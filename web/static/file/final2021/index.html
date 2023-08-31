@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<!-- saved from url=(0064)https://info.cegepmontpetit.ca/5N6-mobile-2/final2021/final.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="page du cours programmation mobile">
+    <meta name="author" content="Département informatique, collège Édouard Montpetit">
+    <title>Mobile : Final</title>
+    <!-- Bootstrap core CSS -->
+    <link href="./Mobile _ Final_files/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            padding-top: 70px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span>
+                    <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                <a class="navbar-brand" href="https://info.cegepmontpetit.ca/5N6-mobile-2/final2021/final.html#">420-5N6 : <strong>Mobile avancé</strong> Examen Final</a> </div>
+            <div class="navbar-collapse collapse navbar-right">
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+    </div>
+    <div class="container">
+        <div class="row ">
+            <div class="col-md-12"> 
+                <p>
+                    <strong>Documentation autorisée</strong>:
+                    Tout ce que vous avez produit pendant le cours, ainsi que les repository utilisés et présentés pendant le cours.
+                </p>
+                <p>
+                    <strong>Durée</strong>:
+                    Vous avez <span class="label label-primary">2</span> heures pour compléter l'examen. Plus si vous avez le droit
+                    à du temps supplémentaire.
+                </p>
+            </div>
+
+
+            <div class="col-xs-6 ">
+                <h3>Firestore</h3>
+                <p>
+                    Commence par faire une copie du projet de départ firebase_start et renomme le exo_firestore_creer.
+                    Le projet est déjà connecté à un projet firebase.
+                    L'initialisation est également déjà intégré.
+                </p>
+                <p>
+                    Vous devez montrer une écriture dans Firestore.
+                </p>
+                <ul>
+                    <li><span class="label label-danger">1 point</span>
+                        Il faut un bouton au milieu de l'application qui déclenchera l'ajout d'un document dans le firestore.
+                    </li>
+                    <li><span class="label label-danger">1 point</span>
+                        A l'appui sur le bouton, vous devez créer un document avec
+                        <ul>
+                            <li>un champ "nomDeFamille" de type String où vous inscrirez votre nom de
+                                famille</li>
+                            <li>un champ "date" de type Date avec la date d'aujourd'hui</li>
+                        </ul>
+                    </li>
+                    <li><span class="label label-danger">1 point</span>
+                        Vous devez créer le document dans une collection appelée "extreme-<em>nomdefamille</em>-<em>prenom</em>" en remplaçant
+                        par votre nom de famille et prénom sans accents.
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-xs-6 "> 
+                <h3>Traduction</h3>
+                <p>
+                    Dans un projet séparé des autres exercices, vous devez produire l'interface suivante et implanter la traduction.
+                </p>
+                <ul>
+                    <li><span class="label label-danger">1 point</span>
+                        La mise en page respecte les copies d'écran.
+                    </li>
+					<li><span class="label label-danger">2 points</span>
+                        Les traductions français et anglais sont telles que vues dans les copies d'écran.
+                    </li>
+                </ul>
+				<a href="./Mobile _ Final_files/examen-en.png"><img src="./Mobile _ Final_files/examen-en.png" class=" col-xs-6"> </a>
+                <a href="./Mobile _ Final_files/examen-fr.png"><img src="./Mobile _ Final_files/examen-fr.png" class=" col-xs-6"> </a>
+            </div>
+
+            <div class="col-xs-6 ">
+                <h3>HTTP JSON et erreurs</h3>
+                <p>
+                    Dans un projet séparé des autres exercices, vous devez programmer une interface avec 2 champs de saisie et un bouton.
+                </p>
+                <ul>
+                    <li><span class="label label-danger">1 point</span>
+                        L'appui sur le bouton envoi une requête GET à l'URL suivante
+                        "https://4n6.azurewebsites.net/milieu/{a}/{b}" avec a et b remplacés par la valeur du premier
+                        champ texte et b par la valeur du 2ème champ texte.
+                        Le service renvoie la moyenne des 2 nombres si on fournit 2 nombres entiers.
+                        Il renvoie une erreur si ce ne sont pas des nombres ou si a est un entier plus grand que b.
+                    </li>
+                    <li><span class="label label-danger">1 point</span>
+                        Si tout se passe bien affiche un SnackBar indiquant "Yeah tout est beau" suivi de la valeur renvoyée.
+                    </li>
+                    <li><span class="label label-danger">1 point</span>
+                        Si le web service renvoit une erreur, vous affichez une erreur.
+                    </li>
+                    <li><span class="label label-danger">1 point</span>
+                        Si vous affichez un message différent et clair dans les 2 cas d'erreurs: si ce ne sont pas des nombres
+                        (exemple https://4n6.azurewebsites.net/milieu/pipo/popi) ou si ce sont des nombres mais
+                        que a est plus grand que B (exemple https://4n6.azurewebsites.net/milieu/5/2)
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="./Mobile _ Final_files/jquery.min.js"></script>
+    <script src="./Mobile _ Final_files/bootstrap.min.js"></script>
+
+
+</body></html>
