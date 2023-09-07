@@ -20,6 +20,18 @@ Vous ne devez pas avoir d'accent dans le nom de votre usager windows
 
 Essaie **File** > **Invalidate Cache / Restart** puis **Invalidate Cache / Restart**.
 
+### Je roule flutter pub run build_runner build mais ça ne marche pas
+
+Essaie de rouler les commandes suivantes dans le terminal d'Android Studio
+- flutter clean
+- flutter pub cache repair
+- flutter pub run build_runner clean
+- flutter pub get
+- dart pub upgrade
+- flutter pub run build_runner build --delete-conflicting-outputs
+
+Si c'est toujours cassé, appelle le prof
+
 ## Android
 
 ### Cannot sync project with gradle files
