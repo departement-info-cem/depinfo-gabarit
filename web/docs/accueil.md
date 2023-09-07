@@ -13,7 +13,7 @@ Le contenu des cours ainsi que les énoncées de TP sont disponibles dans les on
 
 Tu peux déjà commencer à regarder les vidéos du cours 1 et prendre connaissance des informations.
 
-A chaque cours, exécutes ce **[script](https://raw.githubusercontent.com/departement-info-cem/scripts-mobile/main/installation-mobile.ps1)** d'installation. Pour le moment, le script est fait pour être uniquement exécuté sur les postes du CÉGEP.
+A chaque cours, exécutes ce **[script](https://raw.githubusercontent.com/departement-info-cem/scripts-mobile/main/installation-mobile.ps1)** d'installation ([repo](https://github.com/departement-info-cem/scripts-mobile)). Pour le moment, le script est fait pour être uniquement exécuté sur les postes du CÉGEP.
 
 
 </Column>
