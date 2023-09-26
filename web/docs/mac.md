@@ -29,11 +29,12 @@ Si le Wifi n'arrete pas de débarquer et rembarquer, redémarrer le mac. Tu peux
   - tu peux déplacer le dossier flutter téléchargé, juste se souvenir d'où il est
 - Dans Intellij, il te demandera sans doute l'emplacement du SDK Flutter, il faudra indiquer le dossier
 
-## IntelliJ
+## IntelliJ / Android Studio
 
 - Ouvrir le finder (le bonhomme qui sourit)
 - Chercher le dossier Applications
-- Dedans demarrer l’application IntelliJ IDEA
+- Dedans demarrer l’application JetBrains Toolbox
+- Installer Android Studio et Intellij depuis toolbox
 
 ## Simulateur
 
