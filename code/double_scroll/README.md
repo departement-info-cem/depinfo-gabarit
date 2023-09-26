@@ -1,6 +1,6 @@
 # double_scroll
 
-A new Flutter project.
+Double Scroll
 
 ## Getting Started
 

@@ -1,4 +1,4 @@
-package com.example.double_scroll
+package org.depinfo.double_scroll
 
 import io.flutter.embedding.android.FlutterActivity
 
