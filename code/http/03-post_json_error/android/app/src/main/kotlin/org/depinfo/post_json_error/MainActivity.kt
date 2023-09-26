@@ -1,4 +1,4 @@
-package com.example.http
+package org.depinfo.post_json_error
 
 import io.flutter.embedding.android.FlutterActivity
 

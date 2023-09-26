@@ -1,17 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'transfer.dart';
+part of 'transfert.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-Truc _$TrucFromJson(Map<String, dynamic> json) {
-  return Truc()
-    ..a = json['a'] as int
-    ..b = json['b'] as String
-    ..c = (json['c'] as List<dynamic>).map((e) => e as int).toList();
-}
+Truc _$TrucFromJson(Map<String, dynamic> json) => Truc()
+  ..a = json['a'] as int
+  ..b = json['b'] as String
+  ..c = (json['c'] as List<dynamic>).map((e) => e as int).toList();
 
 Map<String, dynamic> _$TrucToJson(Truc instance) => <String, dynamic>{
       'a': instance.a,
@@ -19,11 +17,10 @@ Map<String, dynamic> _$TrucToJson(Truc instance) => <String, dynamic>{
       'c': instance.c,
     };
 
-SignupRequest _$SignupRequestFromJson(Map<String, dynamic> json) {
-  return SignupRequest()
-    ..username = json['username'] as String
-    ..password = json['password'] as String;
-}
+SignupRequest _$SignupRequestFromJson(Map<String, dynamic> json) =>
+    SignupRequest()
+      ..username = json['username'] as String
+      ..password = json['password'] as String;
 
 Map<String, dynamic> _$SignupRequestToJson(SignupRequest instance) =>
     <String, dynamic>{
@@ -31,9 +28,8 @@ Map<String, dynamic> _$SignupRequestToJson(SignupRequest instance) =>
       'password': instance.password,
     };
 
-SignupResponse _$SignupResponseFromJson(Map<String, dynamic> json) {
-  return SignupResponse()..username = json['username'] as String;
-}
+SignupResponse _$SignupResponseFromJson(Map<String, dynamic> json) =>
+    SignupResponse()..username = json['username'] as String;
 
 Map<String, dynamic> _$SignupResponseToJson(SignupResponse instance) =>
     <String, dynamic>{

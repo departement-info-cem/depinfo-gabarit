@@ -1,17 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'transfer.dart';
+part of 'transfert.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-Truc _$TrucFromJson(Map<String, dynamic> json) {
-  return Truc()
-    ..a = json['a'] as int
-    ..b = json['b'] as String
-    ..c = (json['c'] as List<dynamic>).map((e) => e as int).toList();
-}
+Truc _$TrucFromJson(Map<String, dynamic> json) => Truc()
+  ..a = json['a'] as int
+  ..b = json['b'] as String
+  ..c = (json['c'] as List<dynamic>).map((e) => e as int).toList();
 
 Map<String, dynamic> _$TrucToJson(Truc instance) => <String, dynamic>{
       'a': instance.a,
