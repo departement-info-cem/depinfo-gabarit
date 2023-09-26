@@ -1,6 +1,6 @@
 # mise_en_page
 
-A new Flutter project.
+Mise en page
 
 ## Getting Started
 

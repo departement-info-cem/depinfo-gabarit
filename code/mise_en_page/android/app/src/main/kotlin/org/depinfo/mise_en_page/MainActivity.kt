@@ -1,4 +1,4 @@
-package com.example.mise_en_page
+package org.depinfo.mise_en_page
 
 import io.flutter.embedding.android.FlutterActivity
 
