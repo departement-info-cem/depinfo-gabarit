@@ -1,6 +1,6 @@
 # image_cookies
 
-A new Flutter project.
+Image Cookies
 
 ## Getting Started
 

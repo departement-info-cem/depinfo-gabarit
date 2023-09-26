@@ -9,12 +9,12 @@ class ImageCookie extends StatefulWidget {
   final Cookie cookie;
 
   @override
-  _ImageCookieState createState() => _ImageCookieState();
+  State<ImageCookie> createState() => _ImageCookieState();
 }
 
 class _ImageCookieState extends State<ImageCookie> {
   @override
   Widget build(BuildContext context) {
-    return Image.network(widget.imageURL, headers:{'Cookie':widget.cookie.name+"="+widget.cookie.value});
+    return Image.network(widget.imageURL, headers:{'Cookie':"${widget.cookie.name}=${widget.cookie.value}"});
   }
 }

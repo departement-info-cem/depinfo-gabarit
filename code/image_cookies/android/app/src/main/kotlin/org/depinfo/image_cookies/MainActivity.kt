@@ -1,4 +1,4 @@
-package com.example.image_cookies
+package org.depinfo.image_cookies
 
 import io.flutter.embedding.android.FlutterActivity
 
