@@ -57,6 +57,6 @@ Future<List<Truc>> httpListComplex() async {
     return listeTruc;
   } catch (e) {
     print(e);
-    throw (e);
+    rethrow;
   }
 }
