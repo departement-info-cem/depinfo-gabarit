@@ -1,4 +1,4 @@
-package com.example.navigation
+package org.depinfo.navigation
 
 import io.flutter.embedding.android.FlutterActivity
 

@@ -4,31 +4,32 @@ import 'package:navigation/ecran_accueil.dart';
 import 'ecran_a.dart';
 
 class LeTiroir extends StatefulWidget {
+  const LeTiroir({super.key});
 
   @override
-  State<StatefulWidget> createState() => LeTiroirState();
+  State<LeTiroir> createState() => LeTiroirState();
 }
 
 class LeTiroirState extends State<LeTiroir> {
-
-
   @override
   Widget build(BuildContext context) {
     var listView = ListView(
       padding: EdgeInsets.zero,
       children: <Widget>[
-        Container(height: 200,),
+        Container(
+          height: 200,
+        ),
         ListTile(
           dense: true,
-          leading: Icon(Icons.ac_unit),
-          title: Text("Accueil"),
+          leading: const Icon(Icons.ac_unit),
+          title: const Text("Accueil"),
           onTap: () {
             // TODO ferme le tiroir de navigation
             Navigator.of(context).pop();
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => EcranAccueil(),
+                builder: (context) => const EcranAccueil(),
               ),
             );
             // Then close the drawer
@@ -39,14 +40,14 @@ class LeTiroirState extends State<LeTiroir> {
         // ecran sans paramtre.
         ListTile(
           dense: true,
-          leading: Icon(Icons.ac_unit),
-          title: Text("Ecran A"),
+          leading: const Icon(Icons.ac_unit),
+          title: const Text("Ecran A"),
           onTap: () {
             Navigator.of(context).pop();
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => EcranA(),
+                builder: (context) => const EcranA(),
               ),
             );
             // Then close the drawer
@@ -56,7 +57,7 @@ class LeTiroirState extends State<LeTiroir> {
     );
 
     return Drawer(
-      child: new Container(
+      child: Container(
         color: const Color(0xFFFFFFFF),
         child: listView,
       ),

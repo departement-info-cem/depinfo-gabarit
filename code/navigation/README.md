@@ -1,6 +1,6 @@
 # navigation
 
-A new Flutter project.
+Navigation
 
 ## Getting Started
 

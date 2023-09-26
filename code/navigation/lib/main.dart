@@ -1,26 +1,29 @@
 import 'package:flutter/material.dart';
-import 'package:navigation/ecran_a.dart';
-import 'package:navigation/ecran_accueil.dart';
 
+import 'ecran_a.dart';
+import 'ecran_accueil.dart';
 import 'ecran_c.dart';
 
-void main() {runApp(MyApp());}
+void main() {
+  runApp(const MyApp());
+}
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: EcranAccueil(),
+      home: const EcranAccueil(),
       routes: routes(),
     );
   }
 
   Map<String, WidgetBuilder> routes() {
     return {
-      '/ecrana': (context) => EcranA(),
-      '/ecranc': (context) => EcranC(),
-      '/accueil': (context) => EcranAccueil(),
+      '/ecrana': (context) => const EcranA(),
+      '/ecranc': (context) => const EcranC(),
+      '/accueil': (context) => const EcranAccueil(),
     };
   }
 }
