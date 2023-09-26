@@ -1,6 +1,6 @@
 # portrait_paysage
 
-A new Flutter project.
+Portrait paysage
 
 ## Getting Started
 
