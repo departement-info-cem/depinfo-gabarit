@@ -14,11 +14,36 @@ slug: /solutions
 
 ### Aucun projet ne démarre
 
-Vous ne devez pas avoir d'accent dans le nom de votre usager windows
+Vous ne devez pas avoir d'accent dans le nom de votre usager windows. 
+
+Nous vous conseillons d'éviter les accents ou autres caractères spéciaux dans le chemin vers vos projets.
 
 ### Le projet démarre mais il y a du rouge partout
 
 Essaie **File** > **Invalidate Cache / Restart** puis **Invalidate Cache / Restart**.
+
+### Je roule flutter pub run build_runner build mais ça ne marche pas
+
+Les vidéos date un peu, nous te recommandons de prendre les dernières versions de :
+- [json_serializable](https://pub.dev/packages/json_serializable)
+- [build_runner](https://pub.dev/packages/build_runner)
+- [json_annotation](https://pub.dev/packages/json_annotation)
+
+Essaie de rouler les commandes suivantes dans le terminal d'Android Studio
+- flutter clean
+- flutter pub cache repair (en dernier recours ... assez long)
+- flutter pub run build_runner clean (en dernier recours)
+- flutter pub get
+- dart pub upgrade
+- flutter pub run build_runner build --delete-conflicting-outputs
+
+Si c'est toujours cassé, appelle le prof
+
+### La commande flutter semble introuvable depuis le terminal
+
+Des fois quand le script roule, la modification du PATH pour flutter se fait après le démarrage d'Android Studio.
+
+La solution: ferme Android Studio et repars le. L'environnement va se recharger.
 
 ## Android
 
