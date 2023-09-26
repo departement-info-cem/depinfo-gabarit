@@ -1,6 +1,6 @@
 # image_client
 
-A new Flutter project.
+Image Client
 
 ## Getting Started
 
