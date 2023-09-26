@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="page du cours programmation mobile">
+        <meta name="author" content="Département informatique, collège Édouard Montpetit">
+
+        <title>5N6 : Intra</title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+        <style>
+            body {
+                padding-top: 70px;
+            }
+            img {
+                padding-bottom:10px;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Fixed navbar -->
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">420-5N6 : <strong>Programmation mobile 2</strong> Examen Intra</a>
+                </div>
+                <div class="navbar-collapse collapse navbar-right">
+
+                </div><!--/.nav-collapse -->
+            </div>
+        </div>
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-6 alert">
+                    <strong>Documentation autorisée</strong>:
+                    <p>
+                        Tu peux utiliser tes exercices, ton TP1, les vidéos et tout ce qu'on a donné dans le cours (github, repo).
+                    </p>
+					<br/>
+
+                </div>
+                <div class="col-md-6 alert">
+
+                    <strong>Durée</strong>:
+                    <p>
+                        Tu as <span class="label label-primary">120</span> minutes pour compléter l'examen.<br/>
+                        1/3 temps supplémentaire : <span class="label label-primary">160</span> minutes.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-5 alert">
+                    <h3>QUESTION 1 - Mise en page</h3>
+                    <p>
+                        Tu dois créer un projet appelé <strong><em>nom_</em>pages</strong> avec deux pages et les mises en page suivantes :
+                    </p>
+                        <p> <span class="label label-danger">1 point</span>
+                            Les titres des écrans sont <strong>Ecran 1</strong> et <strong>Yapalooza</strong>.
+                        </p>
+                        <p> <span class="label label-danger">1 point</span>
+                            Les boutons d'action flottant permettent de naviguer d'un écran à l'autre. L'icône pour l'écran
+                            1 est une flèche vers la droite <strong>(Icons.arrow_right)</strong> et une flèche vers la gauche pour
+                            l'écran 2 <strong>(Icons.arrow_left)</strong>.
+                        </p>
+                       <p> <span class="label label-danger">1 point</span>
+                           La page 1 est séparé verticalement en un bloc multicolore occupant les 2 tiers de la hauteur
+                           et un bloc rouge <strong>(Colors.red)</strong> qui prend le reste de la hauteur.
+                       </p>
+                       <p>
+                           <span class="label label-danger">1 point</span>
+                           Le bloc multicolore se partage en largeur entre un bloc ambre <strong>(Colors.amber)</strong>
+                           qui occupe la moitié
+                           de la largeur, un bloc vert qui occupe 1/3 de la largeur et un bloc bleu qui occupe 1/6.
+                       </p>
+                       <p> <span class="label label-danger">1 point</span>
+                           La page 2 a un fond vert entouré d'un vide de 20 pixels sur tous les bords.
+                       </p>
+                       <p> <span class="label label-danger">1 point</span>
+                           Il y un bouton puis un texte puis un bouton dans un colonne avec un espace égal de séparation.
+                            Les textes correspondent aux captures.
+                       </p>
+
+					</br>
+                </div>
+                <div class="col-xs-7 alert">
+
+                    <a href="intra2022_files/c.png"><img src="intra2022_files/c.png" class=" col-xs-4"/> </a>
+                    <a href="intra2022_files/d.png"><img src="intra2022_files/d.png" class=" col-xs-4"/> </a>
+                    <a href="intra2022_files/b.png"><img src="intra2022_files/b.png" class=" col-xs-4"/> </a>
+                    <a href="intra2022_files/a.png"><img src="intra2022_files/a.png" class=" col-xs-4"/> </a>
+
+                </div>
+            </div>
+
+            <div class="row well">
+                <div class="">
+
+                    <div class="col-xs-9 alert">
+                        <h3>QUESTION 2 - Accès réseau</h3>
+                        <p>
+                            Tu dois créer un projet appelé <strong><em>nom_</em>web_service</strong>
+                        </p>
+                        <strong>Web service</strong>:
+                        <p>
+                            Ton code doit accéder à un service web disponible en méthode GET sur l'URL ci-dessous.
+                        </p>
+                        <pre>https://exercices-web.herokuapp.com/exam/representations/{nombre}</pre>
+						Exemple concret
+						<pre>https://exercices-web.herokuapp.com/exam/representations/123</pre>
+                        <p>
+                            Le paramètre nombre est entré via un champ texte.
+                        </p>
+                        <p> 
+                            Le service retourne différentes représentations du nombre envoyé.
+                        </p>
+                        <p> 
+                            Les données retournées par le service doivent être affichées dans un ListView.
+                            Tous les champs renvoyés par le service doivent être lisibles.
+                        </p>
+
+                        <strong>Pointage</strong>
+                        <p>
+                            <span class="label label-danger">1 points</span>
+                            Ton application utilise un champ texte pour récupérer le nombre.
+                            Si tu n'y arrives pas tu peux envoyer une constante mais tu perds ce point.
+                        </p>
+                        <p>
+                            <span class="label label-danger">2 points</span>
+                            Récupérer les données retournées par le service dans l'application
+                            et les afficher via un print ou tout autre moyen.
+                        </p>
+
+                        <p>
+                            <span class="label label-danger">2 points</span>
+                            Récupérer les données retournées par le service dans l'application
+                            et les afficher via un ListView où on voit tous les champs de données.
+                            Si tu as réussi à afficher une ListView tu obtiens également les 2 points précédents.
+                        </p>
+                        
+                    </div>
+                    <div class="col-xs-3 alert">
+
+                        <a href="intra2022_files/e.png"><img src="intra2022_files/e.png" class=" col-xs-12"/> </a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    </body>
+</html>
