@@ -1,6 +1,6 @@
 # date_json
 
-A new Flutter project.
+Date JSON
 
 ## Getting Started
 

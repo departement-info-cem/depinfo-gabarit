@@ -1,4 +1,4 @@
-package com.example.date_json
+package org.depinfo.date_json
 
 import io.flutter.embedding.android.FlutterActivity
 
