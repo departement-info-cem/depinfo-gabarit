@@ -13,22 +13,23 @@ class Locs {
     return Localizations.of<Locs>(context, Locs)!;
   }
 
-  Map<String, String> _sentences = Map();
+  Map<String, String> _sentences = {};
 
   Future<bool> load() async {
     // recupere le JSON depuis l'url
-    String data = await rootBundle.loadString('assets/i18n/${this.locale.languageCode}.json');
+    String data =
+        await rootBundle.loadString('assets/i18n/${locale.languageCode}.json');
     // decode la string via json
-    Map<String, dynamic> _result = json.decode(data);
+    Map<String, dynamic> result = json.decode(data);
     // copie les couples dans une map en memoire
-    this._sentences = new Map();
-    _result.forEach((String key, dynamic value) {
-      this._sentences[key] = value.toString();
+    _sentences = <String, String>{};
+    result.forEach((String key, dynamic value) {
+      _sentences[key] = value.toString();
     });
     return true;
   }
 
   String trans(String key) {
-    return this._sentences.containsKey(key) ? this._sentences[key]! : "TODO";
+    return _sentences.containsKey(key) ? _sentences[key]! : "TODO";
   }
 }

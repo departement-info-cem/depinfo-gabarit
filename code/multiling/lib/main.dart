@@ -1,16 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:multiling/home.dart';
-import 'package:multiling/i18n/intl_delegate.dart';
 
-void main() => runApp(MyApp());
+import 'home.dart';
+import 'i18n/intl_delegate.dart';
+
+void main() {
+  runApp(const MyApp());
+}
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-
-
+    return const MaterialApp(
       // TODO enregistrer les delegate pour la traduction
       localizationsDelegates: [
         DemoDelegate(),
@@ -20,10 +24,9 @@ class MyApp extends StatelessWidget {
       ],
       // TODO annoncer les locales qui sont gerees
       supportedLocales: [
-        const Locale('en'),
-        const Locale('fr'),
+        Locale('en'),
+        Locale('fr'),
       ],
-
 
       title: 'Flutter Demo',
       home: DemoMultiLing(),

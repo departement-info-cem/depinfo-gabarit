@@ -1,14 +1,14 @@
-
 import 'package:flutter/material.dart';
 import 'package:multiling/i18n/intl_localization.dart';
 
 class DemoMultiLing extends StatefulWidget {
+  const DemoMultiLing({super.key});
+
   @override
-  _DemoMultiLingState createState() => _DemoMultiLingState();
+  State<DemoMultiLing> createState() => _DemoMultiLingState();
 }
 
 class _DemoMultiLingState extends State<DemoMultiLing> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

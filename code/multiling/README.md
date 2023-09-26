@@ -1,6 +1,6 @@
 # multiling
 
-A new Flutter project.
+Multiling
 
 ## Getting Started
 

@@ -1,4 +1,4 @@
-package com.example.multiling
+package org.depinfo.multiling
 
 import io.flutter.embedding.android.FlutterActivity
 
