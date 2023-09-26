@@ -52,7 +52,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void getHttp() async {
     try {
-      var response = await Dio().get('https://exercices-web.herokuapp.com/exos/long/double/99');
+      var response = await Dio().get('https://4n6.azurewebsites.net/exos/long/double/99');
       print(response);
       this.reponse =  response.data;
       setState(() {});

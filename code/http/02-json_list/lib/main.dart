@@ -57,7 +57,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void getHttp() async {
     try {
-      var response = await Dio().get('https://exercices-web.herokuapp.com/exos/long/double/99');
+      var response = await Dio().get('https://4n6.azurewebsites.net/exos/long/double/99');
       print(response);
       this.reponse =  response.data;
       setState(() {});
@@ -73,7 +73,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void getHttpComplex(String nom) async {
     try {
-      var response = await Dio().get('https://exercices-web.herokuapp.com/exos/truc/complexe?name='+nom);
+      var response = await Dio().get('https://4n6.azurewebsites.net/exos/truc/complexe?name='+nom);
       print(response);
       this.truc =  Truc.fromJson(response.data);
       setState(() {});
@@ -89,7 +89,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void getHttpListComplex() async {
     try {
-      var response = await Dio().get('https://exercices-web.herokuapp.com/exos/truc/list');
+      var response = await Dio().get('https://4n6.azurewebsites.net/exos/truc/list');
       print(response);
       var listeJSON = response.data as List;
       var listeTruc = listeJSON.map(
