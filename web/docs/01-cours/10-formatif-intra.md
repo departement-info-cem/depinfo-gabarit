@@ -10,7 +10,7 @@ hide_table_of_contents: true
 
 ATTENTION : le serveur qui servait pour l'exercice 2 pourrait ne plus être fonctionnel
 
-Lien ici [Intra 2021](pathname:///file/intra2022)
+Lien ici [Intra 2022](pathname:///file/intra2022)
 
 ## Intra Automne 2021
 
