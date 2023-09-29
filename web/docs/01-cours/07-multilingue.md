@@ -4,7 +4,7 @@ description: Déploiement
 hide_table_of_contents: true
 ---
 
-# Multilingue, portrait/paysage
+# Multilingue, portrait / paysage
 
 <Row>
 
@@ -12,12 +12,13 @@ hide_table_of_contents: true
 
 :::tip Avant la séance :
 
-Vous pouvez regarder la doc de Flutter en ligne sur l'internationalization [ici](https://flutter.dev/docs/development/accessibility-and-localization/internationalization)
+### Multilingue
 
-Vous devrez étudier l'exemple de code suivant sur le **[multilingue](https://github.com/departement-info-cem/5N6-mobile-2-Nouveau/tree/main/code/multiling)**. Cherchez les TODOs pour les explications. Dans IntelliJ **View** > **Tool Windows** > **TODO**.
+Vous pouvez regarder la doc de Flutter en ligne sur l'internationalization [ici](https://flutter.dev/docs/development/accessibility-and-localization/internationalization).
 
-TODO voir le plugin flutter intl
+Cependant, nous vous recommendons d'utiliser le plugin Jetbrains [Flutter Intl](https://plugins.jetbrains.com/plugin/13666-flutter-intl), qui automatise une partie non négligeable du travail de traduction.
 
+### Portrait / Paysage
 
 Vous devrez étudier l'exemple de code suivant sur le [les changements d'orientations](https://github.com/departement-info-cem/5N6-mobile-2-Nouveau/tree/main/code/portrait_paysage). Cherchez les TODOs pour les explications. Dans IntelliJ **View** > **Tool Windows** > **TODO**.
 
@@ -29,6 +30,8 @@ Vous devrez étudier l'exemple de code suivant sur le [les changements d'orienta
 <Column>
 
 :::info Séance  : Multilingue et OrientationBuilder
+
+Nous regarderons comment utiliser le plugin de Jetbrains [Flutter Intl](https://plugins.jetbrains.com/plugin/13666-flutter-intl).
 
 Nous regarderons comment utiliser l'OrientationBuilder pour contrôler les changements d'orientation.
 
