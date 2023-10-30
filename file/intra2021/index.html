@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<!-- saved from url=(0064)https://info.cegepmontpetit.ca/5N6-mobile-2/intra2021/intra.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="page du cours programmation mobile">
+        <meta name="author" content="Département informatique, collège Édouard Montpetit">
+
+        <title>5N6 : Intra</title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="./intra2021_files/bootstrap.min.css" rel="stylesheet">
+        <style>
+            body {
+                padding-top: 70px;
+            }
+            img {
+                padding-bottom:10px;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Fixed navbar -->
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="https://info.cegepmontpetit.ca/5N6-mobile-2/intra2021/intra.html#">420-5N6 : <strong>Programmation mobile 2</strong> Examen Intra</a>
+                </div>
+                <div class="navbar-collapse collapse navbar-right">
+
+                </div><!--/.nav-collapse -->
+            </div>
+        </div>
+
+        <div class="container">
+
+            <div class="row">
+                <h3>Consignes</h3>
+                <div class="col-md-12 alert">
+                    <strong>Documentation autorisée</strong>:
+                    <p>
+                        Tu peux utiliser tes exercices, ton TP1, les vidéos et tout ce qu'on a donné dans le cours (github, repo).
+                    </p>
+					<br>
+                    <strong>Durée</strong>:
+                    <p>
+                        Tu as <span class="label label-primary">180</span> minutes pour compléter l'examen.<br>
+                        1/3 temps supplémentaire : <span class="label label-primary">240</span> minutes.
+                    </p>
+					<br>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-4 alert">
+                    <h3>QUESTION 1 - Mise en page et tiroir de navigation (7 pts)</h3>
+                    <p>
+                        Tu dois créer un projet appelé <strong><em>nom_</em>pages_tiroir</strong> avec deux pages et les mises en page suivantes :
+                    </p>
+					<br>
+					<strong>Mise en page</strong>
+
+                       <p> <span class="label label-danger">1 point</span> La page 1 a deux containers occupant toute la largeur et la moitié de la hauteur chaque en mode portrait avec comme couleur de fond : deepPurple et deepOrange. Les <a href="https://www.w3schools.com/colors/colors_hexadecimal.asp">couleurs</a> n'ont pas à être exactement comme l'image.</p>
+                       <p> <span class="label label-danger">1 point</span> La page 1 a deux containers occupant toute la hauteur et la moitié de la largeur chaque en mode paysage avec comme couleur de fond : deepPurple et deepOrange. Les <a href="https://www.w3schools.com/colors/colors_hexadecimal.asp">couleurs</a> n'ont pas à être exactement comme l'image.</p>
+                       <p> <span class="label label-danger">1 point</span> La page 2 a un champ texte en haut, et deux boutons en bas occupant chacun 50% de largeur.</p>
+                       <p> <span class="label label-danger">1 point</span> Les espacements de la page 2 sont présents, mais ils n'ont pas à correspondre exactement à l'image</p>
+
+					<br>
+                    <strong>Tiroir</strong>
+                    <p>
+                        <span class="label label-danger">1 point</span> Afficher un tiroir de navigation dans les 2 pages qui contient deux items:
+                        "Page 1" "Page 2".
+                    </p>
+                    <p>
+                        <span class="label label-danger">1 point</span> La navigation fonctionne avec le tiroir dans les 2 pages.
+                    </p>
+                    <p>
+                        <span class="label label-danger">1 point</span> L'en-tête du tiroir indique "prénom nom" avec un fond vert.
+                    </p>
+                </div>
+                <div class="col-xs-8 alert">
+                    <a href="./intra2021_files/p1.png"><img src="./intra2021_files/p1.png" class=" col-xs-3"> </a>
+					<a href="./intra2021_files/p2.png"><img src="./intra2021_files/p2.png" class=" col-xs-3"> </a>
+                    <a href="./intra2021_files/p1p.png"><img src="./intra2021_files/p1p.png" class=" col-xs-3"> </a>
+                    <a href="./intra2021_files/p2p.png"><img src="./intra2021_files/p2p.png" class=" col-xs-3"> </a>
+                    <a href="./intra2021_files/t.png"><img src="./intra2021_files/t.png" class=" col-xs-3"> </a>
+                </div>
+            </div>
+
+            <div class="row well">
+                <div class="">
+                    <h3>QUESTION 2 - Accès réseau (5 pts)</h3>
+					<p>
+                        Tu dois créer un projet appelé <strong><em>nom_</em>web_service</strong>
+                    </p>
+                    <div class="col-md-12 alert">
+                        <strong>Web service</strong>:
+                        <p>
+                            Ton code doit accéder à un service web disponible en méthode GET sur l'URL ci-dessous.
+                        </p>
+                        <pre>https://4n6.azurewebsites.net/exam/[annee]/[mois]/[jour]</pre>
+						Exemple concret
+						<pre>https://4n6.azurewebsites.net/exam/1999/12/12</pre>
+                        <p>
+                            Les paramètres annee, mois et jour sont lus à partir de 3 champs texte.
+                        </p>
+                        <p> 
+                            Le service retourne la journée de la semaine de la date fournie en paramètre jusqu'à l'année prochaine.
+                        </p>
+                        <p> 
+                            Les données retournées par le service doivent être affichées dans un ListView. Les 3 champs texte doivent être dans la même page que le ListView.
+                        </p>
+                        
+
+                        <br>
+                        <strong>Affichage dans l'interface graphique</strong>
+                        <p>
+                            <span class="label label-danger">2 points</span> Récupérer les données retournées par le service dans l'application et les afficher via un print ou tout autre moyen.
+                        </p>
+                        <p>
+                            <span class="label label-danger">1 points</span> Utiliser les champs textes pour fournir les paramètres au service web.
+                        </p>
+                        <p>
+                            <span class="label label-danger">2 points</span> Récupérer les données retournées par le service dans l'application et les afficher via un ListView view où on voit les différents champs de données.
+                        </p>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="./intra2021_files/jquery.min.js"></script>
+        <script src="./intra2021_files/bootstrap.min.js"></script>
+    
+
+</body></html>
