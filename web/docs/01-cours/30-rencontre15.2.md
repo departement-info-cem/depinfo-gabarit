@@ -1,3 +1,3 @@
-# Rencontre 15.2
+# Cours 30 - Final sommatif (25%)
 
 

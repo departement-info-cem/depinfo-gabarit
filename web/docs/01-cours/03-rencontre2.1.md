@@ -1,3 +1,3 @@
-# Rencontre 2.1
+# Cours 3 - Requêtes HTTP
 
 

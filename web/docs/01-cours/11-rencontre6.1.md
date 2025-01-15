@@ -1,3 +1,3 @@
-# Rencontre 6.1
+# Cours 11 - Mat, modules, tests
 
 

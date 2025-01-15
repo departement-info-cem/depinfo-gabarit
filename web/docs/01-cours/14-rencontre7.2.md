@@ -1,3 +1,3 @@
-# Rencontre 7.2
+# Cours 14 - Intra sommatif (15%)
 
 

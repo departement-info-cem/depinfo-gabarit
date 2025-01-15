@@ -1,3 +1,3 @@
-# Rencontre 12.1
+# Cours 23 - Librairies JS
 
 

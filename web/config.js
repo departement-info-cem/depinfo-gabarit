@@ -1,7 +1,7 @@
 const config = {
-    nom: "Code - Nom du cours",
-    description: "Site de référence du cours de x",
-    nomUrl: "depinfo-gabarit"
+    nom: "4204W6 - Programmation Web orientée services",
+    description: "Site de référence du cours Programmation Web orientée services",
+    nomUrl: "webservices"
 }
 
 module.exports = config;

@@ -1,3 +1,3 @@
-# Rencontre 6.2
+# Cours 12 - TP2 (20%)
 
 

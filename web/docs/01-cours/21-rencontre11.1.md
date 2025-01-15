@@ -1,3 +1,3 @@
-# Rencontre 11.1
+# Cours 21 - Serveur d'images
 
 

@@ -1,3 +1,3 @@
-# Rencontre 3.1
+# Cours 5 - Plusieurs composants
 
 
