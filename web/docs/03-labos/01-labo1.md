@@ -9,7 +9,7 @@ ouverte en cliquant sur l'💡, maintenez `ctrl` appuyé.
 
 ### **1 -** Créer le projet Angular
 
-[💡](/webservices/cours/rencontre1.1#-créer-un-projet-angular) Créez un nouveau projet Angular et nommez-le `labo1` ou `lab1` ou `laboratoire1` ou `labo01` ou `lab01` ou
+[💡](/cours/rencontre1.1#-créer-un-projet-angular) Créez un nouveau projet Angular et nommez-le `labo1` ou `lab1` ou `laboratoire1` ou `labo01` ou `lab01` ou
 `laboratoire01` ou `labo_1` ou `labo_01` ou `lab_1` ou `lab_01` ou `laboratoire_1` ou `laboratoire_01` ou 
 `coccinelle`.
 
@@ -17,7 +17,7 @@ N'ouvrez pas votre projet avec Visual Studio Code immédiatement, nous avons que
 
 ### **2 -** Créer le repo
 
-[💡](/webservices/cours/rencontre1.1#-créer-un-nouveau-projet-et-son-repository) Créez un nouveau repository Git vide à l'aide de **Fork** 🔱 ou **GitKraken** 🦑. Par contre, 
+[💡](/cours/rencontre1.1#-créer-un-nouveau-projet-et-son-repository) Créez un nouveau repository Git vide à l'aide de **Fork** 🔱 ou **GitKraken** 🦑. Par contre, 
 faites-le en prenant un moment de grande considération...
 
 #### 🔱🦑 Fourchette ou Carlos le calamar ?
@@ -41,7 +41,7 @@ Si vous comptez utiliser Git pour vos labos -> décidez si vous voulez faire 1 r
 
 ### **3 -** Préparer le repo
 
-[💡](/webservices/cours/rencontre1.1#-créer-un-nouveau-projet-et-son-repository) Déplacez votre projet Angular dans le repository vide, mais ⛔ assurez-vous de d'abord supprimer le dossier `.git` dans votre
+[💡](/cours/rencontre1.1#-créer-un-nouveau-projet-et-son-repository) Déplacez votre projet Angular dans le repository vide, mais ⛔ assurez-vous de d'abord supprimer le dossier `.git` dans votre
 projet Angular s'il y en a un ! (Ne supprimez pas celui dans le repo vide par contre)
 
 Faites un premier commit et un premier push.
@@ -56,7 +56,7 @@ Pour la suite du laboratoire, n'hésitez pas à faire un commit et un push à la
 
 ### **4 -** Installer deux dépendances
 
-[💡](/webservices/cours/rencontre1.1#-installer-une-d%C3%A9pendance) Installez deux dépendances : `jquery` et `bootstrap`. Attention à l'orthographe, si vous faites la moindre faute dans leur nom ça n'installera pas la bonne chose. 🙄
+[💡](/cours/rencontre1.1#-installer-une-d%C3%A9pendance) Installez deux dépendances : `jquery` et `bootstrap`. Attention à l'orthographe, si vous faites la moindre faute dans leur nom ça n'installera pas la bonne chose. 🙄
 
 Ensuite, assurez-vous que ces deux lignes ont bel et bien été ajoutées dans le fichier `package.json` :
 
@@ -97,7 +97,7 @@ conflits et brise plusieurs mécanismes lorsque plusieurs librairies sont utilis
 
 ### **5 -** Lancer le projet
 
-[💡](/webservices/cours/rencontre1.1#-ouvrir-et-exécuter-un-projet-angular) Vous pouvez maintenant exécuter la commande `ng serve` dans le terminal de Visual Studio Code pour exécuter le projet. Si vous aviez déjà lancé le projet, il faudra l'arrêter (Ctrl + C dans le terminal) et le démarrer à nouveau.
+[💡](/cours/rencontre1.1#-ouvrir-et-exécuter-un-projet-angular) Vous pouvez maintenant exécuter la commande `ng serve` dans le terminal de Visual Studio Code pour exécuter le projet. Si vous aviez déjà lancé le projet, il faudra l'arrêter (Ctrl + C dans le terminal) et le démarrer à nouveau.
 
 :::note
 
@@ -117,7 +117,7 @@ Pour le moment, si vous jetez un coup d'oeil à votre page Web dans le navigateu
 
 <center>![App par défaut](../../static/img/labo1/defaultView.png)</center>
 
-[💡](/webservices/cours/rencontre1.1#-les-composants) Supprimez tout le code HTML présent dans le fichier `app.component.html` et sauvegardez. À présent, la page
+[💡](/cours/rencontre1.1#-les-composants) Supprimez tout le code HTML présent dans le fichier `app.component.html` et sauvegardez. À présent, la page
 Web devrait être complètement vide. (Tout ce qu'il reste, c'est un `<body></body>` relativement vide.)
 
 Copiez-collez ce HTML dans le composant `app` à la place :
@@ -138,7 +138,7 @@ Copiez-collez ce HTML dans le composant `app` à la place :
 Si vous avez bien installé et importé `bootstrap`, les deux colonnes devraient bien être côte-à-côte.
 Notez que les classes `socialisme` et `conservatisme` ne font rien pour le moment et n'ont pas de lien avec `bootstrap`.
 
-[💡](/webservices/cours/rencontre1.1#-les-composants) Ajoutez du CSS _au bon endroit_ (ce CSS ne doit s'appliquer qu'au
+[💡](/cours/rencontre1.1#-les-composants) Ajoutez du CSS _au bon endroit_ (ce CSS ne doit s'appliquer qu'au
 composant `app` !) pour obtenir un résultat similaire à celui ci-dessous. Vous êtes invités à choisir des couleurs 
 qui représentent bien l'âme de l'esprit du mental de la tête de l'aura de votre personne. 
 
@@ -153,7 +153,7 @@ Pour rappel, c'est un fichier de tests unitaires que nous n'utiliserons pas avan
 
 ### **7 -** Afficher une variable
 
-[💡](/webservices/cours/rencontre1.1#-afficher-une-variable-dans-la-page-web) Déclarez une variable
+[💡](/cours/rencontre1.1#-afficher-une-variable-dans-la-page-web) Déclarez une variable
 nommée `myWisdom` dans votre composant `app`. _Typez-la_ en `string` et affectez-lui une phrase qui vous inspire.
 
 Déclarez une deuxième variable nommée `n` (sans la typer car vous êtes un _bandit_) et affectez-lui un nombre
@@ -166,7 +166,7 @@ doubles accolades. De plus, remplacez le mot « Gauche » par la valeur de la va
 
 ### **8 -** Afficher des résultats de fonction
 
-[💡](/webservices/cours/rencontre1.1#fonctions-de-classe) Nous allons créer deux fonctions dans le composant `app`.
+[💡](/cours/rencontre1.1#fonctions-de-classe) Nous allons créer deux fonctions dans le composant `app`.
 
 La première fonction se nomme `bruh`, ne reçoit aucun paramètre et retourne un `string`. La fonction retourne
 la valeur `"Bruh."`.
@@ -178,7 +178,7 @@ Avant de poursuivre, dupliquez votre « `row` » dans le HTML car nous allons aj
 
 <center>![Deux rangées](../../static/img/labo1/twoRows.png)</center>
 
-[💡](/webservices/cours/rencontre1.1#-afficher-le-résultat-dune-fonction) Affichez le résultat de la fonction `equalToN()`
+[💡](/cours/rencontre1.1#-afficher-le-résultat-dune-fonction) Affichez le résultat de la fonction `equalToN()`
 deux fois dans la colonne de gauche de la 2e rangée : une fois en fournissant un paramètre qui est égal à votre variable `n` et
 une autre fois en fournissant un paramètre qui n'est pas égal à votre variable `n`.
 
@@ -192,7 +192,7 @@ Vous devriez avoir un résultat similaire :
 
 ### **9 -** Créer une classe
 
-[💡](/webservices/cours/rencontre1.1#-créer-et-afficher-un-objet-personnalisé) Nous allons maintenant créer une classe personnalisée.
+[💡](/cours/rencontre1.1#-créer-et-afficher-un-objet-personnalisé) Nous allons maintenant créer une classe personnalisée.
 
 Préparez un nouveau dossier `models` qui pourra accueillir une classe. Voici la classe à créer :
 
@@ -217,7 +217,7 @@ projet (vous aurez à le créer) :
 
 <center>![Dossier](../../static/img/labo1/folder.png)</center>
 
-[💡](/webservices/cours/rencontre1.1#-créer-et-afficher-un-objet-personnalisé) Créez une variable de type serviette
+[💡](/cours/rencontre1.1#-créer-et-afficher-un-objet-personnalisé) Créez une variable de type serviette
 dans le composant `app`. Donnez lui votre couleur préférée (sauf si votre couleur préférée est bleu, dans ce cas
 choisissez `brun`), une taille de `1.8` et le nom de votre fichier image. (Ex : `"servietteBleue.jpeg"`)
 
@@ -230,7 +230,7 @@ Pour l'image, vous aurez besoin d'un élément `<img>` dans lequel vous glissere
 
 ### **11 -** Afficher un tableau
 
-[💡](/webservices/cours/rencontre1.1#-créer-et-afficher-un-tableau) Déclarez un tableau de `string` nommé `hateList` dans le composant `app` et affectez-lui un tableau
+[💡](/cours/rencontre1.1#-créer-et-afficher-un-tableau) Déclarez un tableau de `string` nommé `hateList` dans le composant `app` et affectez-lui un tableau
 avec trois choses que vous détestez.
 
 Dans le HTML du composant `app`, à l'aide d'un élément `<ul>` qui contient trois éléments `<li>`, affichez
