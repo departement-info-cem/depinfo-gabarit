@@ -90,12 +90,16 @@ dans le composant.
 un élément HTML. (Les trois couleurs possibles doivent être `lightcyan`, `mistyrose` et
 `lightyellow`) Avec un champ `<select>`, l'attribut `[(ngModel)]` fonctionne un peu différemment...
 
+L'attribut `[(ngModel)]` **aura seulement à être placée à un endroit** : dans la balise `<select>`.
 La variable associée au champ `<select>` grâce à `[(ngModel)]` va contenir la valeur spécifiée
 dans l'attribut `value` de l'élément `<option>` qui aura été choisi par l'utilisateur. (Relisez cette
-phrase plusieurs fois au besoin 😬 Si je le formule autrement, ça donnerait « Dans le fond l'`<option>`
-que t'as choisie, ben c'est ça `value` qui va aller dans la variable associée au `<select>` »)
+phrase plusieurs fois au besoin 😬)
 
-Le but sera simplement d'utiliser cette valeur dans le `style`. Avec un peu de concaténation vous
+Si je le formule autrement, ça donnerait « Dans le fond l'`<option>` que t'as choisie, ben c'est ça `value` 
+qui va aller dans la variable associée au `<select>`. Genre, si t'as choisi l'option **Bleu**, ben ta variable
+va contenir `"lightcyan"`. ». 
+
+[💡](/cours/rencontre1.2#-chaîne-de-caractères-dans-le-html) Le but sera simplement d'utiliser cette valeur dans le `style`. Avec un peu de concaténation vous
 y arriverez.
 
 <center>![Affichage avec fond](../../static/img/labo2/display7_1.png)</center>
