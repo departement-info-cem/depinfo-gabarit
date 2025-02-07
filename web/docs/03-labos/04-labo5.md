@@ -7,7 +7,7 @@ apprendre et à prendre le laboratoire au sérieux] !
 
 Téléchargez le [projet de départ](../../static/files/labo5.zip).
 
-Réinstallez les dépendances avec `npm install`, ouvrez Visuel Studio Code et exécutez l'application Web avec `ng serve`.
+Réinstallez les dépendances avec `npm install`, ouvrez Visual Studio Code et exécutez l'application Web avec `ng serve`.
 
 ## 📦 Étape 2 - Les cons, posant du code*
 

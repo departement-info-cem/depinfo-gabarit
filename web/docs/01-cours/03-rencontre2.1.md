@@ -91,8 +91,8 @@ Angular, il faudra ajouter une instruction qui donnera accès à la classe **Htt
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
-    provideRouter(routes),  // Cette ligne doit être ajoutée
-    provideHttpClient()
+    provideRouter(routes),
+    provideHttpClient() // Cette ligne doit être ajoutée
   ]
 };
 ```
