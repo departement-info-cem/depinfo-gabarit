@@ -261,3 +261,5 @@ simultanément une variable située dans le service) Il existe toutefois d'autre
 certaines données au fil de la navigation sur un site Web Angular, comme le **stockage local**. (Cours 7)
 
 :::
+
+🔄 Dans tous les cas, lorsqu'on **réactualise la page**, toute l'application est « détruite » (ou réinitialisée)
