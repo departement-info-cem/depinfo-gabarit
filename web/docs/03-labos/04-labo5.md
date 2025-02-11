@@ -163,7 +163,7 @@ Pour le moment, le composant `details` affiche toujours les informations sur Ken
 
 Dans le composant `details`, dans `ngOnInit()`, vérifiez si un paramètre de route a été reçu.
 * Si oui, on le met dans la variable `characterName` et on l'utilise donc dans la requête.
-* Si non, on met toujours `"Kenny"` dans `characterName` et on l'utilise par défait pour la requête.
+* Si non, on met toujours `"Kenny"` dans `characterName` et on l'utilise par défaut pour la requête.
 
 Dans le composant `card`, ajoutez un `[routerLink]` sur le `<div>` pour rediriger vers le chemin
 `/details/nom_du_personnage_cliqué`. (Par exemple, cliquer sur le `<div>` de Wendy va nous rediriger

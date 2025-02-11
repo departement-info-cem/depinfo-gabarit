@@ -219,7 +219,7 @@ Grâce à l'attribut `[routerLink]`, qui est utilisable si on a importé le modu
 permettre à l'utiliser de changer la route actuelle grâce à un clic.
 
 ```html
-<div [routerLink]=['/blue']>Bleu</div>
+<div [routerLink]="['/blue']">Bleu</div>
 ```
 
 Par exemple, cliquer sur ce `<div>` changera la route actuelle pour `http://localhost:4200/blue`. Si nos règles de routage
