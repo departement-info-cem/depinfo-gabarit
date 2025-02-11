@@ -86,7 +86,7 @@ Dans le HTML de `card`, remplacez tous les `???` par la variable `characterName`
 <center>![Affichage de tous les personnages](../../static/img/labo5/list.png)</center>
 
 Le composant `card` peut sembler un peu inutile. (Pourquoi ne pas directement tout mettre dans `list` ?) Cela dit, disons qu'on réutilise
-cet affichage d'un personnage n'importe où d'autres dans le site Web, alors on n'aurait qu'à intégrer le composant `card` à nouveau à cet
+cet affichage d'un personnage n'importe où d'autre dans le site Web, alors on aurait qu'à intégrer le composant `card` à nouveau à cet
 endroit plutôt que de dupliquer tout le code HTML, CSS et TypeScript.
 
 :::tip
