@@ -353,4 +353,18 @@ Cela dit, les **étiquettes de traduction** devront être intégrées à tous le
 
 ### 🪙 Requête avec authentification (token)
 
-Yep yep yep
+Certaines Web API requière une authentification pour être utilisées. C'est par exemple le cas
+de **Spotify**, que nous allons aborder en exemple.
+
+####  Étape 1 - 👤 Créer un compte
+
+Rendez-vous sur [https://open.spotify.com/](https://open.spotify.com/ ) pour créer un compte
+si vous n'en avez pas déjà un.
+
+Une fois que vous avez un compte, rendez-vous sur [https://developer.spotify.com/dashboard](https://developer.spotify.com/dashboard) pour **créer une application Spotify**. (Spotify veut simplement que vous remplissiez un formulaire pour décrire votre application qui utilisera leur Web API)
+
+Une fois l'application créée, nous aurons accès un **Client ID** et un **Client Secret** qui nous
+serviront plus tard pour envoyer des requêtes.
+
+<center>![Secret Spotify](../../static/img/cours7/secret.png)</center>
+
