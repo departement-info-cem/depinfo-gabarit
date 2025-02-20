@@ -4,7 +4,7 @@
 
 ### 📦 1 - Installer deux dépendances pour i18n
 
-Téléchargez le [projet de départ](../../static/files/labo6.zip) et réinstallez les dépendances.
+Téléchargez le [projet de départ](../../static/files/labo7.zip) et réinstallez les dépendances.
 
 [💡](/cours/rencontre4.1#étape-1----installer-deux-dépendances) Avant d'ouvrir le projet, installez les deux dépendances supplémentaires.
 
