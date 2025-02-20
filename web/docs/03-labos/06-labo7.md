@@ -51,9 +51,9 @@ L'objectif sera de traduire tous les textes visibles dans la page en français e
 
 ### 🌐 4 - Internationaliser un composant
 
-[💡](/cours/rencontre4.1#-internationalisation) Faites le nécessaire pour rendre disponibles en français et en anglais tous les textes pointés dans l'image plus haute. ⛔ N'oubliez pas que vous avez déjà installer les deux dépendances nécessaires.
+[💡](/cours/rencontre4.1#-internationalisation) Faites le nécessaire pour rendre disponibles en français et en anglais tous les textes pointés dans l'image plus haute. ⛔ N'oubliez pas que vous avez déjà installé les deux dépendances nécessaires.
 
-N'oubliez pas de rendre fonctionneles les boutons `Français` et `English`.
+N'oubliez pas de rendre fonctionnels les boutons `Français` et `English`.
 
 Je vous fournis tous les textes parce que vous êtes tout mignons 😩 :
 
