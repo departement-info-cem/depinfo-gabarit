@@ -18,7 +18,7 @@ Dans l'application Web, créez un profil dans la première page. Vous pouvez ég
 
 L'objectif de cette étape sera d'exploiter le **stockage local** pour faire persister le profil de l'utilisateur.
 
-### 💾 2 - Sauvegarder le profil dans le stockage local
+### 💾 2 - Sauvegarder le profil dans le stockage du navigateur
 
 [💡](/cours/rencontre4.1#-sauvegarder-une-donnée-dun-autre-type-que-string) Faites le nécessaire pour ranger le profil dans le **stockage de session**. 
 
@@ -34,7 +34,7 @@ Lorsqu'on sauvegarde une donnée avec **la même clé** qu'une donnée existante
 
 Même si vous avez bien stocké le profil, gardez à l'esprit que pour l'instant, du point de vue de l'utilisateur, **ça ne fonctionne toujours pas**. (Même si la donnée sera bel et bien présente dans le stockage local) C'est parce qu'il faut réaliser la prochaine section.
 
-### 📬 3 - Récupérer le profil du stockage local
+### 📬 3 - Récupérer le profil dans le stockage du navigateur
 
 [💡](/cours/rencontre4.1#-récupérer-une-donnée-dun-autre-type-que-string) Faites le nécessaire pour que le profil soit **chargé** à chaque
 fois que le composant est chargé. (Donc dès que l'onglet est affiché)
