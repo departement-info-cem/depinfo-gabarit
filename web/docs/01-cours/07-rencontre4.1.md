@@ -356,7 +356,7 @@ Cela dit, les **étiquettes de traduction** devront être intégrées à tous le
 Certaines Web API requière une authentification pour être utilisées. C'est par exemple le cas
 de **Spotify**, que nous allons aborder en exemple.
 
-####  Étape 1 - 👤 Créer un compte
+#### Étape 1 - 👤 Créer un compte
 
 Rendez-vous sur [https://open.spotify.com/](https://open.spotify.com/ ) pour créer un compte
 si vous n'en avez pas déjà un.
@@ -368,3 +368,246 @@ serviront plus tard pour envoyer des requêtes.
 
 <center>![Secret Spotify](../../static/img/cours7/secret.png)</center>
 
+#### Étape 2 - 🕵️‍♂️ Hard-coder le Client ID et le Client Secret
+
+Dans le **service** où vos requêtes HTTP à Spotify seront situées, créez des constantes pour y ranger
+votre **Client ID** et votre **Client Secret** :
+
+```ts showLineNumbers
+const CLIENT_ID : string = "098gf0fd987gdf89g7sd7g9sd";
+const CLIENT_SECRET : string = "9dsh79d8m7j9ds7b97nber978675";
+
+@Injectable({
+  providedIn: 'root'
+})
+export class SpotifyService {
+
+  ...
+
+}
+```
+
+:::note
+
+En temps normal, dans une vraie application, on demanderait à l'utilisateur de se connecter à **son propre compte**
+Spotify et c'est **son ID** et **son secret** qui seraient utilisées par l'application pour envoyer des requêtes à **Spotify**.
+
+:::
+
+#### Étape 3 - 🔌 Utiliser une requête de connexion
+
+Avant de pouvoir envoyer une requête quelconque à Spotify, nous allons devoir nous munir d'un **🪙 token d'authentification**.
+Ce **🪙 token** peut être obtenu à l'aide d'une **requête de connexion** :
+
+```ts showLineNumbers
+async connect() : Promise<void> {
+
+  // Création d'une en-tête spéciale qui accompagnera la requête de connexion.
+  // Cette en-tête contient d'ailleurs le CLIENT_ID et le CLIENT_SECRET !
+  let body = new HttpParams().set('grant_type', 'client_credentials');
+  let httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/x-www-form-urlencoded',
+      'Authorization': 'Basic ' + btoa(CLIENT_ID + ':' + CLIENT_SECRET)
+    })
+  };
+  let x = await lastValueFrom(this.http.post<any>('https://accounts.spotify.com/api/token', body.toString(), httpOptions))
+  console.log(x);
+  this.spotifyToken = x.access_token; // Stockage du token
+
+}
+```
+
+Dans l'objet JSON obtenu, on peut accéder au **token** grâce à `x.access_token` :
+
+<center>![Objet JSON obtenu](../../static/img/cours7/json.png)</center>
+
+Dans notre cas, le **token** a été rangé dans la variable `spotifyToken`, qui a dû être déclarée dans le service :
+
+```ts showLineNumbers
+export class SpotifyService {
+
+  spotifyToken : string; // Utilisée pour stocker le token
+
+  constructor(public http : HttpClient) { }
+
+  ...
+
+}
+```
+
+💡 Pour éviter d'avoir à se connecter manuellement (en cliquant sur un bouton par exemple), n'hésitez pas à appeler
+la requête de connexion dans la méthode `ngOnInit()` d'un composant :
+
+```ts showLineNumbers
+ngOnInit() : void{
+
+  this.spotifyService.connect();
+
+}
+```
+
+#### Étape 4 - 🎵 Effectuer des requêtes avec authentification
+
+Une fois le **token obtenu** grâce à la **requête de connexion**, on peut envoyer toutes sortes de requêtes
+à la Web API de Spotify. Voici comment joindre le token à une requête :
+
+```ts showLineNumbers
+async getArtist(artistName : string): Promise<void> {
+
+  // Création des en-têtes avec le token
+  const httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + this.spotifyToken
+    })
+  };
+  
+  // Requête avec authentification
+  let x = await lastValueFrom(this.http.get<any>('https://api.spotify.com/v1/search?type=artist&offset=0&limit=1&q=' + artistName, httpOptions));
+  console.log(x);
+
+  // Extraction des données
+  this.artist = new Artist(x.artists.items[0].id, x.artists.items[0].name, x.artists.items[0].images[0].url);
+
+}
+```
+
+Remarquez les principales différences avec les requêtes des précédents cours :
+
+* Des **en-têtes** (`httpOptions`) sont préparées avant la requête pour y glisser le token.
+* Un **deuxième paramètre** a été glissé dans la fonction `this.http.get<any>(...)` : c'est `httpOptions` !
+
+C'est à peu près tout, sinon le fonctionnement est similaire à une requête sans authentification.
+
+:::warning
+
+Un token n'est pas valide éternellement. Selon l'API, le token peut expirer après 5 minutes, 60 minutes, jamais, etc.
+
+:::
+
+### 📜 Exemples de requêtes à Spotify pour le TP2
+
+Voici trois classes qui pourraient vous êtres utiles dans le contexte du **TP2** (N'oubliez pas de les isoler chacune
+dans leur propre fichier !) :
+
+```ts showLineNumbers
+export class Artist{
+  constructor(public id : string, public name : string, public imageUrl : string){}
+}
+
+export class Album{
+  constructor(public id : string, public name : string, public image : string){}
+}
+
+export class Song{
+  constructor(public id : string, public name : string){}
+}
+```
+
+Voici trois requêtes permettant d'obtenir des informations sur des **artistes**, **albums** et **chansons**. Vous remarquerez
+que **Spotify** nous permet d'utiliser des **ids** pour trouver les informations d'un artiste ou d'un album en particulier.
+
+N'oubliez pas la **requête de connexion** (disponible plus haut) vous sera également utile.
+ 
+N'hésitez pas à consulter la [documentation de l'API de Spotify](https://developer.spotify.com/documentation/web-api) !
+
+* Requête pour rechercher un artiste :
+
+```ts showLineNumbers
+async getArtist(artistName : string): Promise<Artist> {
+
+  // Création des en-têtes
+  const httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + this.spotifyToken
+    })
+  };
+  
+  // Requête avec authentification
+  let x = await lastValueFrom(this.http.get<any>('https://api.spotify.com/v1/search?type=artist&offset=0&limit=1&q=' + artistName, httpOptions));
+  console.log(x);
+  return new Artist(x.artists.items[0].id, x.artists.items[0].name, x.artists.items[0].images[0].url);
+
+}
+```
+
+* Requête pour obtenir les albums d'un artiste précis :
+
+```ts showLineNumbers
+async getAlbums(artistId : string): Promise<Album[]> {
+
+  // Création des en-têtes
+  const httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + this.spotifyToken
+    })
+  };
+  
+  // Requête avec authentification
+  let x = await lastValueFrom(this.http.get<any>("https://api.spotify.com/v1/artists/" + artistId + "/albums?include_groups=album,single", httpOptions));
+  console.log(x);
+
+  let albums : Album[] = [];
+  for(let i = 0; i < x.items.length; i++){
+    albums.push(new Album(x.items[i].id, x.items[i].name, x.items[i].images[0].url));
+  }
+  return albums;
+
+}
+```
+
+* Requête pour obtenir les chansons d'un album précis :
+
+```ts showLineNumbers
+async getSongs(albumId : string): Promise<Song[]> {
+
+  const httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + this.spotifyToken
+    })
+  };
+
+  let x = await lastValueFrom(this.http.get<any>("https://api.spotify.com/v1/albums/" + albumId, httpOptions));
+  console.log(x);
+  
+  let songs : Song[] = [];
+  for(let i = 0; i < x.tracks.items.length; i++){
+    songs.push(new Song (x.tracks.items[i].id, x.tracks.items[i].name));
+  }
+  return songs;
+}
+```
+
+### 🐇 Pour éviter de répéter du code
+
+Comme nous avons besoin des **en-têtes** contenant le **token d'authentification** pour chaque requête, n'hésitez pas
+à intégrer ce code à une fonction de votre service :
+
+```ts showLineNumbers
+getHttpOptions() : { headers : HttpHeaders } {
+  return {
+    headers : new HttpHeaders({
+      'Content-Type' : 'application/json',
+      'Authorization' : 'Bearer ' + this.spotifyToken
+    })
+  };
+}
+```
+
+Vous pourrez ensuite utiliser cette fonction comme ceci dans vos requêtes :
+
+```ts 
+let x = await lastValueFrom(this.http.get<any>(" ... requête ... ", this.getHttpOptions()));
+console.log(x);
+```
+
+:::note
+
+Dans quelques cours, nous aborderons les **intercepteurs**, qui permettront d'intégrer facilement le token 
+à toutes nos requêtes d'une manière un peu plus intéressante. 
+
+:::
