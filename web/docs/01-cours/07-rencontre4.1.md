@@ -108,7 +108,7 @@ export class AppComponent implements OnInit{
         // Récupérer la donnée qui est sous forme de string (ou inexistante)
         let guestStringData : string | null = localStorage.getItem("guest");
 
-        if(this.guestStringData != null){
+        if(guestStringData != null){
             // Reconvertir la donnée en son type d'origine
             this.guestData = JSON.parse(guestStringData);
         }
