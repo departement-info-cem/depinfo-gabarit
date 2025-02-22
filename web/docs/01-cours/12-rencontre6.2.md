@@ -1,3 +1,3 @@
-# Cours 12 - TP2 (20%)
+# Cours 12 - Intra formatif
 
 

@@ -1,3 +1,3 @@
-# Cours 8 - TP2 (20%)
+# Cours 8 - Maps, vidéos, pipes
 
 

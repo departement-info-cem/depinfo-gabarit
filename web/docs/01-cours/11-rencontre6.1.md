@@ -1,3 +1,3 @@
-# Cours 11 - Mat, modules, tests
+# Cours 11 - TP2 (20%)
 
 

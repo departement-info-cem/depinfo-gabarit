@@ -1,3 +1,3 @@
-# Cours 13 - Intra formatif
+# Cours 13 - Intra sommatif (15%)
 
 

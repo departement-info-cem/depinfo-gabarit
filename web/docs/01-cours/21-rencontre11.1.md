@@ -1,3 +1,3 @@
-# Cours 21 - Serveur d'images
+# Cours 21 - Librairies JS
 
 

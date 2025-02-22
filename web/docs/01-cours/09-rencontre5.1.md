@@ -1,2 +1,2 @@
-# Cours 9 - Maps, vidéos, pipes
+# Cours 9 - TP2 (20%)
 
