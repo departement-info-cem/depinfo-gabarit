@@ -31,7 +31,7 @@ Dans ce cas, il faudra indiquer à Angular d'ignorer l'origine de la ressource. 
 
 :::
 
-**Étape 3 (optionnelle) - ⛔ Contourner le blocage d'une ressource externe**
+**Étape 3 (optionnelle) - 🧼 Contourner le blocage d'une ressource externe**
 
 <center>![Blocage en raison d'une ressource externe](../../static/img/cours8/blocked.png)</center>
 
@@ -184,7 +184,15 @@ Notez qu'il faudra activer une autre API (« Maps JavaScript API ») pour pouvoi
 
 **Étape 1 - 📦 Installer une dépendance**
 
-`npm install @angular/google-maps`
+`npm install @angular/google-maps@18.0.4`
+
+:::warning
+
+Le `@18.0.4` à la fin du nom du package permet de spécifier la **version** à installer. Vous devez choisir la même
+version que votre version de **Angular**. (À l'école, la version est `18.0.4`) N'hésitez pas à vérifier votre version
+d'Angular à l'aide de la commande `ng version`.
+
+:::
 
 **Étape 2 - 🎁 Importation d'un module dans le composant souhaité**
 
@@ -301,3 +309,190 @@ this.markers.push({lat : xValue, lng : yValue});
 Dans le code ci-dessus, `xValue` et `yValue` doivent être des données de type `number`. Attention
 de bien respecter la structure de l'objet avec les accolades `{ ... }` et les étiquettes `lat` et
 `lng`.
+
+:::warning
+
+Attention ! Les valeurs pour `lat` et `lng` doivent absolument être des `number`. Si jamais vous souhaitez
+convertir un `string` (Ex : `"-4.521"`) en `number`, vous pouvez utiliser `parseFloat(monString)`. Ce sera
+nécessaire dans le **TP2** puisque l'API **BandsInTown** fournit les coordonnées des concerts sous forme 
+de `string`.
+
+:::
+
+### ⚙ Pipes
+
+Les pipes permettent de transformer facilement une donnée affichée dans le HTML. Abordons un exemple
+ultra simplifié.
+
+On a la variable suivante : `n : number = 5;`. On a un pipe nommé `timesTwo` qui multiplie par deux.
+
+On pourrait utiliser le pipe comme ceci dans le html :
+
+```html
+<p>{{ n | timesTwo}}</p>
+```
+
+La valeur affichée sera `10`, en raison de la transformation effectuée par le pipe `timesTwo`.
+
+#### 🐣 Créer un pipe
+
+Utilisez la commande `ng generate pipe nomDeVotrePipe` pour créer un nouveau pipe. N'oubliez pas de commencer
+par **créer un dossier pour vos pipes** et **vous déplacer dans le bon dossier avec `cd`** pour créer votre pipe au bon endroit.
+
+<center>
+    ![Commande pour créer un pipe](../../static/img/cours8/pipeCommand.png)
+    ![Dossier pour ranger les pipes](../../static/img/cours8/pipeFolder.png)
+</center>
+
+Comme pour les composants et les services, un **fichier de tests** accompagne le pipe. On peut le supprimer pour le moment.
+
+Vous remarquerez qu'un **pipe vide** ressemble à ceci :
+
+```ts showLineNumbers
+import { Pipe, PipeTransform } from '@angular/core';
+
+@Pipe({
+  name: 'upper', // Nom du pipe pour l'utiliser
+  standalone: true
+})
+export class UpperPipe implements PipeTransform {
+
+  transform(value: unknown, ...args: unknown[]): unknown {
+    return null;
+  }
+
+}
+```
+
+Dans ce cas-ci, on peut voir que pour utiliser ce pipe, on utilisera le nom `upper`. Exemple : `{{ maVariable | upper }}`
+
+⛔ Notez que pour pouvoir utiliser un pipe dans un composant spécifique, **il faut l'importer**.
+
+```ts showLineNumbers
+@Component({
+  selector: 'app-root',
+  standalone : true,
+  imports: [UpperPipe], // Ici !
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+```
+
+#### 🎨 Personnaliser un pipe
+
+Il faut remplacer le `return null` par la transformation / les opérations de notre choix, tant qu'on retourne une valeur.
+Notez que le paramètre `value` reçu par la fonction `transform(...)` contient la **valeur placée à gauche du pipe**.
+
+Pour simplifier la manipulation du paramètre `value`, remplacez son type par `any`. Attention toutefois : on risque
+d'avoir des résultats inattendus si on utilise mal un pipe.
+
+```ts showLineNumbers
+transform(value: any, ...args: unknown[]): unknown {
+  return null;
+}
+```
+
+Voici deux exemples de pipes relativement simples :
+
+**1. 📢 Pipe pour mettre du texte en majuscules :**
+
+```ts showLineNumbers
+export class UpperPipe implements PipeTransform {
+
+  transform(value: any, ...args: unknown[]): unknown {
+    return any.toUpperCase();
+  }
+
+}
+```
+
+Usage : `{{ monString | upper }}`
+
+**2. 🧼 Pipe pour _sanitize_ une ressource externe :**
+
+```ts showLineNumbers
+export class TrustPipe implements PipeTransform {
+
+  constructor(public sanitizer : DomSanitizer){}
+
+  transform(value: any, ...args: unknown[]): unknown {
+    return this.sanitizer.bypassSecurityTrustResourceUrl(value); 
+  }
+
+}
+```
+
+Usage : `<iframe [src]="videoUrl | trust" width="700" ...>`
+
+### 📅 Pipe pour le formatage des dates
+
+Un pipe nommé `date` existe déjà par défaut. Il permet de formater des dates facilement.
+
+Usage : `{{ ma date | date:'format' }}`
+Exemple : `{{ '2021-05-26' | date:'MMM d, y' }}` affichera `may 26, 2021`
+
+Liste de (quelques) symboles pour le formatage de la date :
+
+<center>
+|symbole|description|
+|:-|:-|
+|d|Jour|
+|MMM|Mois en 3 lettres|
+|MMMM|Mois complet|
+|MM|Mois en chiffres|
+|y ou yyyy|Année complète|
+|yy|Année en deux chiffres|
+|h|Heure de 1 à 12|
+|mm|Minutes|
+|ss|Secondes|
+|a|AM / PM|
+|EEEE|Jour de la semaine|
+</center>
+
+⛔ Notez que pour pouvoir utiliser ce pipe dans un composant spécifique, **il faut l'importer**.
+
+```ts showLineNumbers
+@Component({
+  selector: 'app-root',
+  standalone : true,
+  imports: [DatePipe], // Ici !
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+```
+
+#### 🥖 Dates en français
+
+Par défaut, les dates (noms de mois et jours de la semaine) seront affichées en anglais. Voici la procédure
+pour les afficher en français.
+
+**Étape 1 - ⚙ Ajouter la « locale » français dans `app.config.ts`**
+
+```ts showLineNumbers
+// Trois lignes à ajouter juste après les autres importations dans le haut du fichier :
+import { registerLocaleData } from '@angular/common'; 
+import localeFr from '@angular/common/locales/fr'; 
+registerLocaleData(localeFr, 'fr'); 
+
+export const appConfig : ApplicationConfig = {
+  ...
+};
+```
+
+**Étape 2 - 📬 Ajouter un 3e paramètre en utilisant le DatePipe pour choisir une langue**
+
+Le deuxième paramètre peut être laissé vide, car il permet de choisir un fuseau horaire.
+L'important est de spécifier `fr` comme troisième paramètre.
+
+```html
+<p> {{ maDate | date:'EEEE le d MMMM yyyy':'':'fr' }} </p>
+```
+
+Cet affichage pourrait par exemple donner `lundi le 15 novembre 2021`.
+
+:::tip
+
+Lorsqu'un pipe nécessite des paramètres, ils sont glissés après le nom du pipe, entre apostrophes :
+`nomDuPipe:'param1':'param2':'param3'`. S'il y a plusieurs paramètres, ils sont séparés par des `:`.
+
+:::
