@@ -205,3 +205,99 @@ Notez qu'il faudra activer une autre API (« Maps JavaScript API ») pour pouvoi
 Cet élément `<script>` doit être dans le `<head>` du fichier `index.html`. ☢ Pas dans le composant `app` !
 
 ` <script src="https://maps.googleapis.com/maps/api/js?key=VOTRE_CLÉ_API"></script>`
+
+**Étape 4 - 📐 Deux variables pour l'affichage de la carte**
+
+Déclarez les variables suivantes dans le composant souhaité. Elles permettront de définir
+la **position centrale initiale** de la carte et le **niveau de zoom**.
+
+```ts showLineNumbers
+export class AppComponent{
+
+  center : google.maps.LatLngLiteral = {lat : 42, lng : -4};
+  zoom : number = 5;
+
+  ...
+
+}
+```
+
+**Étape 5 - 🗺 Placer un élément `<google-map>`**
+
+Dans le HTML du composant souhaité, intégrez cet élément HTML qui se servira
+d'ailleurs des deux variables créées plus haut.
+
+```html showLineNumbers
+<h2>Gougueule mappe</h2>
+
+<google-map
+  [center]="center"
+  [zoom]="center"
+  width="700"
+  height="300"
+></google-map>
+```
+
+<center>![Carte Google](../../static/img/cours8/googleMap.png)</center>
+
+:::warning
+
+Vous aurez très probablement un message d'erreur en lien avec la facturation non activée.
+Pas de problème, le seul impact est que la carte est obscurcie ! Vous n'avez pas à activer
+la facturation dans ce cours.
+
+<center>![Erreur avec Google Maps](../../static/img/cours8/mapError.png)</center>
+
+:::
+
+### 🚩 Ajouter des marqueurs sur une carte
+
+Suivez les étapes suivantes pour afficher des marqueurs / épingles 📍 sur une carte Google.
+
+**Étape 1 - 📍 Créer un tableau de marqueurs**
+
+```ts showLineNumbers
+export class AppComponent{
+
+  center : google.maps.LatLngLiteral = {lat : 42, lng : -4};
+  zoom : number = 5;
+
+  // Tableau de marqueurs
+  markers : google.maps.LatLngLiteral[] = [
+    {lat : 42, lng : -4},
+    {lat : 40, lng : 0},
+    {lat : 48, lng : -8}
+  ];
+
+  ...
+
+}
+```
+
+**Étape 2 - 📋 Intégrer le tableau de marqueurs à la carte**
+
+```html showLineNumbers
+<h2>Gougueule mappe</h2>
+
+<google-map
+  [center]="center"
+  [zoom]="center"
+  width="700"
+  height="300">
+  <map-marker *ngFor="let m of markers" [position]="m">
+  </map-marker>
+</google-map>
+```
+
+**Étape 3 (optionnelle) - 📬 Permettre d'ajouter des marqueurs**
+
+Si jamais vous aimeriez pouvoir ajouter des marqueurs supplémentaires dynamiquement dans le
+tableau `markers`, le code pourrait ressembler à ceci :
+
+```ts
+this.markers.push({lat : xValue, lng : yValue});
+```
+
+Dans le code ci-dessus, `xValue` et `yValue` doivent être des données de type `number`. Attention
+de bien respecter la structure de l'objet avec les accolades `{ ... }` et les étiquettes `lat` et
+`lng`.
