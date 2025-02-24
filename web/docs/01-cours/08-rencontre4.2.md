@@ -428,7 +428,7 @@ Usage : `<iframe [src]="videoUrl | trust" width="700" ...>`
 
 Un pipe nommé `date` existe déjà par défaut. Il permet de formater des dates facilement.
 
-Usage : `{{ ma date | date:'format' }}`
+Usage : `{{ maDate | date:'format' }}`
 Exemple : `{{ '2021-05-26' | date:'MMM d, y' }}` affichera `may 26, 2021`
 
 Liste de (quelques) symboles pour le formatage de la date :
