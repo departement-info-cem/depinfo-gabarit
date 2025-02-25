@@ -400,7 +400,7 @@ Voici deux exemples de pipes relativement simples :
 export class UpperPipe implements PipeTransform {
 
   transform(value: any, ...args: unknown[]): unknown {
-    return any.toUpperCase();
+    return value.toUpperCase();
   }
 
 }
