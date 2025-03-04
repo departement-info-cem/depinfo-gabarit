@@ -212,7 +212,8 @@ export class Composant2Component {
   language : string = "fr";
 
   constructor(public translator : TranslateService) { 
-    translator.setDefaultLang(this.language);
+    this.translator.setDefaultLang(this.language);
+    this.translator.use(this.language);
   }
 
 }
@@ -225,6 +226,8 @@ dans le constructeur.
 
 Il y a plusieurs manières de créer les étiquettes, mais en gros, il s'agit de remplacer tout le texte par
 des **clés** qui feront référence à du texte dans un autre fichier.
+
+Attention : Importer le module `TranslateModule` est nécessaire pour tous les composants étiquettés.
 
 * ☝ Option 1 : Translation pipe
 
