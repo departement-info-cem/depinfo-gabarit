@@ -240,7 +240,7 @@ d'ailleurs des deux variables créées plus haut.
 
 <google-map
   [center]="center"
-  [zoom]="center"
+  [zoom]="zoom"
   width="700"
   height="300"
 ></google-map>
