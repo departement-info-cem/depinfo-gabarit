@@ -583,7 +583,7 @@ async putToy(){
 
     // En général, le nom, la description et le prix auraient été choisis par l'utilisateur
     let hardCodedToy = new Toy(1, "LEGO Harry Potter Collector", "Château de Poudlard", 1399.99);
-    let x = await lastValueFrom(this.http.put<any>("https://localhost:7064/api/Toys/PutToy", hardCodedToy));
+    let x = await lastValueFrom(this.http.put<any>("https://localhost:7064/api/Toys/PutToy/" + hardCodedToy.id, hardCodedToy));
     console.log(x);
 
 }
