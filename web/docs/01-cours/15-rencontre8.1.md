@@ -1,3 +1,6 @@
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Cours 15 - Relations et services
 
 ## 💍 Relations
@@ -72,7 +75,7 @@ Un `Post` peut avoir plusieurs `Comment`.
 public class Post{
     public int Id { get; set; }
     public string Text { get; set; } = null!;
-    public virtual List<Comment> Comments { get; set; } // Propriété de navigation (liste !)
+    public virtual List<Comment> Comments { get; set; } = new List<Comment>(); // Propriété de navigation (liste !)
 }
 ```
 
@@ -82,7 +85,7 @@ Un `Comment` est associé à un seul `Post`.
 public class Comment{
     public int Id { get; set; }
     public string Text { get; set; } = null!;
-    public virtual Post Post { get; set; } // Propriété de navigation
+    public virtual Post Post { get; set; } = null!; // Propriété de navigation
 }
 ```
 
@@ -151,7 +154,185 @@ Bien entendu, d'un point de vue sématique 🧐, les noms des propriétés peuve
 
 :::
 
-### 💋 Gestion de relations
+
+### 🌀 Objets JSON infinis
+
+:::danger
+
+Lorsqu'une **action** du serveur retournera un objet qui possède une relation avec un autre groupe, cela générera un **objet JSON infini**. Il faut donc utiliser l'annotation `[JsonIgnore]` stratégiquement pour éviter les **cycles** dans les objets JSON. Un exemple est abordé ci-dessous. 
+
+:::
+
+Reprenons l'exemple **One-To-Many** suivant :
+« Un `Post` peut avoir plusieurs `Comment`. Un `Comment` est associé à un seul `Post`. »
+
+<Tabs>
+    <TabItem value="cs1" label="Classe Post" default>
+        ```cs showLineNumbers
+        public class Post{
+            public int Id { get; set; }
+            public string Text { get; set; } = null!;
+            public virtual List<Comment> Comments { get; set; } = new List<Comment>(); // Propriété de navigation (liste !)
+        }
+        ```
+    </TabItem>
+    <TabItem value="cs2" label="Classe Comment">
+        ```cs showLineNumbers
+        public class Comment{
+            public int Id { get; set; }
+            public string Text { get; set; } = null!;
+            public virtual Post Post { get; set; } = null!; // Propriété de navigation
+        }
+        ```
+    </TabItem>
+</Tabs>
+
+Si une action quelconque dans un contrôleur retourne un `Post` qui possède un `Comment` (pour garder ça simple), à cause des **propriétés de navigation** `Comments` et `Post`, voici l'**objet JSON** qui sera généré :
+
+```json showLineNumbers
+{
+    id : 1,
+    text : "Salut les amis",
+    comments : [
+        {
+            id : 1,
+            text : "Ça va ?"
+            post : {
+                id : 1,
+                text : "Salut les amis",
+                comments : [
+                    {
+                        id : 1,
+                        text : "Ça va ?"
+                        post : {
+                            id : 1,
+                            text : "Salut les amis",
+                            comments : [
+                                {
+                                    id : 1,
+                                    text : "Ça va ?"
+                                    post : {
+                                        // etc ... à l'infini 💀
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}
+```
+
+Comment **briser le cycle** ? En utilisant l'annotation `[JsonIgnore]` au-dessus de **l'une des deux propriétés de navigation**. (Ou bien les deux... mais à ce moment impossible d'avoir un `post` ET ses `comment` simultanément)
+
+Dans cette situation, on pourrait mettre l'annotation dans la classe `Comment` :
+
+```cs showLineNumbers
+using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization; // Assurez-vous d'utiliser cette librairie et non Newtonsoft !
+
+public class Comment{
+    public int Id { get; set; }
+    public string Text { get; set; } = null!;
+
+    [JsonIgnore]
+    public virtual Post Post { get; set; } // Propriété de navigation
+}
+```
+
+Désormais, retourner le JSON d'un `Post` impliquera aussi ses `Comment`, mais `Comment` retourné ne contiendra pas son `Post`. 
+
+## 📦 Data-Transfer Objects
+
+Parfois les données qu'on souhaite envoyer au serveur ne correspondent pas exactement à la structure d'un model du serveur. Dans ce cas, l'action `Post` auto-générée lors de la création d'un contrôleur ne convient pas.
+
+Quelques exemples :
+
+* On souhaite envoyer et créer **deux objets** simultanément. (Sachant qu'il est impossible d'envoyer deux `body` dans la requête `Post`)
+* On souhaite envoyer un **objet** et une **liste d'`ids`** qui représente ses relations.
+* On souhaite envoyer un **objet** et un **fichier image**.
+
+Reprenons l'exemple **Many-To-Many** suivant : 
+
+« Un `Ingredient` peut faire partie de plusieurs `Recipe`. Une `Recipe` peut contenir plusieurs `Ingredient`. »
+
+<Tabs>
+    <TabItem value="cs1" label="Classe Ingredient" default>
+        ```cs showLineNumbers
+        public class Ingredient{
+            public int Id { get; set; }
+            public string Name { get; set; } = null!;
+            public virtual List<Recipe> Recipes { get; set; } = new List<Recipe>(); // Propriété de navigation
+        }
+        ```
+    </TabItem>
+    <TabItem value="cs2" label="Classe Recipe">
+        ```cs showLineNumbers
+        public class Recipe{
+            public int Id { get; set; }
+            public string Name { get; set; } = null!;
+            public virtual List<Ingredient> Ingredients { get; set; } = new List<Ingredient>(); // Propriété de navigation
+        }
+        ```
+    </TabItem>
+</Tabs>
+
+Lorsqu'on souhaiter créer (`Post`) une `Recipe`, ce qu'on doit envoyer au serveur, c'est ... :
+
+* Un `string` (le name `Name`)
+* Une `List<int>` (l'`id` de chaque `Ingredient` faisant partie de cette `Recipe`)
+
+Or, aucun modèle ne correspond à la combinaison de ces deux types. La solution est donc de créer une autre **classe** qui servira exclusivement à **transférer des données entre le client et le serveur**, d'où le nom **Data Transfer Object**.
+
+<center>![Classe Data transfer object](../../static/img/cours15/dto1.png)</center>
+
+```cs showLineNumbers
+public class RecipeDTO
+{
+    public string Name { get; set; } = null!;
+    public List<int> IngredientIds { get; set;} = new List<int>();
+}
+```
+
+**Côté serveur**, on aura une action `Post` qui recevra un objet de ce type :
+
+```cs showLineNumbers
+[HttpPost]
+public async Task<ActionResult> PostRecipe(RecipeDTO recipeDTO){
+    ...
+}
+```
+
+**Côté client**, on lancera une requête `Post` dont le corps sera un objet avec une **structure identique** ⚠ :
+
+```ts showLineNumbers
+async createRecipe(ids : number[], recipeName : string){
+
+    // Ceci est un « objet anonyme », mais comme sa structure est identique au DTO, ça fonctionne.
+    let recipeDTO = {
+        name : recipeName,
+        ingredientIds : ids
+    }
+
+    let x = await lastValueFrom(this.http.post<any>("https://localhost:6969/api/Recipes/PostRecipe", recipeDTO));
+    console.log(x);
+    ...
+}
+```
+
+:::info
+
+Pourquoi avoir utilisé un **objet anonyme** plutôt qu'avoir créé un modèle `export class RecipeDTO ...` ? Créer un modèle aurait été tout à fait acceptable. (C'est même plus propre !) Cela dit, généralement, un **DTO** risque d'avoir une utilité très limitée (utilisé à un ou deux endroits ?) alors se contenter d'un **objet anonyme** créé sur le pouce est acceptable. Si par contre on finit par utiliser le `RecipeDTO` à plusieurs endroits, vaut mieux en faire un modèle !
+
+:::
+
+## 💋 Gestion de relations
+
+### 🥚 Création
+
+### 💣 Suppression
 
 ## ⚙ Services
 
