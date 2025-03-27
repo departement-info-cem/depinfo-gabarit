@@ -41,6 +41,16 @@ Puisque nous sommes confrontés au **🦥 Lazy Loading**, vous êtes invités à
 
 <center>![Package Proxies](../../static/img/cours15/proxies.png)</center>
 
+Le code dans `Program.cs` devra être légèrement modifier : 
+
+```cs showLineNumbers
+builder.Services.AddDbContext<serveur15Context>(options =>
+{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("serveur15Context") ?? throw new InvalidOperationException("Connection string 'serveur15Context' not found."));
+    options.UseLazyLoadingProxies(); // On ajoute ceci !
+});
+```
+
 Les prochaines sections abordent des exemples pour chaque type de relation possible.
 
 ### 🍒 One-To-One
