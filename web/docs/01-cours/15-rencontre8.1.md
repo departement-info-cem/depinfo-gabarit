@@ -164,7 +164,7 @@ Bien entendu, d'un point de vue sématique 🧐, les noms des propriétés peuve
 
 :::danger
 
-Lorsqu'une **action** du serveur retournera un objet qui possède une relation avec un autre groupe, cela générera un **objet JSON infini**. Il faut donc utiliser l'annotation `[JsonIgnore]` stratégiquement pour éviter les **cycles** dans les objets JSON. Un exemple est abordé ci-dessous. 
+Lorsqu'une **action** du serveur retournera un objet qui possède une relation avec un autre objet, cela générera un **objet JSON infini**. Il faut donc utiliser l'annotation `[JsonIgnore]` stratégiquement pour éviter les **cycles** dans les objets JSON. Un exemple est abordé ci-dessous. 
 
 :::
 
@@ -192,7 +192,7 @@ Reprenons l'exemple **One-To-Many** suivant :
     </TabItem>
 </Tabs>
 
-Si une action quelconque dans un contrôleur retourne un `Post` qui possède un `Comment` (pour garder ça simple), à cause des **propriétés de navigation** `Comments` et `Post`, voici l'**objet JSON** qui sera généré :
+Si une action quelconque dans un contrôleur retourne un `Post` qui possède un `Comment`, à cause des **propriétés de navigation** `Comments` et `Post`, voici l'**objet JSON** qui sera généré :
 
 ```json showLineNumbers
 {
@@ -247,7 +247,7 @@ public class Comment{
 }
 ```
 
-Désormais, retourner le JSON d'un `Post` impliquera aussi ses `Comment`, mais `Comment` retourné ne contiendra pas son `Post`. 
+Désormais, retourner le JSON d'un `Post` impliquera aussi ses `Comment`, mais un `Comment` retourné ne contiendra pas son `Post`. 
 
 ## 📦 Data-Transfer Objects
 
