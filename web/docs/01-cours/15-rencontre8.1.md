@@ -36,6 +36,11 @@ de références vers une autre classe. (Ex : `public virtual List<Item> Items { 
 
 :::
 
+
+Puisque nous sommes confrontés au **🦥 Lazy Loading**, vous êtes invités à installer le package `Proxies` dans la dernière version `8.X.X` pour vous simplifier la vie lors du chargement des données depuis la base de données !
+
+<center>![Package Proxies](../../static/img/cours15/proxies.png)</center>
+
 Les prochaines sections abordent des exemples pour chaque type de relation possible.
 
 ### 🍒 One-To-One
@@ -246,7 +251,7 @@ Désormais, retourner le JSON d'un `Post` impliquera aussi ses `Comment`, mais `
 
 ## 📦 Data-Transfer Objects
 
-Parfois les données qu'on souhaite envoyer au serveur ne correspondent pas exactement à la structure d'un model du serveur. Dans ce cas, l'action `Post` auto-générée lors de la création d'un contrôleur ne convient pas.
+Parfois les données qu'on souhaite envoyer au serveur ne correspondent pas exactement à la structure d'un modèle du serveur. Dans ce cas, l'action `Post` auto-générée lors de la création d'un contrôleur ne convient pas.
 
 Quelques exemples :
 
@@ -332,10 +337,504 @@ Pourquoi avoir utilisé un **objet anonyme** plutôt qu'avoir créé un modèle 
 
 ### 🥚 Création
 
+**🍇 One-To-Many**
+
+Reprenons l'exemple **One-To-Many** suivant :
+« Un `Post` peut avoir plusieurs `Comment`. Un `Comment` est associé à un seul `Post`. »
+
+<Tabs>
+    <TabItem value="cs1" label="Classe Post" default>
+        ```cs showLineNumbers
+        public class Post{
+            public int Id { get; set; }
+            public string Text { get; set; } = null!;
+            public virtual List<Comment> Comments { get; set; } = new List<Comment>();
+        }
+        ```
+    </TabItem>
+    <TabItem value="cs2" label="Classe Comment">
+        ```cs showLineNumbers
+        public class Comment{
+            public int Id { get; set; }
+            public string Text { get; set; } = null!;
+            public virtual Post Post { get; set; } = null!;
+        }
+        ```
+    </TabItem>
+</Tabs>
+
+Lorsque nous allons créer un `Post`, il n'y a aucun défi : la liste `Comments` peut être vide initialement, on doit juste envoyer au serveur un `Text`. (et optionnellement, l'`id` 0)
+
+Par contre, lorsque nous allons créer un `Comment`, il faudra absolument ⛔ indiquer au serveur à quel `Post` il appartient ! Il suffira d'envoyer au serveur un objet qui contient :
+
+* Le `Text` (`string`) du `Comment`.
+* L'`Id` (`int`) du `Post` auquel il appartient.
+
+Côté **client**, voici comment on pourrait envoyer les données du nouveau `Comment` :
+
+```ts showLineNumbers
+async postComment(id : number, commentText : string){
+
+    let commentDTO = {
+        text : commentText, // Texte du comment
+        postId : id // Id du post auquel le comment appartient
+    };
+    let x = await lastValueFrom(this.http.post<any>("https://localhost:6969/api/Comments/PostComment", commentDTO));
+    console.log(x);
+
+}
+```
+
+Côté **serveur**, voici comment nous pourrions gérer la création du `Comment` pour l'ajouter à la **base de données** :
+
+```cs showLineNumbers
+[HttpPost]
+public async Task<ActionResult<Comment>> PostComment(CommentDTO commentDTO)
+{
+    // On essaye de trouver le Post qui possède l'id fourni
+    Post? post = await _context.Post.FindAsync(commentDTO.PostId);
+
+    // Aucun Post n'a été trouvé avec cet id ? On s'arrête ici, on ne veut pas créer un Comment incohérent
+    if (post == null) return NotFound(new {Message = "Ce post n'existe pas. Il a peut-être été supprimé ?"});
+
+    // On crée le Comment en se servant du Post trouvé
+    Comment comment = new Comment { Id = 0, Text = commentDTO.Text, Post = post };
+
+    // On l'ajoute à la base de données
+    _context.Comment.Add(comment);
+    await _context.SaveChangesAsync();
+
+    // On retourne le nouveau commentaire créé à l'application client
+    // On aurait aussi pu faire « return NoContent() », au choix !
+    return Ok(comment);
+}
+```
+
+:::note
+
+    Si nous n'avions pas associer le `Post` trouvé au nouveau `Comment` créé en faisant `Post = post`, il n'y aurait eu
+    aucun lien entre le `Post` et le `Comment`dans la base de données. Cette opération est essentielle.    
+
+:::
+
+:::tip
+
+    Pour **🍒 One-To-One**, c'est généralement le même processus. Il y aura un objet indépendant qu'on peut créer sans l'autre initialement, puis il y aura le deuxième objet (dépendant) qu'on devra créer en fournissant l'id du premier.
+
+    Dans la rare situation où **les deux objets doivent être créés simultanément**, il faudra créer un DTO qui contient les données des deux objets pour les créer **simultanément** dans la même action `Post`.
+
+:::
+
+**🍣 Many-To-Many**
+
+Le cas **Many-To-Many** a un avantage : il est possible de créer les deux objets dans n'importe quel ordre, puisque leur **propriété de navigation** est une **liste** qui a très bien le droit d'être vide initialement. 
+
+Reprenons l'exemple **Many-To-Many** suivant : 
+
+« Un `Ingredient` peut faire partie de plusieurs `Recipe`. Une `Recipe` peut contenir plusieurs `Ingredient`. »
+
+<Tabs>
+    <TabItem value="cs1" label="Classe Ingredient" default>
+        ```cs showLineNumbers
+        public class Ingredient{
+            public int Id { get; set; }
+            public string Name { get; set; } = null!;
+            public virtual List<Recipe> Recipes { get; set; } = new List<Recipe>(); // Propriété de navigation
+        }
+        ```
+    </TabItem>
+    <TabItem value="cs2" label="Classe Recipe">
+        ```cs showLineNumbers
+        public class Recipe{
+            public int Id { get; set; }
+            public string Name { get; set; } = null!;
+            public virtual List<Ingredient> Ingredients { get; set; } = new List<Ingredient>(); // Propriété de navigation
+        }
+        ```
+    </TabItem>
+</Tabs>
+
+On peut très bien ajouter des `Ingredient` et des `Recipe` dans la base de données sans qu'ils ne soient liés à d'autres objets initialement.
+
+Voici toutefois quelques approches qui pourraient être intéressantes pour **concrétiser la relation** entre ces deux entités :
+
+* (🥚 `Post`) Lorsqu'on crée une `Recipe`, on envoie également une **liste d'ids d'ingrédients** qui serviront à indiquer au serveur quels `Ingredient` sont inclus dans la `Recipe`.
+* (✏ `Put`) Après avoir créé une `Recipe`, on peut, par la suite, indiquer quels `Ingredient` lui sont associés en envoyant au serveur **l'id de la recette** ET la **liste d'ids des ingrédients**.
+* (✏ `Put`) Après avoir créé une `Recipe`, on peut, par la suite, indiquer, un à la fois, un `Ingredient` qui en fait partie en envoyant au serveur **l'id de la recette** et **l'id d'un ingrédient**.
+
+Voici, par exemple, pour **la première de ces trois options**, la solution en se servant d'un **DTO** :
+
+```cs showLineNumbers
+public class RecipeDTO
+{
+    public string Name { get; set; } = null!;
+    public List<int> IngredientIds { get; set;} = new List<int>();
+}
+```
+
+Côté **client**, voici comment on pourrait envoyer les données de la nouvelle `Recipe` :
+
+```ts showLineNumbers
+async postRecipe(recipeName : string, ids : number[]){
+
+    let recipeDTO = {
+        name : recipeName, // Nom de la Recipe
+        ingredientIds : ids // Ids des ingrédients
+    };
+    let x = await lastValueFrom(this.http.post<any>("https://localhost:6969/api/Recipes/PostRecipe", recipeDTO));
+    console.log(x);
+
+}
+```
+
+**Côté serveur**, on aura une action `Post` qui recevra le DTO et créera la `Recipe` :
+
+```cs showLineNumbers
+[HttpPost]
+public async Task<ActionResult> PostRecipe(RecipeDTO recipeDTO){
+    // On préparer une liste pour tous les ingrédients de la recette
+    List<Ingredient> ingredients = new List<Ingredient>();
+
+    // On tente de trouver chacun des ingrédients avec les ids fournis
+    foreach(int id in recipeDTO.IngredientIds){
+
+        Ingredient? i = await _context.Ingredient.FindAsync(id);
+
+        // Ingrédient inexistant ? On arrête tout ! On ne veut pas créer une recette incohérente.
+        if(i == null) return NotFound(new { Message = "Aucun ingrédient n'existe avec l'id " + id + "."});
+
+        ingredients.Add(i);
+    }
+
+    // On crée la Recipe en se servant de la liste d'ingrédients préaprées
+    Recipe recipe = new Recipe { Id = 0, Name = recipeDTO.Name, Ingredients = ingredients };
+
+    // On l'ajoute à la base de données
+    _context.Recipe.Add(recipe);
+    await _context.SaveChangesAsync();
+
+    // On retourne la nouvelle Recipe créée à l'application client
+    // On aurait aussi pu faire « return NoContent() », au choix !
+    return Ok(recipe);
+}
+```
+
 ### 💣 Suppression
+
+La suppression peut sembler évidente, mais il faut faire attention aux **clés étrangères** 🔑😩 !
+
+Reprenons l'exemple **One-To-Many** suivant :
+« Un `Post` peut avoir plusieurs `Comment`. Un `Comment` est associé à un seul `Post`. »
+
+<Tabs>
+    <TabItem value="cs1" label="Classe Post" default>
+        ```cs showLineNumbers
+        public class Post{
+            public int Id { get; set; }
+            public string Text { get; set; } = null!;
+            public virtual List<Comment> Comments { get; set; } = new List<Comment>();
+        }
+        ```
+    </TabItem>
+    <TabItem value="cs2" label="Classe Comment">
+        ```cs showLineNumbers
+        public class Comment{
+            public int Id { get; set; }
+            public string Text { get; set; } = null!;
+            public virtual Post Post { get; set; } = null!;
+        }
+        ```
+    </TabItem>
+</Tabs>
+
+Si on tente de **supprimer un `Post` sans supprimer ses `Comment`**, la base de données lancera une erreur ! ⛔
+
+✅ La solution : supprimer tous les `Comment` d'un `Post` lorsqu'on le supprime :
+
+```cs showLineNumbers
+[HttpDelete("{id}")]
+public async Task<IActionResult> DeletePost(int id)
+{
+    // Chercher le post avec l'id fourni
+    Post? post = await _context.Post.FindAsync(id);
+
+    // Il n'existe pas ? On arrête ici
+    if (post == null) return NotFound();
+
+    // Supprimer tous les commentaires du post !
+    foreach(Comment c in post.Comments)
+    {
+        _context.Comment.Remove(c);
+    }
+
+    // Supprimer le post et enfin, sauvegarder tous les changements
+    _context.Post.Remove(post);
+    await _context.SaveChangesAsync();
+
+    return Ok(new { Message = "Suppression du post complétée !"});
+}
+```
+
+:::note
+
+    Notez que nous aurions pu supprimer un `Comment` en toute quiétude sans rien supprimer d'autre.
+
+:::
 
 ## ⚙ Services
 
+Les **contrôleurs auto-générés** interagissent directement avec le **DbContext**. Généralement, on n'aime pas ça et on préfèrera introduire une petite _couche_ entre les **contrôleurs** et le **DbContext** qui prendra la forme de **Services**. Toutes nos **opérations sur la base de données** seront encapsulées dans les services.
+
+1. Ça permet d'**éviter de répéter des bouts de code similaires** qui font la même chose.
+
+Exemple : J'ai deux contrôleurs capables de créer des `Patate` ? Au lieu de répéter les lignes de code servant à la **création de patates**, mes deux contrôleurs vont simplement appeler une seule et même méthode dans mon `PatateService`.
+
+2. Ça permet d'**améliorer la cohésion** de nos contrôleurs.
+
+Un peu plus délicat à expliquer. En gros, en programmation, en général, on aime quand une classe possède **une seule responsabilité cohérente**. Si on injecte directement le `DbContext` dans un **contrôleur**, on ouvre la porte à lui permettre de faire pas mal n'importe quoi avec la base de données. C'est à partir de ce moment qu'on n'est plus sûr dans quel contrôleur on pourra retrouver telle ou telle opération. Avec un `PatateService`, on sait qu'on pourra y retrouver toutes les opérations possibles qui concernent les patates et qu'on n'aura pas à aller fouiller dans `HotDogService` pour chercher des opérations sur les patates.
+
+<center>![Services](../../static/img/cours15/services.png)</center> 
+
 ### 💉 Injection
 
+Il faut **retirer les injections de `DbContext` dans les contrôleurs** et les remplacer par des **injections de services**.
+
+❌ Ceci :
+
+```cs showLineNumbers
+public class VideoGamesController : ControllerBase
+{
+    private readonly semaine8Context _context;
+
+    public VideoGamesController(semaine8Context context) 
+    {
+        _context = context;
+    }
+    
+    ...
+```
+
+✅ Devient :
+
+```cs showLineNumbers
+public class VideoGamesController : ControllerBase
+{
+    private readonly VideoGameService _videoGameService; // Injection d'un service !
+
+    public VideoGamesController(VideoGameService videoGameService)
+    {
+        _videoGameService = videoGameService;
+    }
+    
+    ...
+```
+
+**🥚 Création d'un service**
+
+Pour créer un **service**, créez une **simple classe** dans laquelle on **injecte le DbContext**.
+
+<center>![Dossier pour les services](../../static/img/cours15/serviceFolder.png)</center> 
+
+```cs showLineNumbers
+    public class VideoGameService
+    {
+        private readonly semaine8Context _context; // Injection du DbContext !
+
+        public VideoGameService(semaine8Context context) 
+        {
+            _context = context;
+        }
+
+        ...
+```
+
+De plus, il faudra **ajouter une ligne de code** dans `Program.cs` pour configurer **l'instanciation** / le **cycle de vie** de chaque service :
+
+```cs
+builder.Services.AddScoped<VideoGameService>();
+```
+
+⛔ Cette ligne doit être située quelque part avant la ligne `var app = builder.Build()`.
+
 ### 🔍 Exemples
+
+Voici, pour chacune des cinq opérations (GetAll, Get, Post, Put et Delete) auto-générées, un équivalent lorsqu'on utilise les **services**. Il faut surtout retenir que **toute ligne de code qui contenait `_context.QuelqueChose.Méthode(...)` a été déplacée dans un service**.
+
+Notez que la méthode ci-dessous a été ajoutée au **service** puisque c'est une vérification fréquente :
+
+```cs
+private bool IsContextValid() => _context != null && _context.VideoGame != null;
+```
+
+... qui est équivalent à ...
+
+```cs
+private bool IsConstextValid(){
+    return _context != null && _context.VideoGame != null;
+}
+```
+
+<hr/>
+
+**🍇 GetAll**
+
+Contrôleur :
+
+```cs showLineNumbers
+[HttpGet]
+public async Task<ActionResult<IEnumerable<VideoGame>>> GetVideoGame()
+{
+    List<VideoGame>? videoGames = await _videoGameService.GetAll();
+    if (videoGames == null) return StatusCode(StatusCodes.Status500InternalServerError);
+
+    return Ok(videoGames);
+}
+```
+
+Service : 
+
+```cs showLineNumbers
+public async Task<List<VideoGame>?> GetAll()
+{
+    if (!IsContextValid()) return null;
+
+    return await _context.VideoGame.ToListAsync();
+}
+```
+
+<hr/>
+
+**🍎 Get**
+
+Contrôleur :
+
+```cs showLineNumbers
+[HttpGet("{id}")]
+public async Task<ActionResult<VideoGame>> GetVideoGame(int id)
+{
+    VideoGame? videoGame = await _videoGameService.Get(id);
+    if (videoGame == null) return NotFound();
+
+    return Ok(videoGame);
+}
+```
+
+Service : 
+
+```cs showLineNumbers
+public async Task<VideoGame?> Get(int id)
+{
+    if(!IsContextValid()) return null;
+
+    return await _context.VideoGame.FindAsync(id);
+}
+```
+
+<hr/>
+
+**📬 Post**
+
+Contrôleur :
+
+```cs showLineNumbers
+[HttpPost]
+public async Task<ActionResult<VideoGame>> PostVideoGame(VideoGame videoGame)
+{
+    VideoGame? newVideoGame = await _videoGameService.Create(videoGame);
+    if (newVideoGame == null) return StatusCode(StatusCodes.Status500InternalServerError);
+
+    return Ok(newVideoGame);
+}
+```
+
+Service : 
+
+```cs showLineNumbers
+public async Task<VideoGame?> Create(VideoGame videoGame)
+{
+    if (!IsContextValid()) return null;
+
+    _context.VideoGame.Add(videoGame);
+    await _context.SaveChangesAsync();
+
+    return videoGame;
+}
+```
+
+<hr/>
+
+**❌ Delete**
+
+Contrôleur :
+
+```cs showLineNumbers
+[HttpDelete("{id}")]
+public async Task<IActionResult> DeleteVideoGame(int id)
+{
+    bool deleteSuccess = await _videoGameService.Delete(id);
+    if (!deleteSuccess) return NotFound();
+
+    return Ok(new {Message = "Suppression réussie."});
+}
+```
+
+Service : 
+
+```cs showLineNumbers
+public async Task<bool> Delete(int id)
+{
+    if (!IsContextValid()) return false;
+    VideoGame? videoGame = await _context.VideoGame.FindAsync(id);
+
+    if (videoGame == null) return false;
+
+    _context.VideoGame.Remove(videoGame);
+    await _context.SaveChangesAsync();
+
+    return true;
+}
+```
+
+<hr/>
+
+**✏ Put**
+
+Contrôleur :
+
+```cs showLineNumbers
+[HttpPut("{id}")]
+public async Task<IActionResult> PutVideoGame(int id, VideoGame videoGame)
+{
+    if (id != videoGame.Id) return BadRequest();
+
+    VideoGame? updatedVideoGame = await _videoGameService.Edit(id, videoGame);
+
+    if (updatedVideoGame == null) return StatusCode(StatusCodes.Status500InternalServerError,
+        new { Message = "Le jeu vidéo a été supprimé ou modifié. Veuillez réessyer." });
+
+    return Ok(updatedVideoGame);
+}
+```
+
+Service : 
+
+```cs showLineNumbers
+public async Task<VideoGame?> Edit(int id, VideoGame videoGame)
+{
+    if (!IsContextValid()) return null;
+
+    _context.Entry(videoGame).State = EntityState.Modified;
+
+    try
+    {
+        await _context.SaveChangesAsync();
+    }
+    catch (DbUpdateConcurrencyException)
+    {
+        if (Get(id) == null) return null;
+        else throw;
+    }
+
+    return videoGame;
+}
+```
