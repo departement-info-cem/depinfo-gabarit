@@ -1,4 +1,4 @@
-# Cours 17 - Retours et sécurité
+# Cours 17 - Retours, sécurité, seed
 
 ## 📬 Retours
 
@@ -68,6 +68,92 @@ Bien entendu, il existe beaucoup d'autres retours possibles, mais ceux-ci couvre
 :::
 
 ### 🎁 Data-Transfer Objects
+
+Nous avons abordé les **DTOs** dans le contexte où on souhaite envoyer de l'information depuis le client **vers le serveur**, mais il est également possible de faire l'inverse : créer un **DTO** pour envoyer des données **vers le client**.
+
+Voici un exemple de classe qui **n'est pas adaptée pour être envoyée au client telle quelle** :
+
+```cs showLineNumbers
+public class Comment{
+
+    public int Id { get; set; }
+    public string Text { get; set; } = null!;
+    
+    [InverseProperty("Comments")]
+    public User Author { get; set; } = null!;
+
+    [InverseProperty("Upvotes")]
+    public List<User> Upvoters { get; set; } = new List<User>();
+
+    [InverseProperty("Downvotes")]
+    public List<User> Downvoters { get; set; } = new List<User>();
+}
+```
+
+Il y a trois propriétés inadéquates :
+
+* On aimerait envoyer le **pseudo de l'auteur (`string`)** plutôt que `User` en entier.
+* On aimerait envoyer le **nombre d'upvotes (`int`)** plutôt que la liste des `User` qui ont upvoté.
+* On aimerait envoyer le **nombre de downvotes (`int`)** plutôt que la liste des `User` qui ont downvoté.
+
+On produit donc un **DTO** qui contiendra les données adaptées :
+
+```cs showLineNumbers
+public class CommentDisplayDTO{
+
+    public int Id { get; set; }
+    public string Text { get; set; } = null!;
+    public string Author { get; set; } = null!;
+    public int Upvotes { get; set; }
+    public int Downvotes { get; set; }
+
+    public CommentDisplayDTO(Comment comment){
+        Id = comment.Id;
+        Text = comment.Text;
+        Author = comment.User.UserName;
+        Upvotes = comment.Upvoters.Count;
+        Downvotes = comment.Downvotes.Count;
+    }
+}
+```
+
+N'hésitez pas à ajouter un constructeur. Par exemple, dans ce cas, ça simplifiera (et ça centralisera) la conversion de `Comment` en `CommentDisplayDTO`.
+
+:::tip
+
+Vous pouvez utiliser le suffixe `DisplayDTO` plutôt que `DTO` (par exemple) si vous souhaitez pouvoir différencier facilement vos deux types de **DTOs**. (Ceux pour envoyer des données **vers le serveur** VS ceux pour envoyer des données **vers le client**)
+
+:::
+
+Une **action** qui retournerait une liste de `CommentDisplayDTO` pourrait procéder comme ceci :
+
+```cs showLineNumbers
+[HttpGet]
+public async Task<ActionResult<IEnumerable<CommentDisplayDTO>>> GetAllComments(){
+
+    IEnumerable<Comment> comments = await _context.Comment.ToListAsync();
+
+    // Conversion de la liste de Comment en liste de CommentDisplayDTO
+    return Ok(comments.Select(c => new CommentDisplayDTO(c)));
+
+}
+```
+
+**Côté Angular**, le modèle pourrait tout simplement ressembler à ceci :
+
+```ts showLineNumbers
+export class Comment{
+
+    constructor(
+        public id : number,
+        public text : string,
+        public author : string,
+        public upvotes : number,
+        public downvotes : number
+    ){}
+
+}
+```
 
 ## 🔒 Sécurité
 
