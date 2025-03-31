@@ -223,11 +223,218 @@ Tous les exemples qui suivent seront abordés **avec service** puisqu'ils vous s
 
 #### 📬 GET
 
+Pour les actions de type `GET`, généralement utiliser une **propriété de navigation** ou encore effectuer un `.Where(...)` en se servant du pseudonyme de l'utilisateur qui envoie la requête permettra de s'assurer que seuls les utilisateurs autorisés ont accès à une donnée.
+
+```cs showLineNumbers
+[HttpGet]
+public async Task<ActionResult<IEnumerable<Comment>>> GetMyComments()
+{
+    // Qui envoie la requête ?
+    User? user = await _userManager.FindByIdAsync(User.FindFirstValue(ClaimTypes.NameIdentifier));
+
+    if (user == null) return Unauthorized(); // Non authentifié ou token invalide
+
+    return user.Comments; // Propriété de navigation utilisée
+}
+```
+
 #### 📦 POST
+
+En général, il n'y a pas vraiment de risque en terme d'**access control** lorsqu'on essaye de créer une nouvelle donnée. Assurez-vous simplement de bien **concrétiser le lien entre la donnée et l'utilisateur** qui la crée au cas où on souhaiterait limiter l'accès aux données plus tard.
+
+Bien entendu, pour empêcher un utilisateur non authentifié de créer une donnée, `[Authorize]` règle le problème.
+
+**⚙ Contrôleur :**
+
+```cs showLineNumbers
+[HttpPost]
+public async Task<ActionResult<Comment>> PostComment(Comment comment)
+{
+    User? user = await _userManager.FindByIdAsync(User.FindFirstValue(ClaimTypes.NameIdentifier));
+
+    if (user == null) return Unauthorized(); // Non authentifié ou token invalide
+
+    // ✅ Le lien entre l'utilisateur est concrétisé par cette propriété de navigation !
+    comment.User = user; // ou encore -> user.Comments.Add(comment);
+
+    Comment? newComment = await _commentService.CreateComment(comment);
+
+    if(newComment == null) return StatusCode(StatusCodes.Status500InternalServerError,
+        new { Message = "Veuillez réessayer plus tard." }); // Problème avec la BD ?
+
+    return Ok(newComment);
+}
+```
+
+**🧰 Service :**
+
+```cs showLineNumbers
+public async Task<Comment?> CreateComment(Comment comment)
+{
+    if (IsCommentSetEmpty()) return null;
+
+    _context.Comment.Add(comment);
+    await _context.SaveChangesAsync();
+
+    return comment;
+}
+```
 
 #### 🚮 DELETE
 
+Le problème potentiel est plutôt évident : on ne veut pas permettre à n'importe qui de supprimer une donnée !
+
+**⚙ Contrôleur :**
+
+```cs showLineNumbers
+[HttpDelete("{id}")]
+public async Task<IActionResult> DeleteComment(int id)
+{
+    // Utilisateur qui fait la requête
+    User? user = await _userManager.FindByIdAsync(User.FindFirstValue(ClaimTypes.NameIdentifier));
+
+    // Commentaire à supprimer
+    Comment? comment = await _commentService.GetComment(id);
+
+    // Si le commentaire n'est pas trouvé
+    if (comment == null) return NotFound();
+
+    // 🛑 Si l'utilisateur n'est PAS propriétaire du commentaire
+    if (user == null || !user.Comments.Contains(comment)) return Unauthorized(new {Message = "Hey touche pas, c'est pas à toi !"});
+
+    // Supprimer le commentaire du DbContext
+    Comment? deletedComment = await _commentService.DeleteComment(comment);
+
+    if(deletedComment == null) return StatusCode(StatusCodes.Status500InternalServerError,
+        new { Message = "Veuillez réessayer plus tard." }); // Problème avec la BD ?
+
+    return Ok(new {Message = "Commentaire supprimé."});
+}
+```
+
+**🧰 Service :**
+
+```cs showLineNumbers
+public async Task<Comment?> DeleteComment(Comment comment)
+{
+    if (IsCommentSetEmpty()) return null;
+
+    _context.Remove(comment);
+    await _context.SaveChangesAsync();
+    return comment;
+}
+```
+
 #### 📝 PUT
+
+Avec un `Put`, il y a deux enjeux à surveiller :
+
+**1 - ✋ Empêcher certains utilisateurs de modifier des données qui ne leur appartiennent pas.**
+
+**⚙ Contrôleur :**
+
+```cs showLineNumbers
+[HttpPut("{id}")]
+public async Task<IActionResult> PutComment(int id, Comment comment)
+{
+    User? user = await _userManager.FindByIdAsync(User.FindFirstValue(ClaimTypes.NameIdentifier));
+
+    if (id != comment.Id) return BadRequest();
+
+    Comment? oldComment = await _commentService.GetComment(id);
+
+    if (oldComment == null) return NotFound();
+
+    // 🛑 Utilisateur pas propriétaire du commentaire ?
+    if(user == null || !user.Comments.Contains(oldComment)) return Unauthorized(new { Message = "Hey touche pas, c'est pas à toi !"});
+
+    Comment? newComment = await _commentService.UpdateComment(id, comment);
+
+    if(newComment == null) return StatusCode(StatusCodes.Status500InternalServerError,
+        new { Message = "Veuillez réessayer plus tard." }); // Problème avec la BD ?
+
+    return Ok(new {Message = "Commentaire modifié", Comment = newComment });
+}
+```
+
+**🧰 Service :**
+
+```cs showLineNumbers
+public async Task<Comment?> UpdateComment(int id, Comment comment)
+{
+    if(IsCommentSetEmpty()) return null;
+
+    // Important car on a déjà sorti le commentaire de la BD plus tôt
+    _context.ChangeTracker.Clear();
+
+    // On remplace l'ancien commentaire avec l'id (int id) par le (Comment comment) reçu
+    _context.Entry(comment).State = EntityState.Modified;
+
+    try
+    {
+        await _context.SaveChangesAsync();
+    }
+    catch (DbUpdateConcurrencyException)
+    {
+        if (!await _context.Comment.AnyAsync(x => x.Id == id)) return null; // Commentaire n'existe plus ?
+        else throw; // Erreur avec la BD
+    }
+
+    return comment;
+}
+```
+
+**2 - ✏ Empêcher les utilisateurs de modifier certaines propriétés jugées immuables.**
+
+En utilisant, par exemple, un **DTO** pour limiter les données qui sont reçues pour modifier la donnée, on peut empêcher les utilisateurs de modifier les propriétés qu'on juge immuables. (Ex : empêcher de changer l'auteur d'un `Comment`, le nombre d'upvotes, etc.)
+
+**⚙ Contrôleur :**
+
+```cs showLineNumbers
+[HttpPut("{id}")]
+public async Task<IActionResult> PutComment(EditCommentDTO editCommentDTO)
+{
+    User? user = await _userManager.FindByIdAsync(User.FindFirstValue(ClaimTypes.NameIdentifier));
+
+    Comment? oldComment = await _commentService.GetComment(editCommentDTO.Id);
+
+    if (oldComment == null) return NotFound();
+
+    // 🛑 Utilisateur pas propriétaire du commentaire ?
+    if(user == null || !user.Comments.Contains(oldComment)) return Unauthorized(new { Message = "Hey touche pas, c'est pas à toi !"});
+
+    Comment? newComment = await _commentService.UpdateComment(editCommentDTO.NewText, comment);
+
+    if(newComment == null) return StatusCode(StatusCodes.Status500InternalServerError,
+        new { Message = "Veuillez réessayer plus tard." }); // Problème avec la BD ?
+
+    return Ok(new {Message = "Commentaire modifié", Comment = newComment });
+}
+```
+
+**🧰 Service :**
+
+```cs showLineNumbers
+public async Task<Comment?> UpdateComment(string newText, Comment comment)
+{
+    if(IsCommentSetEmpty()) return null;
+
+    // ⛔ On remplace SEULEMENT la propriété modifiable plutôt que de remplacer la donnée en entier.
+    comment.Text = newText;
+
+    try
+    {
+        await _context.SaveChangesAsync();
+    }
+    catch (DbUpdateConcurrencyException)
+    {
+        if (!await _context.Comment.AnyAsync(x => x.Id == id)) return null; // Commentaire n'existe plus ?
+        else throw; // Erreur avec la BD
+    }
+
+    return comment;
+}
+```
 
 ## 🌱 Seed
 
