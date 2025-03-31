@@ -157,9 +157,280 @@ export class Comment{
 
 ## 🔒 Sécurité
 
-### 🩲 Données de l'utilisateur
+Il y a quelques idées à garder à l'esprit lorsqu'on souhaite sécuriser notre application Web :
 
-### 👮‍♂️ Protéger les objets
+* 🖥 Inutile de tenter de sécuriser l'application Angular ! Tout son code sera accessible à l'utilisateur de toute façon. **La sécurité passe par le serveur**.
+
+* 🎁 Tout ce que le serveur retourne (sous forme de JSON) est accessible aux utilisateurs. (Que les données soient affichées par Angular ou non)
+
+* 📶 N'importe qui peut envoyer n'importe quelle requête avec n'importe quels paramètres ! Certains outils comme le logiciel **Postman** rendent cela très simple.
+
+### 🩲 Oversharing
+
+Lorsqu'on retourne des données à l'application cliente, il faut faire attention au **oversharing**. (Transmettre plus de données que nécessaire)
+
+Par exemple, disons que mon serveur retourne une liste de `Comment` :
+
+```cs showLineNumbers
+public class Comment{
+
+    public int Id { get; set; }
+    public string Text { get; set; } = null!;
+    public User Author { get; set; } = null!; // Danger ! Oversharing !
+}
+```
+
+On a un problème : même si les données du `User Author` (numéro de téléphone, adresse courriel, hachage de mot de passe, etc.) ne sont pas toutes affichées avec le commentaire côté Angular, **elles ont quand même été envoyées au client et sont donc vulnérables**.
+
+La solution est plutôt simple dans cette situation : utiliser `[JsonIgnore]` :
+
+```cs showLineNumbers
+public class Comment{
+
+    public int Id { get; set; }
+    public string Text { get; set; } = null!;
+
+    [JsonIgnore]
+    public User Author { get; set; } = null!;
+}
+```
+
+:::note
+
+Si jamais on souhaitait toutefois bel et bien envoyer certaines données de l'utilisateur pour les afficher (comme son `UserName`), il suffit de produire un `DTO` tel qu'abordé un peu plus haut dans ce cours.
+
+:::
+
+### 👮‍♂️ Access control
+
+Que ce soit lors d'un `Get`, `Post`, `Put` ou `Delete`, il faut parfois vérifier **qui envoie la requête** pour s'assurer que cet utilisateur soit autorisé à manipuler les données.
+
+Rappelez-vous de cette précieuse ligne de code pour déterminer **🕵️‍♂️ qui envoie la requête** (Utilisable dans un contrôleur) : 
+
+```cs
+User? user = await _userManager.FindByIdAsync(User.FindFirstValue(CLaimTypes.NameIdentifier));
+```
+
+Bien entendu, si aucun token n'est fourni, `user` sera `null`.
+
+:::warning
+
+Pour pouvoir utiliser cette ligne de code, il faut avoir injecté `UserManager` dans son contrôleur. Cette classe fait office de « `UserService` » et existe déjà grâce à la librairie **Identity**.
+
+:::
+
+Tous les exemples qui suivent seront abordés **avec service** puisqu'ils vous serviront durant les **TPs**.
+
+#### 📬 GET
+
+#### 📦 POST
+
+#### 🚮 DELETE
+
+#### 📝 PUT
 
 ## 🌱 Seed
 
+Préparer un **seed** permet de peupler la base de données avec un **🎲 jeu de données** initial.
+
+* Permet de créer des tests pour l'application.
+* Accélère les tests manuels.
+
+:::warning
+
+Notez qu'à chaque fois que le seed est modifié, **une migration doit être générée** et **la base de données doit être mise à jour**.
+
+Commandes : `dotnet ef migrations add nomDeLaMigration` et `dotnet ef database update`
+
+:::
+
+**1 - 🌱 Redéfinir la méthode `OnModelCreating` dans le `DbContext`**
+
+```cs showLineNumbers
+public class serveur16Context : IdentityDbContext<User>
+{
+    public serveur16Context(DbContextOptions<serveur16Context> options) : base(options){}
+
+    // Ici
+    protected override void OnModelCreating(ModelBuilder builder)
+    {
+        base.OnModelCreating(builder); // Conservez cette ligne de code en tout temps
+    }
+
+    public DbSet<Comment> Comment { get; set; }
+}
+```
+
+**2 - 📦 Ajouter les données de test**
+
+**👤 Modèle sans relation**
+
+```cs showLineNumbers
+protected override void OnModelCreating(ModelBuilder builder)
+{
+    base.OnModelCreating(builder);
+
+    builder.Entity<Comment>().HasData(new Comment()
+    {
+        Id = 1,
+        Text = "Ce film a eu la pire note de l'histoire de IMDb",
+        IsReported = false
+    });
+}
+```
+
+**👥 Deux modèles sans relation**
+
+```cs showLineNumbers
+protected override void OnModelCreating(ModelBuilder builder)
+{
+    base.OnModelCreating(builder);
+
+    builder.Entity<Comment>().HasData(
+    new Comment(){
+        Id = 1, Text = "Ce film a eu la pire note de l'histoire de IMDb", IsReported = false
+    },
+    new Comment(){
+        Id = 2, Text = "N'allez pas à ce McDonalds, mon fils a attrapé la covid dans la piscine à balles.", IsReported = false
+    });
+}
+```
+
+**🧑👧 Utilisateur**
+
+```cs showLineNumbers
+protected override void OnModelCreating(ModelBuilder builder)
+{
+    base.OnModelCreating(builder);
+
+    // Préparation de l'utilisateur
+    PasswordHasher<User> hasher = new PasswordHasher<User>(); // Si plusieurs utilisateurs, pas besoin de dupliquer cette ligne
+    User u1 = new User{
+        Id = "11111111-1111-1111-1111-111111111111", // Format GUID à respecter (8-4-4-4-12)
+        UserName = "Bob69",
+        Email = "bobibou@mail.com",
+        NormalizedUserName = "BOB69", // Important
+        NormalizedEmail = "BOBIBOU@MAIL.COM" // Important
+    };
+
+    // Hachage du mot de passe et ajout de l'utilisateur au seed
+    u1.PasswordHash = hasher.HashPassword(u1, "Salut1!");
+    builder.Entity<User>().HasData(u1);
+}
+```
+
+**🍒 Relation One-To-Many**
+
+Sachant que :
+
+* Le modèle `User` possède une liste de `Comment` nommée `Comments`.
+* Le modèle `Comment` possède un `User` nommé `Author`.
+
+```cs showLineNumbers
+protected override void OnModelCreating(ModelBuilder builder)
+{
+    base.OnModelCreating(builder);
+
+    // Le Modèle One-To- doit être créé AVANT pour que son id existe.
+    PasswordHasher<User> hasher = new PasswordHasher<User>(); // Si plusieurs utilisateurs, pas besoin de dupliquer cette ligne
+    User u1 = new User{
+        Id = "11111111-1111-1111-1111-111111111111", // Format GUID à respecter (8-4-4-4-12)
+        UserName = "Bob69",
+        Email = "bobibou@mail.com",
+        NormalizedUserName = "BOB69", // Important
+        NormalizedEmail = "BOBIBOU@MAIL.COM" // Important
+    };
+
+    // Hachage du mot de passe et ajout de l'utilisateur au seed
+    u1.PasswordHash = hasher.HashPassword(u1, "Salut1!");
+    builder.Entity<User>().HasData(u1);
+
+    // Le modèle -To-Many doit être créé APRÈS pour avoir accès à l'id du One-To- (créé plus haut)
+    builder.Entity<Comment>().HasData(new
+    {
+        Id = 1,
+        Text = "Ce film a eu la pire note de l'histoire de IMDb",
+        IsReported = false,
+        AuthorId = u1.Id // Remarquez u1.Id ! C'est ici que la relation est concrétisée
+    });
+}
+```
+
+Remarquez la structure de la classe `Comment` :
+
+```cs showLineNumbers
+public class Comment{
+
+    public int Id { get; set; }
+    public string Text { get; set; } = null!;
+    public bool IsReported { get; set; }
+
+    [JsonIgnore]
+    public User Author { get; set; } = null!;
+}
+```
+
+:::info
+
+Remarquez deux détails très importants :
+
+* Au lieu de `new Comment(){ ... }`, on a simplement utilisé `new{ ... }`. Cela permet d'utiliser des noms de propriétés **qui n'existent pas dans la classe** telle que `AuthorId`.
+
+* Dans la classe `Comment`, la propriété `AuthorId` n'existe pas, alors pourquoi on a utilisé ce nom ? Car **EntityFramework**, en créant la table `Comment`, va retirer la **propriété de navigation** nommé `Author` et va ajouter une colonne qui **combine le nom `Author` et `Id`**, ce qui donne `AuthorId`.
+
+:::
+
+**🍇 Relation Many-To-Many**
+
+Cette fois-ci :
+
+* Le modèle `Comment` possède une liste de `User` nommée `Upvoters`.
+* Le modèle `User` possède une liste de `Comment` nommée `UpvotedComments`.
+
+```cs showLineNumbers
+protected override void OnModelCreating(ModelBuilder builder)
+{
+    base.OnModelCreating(builder);
+
+    // Utilisateur
+    PasswordHasher<User> hasher = new PasswordHasher<User>(); // Si plusieurs utilisateurs, pas besoin de dupliquer cette ligne
+    User u1 = new User{
+        Id = "11111111-1111-1111-1111-111111111111", // Format GUID à respecter (8-4-4-4-12)
+        UserName = "Bob69",
+        Email = "bobibou@mail.com",
+        NormalizedUserName = "BOB69", // Important
+        NormalizedEmail = "BOBIBOU@MAIL.COM" // Important
+    };
+    u1.PasswordHash = hasher.HashPassword(u1, "Salut1!");
+    builder.Entity<User>().HasData(u1);
+
+    // Comment
+    builder.Entity<Comment>().HasData(
+    new {
+        Id = 1,
+        Text = "Ce film a eu la pire note de l'histoire de IMDb",
+        IsReported = false,
+    }, 
+    new {
+        Id = 2,
+        Text = "N'allez pas à ce McDonalds, mon fils a attrapé la covid dans la piscine à balles.",
+        IsReported = false,
+    });
+
+    // Table de liaison 
+    builder.Entity<Comment>()
+        .HasMany(c => c.Upvoters)
+        .WithMany(u => u.UpvotedComments)
+        .UsingEntity(e => {
+            // Ajouter une ligne pour chaque liaison (Ici, Bob69 a upvoté les deux commentaires existants)
+            e.HasData(new { UpvotersId = u1.Id, UpvotedCommentsId = 1});
+            e.HasData(new { UpvotersId = u1.Id, UpvotedCommentsId = 2});
+        });
+}
+```
+
+:::info
+
+Encore une fois, dans la table de liaison, on remarque que les propriétés `UpvotersId` et `UpvotedCommentsId`, **qui n'existent pas** dans nos modèles, sont tout simplement **la combinaison du nom d'une propriété de navigation existante ainsi que de `Id`**.
+
+:::
