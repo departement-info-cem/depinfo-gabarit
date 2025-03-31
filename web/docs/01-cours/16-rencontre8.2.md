@@ -524,3 +524,79 @@ public async Task<ActionResult<IEnumerable<Comment>>> GetMyComments()
     return user.Comments;
 }
 ```
+
+## 🛑 Intercepteurs
+
+À force d'implémenter des requêtes qui nécessitent d'y joindre le **token** dans Angular ...
+
+```ts showLineNumbers
+// Avec un bloc comme celui-ci
+let token = localStorage.getItem("token");
+let httpOptions = {
+    headers : new HttpHeaders({
+    'Content-Type' : 'application/json',
+    'Authorization' : 'Bearer ' + token
+    })
+};
+```
+
+on répète souvent le même morceau de code.
+
+La solution est d'**utiliser un interceptor**.
+
+### 🥚 Créer un interceptor
+
+Utilisez la commande suivante pour créer un interceptor dans votre projet Angular :
+
+`ng generate interceptor nomDeVotreInterceptor`
+
+Un interceptor ressemblera à ceci initialement :
+
+```ts showLineNumbers
+export const authInterceptor : HttpInterceptorFn : (req, next) => {
+    return next(req);
+};
+```
+
+> Que fait ce code ?
+
+Rien ! À chaque fois qu'une requête est envoyée avec un `HttpClient`, elle est interceptée... mais sans être modifiée.
+
+Voici un exemple d'interceptor personnalisé :
+
+```ts showLineNumbers
+export const authInterceptor : HttpInterceptorFn : (req, next) => {
+    console.log("Trois tortues trotaient sur un trottoir 🐢🐢🐢");
+    return next(req);
+};
+```
+
+Désormais, à chaque fois qu'une requête sera envoyée avec `HttpClient`, ce message apparaîtra dans la console du navigateur.
+
+### 🔑 Intercepteur pour l'authentification
+
+Cet interceptor permettra de **joindre le token à la requête** systématiquement. On peut donc retirer le bloc répétitif avec `httpOptions` partout ailleurs dans le code !
+
+```ts showLineNumbers
+export const authInterceptor : HttpInterceptorFn : (req, next) => {
+
+    req = req.clone({
+        setHeaders:{
+            "Content-Type" : "application/json",
+            "Authorization" : "Bearer " + localStorage.getItem("token") // changez la clé si vous avez stocké le token ailleurs
+        }
+    });
+
+    return next(req);
+};
+```
+
+* Le paramètre `req` représente l'objet de la requête. (Son URL, ses en-têtes, son corps, etc.)
+* La fonction `clone()` permet de modifier cet objet.
+* La fonction `next()` permet d'envoyer la requête une fois modifiée.
+
+:::note
+
+Si une requête **ne nécessite pas l'authentification** et qu'on joint quand même le **token** (ou encore aucun token) automatiquement à cause de l'interceptor, est-ce que ça pose problème ? **Non !** Aucun soucis. Pas besoin de se mettre à trier les différentes requêtes dans l'interceptor.
+
+:::
