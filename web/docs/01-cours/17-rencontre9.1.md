@@ -23,12 +23,6 @@ Lorsqu'on souhaite simplement retourner des données, on a deux options :
 
 Ces deux manières de procéder sont **identiques en pratique**. Elle corresponde toutes les code à un **code 200**, qui signifie **✅ réussite** de la requête. Vous êtes toutefois encouragés à utiliser `Ok(...)` puisque c'est un peu plus **explicite**.
 
-Si on vient de `Post` une donnée et qu'on souhaite la retourner pour montrer à l'application cliente ce qui vient d'être créé, on peut utiliser `Created(...)`
-
-> `return Created(maNouvelleDonnee);`
-
-Cela retourne un **code 201**, qui signifie la **✅ réussite** d'une requête avec création de donnée. Vous pouvez utiliser ceci dans ce cours si vous souhaitez être plus spécifique, mais ce n'est pas obligatoire.
-
 **🌌 Retourner... rien ?**
 
 Si on n'a rien de particulier à retourner (ex : une requête `Put` ou `Delete` qui a réussi), on peut utiliser `NoContent()`.
@@ -208,7 +202,7 @@ Que ce soit lors d'un `Get`, `Post`, `Put` ou `Delete`, il faut parfois vérifie
 Rappelez-vous de cette précieuse ligne de code pour déterminer **🕵️‍♂️ qui envoie la requête** (Utilisable dans un contrôleur) : 
 
 ```cs
-User? user = await _userManager.FindByIdAsync(User.FindFirstValue(CLaimTypes.NameIdentifier));
+User? user = await _userManager.FindByIdAsync(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
 ```
 
 Bien entendu, si aucun token n'est fourni, `user` sera `null`.
@@ -230,7 +224,7 @@ Pour les actions de type `GET`, généralement utiliser une **propriété de nav
 public async Task<ActionResult<IEnumerable<Comment>>> GetMyComments()
 {
     // Qui envoie la requête ?
-    User? user = await _userManager.FindByIdAsync(User.FindFirstValue(ClaimTypes.NameIdentifier));
+    User? user = await _userManager.FindByIdAsync(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
 
     if (user == null) return Unauthorized(); // Non authentifié ou token invalide
 
@@ -250,7 +244,7 @@ Bien entendu, pour empêcher un utilisateur non authentifié de créer une donn�
 [HttpPost]
 public async Task<ActionResult<Comment>> PostComment(Comment comment)
 {
-    User? user = await _userManager.FindByIdAsync(User.FindFirstValue(ClaimTypes.NameIdentifier));
+    User? user = await _userManager.FindByIdAsync(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
 
     if (user == null) return Unauthorized(); // Non authentifié ou token invalide
 
@@ -291,7 +285,7 @@ Le problème potentiel est plutôt évident : on ne veut pas permettre à n'impo
 public async Task<IActionResult> DeleteComment(int id)
 {
     // Utilisateur qui fait la requête
-    User? user = await _userManager.FindByIdAsync(User.FindFirstValue(ClaimTypes.NameIdentifier));
+    User? user = await _userManager.FindByIdAsync(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
 
     // Commentaire à supprimer
     Comment? comment = await _commentService.GetComment(id);
@@ -337,7 +331,7 @@ Avec un `Put`, il y a deux enjeux à surveiller :
 [HttpPut("{id}")]
 public async Task<IActionResult> PutComment(int id, Comment comment)
 {
-    User? user = await _userManager.FindByIdAsync(User.FindFirstValue(ClaimTypes.NameIdentifier));
+    User? user = await _userManager.FindByIdAsync(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
 
     if (id != comment.Id) return BadRequest();
 
@@ -394,7 +388,7 @@ En utilisant, par exemple, un **DTO** pour limiter les données qui sont reçues
 [HttpPut("{id}")]
 public async Task<IActionResult> PutComment(EditCommentDTO editCommentDTO)
 {
-    User? user = await _userManager.FindByIdAsync(User.FindFirstValue(ClaimTypes.NameIdentifier));
+    User? user = await _userManager.FindByIdAsync(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
 
     Comment? oldComment = await _commentService.GetComment(editCommentDTO.Id);
 
@@ -525,6 +519,14 @@ protected override void OnModelCreating(ModelBuilder builder)
     builder.Entity<User>().HasData(u1);
 }
 ```
+
+:::tip
+
+Si on souhaitait ajouter un 2e utilisateur dans le seed, sont `Id` pourrait être `11111111-1111-1111-1111-111111111112`.
+
+Un `Id` d'utilisateur peut seulement contenir des symboles hexadécimaux, c'est-à-dire de 0 à 9 et de A à F.
+
+:::
 
 **🍒 Relation One-To-Many**
 

@@ -486,7 +486,7 @@ Grâce au token, cette ligne de code suffit pour déterminer quel utilisateur au
 public async Task<ActionResult<Comment>> PostComment(Comment comment)
 {
     // Trouver l'utilisateur via son token
-    User? user = await _userManager.FindByIdAsync(User.FindFirstValue(CLaimTypes.NameIdentifier));
+    User? user = await _userManager.FindByIdAsync(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
 
     if(user == null){
         return Unauthorized();
@@ -498,7 +498,7 @@ public async Task<ActionResult<Comment>> PostComment(Comment comment)
 Déterminer **qui envoie la requête** peut être très utile pour `Post` des objets qui possèdent une relation avec un utilisateur (Si une propriété de navigation existe entre les deux classes) :
 
 ```cs
-User? user = await _userManager.FindByIdAsync(User.FindFirstValue(CLaimTypes.NameIdentifier));
+User? user = await _userManager.FindByIdAsync(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
 
 if(user != null)
 {
@@ -517,7 +517,7 @@ Ou encore pour retourner un ou des objets qui **appartiennent à l'utilisateur**
 [Authorize]
 public async Task<ActionResult<IEnumerable<Comment>>> GetMyComments()
 {
-    User? user = await _userManager.FindByIdAsync(User.FindFirstValue(CLaimTypes.NameIdentifier));
+    User? user = await _userManager.FindByIdAsync(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
 
     if (user == null) return Unauthorized();
 
