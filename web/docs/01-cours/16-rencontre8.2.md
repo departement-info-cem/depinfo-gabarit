@@ -573,6 +573,19 @@ export const authInterceptor : HttpInterceptorFn : (req, next) => {
 
 Désormais, à chaque fois qu'une requête sera envoyée avec `HttpClient`, ce message apparaîtra dans la console du navigateur.
 
+⛔ Il faut modifier `app.config.ts` pour que l'intercepteur soit bien actif :
+
+```ts showLineNumbers
+export const appConfig: ApplicationConfig = {
+  providers: [
+    provideZoneChangeDetection({ eventCoalescing: true }), 
+    provideRouter(routes),
+    // Remarquez le paramètre ajouté dans provideHttpClient !
+    provideHttpClient(withInterceptors([authInterceptor]))
+  ]
+};
+```
+
 ### 🔑 Intercepteur pour l'authentification
 
 Cet interceptor permettra de **joindre le token à la requête** systématiquement. On peut donc retirer le bloc répétitif avec `httpOptions` partout ailleurs dans le code !
