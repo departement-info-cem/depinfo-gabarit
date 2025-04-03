@@ -223,7 +223,7 @@ public async Task<ActionResult> Register(RegisterDTO register)
 
     // On tente d'ajouter l'utilisateur dans la base de données. Ça pourrait échouer si le mot de
     // passe ne respecte pas les conditions ou que le pseudonyme est déjà utilisé.
-    IdentityResult identityResult = await this.UserManager.CreateAsync(user, register.Password);
+    IdentityResult identityResult = await _userManager.CreateAsync(user, register.Password);
 
     // Si la création a échoué, on retourne une erreur. N'hésitez pas à mettre un breakpoint ici
     // pour inspecter l'objet identityResult si vous avez du mal à créer des utilisateurs.
