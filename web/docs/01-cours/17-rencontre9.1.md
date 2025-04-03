@@ -21,7 +21,7 @@ Lorsqu'on souhaite simplement retourner des données, on a deux options :
 
 > `return Ok(maListe);`
 
-Ces deux manières de procéder sont **identiques en pratique**. Elle corresponde toutes les code à un **code 200**, qui signifie **✅ réussite** de la requête. Vous êtes toutefois encouragés à utiliser `Ok(...)` puisque c'est un peu plus **explicite**.
+Ces deux manières de procéder sont **identiques en pratique**. Elles correspondent toutes les deux à un **code 200**, qui signifie **✅ réussite** de la requête. Vous êtes toutefois encouragés à utiliser `Ok(...)` puisque c'est un peu plus **explicite**.
 
 **🌌 Retourner... rien ?**
 
