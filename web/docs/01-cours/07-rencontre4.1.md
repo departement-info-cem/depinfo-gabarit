@@ -491,8 +491,7 @@ Un token n'est pas valide éternellement. Selon l'API, le token peut expirer apr
 
 ### 📜 Exemples de requêtes à Spotify pour le TP2
 
-Voici trois classes qui pourraient vous êtres utiles dans le contexte du **TP2** (N'oubliez pas de les isoler chacune
-dans leur propre fichier !) :
+Voici deux classes qui pourraient vous êtres utiles dans le contexte du **TP2** (N'oubliez pas de les isoler chacune dans leur propre fichier !) :
 
 ```ts showLineNumbers
 export class Artist{
@@ -501,10 +500,6 @@ export class Artist{
 
 export class Album{
   constructor(public id : string, public name : string, public image : string){}
-}
-
-export class Song{
-  constructor(public id : string, public name : string){}
 }
 ```
 
