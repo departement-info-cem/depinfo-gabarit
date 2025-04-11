@@ -129,6 +129,13 @@ async uploadPicture() : Promise<void>{
 }
 ```
 
+:::warning
+
+Si un **token** est impliqué, il faut absolument retirer la ligne `"Content-Type" : "application/json"` de vos en-têtes de requêtes (que ce soit
+dans un **interceptor** ou non) sinon **l'envoi de l'image échouera !**
+
+:::
+
 :::tip
 
 N'hésitez pas à joindre **plusieurs fichiers** au **FormData** !
@@ -287,9 +294,73 @@ public async Task<IActionResult> DeletePicture(int id)
 
 ## 🔒 Image avec authentification
 
+Parfois, on souhaiter limiter l'accès aux images. (Que ce soit pour empêcher les utilisateurs non authentifiés ou encore certains utilisateurs qui n'ont pas les permissions sur une certaine image)
+
+**Étape 1 - 🔐 Modifier l'action qui retourne une image**
+
+Que ce soit en ajoutant `[Authorize]` ou en **vérifiant qui envoie la requête**, faites le nécessaire pour exiger l'authentification.
+
+```cs showLineNumbers
+[HttpGet("{size}/{id}")]
+[Authorize] // 😩
+public async Task<ActionResult<SimpleImage>> GetPicture(string size, int id)
+{
+    SimpleImage? si = await _context.SimpleImage.FindAsync(id);
+    if (si == null) return NotFound();
+
+    // Si la size fournit ne correspond pas à "big" OU "smol", erreur.
+    if (!Regex.Match(size, "big|smol").Success) return BadRequest(new { Message = "La taille demandée n'existe pas."});
+
+    // Récupération du fichier sur le disque
+    byte[] bytes = System.IO.File.ReadAllBytes(Directory.GetCurrentDirectory() + "/images/" + size + "/" + si.FileName);
+    return File(bytes, si.MimeType);
+}
+```
+
+**Étape 2 - 🔑 Modifier le projet Angular**
+
+* Il faudra une variable de type `SafeResourceUrl`.
+* Il faudra une requête servant à récupérer un `blob`. (Binary Large Object)
+
+Variable dans le composant :
+
+```ts showLineNumbers
+export class AppComponent{
+
+    birbImage ?: SafeResourceUrl;
+
+    ...
+
+}
+```
+
+HTML du composant :
+
+```html
+<img alt="Birb" [src]="birbImage" *ngIf="birbImage != undefined">
+```
+
+Requête pour remplir la variable :
+
+```ts showLineNumbers
+async requestPicture(id : number){
+  
+    let x = await lastValueFrom(this.http.get("https://localhost:7124/api/Birbs/GetBirbPictureWithAuth/miniature/" + id, 
+        { responseType : "blob", headers : this.getHttpOptions() }));
+
+    this.birbImage = this.domSanitizer.bypassSecurityTrustUrl(URL.createObjectURL(x));
+}
+```
+
+:::note
+
+Remarquez le `responseType :` qui a été précisé ! Il y a également un **token** qui a été joint après l'étiquette `headers :`.
+
+:::
+
 ## 🌱 Image dans le seed
 
-**Étape 1 - Ajouter l'image dans les fichiers du serveur**
+**Étape 1 - 📂 Ajouter l'image dans les fichiers du serveur**
 
 Il faudra manuellement ajouter l'image aux fichiers du serveur en lui donnant un nom qui correspond à un **Guid** suivi de l'extension du fichier :
 
@@ -297,7 +368,7 @@ Il faudra manuellement ajouter l'image aux fichiers du serveur en lui donnant un
 
 ⛔ Assurez-vous que le nom de votre fichier soit unique, bien entendu.
 
-**Étape 2 - Ajouter les données de l'image dans le seed**
+**Étape 2 - 🌰 Ajouter les données de l'image dans le seed**
 
 Pour rappel, ceci se passe dans le `DbContext`.
 
