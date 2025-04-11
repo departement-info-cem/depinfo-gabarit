@@ -162,7 +162,7 @@ public class SimpleImage{
 ```
 
 * Le `FileName` sera un **Guid** suivi de l'extension. (Ex : `"11111111-1111-1111-1111-111111111111.png"`)
-* Le `MimeType` sera le type du fichier. (Ex : `"images/png"`)
+* Le `MimeType` sera le type du fichier. (Ex : `"image/png"`)
 
 **Étape 2 - 📚 Installer une librairie pour la gestion des images**
 
@@ -288,3 +288,41 @@ public async Task<IActionResult> DeletePicture(int id)
 ## 🔒 Image avec authentification
 
 ## 🌱 Image dans le seed
+
+**Étape 1 - Ajouter l'image dans les fichiers du serveur**
+
+Il faudra manuellement ajouter l'image aux fichiers du serveur en lui donnant un nom qui correspond à un **Guid** suivi de l'extension du fichier :
+
+<center>![Dossier d'images](../../static/img/cours21/imageFolder.png)</center>
+
+⛔ Assurez-vous que le nom de votre fichier soit unique, bien entendu.
+
+**Étape 2 - Ajouter les données de l'image dans le seed**
+
+Pour rappel, ceci se passe dans le `DbContext`.
+
+```cs showLineNumbers
+protected override void OnModelCreating(ModelBuilder builder){
+    
+    base.OnModelCreating(builder);
+
+    Birb b1 = new Birb(){
+        Id = 1,
+        Name = "Smol birb",
+        FileName = "11111111-1111-1111-1111-111111111111.png",
+        MimeType = "image/png"
+    };
+    builder.Entity<Birb>().HasData(b1);
+
+    // Optionnel : si on veut plusieurs tailles de l'image et qu'on ne veut pas créer les copies manuellement
+    byte[] file = File.ReadAllBytes(Directory.GetCurrentDirectory() + "/images/original/" + b1.FileName);
+    Image image = Image.Load(file);
+    image.Mutate(i => i.Resize(new ResizeOptions(){ Mode = ResizeMode.Min, Size = new Size() { Width = 320 } }));
+    image.Save(Directory.GetCurrentDirectory() + "/images/miniature/" + b1.FileName);
+
+}
+```
+
+Après avoir fait une **migration** et une **mise à jour de la base de données**, ça devrait fonctionner.
+
+<center>![Dossier d'images](../../static/img/cours21/smolBirb.png)</center>
