@@ -385,7 +385,7 @@ En utilisant, par exemple, un **DTO** pour limiter les données qui sont reçues
 **⚙ Contrôleur :**
 
 ```cs showLineNumbers
-[HttpPut("{id}")]
+[HttpPut]
 public async Task<IActionResult> PutComment(EditCommentDTO editCommentDTO)
 {
     User? user = await _userManager.FindByIdAsync(User.FindFirstValue(ClaimTypes.NameIdentifier)!);

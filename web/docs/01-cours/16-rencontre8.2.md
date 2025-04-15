@@ -31,7 +31,7 @@ Il y aura beaucoup de code **boilerplate** à rédiger pour configurer `Identity
 
 **1 - 📰 Se référer au cours 15**
 
-Tout d'abord, répétez toutes les étapes de création d'un projet telles qu'abordées dans le [cours 15](/cours/rencontre8.1).
+Tout d'abord, répétez toutes les étapes de création d'un projet telles qu'abordées dans le [cours 14](/cours/rencontre7.2).
 
 Arrêtez-vous juste avant la création d'un **modèle**.
 
