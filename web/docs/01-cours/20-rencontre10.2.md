@@ -397,3 +397,35 @@ protected override void OnModelCreating(ModelBuilder builder){
 Après avoir fait une **migration** et une **mise à jour de la base de données**, ça devrait fonctionner.
 
 <center>![Dossier d'images](../../static/img/cours21/smolBirb.png)</center>
+
+## 📷 Prévisualiser l'image sélectionnée
+
+Si vous aimeriez que l'utilisateur puisse voir l'image qu'il s'apprête à envoyer au serveur après l'avoir jointe à l'`<input>` de type `file`, vous pouvez utiliser la technique suivante qui suit.
+
+Dans le HTML :
+
+```html showLineNumbers
+<input #memePicture type="file" name="memeImage" accept="images/*" (change)="imgFileSelected($event)"> <!-- Remarquez le (change) -->
+<img [src]="imageSrc" alt="Meme"> <!-- La prévisualisation de l'image sera cet élément <img> ! -->
+<button (click)="createMeme()">Envoyer</button>
+```
+
+Dans le TypeScript :
+
+```ts showLineNumbers
+export class PostMemeComponent {
+
+    @ViewChild("memePicture", {static:false}) memePicture ?: ElementRef;
+    imageSrc = "/assets/images/placeholder.png";
+
+    // Remplacera l'image affichée par celle jointe par l'utilisateur
+    imgFileSelected(event: any) {
+        if (event.target.files && event.target.files[0]) {
+        this.imageSrc = URL.createObjectURL(event.target.files[0]);
+        }
+    }
+
+    ...
+
+}
+```
