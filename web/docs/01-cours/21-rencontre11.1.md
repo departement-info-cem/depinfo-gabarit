@@ -202,7 +202,7 @@ Un `signal` est un type de variable un peu plus sophistiqué présentant des ava
 Ci-dessous, on a un simple **compteur** qui peut être incrémenté à l'aide d'un bouton. Tel qu'on le sait, la variable `n` sera mise à jour dans le HTML à chaque fois que nous appelerons la fonction `plusOne()` en cliquant sur le bouton.
 
 <Tabs>
-    <TabItem value="html" label="HTML" default>
+    <TabItem value="html" label="HTML">
         ```html showLineNumbers
         <p>{{n}}</p>
         <button (click)="plusOne()">Incrémenter</button>
@@ -238,7 +238,7 @@ Obtenir la valeur d'un signal (c'est une fonction) : `maVariable()`
 Changer la valeur d'un signal : `maVariable.set( ... nouvelle valeur .. );`  
 
 <Tabs>
-    <TabItem value="html" label="HTML" default>
+    <TabItem value="html" label="HTML">
         ```html showLineNumbers
         <p>{{n()}}</p>
         <button (click)="plusOne()">Incrémenter</button>
@@ -261,10 +261,53 @@ Changer la valeur d'un signal : `maVariable.set( ... nouvelle valeur .. );`
     </TabItem>
 </Tabs>
 
-:::info
+:::note
 
 Cette fois, puisqu'on utilise un `signal`, Angular est immédiatement **notifié** lorsque la valeur change et il peut mettre à jour la valeur de `n` affichée dans la page de manière beaucoup plus efficace. Cela dit, du point de vue de l'utilisateur, le fonctionnement de la page est identique.
 
 :::
 
-### ✍🔍 Signaux read / write
+### ✍🔍 Signaux non-modifiables
+
+Les signaux abordés plus haut sont _Writable_. (C'est-à-dire qu'on peut modifier leur valeur)
+
+Il est possible de créer un signal non modifiable (« **Computed signal** ») à l'aide de la fonction `computed()`.
+
+<Tabs>
+    <TabItem value="html" label="HTML">
+        ```html showLineNumbers
+        <p>Prix : {{price()}}</p>
+        <p>Prix avec taxes : {{priceWithTaxes()}}</p>
+        ```
+    </TabItem>
+    <TabItem value="ts" label="TypeScript" default>
+        ```ts showLineNumbers
+        export class AppComponent{
+
+            // signal modifiable
+            price : WritableSignal<number> = signal(10);
+
+            // signal non-modifiable (dérivé de this.price)
+            priceWithTaxes = computed(() => {
+                return this.price() * 1.15;
+            });
+
+        }
+        ```
+    </TabItem>
+</Tabs>
+
+Notez bien :
+
+* Le signal `priceWithTaxes` **ne peut pas être modifié**. (⛔ Faire `this.priceWithTaxes.set(...)` lancerait une exception)
+* Dès que la valeur du signal `price` changera, la valeur de `priceWithTaxes` évoluera automatiquement. (Cela restera toujours la valeur actuelle de `price`, multipliée par `1.15`)
+* Pour afficher la valeur de `priceWithTaxes`, on utilise `priceWithTaxes()`, comme pour un signal normal.
+
+:::info
+
+Les **signaux non-modifiables** sont très utiles lorsque l'on souhaite s'assurer qu'une variable conserve une **valeur cohérente** en lien avec une autre variable.
+
+* Impossible de modifier sa valeur par erreur.
+* Sa valeur est recalculée automatiquement lorsque nécessaire.
+
+:::
