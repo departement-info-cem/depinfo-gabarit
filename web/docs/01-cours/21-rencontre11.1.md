@@ -288,7 +288,7 @@ Il est possible de créer un signal non modifiable (« **Computed signal** ») �
             price : WritableSignal<number> = signal(10);
 
             // signal non-modifiable (dérivé de this.price)
-            priceWithTaxes = computed(() => {
+            priceWithTaxes : Signal<number> = computed(() => {
                 return this.price() * 1.15;
             });
 
@@ -309,5 +309,55 @@ Les **signaux non-modifiables** sont très utiles lorsque l'on souhaite s'assure
 
 * Impossible de modifier sa valeur par erreur.
 * Sa valeur est recalculée automatiquement lorsque nécessaire.
+
+:::
+
+### 🍒 Signal pour plusieurs composants
+
+Bien entendu, lorsqu'on souhaite rendre accessibles à plusieurs composants des **données** ou des **fonctions**, il faut utiliser un **service**.
+
+Pour rendre la valeur d'un signal accessible à plusieurs composants, on peut créer un signal dans un service et **injecter ce service** dans tous les composants nécessaires.
+
+```ts showLineNumbers
+export class DataService {
+
+  private usernameSignal : WritableSignal<string|null> = signal(null);
+
+  readonly username : Signal<string|null> = this.usernameSignal.asReadonly();
+
+  ...
+}
+```
+
+Fonctionnement :
+
+* Comme le signal `usernameSignal` possède l'étiquette `private`, seul le service lui-même peut modifier ou lire sa valeur.
+* Tous les composants dans lesquels nous injecterons le `DataService` pourront lire la valeur de `username` (à l'aide de `this.dataService.username()`), qui est un signal non-modifiable. (`.asReadonly()` est l'équivalent de `computed(() => return this.usernameSignal())`)
+
+Et si on souhaite permettre aux composants de modifier `usernameSignal` ?
+
+* Il faudrait simplement ajouter une fonction dans `DataService`, comme ceci :
+
+```ts showLineNumbers
+editUsername(name : string | null){
+    this.usernameSignal.set(name);
+}
+```
+
+Tel qu'abordé plus haut, la valeur du signal non-modifiable `username` s'adaptera automatiquement ensuite.
+
+:::note
+
+Vous vous dites peut-être :
+
+> Wow wow wow, pourquoi ne pas simplement utiliser une variable ordinaire dans le service, qui sera accessible et modifiable dans tous les composants ?
+
+Il est vrai que cela pourrait faire le travail. Les arguments avancés pour l'usage des signaux sont les suivants :
+
+* La mise à jour du HTML est **plus efficace** avec les signaux qu'avec les variables ordinaires. (Angular n'a pas à tout vérifier le JavaScript et le HTML, car le signal notifie Angular dès un changement)
+* Ce design permet **l'encapsulation** du pseudo de l'utilisateur. Il y a moins de chances qu'un composant modifie la valeur par erreur.
+
+Bref, les signaux sont probablement plus intéressants dans des projets plus grands et sophistiqués, où on souhaite prévilégier la performance, la cohérence des données et la cohésion des classes.
+
 
 :::
