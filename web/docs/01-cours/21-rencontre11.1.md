@@ -1,3 +1,6 @@
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Cours 21 - Rôles et signaux
 
 ## 👮‍♀️👨‍🍳 Rôles
@@ -190,8 +193,78 @@ public async Task<IActionResult> PostRole(string roleName){
 }
 ```
 
-### 🙈 Cacher des bidules côté Angular si on n'a pas un rôle
+## 📶 Signaux (Angular)
 
-## 📶 Signaux
+Un `signal` est un type de variable un peu plus sophistiqué présentant des avantages inusités que nous aborderons un peu plus loin.
 
+### ❌ Exemple sans signal
 
+Ci-dessous, on a un simple **compteur** qui peut être incrémenté à l'aide d'un bouton. Tel qu'on le sait, la variable `n` sera mise à jour dans le HTML à chaque fois que nous appelerons la fonction `plusOne()` en cliquant sur le bouton.
+
+<Tabs>
+    <TabItem value="html" label="HTML" default>
+        ```html showLineNumbers
+        <p>{{n}}</p>
+        <button (click)="plusOne()">Incrémenter</button>
+        ```
+    </TabItem>
+    <TabItem value="ts" label="TypeScript" default>
+        ```ts showLineNumbers
+        export class AppComponent{
+
+            n : number = 0;
+
+            plusOne(){
+                this.n++;
+            }
+
+        }
+        ```
+    </TabItem>
+</Tabs>
+
+:::warning
+
+Utiliser la variable `n` telle quelle est tout à fait acceptable, mais il y a un ⛔ bémol : Angular ne sait pas quand la variable `n` change de valeur. L'application doit vérifier le composant en entier pour détecter tous les éventuels changements et mettre à jour la page Web avec la nouvelle valeur de `n`.
+
+À petite échelle, ce n'est pas un problème, mais à grande échelle, avec des pages plus vastes et sophistiquées, c'est de moins en moins performant.
+
+:::
+
+### ✅ Exemple avec signal
+
+Déclarer une variable avec un signal : `maVariable : WritableSignal<T> = signal( ... valeur initiale ... );`  
+Obtenir la valeur d'un signal (c'est une fonction) : `maVariable()`  
+Changer la valeur d'un signal : `maVariable.set( ... nouvelle valeur .. );`  
+
+<Tabs>
+    <TabItem value="html" label="HTML" default>
+        ```html showLineNumbers
+        <p>{{n()}}</p>
+        <button (click)="plusOne()">Incrémenter</button>
+        ```
+    </TabItem>
+    <TabItem value="ts" label="TypeScript" default>
+        ```ts showLineNumbers
+        export class AppComponent{
+
+            // Initialiser n avec un signal possédant la valeur 0
+            n : WritableSignal<number> = signal(0);
+
+            plusOne(){
+                // Remarquez this.n() et non this.n ! n() est une fonction, pas une simple variable !
+                this.n.set(this.n() + 1);
+            }
+
+        }
+        ```
+    </TabItem>
+</Tabs>
+
+:::info
+
+Cette fois, puisqu'on utilise un `signal`, Angular est immédiatement **notifié** lorsque la valeur change et il peut mettre à jour la valeur de `n` affichée dans la page de manière beaucoup plus efficace. Cela dit, du point de vue de l'utilisateur, le fonctionnement de la page est identique.
+
+:::
+
+### ✍🔍 Signaux read / write
