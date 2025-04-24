@@ -8,7 +8,7 @@ Lorsqu’on crée un commentaire, on doit être capable d’y joindre zéro à p
 
 :::danger
 
-⛔ Attention ! On peut créer des commentaires à deux endroits : dans `PostComponent` (quand on veut créer un commentaire ordinaire) et dans `CommentComponent` (qaund on veut créer un sous-commentaire en réponse à un autre commentaire) Vous devrez faire pas mal de travail en double **côté Angular**. (Surtout du copié-collé à quelques détails près)
+⛔ Attention ! On peut créer des commentaires à deux endroits : dans `PostComponent` (quand on veut créer un commentaire ordinaire) et dans `CommentComponent` (quand on veut créer un sous-commentaire en réponse à un autre commentaire) Vous devrez faire pas mal de travail en double **côté Angular**. (Surtout du copié-collé à quelques détails près)
 
 :::
 
