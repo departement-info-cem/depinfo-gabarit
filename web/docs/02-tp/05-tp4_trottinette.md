@@ -11,7 +11,7 @@ Lorsqu'on crée un `post` (`EditPostComponent`), on doit être capable d'y joind
 (Il faudra ajouter l'`<input>` vous-mêmes !)
 
 * Le serveur reçoit déjà un `PostDTO` dans le corps de la requête `POST`. Comme on va potentiellement envoyer plusieurs fichiers, il faudra remplacer cela par un **formData**. (Le `PostDTO` va devenir inutile)
-* N’oubliez pas d’afficher les images dans le composant `PostComponent`. Pour y arriver, il faudra que le client Angular reçoivent la liste des ids des images du `post`.
+* N’oubliez pas d’afficher les images dans le composant `PostComponent`. Pour y arriver, il faudra que le client Angular reçoive la liste des ids des images du `post`.
 * Gardez à l'esprit que le serveur n'envoie pas de `Post.cs` au client Angular, seulement des `PostDisplayDTO.cs` !
 
 :::danger
