@@ -17,7 +17,7 @@ Lorsqu’on crée un commentaire, on doit être capable d’y joindre zéro à p
 <center>![Créer un commentaire](../../static/img/tp4/createComment1.png)</center>
 <center>![Créer un commentaire](../../static/img/tp4/createComment2.png)</center>
 
-* Le serveur reçoit un `CommentDTO` et un `parentCommentId` dans le corps de la requête actuellement pour créer un nouveau commentaire… ce ne sera plus possible car on va maintenant devoir envoyer un **formData**. Il faudra remplacer le `DTO` (qui va devenir inutile) par un **formData**.
+* Le serveur reçoit un `CommentDTO` dans le corps de la requête actuellement pour créer un nouveau commentaire… ce ne sera plus possible car on va maintenant devoir envoyer un **formData**. Il faudra remplacer le `DTO` (qui va devenir inutile) par un **formData**.
 * N’oubliez pas d’afficher les images dans le composant `CommentComponent`. Pour y arriver, il faudra que le client Angular reçoive la liste des ids des images du commentaire.
 * Gardez à l’esprit que le serveur n’envoie pas de `Comment.cs` à Angular, mais bien des `CommentDisplayDTO.cs` !
 
