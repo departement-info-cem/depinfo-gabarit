@@ -208,7 +208,7 @@ public async Task<ActionResult<SimpleImage>> PostPicture()
         // copie miniature. Remarquez qu'on a utilisé un sous-dossier différent ! 📂
         image.Mutate(i => i.Resize(
             new ResizeOptions() { Mode = ResizeMode.Min, Size = new Size() { Height = 200 }}));
-        image.Save(Directory.GetCurrentDirectory() + "/images/smol/" + p.FileName);
+        image.Save(Directory.GetCurrentDirectory() + "/images/smol/" + si.FileName);
 
         _context.SimpleImage.Add(si);
         await _context.SaveChangesAsync();

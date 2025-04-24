@@ -144,8 +144,8 @@ On peut également vérifier le rôle d'un utilisateur **dans le code de l'actio
 User? user = await _userManager.FindByIdAsync(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
 bool isAdmin = await _userManager.IsInRoleAsync(user, "admin");
 
-// On n'a pas le droit d'exécuter l'opération si on est NI propriétaire de l'objet, NI modérateur.
-if (myObject.User != user && !isModerator) return Unauthorized();
+// On n'a pas le droit d'exécuter l'opération si on est NI propriétaire de l'objet, NI administrateur.
+if (myObject.User != user && !isAdmin) return Unauthorized();
 ``` 
 
 ### 🏅 Assigner un rôle
