@@ -120,7 +120,7 @@ Il est crucial de **d'abord merge `dev` dans votre sous-branche**, de résoudre 
 
 S'il n'y a aucun autre merge dans `dev` depuis que vous avez créé votre sous-branche, il n'y aura pas de conflits et vous pourrez directement **merge dans `dev`**.
 
-1. Sélectionner votre branche et merge `dev` devant :
+1. Sélectionner votre branche et merge `dev` dedans :
 
 <center>![Merge de dev dans une sous-branche](../../static/img/cours22/mergeKra1.png)</center>
 
@@ -175,8 +175,54 @@ Il est crucial de **d'abord merge `dev` dans votre sous-branche**, de résoudre 
 
 S'il n'y a aucun autre merge dans `dev` depuis que vous avez créé votre sous-branche, il n'y aura pas de conflits et vous pourrez directement **merge dans `dev`**.
 
-Notes encore en construction, voir la [version Powerpoint](../../static/files/4204W6_git_collaboration.pptx).
+1. Sélectionner votre branche et merge `dev` dedans :
+
+<center>![Avant le merge](../../static/img/cours22/preMerge.png)</center>
+
+<center>
+    ![Sélectionner la bonne branche](../../static/img/cours22/selectBranch.png)
+    ![Merge dev dans Etape-2](../../static/img/cours22/mergeIntoDev.png)
+</center>
+
+<center>![Avertissement de conflits](../../static/img/cours22/conflicts.png)</center>
+
+2. Résoudre les conflits (s'il y en a)
+
+🚪 Notez qu'il faudra faire la gestion de conflits dans `Visual Studio` et dans `VS Code`. L'exemple ci-dessous est avec `VS Code`.
+
+<center>![VS Code avec conflits](../../static/img/cours22/vsCode.png)</center>
+<center>![Bouton vers éditeur de fusion](../../static/img/cours22/fusion.png)</center>
+
+L'objectif est de s'assurer que le **code en bas** correspond au résultat souhaité. Vous pouvez l'éditer manuellement au besoin en vous servant des deux versions en conflit qui sont en haut.
+
+<center>![VS Code avec conflits](../../static/img/cours22/fusion2.png)</center>
+
+:::warning
+
+S'il y a plusieurs fichiers en conflit, réglez-les dans l'ordre suivant :
+
+1. Modèles
+2. Services
+3. Contrôleurs / composants
+
+Inutile de gérer les conflits pour les migrations ! Au pire, supprimez les migrations et recréez-en sur votre prochaine branche.
+
+:::
+
+3. Retourner dans **Fork** pour conclure le merge
+
+<center>![Merge terminé dans Fork](../../static/img/cours22/endMerge.png)</center>
+
+4. ⛔ TESTEZ votre code.
+
+S'il y a des bugs, faites un commit supplémentaire sur votre sous-branche pour les régler AVANT de **merge dans `dev`**.
+
+5. Merge dans `dev`
+
+<center>![Merge dans dev](../../static/img/cours22/mergeIntoDev2.png)</center>
+
+<center>![Merge dans dev terminé](../../static/img/cours22/mergeFinished.png)</center>
 
 ### 🤕 Erreurs fréquentes
 
-Notes encore en construction, voir la [version Powerpoint](../../static/files/4204W6_git_collaboration.pptx).
+Notes encore en construction, voir la [version Powerpoint](../../static/files/4204W6_git_collaboration.pptx). (Section « Oula »)
