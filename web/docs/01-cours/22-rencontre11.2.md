@@ -197,6 +197,8 @@ L'objectif est de s'assurer que le **code en bas** correspond au résultat souha
 
 <center>![VS Code avec conflits](../../static/img/cours22/fusion2.png)</center>
 
+Il va falloir faire un aller-retour entre VS Code et Fork **pour chaque fichier**.
+
 :::warning
 
 S'il y a plusieurs fichiers en conflit, réglez-les dans l'ordre suivant :
@@ -224,5 +226,47 @@ S'il y a des bugs, faites un commit supplémentaire sur votre sous-branche pour 
 <center>![Merge dans dev terminé](../../static/img/cours22/mergeFinished.png)</center>
 
 ### 🤕 Erreurs fréquentes
+
+#### 🌿 J'ai travaillé sur la mauvaise branche
+
+Par exemple, avoir fait un commit sur `dev` plutôt que dans une sous-branche : 
+
+<center>![Commit sur dev](../../static/img/cours22/mauvaiseBranche1.png)</center>
+
+Commencez par **créer une nouvelle branche** à partir de ce commit de trop :
+
+<center>![Nouvelle branche](../../static/img/cours22/mauvaiseBranche2.png)</center>
+
+Sélectionner `dev` :
+
+<center>![Branche dev sélectionnée](../../static/img/cours22/mauvaiseBranche3.png)</center>
+
+Pour ensuite faire un clic-droit sur le **commit précédent** et réinitialiser la branche `dev` à ce commit :
+
+<center>![Branche dev réinitialisée](../../static/img/cours22/mauvaiseBranche4.png)</center>
+
+Pour le moment, cela va « dupliquer » la branche `dev` :
+
+<center>![Branche dev dupliquée](../../static/img/cours22/mauvaiseBranche5.png)</center>
+
+Il suffira de faire un **push** (« force push ») pour que seule la nouvelle branche `dev` soit conservée :
+
+<center>![Force push](../../static/img/cours22/mauvaiseBranche6.png)</center>
+
+<center>![Problème réglé](../../static/img/cours22/mauvaiseBranche7.png)</center>
+
+#### ⏳ Revenir en arrière (annuler un commit)
+
+Disons qu'on souhaite annuler le tout dernier commit qu'on a fait :
+
+<center>![Mauvais commit](../../static/img/cours22/annulerCommit1.png)</center>
+
+Faites un clic-droit sur le commit précédent et **réinitialisez votre branche** à celui-ci :
+
+<center>![Réinitialiser le commit](../../static/img/cours22/annulerCommit2.png)</center>
+
+Après avoir fait un **push** (force push), vous devriez avoir ce résultat :
+
+<center>![Commit réinitialisé](../../static/img/cours22/annulerCommit3.png)</center>
 
 Notes encore en construction, voir la [version Powerpoint](../../static/files/4204W6_git_collaboration.pptx). (Section « Oula »)
