@@ -269,4 +269,32 @@ Après avoir fait un **push** (force push), vous devriez avoir ce résultat :
 
 <center>![Commit réinitialisé](../../static/img/cours22/annulerCommit3.png)</center>
 
-Notes encore en construction, voir la [version Powerpoint](../../static/files/4204W6_git_collaboration.pptx). (Section « Oula »)
+#### 💥 Merge simultané accidentel
+
+Disons que votre partenaire et vous avez fait un **merge** dans `dev` en même temps... Vous aurez des problèmes lors de votre prochain **pull** puisque la branche `dev` existera en deux versions !
+
+Avant les merge :
+
+<center>![Avant le double merge](../../static/img/cours22/doubleMerge1.png)</center>
+
+Merge réalisé par la personne 1 :
+
+<center>![Premier merge](../../static/img/cours22/doubleMerge2.png)</center>
+
+Merge réalisé par la personne 2 :
+
+<center>![Deuxième merge](../../static/img/cours22/doubleMerge3.png)</center>
+
+Lorsque les deux personnes feront un **push**, la première personne qui fera un **pull** aura ce problème : il y a deux versions de `dev` !
+
+<center>![Branche dev dupliquée](../../static/img/cours22/doubleMerge4.png)</center>
+
+La solution sera de **merge** `dev` dans `dev` (oui oui) Alternativement, on peut aussi merge la branche `dev` générée par notre partenaire dans notre sous-branche à nous pour ne pas avoir à **gérer les conflits** directement sur `dev`. 
+
+<center>![Merge dev dans dev](../../static/img/cours22/doubleMerge5.png)</center>
+
+<center>![Merge dev dans dev](../../static/img/cours22/doubleMerge6.png)</center>
+
+Résultat : (N'oubliez pas de **push** `dev` ensuite !)
+
+<center>![Merge dev dans dev](../../static/img/cours22/doubleMerge7.png)</center>
