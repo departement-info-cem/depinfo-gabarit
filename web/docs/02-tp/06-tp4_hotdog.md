@@ -37,7 +37,7 @@ Les utilisateurs doivent pouvoir choisir un avatar personnalisé. Il est affich�
 
 ## Étape E
 
-Cliquer sur une image dans un post (commentaire principal d’un post) doit permettre de l’afficher en pleine taille, dans un autre onglet.
+Cliquer sur une image dans un post ou un commentaire doit permettre de l’afficher en pleine taille, dans un autre onglet.
 
 * Ne vous compliquez pas la vie : Ajoutez une balise `<a>` avec un `href` qui contient la requête vers l’image en **pleine taille**. Cela redirigera vers une autre page qui contient seulement l’image. C’est suffisant. Vous devez ouvrir l’image dans un nouvel onglet.
 * Ceci concerne TOUTES les images qui ne sont pas des avatars. (Dont le **carrousel** fait par l’équipier 🛴 à l’étape D) N’en oubliez pas.
