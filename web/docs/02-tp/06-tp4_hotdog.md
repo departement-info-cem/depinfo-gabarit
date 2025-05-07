@@ -61,6 +61,14 @@ Pour placer les petits X en haut à droite des images facilement :
 
 :::
 
+:::warning
+
+Dans le carrousel, les images « répétées » risquent d'être difficiles à supprimer. (Cliquer sur le petit X ne marchera pas forcément) La correction sera très tolérante : si on réussit à supprimer une image à la fois (quitte à réactualiser la page entre chaque suppression), il n'y aura pas de pénalté.
+
+Alternativement, vous pouvez remplacer `type:carousel` par `type:slider` (Voir dans `post.component.ts`) pour désactiver la répétition d'images et garantir que le bouton X soit toujours fonctionnel.
+
+:::
+
 ## Étape G
 
 Les utilisateurs peuvent signaler (Report) les commentaires / posts des autres utilisateurs.
