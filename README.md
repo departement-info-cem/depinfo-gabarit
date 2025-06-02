@@ -6,6 +6,8 @@ L'objectif est de générer un site web pour un cours le plus simplement possibl
 
 Ce gabarit est simplement le projet de départ du produit [Docusaurus](https://docusaurus.io/) développé par l'équipe de Facebook, avec quelques configurations prédéfinies pour le département d'informatique du CÉGEP Édouard Montpetit. Nous vous encourageons fortement à aller jeter un coup d'oeil aux références ci-bas pour en apprendre davantage sur les possibilités qu'offre Docusaurus.
 
+Voici une vidéo d'explication / démonstration de la plateforme : [vidéo](https://www.youtube.com/watch?v=fjfxCSLUgXY)
+
 ## Pour bien commencer
 
 1. Sur Github, faite un *fork* de ce projet. Le standard de nomenclature au département est `sigle-nom-du-cours` ex : `4N6-Mobile`.
