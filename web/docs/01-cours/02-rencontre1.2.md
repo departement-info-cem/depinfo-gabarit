@@ -147,11 +147,11 @@ Voici un exemple avec des objets personnalisés :
 <Tabs>
     <TabItem value="class" label="Classe personnalisée" default>
     ```ts showLineNumbers
-    export class Npc{
+    export class Youtuber{
 
         constructor(
             public name : string,
-            public dialogue : string,
+            public content : string,
             public age : number | null
         ){}
 
@@ -163,10 +163,10 @@ Voici un exemple avec des objets personnalisés :
     export class AppComponent {
 
         youtubers : Youtuber[] = [
-            new Youtuber("MotherSniperZz", "Call of Duty gaming", 16, true),
-            new Youtuber("Ka$haStudioASMR", "ASMR", 24, true),
-            new Youtuber("SussyBaka69", "NSFW", null, false),
-            new Youtuber("Bl0ck4L1f3", "LEGO Collection", 47, true)
+            new Youtuber("MotherSniperZz", "Call of Duty gaming", 16),
+            new Youtuber("Ka$haStudioASMR", "ASMR", 24),
+            new Youtuber("SussyBaka69", "NSFW", null),
+            new Youtuber("Bl0ck4L1f3", "LEGO Collection", 47)
         ];
 
     }

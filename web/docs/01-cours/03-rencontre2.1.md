@@ -196,7 +196,7 @@ Disons qu'on souhaite extraire l'URL de l'image de taille `medium` pour la gliss
 
 C'est un peu plus pimenté 🌶 puisqu'il y a un tableau impliqué (nommé `image`) et le damné caractère `#` dans le nom de la propriété `#text`.
 
-Voici comment extraire la propriété `#nom` :
+Voici comment extraire la propriété `#text` :
 
 ```ts showLineNumbers
 async getSongs(){
