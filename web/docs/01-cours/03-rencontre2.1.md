@@ -31,7 +31,7 @@ envoyer des requêtes à des **serveurs Web existants** pour obtenir des donnée
 
 :::info
 
-Beaucoup de d'API Web (serveurs Web auxquel on peut envoyer des requêtes) sont payants 💲, mais il en existe de nombreux qui
+Beaucoup d'API Web (serveurs Web auxquel on peut envoyer des requêtes) sont payants 💲, mais il en existe de nombreux qui
 sont gratuits 🗿 ou partiellement gratuits et auxquels nous pourrons envoyer des requêtes HTTP en échange de données à 
 des fins d'apprentissage.
 
@@ -47,7 +47,7 @@ meubler les pages Web de notre application Angular.
 
 <center>![Requête HTTP envoyée à LastFM](../../static/img/cours3/lastFM.png)</center>
 
-Rendez vous à [cette page](https://www.last.fm/api/intro) pour accéder à la documentation qui décrit toutes les **requêtes disponibles**
+Rendez-vous à [cette page](https://www.last.fm/api/intro) pour accéder à la documentation qui décrit toutes les **requêtes disponibles**
 avec **Last FM**.
 
 <center>![Requêtes disponibles avec last fm](../../static/img/cours3/methods.png)</center>
@@ -180,8 +180,8 @@ _placeholder_ pour représenter la **racine** de l'objet JSON, on doit simplemen
 
 :::info
 
-Notez que sans le `<any>` placé dans la fonction `this.http.get<any>(..)`, nous n'aurons pas pu utiliser le chemin
-`x.quelqueChose.quelqueChose...`. Sans le `<any>`, TypeScript ne nous aurons pas laissé accéder aux propriétés de
+Notez que sans le `<any>` placé dans la fonction `this.http.get<any>(..)`, nous n'aurions pas pu utiliser le chemin
+`x.quelqueChose.quelqueChose...`. Sans le `<any>`, TypeScript ne nous aurait pas laissé accéder aux propriétés de
 **l'objet JSON** dans la variable `x`. En utilisant `<any>`, on _dit_ à TypeScript que la variable `x` pourrait être
 n'importe quoi et le compilateur nous donne la permission d'en faire ce que l'on veut. Notez qu'en contrepartie, si
 on essaye d'accéder à des sous-propriétés **qui n'existent pas**, on va générer des erreurs.
@@ -365,7 +365,7 @@ export class AppComponent implements OnInit { // Remarquez le implements OnInit 
 
 #### 🔑 Ranger la clé d'API dans une constante
 
-Plutôt de _harcoder_ la clé d'API directement dans la requête, il est préférable  de la ranger dans une constante.
+Plutôt que de _harcoder_ la clé d'API directement dans la requête, il est préférable  de la ranger dans une constante.
 Ainsi, si on a plusieurs requêtes, il suffira d'y concaténer la constante. De plus, si jamais la clé d'API change ⛔,
 nous n'aurons pas à modifier chaque requête répétitivement.
 
