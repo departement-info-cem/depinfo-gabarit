@@ -4,3 +4,5 @@ slug: /
 ---
 
 # Accueil
+
+<MainDocsGrid />
