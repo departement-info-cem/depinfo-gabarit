@@ -26,7 +26,7 @@ function extractFrontmatter(content) {
  * @returns {string}
  */
 function getStaticMetadataPath() {
-  return path.resolve(__dirname, '../../static/docsMetadata.json');
+  return path.resolve(__dirname, "../../static/docsMetadata.json");
 }
 
 /**
@@ -69,7 +69,10 @@ module.exports = function pluginDocsMetadata(context, options) {
      * Génère le fichier docsMetadata.json dans static/ pour qu'il soit déployé
      */
     async contentLoaded({ content }) {
-      fs.writeFileSync(getStaticMetadataPath(), JSON.stringify(content, null, 2));
+      fs.writeFileSync(
+        getStaticMetadataPath(),
+        JSON.stringify(content, null, 2)
+      );
     },
   };
 };
