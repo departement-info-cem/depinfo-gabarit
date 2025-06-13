@@ -1,17 +1,18 @@
 .gridContainer {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  margin: 2rem 0;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0;
 }
 
 .gridItem {
   background: var(--ifm-background-surface-color, #fff);
   border: 1px solid var(--ifm-color-emphasis-200, #e0e0e0);
   border-radius: 8px;
-  padding: 2rem 1.5rem;
-  transition: border-color 0.2s, background 0.2s;
+  padding: 1rem 0.75rem;
+  transition: border-color 0.2s;
   box-shadow: none;
+  font-size: 0.95em;
 }
 
 .gridItem:hover {
@@ -21,13 +22,14 @@
 
 .gridItem h3 {
   margin-top: 0;
-  margin-bottom: 0.5rem;
-  font-size: 1.3rem;
+  margin-bottom: 0.3rem;
+  font-size: 1.05rem;
 }
 
 .gridItem p {
   margin: 0;
   color: var(--ifm-font-color-base, #444);
+  font-size: 0.95em;
 }
 
 .gridContainerDark .gridItem {
