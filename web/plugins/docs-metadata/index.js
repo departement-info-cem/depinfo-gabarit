@@ -34,9 +34,10 @@ module.exports = function (context, options) {
       const docsDir = path.resolve(__dirname, "../../docs/01-cours");
       return getAllDocsMetadata({ docsDir });
     },
-    async contentLoaded({ content, actions }) {
-      const { createData } = actions;
-      await createData("docsMetadata.json", JSON.stringify(content, null, 2));
+    async contentLoaded({ content }) {
+      // Générer le fichier directement dans static/ pour qu'il soit déployé
+      const staticPath = path.resolve(__dirname, '../../static/docsMetadata.json');
+      fs.writeFileSync(staticPath, JSON.stringify(content, null, 2));
     },
   };
 };
