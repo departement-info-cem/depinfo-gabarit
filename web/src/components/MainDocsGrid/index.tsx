@@ -20,11 +20,12 @@ export default function MainDocsGrid() {
 
   useEffect(() => {
     if (meta.length === 0) return;
-    // Pour chaque id de la sidebar, trouver le doc correspondant (même si doublon)
-    const sidebarSuffixes = sidebarDocs.map((id) => id.split("/").pop());
-    const docsList = sidebarSuffixes.map((suffix) =>
-      meta.find((doc: any) => doc.id.endsWith(suffix))
-    );
+    // Pour chaque entrée de la sidebar, trouver le doc correspondant (même si doublon)
+    const docsList = sidebarDocs.map((entry: any) => {
+      const suffix = entry.id.split("/").pop();
+      const doc = meta.find((d: any) => d.id.endsWith(suffix));
+      return { ...doc, _sidebarLabel: entry.label };
+    });
     setDocs(docsList);
   }, [meta]);
 
@@ -43,15 +44,15 @@ export default function MainDocsGrid() {
           : ` ${styles.gridContainerLight}`)
       }
     >
-      {docs.map((doc) => (
+      {docs.map((doc, i) => (
         <div
-          key={doc.id}
+          key={i}
           className={styles.gridItem}
           onClick={() => handleClick(doc)}
           style={{ cursor: "pointer" }}
         >
-          <h3>{doc.title || doc.id}</h3>
-          <p>{doc.description || ""}</p>
+          <h3>{doc?.title || doc?._sidebarLabel || doc?.id}</h3>
+          <p>{doc?.description || ""}</p>
         </div>
       ))}
     </div>
