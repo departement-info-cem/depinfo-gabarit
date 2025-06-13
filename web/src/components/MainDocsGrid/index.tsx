@@ -2,11 +2,13 @@ import React, { useEffect, useState } from "react";
 import styles from "./MainDocsGrid.module.css";
 import { useHistory } from "@docusaurus/router";
 import useBaseUrl from "@docusaurus/useBaseUrl";
+import { useColorMode } from "@docusaurus/theme-common";
 
 export default function MainDocsGrid() {
   const [docs, setDocs] = useState([]);
   const history = useHistory();
   const baseUrl = useBaseUrl("/");
+  const { colorMode } = useColorMode();
 
   useEffect(() => {
     fetch("docsMetadata.json")
@@ -21,7 +23,14 @@ export default function MainDocsGrid() {
   };
 
   return (
-    <div className={styles.gridContainer}>
+    <div
+      className={
+        styles.gridContainer +
+        (colorMode === "dark"
+          ? ` ${styles.gridContainerDark}`
+          : ` ${styles.gridContainerLight}`)
+      }
+    >
       {docs.map((doc) => (
         <div
           key={doc.id}
