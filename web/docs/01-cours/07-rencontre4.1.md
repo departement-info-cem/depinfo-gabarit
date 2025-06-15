@@ -286,7 +286,7 @@ maVariable : string = "Longueuil";
 
 * ✌ Option 2 : Translation directive en contenu
 
-(S'il y a plusieurs translateParams, séparez les par des virgules en restant dans les accolades `{ ... }`)
+(S'il y a plusieurs translateParams, séparez-les par des virgules en restant dans les accolades `{ ... }`)
 
 ```html
 <p translate [translateParams]="{x : maVariable}">composant2.textWithVar</p>
@@ -356,7 +356,7 @@ Cela dit, les **étiquettes de traduction** devront être intégrées à tous le
 
 ### 🪙 Requête avec authentification (token)
 
-Certaines Web API requière une authentification pour être utilisées. C'est par exemple le cas
+Certaines Web API requièrent une authentification pour être utilisées. C'est par exemple le cas
 de **Spotify**, que nous allons aborder en exemple.
 
 #### Étape 1 - 👤 Créer un compte
@@ -366,7 +366,7 @@ si vous n'en avez pas déjà un.
 
 Une fois que vous avez un compte, rendez-vous sur [https://developer.spotify.com/dashboard](https://developer.spotify.com/dashboard) pour **créer une application Spotify**. (Spotify veut simplement que vous remplissiez un formulaire pour décrire votre application qui utilisera leur Web API)
 
-Une fois l'application créée, nous aurons accès un **Client ID** et un **Client Secret** qui nous
+Une fois l'application créée, nous aurons accès à un **Client ID** et un **Client Secret** qui nous
 serviront plus tard pour envoyer des requêtes.
 
 <center>![Secret Spotify](../../static/img/cours7/secret.png)</center>
@@ -491,7 +491,7 @@ Un token n'est pas valide éternellement. Selon l'API, le token peut expirer apr
 
 ### 📜 Exemples de requêtes à Spotify pour le TP2
 
-Voici deux classes qui pourraient vous êtres utiles dans le contexte du **TP2** (N'oubliez pas de les isoler chacune dans leur propre fichier !) :
+Voici deux classes qui pourraient vous être utiles dans le contexte du **TP2** (N'oubliez pas de les isoler chacune dans leur propre fichier !) :
 
 ```ts showLineNumbers
 export class Artist{
@@ -506,7 +506,7 @@ export class Album{
 Voici trois requêtes permettant d'obtenir des informations sur des **artistes**, **albums** et **chansons**. Vous remarquerez
 que **Spotify** nous permet d'utiliser des **ids** pour trouver les informations d'un artiste ou d'un album en particulier.
 
-N'oubliez pas la **requête de connexion** (disponible plus haut) vous sera également utile.
+N'oubliez pas la **requête de connexion** (disponible plus haut) qui vous sera également utile.
  
 N'hésitez pas à consulter la [documentation de l'API de Spotify](https://developer.spotify.com/documentation/web-api) !
 
