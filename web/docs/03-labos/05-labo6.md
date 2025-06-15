@@ -3,7 +3,7 @@
 Téléchargez le [projet de départ](../../static/files/labo6.zip) et lancez-le. 🧤⚾
 
 Familiarisez-vous avec l'application Web : visitez les trois pages et essayez quelques requêtes. Notez que nous n'ajouterons
-**aucune** fonctionnalité dans cette application Web à part compter le nombre de requête. (mini affichage en bas à gauche) Nous
+**aucune** fonctionnalité dans cette application Web à part compter le nombre de requêtes. (mini affichage en bas à gauche) Nous
 allons principalement améliorer la structure du code à l'aide d'un service.
 
 ## 🤰 Étape 1 - Accoucher d'un service
