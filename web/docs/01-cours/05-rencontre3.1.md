@@ -216,7 +216,7 @@ qui servira à intégrer les composants chargés par le routage.
 4. 🗺 Créer un menu de navigation (au besoin)
 
 Grâce à l'attribut `[routerLink]`, qui est utilisable si on a importé le module `RouterModule` dans le composant désiré, on peut
-permettre à l'utiliser de changer la route actuelle grâce à un clic.
+permettre à l'utilisateur de changer la route actuelle grâce à un clic.
 
 ```html
 <div [routerLink]="['/blue']">Bleu</div>
@@ -247,7 +247,7 @@ ajouté **à la fin de la route actuelle**. (Alors que `/blue` permet de **rempl
 
 #### 📬 Paramètres de route
 
-On souhaite parfois envoyer une informatique au prochain composant lorsqu'on change la route. Avec le routage, notez
+On souhaite parfois envoyer une information au prochain composant lorsqu'on change la route. Avec le routage, notez
 qu'il est uniquement possible d'envoyer une ou plusieurs données de type `string` puisque la donnée sera passée dans
 l'URL.
 
@@ -334,7 +334,7 @@ export class SomeComponent {
 }
 ```
 
-Notez que l'injection de `Router` est nécessaire pour avoir accès à la fonction `navigate()`. Le tableau fournit
+Notez que l'injection de `Router` est nécessaire pour avoir accès à la fonction `navigate()`. Le tableau fourni
 en paramètre à la fonction `navigate()` fonctionne exactement comme celui dans un `[routerLink]`.
 
 #### ☢ Règles ambiguës
