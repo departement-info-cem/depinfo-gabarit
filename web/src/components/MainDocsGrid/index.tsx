@@ -57,9 +57,9 @@ export default function MainDocsGrid() {
 
   const formatDateFr = (dateStr: string) => {
     if (!dateStr) return "";
-    const date = new Date(dateStr);
+    const [year, month, day] = dateStr.split("-").map(Number);
+    const date = new Date(year, month - 1, day);
     return date.toLocaleDateString("fr-FR", {
-      year: "numeric",
       month: "long",
       day: "numeric",
     });
@@ -123,7 +123,9 @@ export default function MainDocsGrid() {
                 }
               >
                 <strong>Calendrier :</strong>
-                <ul style={{ margin: 0, paddingLeft: 16, whiteSpace: "nowrap" }}>
+                <ul
+                  style={{ margin: 0, paddingLeft: 16, whiteSpace: "nowrap" }}
+                >
                   {Object.entries(calendrier).map(([nom, date]) => (
                     <li key={nom} style={{ whiteSpace: "nowrap" }}>
                       {nom} : {formatDateFr(date as string)}
