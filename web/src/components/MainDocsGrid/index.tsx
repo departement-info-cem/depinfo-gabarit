@@ -76,6 +76,14 @@ export default function MainDocsGrid() {
     >
       {docs.map((doc, i) => {
         const calendrier = doc._sidebarProps?.calendrier;
+        // Déterminer la position du tooltip (droite ou gauche)
+        let tooltipSide: "left" | "right" = "right";
+        if (hoveredIndex === i && tooltipPos) {
+          const tooltipWidth = 200; // px, valeur approximative
+          if (tooltipPos.x + tooltipWidth > window.innerWidth) {
+            tooltipSide = "left";
+          }
+        }
         return (
           <div
             key={i}
@@ -119,13 +127,14 @@ export default function MainDocsGrid() {
                   styles.tooltip +
                   (colorMode === "dark"
                     ? " " + styles.tooltipDark
-                    : " " + styles.tooltipLight)
+                    : " " + styles.tooltipLight) +
+                  (tooltipSide === "left"
+                    ? " " + styles.tooltipLeft
+                    : " " + styles.tooltipRight)
                 }
               >
                 <strong>Calendrier :</strong>
-                <ul
-                  style={{ margin: 0, paddingLeft: 16, whiteSpace: "nowrap" }}
-                >
+                <ul style={{ margin: 0, paddingLeft: 16, whiteSpace: "nowrap" }}>
                   {Object.entries(calendrier).map(([nom, date]) => (
                     <li key={nom} style={{ whiteSpace: "nowrap" }}>
                       {nom} : {formatDateFr(date as string)}
