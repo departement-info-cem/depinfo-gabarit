@@ -249,10 +249,10 @@ Attention : Importer le module `TranslateModule` est nécessaire pour tous les c
 
 ⛔ Peu importe l'option utilisée, assurez-vous que chaque étiquette ait la forme `nomDuComposant.nomEtiquetteUnique`.
 
-Pour une valeur d'attribut, on peut utiliser **l'option 1** :
+Pour une valeur d'attribut, on peut utiliser **l'option 1** avec le nom de l'attribut entre crochets [] :
 
 ```html
-<input type="submit" value="{{ 'nomComposant.search' | translate }}">
+<input type="submit" [value]="{{ 'nomComposant.search' | translate }}">
 ```
 
 #### Étape 5 - 📝 Produire les fichiers de traduction
