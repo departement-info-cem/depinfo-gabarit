@@ -70,3 +70,32 @@
   border-color: var(--ifm-color-primary, #25c2a0);
   background: var(--ifm-hover-overlay, rgba(0, 0, 0, 0.03));
 }
+
+.tooltip {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  margin-left: 8px;
+  z-index: 10;
+  background: var(--ifm-background-surface-color, #fff);
+  color: var(--ifm-font-color-base, #222);
+  padding: 0.5em 1em;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  min-width: 160px;
+  font-size: 0.95em;
+  pointer-events: none;
+  border: 1px solid var(--ifm-color-emphasis-200, #e0e0e0);
+}
+
+.tooltipDark {
+  background: #222;
+  color: #fff;
+  border: none;
+}
+
+.tooltipLight {
+  background: #fff;
+  color: #222;
+  border: 1px solid #ddd;
+}

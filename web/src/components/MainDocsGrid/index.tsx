@@ -9,6 +9,10 @@ import ProgressBar from "./ProgressBar";
 export default function MainDocsGrid() {
   const [docs, setDocs] = useState<any[]>([]);
   const [meta, setMeta] = useState<any[]>([]);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [tooltipPos, setTooltipPos] = useState<{ x: number; y: number } | null>(
+    null
+  );
   const history = useHistory();
   const baseUrl = useBaseUrl("/");
   const { colorMode } = useColorMode();
@@ -51,6 +55,16 @@ export default function MainDocsGrid() {
     return "inherit";
   };
 
+  const formatDateFr = (dateStr: string) => {
+    if (!dateStr) return "";
+    const date = new Date(dateStr);
+    return date.toLocaleDateString("fr-FR", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    });
+  };
+
   return (
     <div
       className={
@@ -60,33 +74,67 @@ export default function MainDocsGrid() {
           : ` ${styles.gridContainerLight}`)
       }
     >
-      {docs.map((doc, i) => (
-        <div
-          key={i}
-          className={styles.gridItem}
-          style={{
-            backgroundColor: getBackgroundColor(doc._sidebarClassName),
-            color: doc._sidebarProps?.color || "inherit",
-          }}
-          onClick={() => handleClick(doc)}
-        >
-          <div>
-            <h3>{doc?.title || doc?._sidebarLabel || doc?.id}</h3>
-            <p>{doc?.description || ""}</p>
-          </div>
-          <div>
-            {typeof doc?._sidebarProps?.avancement === "number" && (
-              <>
-                <ProgressBar value={doc._sidebarProps.avancement} />
-                <p className={styles.avancement}>
-                  {doc._sidebarProps.avancementLabel}{" "}
-                  {doc._sidebarProps.avancement * 100}% complété
-                </p>
-              </>
+      {docs.map((doc, i) => {
+        const calendrier = doc._sidebarProps?.calendrier;
+        return (
+          <div
+            key={i}
+            className={styles.gridItem}
+            style={{
+              backgroundColor: getBackgroundColor(doc._sidebarClassName),
+              color: doc._sidebarProps?.color || "inherit",
+              position: "relative",
+            }}
+            onClick={() => handleClick(doc)}
+            onMouseEnter={(e) => {
+              setHoveredIndex(i);
+              const rect = (
+                e.currentTarget as HTMLElement
+              ).getBoundingClientRect();
+              setTooltipPos({ x: rect.right + 8, y: rect.top });
+            }}
+            onMouseLeave={() => {
+              setHoveredIndex(null);
+              setTooltipPos(null);
+            }}
+          >
+            <div>
+              <h3>{doc?.title || doc?._sidebarLabel || doc?.id}</h3>
+              <p>{doc?.description || ""}</p>
+            </div>
+            <div>
+              {typeof doc?._sidebarProps?.avancement === "number" && (
+                <>
+                  <ProgressBar value={doc._sidebarProps.avancement} />
+                  <p className={styles.avancement}>
+                    {doc._sidebarProps.avancementLabel}{" "}
+                    {doc._sidebarProps.avancement * 100}% complété
+                  </p>
+                </>
+              )}
+            </div>
+            {hoveredIndex === i && calendrier && (
+              <div
+                className={
+                  styles.tooltip +
+                  (colorMode === "dark"
+                    ? " " + styles.tooltipDark
+                    : " " + styles.tooltipLight)
+                }
+              >
+                <strong>Calendrier :</strong>
+                <ul style={{ margin: 0, paddingLeft: 16, whiteSpace: "nowrap" }}>
+                  {Object.entries(calendrier).map(([nom, date]) => (
+                    <li key={nom} style={{ whiteSpace: "nowrap" }}>
+                      {nom} : {formatDateFr(date as string)}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             )}
           </div>
-        </div>
-      ))}
+        );
+      })}
     </div>
   );
 }
