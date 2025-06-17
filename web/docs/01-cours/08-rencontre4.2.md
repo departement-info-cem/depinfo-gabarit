@@ -289,7 +289,7 @@ export class AppComponent{
 
 <google-map
   [center]="center"
-  [zoom]="center"
+  [zoom]="zoom"
   width="700"
   height="300">
   <map-marker *ngFor="let m of markers" [position]="m">
