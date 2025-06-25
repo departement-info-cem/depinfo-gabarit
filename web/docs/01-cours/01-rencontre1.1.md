@@ -1,4 +1,3 @@
-
 # R01 - Introduction au cours
 ### 🌐 Connexion au réseau du collège
 
@@ -108,6 +107,4 @@ Console.WriteLine("Bonjour, " + prenom + "!");
 
 ### ⚠️ Attention
 `Console.ReadLine()` retourne toujours un **texte (string)**, même si l’utilisateur tape un chiffre. Pour l’utiliser comme un nombre, il faut le **convertir** (voir rencontre 2).
-
-
 

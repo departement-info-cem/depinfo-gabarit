@@ -1,0 +1,81 @@
+.container {
+  margin: 1rem 0;
+}
+
+.toggleContainer {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  justify-content: center;
+}
+
+.toggleButton {
+  background: var(--ifm-color-emphasis-100, #f5f5f5);
+  border: 2px solid var(--ifm-color-emphasis-200, #e0e0e0);
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--ifm-font-color-base, #222);
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.toggleButton:hover {
+  background: var(--ifm-color-emphasis-200, #e8e8e8);
+  border-color: var(--ifm-color-primary, #25c2a0);
+}
+
+.toggleButton.active {
+  background: var(--ifm-color-primary, #25c2a0);
+  border-color: var(--ifm-color-primary, #25c2a0);
+  color: white;
+}
+
+.viewContainer {
+  min-height: 400px;
+}
+
+/* Mode sombre */
+[data-theme="dark"] .toggleButton {
+  background: var(--ifm-color-emphasis-200, #2e3440);
+  border-color: var(--ifm-color-emphasis-300, #444950);
+  color: var(--ifm-font-color-base, #f3f3f3);
+}
+
+[data-theme="dark"] .toggleButton:hover {
+  background: var(--ifm-color-emphasis-300, #3d434d);
+  border-color: var(--ifm-color-primary, #5cdbf0);
+}
+
+[data-theme="dark"] .toggleButton.active {
+  background: var(--ifm-color-primary, #5cdbf0);
+  border-color: var(--ifm-color-primary, #5cdbf0);
+  color: var(--ifm-color-primary-contrast-background, #003d82);
+}
+
+.tabIcon {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.tabLabel {
+  font-size: 0.9rem;
+  line-height: 1;
+}
+
+@media (max-width: 768px) {
+  .toggleContainer {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .toggleButton {
+    flex: 1;
+    min-width: 140px;
+    justify-content: center;
+  }
+}
