@@ -73,12 +73,21 @@ const config = {
             position: "left",
             label: "Cours",
           },
+        
+
           {
             type: "docSidebar",
             position: "left",
             sidebarId: "tp",
             label: "Travaux Pratiques",
           },
+          {
+            type: "docSidebar",
+            position: "left",
+            sidebarId: "laboratoire",
+            label: "Laboratoires",
+          }
+
         ],
       },
       footer: {
