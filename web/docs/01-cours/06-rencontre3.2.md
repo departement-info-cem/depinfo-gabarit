@@ -1,6 +1,5 @@
 ---
-title: Rencontre 3.2
-description: Cours Rencontre 3.2
+description: Temps en classe pour finaliser le TP
 ---
 
-# Rencontre 3.2
+# 3.2 - TP1 Créateur de personnage

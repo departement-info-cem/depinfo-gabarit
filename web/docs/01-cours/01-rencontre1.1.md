@@ -1,4 +1,8 @@
-# R01 - Introduction au cours
+---
+description: Fonctionnement du cours, Visual Studio et programmer en console
+---
+
+# 1.1 - Introduction au cours 🏁
 ### 🌐 Connexion au réseau du collège
 
 #### 🧭 Plateforme pédagogique

@@ -1,6 +1,5 @@
 ---
-title: Rencontre 3.1
-description: Cours Rencontre 3.1
+description: Exercices supplémentaires
 ---
 
-# Rencontre 3.1
+# 3.1 - Intégration des fonctions

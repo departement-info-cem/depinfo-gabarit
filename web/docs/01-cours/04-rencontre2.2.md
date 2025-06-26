@@ -1,6 +1,5 @@
 ---
-title: Rencontre 2.2
-description: Cours Rencontre 2.2
+description: Fonctions, valeurs de retour et portée des variables
 ---
 
-# Rencontre 2.2
+# 2.2 - Fonctions, valeurs de retour et portée des variables

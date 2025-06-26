@@ -1,6 +1,5 @@
 ---
-title: Rencontre 2.1
-description: Cours Rencontre 2.1
+description: Structures conditionnelles, booléens et pseudo-code
 ---
 
-# Rencontre 2.1
+# 2.1 - Structures conditionnelles (if/else), booléens et pseudo-code

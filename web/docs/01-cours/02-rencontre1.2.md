@@ -1,4 +1,8 @@
-# Rencontre 1.2
+---
+description: Variables, chaînes de caractères, opérations et debugger
+---
+
+# 1.2 - Variables, chaînes, opérations et debugger
 ## 🧠 Théorie Rencontre 2
 ## Types de base en C#
 
