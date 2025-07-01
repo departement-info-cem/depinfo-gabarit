@@ -1,4 +1,4 @@
-# 🧪 Laboratoire 1 – Application console en C#
+# 🧪 Laboratoire 1 – Application console en C sharp
 
 Dans ce premier laboratoire, tu découvriras comment créer une **application console C#**. Ce type d’application s’exécute dans une fenêtre texte (console) et est idéal pour apprendre les bases du langage sans interface graphique.
 

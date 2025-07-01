@@ -151,6 +151,21 @@ int resultat = 2 + 3 * 4;      // Donne 14 (car 3*4 est calculé avant)
 int correct = (2 + 3) * 4;     // Donne 20
 ```
 
+### 🔁 Permutation de valeurs
+Il arrive souvent qu’on veuille échanger la valeur de deux variables. Cette opération s’appelle une **permutation**.
+
+```csharp
+int a = 5;
+int b = 10;
+
+// Permuter les valeurs de a et b
+int temporaire = a;
+a = b;
+b = temporaire;
+
+Console.WriteLine("a = " + a); // a = 10
+Console.WriteLine("b = " + b); // b = 5
+```
 ## 6. Conversion de types
 
 Lorsqu’on lit une entrée utilisateur via `Console.ReadLine()`, on obtient toujours une **chaîne de caractères (`string`)**. Pour utiliser cette entrée comme un nombre, il faut la convertir.

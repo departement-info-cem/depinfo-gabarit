@@ -85,6 +85,7 @@ const config = {
             sidebarId: "laboratoire",
             label: "Laboratoires",
           }
+          
 
         ],
       },
