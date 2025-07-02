@@ -1,6 +1,6 @@
 ---
-title: Rencontre 1.1
-description: Cours Rencontre 1.1
+title: Cours 1 - Atelier
+description: Atelier sur l'environnement technologique en TIM
 ---
 
-# Rencontre 1.1
+# Cours 1 - Atelier

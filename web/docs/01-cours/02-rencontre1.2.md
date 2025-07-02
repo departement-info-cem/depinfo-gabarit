@@ -1,6 +1,6 @@
 ---
-title: Rencontre 1.2
-description: Cours Rencontre 1.2
+title: Cours 2 - Variables et nombres
+description: Variables, affectation et opérateurs arithmétiques
 ---
 
-# Rencontre 1.2
+# Cours 2 - Variables et calculs
