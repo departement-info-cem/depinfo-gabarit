@@ -62,6 +62,11 @@ Il est recommandé de mettre à jour votre site web de cours au moins une fois p
 
 Des composantes supplémentaires ont été développées par Pierre-Olivier Brillant. Vous pouvez vous référer à la section [Wiki](https://github.com/departement-info-cem/depinfo-gabarit/wiki) de ce repository, ou vous adresser directement à lui pour en savoir plus.
 
+## Démonstrations
+
+- [Gabarit](https://info.cegepmontpetit.ca/depinfo-gabarit/)
+- [5N6](https://info.cegepmontpetit.ca/5N6-mobile-2/)
+
 ## Références
 
 - [Guide Markdown de base](https://www.markdownguide.org/getting-started/)
