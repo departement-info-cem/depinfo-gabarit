@@ -1,4 +1,4 @@
-# depinfo-modele
+# depinfo-gabarit
 
 Modèle de base pour un cours du département d'informatique du CÉGEP Édouard-Montpetit. 
 
