@@ -112,14 +112,18 @@ export default function MainDocsGrid() {
             </div>
             <div>
               {typeof doc?._sidebarProps?.avancement === "number" && (
-                <>
-                  <ProgressBar value={doc._sidebarProps.avancement} />
-                  <p className={styles.avancement}>
-                    {doc._sidebarProps.avancementLabel}{" "}
-                    {doc._sidebarProps.avancement * 100}% complété
-                  </p>
-                </>
+
+                <ProgressBar value={doc._sidebarProps.avancement} />
               )}
+              <p className={styles.avancement}>
+                {typeof doc?._sidebarProps?.avancementLabel === "string" && (<>
+                  {doc._sidebarProps.avancementLabel}{" "}</>)}
+                {typeof doc?._sidebarProps?.avancement === "number" && (
+                  <>
+                    {doc._sidebarProps.avancement * 100}% complété</>)}
+              </p>
+
+
             </div>
             {hoveredIndex === i && calendrier && (
               <div
