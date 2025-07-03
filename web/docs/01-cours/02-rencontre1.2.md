@@ -6,7 +6,7 @@ description: Variables, affectation et opérateurs arithmétiques
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Cours 2 - Variables et calculs
+# Cours 2 - Variables et nombres
 
 ## 🤓 JavaScript
 
