@@ -1,4 +1,8 @@
-#
+---
+description: Variables, chaînes de caractères, opérations et debugger
+---
+
+# 1.2 - Variables, chaînes, opérations et debugger
 ## 🧠 Théorie Rencontre 2
 ## Types de base en C#
 
@@ -198,3 +202,4 @@ Voici les documents de référence :
 - [Opérateur](https://info.cegepmontpetit.ca/notions-csharp/documentation/operateur) : un opérateur réalise des opérations arithmétiques, logiques ou d’assignation entre variables et littéraux.
 - [Priorité des opérateurs](https://info.cegepmontpetit.ca/notions-csharp/documentation/operateur/priorite) : la priorité des opérateurs détermine l’ordre dans lequel les opérations sont évaluées, comme dans les expressions mathématiques.
 - [Littéral](https://info.cegepmontpetit.ca/notions-csharp/documentation/litteral) : un littéral représente une valeur fixe directement inscrite dans le code, comme un nombre ou une chaîne de caractères.
+

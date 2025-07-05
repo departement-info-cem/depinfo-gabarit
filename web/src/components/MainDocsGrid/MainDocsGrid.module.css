@@ -1,0 +1,115 @@
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.gridItem {
+  background: var(--ifm-background-surface-color, #fff);
+  border: 1px solid var(--ifm-color-emphasis-200, #e0e0e0);
+  border-radius: 8px;
+  padding: 0.5rem;
+  transition: border-color 0.2s;
+  box-shadow: none;
+  font-size: 0.95em;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.gridItem:hover {
+  border-color: var(--ifm-color-primary, #25c2a0);
+  background: var(--ifm-hover-overlay, rgba(0, 0, 0, 0.03));
+}
+
+.gridItem h3 {
+  margin-top: 0;
+  margin-bottom: 0.3rem;
+  font-size: 1.05rem;
+}
+
+.note {
+  text-align: center;
+}
+
+.avancement {
+  text-align: center;
+  font-size: 0.7rem !important;
+}
+
+.gridItem p {
+  margin: 0;
+  color: var(--ifm-font-color-base, #444);
+  font-size: 0.95em;
+}
+
+.gridContainerDark .gridItem {
+  background: var(--ifm-background-surface-color, #23272f);
+  border-color: var(--ifm-color-emphasis-200, #444950);
+  color: var(--ifm-font-color-base, #f3f3f3);
+}
+
+.gridContainerDark .gridItem p {
+  color: var(--ifm-font-color-base, #bbb);
+}
+
+.gridContainerDark .gridItem:hover {
+  border-color: var(--ifm-color-primary, #25c2a0);
+  background: var(--ifm-hover-overlay, rgba(255, 255, 255, 0.03));
+}
+
+.gridContainerLight .gridItem {
+  background: var(--ifm-background-surface-color, #fff);
+  border-color: var(--ifm-color-emphasis-200, #e0e0e0);
+  color: var(--ifm-font-color-base, #222);
+}
+
+.gridContainerLight .gridItem:hover {
+  border-color: var(--ifm-color-primary, #25c2a0);
+  background: var(--ifm-hover-overlay, rgba(0, 0, 0, 0.03));
+}
+
+.tooltip {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  margin-left: 8px;
+  z-index: 10;
+  background: var(--ifm-background-surface-color, #fff);
+  color: var(--ifm-font-color-base, #222);
+  padding: 0.5em 1em;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  min-width: 160px;
+  font-size: 0.95em;
+  pointer-events: none;
+  border: 1px solid var(--ifm-color-emphasis-200, #e0e0e0);
+}
+
+.tooltipDark {
+  background: #222;
+  color: #fff;
+  border: none;
+}
+
+.tooltipLight {
+  background: #fff;
+  color: #222;
+  border: 1px solid #ddd;
+}
+
+.tooltipRight {
+  left: 100%;
+  right: auto;
+  margin-left: 8px;
+  margin-right: 0;
+}
+
+.tooltipLeft {
+  left: auto;
+  right: 100%;
+  margin-left: 0;
+  margin-right: 8px;
+}

@@ -1,5 +1,8 @@
+---
+description: Fonctionnement du cours, Visual Studio et programmer en console
+---
 
-# R01 - Introduction au cours
+# 1.1 - Introduction au cours 🏁
 ### 🌐 Connexion au réseau du collège
 
 #### 🧭 Plateforme pédagogique
@@ -108,6 +111,4 @@ Console.WriteLine("Bonjour, " + prenom + "!");
 
 ### ⚠️ Attention
 `Console.ReadLine()` retourne toujours un **texte (string)**, même si l’utilisateur tape un chiffre. Pour l’utiliser comme un nombre, il faut le **convertir** (voir rencontre 2).
-
-
 
