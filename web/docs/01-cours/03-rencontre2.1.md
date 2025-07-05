@@ -63,11 +63,11 @@ Si on additionne deux **nombres**, une opération mathématique est faite.
 </td>
 <td>
 <center>![Nombre + chaîne de caractères](../../static/img/cours3/numberPlusString1.png) ![Nombre + chaîne de caractères](../../static/img/cours3/numberPlusString2.png)</center>
-Si on additionne un **nombre** avec une **chaîne de caractères**, les deux valeurs sont tout simplement ** ⛔ concaténées** l’une à la suite de l’autre pour former une nouvelle **chaîne de caractères**.
+Si on additionne un **nombre** avec une **chaîne de caractères**, les deux valeurs sont tout simplement **⛔ concaténées** l’une à la suite de l’autre pour former une nouvelle **chaîne de caractères**.
 </td>
 <td>
 <center>![Chaîne de caractères + chaîne de caractères](../../static/img/cours3/stringPlusString.png)</center>
-Bien entendu, si on additionne deux **chaînes de caractères**, elles sont ** ⛔ concaténées** également.
+Bien entendu, si on additionne deux **chaînes de caractères**, elles sont **⛔ concaténées** également.
 </td>
 </tr>
 </table>
