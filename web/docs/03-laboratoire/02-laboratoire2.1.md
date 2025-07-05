@@ -1,4 +1,4 @@
-# 🧪 Laboratoire 2.1 – Niveau 1
+# 🧪 Labo 2.1 – Variables, affectation, opérations
 
 ---
 

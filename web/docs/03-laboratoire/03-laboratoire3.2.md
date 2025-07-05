@@ -1,5 +1,5 @@
 
-# 🧪 Laboratoire 3.2 – Niveau 2
+# 🧪 Labo 3.2 – Conditions, assignation composées
 
 ---
 

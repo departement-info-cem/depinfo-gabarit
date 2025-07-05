@@ -1,4 +1,4 @@
-# 🧪 Laboratoire 2.2 – Niveau 2
+# 🧪 Laboratoire 2.2 – Conversion, premutation, opérations
 
 ---
 

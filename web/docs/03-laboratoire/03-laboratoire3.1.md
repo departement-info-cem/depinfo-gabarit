@@ -1,6 +1,6 @@
 
 
-# 🧪 Laboratoire 3.1 – Niveau 1
+# 🧪 Labo 3.1 – Conditions
 
 ---
 

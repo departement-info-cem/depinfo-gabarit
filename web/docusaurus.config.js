@@ -85,6 +85,13 @@ const config = {
             sidebarId: "laboratoire",
             label: "Laboratoires",
           }
+          ,
+          {
+            type: "docSidebar",
+            position: "left",
+            sidebarId: "solution",
+            label: "Solutions",
+          }
           
 
         ],

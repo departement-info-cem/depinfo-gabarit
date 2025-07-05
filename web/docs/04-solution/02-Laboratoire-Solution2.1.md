@@ -1,4 +1,4 @@
-# ✅ Solutions – Laboratoire 2 – Variables et Opérations (Niveau 1)
+# ✅ Solutions – Laboratoire 2.1
 
 ---
 

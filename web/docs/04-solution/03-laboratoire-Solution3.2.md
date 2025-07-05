@@ -1,4 +1,4 @@
-# ✅ Solutions – Laboratoire 3.2 – Conditions et booléens (Niveau 2)
+# ✅ Solutions – Laboratoire 3.2
 
 ---
 

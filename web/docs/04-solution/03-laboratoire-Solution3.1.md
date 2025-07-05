@@ -1,8 +1,5 @@
 
----
-
-````markdown
-# ✅ Solutions – Laboratoire 3 – Conditions et booléens
+# ✅ Solutions – Laboratoire 3.1
 
 ---
 
