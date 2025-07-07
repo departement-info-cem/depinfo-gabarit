@@ -1,6 +1,6 @@
 ---
-title: Rencontre 5.1
-description: Cours Rencontre 5.1
+title: Cours 9 - TP1
+description: Temps consacré au TP1
 ---
 
-# Rencontre 5.1
+# Cours 9 - TP1

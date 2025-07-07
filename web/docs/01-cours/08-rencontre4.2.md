@@ -1,6 +1,6 @@
 ---
-title: Rencontre 4.2
-description: Cours Rencontre 4.2
+title: Cours 8 - TP1
+description: Temps consacré au TP1
 ---
 
-# Rencontre 4.2
+# Cours 8 - TP1
