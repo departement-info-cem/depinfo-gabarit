@@ -1,6 +1,6 @@
 ---
-title: Rencontre 7.2
-description: Cours Rencontre 7.2
+title: Cours 14 - Intra sommatif
+description: Examen intra sommatif (compte !)
 ---
 
-# Rencontre 7.2
+# Cours 14 - Intra sommatif

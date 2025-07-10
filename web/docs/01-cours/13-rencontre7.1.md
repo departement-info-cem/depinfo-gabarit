@@ -1,6 +1,6 @@
 ---
-title: Rencontre 7.1
-description: Cours Rencontre 7.1
+title: Cours 14 - Intra formatif
+description: Examen intra formatif (ne compte pas !)
 ---
 
-# Rencontre 7.1
+# Cours 13 - Intra formatif
