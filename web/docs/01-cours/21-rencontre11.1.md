@@ -1,6 +1,6 @@
 ---
-title: Rencontre 11.1
-description: Cours Rencontre 11.1
+title: Cours 21 - TP2
+description: Temps consacré au TP2
 ---
 
-# Rencontre 11.1
+# Cours 21 - TP2

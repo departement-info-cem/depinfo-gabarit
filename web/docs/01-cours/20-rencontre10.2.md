@@ -1,6 +1,6 @@
 ---
-title: Rencontre 10.2
-description: Cours Rencontre 10.2
+title: Cours 20 - TP2
+description: Temps consacré au TP2
 ---
 
-# Rencontre 10.2
+# Cours 20 - TP2
