@@ -1,6 +1,6 @@
 ---
-title: Rencontre 15.1
-description: Cours Rencontre 15.1
+title: Cours 29 - Final formatif
+description: Examen final formatif (ne compte pas !)
 ---
 
-# Rencontre 15.1
+# Cours 29 - final formatif

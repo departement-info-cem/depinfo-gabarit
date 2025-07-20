@@ -1,6 +1,6 @@
 ---
-title: Rencontre 15.2
-description: Cours Rencontre 15.2
+title: Cours 30 - Final sommatif
+description: Examen final sommatif (compte !)
 ---
 
-# Rencontre 15.2
+# Cours 30 - final sommatif

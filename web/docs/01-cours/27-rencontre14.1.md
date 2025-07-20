@@ -1,6 +1,6 @@
 ---
-title: Rencontre 14.1
-description: Cours Rencontre 14.1
+title: Cours 27 - TP3
+description: Temps consacré au TP3
 ---
 
-# Rencontre 14.1
+# Cours 27 - TP3
