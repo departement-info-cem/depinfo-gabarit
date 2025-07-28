@@ -97,7 +97,7 @@ Console.Write("Entrez votre nom : ");
 ```
 
 ### ⌨️ Lecture de l’entrée avec `Console.ReadLine()`
-Lit une chaîne entrée par l'utilisateur (toujours une `string`).
+Lit un texte entré par l'utilisateur (toujours une `string`, c'est un type de **variable** (voir rencontre 2)).
 ```csharp
 string nom = Console.ReadLine();
 ```
@@ -112,3 +112,7 @@ Console.WriteLine("Bonjour, " + prenom + "!");
 ### ⚠️ Attention
 `Console.ReadLine()` retourne toujours un **texte (string)**, même si l’utilisateur tape un chiffre. Pour l’utiliser comme un nombre, il faut le **convertir** (voir rencontre 2).
 
+
+## 💪 Exercice
+
+Vous devez réaliser le [🧪 Labo 1](https://info.cegepmontpetit.ca/1P6/laboratoire/laboratoire1)
