@@ -1,6 +1,8 @@
+---
+description: Structures conditionnelles if/else, booléens
+---
 
-
-# 🤔 Rencontre 3 – Booléens, Conditions et Débogage
+# 🤔 Booléens, Conditions et Débogage
 
 ## 🎯 Objectif
 

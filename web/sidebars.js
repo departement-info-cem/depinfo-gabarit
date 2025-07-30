@@ -6,7 +6,7 @@ const sidebars = {
     {
       type: "doc",
       label: "1.1 - Introduction 🏁",
-      id: "cours/rencontre1.1",
+      id: "cours/introduction",
       customProps: {
         calendrier: {
           "David": "2025-06-09",
@@ -21,9 +21,9 @@ const sidebars = {
     {
       type: "doc",
       label: "1.2 - Variables et opérations ",
-      id: "cours/rencontre1.2",
+      id: "cours/variables",
       customProps: {
-        avancementLabel: "TP1 - Créé",
+        avancementLabel: "TP1 - Créé - ",
         avancement: 0.1,
         calendrier: {
           "David": "2025-06-09",
@@ -38,7 +38,7 @@ const sidebars = {
     {
       type: "doc",
       label: "2.1 - Structures conditionnelles (if/else)",
-      id: "cours/rencontre2.1",
+      id: "cours/ifelse",
       customProps: {
         avancementLabel: "TP1",
         avancement: 0.2,
@@ -55,7 +55,7 @@ const sidebars = {
     {
       type: "doc",
       label: "2.2 - Fonctions",
-      id: "cours/rencontre2.2",
+      id: "cours/fonctions",
       customProps: {
         avancementLabel: "TP1",
         avancement: 0.4,
@@ -72,7 +72,7 @@ const sidebars = {
     {
       type: "doc",
       label: "3.1 - Intégration des fonctions",
-      id: "cours/rencontre3.1",
+      id: "cours/integration-fonctions",
       customProps: {
         avancementLabel: "TP1",
         avancement: 0.6,
@@ -88,8 +88,8 @@ const sidebars = {
     },
     {
       type: "doc",
-      label: "3.2 - TP1 Créateur de personnage",
-      id: "cours/rencontre3.2",
+      label: "3.2 - TP1 - Créateur de personnage",
+      id: "cours/integration-tp1",
       className: "remise-tp1",
       customProps: {
         avancementLabel: "TP1",
@@ -107,26 +107,9 @@ const sidebars = {
     {
       type: "doc",
       label: "4.1 - Tableaux 1D",
-      id: "cours/rencontre4.1",
+      id: "cours/tableaux1d",
       customProps: {
-        avancementLabel: "TP2 - Créé",
-        avancement: 0.0,
-        calendrier: {
-          "David": "2025-06-09",
-          "Éric": "2025-06-09",
-          "Jamil": "2025-06-09",
-          "Jean-Michel": "2025-06-09",
-          "Pierre-Paul": "2025-06-09",
-          "Zénia": "2025-06-09",
-        },
-      },
-    },
-    {
-      type: "doc",
-      label: "R08 - Boucles for, tableaux, recherche",
-      id: "cours/rencontre4.2",
-      customProps: {
-        avancementLabel: "TP2",
+        avancementLabel: "TP2 - Créé - ",
         avancement: 0.1,
         calendrier: {
           "David": "2025-06-09",
@@ -140,70 +123,392 @@ const sidebars = {
     },
     {
       type: "doc",
-      label: "R09 - Intégration des notions",
-      id: "cours/rencontre5.1",
+      label: "4.2 - Boucles for, tableaux et recherche",
+      id: "cours/for",
+      customProps: {
+        avancementLabel: "TP2",
+        avancement: 0.2,
+        calendrier: {
+          "David": "2025-06-09",
+          "Éric": "2025-06-09",
+          "Jamil": "2025-06-09",
+          "Jean-Michel": "2025-06-09",
+          "Pierre-Paul": "2025-06-09",
+          "Zénia": "2025-06-09",
+        },
+      },
     },
-    { type: "doc", label: "R10 - Formative 1", id: "cours/rencontre5.2" },
-    { type: "doc", label: "R11 - Examen 1", id: "cours/rencontre6.1" },
-    { type: "doc", label: "R12 - Tableaux 2D", id: "cours/rencontre6.2" },
     {
       type: "doc",
-      label: "R13 - Parcours de tableaux 2D",
+      label: "5.1 - Intégration des notions",
+      id: "cours/integration-for",
+      customProps: {
+        avancementLabel: "TP2",
+        avancement: 0.4,
+        calendrier: {
+          "David": "2025-06-09",
+          "Éric": "2025-06-09",
+          "Jamil": "2025-06-09",
+          "Jean-Michel": "2025-06-09",
+          "Pierre-Paul": "2025-06-09",
+          "Zénia": "2025-06-09",
+        },
+      },
+    },
+    { 
+      type: "doc", 
+      label: "5.2 - Formative 1", 
+      id: "cours/formatif1",
+      customProps: {
+        avancementLabel: "TP2",
+        avancement: 0.4,
+        calendrier: {
+          "David": "2025-06-09",
+          "Éric": "2025-06-09",
+          "Jamil": "2025-06-09",
+          "Jean-Michel": "2025-06-09",
+          "Pierre-Paul": "2025-06-09",
+          "Zénia": "2025-06-09",
+        },
+      },
+    },
+    { 
+      type: "doc", 
+      label: "6.1 - Examen 1", 
+      id: "cours/examen1",
+      customProps: {
+        avancementLabel: "TP2",
+        avancement: 0.4,
+        calendrier: {
+          "David": "2025-06-09",
+          "Éric": "2025-06-09",
+          "Jamil": "2025-06-09",
+          "Jean-Michel": "2025-06-09",
+          "Pierre-Paul": "2025-06-09",
+          "Zénia": "2025-06-09",
+        },
+      }, 
+    },
+    { 
+      type: "doc", 
+      label: "6.2 - Tableaux 2D", 
+      id: "cours/rencontre6.2",
+      customProps: {
+        avancementLabel: "TP2",
+        avancement: 0.5,
+        calendrier: {
+          "David": "2025-06-09",
+          "Éric": "2025-06-09",
+          "Jamil": "2025-06-09",
+          "Jean-Michel": "2025-06-09",
+          "Pierre-Paul": "2025-06-09",
+          "Zénia": "2025-06-09",
+        },
+      }, 
+    },
+    {
+      type: "doc",
+      label: "7.1 - Parcours de tableaux 2D",
       id: "cours/rencontre7.1",
+      customProps: {
+        avancementLabel: "TP2",
+        avancement: 0.6,
+        calendrier: {
+          "David": "2025-06-09",
+          "Éric": "2025-06-09",
+          "Jamil": "2025-06-09",
+          "Jean-Michel": "2025-06-09",
+          "Pierre-Paul": "2025-06-09",
+          "Zénia": "2025-06-09",
+        },
+      }
     },
     {
       type: "doc",
-      label: "R14 - Switch, while, do while",
+      label: "7.2 - Switch, while, do while",
       id: "cours/rencontre7.2",
+      customProps: {
+        avancementLabel: "TP2",
+        avancement: 0.7,
+        calendrier: {
+          "David": "2025-06-09",
+          "Éric": "2025-06-09",
+          "Jamil": "2025-06-09",
+          "Jean-Michel": "2025-06-09",
+          "Pierre-Paul": "2025-06-09",
+          "Zénia": "2025-06-09",
+        },
+      }
     },
     {
       type: "doc",
-      label: "R15 - Intégration des notions vues",
+      label: "8.1 - Intégration des notions vues",
       id: "cours/rencontre8.1",
+      customProps: {
+        avancementLabel: "TP2",
+        avancement: 0.8,
+        calendrier: {
+          "David": "2025-06-09",
+          "Éric": "2025-06-09",
+          "Jamil": "2025-06-09",
+          "Jean-Michel": "2025-06-09",
+          "Pierre-Paul": "2025-06-09",
+          "Zénia": "2025-06-09",
+        },
+      }
     },
-    { type: "doc", label: "R16 - TP2 Mini RPG", id: "cours/rencontre8.2" },
+    { 
+      type: "doc", 
+      label: "8.2 - TP2 Mini RPG", 
+      id: "cours/rencontre8.2",
+      className: "remise-tp2",
+      customProps: {
+        avancementLabel: "TP2",
+        avancement: 1,
+        calendrier: {
+          "David": "2025-06-09",
+          "Éric": "2025-06-09",
+          "Jamil": "2025-06-09",
+          "Jean-Michel": "2025-06-09",
+          "Pierre-Paul": "2025-06-09",
+          "Zénia": "2025-06-09",
+        },
+      } 
+    },
     {
       type: "doc",
-      label: "R17 - Remise TP2, lecture fichiers",
+      label: "9.1 - Remise TP2, lecture fichiers",
       id: "cours/rencontre9.1",
+      customProps: {
+        avancementLabel: "TP2",
+        avancement: 0.1,
+        calendrier: {
+          "David": "2025-06-09",
+          "Éric": "2025-06-09",
+          "Jamil": "2025-06-09",
+          "Jean-Michel": "2025-06-09",
+          "Pierre-Paul": "2025-06-09",
+          "Zénia": "2025-06-09",
+        },
+      }
     },
     {
       type: "doc",
-      label: "R18 - Écriture dans un fichier",
+      label: "9.2 - Écriture dans un fichier",
       id: "cours/rencontre9.2",
+      customProps: {
+        avancementLabel: "TP2",
+        avancement: 0.1,
+        calendrier: {
+          "David": "2025-06-09",
+          "Éric": "2025-06-09",
+          "Jamil": "2025-06-09",
+          "Jean-Michel": "2025-06-09",
+          "Pierre-Paul": "2025-06-09",
+          "Zénia": "2025-06-09",
+        },
+      }
     },
     {
       type: "doc",
-      label: "R19 - Fichiers CSV et séparateurs",
+      label: "10.1 - Fichiers CSV et séparateurs",
       id: "cours/rencontre10.1",
+      customProps: {
+        avancementLabel: "TP2",
+        avancement: 0.1,
+        calendrier: {
+          "David": "2025-06-09",
+          "Éric": "2025-06-09",
+          "Jamil": "2025-06-09",
+          "Jean-Michel": "2025-06-09",
+          "Pierre-Paul": "2025-06-09",
+          "Zénia": "2025-06-09",
+        },
+      }
     },
-    { type: "doc", label: "R20 - Formative 2", id: "cours/rencontre10.2" },
-    { type: "doc", label: "R21 - Sommatif 2", id: "cours/rencontre11.1" },
-    { type: "doc", label: "R22 - TP3 RPG avancé", id: "cours/rencontre11.2" },
-    { type: "doc", label: "R23 - TP3 suite", id: "cours/rencontre12.1" },
+    { 
+      type: "doc", 
+      label: "10.2 - Formative 2", 
+      id: "cours/rencontre10.2",
+      customProps: {
+        avancementLabel: "TP2",
+        avancement: 0.1,
+        calendrier: {
+          "David": "2025-06-09",
+          "Éric": "2025-06-09",
+          "Jamil": "2025-06-09",
+          "Jean-Michel": "2025-06-09",
+          "Pierre-Paul": "2025-06-09",
+          "Zénia": "2025-06-09",
+        },
+      } 
+    },
+    { 
+      type: "doc", 
+      label: "11.1 - Sommatif 2", 
+      id: "cours/rencontre11.1",
+      customProps: {
+        avancementLabel: "TP2",
+        avancement: 0.1,
+        calendrier: {
+          "David": "2025-06-09",
+          "Éric": "2025-06-09",
+          "Jamil": "2025-06-09",
+          "Jean-Michel": "2025-06-09",
+          "Pierre-Paul": "2025-06-09",
+          "Zénia": "2025-06-09",
+        },
+      } 
+    },
+    { 
+      type: "doc", 
+      label: "11.2 - TP3 RPG avancé", 
+      id: "cours/rencontre11.2",
+      customProps: {
+        avancementLabel: "TP2",
+        avancement: 0.1,
+        calendrier: {
+          "David": "2025-06-09",
+          "Éric": "2025-06-09",
+          "Jamil": "2025-06-09",
+          "Jean-Michel": "2025-06-09",
+          "Pierre-Paul": "2025-06-09",
+          "Zénia": "2025-06-09",
+        },
+      } },
+    { 
+      type: "doc", 
+      label: "12.1 - TP3 suite", 
+      id: "cours/rencontre12.1",
+      customProps: {
+        avancementLabel: "TP2",
+        avancement: 0.1,
+        calendrier: {
+          "David": "2025-06-09",
+          "Éric": "2025-06-09",
+          "Jamil": "2025-06-09",
+          "Jean-Michel": "2025-06-09",
+          "Pierre-Paul": "2025-06-09",
+          "Zénia": "2025-06-09",
+        },
+      } 
+    },
     {
       type: "doc",
       label: "R24 - Remise TP3, interface graphique",
       id: "cours/rencontre12.2",
+      customProps: {
+        avancementLabel: "TP2",
+        avancement: 0.1,
+        calendrier: {
+          "David": "2025-06-09",
+          "Éric": "2025-06-09",
+          "Jamil": "2025-06-09",
+          "Jean-Michel": "2025-06-09",
+          "Pierre-Paul": "2025-06-09",
+          "Zénia": "2025-06-09",
+        },
+      }
     },
     {
       type: "doc",
-      label: "R25 - Introduction à la POO",
+      label: "13.1 - Introduction à la POO",
       id: "cours/rencontre13.1",
+      customProps: {
+        avancementLabel: "TP2",
+        avancement: 0.1,
+        calendrier: {
+          "David": "2025-06-09",
+          "Éric": "2025-06-09",
+          "Jamil": "2025-06-09",
+          "Jean-Michel": "2025-06-09",
+          "Pierre-Paul": "2025-06-09",
+          "Zénia": "2025-06-09",
+        },
+      }
     },
     {
       type: "doc",
-      label: "R26 - Intégration des objets",
+      label: "13.2 - Intégration des objets",
       id: "cours/rencontre13.2",
+      customProps: {
+        avancementLabel: "TP2",
+        avancement: 0.1,
+        calendrier: {
+          "David": "2025-06-09",
+          "Éric": "2025-06-09",
+          "Jamil": "2025-06-09",
+          "Jean-Michel": "2025-06-09",
+          "Pierre-Paul": "2025-06-09",
+          "Zénia": "2025-06-09",
+        },
+      }
     },
-    { type: "doc", label: "R27 - TP4", id: "cours/rencontre14.1" },
-    { type: "doc", label: "R28 - TP4 suite", id: "cours/rencontre14.2" },
+    { type: "doc", label: "14.1 - TP4", id: "cours/rencontre14.1",
+      customProps: {
+        avancementLabel: "TP2",
+        avancement: 0.1,
+        calendrier: {
+          "David": "2025-06-09",
+          "Éric": "2025-06-09",
+          "Jamil": "2025-06-09",
+          "Jean-Michel": "2025-06-09",
+          "Pierre-Paul": "2025-06-09",
+          "Zénia": "2025-06-09",
+        },
+      }
+    },
+    { 
+      type: "doc", 
+      label: "14.2 - TP4 suite", 
+      id: "cours/rencontre14.2",
+      customProps: {
+        avancementLabel: "TP2",
+        avancement: 0.1,
+        calendrier: {
+          "David": "2025-06-09",
+          "Éric": "2025-06-09",
+          "Jamil": "2025-06-09",
+          "Jean-Michel": "2025-06-09",
+          "Pierre-Paul": "2025-06-09",
+          "Zénia": "2025-06-09",
+        },
+      } 
+    },
     {
       type: "doc",
-      label: "R29 - Remise TP4, Formative 3",
+      label: "15.1 - Remise TP4, Formative 3",
       id: "cours/rencontre15.1",
+      customProps: {
+        avancementLabel: "TP2",
+        avancement: 0.1,
+        calendrier: {
+          "David": "2025-06-09",
+          "Éric": "2025-06-09",
+          "Jamil": "2025-06-09",
+          "Jean-Michel": "2025-06-09",
+          "Pierre-Paul": "2025-06-09",
+          "Zénia": "2025-06-09",
+        },
+      }
     },
-    { type: "doc", label: "R30 - Sommatif 3", id: "cours/rencontre15.2" },
+    { 
+      type: "doc", 
+      label: "15.2 - Sommatif 3", 
+      id: "cours/rencontre15.2",
+      customProps: {
+        avancementLabel: "TP2",
+        avancement: 0.1,
+        calendrier: {
+          "David": "2025-06-09",
+          "Éric": "2025-06-09",
+          "Jamil": "2025-06-09",
+          "Jean-Michel": "2025-06-09",
+          "Pierre-Paul": "2025-06-09",
+          "Zénia": "2025-06-09",
+        },
+      } 
+    },
   ],
   tp: [
     { type: "autogenerated", dirName: "02-tp" }

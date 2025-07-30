@@ -1,9 +1,12 @@
+---
+description: Fonctions, valeurs de retour et portée des variables
+---
 
-# 🧩Rencontre 4 – Méthodes et portée des variables
-## 1️⃣ Introduction : Méthodes déjà vues
+# 🧩 Fonctions et portée des variables
+## 1️⃣ Introduction : Fonctions déjà vues
 
 > 💡 **Définition intuitive**  
-> Une **méthode**, c’est une **action** que fait un **objet** ou le **programme**.  
+> Une fonction ou **méthode**, c’est une **action** que fait un **objet** ou le **programme**.  
 > Elle peut recevoir des **informations** (paramètres) et parfois **renvoyer un résultat**.
 
 ---
