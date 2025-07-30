@@ -157,11 +157,9 @@ const sidebars = {
     },
     { 
       type: "doc", 
-      label: "5.2 - Formative 1", 
+      label: "5.2 - Formatif 1", 
       id: "cours/formatif1",
       customProps: {
-        avancementLabel: "TP2",
-        avancement: 0.4,
         calendrier: {
           "David": "2025-06-09",
           "Éric": "2025-06-09",
@@ -176,9 +174,8 @@ const sidebars = {
       type: "doc", 
       label: "6.1 - Examen 1", 
       id: "cours/examen1",
+      className: "examen",
       customProps: {
-        avancementLabel: "TP2",
-        avancement: 0.4,
         calendrier: {
           "David": "2025-06-09",
           "Éric": "2025-06-09",
@@ -192,7 +189,7 @@ const sidebars = {
     { 
       type: "doc", 
       label: "6.2 - Tableaux 2D", 
-      id: "cours/rencontre6.2",
+      id: "cours/tableaux2d",
       customProps: {
         avancementLabel: "TP2",
         avancement: 0.5,
@@ -209,7 +206,7 @@ const sidebars = {
     {
       type: "doc",
       label: "7.1 - Parcours de tableaux 2D",
-      id: "cours/rencontre7.1",
+      id: "cours/parcours2d",
       customProps: {
         avancementLabel: "TP2",
         avancement: 0.6,
@@ -226,7 +223,7 @@ const sidebars = {
     {
       type: "doc",
       label: "7.2 - Switch, while, do while",
-      id: "cours/rencontre7.2",
+      id: "cours/switch-while",
       customProps: {
         avancementLabel: "TP2",
         avancement: 0.7,
@@ -243,7 +240,7 @@ const sidebars = {
     {
       type: "doc",
       label: "8.1 - Intégration des notions vues",
-      id: "cours/rencontre8.1",
+      id: "cours/integration-2d",
       customProps: {
         avancementLabel: "TP2",
         avancement: 0.8,
@@ -259,8 +256,8 @@ const sidebars = {
     },
     { 
       type: "doc", 
-      label: "8.2 - TP2 Mini RPG", 
-      id: "cours/rencontre8.2",
+      label: "8.2 - TP2 - Mini RPG", 
+      id: "cours/integration-tp2",
       className: "remise-tp2",
       customProps: {
         avancementLabel: "TP2",
@@ -277,10 +274,10 @@ const sidebars = {
     },
     {
       type: "doc",
-      label: "9.1 - Remise TP2, lecture fichiers",
-      id: "cours/rencontre9.1",
+      label: "9.1 - Lecture de fichiers texte",
+      id: "cours/lecture-texte",
       customProps: {
-        avancementLabel: "TP2",
+        avancementLabel: "TP3 - Créé -",
         avancement: 0.1,
         calendrier: {
           "David": "2025-06-09",
@@ -295,10 +292,10 @@ const sidebars = {
     {
       type: "doc",
       label: "9.2 - Écriture dans un fichier",
-      id: "cours/rencontre9.2",
+      id: "cours/ecriture-texte",
       customProps: {
-        avancementLabel: "TP2",
-        avancement: 0.1,
+        avancementLabel: "TP3",
+        avancement: 0.2,
         calendrier: {
           "David": "2025-06-09",
           "Éric": "2025-06-09",
@@ -312,10 +309,10 @@ const sidebars = {
     {
       type: "doc",
       label: "10.1 - Fichiers CSV et séparateurs",
-      id: "cours/rencontre10.1",
+      id: "cours/csv",
       customProps: {
-        avancementLabel: "TP2",
-        avancement: 0.1,
+        avancementLabel: "TP3",
+        avancement: 0.3,
         calendrier: {
           "David": "2025-06-09",
           "Éric": "2025-06-09",
@@ -328,11 +325,9 @@ const sidebars = {
     },
     { 
       type: "doc", 
-      label: "10.2 - Formative 2", 
-      id: "cours/rencontre10.2",
+      label: "10.2 - Formatif 2", 
+      id: "cours/formatif2",
       customProps: {
-        avancementLabel: "TP2",
-        avancement: 0.1,
         calendrier: {
           "David": "2025-06-09",
           "Éric": "2025-06-09",
@@ -345,11 +340,10 @@ const sidebars = {
     },
     { 
       type: "doc", 
-      label: "11.1 - Sommatif 2", 
-      id: "cours/rencontre11.1",
+      label: "11.1 - Examen 2", 
+      id: "cours/examen2",
+      className: "examen",
       customProps: {
-        avancementLabel: "TP2",
-        avancement: 0.1,
         calendrier: {
           "David": "2025-06-09",
           "Éric": "2025-06-09",
@@ -362,8 +356,8 @@ const sidebars = {
     },
     { 
       type: "doc", 
-      label: "11.2 - TP3 RPG avancé", 
-      id: "cours/rencontre11.2",
+      label: "11.2 - TP3 - RPG avancé", 
+      id: "cours/integration-tp3-1",
       customProps: {
         avancementLabel: "TP2",
         avancement: 0.1,
@@ -378,11 +372,12 @@ const sidebars = {
       } },
     { 
       type: "doc", 
-      label: "12.1 - TP3 suite", 
-      id: "cours/rencontre12.1",
+      label: "12.1 - TP3 - suite", 
+      id: "cours/integration-tp3-2",
+      className: "remise-tp3",
       customProps: {
-        avancementLabel: "TP2",
-        avancement: 0.1,
+        avancementLabel: "TP3",
+        avancement: 1,
         calendrier: {
           "David": "2025-06-09",
           "Éric": "2025-06-09",
@@ -395,11 +390,11 @@ const sidebars = {
     },
     {
       type: "doc",
-      label: "R24 - Remise TP3, interface graphique",
-      id: "cours/rencontre12.2",
+      label: "12.2 - Interface graphique",
+      id: "cours/winform",
       customProps: {
-        avancementLabel: "TP2",
-        avancement: 0.1,
+        avancementLabel: "TP4 - Créé -",
+        avancement: 0.15,
         calendrier: {
           "David": "2025-06-09",
           "Éric": "2025-06-09",
@@ -413,10 +408,10 @@ const sidebars = {
     {
       type: "doc",
       label: "13.1 - Introduction à la POO",
-      id: "cours/rencontre13.1",
+      id: "cours/poo",
       customProps: {
-        avancementLabel: "TP2",
-        avancement: 0.1,
+        avancementLabel: "TP4",
+        avancement: 0.3,
         calendrier: {
           "David": "2025-06-09",
           "Éric": "2025-06-09",
@@ -430,10 +425,10 @@ const sidebars = {
     {
       type: "doc",
       label: "13.2 - Intégration des objets",
-      id: "cours/rencontre13.2",
+      id: "cours/integration-poo",
       customProps: {
-        avancementLabel: "TP2",
-        avancement: 0.1,
+        avancementLabel: "TP4",
+        avancement: 0.5,
         calendrier: {
           "David": "2025-06-09",
           "Éric": "2025-06-09",
@@ -444,10 +439,13 @@ const sidebars = {
         },
       }
     },
-    { type: "doc", label: "14.1 - TP4", id: "cours/rencontre14.1",
+    { 
+      type: "doc", 
+      label: "14.1 - TP4", 
+      id: "cours/integration-tp4-1",
       customProps: {
-        avancementLabel: "TP2",
-        avancement: 0.1,
+        avancementLabel: "TP4",
+        avancement: 0.75,
         calendrier: {
           "David": "2025-06-09",
           "Éric": "2025-06-09",
@@ -461,10 +459,11 @@ const sidebars = {
     { 
       type: "doc", 
       label: "14.2 - TP4 suite", 
-      id: "cours/rencontre14.2",
+      id: "cours/integration-tp4-2",
+      className: "remise-tp4",
       customProps: {
-        avancementLabel: "TP2",
-        avancement: 0.1,
+        avancementLabel: "TP4",
+        avancement: 1,
         calendrier: {
           "David": "2025-06-09",
           "Éric": "2025-06-09",
@@ -477,11 +476,9 @@ const sidebars = {
     },
     {
       type: "doc",
-      label: "15.1 - Remise TP4, Formative 3",
-      id: "cours/rencontre15.1",
+      label: "15.1 - Formatif 3",
+      id: "cours/formatif3",
       customProps: {
-        avancementLabel: "TP2",
-        avancement: 0.1,
         calendrier: {
           "David": "2025-06-09",
           "Éric": "2025-06-09",
@@ -494,11 +491,10 @@ const sidebars = {
     },
     { 
       type: "doc", 
-      label: "15.2 - Sommatif 3", 
-      id: "cours/rencontre15.2",
+      label: "15.2 - Examen 3", 
+      id: "cours/examen3",
+      className: "examen",
       customProps: {
-        avancementLabel: "TP2",
-        avancement: 0.1,
         calendrier: {
           "David": "2025-06-09",
           "Éric": "2025-06-09",
