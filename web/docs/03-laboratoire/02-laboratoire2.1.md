@@ -1,179 +1,185 @@
+
 # 🧪 Labo 2.1 – Variables, affectation, opérations
 
 ---
 
-### 🟢 Exercice 1 – Afficher un message
-
+### 🟢 Exercice 1 – Afficher un message  
 🎯 **Objectif** : Apprendre à afficher un message simple dans la console avec `Console.WriteLine`.
 
-🧠 Le langage C# permet d'afficher du texte dans la console avec la commande `Console.WriteLine()`.
+🧠 C# permet d'afficher du texte avec la commande `Console.WriteLine()`.
 
-🛠️ Instructions :
-- Ouvre Visual Studio
-- Crée un nouveau projet console
+🛠️ **Instructions** :
+- Ouvre Visual Studio.
+- Crée un nouveau projet console.
 - Affiche les deux lignes suivantes :
-
-```
+```csharp
 Bonjour
 Bienvenue au cours de programmation!
 ```
 
-✅ Sortie attendue :
-```
+✅ **Sortie attendue** :
+```plaintext
 Bonjour
 Bienvenue au cours de programmation!
 ```
 
 ---
 
-### 🟢 Exercice 2 – Variable `int`
+### 🟢 Exercice 2 – Variable `int`  
+🎯 **Objectif** : Comprendre ce qu'est une variable entière.
 
-🎯 **Objectif** : Comprendre ce qu’est une variable de type entier (`int`).
+🧠 `int` permet de stocker un nombre entier.
 
-🧠 Une variable de type `int` sert à stocker un nombre entier (sans décimales).
+🛠️ **Instructions** :
+- Déclare une variable `int` nommée `anneeNaissance`.
+- Donne-lui la valeur `2006`.
+- Affiche-la avec un message.
 
-🛠️ Instructions :
-- Déclare une variable `int` appelée `anneeNaissance`
-- Assigne-lui la valeur 2006
-- Affiche-la dans la console
-
-✅ Sortie attendue :
-```
+✅ **Sortie attendue** :
+```plaintext
 Année de naissance : 2006
 ```
 
 ---
 
-### 🟢 Exercice 3 – Variable `char`
+### 🟢 Exercice 3 – Variable `char`  
+🎯 **Objectif** : Manipuler un caractère.
 
-🎯 **Objectif** : Manipuler une variable de type `char`.
+🧠 `char` stocke un caractère entre apostrophes (`'A'`).
 
-🧠 Le type `char` sert à stocker un seul caractère entre apostrophes, comme `'A'`.
+🛠️ **Instructions** :
+- Déclare une variable `char` appelée `initiale`.
+- Donne-lui la valeur `'L'`.
+- Affiche-la avec un message clair.
 
-🛠️ Instructions :
-- Déclare une variable `char` appelée `initiale`
-- Donne-lui la valeur `'L'`
-- Affiche-la avec un message clair
-
-✅ Sortie attendue :
-```
+✅ **Sortie attendue** :
+```plaintext
 Initiale : L
 ```
 
 ---
 
-### 🟢 Exercice 4 – Variable `double`
+### 🟢 Exercice 4 – Variable `double`  
+🎯 **Objectif** : Stocker des nombres décimaux.
 
-🎯 **Objectif** : Comprendre comment stocker des nombres décimaux avec `double`.
+🧠 `double` permet de représenter des valeurs comme `3.14`.
 
-🧠 `double` permet de représenter des nombres avec virgule (comme 3.14).
+🛠️ **Instructions** :
+- Déclare une variable `double` nommée `note`.
+- Donne-lui la valeur `87.5`.
+- Affiche-la.
 
-🛠️ Instructions :
-- Déclare une variable `double` appelée `note`
-- Donne-lui la valeur `87.5`
-- Affiche-la dans un message
-
-✅ Sortie attendue :
-```
+✅ **Sortie attendue** :
+```plaintext
 Note : 87.5
 ```
 
 ---
 
-### 🟢 Exercice 5 – Variable `bool`
+### 🟢 Exercice 5 – Variable `bool`  
+🎯 **Objectif** : Utiliser des booléens (`true` ou `false`).
 
-🎯 **Objectif** : Introduire les variables booléennes (`true` ou `false`).
+🧠 `bool` représente un état vrai ou faux.
 
-🧠 Le type `bool` sert à représenter un état : vrai ou faux.
+🛠️ **Instructions** :
+- Déclare une variable `bool` nommée `aReussi`.
+- Donne-lui la valeur `true`.
+- Affiche-la.
 
-🛠️ Instructions :
-- Déclare une variable `bool` appelée `aReussi`
-- Donne-lui la valeur `true`
-- Affiche un message comme "Réussite : true"
-
-✅ Sortie attendue :
-```
+✅ **Sortie attendue** :
+```plaintext
 Réussite : true
 ```
 
 ---
 
-### 🟢 Exercice 6 – Variable `string`
+### 🟢 Exercice 6 – Variable `string`  
+🎯 **Objectif** : Travailler avec du texte.
 
-🎯 **Objectif** : Travailler avec des chaînes de caractères.
+🧠 `string` stocke une chaîne de caractères.
 
-🧠 Le type `string` sert à stocker du texte (entre guillemets).
+🛠️ **Instructions** :
+- Demande le nom de l’utilisateur avec `Console.ReadLine()`.
+- Affiche "Bonjour" suivi du nom.
 
-🛠️ Instructions :
-- Demande le nom de l’utilisateur avec `Console.ReadLine()`
-- Affiche "Bonjour" suivi du nom
-
-✅ Entrée/sortie attendue :
-```
+✅ **Entrée/Sortie attendue** :
+```plaintext
 Entrez votre nom : Louis
 Bonjour Louis
 ```
 
 ---
 
-### 🟢 Exercice 7 – Affectation après déclaration
+### 🟢 Exercice 7 – Affectation après déclaration  
+🎯 **Objectif** : Déclarer une variable sans lui affecter immédiatement une valeur.
 
-🎯 **Objectif** : Déclarer une variable sans lui donner immédiatement une valeur.
+🛠️ **Instructions** :
+- Déclare une variable `int` nommée `score`.
+- Affecte-lui ensuite la valeur `100`.
+- Affiche-la.
 
-🛠️ Instructions :
-- Déclare une variable `int` nommée `score`
-- Affecte-lui ensuite la valeur 100
-- Affiche son contenu
-
-✅ Sortie attendue :
-```
+✅ **Sortie attendue** :
+```plaintext
 Score : 100
 ```
 
 ---
 
-### 🟢 Exercice 8 – Concaténation de chaînes
+### 🟢 Exercice 8 – Concaténation de chaînes  
+🎯 **Objectif** : Utiliser l’opérateur `+` pour concaténer du texte.
 
-🎯 **Objectif** : Apprendre à concaténer (`+`) des chaînes de caractères.
+🛠️ **Instructions** :
+- Demande le prénom de l'utilisateur.
+- Affiche "Bonjour [prénom]!"
 
-🛠️ Instructions :
-- Demande le prénom d’une personne
-- Affiche un message personnalisé avec ce prénom
-
-✅ Entrée/sortie attendue :
-```
+✅ **Entrée/Sortie attendue** :
+```plaintext
 Quel est ton prénom ? Alice
 Bonjour Alice!
 ```
 
 ---
 
-### 🟢 Exercice 9 – Concaténation avec `int`
+### 🟢 Exercice 9 – Conversion `string` en `int`  
+🎯 **Objectif** : Lire une saisie et la convertir en entier avec `int.Parse()`.
 
-🎯 **Objectif** : Combiner texte et nombre dans un seul affichage.
+🛠️ **Instructions** :
+- Demande l’âge.
+- Convertis-le avec `int.Parse()`.
+- Affiche l’âge.
 
-🛠️ Instructions :
-- Demande l’âge d’un utilisateur (lecture avec `ReadLine` et conversion)
-- Affiche : "Tu as 18 ans" (en remplaçant 18 par ce que l’utilisateur a entré)
-
-✅ Entrée/sortie attendue :
-```
-Quel âge as-tu ? 18
-Tu as 18 ans
+✅ **Entrée/Sortie attendue** :
+```plaintext
+Quel âge as-tu ? 17
+Tu as 17 ans
 ```
 
 ---
 
-### 🟢 Exercice 10 – Addition
+### 🟢 Exercice 10 – Concaténation avec `int`  
+🎯 **Objectif** : Combiner texte et valeur numérique.
 
-🎯 **Objectif** : Appliquer une addition avec deux nombres entiers.
+🛠️ **Instructions** :
+- Demande l’âge (avec conversion).
+- Affiche : "Tu as [âge] ans".
 
-🛠️ Instructions :
-- Demande deux nombres à l’utilisateur
-- Additionne-les et affiche le résultat
-
-✅ Entrée/sortie attendue :
+✅ **Entrée/Sortie attendue** :
+```plaintext
+Quel âge as-tu ? 18
+Tu as 18 ans
 ```
+
+
+### 🟢 Exercice 11 – Addition  
+🎯 **Objectif** : Additionner deux entiers.
+
+🛠️ **Instructions** :
+- Demande deux nombres.
+- Additionne-les.
+- Affiche la somme.
+
+✅ **Entrée/Sortie attendue** :
+```plaintext
 Entrez un nombre : 20
 Entrez un autre nombre : 12
 Somme : 32
@@ -181,17 +187,16 @@ Somme : 32
 
 ---
 
-### 🟢 Exercice 11 – Soustraction
+### 🟢 Exercice 12 – Soustraction  
+🎯 **Objectif** : Soustraire deux nombres.
 
-🎯 **Objectif** : Appliquer une soustraction simple.
+🛠️ **Instructions** :
+- Demande deux nombres.
+- Soustrais le second du premier.
+- Affiche le résultat.
 
-🛠️ Instructions :
-- Demande deux nombres à l’utilisateur
-- Soustrais le deuxième du premier
-- Affiche le résultat
-
-✅ Entrée/sortie attendue :
-```
+✅ **Entrée/Sortie attendue** :
+```plaintext
 Entrez un nombre : 50
 Entrez un autre nombre : 8
 Résultat : 42
@@ -199,16 +204,15 @@ Résultat : 42
 
 ---
 
-### 🟢 Exercice 12 – Multiplication
+### 🟢 Exercice 13 – Multiplication  
+🎯 **Objectif** : Multiplier deux entiers.
 
-🎯 **Objectif** : Comprendre la multiplication entre variables.
+🛠️ **Instructions** :
+- Demande deux nombres.
+- Affiche leur produit.
 
-🛠️ Instructions :
-- Demande deux nombres
-- Affiche leur produit
-
-✅ Entrée/sortie attendue :
-```
+✅ **Entrée/Sortie attendue** :
+```plaintext
 Entrez un nombre : 6
 Entrez un autre nombre : 7
 Produit : 42
@@ -216,130 +220,110 @@ Produit : 42
 
 ---
 
-### 🟢 Exercice 13 – Division entière
+### 🟢 Exercice 14 – Division entière  
+🎯 **Objectif** : Comprendre la perte de précision en division entière.
 
-🎯 **Objectif** : Comprendre la division entière et la perte de précision.
+🧠 Division de deux `int` coupe la partie décimale.
 
-🧠 Avec deux `int`, le résultat d'une division perd la partie décimale.
-
-🛠️ Instructions :
-- Déclare `int a = 7`, `int b = 2`
+🛠️ **Instructions** :
+- `int a = 7`, `int b = 2`
 - Affiche `a / b`
 
-✅ Sortie attendue :
-```
+✅ **Sortie attendue** :
+```plaintext
 Résultat (int) : 3
 ```
 
 ---
 
-### 🟢 Exercice 14 – Division avec `double`
+### 🟢 Exercice 15 – Division avec `double`  
+🎯 **Objectif** : Obtenir un résultat précis avec `double`.
 
-🎯 **Objectif** : Corriger la perte de précision avec des types `double`.
-
-🛠️ Instructions :
-- Déclare `double a = 7`, `double b = 2`
+🛠️ **Instructions** :
+- `double a = 7`, `double b = 2`
 - Affiche `a / b`
 
-✅ Sortie attendue :
-```
+✅ **Sortie attendue** :
+```plaintext
 Résultat (double) : 3.5
 ```
 
 ---
 
-### 🟢 Exercice 15 – Modulo
+### 🟢 Exercice 16 – Modulo  
+🎯 **Objectif** : Utiliser `%` pour obtenir le reste d’une division.
 
-🎯 **Objectif** : Utiliser l’opérateur `%` pour obtenir un reste.
+🛠️ **Instructions** :
+- Demande un nombre.
+- Affiche le reste de la division par 10.
 
-🛠️ Instructions :
-- Demande un nombre
-- Affiche s’il est pair (vérifie `nombre % 2`)
-
-✅ Entrée/sortie attendue :
-```
-Entrez un nombre : 5
-Reste : 1 (impair)
+✅ **Entrée/Sortie attendue** :
+```plaintext
+Entrez un nombre : 23
+Reste de 23 ÷ 10 = 3
 ```
 
 ---
 
-### 🟢 Exercice 16 – Ordre des opérations
+### 🟢 Exercice 17 – Ordre des opérations  
+🎯 **Objectif** : Comprendre la priorité des opérateurs.
 
-🎯 **Objectif** : Observer l’impact de la priorité des opérations.
+🛠️ **Instructions** :
+- Affiche le résultat de `2 + 3 * 4`
+- Puis de `(2 + 3) * 4`
 
-🛠️ Instructions :
-- Calcule `2 + 3 * 4` et affiche le résultat
-- Calcule `(2 + 3) * 4` et affiche aussi
-
-✅ Sortie attendue :
-```
+✅ **Sortie attendue** :
+```plaintext
 Sans parenthèses : 14
 Avec parenthèses : 20
 ```
 
 ---
 
-### 🟢 Exercice 17 – Moyenne de deux notes
+### 🟢 Exercice 18 – Moyenne de deux notes  
+🎯 **Objectif** : Calculer la moyenne avec des `double`.
 
-🎯 **Objectif** : Appliquer une moyenne correctement.
+🛠️ **Instructions** :
+- Demande deux notes.
+- Calcule et affiche leur moyenne.
 
-🛠️ Instructions :
-- Demande deux notes (entiers)
-- Affiche leur moyenne (attention à la division entière)
-
-✅ Entrée/sortie attendue :
-```
-Note 1 : 60
-Note 2 : 80
-Moyenne : 70
-```
-
----
-
-### 🟢 Exercice 18 – Conversion `string` en `int`
-
-🎯 **Objectif** : Lire une saisie et la convertir en entier.
-
-🛠️ Instructions :
-- Demande l’âge avec `ReadLine()`
-- Convertis avec `int.Parse()`
-
-✅ Entrée/sortie attendue :
-```
-Quel âge as-tu ? 17
-Tu as 17 ans
+✅ **Entrée/Sortie attendue** :
+```plaintext
+Note 1 : 75.5
+Note 2 : 82.0
+Moyenne : 78.75
 ```
 
 ---
 
-### 🟢 Exercice 19 – Conversion `string` en `double`
+### 🟢 Exercice 19 – Conversion `string` en `double`  
+🎯 **Objectif** : Lire un prix et le convertir pour le doubler.
 
-🎯 **Objectif** : Lire un prix et le convertir pour le calculer.
+🛠️ **Instructions** :
+- Demande un prix.
+- Affiche le double.
 
-🛠️ Instructions :
-- Demande un prix d’article
-- Affiche le prix avec taxes (15 %)
-
-✅ Entrée/sortie attendue :
-```
-Prix : 10.00
-Total avec taxes : 11.5
+✅ **Entrée/Sortie attendue** :
+```plaintext
+Prix : 15.50
+Double du prix : 31.0
 ```
 
 ---
 
-### 🟢 Exercice 20 – Permutation de deux valeurs
-
+### 🟢 Exercice 20 – Permutation de deux valeurs  
 🎯 **Objectif** : Échanger le contenu de deux variables.
 
-🛠️ Instructions :
-- Demande deux nombres à l’utilisateur
-- Échange les valeurs et affiche-les après
+🛠️ **Instructions** :
+- Demande deux nombres.
+- Échange-les.
+- Affiche le résultat.
 
-✅ Entrée/sortie attendue :
-```
+✅ **Entrée/Sortie attendue** :
+```plaintext
 Nombre A : 4
 Nombre B : 7
 Après permutation : A = 7, B = 4
 ```
+
+---
