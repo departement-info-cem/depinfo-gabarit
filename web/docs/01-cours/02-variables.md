@@ -1,5 +1,8 @@
+---
+description: Variables, chaînes de caractères, opérations et debugger
+---
 
-# 1.2 - Variables, chaînes et opérations arithmétiques
+# Variables, chaînes et opérations arithmétiques
 
 ## 🧠 Théorie Rencontre 2
 

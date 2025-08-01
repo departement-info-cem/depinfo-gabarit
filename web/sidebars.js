@@ -441,7 +441,7 @@ const sidebars = {
     },
     { 
       type: "doc", 
-      label: "14.1 - TP4", 
+      label: "14.1 - TP4 - Démineur", 
       id: "cours/integration-tp4-1",
       customProps: {
         avancementLabel: "TP4",
@@ -458,7 +458,7 @@ const sidebars = {
     },
     { 
       type: "doc", 
-      label: "14.2 - TP4 suite", 
+      label: "14.2 - TP4 - suite", 
       id: "cours/integration-tp4-2",
       className: "remise-tp4",
       customProps: {
