@@ -1,10 +1,45 @@
----
-description: Variables, chaînes de caractères, opérations et debugger
----
 
-# Variables, chaînes, opérations et debugger
-## 🧠 Théorie Rencontre 2
-## Types de base en C#
+# 1.2 - Variables, chaînes et opérations arithmétiques
+
+## 🧠 Théorie Rencontre 2
+
+[Variable](https://info.cegepmontpetit.ca/notions-csharp/documentation/variable/variable) : une variable est une zone mémoire identifiée permettant de stocker et modifier une valeur durant l'exécution d'un programme.
+
+## 1. Déclaration et affectation
+
+La déclaration d'une variable signifie que l'on réserve un espace mémoire pour stocker une valeur d'un type précis. L'affectation consiste à attribuer une valeur à cette variable.
+
+### 🧱 Syntaxe générale
+```csharp
+type nomDeVariable = valeur;
+```
+
+### 📝 Règles de nommage
+[Identificateur](https://info.cegepmontpetit.ca/notions-csharp/documentation/identificateur) : un identificateur est un nom choisi pour désigner variables, méthodes, etc., selon des conventions précises de style.
+- Une variable commence par une lettre (pas de chiffre au début)
+- Elle ne peut pas contenir d'espaces ou de symboles spéciaux
+- Convention : camelCase (`monNom`, `nombreTotal`)
+
+### 🔹 Exemples simples
+```csharp
+int age = 25;
+char lettre = 'C';
+bool estValide = true;
+string nom = "Louis";
+```
+
+### 🔄 Assignation après déclaration
+
+[Assignation](https://info.cegepmontpetit.ca/notions-csharp/documentation/assignation) : l'assignation utilise `=` pour placer une valeur calculée ou littérale dans une variable.
+
+Vous pouvez aussi déclarer une variable sans lui donner de valeur immédiatement, puis l'affecter plus tard :
+```csharp
+int score;
+score = 100;
+```
+## 2. Types de base en C#
+
+[Types de données](https://info.cegepmontpetit.ca/notions-csharp/documentation/types-de-donnees) : Types de données
 
 Les types de base sont les types fondamentaux utilisés pour déclarer des variables. Voici les plus courants en C# :
 
@@ -47,39 +82,8 @@ bool aFini = false;
 string nom = "Alice";
 string message = "Bienvenue!";
 ```
-## Déclaration et affectation
 
-La déclaration d'une variable signifie que l'on réserve un espace mémoire pour stocker une valeur d'un type précis. L'affectation consiste à attribuer une valeur à cette variable.
-
-### 🧱 Syntaxe générale
-```csharp
-type nomDeVariable = valeur;
-```
-
-### 🔹 Exemples simples
-```csharp
-int age = 25;
-char lettre = 'C';
-bool estValide = true;
-string nom = "Louis";
-```
-
-### 🔄 Affectation après déclaration
-Vous pouvez aussi déclarer une variable sans lui donner de valeur immédiatement, puis l’affecter plus tard :
-```csharp
-int score;
-score = 100;
-```
-
-### 📝 Règles de nommage
-- Une variable commence par une lettre (pas de chiffre au début)
-- Elle ne peut pas contenir d'espaces ou de symboles spéciaux
-- Convention : camelCase (`monNom`, `nombreTotal`)
-
-### ❗ Importance de l'initialisation
-Les variables doivent être initialisées avant d’être utilisées, sinon vous aurez une erreur de compilation en C#.
-
-## 4. Concaténation de chaînes
+## 3. Concaténation de chaînes
 
 La concaténation consiste à assembler plusieurs chaînes de caractères en une seule.
 
@@ -104,7 +108,7 @@ On peut aussi utiliser l’interpolation (niveau plus avancé, à présenter plu
 string nom = "Bob";
 Console.WriteLine($"Salut, {nom}!");
 ```
-## 5. Opérations arithmétiques
+## 4. Opérations arithmétiques
 
 Les opérations arithmétiques permettent de manipuler des valeurs numériques (`int`, `double`).
 
@@ -136,7 +140,7 @@ Console.WriteLine("Taxe : " + taxe);
 ```
 
 ### ⚠️ Division entière
-Lorsque vous divisez deux `int`, le résultat est un entier (le reste est perdu). Pour un résultat avec décimales, utilisez `double` ou convertissez les valeurs.
+Lorsque vous divisez deux `int`, le résultat est un entier (le reste est perdu). Pour un résultat avec décimales, utilisez `float`, `double` ou `decimal`.
 ```csharp
 int a = 7;
 int b = 2;
@@ -170,7 +174,7 @@ b = temporaire;
 Console.WriteLine("a = " + a); // a = 10
 Console.WriteLine("b = " + b); // b = 5
 ```
-## 6. Conversion de types
+## 5. Conversion de types
 
 Lorsqu’on lit une entrée utilisateur via `Console.ReadLine()`, on obtient toujours une **chaîne de caractères (`string`)**. Pour utiliser cette entrée comme un nombre, il faut la convertir.
 
@@ -196,9 +200,9 @@ Pour éviter les erreurs, on peut utiliser `TryParse()`, mais cette méthode ser
 
 Voici les documents de référence :
 
-- [Variable](https://info.cegepmontpetit.ca/notions-csharp/documentation/variable/variable) : une variable est une zone mémoire identifiée permettant de stocker et modifier une valeur durant l’exécution d’un programme.
-- [Identificateur](https://info.cegepmontpetit.ca/notions-csharp/documentation/identificateur) : un identificateur est un nom choisi pour désigner variables, méthodes, etc., selon des conventions précises de style.
-- [Assignation](https://info.cegepmontpetit.ca/notions-csharp/documentation/assignation) : l’assignation utilise `=` pour placer une valeur calculée ou littérale dans une variable.
+
+
+
 - [Opérateur](https://info.cegepmontpetit.ca/notions-csharp/documentation/operateur) : un opérateur réalise des opérations arithmétiques, logiques ou d’assignation entre variables et littéraux.
 - [Priorité des opérateurs](https://info.cegepmontpetit.ca/notions-csharp/documentation/operateur/priorite) : la priorité des opérateurs détermine l’ordre dans lequel les opérations sont évaluées, comme dans les expressions mathématiques.
 - [Littéral](https://info.cegepmontpetit.ca/notions-csharp/documentation/litteral) : un littéral représente une valeur fixe directement inscrite dans le code, comme un nombre ou une chaîne de caractères.
