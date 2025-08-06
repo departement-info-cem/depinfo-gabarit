@@ -74,6 +74,12 @@ const config = {
             label: "Cours",
           },
           {
+            type:"docSidebar",
+            position:"left",
+            sidebarId:"labos",
+            label:"Laboratoires"
+          },
+          {
             type: "docSidebar",
             position: "left",
             sidebarId: "tp",
