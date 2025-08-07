@@ -69,7 +69,7 @@ function changerFond(classe){
 
 ## 💡 Solution : currentTarget
 
-Dans le genre de situation abordé plus haut, le gadget `currentTarget` est très utile.
+Dans le genre de situation abordé plus haut, le *gadget* `currentTarget` est très utile.
 
 Commençons par reprendre le code lorsqu'il y avait seulement l'élément `.bouton1` :
 
@@ -126,7 +126,7 @@ function changerFond(event){
 
 :::warning
 
-Le gadget `event.currentTarget` est seulement utile quand c'est **l'élément avec lequel on interagit** qu'on souhaite modifier.
+Le *gadget* `event.currentTarget` est seulement utile quand c'est **l'élément avec lequel on interagit** qu'on souhaite modifier.
 
 Par exemple, si on veut changer la couleur de `.texte1` lorsqu'on clique sur `bouton1`, nous n'aurons pas le choix de faire ceci :
 
@@ -156,6 +156,8 @@ function init(event){
 ```
 
 Il faut toujours indiquer clairement à quel **élément HTML** un écouteur d'événements **est rattaché**.
+
+On ne peut utiliser `event.currentTarget` que dans les fonctions appelées par un écouteur d'évènements, par exemple ici dans la fonction `changerCouleur`.
 
 :::
 

@@ -62,13 +62,14 @@ L'opérateur `+` fonctionnement différemment dès qu'une donnée de type **cha�
 Si on additionne deux **nombres**, une opération mathématique est faite.
 </td>
 <td>
-<center>![Nombre + chaîne de caractères](../../static/img/cours3/numberPlusString1.png) ![Nombre + chaîne de caractères](../../static/img/cours3/numberPlusString2.png)</center>
-Si on additionne un **nombre** avec une **chaîne de caractères**, les deux valeurs sont tout simplement **⛔ concaténées** l’une à la suite de l’autre pour former une nouvelle **chaîne de caractères**.
+<center>![Chaîne de caractères + chaîne de caractères](../../static/img/cours3/stringPlusString.png)</center>
+Si on additionne deux **chaînes de caractères**, les deux valeurs sont tout simplement **⛔ concaténées** l’une à la suite de l’autre pour former une nouvelle **chaîne de caractères**.
 </td>
 <td>
-<center>![Chaîne de caractères + chaîne de caractères](../../static/img/cours3/stringPlusString.png)</center>
-Bien entendu, si on additionne deux **chaînes de caractères**, elles sont **⛔ concaténées** également.
+<center>![Nombre + chaîne de caractères](../../static/img/cours3/numberPlusString1.png) ![Nombre + chaîne de caractères](../../static/img/cours3/numberPlusString2.png)</center>
+Si on additionne un **nombre** avec une **chaîne de caractères**, le **nombre** est automatiquement converti en **chaîne de caractères** (les deux sont donc **⛔ concaténés**).
 </td>
+
 </tr>
 </table>
 
@@ -232,13 +233,13 @@ document.querySelector(".titre").textContent
 ```
 
 * `document` : Indique qu'on va utiliser le **DOM**.
-* `.querySelector` : Indique qu'on va demander d'accéder à **élément HTML**.
+* `.querySelector` : Indique qu'on va demander d'accéder à l'**élément HTML**.
 * `(".titre")` : La **classe** de l'élément qui nous intéresse doit être ... :
   * Précédée d'un point `.`
   * Entourée de guillemets `"..."`
   * Entourée de parenthèses `(...)`
   * C'est un peu bizarre, mais pour le moment soyez ouvert d'esprit 😵
-* `.textContent` : Indique qu'on veut connaître le **contenu textuel** de l'élément
+* `.textContent` : Indique qu'on veut connaître le **contenu textuel** de l'élément, notez bien le `t` minuscule et le `C` majuscule 🧐.
 
 :::
 

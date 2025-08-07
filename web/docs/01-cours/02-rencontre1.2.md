@@ -241,13 +241,13 @@ Si on souhaitait changer la valeur de la variable, il suffisait de faire ceci :
 
 Une fois qu'une variable est **déclarée** et **affectée** (donc créée ET contient une valeur), on peut l'utiliser dans des calculs.
 
-Par exemple, ci-dessous, on a **déclaré** et **affectée** les variables `a` et `b`. On peut donc les additionner ensuite :
+Par exemple, ci-dessous, on a **déclaré** et **affecté** les variables `a` et `b`. On peut donc les additionner ensuite :
 
 <center>![Fichier avec l'extension js](../../static/img/cours2/useVariable.png)</center>
 
 Notez bien :
 
-* Lorsqu'une variable est utilisée, elle « remplacée par la valeur qu'elle contient ». Ici, c'est comme si on avait fait `3 + 2` !
+* Lorsqu'une variable est utilisée, elle est « remplacée par la valeur qu'elle contient ». Ici, c'est comme si on avait fait `3 + 2` !
 * Suite à cette addition, les valeurs de `a` et `b` n'ont pas changé ! `a` contient encore `3` et `b` contient encore `2`.
 
 Quelques exemples supplémentaires :
@@ -345,7 +345,7 @@ L'ordre de priorité des opérateurs est la suivante :
 3. Addition et soustraction `+` `-`
 4. Affectation `=`
 
-(En cas d'égalité, on résoud l'équation de **gauche à droite**)
+(En cas d'égalité, on résout l'équation de **gauche à droite**)
 
 Les parenthèses permettent donc de prioriser certaines opérations. Par exemple, ci-dessous, on obtient deux résultats différents grâce aux parenthèses :
 

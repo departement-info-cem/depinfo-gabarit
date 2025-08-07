@@ -47,19 +47,19 @@ function jouer(){
 
     if(nombreAleatoire < 0.25){
 
-        argent += 100;
+        gArgent += 100;
 
     }
     else{
 
-        argent -= 50;
+        gArgent -= 50;
 
     }
 
 }
 ```
 
-* Dans la variable `nombreAleatoire`, il y aura une valeur entre `0` et `0.9999...`. On ne sait pas d'avance quelle sera la valeur ! La valeur changera à chaque fois que nous appelerons la fonction `jouer()`.
+* Dans la variable `nombreAleatoire`, il y aura une valeur entre `0` et `0.9999...`. On ne sait pas d'avance quelle sera la valeur ! La valeur changera à chaque fois que nous appellerons la fonction `jouer()`.
 * Avec ce `if` ... `else`, on a 25% de chances d'exécuter le `if` et 75% de chances d'exécuter le `else`.
 
 <center>![Probabilité illustrée](../../static/img/cours11/odds.png)</center>
@@ -118,7 +118,7 @@ let nombre = maximum(2, 4); // nombre contient 4
 
 <hr/>
 
-Voici une fonction qui reçoit un **paramètre** (une chaîne de caractère nommée `nom`) et qui **retourne une chaîne de caractères qui correspond à un message de salutations** :
+Voici une fonction qui reçoit un **paramètre** (une chaîne de caractères nommée `nom`) et qui **retourne une chaîne de caractères qui correspond à un message de salutations** :
 
 ```js showLineNumbers
 function saluer(nom){

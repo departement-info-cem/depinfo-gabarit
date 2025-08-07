@@ -206,6 +206,18 @@ if( !(age < 4 || age > 99) ){
 }
 ```
 
+### ⌛ Priorité des opérateurs
+
+L'**ordre de priorité** de tous les opérateurs que nous avons vu jusqu'ici est la suivante :
+
+1. Parenthèses `( ... )`
+2. Inverse `!`
+3. Multiplication et division `*` `/`
+4. Addition et soustraction `+` `-`
+5. Comparaison `<` `>` `>=` `<=` `==` `!=`
+6. Opérateurs logiques `&&` `||`
+7. Affectation `=`
+
 ### 🧠 Exemples plus complexes
 
 Disons qu'on a trois âges :
@@ -299,10 +311,10 @@ Hélas, lorsqu'on **teste** la fonction dans la console :
 
 Malheureusement, la console nous répond **en anglais** et ses explications sont limitées. Cela dit :
 
-* On peut devenir que le problème est lié à `document.querySelector(...)`.
+* On peut deviner que le problème est lié à `document.querySelector(...)`.
 * « document.querySelector(...) is null » signifie qu'aucun élément HTML n'a été trouvé avec la **classe** demandée.
 
-Vérifions la **classe** que nous avions utilisé dans le code :
+Vérifions la **classe** que nous avions utilisée dans le code :
 
 <center>![Trouver un bogue](../../static/img/cours7/missingPoint.png)</center>
 

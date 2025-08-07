@@ -157,7 +157,7 @@ function colorierTexte(couleur){
 }
 ```
 
-Les deux manières de **paser un paramètre** qui suivent sont toutes deux valides.
+Les deux manières de **passer un paramètre** qui suivent sont toutes deux valides.
 
 * Écrire directement la valeur :
 

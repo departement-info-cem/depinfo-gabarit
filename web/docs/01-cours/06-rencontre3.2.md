@@ -19,7 +19,7 @@ Les **booléens** permettent d'exprimer que quelque chose est **vrai** ou **faux
 * 👀 Ai-je deux yeux ? `true`
 * 🍷 Suis-je majeur ? `true`
 * 🤔 Mon prénom contient la lettre T ? `false`
-* 🔥 Ai-je déjà utilisé un extincteur ? `false`
+* 🔥 Ai-je déjà utilisé un extincteur ? `true`
 
 Bien entendu, on peut **affecter** un **booléen** à une variable :
 
@@ -236,7 +236,7 @@ if(x == 5){
 
 ### Bloc else
 
-Chaque bloc `if` **peut** être accompagné par une bloc `else`.
+Chaque bloc `if` **peut** être accompagné d'un bloc `else`.
 
 Syntaxe :
 
@@ -249,7 +249,7 @@ else{
 }
 ```
 
-* Le bloc `else` **ne possède JAMAIS de condition**, car il est associé à la même condition que le `if`.
+* Le bloc `else` **ne possède JAMAIS de condition**, car il est associé à la même condition que le `if` auquel il se rattache.
 * Le bloc `else` **s'exécute si la condition est `false`**. C'est un « plan de secours ». Ainsi, c'est toujours **soit le `if`, soit le `else` qui s'exécute**. (⛔ Jamais les deux !)
 
 #### Exemple

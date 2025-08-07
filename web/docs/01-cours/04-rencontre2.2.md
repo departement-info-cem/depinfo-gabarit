@@ -185,7 +185,7 @@ Une **erreur fréquente** lorsqu'on déclare une fonction est d'**oublier** une 
 
 Troisièmement, on doit **rédiger le code de la fonction**
 
-Bien entendu, c'est nous qui décide ce que la fonction va faire. Par exemple, disons qu'on veut faire trois choses :
+Bien entendu, c'est nous qui décidons ce que la fonction va faire. Par exemple, disons qu'on veut faire trois choses :
 
 * Remplacer le texte `"est le meilleur chat"` par `"veut manger sa salade en paix."` dans la page.
 * Afficher une **alerte** avec le message `"Texte changé !"`.

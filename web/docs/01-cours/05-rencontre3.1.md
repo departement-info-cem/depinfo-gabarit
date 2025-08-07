@@ -22,7 +22,7 @@ Toutefois, l'**emplacement** dans le code (dans `script.js`) où cette variable 
 
 <center>![Variable locale](../../static/img/cours5/local.png)</center>
 
-💡 La variable `phrase` est donc une **variable locale** et **existe seulement** dans `phrase1()`.
+💡 La variable `phrase` est donc une **variable locale** et **existe seulement** dans `texte1()`.
 
 ### 🌐 Variables globales
 
@@ -137,6 +137,18 @@ On peut mettre **autant** d'écouteurs d'événements **qu'on veut** dans la fon
 
 :::
 
+:::note
+
+Pour que la fonction `init()` soit effectivement executée quand la page Web sera **chargée**, il faut rajouter l'attribut suivant à la balise `<body>` du fichier HTML.
+
+```html
+<body onload="init()">
+```
+
+Dans ce cours, cette opération sera toujours réalisée pour vous au préalable, donc vous n'aurez pas à le faire.
+
+:::
+
 ## 👨‍🎨 Styles (DOM)
 
 À l'aide du **DOM** (Document Object Model), nous allons pouvoir modifier les **styles** d'un élément HTML. On peut appliquer des **styles CSS** sur demande à l'aide de JavaScript !
@@ -183,6 +195,8 @@ document.querySelector(".classe").style.borderWidth = "NOMBREpx";
 Exemple :
 
 <center>![Modification de style](../../static/img/cours5/border.png)</center>
+
+⛔ `px` est l'unité, ici la bordure fera 20 **pixels**. Si vous oubliez l'unité, la valeur de l'attribut ne sera pas changée.
 
 ### 📏 Largeur et hauteur d'un élément
 
@@ -246,7 +260,7 @@ Exemple :
 
 ### 🌈 Plus de couleurs
 
-Bien qu'il existe **140 couleurs nommées** en lettres comme ceci :
+Bien qu'il existe [**140 couleurs nommées**](https://www.w3schools.com/colors/colors_names.asp) en lettres comme ceci :
 
 ```js
 // "red" est une couleur qui existe :
