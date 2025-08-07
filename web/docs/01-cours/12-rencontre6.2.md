@@ -69,7 +69,7 @@ function changerFond(classe){
 
 ## 💡 Solution : currentTarget
 
-Dans le genre de situation abordé plus haut, le *gadget* `currentTarget` est très utile.
+Dans le genre de situation abordée plus haut, le *gadget* `currentTarget` est très utile.
 
 Commençons par reprendre le code lorsqu'il y avait seulement l'élément `.bouton1` :
 
