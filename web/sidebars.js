@@ -10,7 +10,7 @@ const sidebars = {
       customProps: {
         calendrier: {
           "David": "2025-06-09",
-          "Éric": "2025-06-09",
+          "Éric": "2025-08-22",
           "Jamil": "2025-06-09",
           "Jean-Michel": "2025-08-25",
           "Pierre-Paul": "2025-06-09",
@@ -27,7 +27,7 @@ const sidebars = {
         avancement: 0.1,
         calendrier: {
           "David": "2025-06-09",
-          "Éric": "2025-06-09",
+          "Éric": "2025-08-27",
           "Jamil": "2025-06-09",
           "Jean-Michel": "2025-08-27",
           "Pierre-Paul": "2025-06-09",
@@ -44,7 +44,7 @@ const sidebars = {
         avancement: 0.2,
         calendrier: {
           "David": "2025-06-09",
-          "Éric": "2025-06-09",
+          "Éric": "2025-09-03",
           "Jamil": "2025-06-09",
           "Jean-Michel": "2025-08-29",
           "Pierre-Paul": "2025-06-09",
@@ -61,7 +61,7 @@ const sidebars = {
         avancement: 0.4,
         calendrier: {
           "David": "2025-06-09",
-          "Éric": "2025-06-09",
+          "Éric": "2025-09-10",
           "Jamil": "2025-06-09",
           "Jean-Michel": "2025-09-03",
           "Pierre-Paul": "2025-06-09",
@@ -78,7 +78,7 @@ const sidebars = {
         avancement: 0.6,
         calendrier: {
           "David": "2025-06-09",
-          "Éric": "2025-06-09",
+          "Éric": "2025-09-12",
           "Jamil": "2025-06-09",
           "Jean-Michel": "2025-09-08",
           "Pierre-Paul": "2025-06-09",
@@ -96,7 +96,7 @@ const sidebars = {
         avancement: 1.0,
         calendrier: {
           "David": "2025-06-09",
-          "Éric": "2025-06-09",
+          "Éric": "2025-09-17",
           "Jamil": "2025-06-09",
           "Jean-Michel": "2025-09-10",
           "Pierre-Paul": "2025-06-09",
@@ -113,7 +113,7 @@ const sidebars = {
         avancement: 0.1,
         calendrier: {
           "David": "2025-06-09",
-          "Éric": "2025-06-09",
+          "Éric": "2025-09-19",
           "Jamil": "2025-06-09",
           "Jean-Michel": "2025-09-15",
           "Pierre-Paul": "2025-06-09",
@@ -130,7 +130,7 @@ const sidebars = {
         avancement: 0.2,
         calendrier: {
           "David": "2025-06-09",
-          "Éric": "2025-06-09",
+          "Éric": "2025-09-24",
           "Jamil": "2025-06-09",
           "Jean-Michel": "2025-09-17",
           "Pierre-Paul": "2025-06-09",
@@ -147,7 +147,7 @@ const sidebars = {
         avancement: 0.4,
         calendrier: {
           "David": "2025-06-09",
-          "Éric": "2025-06-09",
+          "Éric": "2025-09-26",
           "Jamil": "2025-06-09",
           "Jean-Michel": "2025-09-22",
           "Pierre-Paul": "2025-06-09",
@@ -162,7 +162,7 @@ const sidebars = {
       customProps: {
         calendrier: {
           "David": "2025-06-09",
-          "Éric": "2025-06-09",
+          "Éric": "2025-10-01",
           "Jamil": "2025-06-09",
           "Jean-Michel": "2025-09-24",
           "Pierre-Paul": "2025-06-09",
@@ -178,7 +178,7 @@ const sidebars = {
       customProps: {
         calendrier: {
           "David": "2025-06-09",
-          "Éric": "2025-06-09",
+          "Éric": "2025-10-03",
           "Jamil": "2025-06-09",
           "Jean-Michel": "2025-09-29",
           "Pierre-Paul": "2025-06-09",
@@ -195,7 +195,7 @@ const sidebars = {
         avancement: 0.5,
         calendrier: {
           "David": "2025-06-09",
-          "Éric": "2025-06-09",
+          "Éric": "2025-10-08",
           "Jamil": "2025-06-09",
           "Jean-Michel": "2025-10-01",
           "Pierre-Paul": "2025-06-09",
@@ -212,7 +212,7 @@ const sidebars = {
         avancement: 0.6,
         calendrier: {
           "David": "2025-06-09",
-          "Éric": "2025-06-09",
+          "Éric": "2025-10-10",
           "Jamil": "2025-06-09",
           "Jean-Michel": "2025-10-06",
           "Pierre-Paul": "2025-06-09",
@@ -229,7 +229,7 @@ const sidebars = {
         avancement: 0.7,
         calendrier: {
           "David": "2025-06-09",
-          "Éric": "2025-06-09",
+          "Éric": "2025-10-22",
           "Jamil": "2025-06-09",
           "Jean-Michel": "2025-10-08",
           "Pierre-Paul": "2025-06-09",
@@ -246,7 +246,7 @@ const sidebars = {
         avancement: 0.8,
         calendrier: {
           "David": "2025-06-09",
-          "Éric": "2025-06-09",
+          "Éric": "2025-10-24",
           "Jamil": "2025-06-09",
           "Jean-Michel": "2025-10-20",
           "Pierre-Paul": "2025-06-09",
@@ -264,7 +264,7 @@ const sidebars = {
         avancement: 1,
         calendrier: {
           "David": "2025-06-09",
-          "Éric": "2025-06-09",
+          "Éric": "2025-10-29",
           "Jamil": "2025-06-09",
           "Jean-Michel": "2025-10-22",
           "Pierre-Paul": "2025-06-09",
@@ -281,7 +281,7 @@ const sidebars = {
         avancement: 0.1,
         calendrier: {
           "David": "2025-06-09",
-          "Éric": "2025-06-09",
+          "Éric": "2025-10-31",
           "Jamil": "2025-06-09",
           "Jean-Michel": "2025-10-27",
           "Pierre-Paul": "2025-06-09",
@@ -298,7 +298,7 @@ const sidebars = {
         avancement: 0.2,
         calendrier: {
           "David": "2025-06-09",
-          "Éric": "2025-06-09",
+          "Éric": "2025-11-05",
           "Jamil": "2025-06-09",
           "Jean-Michel": "2025-10-29",
           "Pierre-Paul": "2025-06-09",
@@ -315,7 +315,7 @@ const sidebars = {
         avancement: 0.3,
         calendrier: {
           "David": "2025-06-09",
-          "Éric": "2025-06-09",
+          "Éric": "2025-11-07",
           "Jamil": "2025-06-09",
           "Jean-Michel": "2025-11-03",
           "Pierre-Paul": "2025-06-09",
@@ -330,7 +330,7 @@ const sidebars = {
       customProps: {
         calendrier: {
           "David": "2025-06-09",
-          "Éric": "2025-06-09",
+          "Éric": "2025-11-12",
           "Jamil": "2025-06-09",
           "Jean-Michel": "2025-11-05",
           "Pierre-Paul": "2025-06-09",
@@ -346,7 +346,7 @@ const sidebars = {
       customProps: {
         calendrier: {
           "David": "2025-06-09",
-          "Éric": "2025-06-09",
+          "Éric": "2025-11-14",
           "Jamil": "2025-06-09",
           "Jean-Michel": "2025-11-12",
           "Pierre-Paul": "2025-06-09",
@@ -363,7 +363,7 @@ const sidebars = {
         avancement: 0.1,
         calendrier: {
           "David": "2025-06-09",
-          "Éric": "2025-06-09",
+          "Éric": "2025-11-19",
           "Jamil": "2025-06-09",
           "Jean-Michel": "2025-11-17",
           "Pierre-Paul": "2025-06-09",
@@ -380,7 +380,7 @@ const sidebars = {
         avancement: 1,
         calendrier: {
           "David": "2025-06-09",
-          "Éric": "2025-06-09",
+          "Éric": "2025-11-21",
           "Jamil": "2025-06-09",
           "Jean-Michel": "2025-11-19",
           "Pierre-Paul": "2025-06-09",
@@ -397,7 +397,7 @@ const sidebars = {
         avancement: 0.15,
         calendrier: {
           "David": "2025-06-09",
-          "Éric": "2025-06-09",
+          "Éric": "2025-11-26",
           "Jamil": "2025-06-09",
           "Jean-Michel": "2025-11-24",
           "Pierre-Paul": "2025-06-09",
@@ -414,7 +414,7 @@ const sidebars = {
         avancement: 0.3,
         calendrier: {
           "David": "2025-06-09",
-          "Éric": "2025-06-09",
+          "Éric": "2025-11-28",
           "Jamil": "2025-06-09",
           "Jean-Michel": "2025-11-26",
           "Pierre-Paul": "2025-06-09",
@@ -431,7 +431,7 @@ const sidebars = {
         avancement: 0.5,
         calendrier: {
           "David": "2025-06-09",
-          "Éric": "2025-06-09",
+          "Éric": "2025-12-03",
           "Jamil": "2025-06-09",
           "Jean-Michel": "2025-12-01",
           "Pierre-Paul": "2025-06-09",
@@ -448,7 +448,7 @@ const sidebars = {
         avancement: 0.75,
         calendrier: {
           "David": "2025-06-09",
-          "Éric": "2025-06-09",
+          "Éric": "2025-12-05",
           "Jamil": "2025-06-09",
           "Jean-Michel": "2025-12-03",
           "Pierre-Paul": "2025-06-09",
@@ -466,7 +466,7 @@ const sidebars = {
         avancement: 1,
         calendrier: {
           "David": "2025-06-09",
-          "Éric": "2025-06-09",
+          "Éric": "2025-12-09",
           "Jamil": "2025-06-09",
           "Jean-Michel": "2025-12-08",
           "Pierre-Paul": "2025-06-09",
@@ -481,7 +481,7 @@ const sidebars = {
       customProps: {
         calendrier: {
           "David": "2025-06-09",
-          "Éric": "2025-06-09",
+          "Éric": "2025-12-10",
           "Jamil": "2025-06-09",
           "Jean-Michel": "2025-12-10",
           "Pierre-Paul": "2025-06-09",
@@ -497,7 +497,7 @@ const sidebars = {
       customProps: {
         calendrier: {
           "David": "2025-06-09",
-          "Éric": "2025-06-09",
+          "Éric": "2025-12-22",
           "Jamil": "2025-06-09",
           "Jean-Michel": "2025-12-22",
           "Pierre-Paul": "2025-06-09",
