@@ -9,7 +9,7 @@ const sidebars = {
       id: "cours/introduction",
       customProps: {
         calendrier: {
-          "David": "2025-06-09",
+          "David": "2025-08-25",
           "Éric": "2025-08-22",
           "Jamil": "2025-06-09",
           "Jean-Michel": "2025-08-25",
@@ -26,7 +26,7 @@ const sidebars = {
         avancementLabel: "TP1 - Créé - ",
         avancement: 0.1,
         calendrier: {
-          "David": "2025-06-09",
+          "David": "2025-08-28",
           "Éric": "2025-08-27",
           "Jamil": "2025-06-09",
           "Jean-Michel": "2025-08-27",
@@ -43,7 +43,7 @@ const sidebars = {
         avancementLabel: "TP1",
         avancement: 0.2,
         calendrier: {
-          "David": "2025-06-09",
+          "David": "2025-08-29",
           "Éric": "2025-09-03",
           "Jamil": "2025-06-09",
           "Jean-Michel": "2025-08-29",
@@ -60,7 +60,7 @@ const sidebars = {
         avancementLabel: "TP1",
         avancement: 0.4,
         calendrier: {
-          "David": "2025-06-09",
+          "David": "2025-09-04",
           "Éric": "2025-09-10",
           "Jamil": "2025-06-09",
           "Jean-Michel": "2025-09-03",
@@ -77,7 +77,7 @@ const sidebars = {
         avancementLabel: "TP1",
         avancement: 0.6,
         calendrier: {
-          "David": "2025-06-09",
+          "David": "2025-09-08",
           "Éric": "2025-09-12",
           "Jamil": "2025-06-09",
           "Jean-Michel": "2025-09-08",
@@ -95,7 +95,7 @@ const sidebars = {
         avancementLabel: "TP1",
         avancement: 1.0,
         calendrier: {
-          "David": "2025-06-09",
+          "David": "2025-09-11",
           "Éric": "2025-09-17",
           "Jamil": "2025-06-09",
           "Jean-Michel": "2025-09-10",
@@ -112,7 +112,7 @@ const sidebars = {
         avancementLabel: "TP2 - Créé - ",
         avancement: 0.1,
         calendrier: {
-          "David": "2025-06-09",
+          "David": "2025-09-15",
           "Éric": "2025-09-19",
           "Jamil": "2025-06-09",
           "Jean-Michel": "2025-09-15",
@@ -129,7 +129,7 @@ const sidebars = {
         avancementLabel: "TP2",
         avancement: 0.2,
         calendrier: {
-          "David": "2025-06-09",
+          "David": "2025-09-18",
           "Éric": "2025-09-24",
           "Jamil": "2025-06-09",
           "Jean-Michel": "2025-09-17",
@@ -146,7 +146,7 @@ const sidebars = {
         avancementLabel: "TP2",
         avancement: 0.4,
         calendrier: {
-          "David": "2025-06-09",
+          "David": "2025-09-22",
           "Éric": "2025-09-26",
           "Jamil": "2025-06-09",
           "Jean-Michel": "2025-09-22",
@@ -161,7 +161,7 @@ const sidebars = {
       id: "cours/formatif1",
       customProps: {
         calendrier: {
-          "David": "2025-06-09",
+          "David": "2025-09-25",
           "Éric": "2025-10-01",
           "Jamil": "2025-06-09",
           "Jean-Michel": "2025-09-24",
@@ -177,7 +177,7 @@ const sidebars = {
       className: "examen",
       customProps: {
         calendrier: {
-          "David": "2025-06-09",
+          "David": "2025-09-29",
           "Éric": "2025-10-03",
           "Jamil": "2025-06-09",
           "Jean-Michel": "2025-09-29",
@@ -194,7 +194,7 @@ const sidebars = {
         avancementLabel: "TP2",
         avancement: 0.5,
         calendrier: {
-          "David": "2025-06-09",
+          "David": "2025-10-02",
           "Éric": "2025-10-08",
           "Jamil": "2025-06-09",
           "Jean-Michel": "2025-10-01",
@@ -211,7 +211,7 @@ const sidebars = {
         avancementLabel: "TP2",
         avancement: 0.6,
         calendrier: {
-          "David": "2025-06-09",
+          "David": "2025-10-06",
           "Éric": "2025-10-10",
           "Jamil": "2025-06-09",
           "Jean-Michel": "2025-10-06",
@@ -228,7 +228,7 @@ const sidebars = {
         avancementLabel: "TP2",
         avancement: 0.7,
         calendrier: {
-          "David": "2025-06-09",
+          "David": "2025-10-09",
           "Éric": "2025-10-22",
           "Jamil": "2025-06-09",
           "Jean-Michel": "2025-10-08",
@@ -245,7 +245,7 @@ const sidebars = {
         avancementLabel: "TP2",
         avancement: 0.8,
         calendrier: {
-          "David": "2025-06-09",
+          "David": "2025-10-20",
           "Éric": "2025-10-24",
           "Jamil": "2025-06-09",
           "Jean-Michel": "2025-10-20",
@@ -263,7 +263,7 @@ const sidebars = {
         avancementLabel: "TP2",
         avancement: 1,
         calendrier: {
-          "David": "2025-06-09",
+          "David": "2025-10-23",
           "Éric": "2025-10-29",
           "Jamil": "2025-06-09",
           "Jean-Michel": "2025-10-22",
@@ -280,7 +280,7 @@ const sidebars = {
         avancementLabel: "TP3 - Créé -",
         avancement: 0.1,
         calendrier: {
-          "David": "2025-06-09",
+          "David": "2025-10-27",
           "Éric": "2025-10-31",
           "Jamil": "2025-06-09",
           "Jean-Michel": "2025-10-27",
@@ -297,7 +297,7 @@ const sidebars = {
         avancementLabel: "TP3",
         avancement: 0.2,
         calendrier: {
-          "David": "2025-06-09",
+          "David": "2025-10-30",
           "Éric": "2025-11-05",
           "Jamil": "2025-06-09",
           "Jean-Michel": "2025-10-29",
@@ -314,7 +314,7 @@ const sidebars = {
         avancementLabel: "TP3",
         avancement: 0.3,
         calendrier: {
-          "David": "2025-06-09",
+          "David": "2025-11-03",
           "Éric": "2025-11-07",
           "Jamil": "2025-06-09",
           "Jean-Michel": "2025-11-03",
@@ -329,7 +329,7 @@ const sidebars = {
       id: "cours/formatif2",
       customProps: {
         calendrier: {
-          "David": "2025-06-09",
+          "David": "2025-11-06",
           "Éric": "2025-11-12",
           "Jamil": "2025-06-09",
           "Jean-Michel": "2025-11-05",
@@ -345,7 +345,7 @@ const sidebars = {
       className: "examen",
       customProps: {
         calendrier: {
-          "David": "2025-06-09",
+          "David": "2025-11-13",
           "Éric": "2025-11-14",
           "Jamil": "2025-06-09",
           "Jean-Michel": "2025-11-12",
@@ -362,7 +362,7 @@ const sidebars = {
         avancementLabel: "TP2",
         avancement: 0.1,
         calendrier: {
-          "David": "2025-06-09",
+          "David": "2025-11-17",
           "Éric": "2025-11-19",
           "Jamil": "2025-06-09",
           "Jean-Michel": "2025-11-17",
@@ -379,7 +379,7 @@ const sidebars = {
         avancementLabel: "TP3",
         avancement: 1,
         calendrier: {
-          "David": "2025-06-09",
+          "David": "2025-11-20",
           "Éric": "2025-11-21",
           "Jamil": "2025-06-09",
           "Jean-Michel": "2025-11-19",
@@ -396,7 +396,7 @@ const sidebars = {
         avancementLabel: "TP4 - Créé -",
         avancement: 0.15,
         calendrier: {
-          "David": "2025-06-09",
+          "David": "2025-11-24",
           "Éric": "2025-11-26",
           "Jamil": "2025-06-09",
           "Jean-Michel": "2025-11-24",
@@ -413,7 +413,7 @@ const sidebars = {
         avancementLabel: "TP4",
         avancement: 0.3,
         calendrier: {
-          "David": "2025-06-09",
+          "David": "2025-11-27",
           "Éric": "2025-11-28",
           "Jamil": "2025-06-09",
           "Jean-Michel": "2025-11-26",
@@ -430,7 +430,7 @@ const sidebars = {
         avancementLabel: "TP4",
         avancement: 0.5,
         calendrier: {
-          "David": "2025-06-09",
+          "David": "2025-12-01",
           "Éric": "2025-12-03",
           "Jamil": "2025-06-09",
           "Jean-Michel": "2025-12-01",
@@ -447,7 +447,7 @@ const sidebars = {
         avancementLabel: "TP4",
         avancement: 0.75,
         calendrier: {
-          "David": "2025-06-09",
+          "David": "2025-12-04",
           "Éric": "2025-12-05",
           "Jamil": "2025-06-09",
           "Jean-Michel": "2025-12-03",
@@ -465,7 +465,7 @@ const sidebars = {
         avancementLabel: "TP4",
         avancement: 1,
         calendrier: {
-          "David": "2025-06-09",
+          "David": "2025-12-08",
           "Éric": "2025-12-09",
           "Jamil": "2025-06-09",
           "Jean-Michel": "2025-12-08",
@@ -480,7 +480,7 @@ const sidebars = {
       id: "cours/formatif3",
       customProps: {
         calendrier: {
-          "David": "2025-06-09",
+          "David": "2025-12-11",
           "Éric": "2025-12-10",
           "Jamil": "2025-06-09",
           "Jean-Michel": "2025-12-10",
@@ -496,7 +496,7 @@ const sidebars = {
       className: "examen",
       customProps: {
         calendrier: {
-          "David": "2025-06-09",
+          "David": "2025-12-22",
           "Éric": "2025-12-22",
           "Jamil": "2025-06-09",
           "Jean-Michel": "2025-12-22",
