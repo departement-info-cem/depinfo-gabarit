@@ -139,7 +139,7 @@ let n = 5;
 message = 5 < 4 ? "Pick a Shoe" : message + " dudes";
 
 for(let i = 0; i < n; i++){
-    if(n % 2 == 0){
+    if(i % 2 == 0){
         printToConsole(message);
     }
 }
