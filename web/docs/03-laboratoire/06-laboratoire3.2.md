@@ -180,7 +180,7 @@ Pas mal, mais tu peux faire mieux !
 
 ```
 
-Score final : 27
+Score final : 29
 
 ```
 

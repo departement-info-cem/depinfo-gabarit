@@ -2,7 +2,7 @@
 description: Exercices supplémentaires sur les fonctions
 ---
 
-# Intégration des fonctions
+# Intégration des notions
 
 
 <Row>
@@ -39,5 +39,7 @@ Tu peux prendre de l'avance en regardant le contenu des semaines qui arrivent.
 
 ## 💪 Exercices supplémentaires
 
-Vous devez réaliser le [🧪 Labo 3.1](/laboratoire/laboratoire3.1)
+Vous devez réaliser les laboratoires
+ [🧪 Labo 5.1](/laboratoire/laboratoire5.1)
+ [🧪 Labo 5.2](/laboratoire/laboratoire5.2)
 

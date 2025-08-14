@@ -1,44 +1,106 @@
-# 🧪 Labo 1 – Application console en C sharp
+# 🧪 Labo 1.1 – Premiers pas en C#
 
-Dans ce premier laboratoire, tu découvriras comment créer une **application console C#**. Ce type d’application s’exécute dans une fenêtre texte (console) et est idéal pour apprendre les bases du langage sans interface graphique.
-
-Tu apprendras à :
-- Créer un nouveau projet dans Visual Studio
-- Écrire un code simple pour interagir avec l’utilisateur
-- Lancer et tester ton application
 
 🎥 Visionne cette capsule pour bien démarrer :  
 <a href="https://youtu.be/PAdnzYcKcRQ?si=iacc8sIyPRtffAcT" target="_blank" rel="noopener noreferrer">Première application console en C#</a>
 
-### Exemple de code
+## 🎯 Objectif
+Apprendre à :
+- Créer un projet **Console** dans Visual Studio.
+- Comprendre la structure de base d’un programme C#.
+- Écrire, exécuter et tester un programme simple qui affiche du texte.
+
+---
+
+## 🚀 Étape 1 – Créer le projet
+
+1. **Ouvrir Visual Studio**.
+2. Cliquez sur **Créer un nouveau projet**.
+3. Choisissez **Application console (.NET 6)** ou **Application console (.NET 7)**.
+4. Cliquez sur **Suivant**.
+5. Donnez un **nom** à votre projet (ex. `Laboratoire1_Ex1`).
+6. Cliquez sur **Suivant**.
+7. À l’étape **Informations supplémentaires** :
+
+   > ⚠️ **Important** :  
+   > Cochez **« N’utilisez pas d’instructions de niveau supérieur. »**  
+   > Cela générera un fichier `Program.cs` avec une **méthode `Main()` dans une classe `Program`**.  
+   > Toutes vos méthodes seront définies **dans cette classe**, avec le mot-clé `static`.
+
+8. Cliquez sur **Créer**.
+
+---
+
+## 📂 Étape 2 – Comprendre la structure
+
+Après la création, Visual Studio génère automatiquement un fichier **`Program.cs`** :
 
 ```csharp
-using System; // Importation du namespace 'System' qui contient la classe Console
+using System;
 
-class Program // Déclaration de la classe principale du programme
+namespace Laboratoire1_Ex1
 {
-    static void Main() // Point d'entrée de l'application, méthode appelée au démarrage
+    class Program
     {
-        Console.WriteLine("Bienvenue dans votre première application C#!");
-        // Affiche un message de bienvenue avec un retour à la ligne
-
-        Console.WriteLine("Quel est votre prénom ? ");
-        // Invite l'utilisateur à entrer son prénom 
-
-        string prenom = Console.ReadLine();
-        // Lit la ligne saisie au clavier et la stocke dans une variable 'prenom' (assignation)
-
-        Console.WriteLine("Enchanté " + prenom);
-        // Affiche un message personnalisé avec la variable 'prenom'
-
-        Console.WriteLine("À bientôt !");
-        // Affiche un message de clôture
-
-        Console.WriteLine("Appuie sur une touche pour quitter...");
-        // Indique à l'utilisateur d'appuyer sur une touche pour terminer
-
-        Console.ReadKey();
-        // Attend que l'utilisateur appuie sur une touche pour fermer la console
+        static void Main(string[] args)
+        {
+            // Votre code ira ici
+        }
     }
 }
+```
 
+**Explications** :
+- `using System;` → donne accès aux fonctionnalités de base (comme `Console.WriteLine`).
+- `namespace Laboratoire1_Ex1` → regroupe le code du projet.
+- `class Program` → classe principale où se trouve le programme.
+- `static void Main` → point d’entrée du programme. C’est la première méthode exécutée.
+
+---
+
+## ✏️ Étape 3 – Écrire le programme
+
+Nous allons écrire un programme qui affiche deux lignes de texte.
+
+### Code à saisir :
+```csharp
+using System;
+
+namespace Laboratoire1_Ex1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Bonjour");
+            Console.WriteLine("Bienvenue au cours de programmation!");
+        }
+    }
+}
+```
+
+---
+
+## ▶️ Étape 4 – Exécuter le programme
+
+1. Cliquez sur **Démarrer** (triangle vert en haut) ou appuyez sur **F5**.
+2. Une fenêtre noire (console) s’ouvrira avec :
+```
+Bonjour
+Bienvenue au cours de programmation!
+```
+
+---
+
+## 🧪 Étape 5 – Expérimenter
+
+- Modifiez le texte affiché.
+- Ajoutez une troisième ligne avec `Console.WriteLine("Bonne journée!");`.
+- Relancez le programme pour voir le changement.
+
+---
+
+## 📎 Résumé des notions vues
+- Structure d’un programme C# avec `Main()`.
+- Affichage dans la console avec `Console.WriteLine`.
+- Importance de désactiver les instructions de niveau supérieur pour avoir un `Main()` classique.

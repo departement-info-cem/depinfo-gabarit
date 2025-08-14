@@ -3,11 +3,7 @@
 
 Nous allons travailler une série d’exercices pour pratiquer la **définition de méthodes avec paramètres et retour de valeur**.
 
-> ⚠️ **Important** :  
-> Lors de la création de votre projet dans Visual Studio, à l’étape « Informations supplémentaires », **cochez** :  
-> **« N’utilisez pas d’instructions de niveau supérieur. »**  
-> Cela génèrera un fichier `Program.cs` avec une **méthode `Main()` dans une classe `Program`**.  
-> Toutes vos méthodes seront définies **dans cette classe**, avec le mot-clé `static`.
+
 
 ---
 

@@ -1,4 +1,4 @@
-# 🧪 Laboratoire 2.2 – Conversion, premutation, opérations
+# 🧪 Laboratoire 2.2 – Conversion, permutation, opérations
 
 ---
 
@@ -9,19 +9,19 @@
 - Demandez à l’utilisateur trois notes (ex : sur 30 %, 30 %, 40 %)
 - Utilisez `double.Parse()` pour convertir les entrées
 - Calculez la moyenne avec les poids suivants : 30 %, 30 %, 40 %
-- Affichez le résultat avec une précision de deux décimales
+- Affichez le résultat
 
 ✅ **Exemple attendu** :
 ```
 Note 1 : 80
 Note 2 : 70
 Note 3 : 90
-Moyenne : 81.00
+Moyenne : 81
 ```
 
 ---
 
-### 🟡 2. Conversion de température (version simplifiée)
+### 🟡 2. Conversion de température 
 🎯 **Objectif** : Appliquer deux formules de conversion de température en manipulant des `double`.
 
 🛠️ **Instructions** :
@@ -36,7 +36,7 @@ Moyenne : 81.00
 ```
 Température : 25
 En Fahrenheit : 77
-En Celsius : -3.89
+En Celsius : -3.888888888888889
 ```
 
 ---
@@ -51,8 +51,8 @@ En Celsius : -3.89
 
 ✅ **Exemple attendu** :
 ```
-Prix du repas : 20.00
-Total à payer : 25.00
+Prix du repas : 20
+Total à payer : 25
 ```
 
 ---
@@ -104,7 +104,7 @@ Après permutation : A = 2, B = 3, C = 1
 ```
 Article 1 : quantité = 2, prix = 4.5
 Article 2 : quantité = 1, prix = 3.0
-Total : 12.00
+Total : 12
 ```
 
 ---

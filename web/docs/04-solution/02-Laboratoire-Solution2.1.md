@@ -85,9 +85,19 @@ int age = int.Parse(Console.ReadLine());
 Console.WriteLine("Tu as " + age + " ans");
 ```
 
+
 ---
 
 ## 🟢 Exercice 10
+
+```csharp
+Console.Write("Entrez un prix : ");
+double prixSaisi = double.Parse(Console.ReadLine());
+Console.WriteLine("Prix saisi : " + prixSaisi);
+```
+---
+
+## 🟢 Exercice 11
 
 ```csharp
 Console.Write("Entrez un nombre : ");
@@ -99,7 +109,7 @@ Console.WriteLine("Somme : " + (n1 + n2));
 
 ---
 
-## 🟢 Exercice 11
+## 🟢 Exercice 12
 
 ```csharp
 Console.Write("Entrez un nombre : ");
@@ -111,7 +121,7 @@ Console.WriteLine("Résultat : " + (s1 - s2));
 
 ---
 
-## 🟢 Exercice 12
+## 🟢 Exercice 13
 
 ```csharp
 Console.Write("Entrez un nombre : ");
@@ -123,7 +133,7 @@ Console.WriteLine("Produit : " + (m1 * m2));
 
 ---
 
-## 🟢 Exercice 13
+## 🟢 Exercice 14
 
 ```csharp
 int a = 7, b = 2;
@@ -132,7 +142,7 @@ Console.WriteLine("Résultat (int) : " + (a / b));
 
 ---
 
-## 🟢 Exercice 14
+## 🟢 Exercice 15
 
 ```csharp
 double ad = 7, bd = 2;
@@ -141,17 +151,17 @@ Console.WriteLine("Résultat (double) : " + (ad / bd));
 
 ---
 
-## 🟢 Exercice 15
+## 🟢 Exercice 16
 
 ```csharp
 Console.Write("Entrez un nombre : ");
 int nombre = int.Parse(Console.ReadLine());
-Console.WriteLine("Reste : " + (nombre % 2) + " (impair)");
+Console.WriteLine("Reste de " + nombre + " ÷ 10 = " + (nombre % 10));
 ```
 
 ---
 
-## 🟢 Exercice 16
+## 🟢 Exercice 17
 
 ```csharp
 Console.WriteLine("Sans parenthèses : " + (2 + 3 * 4));
@@ -160,24 +170,14 @@ Console.WriteLine("Avec parenthèses : " + ((2 + 3) * 4));
 
 ---
 
-## 🟢 Exercice 17
-
-```csharp
-Console.Write("Note 1 : ");
-int note1 = int.Parse(Console.ReadLine());
-Console.Write("Note 2 : ");
-int note2 = int.Parse(Console.ReadLine());
-Console.WriteLine("Moyenne : " + ((note1 + note2) / 2));
-```
-
----
-
 ## 🟢 Exercice 18
 
 ```csharp
-Console.Write("Quel âge as-tu ? ");
-int ageLu = int.Parse(Console.ReadLine());
-Console.WriteLine("Tu as " + ageLu + " ans");
+Console.Write("Note 1 : ");
+double note1 = double.Parse(Console.ReadLine());
+Console.Write("Note 2 : ");
+double note2 = double.Parse(Console.ReadLine());
+Console.WriteLine("Moyenne : " + ((note1 + note2) / 2));
 ```
 
 ---
@@ -187,8 +187,7 @@ Console.WriteLine("Tu as " + ageLu + " ans");
 ```csharp
 Console.Write("Prix : ");
 double prix = double.Parse(Console.ReadLine());
-double total = prix * 1.15;
-Console.WriteLine("Total avec taxes : " + total);
+Console.WriteLine("Double du prix : " + (prix * 2));
 ```
 
 ---

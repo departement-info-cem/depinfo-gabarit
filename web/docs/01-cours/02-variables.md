@@ -195,6 +195,7 @@ string entree = Console.ReadLine();
 double prix = double.Parse(entree);
 ```
 
+
 ### 🛑 Attention aux erreurs !
 Si l’utilisateur entre un texte non numérique (ex: "abc"), `int.Parse()` ou `double.Parse()` déclencheront une **erreur d’exécution**.
 

@@ -60,7 +60,7 @@ if (prix >= 100)
 }
 else if (prix < 30)
 {
-    Console.WriteLine("Wow c'est un beau prix. C'est suspect.");
+    Console.WriteLine("Wow c'est un beau prix. C'est sus.");
 }
 else
 {
@@ -78,11 +78,11 @@ string aliment = Console.ReadLine();
 
 if (aliment == "brocoli")
 {
-    Console.WriteLine("Un des aliments avec le plus de nutriments");
+    Console.WriteLine("Miam. Un des aliments avec le plus de nutriments");
 }
 else
 {
-    Console.WriteLine("Le brocoli est une meilleure option");
+    Console.WriteLine("Huh, c'est mieux le brocoli");
 }
 ```
 

@@ -1,4 +1,4 @@
-# ✅ Solutions – Laboratoire 2.2
+# ✅ Solutions – Laboratoire 2.2 
 
 ---
 
@@ -22,11 +22,7 @@ Console.WriteLine("Moyenne : " + moyenne);
 ```csharp
 Console.Write("Température : ");
 double t = double.Parse(Console.ReadLine());
-
-// Ligne pour Celsius en Fahrenheit
 Console.WriteLine("En Fahrenheit : " + (t * 9 / 5 + 32));
-
-// Ligne pour Fahrenheit en Celsius
 Console.WriteLine("En Celsius : " + ((t - 32) * 5 / 9));
 ```
 
@@ -37,7 +33,7 @@ Console.WriteLine("En Celsius : " + ((t - 32) * 5 / 9));
 ```csharp
 Console.Write("Prix du repas : ");
 double prix = double.Parse(Console.ReadLine());
-double total = prix * 1.15 * 1.10;
+double total = prix + (prix * 0.15) + (prix * 0.10);
 Console.WriteLine("Total à payer : " + total);
 ```
 
@@ -102,3 +98,4 @@ Console.WriteLine("Division entière : " + (x / y));
 
 double resultatDecimal = (double)x / y;
 Console.WriteLine("Division décimale : " + resultatDecimal);
+```

@@ -156,18 +156,23 @@ Tu as 17 ans
 
 ---
 
-### 🟢 Exercice 10 – Concaténation avec `int`  
-🎯 **Objectif** : Combiner texte et valeur numérique.
+### 🟢 Exercice 10 – Conversion `string` en `double`  
+🎯 **Objectif** : Lire un nombre à virgule et l’afficher.  
 
-🛠️ **Instructions** :
-- Demande l’âge (avec conversion).
-- Affiche : "Tu as [âge] ans".
+🧠 Utiliser `double.Parse()` pour convertir une saisie en un nombre décimal.  
 
-✅ **Entrée/Sortie attendue** :
+🛠️ **Instructions** :  
+- Demande à l’utilisateur un prix (avec décimales).  
+- Convertis la saisie en `double` avec `double.Parse()`.  
+- Affiche : `"Prix saisi : X"`.  
+
+✅ **Entrée/Sortie attendue** :  
 ```plaintext
-Quel âge as-tu ? 18
-Tu as 18 ans
+Entrez un prix : 19.95
+Prix saisi : 19.95
 ```
+
+---
 
 
 ### 🟢 Exercice 11 – Addition  
