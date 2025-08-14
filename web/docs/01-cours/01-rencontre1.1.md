@@ -672,40 +672,25 @@ Au Cégep, ce dossier sera invisible à moins d'avoir activé cette option préa
 Vous remarquerez que le projet Angular est automatiquement muni d'un fichier `.gitignore`. Il est parfait
 pour nos besoins car il permettra d'ignorer les sous-dossiers lourds comme `node_modules` et `.angular`.
 
-Ensuite, à l'aide de **GitKraken** 🦑, initialisez votre repository. (Si vous utilisez **Fork** 🔱, initialisez
-votre repository sur GitHub en vous assurant qu'il soit **privé** ⛔ puis clonez-le sur l'ordinateur ensuite)
+Ensuite, initialisez votre repository sur GitHub. (Pour pouvoir le cloner dans **Fork** 🔱 ensuite)
 
-<center>![Initialiser le repository](../../static/img/cours1/initRepo.png)</center>
+⛔ Assurez-vous qu'il soit privé !
 
-<center>![Initialier le repository](../../static/img/cours1/initRepo2.png)</center>
+<center>![Initialiser le repository](../../static/img/cours1/git1.png)</center>
+
+Clonez le repository sur votre ordinateur à l'aide de son URL :
+
+<center>![Cloner le repository](../../static/img/cours1/git2.png)</center>
 
 Puis, **glissez votre projet Angular dans le repository**. Vous pourrez donc faire un premier **commit**
 pour l'ajout du projet Angular de départ.
 
-<center>![Premier commit](../../static/img/cours1/stageChanges.png)</center>
+<center>![Commit dans le repository](../../static/img/cours1/git3.png)</center>
 
-<center>![Premier commit](../../static/img/cours1/commit.png)</center>
+On peut faire son premier push
 
-<center>![Liste des commits](../../static/img/cours1/commits.png)</center>
-
-On peut faire son premier push. (Si vous utilisez GitKraken 🦑, cela permettra de publier le repo sur GitHub)
-
-<center>![Push](../../static/img/cours1/push.png)</center>
-
-N'oubliez surtout pas de rendre votre repository `private` si c'est un TP ! (Vous n'aurez pas à faire cette étape
-si vous utilisiez Fork 🔱)
-
-<center>![Publish](../../static/img/cours1/publish.png)</center>
+<center>![Push le repository](../../static/img/cours1/git4.png)</center>
 
 #### 🐑🐑 Cloner un repo pour poursuivre son travail plus tard
 
-Que ce soit avec GitKraken 🦑 ou Fork 🔱 la procédure est plutôt similaire. (Pour Fork, il faudra copier-coller
-l'URL du repository) On commence par cloner le repository qui a été publié sur GitHub :
-
-<center>![Cloner un repo](../../static/img/cours1/clone.png)</center>
-
-<center>![Cloner un repo depuis GitHub](../../static/img/cours1/cloneGithub.png)</center>
-
-La première chose à faire ensuite sera d'utiliser la commande `npm install` dans votre projet
-Angular pour générer le dossier `node_modules` ! Gardez à l'esprit que ce dossier sera toujours
-absent après avoir cloné un projet à cause (ou plutôt grâce) du `.gitignore`.
+Toutes les fois suivantes où vous **clonerez** votre repository, la première chose à faire ensuite sera d'utiliser la commande `npm install` dans votre projet Angular pour générer le dossier `node_modules` ! Gardez à l'esprit que ce dossier sera toujours absent après avoir cloné un projet à cause (ou plutôt grâce) du `.gitignore`.
