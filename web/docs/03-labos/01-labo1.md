@@ -17,20 +17,8 @@ N'ouvrez pas votre projet avec Visual Studio Code immédiatement, nous avons que
 
 ### **2 -** Créer le repo
 
-[💡](/cours/rencontre1.1#-créer-un-nouveau-projet-et-son-repository) Créez un nouveau repository Git vide à l'aide de **Fork** 🔱 ou **GitKraken** 🦑. Par contre, 
-faites-le en prenant un moment de grande considération...
+[💡](/cours/rencontre1.1#-créer-un-nouveau-projet-et-son-repository) Créez un nouveau repository Git vide à l'aide de **Fork** 🔱
 
-#### 🔱🦑 Fourchette ou Carlos le calamar ?
-
-<center>![Fork ou GitKraken](../../static/img/labo1/forkKraken.png)</center>
-
-Je vous invite à choisir une des deux applications pour le reste de la session. Voici les pours et les contres :
-
-|Aspect|GitKraken|Fork|
-|-|-|-|
-|Licence|Payante, mais gratuite pour les étudiants. Vous risquez de ne plus l'utiliser après la technique. Il faut renouveler la licence une fois par année en envoyant une preuve (ex : photo de carte étudiante) et ça prend 24+ heures... 💩|Gratuit.|
-|Gestion des branches et merge (TP4)|Clairement représenté visuellement. Plus facile pour l'apprentissage.|Légèrement moins riche visuellement, mais ça fonctionne.|
-|Gestion des conflits lors d'un merge (TP4)|Gestion de conflits intégrée. Très confortable.|Renvoie vers les IDE (Visual Studio / VS Code) pour gérer les conflits là-bas. Moins confortable.|
 
 #### 🦸‍♂️ Tous pour un ou Un pour tous ?
 
