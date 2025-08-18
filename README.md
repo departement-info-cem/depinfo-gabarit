@@ -1,4 +1,4 @@
-# depinfo-modele
+# depinfo-gabarit
 
 Modèle de base pour un cours du département d'informatique du CÉGEP Édouard-Montpetit. 
 
@@ -54,9 +54,18 @@ Cette commande démarre une serveur de développement local sur le port `3000` d
 
 Tout le code poussé sur la branche `main` de ce dépôt est automatiquement déployée sur [https://info.cegepmontpetit.ca/nom-du-repo-github/](https://info.cegepmontpetit.ca/nom-du-repo-github/) à l'aide de Github Actions.
 
+## Mise à jour de votre site de cours
+
+Il est recommandé de mettre à jour votre site web de cours au moins une fois par année, c'est à dire d'aller chercher les derniers changements qui ont été ajoutés dans le gabarit. Pour ce faire, il est recommandé d'utiliser l'option de synchronisation entre fork de Github. Si vous êtes enseignant au département d'informatique au CÉGEP Édouard-Montpetit, Pierre-Olivier Brillant s'offre de s'occuper des mises à jour de vos site web, dans un délais de moins de 3 semaines après la demande.
+
 ## Avancé
 
 Des composantes supplémentaires ont été développées par Pierre-Olivier Brillant. Vous pouvez vous référer à la section [Wiki](https://github.com/departement-info-cem/depinfo-gabarit/wiki) de ce repository, ou vous adresser directement à lui pour en savoir plus.
+
+## Démonstrations
+
+- [Gabarit](https://info.cegepmontpetit.ca/depinfo-gabarit/)
+- [5N6](https://info.cegepmontpetit.ca/5N6-mobile-2/)
 
 ## Références
 

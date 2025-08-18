@@ -39,9 +39,9 @@ export default function MainDocsCalendar({
   const detectYearFromSidebar = (): number => {
     for (const entry of sidebarDocs) {
       if (entry.customProps?.calendrier) {
-        const firstDate = Object.values(
-          entry.customProps.calendrier
-        )[0] as string;
+        const groupedate = Object.values(entry.customProps.calendrier);
+        const groupe = Object.values(groupedate[0]);
+        const firstDate = Object.values(groupe[0])[0] as string;
         if (firstDate) {
           return new Date(firstDate).getFullYear();
         }
@@ -86,15 +86,22 @@ export default function MainDocsCalendar({
         doc._sidebarProps?.calendrier &&
         doc._sidebarProps.calendrier[professorName]
       ) {
-        const date = doc._sidebarProps.calendrier[professorName];
-        events.push({
-          id: doc.id, // Utiliser directement l'ID du document
-          title: doc?.title || doc?._sidebarLabel || doc?.id,
-          description: doc?.description || "",
-          date: date as string,
-          className: doc._sidebarClassName,
-          customProps: doc._sidebarProps,
-        });
+        const groupedate = doc._sidebarProps.calendrier[professorName] as Array<Record<string, string>>;
+        groupedate.forEach((groupeObj) => {
+          const [groupe, date] = Object.entries(groupeObj)[0];
+          events.push({
+            id: doc.id, // Utiliser directement l'ID du document
+            title: groupe + " - " + (doc?.title || doc?._sidebarLabel || doc?.id),
+            description: doc?.description || "",
+            date: date as string,
+            className: doc._sidebarClassName,
+            customProps: doc._sidebarProps,
+          });
+          console.log(events);
+        })
+        //const groupe = doc._sidebarProps.calendrier[professorName];
+        //const date = doc._sidebarProps.calendrier[professorName];
+        
       }
     });
     setCalendarEvents(events);
