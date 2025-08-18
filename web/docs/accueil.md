@@ -83,6 +83,13 @@ La matière est expliquée dans chacun des cours, mais tu peux trouver plus d'in
             icon: "📅",
             component: <MainDocsCalendar professorName="Pierre-Paul" />,
         },
+        ,
+        {
+            id: "calendar-tommy",
+            label: "Tommy",
+            icon: "📅",
+            component: <MainDocsCalendar professorName="Tommy" />,
+        },
         {
             id: "calendar-zenia",
             label: "Zénia",
