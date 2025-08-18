@@ -5,546 +5,548 @@ const sidebars = {
   docs: [
     {
       type: "doc",
-      label: "1.1 - Introduction 🏁",
-      id: "cours/introduction",
-      customProps: {
+      label: "1.1 - Rencontre",
+      id: "cours/rencontre1.1", // Doit matcher le nom du document qui est dans docs/01-cours/. Les chiffres au début (ex : 01-) sont ignorés.
+      customProps: { // Attention, il faut recompiler à chaque modification dans sidebar.js pour que les modifications s'appliquent.
         calendrier: {
-          "David": [{"1090":"2025-08-25"}, {"1100":"2025-08-25"}],
-          "Éric": [{"1050":"2025-08-22"}, {"1060":"2025-08-22"}],
-          "Jamil": [{"1010":"2025-06-09"}, {"1020":"2025-06-09"}],
-          "Jean-Michel": [{"1120":"2025-08-25"}],
-          "Pierre-Paul": [{"1030":"2025-08-25"}, {"1040":"2025-08-25"}],
-          "Tommy": [{"1130":"2025-06-09"}],
-          "Zénia": [{"1070":"2025-06-09"}, {"1080":"2025-06-09"}]
+          "Prof 1": [
+            {"1010": "2025-06-09"}  // Date du cours pour le groupe 1010 du le Prof 1
+          ],
+          "Prof 2": [
+            {"1020": "2025-06-09"},  // Date du cours pour le groupe 1020 du le Prof 2
+            {"1030": "2025-06-09"} // Date du cours pour le groupe 1030 du le Prof 2
+          ]
         },
-      },
+        tooltip: "visible" // Valeurs possibles visible ou cache, valeur par défaut "visible"
+      }
     },
     {
       type: "doc",
-      label: "1.2 - Variables et opérations",
-      id: "cours/variables",
+      label: "1.2 - Rencontre",
+      id: "cours/rencontre1.2",
       customProps: {
-        avancementLabel: "TP1 - Créé - ",
-        avancement: 0.1,
         calendrier: {
-          "David": [{"1090":"2025-08-28"}, {"1100":"2025-08-28"}],
-          "Éric": [{"1050":"2025-08-27"}, {"1060":"2025-08-27"}],
-          "Jamil": [{"1010":"2025-06-09"}, {"1020":"2025-06-09"}],
-          "Jean-Michel": [{"1120":"2025-08-27"}],
-          "Pierre-Paul": [{"1030":"2025-08-27"}, {"1040":"2025-08-27"}],
-          "Tommy": [{"1130":"2025-06-09"}],
-          "Zénia": [{"1070":"2025-06-09"}, {"1080":"2025-06-09"}]
+          "Prof 1": [
+            {"1010": "2025-06-09"} // Date du cours pour le groupe 1010 du le Prof 1
+          ],
+          "Prof 2": [
+            {"1020": "2025-06-09"}, // Date du cours pour le groupe 1020 du le Prof 2
+            {"1030": "2025-06-09"} // Date du cours pour le groupe 1030 du le Prof 2
+          ]
         },
-      },
+        tooltip: "cache"
+      }
     },
     {
       type: "doc",
-      label: "2.1 - Structures conditionnelles (if/else)",
-      id: "cours/ifelse",
+      label: "2.1 - Rencontre",
+      id: "cours/rencontre2.1",
       customProps: {
+        calendrier: {
+          "Prof 1": [
+            {"1010": "2025-06-11"}
+          ],
+          "Prof 2": [
+            {"1020": "2025-06-09"},
+            {"1030": "2025-06-09"}
+          ]
+        },
+        avancementLabel: "TP1 - Créé",
+        avancement: 0.0
+      }
+    },
+    {
+      type: "doc",
+      label: "2.2 - Rencontre",
+      id: "cours/rencontre2.2",
+      customProps: {
+        calendrier: {
+          "Prof 1": [
+            {"1010": "2025-06-11"}
+          ],
+          "Prof 2": [
+            {"1020": "2025-06-11"},
+            {"1030": "2025-06-11"}
+          ]
+        },
         avancementLabel: "TP1",
-        avancement: 0.2,
-        calendrier: {
-          "David": [{"1090":"2025-08-29"}, {"1100":"2025-08-29"}],
-          "Éric": [{"1050":"2025-09-03"}, {"1060":"2025-09-03"}],
-          "Jamil": [{"1010":"2025-06-09"}, {"1020":"2025-06-09"}],
-          "Jean-Michel": [{"1120":"2025-08-29"}],
-          "Pierre-Paul": [{"1030":"2025-08-29"}, {"1040":"2025-08-29"}],
-          "Tommy": [{"1130":"2025-06-09"}],
-          "Zénia": [{"1070":"2025-06-09"}, {"1080":"2025-06-09"}]
-        },
-      },
+        avancement: 0.1
+      }
     },
     {
       type: "doc",
-      label: "2.2 - Fonctions",
-      id: "cours/fonctions",
+      label: "3.1 - Rencontre",
+      id: "cours/rencontre3.1",
       customProps: {
+        calendrier: {
+          "Prof 1": [
+            {"1010": "2025-06-12"}
+          ],
+          "Prof 2": [
+            {"1020": "2025-06-11"},
+            {"1030": "2025-06-11"}
+          ]
+        },
         avancementLabel: "TP1",
-        avancement: 0.4,
-        calendrier: {
-          "David": [{"1090":"2025-09-04"}, {"1100":"2025-09-04"}],
-          "Éric": [{"1050":"2025-09-10"}, {"1060":"2025-09-10"}],
-          "Jamil": [{"1010":"2025-06-09"}, {"1020":"2025-06-09"}],
-          "Jean-Michel": [{"1120":"2025-09-03"}],
-          "Pierre-Paul": [{"1030":"2025-09-03"}, {"1040":"2025-09-03"}],
-          "Tommy": [{"1130":"2025-06-09"}],
-          "Zénia": [{"1070":"2025-06-09"}, {"1080":"2025-06-09"}]
-        },
-      },
+        avancement: 0.25
+      }
     },
     {
       type: "doc",
-      label: "3.1 - Intégration des fonctions",
-      id: "cours/integration-fonctions",
+      label: "3.2 - Rencontre",
+      id: "cours/rencontre3.2",
       customProps: {
+        calendrier: {
+          "Prof 1": [
+            {"1010": "2025-06-12"}
+          ],
+          "Prof 2": [
+            {"1020": "2025-06-12"},
+            {"1030": "2025-06-12"}
+          ]
+        },
         avancementLabel: "TP1",
-        avancement: 0.6,
-        calendrier: {
-          "David": [{"1090":"2025-09-08"}, {"1100":"2025-09-08"}],
-          "Éric": [{"1050":"2025-09-12"}, {"1060":"2025-09-12"}],
-          "Jamil": [{"1010":"2025-06-09"}, {"1020":"2025-06-09"}],
-          "Jean-Michel": [{"1120":"2025-09-08"}],
-          "Pierre-Paul": [{"1030":"2025-09-08"}, {"1040":"2025-09-08"}],
-          "Tommy": [{"1130":"2025-06-09"}],
-          "Zénia": [{"1070":"2025-06-09"}, {"1080":"2025-06-09"}]
-        },
-      },
+        avancement: 0.5
+      }
     },
     {
       type: "doc",
-      label: "3.2 - TP1 - Créateur de personnage",
-      id: "cours/integration-tp1",
-      className: "remise-tp1",
+      label: "4.1 - Rencontre",
+      id: "cours/rencontre4.1",
       customProps: {
+        calendrier: {
+          "Prof 1": [
+            {"1010": "2025-06-16"}
+          ],
+          "Prof 2": [
+            {"1020": "2025-06-12"},
+            {"1030": "2025-06-12"}
+          ]
+        },
         avancementLabel: "TP1",
-        avancement: 1.0,
+        avancement: 0.75
+      }
+    },
+    {
+      type: "doc",
+      label: "4.2 - Rencontre",
+      id: "cours/rencontre4.2",
+      customProps: {
         calendrier: {
-          "David": [{"1090":"2025-09-11"}, {"1100":"2025-09-11"}],
-          "Éric": [{"1050":"2025-09-17"}, {"1060":"2025-09-17"}],
-          "Jamil": [{"1010":"2025-06-09"}, {"1020":"2025-06-09"}],
-          "Jean-Michel": [{"1120":"2025-09-10"}],
-          "Pierre-Paul": [{"1030":"2025-09-10"}, {"1040":"2025-06-10"}],
-          "Tommy": [{"1130":"2025-06-09"}],
-          "Zénia": [{"1070":"2025-06-09"}, {"1080":"2025-06-09"}]
+          "Prof 1": [
+            {"1010": "2025-06-16"}
+          ],
+          "Prof 2": [
+            {"1020": "2025-06-16"},
+            {"1030": "2025-06-16"}
+          ]
         },
+        avancementLabel: "TP1",
+        avancement: 1
+      }
+    },
+    {
+      type: "doc",
+      label: "5.1 - Rencontre",
+      id: "cours/rencontre5.1",
+      customProps: {
+        calendrier: {
+          "Prof 1": [
+            {"1010": "2025-06-18"}
+          ],
+          "Prof 2": [
+            {"1020": "2025-06-18"},
+            {"1030": "2025-06-18"}
+          ]
+        },
+        avancementLabel: "TP2 - Créé",
+        avancement: 0.0
       },
+      "className": "remise-tp1"
     },
     {
       type: "doc",
-      label: "4.1 - Tableaux 1D",
-      id: "cours/tableaux1d",
+      label: "5.2 - Rencontre",
+      id: "cours/rencontre5.2",
       customProps: {
-        avancementLabel: "TP2 - Créé - ",
-        avancement: 0.1,
         calendrier: {
-          "David": [{"1090":"2025-09-15"}, {"1100":"2025-09-15"}],
-          "Éric": [{"1050":"2025-09-19"}, {"1060":"2025-09-19"}],
-          "Jamil": [{"1010":"2025-06-09"}, {"1020":"2025-06-09"}],
-          "Jean-Michel": [{"1120":"2025-09-15"}],
-          "Pierre-Paul": [{"1030":"2025-09-15"}, {"1040":"2025-09-15"}],
-          "Tommy": [{"1130":"2025-06-09"}],
-          "Zénia": [{"1070":"2025-06-09"}, {"1080":"2025-06-09"}]
-        }
-      }
-    },
-    {
-      type: "doc",
-      label: "4.2 - Boucles for, tableaux et recherche",
-      id: "cours/for",
-      customProps: {
+          "Prof 1": [
+            {"1010": "2025-06-18"}
+          ],
+          "Prof 2": [
+            {"1020": "2025-06-18"},
+            {"1030": "2025-06-18"}
+          ]
+        },
         avancementLabel: "TP2",
-        avancement: 0.2,
-        calendrier: {
-          "David": [{"1090":"2025-09-18"}, {"1100":"2025-09-18"}],
-          "Éric": [{"1050":"2025-09-24"}, {"1060":"2025-09-24"}],
-          "Jamil": [{"1010":"2025-06-09"}, {"1020":"2025-06-09"}],
-          "Jean-Michel": [{"1120":"2025-09-17"}],
-          "Pierre-Paul": [{"1030":"2025-09-17"}, {"1040":"2025-09-17"}],
-          "Tommy": [{"1130":"2025-06-09"}],
-          "Zénia": [{"1070":"2025-06-09"}, {"1080":"2025-06-09"}]
-        }
+        avancement: 0.1
       }
     },
     {
       type: "doc",
-      label: "5.1 - Intégration des notions",
-      id: "cours/integration-for",
+      label: "6.1 - Rencontre",
+      id: "cours/rencontre6.1",
       customProps: {
+        calendrier: {
+          "Prof 1": [
+            {"1010": "2025-06-19"}
+          ],
+          "Prof 2": [
+            {"1020": "2025-06-19"},
+            {"1030": "2025-06-19"}
+          ]
+        },
         avancementLabel: "TP2",
-        avancement: 0.4,
-        calendrier: {
-          "David": [{"1090":"2025-09-22"}, {"1100":"2025-09-22"}],
-          "Éric": [{"1050":"2025-09-26"}, {"1060":"2025-09-26"}],
-          "Jamil": [{"1010":"2025-06-09"}, {"1020":"2025-06-09"}],
-          "Jean-Michel": [{"1120":"2025-09-22"}],
-          "Pierre-Paul": [{"1030":"2025-09-22"}, {"1040":"2025-09-22"}],
-          "Tommy": [{"1130":"2025-06-09"}],
-          "Zénia": [{"1070":"2025-06-09"}, {"1080":"2025-06-09"}]
-        }
+        avancement: 0.3
       }
     },
     {
       type: "doc",
-      label: "5.2 - Formatif 1",
-      id: "cours/formatif1",
+      label: "6.2 - Rencontre",
+      id: "cours/rencontre6.2",
       customProps: {
         calendrier: {
-          "David": [{"1090":"2025-09-25"}, {"1100":"2025-09-25"}],
-          "Éric": [{"1050":"2025-10-01"}, {"1060":"2025-10-01"}],
-          "Jamil": [{"1010":"2025-06-09"}, {"1020":"2025-06-09"}],
-          "Jean-Michel": [{"1120":"2025-09-24"}],
-          "Pierre-Paul": [{"1030":"2025-09-24"}, {"1040":"2025-09-24"}],
-          "Tommy": [{"1130":"2025-06-09"}],
-          "Zénia": [{"1070":"2025-06-09"}, {"1080":"2025-06-09"}]
-        }
-      }
-    },
-    {
-      type: "doc",
-      label: "6.1 - Examen 1",
-      id: "cours/examen1",
-      className: "examen",
-      customProps: {
-        calendrier: {
-          "David": [{"1090":"2025-09-29"}, {"1100":"2025-09-29"}],
-          "Éric": [{"1050":"2025-10-03"}, {"1060":"2025-10-03"}],
-          "Jamil": [{"1010":"2025-06-09"}, {"1020":"2025-06-09"}],
-          "Jean-Michel": [{"1120":"2025-09-29"}],
-          "Pierre-Paul": [{"1030":"2025-09-29"}, {"1040":"2025-09-29"}],
-          "Tommy": [{"1130":"2025-06-09"}],
-          "Zénia": [{"1070":"2025-06-09"}, {"1080":"2025-06-09"}]
-        }
-      }
-    },
-    {
-      type: "doc",
-      label: "6.2 - Tableaux 2D",
-      id: "cours/tableaux2d",
-      customProps: {
+          "Prof 1": [
+            {"1010": "2025-06-19"}
+          ],
+          "Prof 2": [
+            {"1020": "2025-06-19"},
+            {"1030": "2025-06-19"}
+          ]
+        },
         avancementLabel: "TP2",
-        avancement: 0.5,
-        calendrier: {
-          "David": [{"1090":"2025-10-02"}, {"1100":"2025-10-02"}],
-          "Éric": [{"1050":"2025-10-08"}, {"1060":"2025-10-08"}],
-          "Jamil": [{"1010":"2025-06-09"}, {"1020":"2025-06-09"}],
-          "Jean-Michel": [{"1120":"2025-10-01"}],
-          "Pierre-Paul": [{"1030":"2025-10-01"}, {"1040":"2025-10-01"}],
-          "Tommy": [{"1130":"2025-06-09"}],
-          "Zénia": [{"1070":"2025-06-09"}, {"1080":"2025-06-09"}]
-        }
+        avancement: 0.4
       }
     },
     {
       type: "doc",
-      label: "7.1 - Parcours de tableaux 2D",
-      id: "cours/parcours2d",
+      label: "7.1 - Rencontre",
+      id: "cours/rencontre7.1",
       customProps: {
+        calendrier: {
+          "Prof 1": [
+            {"1010": "2025-06-23"}
+          ],
+          "Prof 2": [
+            {"1020": "2025-06-16"},
+            {"1030": "2025-06-16"}
+          ]
+        },
         avancementLabel: "TP2",
-        avancement: 0.6,
-        calendrier: {
-          "David": [{"1090":"2025-10-06"}, {"1100":"2025-10-06"}],
-          "Éric": [{"1050":"2025-10-10"}, {"1060":"2025-10-10"}],
-          "Jamil": [{"1010":"2025-06-09"}, {"1020":"2025-06-09"}],
-          "Jean-Michel": [{"1120":"2025-10-06"}],
-          "Pierre-Paul": [{"1030":"2025-10-06"}, {"1040":"2025-10-06"}],
-          "Zénia": [{"1070":"2025-06-09"}, {"1080":"2025-06-09"}],
-          "Tommy": [{"1130":"2025-06-09"}]
-        }
+        avancement: 0.4
       }
     },
     {
       type: "doc",
-      label: "7.2 - Switch, while, do while",
-      id: "cours/switch-while",
+      label: "7.2 - Rencontre",
+      id: "cours/rencontre7.2",
       customProps: {
+        calendrier: {
+          "Prof 1": [
+            {"1010": "2025-06-23"}
+          ],
+          "Prof 2": [
+            {"1020": "2025-06-19"},
+            {"1030": "2025-06-19"}
+          ]
+        }
+      },
+      "className": "examen"
+    },
+    {
+      type: "doc",
+      label: "8.1 - Rencontre",
+      id: "cours/rencontre8.1",
+      customProps: {
+        calendrier: {
+          "Prof 1": [
+            {"1010": "2025-06-25"}
+          ],
+          "Prof 2": [
+            {"1020": "2025-06-23"},
+            {"1030": "2025-06-23"}
+          ]
+        },
         avancementLabel: "TP2",
-        avancement: 0.7,
-        calendrier: {
-          "David": [{"1090":"2025-10-09"}, {"1100":"2025-10-09"}],
-          "Éric": [{"1050":"2025-10-22"}, {"1060":"2025-10-22"}],
-          "Jamil": [{"1010":"2025-06-09"}, {"1020":"2025-06-09"}],
-          "Jean-Michel": [{"1120":"2025-10-08"}],
-          "Pierre-Paul": [{"1030":"2025-10-08"}, {"1040":"2025-10-08"}],
-          "Zénia": [{"1070":"2025-06-09"}, {"1080":"2025-06-09"}],
-          "Tommy": [{"1130":"2025-06-09"}]
-        }
+        avancement: 0.6
       }
     },
     {
       type: "doc",
-      label: "8.1 - Intégration des notions vues",
-      id: "cours/integration-2d",
+      label: "8.2 - Rencontre",
+      id: "cours/rencontre8.2",
       customProps: {
+        calendrier: {
+          "Prof 1": [
+            {"1010": "2025-06-25"}
+          ],
+          "Prof 2": [
+            {"1020": "2025-06-23"},
+            {"1030": "2025-06-23"}
+          ]
+        },
         avancementLabel: "TP2",
-        avancement: 0.8,
-        calendrier: {
-          "David": [{"1090":"2025-10-20"}, {"1100":"2025-10-20"}],
-          "Éric": [{"1050":"2025-10-24"}, {"1060":"2025-10-24"}],
-          "Jamil": [{"1010":"2025-06-09"}, {"1020":"2025-06-09"}],
-          "Jean-Michel": [{"1120":"2025-10-20"}],
-          "Pierre-Paul": [{"1030":"2025-10-20"}, {"1040":"2025-10-20"}],
-          "Zénia": [{"1070":"2025-06-09"}, {"1080":"2025-06-09"}],
-          "Tommy": [{"1130":"2025-06-09"}]
-        }
+        avancement: 0.7
       }
     },
     {
       type: "doc",
-      label: "8.2 - TP2 - Mini RPG",
-      id: "cours/integration-tp2",
-      className: "remise-tp2",
+      label: "9.1 - Rencontre",
+      id: "cours/rencontre9.1",
       customProps: {
+        calendrier: {
+          "Prof 1": [
+            {"1010": "2025-06-26"}
+          ],
+          "Prof 2": [
+            {"1020": "2025-06-25"},
+            {"1030": "2025-06-25"}
+          ]
+        },
         avancementLabel: "TP2",
-        avancement: 1.0,
-        calendrier: {
-          "David": [{"1090":"2025-10-23"}, {"1100":"2025-10-23"}],
-          "Éric": [{"1050":"2025-10-29"}, {"1060":"2025-10-29"}],
-          "Jamil": [{"1010":"2025-06-09"}, {"1020":"2025-06-09"}],
-          "Jean-Michel": [{"1120":"2025-10-22"}],
-          "Pierre-Paul": [{"1030":"2025-10-22"}, {"1040":"2025-10-22"}],
-          "Zénia": [{"1070":"2025-06-09"}, {"1080":"2025-06-09"}],
-          "Tommy": [{"1130":"2025-06-09"}]
-        }
+        avancement: 0.9
       }
     },
     {
       type: "doc",
-      label: "9.1 - Lecture de fichiers texte",
-      id: "cours/lecture-texte",
+      label: "9.2 - Rencontre",
+      id: "cours/rencontre9.2",
       customProps: {
-        avancementLabel: "TP3 - Créé - ",
-        avancement: 0.1,
         calendrier: {
-          "David": [{"1090":"2025-10-27"}, {"1100":"2025-10-27"}],
-          "Éric": [{"1050":"2025-10-31"}, {"1060":"2025-10-31"}],
-          "Jamil": [{"1010":"2025-06-09"}, {"1020":"2025-06-09"}],
-          "Jean-Michel": [{"1120":"2025-10-27"}],
-          "Pierre-Paul": [{"1030":"2025-10-27"}, {"1040":"2025-10-27"}],
-          "Zénia": [{"1070":"2025-06-09"}, {"1080":"2025-06-09"}],
-          "Tommy": [{"1130":"2025-06-09"}]
-        }
+          "Prof 1": [
+            {"1010": "2025-06-26"}
+          ],
+          "Prof 2": [
+            {"1020": "2025-06-25"},
+            {"1030": "2025-06-25"}
+          ]
+        },
+        avancementLabel: "TP2",
+        avancement: 1
+      },
+      "className": "remise-tp2"
+    },
+    {
+      type: "doc",
+      label: "10.1 - Rencontre",
+      id: "cours/rencontre10.1",
+      customProps: {
+        calendrier: {
+          "Prof 1": [
+            {"1010": "2025-07-01"}
+          ],
+          "Prof 2": [
+            {"1020": "2025-06-26"},
+            {"1030": "2025-06-26"}
+          ]
+        },
+        avancementLabel: "TP3 - Créé",
+        avancement: 0.0
       }
     },
     {
       type: "doc",
-      label: "9.2 - Écriture dans un fichier",
-      id: "cours/ecriture-texte",
+      label: "10.2 - Rencontre",
+      id: "cours/rencontre10.2",
       customProps: {
+        calendrier: {
+          "Prof 1": [
+            {"1010": "2025-07-01"}
+          ],
+          "Prof 2": [
+            {"1020": "2025-06-26"},
+            {"1030": "2025-06-26"}
+          ]
+        },
         avancementLabel: "TP3",
-        avancement: 0.2,
-        calendrier: {
-          "David": [{"1090":"2025-10-30"}, {"1100":"2025-10-30"}],
-          "Éric": [{"1050":"2025-11-05"}, {"1060":"2025-11-05"}],
-          "Jamil": [{"1010":"2025-06-09"}, {"1020":"2025-06-09"}],
-          "Jean-Michel": [{"1120":"2025-10-29"}],
-          "Pierre-Paul": [{"1030":"2025-10-29"}, {"1040":"2025-10-29"}],
-          "Zénia": [{"1070":"2025-06-09"}, {"1080":"2025-06-09"}],
-          "Tommy": [{"1130":"2025-06-09"}]
-        }
+        avancement: 0.1
       }
     },
     {
       type: "doc",
-      label: "10.1 - Fichiers CSV et séparateurs",
-      id: "cours/csv",
+      label: "11.1 - Rencontre",
+      id: "cours/rencontre11.1",
       customProps: {
+        calendrier: {
+          "Prof 1": [
+            {"1010": "2025-07-02"}
+          ],
+          "Prof 2": [
+            {"1020": "2025-06-26"},
+            {"1030": "2025-06-26"}
+          ]
+        },
         avancementLabel: "TP3",
-        avancement: 0.3,
-        calendrier: {
-          "David": [{"1090":"2025-11-03"}, {"1100":"2025-11-03"}],
-          "Éric": [{"1050":"2025-11-07"}, {"1060":"2025-11-07"}],
-          "Jamil": [{"1010":"2025-06-09"}, {"1020":"2025-06-09"}],
-          "Jean-Michel": [{"1120":"2025-11-03"}],
-          "Pierre-Paul": [{"1030":"2025-11-03"}, {"1040":"2025-11-03"}],
-          "Tommy": [{"1130":"2025-06-09"}],
-          "Zénia": [{"1070":"2025-06-09"}, {"1080":"2025-06-09"}]
-        }
+        avancement: 0.2
       }
     },
     {
       type: "doc",
-      label: "10.2 - Formatif 2",
-      id: "cours/formatif2",
+      label: "11.2 - Rencontre",
+      id: "cours/rencontre11.2",
       customProps: {
         calendrier: {
-          "David": [{"1090":"2025-11-06"}, {"1100":"2025-11-06"}],
-          "Éric": [{"1050":"2025-11-12"}, {"1060":"2025-11-12"}],
-          "Jamil": [{"1010":"2025-06-09"}, {"1020":"2025-06-09"}],
-          "Jean-Michel": [{"1120":"2025-11-05"}],
-          "Pierre-Paul": [{"1030":"2025-11-05"}, {"1040":"2025-11-05"}],
-          "Tommy": [{"1130":"2025-06-09"}],
-          "Zénia": [{"1070":"2025-06-09"}, {"1080":"2025-06-09"}]
-        }
-      }
-    },
-    {
-      type: "doc",
-      label: "11.1 - Examen 2",
-      id: "cours/examen2",
-      className: "examen",
-      customProps: {
-        calendrier: {
-          "David": [{"1090":"2025-11-13"}, {"1100":"2025-11-13"}],
-          "Éric": [{"1050":"2025-11-14"}, {"1060":"2025-11-14"}],
-          "Jamil": [{"1010":"2025-06-09"}, {"1020":"2025-06-09"}],
-          "Jean-Michel": [{"1120":"2025-11-12"}],
-          "Pierre-Paul": [{"1030":"2025-11-12"}, {"1040":"2025-11-12"}],
-          "Tommy": [{"1130":"2025-06-09"}],
-          "Zénia": [{"1070":"2025-06-09"}, {"1080":"2025-06-09"}]
-        }
-      }
-    },
-    {
-      type: "doc",
-      label: "11.2 - TP3 - RPG avancé",
-      id: "cours/integration-tp3-1",
-      customProps: {
+          "Prof 1": [
+            {"1010": "2025-07-02"}
+          ],
+          "Prof 2": [
+            {"1020": "2025-07-01"},
+            {"1030": "2025-07-01"}
+          ]
+        },
         avancementLabel: "TP3",
-        avancement: 0.1,
-        calendrier: {
-          "David": [{"1090":"2025-11-17"}, {"1100":"2025-11-17"}],
-          "Éric": [{"1050":"2025-11-19"}, {"1060":"2025-11-19"}],
-          "Jamil": [{"1010":"2025-06-09"}, {"1020":"2025-06-09"}],
-          "Jean-Michel": [{"1120":"2025-11-17"}],
-          "Pierre-Paul": [{"1030":"2025-11-17"}, {"1040":"2025-11-17"}],
-          "Tommy": [{"1130":"2025-06-09"}],
-          "Zénia": [{"1070":"2025-06-09"}, {"1080":"2025-06-09"}]
-        }
+        avancement: 0.3
       }
     },
     {
       type: "doc",
-      label: "12.1 - TP3 - suite",
-      id: "cours/integration-tp3-2",
-      className: "remise-tp3",
+      label: "12.1 - Rencontre",
+      id: "cours/rencontre12.1",
       customProps: {
+        calendrier: {
+          "Prof 1": [
+            {"1010": "2025-07-03"}
+          ],
+          "Prof 2": [
+            {"1020": "2025-07-01"},
+            {"1030": "2025-07-01"}
+          ]
+        },
         avancementLabel: "TP3",
-        avancement: 1.0,
-        calendrier: {
-          "David": [{"1090":"2025-11-20"}, {"1100":"2025-11-20"}],
-          "Éric": [{"1050":"2025-11-21"}, {"1060":"2025-11-21"}],
-          "Jamil": [{"1010":"2025-06-09"}, {"1020":"2025-06-09"}],
-          "Jean-Michel": [{"1120":"2025-11-19"}],
-          "Pierre-Paul": [{"1030":"2025-11-19"}, {"1040":"2025-11-19"}],
-          "Tommy": [{"1130":"2025-06-09"}],
-          "Zénia": [{"1070":"2025-06-09"}, {"1080":"2025-06-09"}]
-        }
+        avancement: 0.4
       }
     },
     {
       type: "doc",
-      label: "12.2 - Interface graphique",
-      id: "cours/winform",
+      label: "12.2 - Rencontre",
+      id: "cours/rencontre12.2",
       customProps: {
-        avancementLabel: "TP4 - Créé - ",
-        avancement: 0.15,
         calendrier: {
-          "David": [{"1090":"2025-11-24"}, {"1100":"2025-11-24"}],
-          "Éric": [{"1050":"2025-11-26"}, {"1060":"2025-11-26"}],
-          "Jamil": [{"1010":"2025-06-09"}, {"1020":"2025-06-09"}],
-          "Jean-Michel": [{"1120":"2025-11-24"}],
-          "Pierre-Paul": [{"1030":"2025-11-24"}, {"1040":"2025-11-24"}],
-          "Tommy": [{"1130":"2025-06-09"}],
-          "Zénia": [{"1070":"2025-06-09"}, {"1080":"2025-06-09"}]
-        }
+          "Prof 1": [
+            {"1010": "2025-07-03"}
+          ],
+          "Prof 2": [
+            {"1020": "2025-07-01"},
+            {"1030": "2025-07-01"}
+          ]
+        },
+        avancementLabel: "TP3",
+        avancement: 0.5
       }
     },
     {
       type: "doc",
-      label: "13.1 - Introduction à la POO",
-      id: "cours/poo",
+      label: "13.1 - Rencontre",
+      id: "cours/rencontre13.1",
       customProps: {
-        avancementLabel: "TP4",
-        avancement: 0.3,
         calendrier: {
-          "David": [{"1090":"2025-11-27"}, {"1100":"2025-11-27"}],
-          "Éric": [{"1050":"2025-11-28"}, {"1060":"2025-11-28"}],
-          "Jamil": [{"1010":"2025-06-09"}, {"1020":"2025-06-09"}],
-          "Jean-Michel": [{"1120":"2025-11-26"}],
-          "Pierre-Paul": [{"1030":"2025-11-26"}, {"1040":"2025-11-26"}],
-          "Tommy": [{"1130":"2025-06-09"}],
-          "Zénia": [{"1070":"2025-06-09"}, {"1080":"2025-06-09"}]
-        }
+          "Prof 1": [
+            {"1010": "2025-07-07"}
+          ],
+          "Prof 2": [
+            {"1020": "2025-07-02"},
+            {"1030": "2025-07-02"}
+          ]
+        },
+        avancementLabel: "TP3",
+        avancement: 0.6
       }
     },
     {
       type: "doc",
-      label: "13.2 - Intégration des objets",
-      id: "cours/integration-poo",
+      label: "13.2 - Rencontre",
+      id: "cours/rencontre13.2",
       customProps: {
-        avancementLabel: "TP4",
-        avancement: 0.5,
         calendrier: {
-          "David": [{"1090":"2025-12-01"}, {"1100":"2025-12-01"}],
-          "Éric": [{"1050":"2025-12-03"}, {"1060":"2025-12-03"}],
-          "Jamil": [{"1010":"2025-06-09"}, {"1020":"2025-06-09"}],
-          "Jean-Michel": [{"1120":"2025-12-01"}],
-          "Pierre-Paul": [{"1030":"2025-12-01"}, {"1040":"2025-12-01"}],
-          "Tommy": [{"1130":"2025-06-09"}],
-          "Zénia": [{"1070":"2025-06-09"}, {"1080":"2025-06-09"}]
-        }
+          "Prof 1": [
+            {"1010": "2025-07-07"}
+          ],
+          "Prof 2": [
+            {"1020": "2025-07-07"},
+            {"1030": "2025-07-07"}
+          ]
+        },
+        avancementLabel: "TP3",
+        avancement: 0.7
       }
     },
     {
       type: "doc",
-      label: "14.1 - TP4 - Démineur",
-      id: "cours/integration-tp4-1",
+      label: "14.1 - Rencontre",
+      id: "cours/rencontre14.1",
       customProps: {
-        avancementLabel: "TP4",
-        avancement: 0.75,
         calendrier: {
-          "David": [{"1090":"2025-12-04"}, {"1100":"2025-12-04"}],
-          "Éric": [{"1050":"2025-12-05"}, {"1060":"2025-12-05"}],
-          "Jamil": [{"1010":"2025-06-09"}, {"1020":"2025-06-09"}],
-          "Jean-Michel": [{"1120":"2025-12-03"}],
-          "Pierre-Paul": [{"1030":"2025-12-03"}, {"1040":"2025-12-03"}],
-          "Tommy": [{"1130":"2025-06-09"}],
-          "Zénia": [{"1070":"2025-06-09"}, {"1080":"2025-06-09"}]
-        }
+          "Prof 1": [
+            {"1010": "2025-07-10"}
+          ],
+          "Prof 2": [
+            {"1020": "2025-07-04"},
+            {"1030": "2025-07-04"}
+          ]
+        },
+        avancementLabel: "TP3",
+        avancement: 0.8
       }
     },
     {
       type: "doc",
-      label: "14.2 - TP4 - suite",
-      id: "cours/integration-tp4-2",
-      className: "remise-tp4",
+      label: "14.2 - Rencontre",
+      id: "cours/rencontre14.2",
       customProps: {
-        avancementLabel: "TP4",
-        avancement: 1.0,
         calendrier: {
-          "David": [{"1090":"2025-12-08"}, {"1100":"2025-12-08"}],
-          "Éric": [{"1050":"2025-12-09"}, {"1060":"2025-12-09"}],
-          "Jamil": [{"1010":"2025-06-09"}, {"1020":"2025-06-09"}],
-          "Jean-Michel": [{"1120":"2025-12-08"}],
-          "Pierre-Paul": [{"1030":"2025-12-08"}, {"1040":"2025-12-08"}],
-          "Tommy": [{"1130":"2025-06-09"}],
-          "Zénia": [{"1070":"2025-06-09"}, {"1080":"2025-06-09"}]
-        }
+          "Prof 1": [
+            {"1010": "2025-07-09"}
+          ],
+          "Prof 2": [
+            {"1020": "2025-07-07"},
+            {"1030": "2025-07-07"}
+          ]
+        },
+        avancementLabel: "TP3",
+        avancement: 1
       }
     },
     {
       type: "doc",
-      label: "15.1 - Formatif 3",
-      id: "cours/formatif3",
+      label: "15.1 - Rencontre",
+      id: "cours/rencontre15.1",
       customProps: {
         calendrier: {
-          "David": [{"1090":"2025-12-11"}, {"1100":"2025-12-11"}],
-          "Éric": [{"1050":"2025-12-10"}, {"1060":"2025-12-10"}],
-          "Jamil": [{"1010":"2025-06-09"}, {"1020":"2025-06-09"}],
-          "Jean-Michel": [{"1120":"2025-12-10"}],
-          "Pierre-Paul": [{"1030":"2025-12-10"}, {"1040":"2025-12-10"}],
-          "Tommy": [{"1130":"2025-06-09"}],
-          "Zénia": [{"1070":"2025-06-09"}, {"1080":"2025-06-09"}]
+          "Prof 1": [
+            {"1010": "2025-07-09"}
+          ],
+          "Prof 2": [
+            {"1020": "2025-07-02"},
+            {"1030": "2025-07-02"}
+          ]
         }
-      }
+      },
+      "className": "remise-tp3"
     },
     {
       type: "doc",
-      label: "15.2 - Examen 3",
-      id: "cours/examen3",
-      className: "examen",
+      label: "15.2 - Rencontre",
+      id: "cours/rencontre15.2",
       customProps: {
         calendrier: {
-          "David": [{"1090":"2025-12-22"}, {"1100":"2025-12-22"}],
-          "Éric": [{"1050":"2025-12-22"}, {"1060":"2025-12-22"}],
-          "Jamil": [{"1010":"2025-06-09"}, {"1020":"2025-06-09"}],
-          "Jean-Michel": [{"1120":"2025-12-22"}],
-          "Pierre-Paul": [{"1030":"2025-12-22"}, {"1040":"2025-12-22"}],
-          "Tommy": [{"1130":"2025-06-09"}],
-          "Zénia": [{"1070":"2025-06-09"}, {"1080":"2025-06-09"}]
+          "Prof 1": [
+            {"1010": "2025-07-10"}
+          ],
+          "Prof 2": [
+            {"1020": "2025-07-04"},
+            {"1030": "2025-07-04"}
+          ]
         }
-      }
+      },
+      "className": "examen"
     }
-
   ],
-  tp: [
-    { type: "autogenerated", dirName: "02-tp" }
-  ],
-  
-  laboratoire: [{ type: "autogenerated", dirName: "03-laboratoire" }],
-  solution: [{ type: "autogenerated", dirName: "04-solution" }],
+  "tp": [
+    {
+      type: "autogenerated",
+      "dirName": "02-tp"
+    }
+  ]
 };
-
 
 module.exports = sidebars;
