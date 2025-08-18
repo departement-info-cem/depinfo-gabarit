@@ -76,6 +76,7 @@ export default function MainDocsGrid() {
     >
       {docs.map((doc, i) => {
         const calendrier = doc._sidebarProps?.calendrier;
+        const tooltip = doc._sidebarProps?.tooltip;
         // Déterminer la position du tooltip (droite ou gauche)
         let tooltipSide: "left" | "right" = "right";
         if (hoveredIndex === i && tooltipPos) {
@@ -95,15 +96,19 @@ export default function MainDocsGrid() {
             }}
             onClick={() => handleClick(doc)}
             onMouseEnter={(e) => {
-              setHoveredIndex(i);
-              const rect = (
-                e.currentTarget as HTMLElement
-              ).getBoundingClientRect();
-              setTooltipPos({ x: rect.right + 8, y: rect.top });
+              if(tooltip !== "cache") {
+                setHoveredIndex(i);
+                const rect = (
+                  e.currentTarget as HTMLElement
+                ).getBoundingClientRect();
+                setTooltipPos({ x: rect.right + 8, y: rect.top });
+              }
             }}
             onMouseLeave={() => {
-              setHoveredIndex(null);
-              setTooltipPos(null);
+              if(tooltip !== "cache") {
+                setHoveredIndex(null);
+                setTooltipPos(null);
+              }              
             }}
           >
             <div>
@@ -112,14 +117,18 @@ export default function MainDocsGrid() {
             </div>
             <div>
               {typeof doc?._sidebarProps?.avancement === "number" && (
-                <>
-                  <ProgressBar value={doc._sidebarProps.avancement} />
-                  <p className={styles.avancement}>
-                    {doc._sidebarProps.avancementLabel}{" "}
-                    {doc._sidebarProps.avancement * 100}% complété
-                  </p>
-                </>
+
+                <ProgressBar value={doc._sidebarProps.avancement} />
               )}
+              <p className={styles.avancement}>
+                {typeof doc?._sidebarProps?.avancementLabel === "string" && (<>
+                  {doc._sidebarProps.avancementLabel}{" "}</>)}
+                {typeof doc?._sidebarProps?.avancement === "number" && (
+                  <>
+                    {doc._sidebarProps.avancement * 100}% complété</>)}
+              </p>
+
+
             </div>
             {hoveredIndex === i && calendrier && (
               <div
@@ -135,10 +144,15 @@ export default function MainDocsGrid() {
               >
                 <strong>Calendrier :</strong>
                 <ul style={{ margin: 0, paddingLeft: 16, whiteSpace: "nowrap" }}>
-                  {Object.entries(calendrier).map(([nom, date]) => (
-                    <li key={nom} style={{ whiteSpace: "nowrap" }}>
-                      {nom} : {formatDateFr(date as string)}
-                    </li>
+                  {Object.entries(calendrier).map(([nom, groupedate]) => (
+                    (groupedate as Array<Record<string, string>>).map((groupeObj, index) => {
+                        const [groupe, date] = Object.entries(groupeObj)[0];
+                        return (
+                          <li key={index} style={{ whiteSpace: "nowrap" }}>
+                            {nom} - {groupe} : {formatDateFr(date)}
+                          </li>
+                        );
+                      })
                   ))}
                 </ul>
               </div>
