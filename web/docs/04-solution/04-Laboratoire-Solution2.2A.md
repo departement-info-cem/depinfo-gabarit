@@ -1,4 +1,4 @@
-# ✅ Solutions – Laboratoire 4.1 – Méthodes avec paramètres
+# ✅ Solutions – Laboratoire 2.2A – Méthodes avec paramètres
 
 ---
 

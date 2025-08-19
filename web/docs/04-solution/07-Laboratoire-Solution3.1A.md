@@ -1,4 +1,4 @@
-# ✅ Solution – Labo 5.2 🎲 Devine le nombre 
+# ✅ Solution – Labo 3.1A 🎲 Devine le nombre 
 
 ## 📝 Version 1 – Code simple avec répétition
 ```csharp

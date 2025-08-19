@@ -1,4 +1,4 @@
-# ✅ Solutions – Laboratoire 4.2 – Portée des variables
+# ✅ Solutions – Laboratoire 2.2B – Portée des variables
 
 ```csharp
 using System;

@@ -1,4 +1,4 @@
-# 🧪 Labo 5.2 🎲 Mini-projet – Devine le nombre 
+# 🧪 Labo 3.1A 🎲 Mini-projet – Devine le nombre 
 
 ## 🎯 Objectif
 Créer un programme console où **l’utilisateur doit deviner un nombre secret** entre 1 et 10.  

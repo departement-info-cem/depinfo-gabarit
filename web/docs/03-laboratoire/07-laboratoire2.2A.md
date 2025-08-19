@@ -1,4 +1,4 @@
-# 🧪 Laboratoire 4.1 – Méthodes avec paramètres
+# 🧪 Laboratoire 2.2A – Méthodes avec paramètres
 
 Nous allons réaliser une série d’exercices permettant de pratiquer la **définition de méthodes avec paramètres** en C#.
 

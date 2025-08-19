@@ -1,4 +1,4 @@
-# ✅ Solutions – Laboratoire 2.2 
+# ✅ Solutions – Laboratoire 1.2B 
 
 ---
 

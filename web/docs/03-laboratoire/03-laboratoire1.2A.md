@@ -1,5 +1,5 @@
 
-# 🧪 Labo 2.1 – Variables, affectation, opérations
+# 🧪 Labo 1.2A – Variables, affectation, opérations
 
 ---
 

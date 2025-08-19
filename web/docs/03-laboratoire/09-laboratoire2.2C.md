@@ -1,5 +1,5 @@
 
-# 🧪 Labo 4.3 – Méthodes avec retour
+# 🧪 Labo 2.2C – Méthodes avec retour
 
 Nous allons travailler une série d’exercices pour pratiquer la **définition de méthodes avec paramètres et retour de valeur**.
 

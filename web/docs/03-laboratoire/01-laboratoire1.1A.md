@@ -1,4 +1,4 @@
-# 🧪 Labo 1.1 – Premiers pas en C#
+# 🧪 Labo 1.1A – Premiers pas en C#
 
 
 🎥 Visionne cette capsule pour bien démarrer :  
