@@ -253,3 +253,6 @@ Le **débogueur** permet d’exécuter étape par étape et d’observer les val
 4. Observer les variables via les fenêtres **Locals** ou **Autos**
 
 ---
+Vous devez réaliser les labos suivants :
+ [🧪 Labo 2.1A](/laboratoire/laboratoire2.1A)
+ [🧪 Labo 2.1B](/laboratoire/laboratoire2.1B)
