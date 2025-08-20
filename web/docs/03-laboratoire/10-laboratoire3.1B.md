@@ -1,3 +1,7 @@
+---
+title: B - 🎬 Mini-projet – Calculateur de coût de sortie au cinéma
+---
+
 # 🧪 Labo 3.1B 🎬 Mini-projet – Calculateur de coût de sortie au cinéma 
 
 ## 🎯 Objectif

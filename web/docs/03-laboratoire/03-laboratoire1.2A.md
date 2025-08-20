@@ -1,3 +1,6 @@
+---
+title: A - Variables, affectation, opérations
+---
 
 # 🧪 Labo 1.2A – Variables, affectation, opérations
 

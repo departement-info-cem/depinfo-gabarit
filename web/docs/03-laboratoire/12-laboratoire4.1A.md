@@ -1,4 +1,5 @@
 ---
+title: A - Tableaux 1D
 description: "Série d’exercices – Tableaux 1D : manipulation et compréhension"
 ---
 

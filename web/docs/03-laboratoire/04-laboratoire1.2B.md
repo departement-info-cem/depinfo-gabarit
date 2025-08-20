@@ -1,3 +1,7 @@
+---
+title: B - Conversion, permutation, opérations
+---
+
 # 🧪 Labo 1.2B – Conversion, permutation, opérations
 
 ---

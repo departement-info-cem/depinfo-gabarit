@@ -1,3 +1,6 @@
+---
+title: B - Conditions, assignation composées
+---
 
 # 🧪 Labo 2.1B – Conditions, assignation composées
 

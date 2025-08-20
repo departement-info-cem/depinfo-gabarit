@@ -1,3 +1,6 @@
+---
+title: C - Méthodes avec retour
+---
 
 # 🧪 Labo 2.2C – Méthodes avec retour
 

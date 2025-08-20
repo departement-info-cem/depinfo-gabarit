@@ -1,3 +1,7 @@
+---
+title: A - 🎲 Mini-projet – Devine le nombre 
+---
+
 # 🧪 Labo 3.1A 🎲 Mini-projet – Devine le nombre 
 
 ## 🎯 Objectif
