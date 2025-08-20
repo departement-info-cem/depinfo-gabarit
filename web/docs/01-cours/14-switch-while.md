@@ -1,8 +1,8 @@
 ---
-description: Boucles while / do while et conditions avec switch
+description: Boucles while / do while et conditions avec switch / TryParse
 ---
 
-# Switch, while, do while
+# Switch, while, do while,TryParse
 
 
 ## Instruction de répétition [`while`](https://info.cegepmontpetit.ca/notions-csharp/documentation/structures-de-controle/while)
