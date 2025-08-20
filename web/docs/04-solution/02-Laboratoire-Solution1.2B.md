@@ -23,7 +23,7 @@ Console.WriteLine("Moyenne : " + moyenne);
 Console.Write("Température : ");
 double t = double.Parse(Console.ReadLine());
 Console.WriteLine("En Fahrenheit : " + (t * 9 / 5 + 32));
-Console.WriteLine("En Celsius : " + ((t - 32) * 5 / 9));
+
 ```
 
 ---
