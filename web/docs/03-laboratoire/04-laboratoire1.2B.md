@@ -1,4 +1,4 @@
-# 🧪 Laboratoire 1.2B – Conversion, permutation, opérations
+# 🧪 Labo 1.2B – Conversion, permutation, opérations
 
 ---
 
@@ -22,21 +22,19 @@ Moyenne : 81
 ---
 
 ### 🟡 2. Conversion de température 
-🎯 **Objectif** : Appliquer deux formules de conversion de température en manipulant des `double`.
+🎯 **Objectif** : Appliquer une formule de conversion de température en manipulant des `double`.
 
 🛠️ **Instructions** :
-- Demandez à l’utilisateur une température (nombre décimal)
-- Demandez l’unité de cette température (C pour Celsius ou F pour Fahrenheit)
-- Affichez **les deux conversions** possibles, sans choisir selon l’unité
+- Demandez à l’utilisateur une température en Celcius (nombre décimal)
+- Affichez la conversion
   - `F = C * 9 / 5 + 32`
-  - `C = (F - 32) * 5 / 9`
-- L’utilisateur pourra ainsi voir les deux résultats
+- L’utilisateur pourra ainsi voir le résultat
 
 ✅ **Exemple attendu** :
 ```
-Température : 25
-En Fahrenheit : 77
-En Celsius : -3.888888888888889
+Température : 25.2
+En Fahrenheit : 77.36
+
 ```
 
 ---
