@@ -211,3 +211,6 @@ Voici les documents de référence :
 - [Priorité des opérateurs](https://info.cegepmontpetit.ca/notions-csharp/documentation/operateur/priorite) : la priorité des opérateurs détermine l’ordre dans lequel les opérations sont évaluées, comme dans les expressions mathématiques.
 - [Littéral](https://info.cegepmontpetit.ca/notions-csharp/documentation/litteral) : un littéral représente une valeur fixe directement inscrite dans le code, comme un nombre ou une chaîne de caractères.
 
+Vous devez réaliser les labos suivants :
+ [🧪 Labo 1.2A](/laboratoire/laboratoire1.2A)
+ [🧪 Labo 1.2B](/laboratoire/laboratoire1.2B)

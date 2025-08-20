@@ -1,58 +1,102 @@
 ---
-description: "Remise du TP1, tableaux 1D, chaînes de caractères 2e partie"
+description: "Introduction aux tableaux 1D, pourquoi et comment les utiliser"
 ---
 
-# 🗂️ Tableaux 1D
+# 🗂️ Tableaux 1D – Introduction visuelle et progressive
 
-## 📦 Tableau 1D préinitialisé, indexation et `Length`
-
-🔹 **Définition**  
-Un **tableau à une dimension** est un regroupement d'éléments **de même type**.
-
-📎 **Référence complète** : [Tableau 1D – Documentation C#](https://info.cegepmontpetit.ca/notions-csharp/documentation/tableau/tableau-1d)
+📎 **Référence** : [Tableau 1D – Documentation C#](https://info.cegepmontpetit.ca/notions-csharp/documentation/tableau/tableau-1d)
 
 ---
 
-### 🛠️ Déclaration d’un tableau préinitialisé
+## 1️⃣ Pourquoi utiliser un tableau ?
 
-📌 Forme générale :  
+Imaginons que nous devions stocker les notes de 5 étudiants. Sans tableau, nous aurions :
+```csharp
+int note1 = 85;
+int note2 = 90;
+int note3 = 78;
+int note4 = 92;
+int note5 = 88;
+```
+❌ Inconvénients :
+- Trop de variables à déclarer.
+- Difficile à traiter automatiquement.
+- Peu pratique si le nombre d'éléments change.
+
+✅ Solution : utiliser **un seul conteneur** capable de stocker toutes les valeurs : **un tableau**.
+
+---
+
+## 2️⃣ Qu'est-ce qu'un tableau ?
+
+Un tableau est une **collection ordonnée** d'éléments **du même type**, repérés par un **index**.
+
+**Avantages :**
+- Regrouper plusieurs valeurs sous un seul nom.
+- Accès rapide à n'importe quel élément par son index.
+- Taille connue via la propriété `.Length`.
+
+---
+
+## 3️⃣ Déclaration et préinitialisation
+
+Forme générale pour un tableau **préinitialisé** :
 ```csharp
 type[] nomTableau = { elt1, elt2, ..., eltN };
 ```
 
-💡 **Exemple** :  
+Exemple :
 ```csharp
-int[] tabNbres = { 12, 0, 5, 76, 12, 5, 4 };
+int[] notes = { 85, 90, 78, 92, 88 };
+```
+
+Forme générale pour un tableau **vide** avec une taille définie :
+```csharp
+type[] nomTableau = new type[taille];
+```
+
+Exemple :
+```csharp
+int[] tabNombres = new int[10]; // Tableau de 10 entiers initialisés à 0
 ```
 
 ---
 
-### 🔍 Accéder aux éléments
+## 4️⃣ Indexation – Comment accéder aux éléments ?
 
-L’accès à un élément se fait par **indexation** :  
-L’**index** est un nombre entier placé entre `[ ]` :
-
-- `tabNbres[0]` → premier élément (**12**)  
-- `tabNbres[1]` → deuxième élément (**0**)  
-- `tabNbres[2]` → troisième élément (**5**)  
-
-> ℹ️ **Important** : en C#, les index commencent à `0`.
-
----
-
-### 📏 Propriété `Length`
-
-- `tabNbres.Length` retourne le **nombre d’éléments** (ici **7**).
-- Le **dernier élément** est à l’index `tabNbres.Length - 1` :
-  - `tabNbres[tabNbres.Length - 1]` → dernier élément (**4**).
-
----
-
-### ✏️ Modifier un élément
+📌 L'**index** commence toujours à `0`.
 
 ```csharp
-tabNbres[6] = 4; // change le 7e élément
-element = tabNbres[6]; // assigne la valeur du 7e élément à la variable "element"
+Console.WriteLine(notes[0]); // Premier élément (85)
+Console.WriteLine(notes[4]); // Dernier élément (88)
 ```
 
-> ⚠️ **Attention** : On ne peut pas assigner une valeur à un tableau complet en une seule instruction, seulement élément par élément.
+### Illustration :
+```
+┌────┬────┬────┬────┬────┐
+│ 85 │ 90 │ 78 │ 92 │ 88 │   ← Valeurs
+└────┴────┴────┴────┴────┘
+ [0]  [1]  [2]  [3]  [4]    ← Index
+```
+
+---
+
+## 5️⃣ Propriété `.Length`
+
+`notes.Length` retourne le **nombre d'éléments** du tableau.
+```csharp
+Console.WriteLine(notes.Length); // Affiche 5
+```
+
+📌 Le dernier élément est à l'index `notes.Length - 1`.
+
+---
+
+## 6️⃣ Modifier un élément
+
+```csharp
+notes[2] = 80; // Change le 3e élément de 78 à 80
+Console.WriteLine(notes[2]); // Affiche 80
+```
+
+> ⚠️ On ne peut pas assigner une valeur à un tableau complet en une seule instruction, seulement élément par élément.

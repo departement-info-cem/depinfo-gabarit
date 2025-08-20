@@ -1,4 +1,4 @@
-# ✅ Solutions – Laboratoire 4.3 – Méthodes avec retour
+# ✅ Solutions – Laboratoire 2.2C – Méthodes avec retour
 
 ---
 

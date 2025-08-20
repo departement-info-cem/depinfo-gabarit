@@ -2,7 +2,7 @@
 description: "Série d’exercices – Tableaux 1D : manipulation et compréhension"
 ---
 
-# 🧪 Labo 7.1 – Tableaux 1D
+# 🧪 Labo 4.1A – Tableaux 1D
 
 📎 **Référence** : [Tableau 1D – Documentation C#](https://info.cegepmontpetit.ca/notions-csharp/documentation/tableau/tableau-1d)
 

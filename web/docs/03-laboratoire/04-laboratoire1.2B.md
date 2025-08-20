@@ -1,4 +1,4 @@
-# 🧪 Laboratoire 2.2 – Conversion, permutation, opérations
+# 🧪 Laboratoire 1.2B – Conversion, permutation, opérations
 
 ---
 

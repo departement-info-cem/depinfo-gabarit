@@ -40,6 +40,6 @@ Tu peux prendre de l'avance en regardant le contenu des semaines qui arrivent.
 ## 💪 Exercices supplémentaires
 
 Vous devez réaliser les laboratoires
- [🧪 Labo 5.1](/laboratoire/laboratoire5.1)
- [🧪 Labo 5.2](/laboratoire/laboratoire5.2)
+ [🧪 Labo 3.1A](/laboratoire/laboratoire3.1A) et 
+ [🧪 Labo 3.1B](/laboratoire/laboratoire3.1B)
 

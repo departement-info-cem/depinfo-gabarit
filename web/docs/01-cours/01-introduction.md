@@ -115,4 +115,6 @@ Console.WriteLine("Bonjour, " + prenom + "!");
 
 ## 💪 Exercice
 
-Vous devez réaliser le [🧪 Labo 1](/laboratoire/laboratoire1.1)
+Vous devez réaliser les labos suivants :
+ [🧪 Labo 1A](/laboratoire/laboratoire1.1)
+ [🧪 Labo 1B](/laboratoire/laboratoire1.1B)

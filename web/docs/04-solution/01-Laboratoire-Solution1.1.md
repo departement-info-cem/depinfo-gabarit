@@ -1,1 +1,3 @@
-# ✅ Solutions – Laboratoire 1.1
+# ✅ Solutions – Laboratoire 1.1A
+
+Voir avec votre enseignant.

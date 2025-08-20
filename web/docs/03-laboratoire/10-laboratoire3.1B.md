@@ -1,4 +1,4 @@
-# 🧪 Labo 5.2 🎬 Mini-projet – Calculateur de coût de sortie au cinéma 
+# 🧪 Labo 3.1B 🎬 Mini-projet – Calculateur de coût de sortie au cinéma 
 
 ## 🎯 Objectif
 Créer un programme console qui calcule le coût d’une sortie au cinéma pour **un participant**, en tenant compte :

@@ -1,4 +1,4 @@
-# ✅ Solution – Labo 5.1 🎬 Mini-projet – Sortie au cinéma
+# ✅ Solution – Labo 3.1B 🎬 Mini-projet – Sortie au cinéma
 
 ```csharp
 using System;
