@@ -95,7 +95,7 @@ La variable associée au champ `<select>` grâce à `[(ngModel)]` va contenir l
 dans l'attribut `value` de l'élément `<option>` qui aura été choisi par l'utilisateur. (Relisez cette
 phrase plusieurs fois au besoin 😬)
 
-Si je le formule autrement, ça donnerait « Dans le fond l'`<option>` que t'as choisie, ben c'est ça `value` 
+Si je le formule autrement, ça donnerait « Dans le fond l'`<option>` que t'as choisie, ben c'est sa `value` 
 qui va aller dans la variable associée au `<select>`. Genre, si t'as choisi l'option **Bleu**, ben ta variable
 va contenir `"lightcyan"`. ». 
 
