@@ -106,7 +106,7 @@ Pour vérifier que NPM est bien installé, ouvrez **PowerShell**
 #### Angular
 <center>![Logo d'Angular](../../static/img/cours1/angular.png)</center>
 
-Tapez simplement la commande `npm install -g @angular/cli@18.1.2`. (Toujours dans PowerShell) On précise la version `18.1.2` car c'est la même que celle installée au Cégep, ce qui évite des conflits.
+Tapez simplement la commande `npm install -g @angular/cli@20.1.3`. (Toujours dans PowerShell) On précise la version `20.1.3` car c'est la même que celle installée au Cégep, ce qui évite des conflits.
 N'hésitez pas à ensuite taper la commande `ng version` pour valider qu'Angular s'est bien installé globalement.
 
 ### 🧪 Introduction à TypeScript
@@ -338,6 +338,7 @@ Avec l'explorateur de fichiers Windows, rendez-vous dans le répertoire parent d
 
 Tapez ensuite la commande `ng new nomDeVotreProjet`. Vous aurez deux choix à faire :
 
+1. Application zoneless -> `No`
 1. Format de feuilles de styles -> `CSS`
 2. Activer le rendu côté serveur -> `Non`
 

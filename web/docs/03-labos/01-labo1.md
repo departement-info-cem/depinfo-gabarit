@@ -58,7 +58,7 @@ Ensuite, assurez-vous que ces deux lignes ont bel et bien été ajoutées dans l
 ✨ Vous pouvez maintenir ouvrir votre projet Angular avec **Visual Studio Code**.
 
 Pour que **jQuery** et **Bootstrap** fonctionnent bel et bien dans notre projet, nous allons devoir modifier le fichier
-`angular.json` pour importer certains scripts :
+`angular.json` pour importer certains scripts (le noeud `scripts` devra être ajouté !) :
 
 ```json
 "styles": [  
@@ -71,9 +71,9 @@ Pour que **jQuery** et **Bootstrap** fonctionnent bel et bien dans notre projet,
 ]
 ```
 
-⛔ **Attention !** Les noeuds `styles` et `scripts` sont présents deux fois dans le fichier `angular.json`. Dans
-notre cas, on doit seulement modifier la **première occurence** de ces noeuds. (On ne touche pas à ceux vers
-la fin du fichier ! 😠)
+⛔ **Attention !** Le noeud `styles` est présent deux fois dans le fichier `angular.json`. Dans
+notre cas, on doit seulement modifier la **première occurence** de ce noeud. (On ne touche pas à ceux vers
+la fin du fichier ! 😠) Notre noeud `scripts` sera ajouté juste en-dessous de ce noeud `styles`.
 
 :::note
 
@@ -105,7 +105,7 @@ Pour le moment, si vous jetez un coup d'oeil à votre page Web dans le navigateu
 
 <center>![App par défaut](../../static/img/labo1/defaultView.png)</center>
 
-[💡](/cours/rencontre1.1#-les-composants) Supprimez tout le code HTML présent dans le fichier `app.component.html` et sauvegardez. À présent, la page
+[💡](/cours/rencontre1.1#-les-composants) Supprimez tout le code HTML présent dans le fichier `app.html` et sauvegardez. À présent, la page
 Web devrait être complètement vide. (Tout ce qu'il reste, c'est un `<body></body>` relativement vide.)
 
 Copiez-collez ce HTML dans le composant `app` à la place :
@@ -136,7 +136,7 @@ Ouf ! C'est assez de CSS pour le moment. Vous êtes probablement _é-pui-sé(e)_
 
 ## 👶 Étape 3 - Mon tout premier TypeScript
 
-Avant de se lancer, profitez-en pour aérer le projet en supprimant le fichier `app.component.spec.ts`. 
+Avant de se lancer, profitez-en pour aérer le projet en supprimant le fichier `app.spec.ts`. 
 Pour rappel, c'est un fichier de tests unitaires que nous n'utiliserons pas avant la semaine 6.
 
 ### **7 -** Afficher une variable
