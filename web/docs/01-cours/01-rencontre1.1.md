@@ -452,7 +452,7 @@ Il sert à créer l'environnement dans le navigateur pour afficher le site Web.
 
 <center>![index html](../../static/img/cours1/index.png)</center>
 
-`index.html` est le principal fichier HTML du projet. C'est, croyez le ou non, la seule page Web de tout le projet.
+`index.html` est le principal fichier HTML du projet. C'est, croyez-le ou non, la seule page Web de tout le projet.
 Pourtant, son contenu correspond seulement au squelette d'une page Web. En gros, l'application Angular chargera dynamiquement
 d'autres morceaux de HTML dans `index.html` (ces morceaux sont des **composants**) lors de la navigation de l'utilisateur,
 ce qui donnera l'illusion d'un site Web avec plusieurs pages.
