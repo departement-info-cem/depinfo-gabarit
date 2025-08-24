@@ -649,7 +649,7 @@ Lors du Cours 2, nous verrons une méthode plus élégante pour afficher les él
 retrouver les conventions de la technique en informatique en lien avec l'usage de Git.
 
 Les adultes 👨👩 doivent utiliser Git. L'usage de Git sera évalué pour les quatres TPs du cours. 
-Bien entendu, pour les laboratoires, vous pouvez vous contenter de OneDrive si vous êtes paresseux. (Pratiquez vous au moins une fois
+Bien entendu, pour les laboratoires, vous pouvez vous contenter de OneDrive si vous êtes paresseux. (Pratiquez-vous au moins une fois
 à utiliser Git avec Angular avant le TP1, qui est juste après le labo 3 !)
 
 :::warning
