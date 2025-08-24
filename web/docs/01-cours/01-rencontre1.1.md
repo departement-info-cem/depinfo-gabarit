@@ -254,7 +254,7 @@ Les types que nous utiliserons le plus en TypeScript seront `boolean`, `null`, `
 Si un paramètre du constructeur possède le préfixe `public`, ce paramètre devient automatiquement une propriété de classe.
 
 ```ts showLineNumbers
-class Crewmate{
+class Imposter{
 
     impostor : boolean;
     alive : boolean = true;
