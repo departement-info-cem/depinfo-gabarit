@@ -74,7 +74,7 @@ Initiale : L
 
 ✅ **Sortie attendue** :
 ```plaintext
-Note : 87.5
+Note : 87,5
 ```
 
 ---
@@ -171,8 +171,8 @@ Tu as 17 ans
 
 ✅ **Entrée/Sortie attendue** :  
 ```plaintext
-Entrez un prix : 19.95
-Prix saisi : 19.95
+Entrez un prix : 19,95
+Prix saisi : 19,95
 ```
 
 ---
@@ -253,7 +253,7 @@ Résultat (int) : 3
 
 ✅ **Sortie attendue** :
 ```plaintext
-Résultat (double) : 3.5
+Résultat (double) : 3,5
 ```
 
 ---
@@ -297,9 +297,9 @@ Avec parenthèses : 20
 
 ✅ **Entrée/Sortie attendue** :
 ```plaintext
-Note 1 : 75.5
-Note 2 : 82.0
-Moyenne : 78.75
+Note 1 : 75,5
+Note 2 : 82,0
+Moyenne : 78,75
 ```
 
 ---
@@ -313,8 +313,8 @@ Moyenne : 78.75
 
 ✅ **Entrée/Sortie attendue** :
 ```plaintext
-Prix : 15.50
-Double du prix : 31.0
+Prix : 15,50
+Double du prix : 31
 ```
 
 ---
