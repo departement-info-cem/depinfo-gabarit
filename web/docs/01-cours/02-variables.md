@@ -23,7 +23,7 @@ type nomDeVariable = valeur;
 - Elle ne peut pas contenir d'espaces ou de symboles spéciaux
 - Convention : camelCase (`monNom`, `nombreTotal`)
 
-### 🔹 Exemples simples
+### 🔹 Exemples
 ```csharp
 int age = 25;
 char lettre = 'C';
@@ -131,15 +131,15 @@ int reste = a % b;       // Modulo (reste de la division)
 ```csharp
 int x = 7;
 int y = 2;
-Console.WriteLine("x + y = " + (x + y));
-Console.WriteLine("x % y = " + (x % y));
+Console.WriteLine("x + y = " + (x + y)); //Donne 9
+Console.WriteLine("x % y = " + (x % y)); //Donne 1
 ```
 
 ### 🔢 Avec `double`
 ```csharp
 double prix = 12.99;
 double taxe = 0.15 * prix;
-Console.WriteLine("Taxe : " + taxe);
+Console.WriteLine("Taxe : " + taxe); //Donne 1,9485
 ```
 
 ### ⚠️ Division entière
