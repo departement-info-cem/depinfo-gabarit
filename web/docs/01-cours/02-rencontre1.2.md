@@ -585,7 +585,7 @@ leur valeur dans le rendu final du HTML. Le HTML sera affiché tel quel !
 
 :::
 
-Si jamais on souhaite d'un attribut contienne un élément hardcodé et du TypeScript, on peut faire comme ceci :
+Si jamais on souhaite qu'un attribut contienne un élément hardcodé et du TypeScript, on peut faire comme ceci :
 
 ```html showLineNumbers
 <div [class]="'container ' + selectedTheme">
