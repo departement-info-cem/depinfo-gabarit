@@ -5,38 +5,40 @@ description: Fonctions, valeurs de retour et portée des variables
 # 🧩 Fonctions et portée des variables
 ## 1️⃣ Introduction : Fonctions déjà vues
 
-> 💡 **Définition intuitive**  
-> Une fonction ou **méthode**, c’est une **action** que fait un **objet** ou le **programme**.  
-> Elle peut recevoir des **informations** (paramètres) et parfois **renvoyer un résultat**.
+> 💡 **Définition**  
+> Une fonction est un bloc de **code nommé**, conçu pour **exécuter** une **tâche** précise.
+
+> Elle peut recevoir des informations en **entrée** (appelées **paramètres**) et retourner un résultat (appelé **valeur de retour**).
+
 
 ---
 
 ### 🔍 Exemples déjà utilisés (sans qu’on le dise)
 
 
-| Méthode                        | Ce qu’elle fait                              | Type de méthode                              |
+| Fonction                        | Ce qu’elle fait                              | Type de Fonction                              |
 |-------------------------------|----------------------------------------------|----------------------------------------------|
-| `Console.WriteLine("Salut")`  | Affiche du texte à l’écran                   | Méthode avec paramètre, sans retour (`void`) |
-| `Console.ReadLine()`          | Lit du texte saisi par l’utilisateur         | Méthode sans paramètre, avec retour (`string`) |
-| `int.Parse("123")`            | Convertit une chaîne en entier (`int`)       | Méthode avec paramètre et retour (`int`)     |
+| `Console.WriteLine("Salut")`  | Affiche du texte à l’écran                   | Fonction avec paramètre, sans retour (`void`) |
+| `Console.ReadLine()`          | Lit du texte saisi par l’utilisateur         | Fonction sans paramètre, avec retour (`string`) |
+| `int.Parse("123")`            | Convertit une chaîne en entier (`int`)       | Fonction avec paramètre et retour (`int`)     |
 ---
 
 > 📌 **À retenir**  
-> - Une méthode peut appartenir à une **classe** (`Console`, `int`, etc.).  
+> - Une Fonction peut appartenir à une **classe** (`Console`, `int`, etc.).  
 > - On écrit : `Classe.Methode(paramètre)`  
-> - Certaines méthodes **renvoient un résultat** (`int.Parse`), d’autres **non** (`Console.WriteLine`).
+> - Certaines Fonctions **renvoient un résultat** (`int.Parse`), d’autres **non** (`Console.WriteLine`).
 
-[🔗 Lire plus sur les méthodes (Notions C#)](https://info.cegepmontpetit.ca/notions-csharp/documentation/structures-de-controle/methode)
+[🔗 Lire plus sur les Fonctions (Notions C#)](https://info.cegepmontpetit.ca/notions-csharp/documentation/structures-de-controle/methode)
 
 ---
 
-## 2️⃣ Déclaration d’une méthode (sans paramètre, sans retour)
+## 2️⃣ Déclaration d’une fonction (sans paramètre, sans retour)
 
 > 🎯 **But** : éviter de copier-coller du code plusieurs fois, rendre le programme plus lisible et réutilisable.
 
 ---
 
-### ❌ Code répétitif sans méthode
+### ❌ Code répétitif sans fonction
 
 ```csharp
 Console.WriteLine("Bonjour Léa !");
@@ -52,7 +54,7 @@ Console.WriteLine("Bonjour Inès !");
 
 ---
 
-### ✅ Avec méthode (sans paramètre, sans retour)
+### ✅ Avec fonction (sans paramètre, sans retour)
 
 ```csharp
 void DireBonjour()
@@ -69,7 +71,7 @@ DireBonjour();
 
 > 💡 **Explication**
 >
-> * On crée une méthode nommée `DireBonjour`
+> * On crée une fonction nommée `DireBonjour`
 > * Elle contient un **bloc de code** (délimité par `{ ... }`)
 > * On peut **l'appeler plusieurs fois** sans copier le contenu
 
@@ -77,17 +79,17 @@ DireBonjour();
 
 > 📌 **À retenir**
 >
-> * `void` signifie que la méthode **ne retourne rien**
+> * `void` signifie que la fonction **ne retourne rien**
 > * Les instructions à l’intérieur du bloc sont exécutées **à chaque appel**
 > * C’est un moyen de **réutiliser du code**
 
 ---
 
-## 3️⃣ Méthode avec paramètre
+## 3️⃣ Fonction avec paramètre
 
 ---
 
-### 🔄 Limitation d'une méthode sans paramètre
+### 🔄 Limitation d'une fonction sans paramètre
 
 ```csharp
 void DireBonjourLéa()
@@ -112,12 +114,12 @@ DireBonjourInès();
 ```
 
 > ⚠️ **Problème**
-> On a dû créer **une méthode par prénom**.
+> On a dû créer **une fonction par prénom**.
 > Le code devient **lourd**, **non flexible**, et **pas maintenable**.
 
 ---
 
-### ✅ Méthode avec paramètre
+### ✅ Fonction avec paramètre
 
 ```csharp
 void Saluer(string prenom)
@@ -132,27 +134,27 @@ Saluer("Inès");
 ```
 
 > ✅ **Solution propre**
-> Une seule méthode pour **plusieurs cas**. On envoie un **paramètre différent** à chaque appel.
+> Une seule fonction pour **plusieurs cas**. On envoie un **paramètre différent** à chaque appel.
 
 ---
 
 > 📦 **Métaphore du sac à dos**
-> Imagine que tu donnes un **sac** à la méthode. Tu y mets un **prénom**.
-> La méthode ouvre le sac, lit le prénom, dit bonjour… puis **jette le sac** une fois le travail terminé.
+> Imagine que tu donnes un **sac** à la fonction. Tu y mets un **prénom**.
+> La fonction ouvre le sac, lit le prénom, dit bonjour… puis **jette le sac** une fois le travail terminé.
 
 ---
 
 > 📌 **À retenir**
 >
-> * Un **paramètre** est une **variable temporaire** envoyée à la méthode
+> * Un **paramètre** est une **variable temporaire** envoyée à la fonction
 > * Elle existe **uniquement à l’intérieur du bloc**
-> * Elle permet de rendre la méthode **plus générale et réutilisable**
+> * Elle permet de rendre la fonction **plus générale et réutilisable**
 
 ---
 
-## 4️⃣ Méthode avec retour
+## 4️⃣ Fonction avec retour
 
-> 🎯 **Objectif** : créer une méthode qui **renvoie un résultat** à utiliser ailleurs dans le programme.
+> 🎯 **Objectif** : créer une fonction qui **renvoie un résultat** à utiliser ailleurs dans le programme.
 
 ---
 
@@ -174,7 +176,7 @@ Console.WriteLine("La somme est : " + resultat);
 
 > 💡 **Explication**
 >
-> * `int Addition(...)` signifie que la méthode **retourne un entier** (`int`)
+> * `int Addition(...)` signifie que la fonction **retourne un entier** (`int`)
 > * Elle reçoit deux paramètres (`a` et `b`)
 > * Elle effectue une opération, puis **renvoie le résultat** avec `return`
 > * On peut **stocker le résultat** dans une variable (`resultat`) et l’utiliser ensuite
@@ -182,7 +184,7 @@ Console.WriteLine("La somme est : " + resultat);
 ---
 
 > ⚠️ **Attention : `return` interrompt l’exécution**
-> Dès que l'instruction `return` est atteinte, la méthode **s'arrête immédiatement**.
+> Dès que l'instruction `return` est atteinte, la fonction **s'arrête immédiatement**.
 > Aucune ligne après `return` ne sera exécutée.
 > Cela permet de **sortir rapidement** avec une valeur, mais cela signifie aussi que **tout code placé après ne sera jamais lu**.
 
@@ -190,7 +192,7 @@ Console.WriteLine("La somme est : " + resultat);
 
 > 📌 **À retenir**
 >
-> * Le type avant le nom de la méthode (ex. `int`) = **type du résultat retourné**
+> * Le type avant le nom de la fonction (ex. `int`) = **type du résultat retourné**
 > * `return` sert à **renvoyer une valeur**
 > * Le résultat peut être affiché, stocké ou utilisé dans un calcul
 
@@ -210,7 +212,7 @@ using System;
 
 class Program
 {
-    static int c = 100; // Variable de classe (globale à toutes les méthodes)
+    static int c = 100; // Variable de classe (globale à toutes les fonctions)
 
     static void Main()
     {
@@ -230,7 +232,7 @@ class Program
 
     static void AfficherC()
     {
-        Console.WriteLine("Valeur de c : " + c); // OK : c est partagée entre les méthodes
+        Console.WriteLine("Valeur de c : " + c); // OK : c est partagée entre les fonctions
         // Console.WriteLine(a); // ❌ Erreur : a est local à Main
     }
 }
@@ -240,16 +242,16 @@ class Program
 
 ### 🔍 Explication
 
-* `a` est locale à la méthode `Main`
+* `a` est locale à la fonction `Main`
 * `b` est locale au bloc `if` → **disparaît après le bloc**
-* `c` est **globale à la classe** → accessible dans toutes les méthodes
+* `c` est **globale à la classe** → accessible dans toutes les fonctions
 
 ---
 
 > 📌 **À retenir**
 >
 > * `{ ... }` = **bloc de code**
-> * Une variable **locale** vit dans son bloc/méthode uniquement
+> * Une variable **locale** vit dans son bloc/fonction uniquement
 > * Une variable **de classe** vit tant que l’objet existe
 
 ---
@@ -257,16 +259,16 @@ class Program
 > ⚠️ **Erreurs fréquentes**
 >
 > * Utiliser une variable après sa disparition (ex : `b` hors du bloc)
-> * Accéder à une variable locale depuis une autre méthode
+> * Accéder à une variable locale depuis une autre fonction
 
 
 [🔗 Lire plus sur la portée des variables (Notions C#)](https://info.cegepmontpetit.ca/notions-csharp/documentation/variable/portee-et-duree-de-vie)
 
 ---
 
-## 6️⃣ Méthodes sur les chaînes (`string`)
+## 6️⃣ Fonctions sur les chaînes (`string`)
 
-> 🎯 **Objectif** : utiliser les méthodes intégrées pour **manipuler et formater** des chaînes de caractères.
+> 🎯 **Objectif** : utiliser les fonctions intégrées pour **manipuler et formater** des chaînes de caractères.
 
 ---
 
@@ -336,11 +338,11 @@ Console.WriteLine(montant.ToString("N0"));    // "1,235" (arrondi, séparateur)
 
 | Expression          | Type    | Parenthèses | Renvoie           |
 | ------------------- | ------- | ----------- | ----------------- |
-| `mot.ToUpper()`     | Méthode | Oui         | Chaîne (`string`) |
-| `mot.ToLower()`     | Méthode | Oui         | Chaîne (`string`) |
-| `valeur.ToString()` | Méthode | Oui         | Chaîne (`string`) |
+| `mot.ToUpper()`     | Fonction | Oui         | Chaîne (`string`) |
+| `mot.ToLower()`     | Fonction | Oui         | Chaîne (`string`) |
+| `valeur.ToString()` | Fonction | Oui         | Chaîne (`string`) |
 
-> ✅ Les **méthodes** permettent de transformer ou manipuler les données
+> ✅ Les **fonctions** permettent de transformer ou manipuler les données
 
 
 

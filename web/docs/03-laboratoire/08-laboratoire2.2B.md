@@ -9,7 +9,7 @@ title: B - Portée des variables
 Comprendre la différence entre :
 
 * Variable **de classe** (portée globale)
-* Variable **locale à une méthode**
+* Variable **locale à une fonction**
 * Variable **locale à un bloc** (ex. : dans un `if`)
 
 ---
@@ -28,7 +28,7 @@ class Program
 
     static void Main()
     {
-        int nombreMain = 10;  // portée : méthode Main
+        int nombreMain = 10;  // portée : fonction Main
 
         if (nombreMain > 5)
         {
@@ -64,7 +64,7 @@ class Program
 ### ✅ À faire
 
 1. Corrige les lignes commentées qui causent des erreurs.
-2. Ajoute une nouvelle méthode `AfficherGlobalEtLocal()` qui essaie d’accéder aux différentes variables.
+2. Ajoute une nouvelle fonction `AfficherGlobalEtLocal()` qui essaie d’accéder aux différentes variables.
 3. Dessine un petit schéma ou commente ton code pour indiquer la **portée de chaque variable**.
 
 ---

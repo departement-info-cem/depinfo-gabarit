@@ -1,19 +1,19 @@
 ---
-title: C - Méthodes avec retour
+title: C - Fonctions avec retour
 ---
 
-# 🧪 Labo 2.2C – Méthodes avec retour
+# 🧪 Labo 2.2C – Fonctions avec retour
 
-Nous allons travailler une série d’exercices pour pratiquer la **définition de méthodes avec paramètres et retour de valeur**.
+Nous allons travailler une série d’exercices pour pratiquer la **définition de fonctions avec paramètres et retour de valeur**.
 
 
 
 ---
 
-## 📌 Rappel : Syntaxe d’une méthode avec retour
+## 📌 Rappel : Syntaxe d’une fonction avec retour
 
 ```csharp
-static TypeRetour NomDeLaMéthode(type pParam1, type pParam2)
+static TypeRetour NomDeLaFonction(type pParam1, type pParam2)
 {
     // calculs
     return valeur;
@@ -63,8 +63,8 @@ Est premier : True
 
 ### 🔹 Exercice 3 – Maximum entre deux puis trois valeurs
 
-1. Créez une méthode qui retourne le **maximum entre deux entiers**.
-2. Utilisez cette méthode pour obtenir le **maximum entre trois entiers** (en appelant la méthode à l’intérieur d’un paramètre).
+1. Créez une fonction qui retourne le **maximum entre deux entiers**.
+2. Utilisez cette fonction pour obtenir le **maximum entre trois entiers** (en appelant la fonction à l’intérieur d’un paramètre).
 
 #### 💬 Exemple d’utilisation en console :
 
@@ -75,24 +75,24 @@ Le plus grand est : 12
 
 ---
 
-### 🔹 Exercice 4 – Surcharge de méthode
+### 🔹 Exercice 4 – Surcharge de fonction
 
-Dans le **même projet que l’exercice 3**, créez une **deuxième méthode** portant le **même nom**, mais prenant **trois paramètres**.
+Dans le **même projet que l’exercice 3**, créez une **deuxième fonction** portant le **même nom**, mais prenant **trois paramètres**.
 Elle doit retourner le **maximum des trois**. Ce procédé s'appelle une **surcharge**.
 
 #### 💬 Exemple d’utilisation en console :
 
 ```
 Entrez trois nombres : 9, 15, 10
-Le maximum (avec méthode surchargée) est : 15
+Le maximum (avec fonction surchargée) est : 15
 ```
 
 ---
 
 ### 🔹 Exercice 5 – Année bissextile (retour)
 
-Modifiez la méthode de l’exercice précédent sur les années bissextiles pour qu’elle **retourne un booléen** au lieu d’afficher le résultat.
-La méthode retourne `true` si l’année est bissextile, sinon `false`.
+Modifiez la fonction de l’exercice précédent sur les années bissextiles pour qu’elle **retourne un booléen** au lieu d’afficher le résultat.
+La fonction retourne `true` si l’année est bissextile, sinon `false`.
 
 #### 💬 Exemple d’utilisation en console :
 
