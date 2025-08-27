@@ -340,7 +340,7 @@ Désormais, la variable et l'input sont bel et bien liés : leur valeur sera tou
 cette synchronisation en modifiant le HTML comme ceci :
 
 ```html showLineNumbers
-<input type="text" name="motPrefere">
+<input type="text" name="motPrefere" [(ngModel)]="motPrefere">
 
 <p>{{motPrefere}}</p>
 ```
