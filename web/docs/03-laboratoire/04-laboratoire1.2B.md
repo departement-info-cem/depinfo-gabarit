@@ -36,8 +36,8 @@ Moyenne : 81
 
 ✅ **Exemple attendu** :
 ```
-Température : 25.2
-En Fahrenheit : 77.36
+Température : 25,2
+En Fahrenheit : 77,36
 
 ```
 
@@ -104,8 +104,8 @@ Après permutation : A = 2, B = 3, C = 1
 
 ✅ **Exemple attendu** :
 ```
-Article 1 : quantité = 2, prix = 4.5
-Article 2 : quantité = 1, prix = 3.0
+Article 1 : quantité = 2, prix = 4,5
+Article 2 : quantité = 1, prix = 3,0
 Total : 12
 ```
 
@@ -122,5 +122,5 @@ Total : 12
 ✅ **Exemple attendu** :
 ```
 Division entière : 2
-Division décimale : 2.5
+Division décimale : 2,5
 ```
