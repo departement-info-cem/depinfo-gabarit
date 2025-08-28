@@ -13,7 +13,7 @@ Pour **chaque exercice**, créez un **nouveau projet** dans Visual Studio.
 ## 📌 Rappel : Syntaxe d’une fonction avec paramètres
 
 ```csharp
-void NomDeLaMethode(type pParam1, type pParam2)
+void NomDeLaFonction(type pParam1, type pParam2)
 {
     // Instructions
 }

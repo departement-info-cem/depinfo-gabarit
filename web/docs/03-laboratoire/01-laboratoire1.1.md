@@ -20,7 +20,7 @@ Apprendre à :
 
 1. **Ouvrir Visual Studio**.
 2. Cliquez sur **Créer un nouveau projet**.
-3. Choisissez **Application console (.NET 6)** ou **Application console (.NET 7)**.
+3. Choisissez **Application console (.NET 8)** ou **Application console (.NET 9)**.
 4. Cliquez sur **Suivant**.
 5. Donnez un **nom** à votre projet (ex. `Laboratoire1_Ex1`).
 6. Cliquez sur **Suivant**.

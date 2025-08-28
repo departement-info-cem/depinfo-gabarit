@@ -48,23 +48,18 @@ Résultat : 12
 
 ---
 
-### 🔹 Exercice 2 – Nombre premier
-
-Créez une fonction qui prend un entier et retourne un **booléen** indiquant si ce nombre est **premier ou non**.
-
-#### 💬 Exemple d’utilisation en console :
-
-```
-Entrez un nombre : 11
-Est premier : True
-```
-
----
-
-### 🔹 Exercice 3 – Maximum entre deux puis trois valeurs
+### 🔹 Exercice 2 – Maximum entre deux puis trois valeurs
 
 1. Créez une fonction qui retourne le **maximum entre deux entiers**.
-2. Utilisez cette fonction pour obtenir le **maximum entre trois entiers** (en appelant la fonction à l’intérieur d’un paramètre).
+ 
+2. Ensuite, utilisez **cette même fonction** pour obtenir le **maximum entre trois entiers**.\
+   L’astuce est d’appeler la fonction **à l’intérieur d’un autre appel**. Par exemple :
+
+   ```csharp
+   int max3 = MaximumDeux(nombre1, MaximumDeux(nombre2, nombre3));
+   ```
+
+   Ici, on commence par trouver le maximum entre `nombre2` et `nombre3`, puis on compare ce résultat avec `nombre1`.
 
 #### 💬 Exemple d’utilisation en console :
 
@@ -75,10 +70,9 @@ Le plus grand est : 12
 
 ---
 
-### 🔹 Exercice 4 – Surcharge de fonction
+### 🔹 Exercice 3 – Surcharge de fonction
 
-Dans le **même projet que l’exercice 3**, créez une **deuxième fonction** portant le **même nom**, mais prenant **trois paramètres**.
-Elle doit retourner le **maximum des trois**. Ce procédé s'appelle une **surcharge**.
+Dans le **même projet que l’exercice 2**, créez une **deuxième fonction** portant le **même nom**, mais prenant **trois paramètres**. Elle doit retourner le **maximum des trois**. Ce procédé s'appelle une **surcharge**.
 
 #### 💬 Exemple d’utilisation en console :
 
@@ -89,10 +83,9 @@ Le maximum (avec fonction surchargée) est : 15
 
 ---
 
-### 🔹 Exercice 5 – Année bissextile (retour)
+### 🔹 Exercice 4 – Année bissextile (retour)
 
-Modifiez la fonction de l’exercice précédent sur les années bissextiles pour qu’elle **retourne un booléen** au lieu d’afficher le résultat.
-La fonction retourne `true` si l’année est bissextile, sinon `false`.
+Modifiez la fonction de l’exercice précédent sur les années bissextiles pour qu’elle **retourne un booléen** au lieu d’afficher le résultat. La fonction retourne `true` si l’année est bissextile, sinon `false`.
 
 #### 💬 Exemple d’utilisation en console :
 
@@ -103,3 +96,62 @@ Bissextile : True
 
 ---
 
+### 🔹 Exercice 5 – Nombre palindrome
+
+Créez une fonction qui prend un **entier à 3 chiffres** et retourne un **booléen** indiquant si ce nombre est un **palindrome** (il se lit de la même façon à l’endroit et à l’envers).
+
+#### 💡 Indices
+
+- Utiliser la division entière `/` et le reste `%` pour extraire les chiffres.
+- Comparer le chiffre des centaines et celui des unités.
+
+#### 💬 Exemple d’utilisation en console :
+
+```
+Entrez un nombre à 3 chiffres : 121
+Palindrome : True
+
+Entrez un nombre à 3 chiffres : 245
+Palindrome : False
+```
+
+---
+
+### 🔹 Défi 6 – Triangle valide
+
+Créez une fonction qui prend **trois côtés** (entiers) et retourne un booléen indiquant si ces trois côtés peuvent former un **triangle valide**.
+
+📌 Règle : la somme de deux côtés doit toujours être **supérieure** au troisième.
+
+#### 💬 Exemple d’utilisation en console :
+
+```
+Entrez trois côtés : 3, 4, 5
+Triangle valide : True
+
+Entrez trois côtés : 2, 2, 5
+Triangle valide : False
+```
+
+---
+
+### 🔹 Défi 7 – Devine la moyenne
+
+Créez une fonction qui prend **deux notes** et retourne :
+
+- `"A"` si la moyenne est ≥ 90
+- `"B"` si elle est ≥ 80
+- `"C"` si elle est ≥ 70
+- `"Échec"` sinon
+
+#### 💬 Exemple d’utilisation en console :
+
+```
+Entrez deux notes : 85 et 92
+Résultat : A
+
+Entrez deux notes : 60 et 70
+Résultat : Échec
+```
+
+---
