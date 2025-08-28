@@ -94,6 +94,13 @@ const config = {
             sidebarId: "solution",
             label: "Solutions",
           }
+          ,
+          {
+            type: "docSidebar",
+            position: "left",
+            sidebarId: "extra",
+            label: "Extra",
+          }
           
 
         ],
