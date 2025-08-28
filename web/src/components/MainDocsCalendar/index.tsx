@@ -47,7 +47,14 @@ export default function MainDocsCalendar({
 
   // Fonction pour obtenir un index de couleur basé sur le nom du groupe
   const getColorIndex = (groupe: string): number => {
-    return simpleHash(groupe) % 15; // 15 couleurs disponibles
+    // Amélioration: utiliser directement la valeur numérique pour les groupes numériques
+    const numericGroup = parseInt(groupe);
+    if (!isNaN(numericGroup)) {
+      // Pour les groupes numériques, utiliser une distribution plus prévisible
+      return numericGroup % 15;
+    }
+    // Pour les groupes non-numériques, utiliser le hash
+    return simpleHash(groupe) % 15;
   };
 
   // Fonction pour détecter l'année à partir de la première date trouvée
