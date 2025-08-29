@@ -1,5 +1,5 @@
 ---
-description: Temps en classe pour finaliser le TP
+description: Pondération 15%
 ---
 
 # Intégration - TP4 - Suite

@@ -1,5 +1,5 @@
 ---
-description: Pondération 20%
+description: Pondération 15%
 ---
 
 # Examen 1

@@ -1,5 +1,5 @@
 ---
-description: Temps en classe pour finaliser le TP
+description: Pondération 5%
 ---
 
 # Intégration - TP1 - Créateur de personnage
