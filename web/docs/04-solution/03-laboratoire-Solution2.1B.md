@@ -93,7 +93,7 @@ if (age < 13)
 {
     Console.WriteLine("Tu peux regarder : Coco");
 }
-else if (age <= 17)
+else if (age >= 13 && age <= 17)
 {
     Console.WriteLine("Tu peux regarder : Spider-Man");
 }
