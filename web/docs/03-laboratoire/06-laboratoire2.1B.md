@@ -96,7 +96,7 @@ Il fait chaud !
 
 ### 🟡 Exercice 5 – Film recommandé 🎬
 
-🎯 **Objectif** : Combiner `if`, `else if`, et logique `||`.
+🎯 **Objectif** : Combiner `if`+`else if`+`else` et l'opérateur ET logique `&&`.
 
 🛠️ Instructions :
 
