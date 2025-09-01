@@ -149,7 +149,8 @@ Jeune adulte fatigué
 🛠️ Instructions :
 
 * Demande à l’utilisateur s’il est prêt (`true` ou `false`)
-* Si la réponse n’est pas `true`, affiche `Tu n’es pas prêt.`
+* Si l'utilisateur n'est pas prêt, affiche `Tu n’es pas prêt.`
+Attention: évite d'utiliser la condition `== false` et favorise plutôt l'opérateur de négation `!`.
 
 ✅ Exemple :
 
