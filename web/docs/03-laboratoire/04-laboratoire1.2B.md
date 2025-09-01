@@ -104,8 +104,10 @@ Après permutation : A = 2, B = 3, C = 1
 
 ✅ **Exemple attendu** :
 ```
-Article 1 : quantité = 2, prix = 4,5
-Article 2 : quantité = 1, prix = 3,0
+Article 1 - quantité : 2
+Article 1 - prix : 4,5
+Article 2 - quantité : 1
+Article 2 - prix : 3,0
 Total : 12
 ```
 
