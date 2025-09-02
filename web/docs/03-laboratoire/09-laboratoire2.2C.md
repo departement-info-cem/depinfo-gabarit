@@ -64,7 +64,9 @@ Résultat : 12
 #### 💬 Exemple d’utilisation en console :
 
 ```
-Entrez trois nombres : 12, 7, 4
+Entrez nombre Un : 12
+Entrez nombre Deux : 7
+Entrez nombre Trois : 4
 Le plus grand est : 12
 ```
 
@@ -77,7 +79,9 @@ Dans le **même projet que l’exercice 2**, créez une **deuxième fonction** p
 #### 💬 Exemple d’utilisation en console :
 
 ```
-Entrez trois nombres : 9, 15, 10
+Entrez nombre Un : 9
+Entrez nombre Deux : 15
+Entrez nombre Trois : 10
 Le maximum (avec fonction surchargée) est : 15
 ```
 
@@ -126,10 +130,10 @@ Créez une fonction qui prend **trois côtés** (entiers) et retourne un boolée
 #### 💬 Exemple d’utilisation en console :
 
 ```
-Entrez trois côtés : 3, 4, 5
+Valeur des trois côtés : 3, 4, 5
 Triangle valide : True
 
-Entrez trois côtés : 2, 2, 5
+Valeur des trois côtés : 2, 2, 5
 Triangle valide : False
 ```
 
@@ -147,10 +151,12 @@ Créez une fonction qui prend **deux notes** et retourne :
 #### 💬 Exemple d’utilisation en console :
 
 ```
-Entrez deux notes : 85 et 92
+Entrez note 1 : 85
+Entrez note 2 : 92
 Résultat : A
 
-Entrez deux notes : 60 et 70
+Entrez note 1 : 60
+Entrez note 2 : 70
 Résultat : Échec
 ```
 

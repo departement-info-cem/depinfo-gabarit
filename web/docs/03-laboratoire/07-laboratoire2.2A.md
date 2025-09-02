@@ -13,7 +13,7 @@ Pour **chaque exercice**, créez un **nouveau projet** dans Visual Studio.
 ## 📌 Rappel : Syntaxe d’une fonction avec paramètres
 
 ```csharp
-void NomDeLaFonction(type pParam1, type pParam2)
+static void NomDeLaFonction(type pParam1, type pParam2)
 {
     // Instructions
 }
@@ -22,7 +22,7 @@ void NomDeLaFonction(type pParam1, type pParam2)
 ### Exemple
 
 ```csharp
-void MessageDeBienvenue(string pPrenom, string pNom)
+static void MessageDeBienvenue(string pPrenom, string pNom)
 {
     Console.WriteLine("Bienvenue " + pPrenom + " " + pNom);
 }

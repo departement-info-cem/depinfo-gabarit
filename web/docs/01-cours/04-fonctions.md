@@ -24,11 +24,13 @@ description: Fonctions, valeurs de retour et portée des variables
 ---
 
 > 📌 **À retenir**  
-> - Une Fonction peut appartenir à une **classe** (`Console`, `int`, etc.).  
+> - Une fonction peut appartenir à une **classe** (`Console`, `int`, etc.).  
 > - On écrit : `Classe.Methode(paramètre)`  
-> - Certaines Fonctions **renvoient un résultat** (`int.Parse`), d’autres **non** (`Console.WriteLine`).
+> - Certaines fonctions **renvoient un résultat** (`int.Parse`), d’autres **non** (`Console.WriteLine`).
+> - La fonction **Main()** est exécutée lorsqu'on déclanche l'exéution du programme.
+> - On crée les nouvelles fonctions en dehors du **Main**.
 
-[🔗 Lire plus sur les Fonctions (Notions C#)](https://info.cegepmontpetit.ca/notions-csharp/documentation/structures-de-controle/methode)
+[🔗 Lire plus sur les fonctions (Notions C#)](https://info.cegepmontpetit.ca/notions-csharp/documentation/structures-de-controle/methode)
 
 ---
 
@@ -57,7 +59,7 @@ Console.WriteLine("Bonjour Inès !");
 ### ✅ Avec fonction (sans paramètre, sans retour)
 
 ```csharp
-void DireBonjour()
+static void DireBonjour()
 {
     Console.WriteLine("Bonjour Léa !");
     Console.WriteLine("Bonjour Marco !");
@@ -92,17 +94,17 @@ DireBonjour();
 ### 🔄 Limitation d'une fonction sans paramètre
 
 ```csharp
-void DireBonjourLéa()
+static void DireBonjourLéa()
 {
     Console.WriteLine("Bonjour Léa !");
 }
 
-void DireBonjourMarco()
+static void DireBonjourMarco()
 {
     Console.WriteLine("Bonjour Marco !");
 }
 
-void DireBonjourInès()
+static void DireBonjourInès()
 {
     Console.WriteLine("Bonjour Inès !");
 }
@@ -113,7 +115,7 @@ DireBonjourMarco();
 DireBonjourInès();
 ```
 
-> ⚠️ **Problème**
+> ⚠️ **Problème.**
 > On a dû créer **une fonction par prénom**.
 > Le code devient **lourd**, **non flexible**, et **pas maintenable**.
 
@@ -122,7 +124,7 @@ DireBonjourInès();
 ### ✅ Fonction avec paramètre
 
 ```csharp
-void Saluer(string prenom)
+static void Saluer(string prenom)
 {
     Console.WriteLine("Bonjour " + prenom + " !");
 }
@@ -134,7 +136,7 @@ Saluer("Inès");
 ```
 
 > ✅ **Solution propre**
-> Une seule fonction pour **plusieurs cas**. On envoie un **paramètre différent** à chaque appel.
+> Une seule fonction pour **plusieurs cas**. On envoie une  **valeur de paramètre différente** à chaque appel.
 
 ---
 
@@ -161,7 +163,7 @@ Saluer("Inès");
 ### 🧪 Exemple : une addition
 
 ```csharp
-int Addition(int a, int b)
+static int Addition(int a, int b)
 {
     int somme = a + b;
     return somme;
