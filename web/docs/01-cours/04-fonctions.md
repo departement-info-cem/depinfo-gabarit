@@ -347,7 +347,7 @@ Console.WriteLine(montant.ToString("N0"));    // "1,235" (arrondi, séparateur)
 
 
 
-```
+
 
 Vous devez réaliser les labos suivants :
  [🧪 Labo 2.2A](/laboratoire/laboratoire2.2A)
