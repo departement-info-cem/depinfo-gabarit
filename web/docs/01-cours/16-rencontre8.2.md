@@ -553,7 +553,7 @@ Utilisez la commande suivante pour créer un interceptor dans votre projet Angul
 Un interceptor ressemblera à ceci initialement :
 
 ```ts showLineNumbers
-export const authInterceptor : HttpInterceptorFn : (req, next) => {
+export const authInterceptor : HttpInterceptorFn = (req, next) => {
     return next(req);
 };
 ```
@@ -565,7 +565,7 @@ Rien ! À chaque fois qu'une requête est envoyée avec un `HttpClient`, elle es
 Voici un exemple d'interceptor personnalisé :
 
 ```ts showLineNumbers
-export const authInterceptor : HttpInterceptorFn : (req, next) => {
+export const authInterceptor : HttpInterceptorFn = (req, next) => {
     console.log("Trois tortues trotaient sur un trottoir 🐢🐢🐢");
     return next(req);
 };
