@@ -27,7 +27,7 @@ description: Fonctions, valeurs de retour et portée des variables
 > - Une fonction peut appartenir à une **classe** (`Console`, `int`, etc.).  
 > - On écrit : `Classe.Methode(paramètre)`  
 > - Certaines fonctions **renvoient un résultat** (`int.Parse`), d’autres **non** (`Console.WriteLine`).
-> - La fonction **Main()** est exécutée lorsqu'on déclanche l'exéution du programme.
+> - La fonction **Main()** est exécutée lorsqu'on déclenche l'exécution du programme.
 > - On crée les nouvelles fonctions en dehors du **Main**.
 
 [🔗 Lire plus sur les fonctions (Notions C#)](https://info.cegepmontpetit.ca/notions-csharp/documentation/structures-de-controle/methode)
