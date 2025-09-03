@@ -157,3 +157,8 @@ Array.Sort(notes)
 Console.WriteLine(string.Join(", ", notes)); //  2, 55, 85, 88 
 
 ```
+Vous devez réaliser les labos suivants :
+ [🧪 Labo 4.1A](/laboratoire/laboratoire4.1A)
+ [🧪 Labo 4.2B](/laboratoire/laboratoire4.1B)
+
+
