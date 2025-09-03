@@ -1,6 +1,5 @@
 ---
-title: A - Tableaux 1D
-description: "Série d’exercices – Tableaux 1D : manipulation et compréhension"
+title: A - Tableaux 1D - Simple
 ---
 
 # 🧪 Labo 4.1A – Tableaux 1D
@@ -42,13 +41,13 @@ Vendredi
 
 ---
 
-## 🟢 Exercice 3 – Utilisation de `Length` (sans boucle)
+## 🟢 Exercice 3 – Utilisation de `Length`
 🎯 **Objectif** : Utiliser la propriété `.Length` pour connaître le nombre d’éléments et faire un calcul simple.
 
 🛠️ **Instructions** :
 1. Déclarez un tableau `int` : `{ 2, 4, 6 }`.
 2. Affichez le **nombre d’éléments** grâce à `Length`.
-3. Calculez la somme des trois éléments **sans utiliser de boucle**.
+3. Calculez la somme des trois éléments en utilisant la fonction appropriée.
 4. Affichez la somme.
 
 ✅ **Exemple attendu** :
@@ -64,7 +63,7 @@ Somme : 12
 
 🛠️ **Instructions** :
 1. Déclarez un tableau `double` : `{ 12.5, 15.0, 20.0 }`.
-2. Calculez la moyenne des trois éléments **sans boucle**.
+2. Calculez la moyenne des trois éléments en utilisant la fonction approprié.
 3. Affichez la moyenne.
 
 ✅ **Exemple attendu** :
@@ -92,7 +91,7 @@ Les prénoms sont : Alex, Sam, Léa
 
 ---
 
-## 🟢 Exercice 6 – Remplacement conditionnel
+## 🟢 Exercice 6 – Remplacement d'une valeur
 🎯 **Objectif** : Modifier un élément selon une logique définie.
 
 🛠️ **Instructions** :
@@ -102,15 +101,12 @@ Les prénoms sont : Alex, Sam, Léa
 
 ✅ **Exemple attendu** :
 ```
-1
-4
-3
-4
+Valeurs : 1, 4, 3, 4
 ```
 
 ---
 
-## 🟢 Exercice 7 – Index dynamique
+## 🟢 Exercice 7 – Remplacement d'une valeur en utilisant Length
 🎯 **Objectif** : Utiliser `Length` pour cibler le dernier élément.
 
 🛠️ **Instructions** :
