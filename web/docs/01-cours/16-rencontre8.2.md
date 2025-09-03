@@ -591,7 +591,7 @@ export const appConfig: ApplicationConfig = {
 Cet interceptor permettra de **joindre le token à la requête** systématiquement. On peut donc retirer le bloc répétitif avec `httpOptions` partout ailleurs dans le code !
 
 ```ts showLineNumbers
-export const authInterceptor : HttpInterceptorFn : (req, next) => {
+export const authInterceptor : HttpInterceptorFn = (req, next) => {
 
     req = req.clone({
         setHeaders:{
