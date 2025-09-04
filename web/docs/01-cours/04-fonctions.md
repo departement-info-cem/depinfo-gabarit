@@ -34,6 +34,54 @@ description: Fonctions, valeurs de retour et portée des variables
 
 ---
 
+## ➕ Créer une fonction
+
+:::note Structure de la fonction
+```csharp
+static void MaSuperFonction() 
+{
+    // Code à exécuter dans la fonction
+}
+```
+ - **`static`** Mot clé, nous en reparlerons lorsque que la programmation objet sera introduite, pour l'instant ce n'est une mot clé obligatoire.
+ - **`void`** Type de la valeur de retour (int, double, string, etc.). Ici void signifie qu'il n'y a aucun retour
+ - **`MaSuperFonction`** Nom de la fonction, chaque fonction doit avoir un nom unique.
+ - Les **`()`** Emplacement pour les paramètres de la fonctione, les `()`sont obligatoires même si l'on n'a pas de paramètre.
+ - Les **`{ }`** Porté de la fonction. Tout le code entre les `{ }` sera exécuté lorsque nous ferons un appel à la fonction.
+:::
+:::danger Emplacement de la fonction
+Attention! On ne peut pas placer une fonction à n'importe quel endroit, tant que nous n'avons pas vu la programmation objet, nous les placerons au même niveau que la fonction `Main`, voici un exemple. 👇
+```csharp
+
+namespace Laboratoire1_Ex1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // ...
+        }
+
+        static void MaSuperFonction() 
+        {
+            // ...
+        }
+
+        static void FonctionEncorePlusSuper() 
+        {
+            // ...
+        }
+
+        static void SuperFonctionInfinie() 
+        {
+            // ...
+        }
+    }
+}
+
+```
+:::
+
 ## 2️⃣ Déclaration d’une fonction (sans paramètre, sans retour)
 
 > 🎯 **But** : éviter de copier-coller du code plusieurs fois, rendre le programme plus lisible et réutilisable.
