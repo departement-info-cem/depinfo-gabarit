@@ -153,7 +153,7 @@ Créez une fonction qui prend **deux notes** et retourne :
 ```
 Entrez note 1 : 85
 Entrez note 2 : 92
-Résultat : A
+Résultat : B
 
 Entrez note 1 : 60
 Entrez note 2 : 70
