@@ -1,4 +1,4 @@
-# ✅ Solution – Labo 4.1B
+# ✅ Solution – Labo 4.2B
 
 ## 🟡 Exercice 1
 ```csharp

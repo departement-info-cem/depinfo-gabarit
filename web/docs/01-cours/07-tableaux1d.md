@@ -1,5 +1,5 @@
 ---
-description: "Introduction aux tableaux 1D, pourquoi et comment les utiliser"
+description: Introduction aux tableaux 1D, parcours et recherche
 ---
 
 # 🗂️ Tableaux 1D – Introduction visuelle et progressive

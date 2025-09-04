@@ -119,8 +119,8 @@ const sidebars = {
     },
     {
       type: "doc",
-      label: "4.1 - Tableaux 1D",
-      id: "cours/tableaux1d",
+      label: "4.1 - Boucles for",
+      id: "cours/for",
       customProps: {
         avancementLabel: "TP2 - Créé - ",
         avancement: 0.1,
@@ -138,8 +138,8 @@ const sidebars = {
     },
     {
       type: "doc",
-      label: "4.2 - Boucles for, tableaux et recherche",
-      id: "cours/for",
+      label: "4.2 - Tableaux 1D",
+      id: "cours/tableaux1d",
       customProps: {
         avancementLabel: "TP2",
         avancement: 0.2,
@@ -608,19 +608,20 @@ const sidebars = {
       collapsed: false,
       items: ['laboratoire/laboratoire3.1A', 'laboratoire/laboratoire3.1B']
     },
+
     {
       type: 'category',
       label: 'Laboratoire 4.1',
       collapsible: true,
       collapsed: false,
-      items: ['laboratoire/laboratoire4.1A','laboratoire/laboratoire4.1B']
+      items: ['laboratoire/laboratoire4.1']
     },
     {
       type: 'category',
       label: 'Laboratoire 4.2',
       collapsible: true,
       collapsed: false,
-      items: ['laboratoire/laboratoire4.2']
+      items: ['laboratoire/laboratoire4.2A','laboratoire/laboratoire4.2B']
     },
     {
       type: 'category',

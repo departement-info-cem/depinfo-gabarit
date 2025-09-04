@@ -1,8 +1,8 @@
 ---
-description: Parcours de tableaux 1D
+description: Répétitions de code
 ---
 
-# Boucles for, tableaux et recherche
+# Boucles for
 
 ## Instruction de répétition `for`
 
