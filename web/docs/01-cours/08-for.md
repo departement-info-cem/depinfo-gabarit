@@ -2,12 +2,41 @@
 description: Répétitions de code
 ---
 
+
+
+
 # Boucles for
+
+##
+Certains problèmes nécessitent un traitement répétitif. 
+Si on veut imprimer la même ligne 100 fois, on ne va pas écrire `Console.WriteLine()` 20 fois.
+On préfère utiliser une **boucle** pour répéter un ensemble d'instructions.
+
+  ```csharp
+     Console.WriteLine("***")
+     Console.WriteLine("***")
+     Console.WriteLine("***")
+     Console.WriteLine("***")
+     Console.WriteLine("***")
+     Console.WriteLine("***")
+     Console.WriteLine("***")
+     Console.WriteLine("***")
+     Console.WriteLine("***")
+     Console.WriteLine("***")
+     ```
+
+  ```csharp
+     for (initialisation; condition; incrémentation/décrémentation)
+     {
+         // bloc d'instructions à exécuter
+     }
+     ```
 
 ## Instruction de répétition `for`
 
-   * Certains problèmes nécessitent un traitement répétitif.
-     On utilise souvent le terme **boucle** pour parler de ces instructions.
+   * La boucle `for` est le type de boucle le plus standard.
+
+
    * **Structure d'une boucle `for`** :
 
      ```csharp
@@ -17,9 +46,9 @@ description: Répétitions de code
      }
      ```
 
-     * **initialisation** : déclaration et affectation du compteur
-     * **condition** : booléenne, tant qu’elle est vraie, le bloc s’exécute
-     * **incrémentation/décrémentation** : modifie le compteur pour finir la boucle
+     * **initialisation** : Déclaration et affectation du compteur
+     * **condition** : Test logique évalué à chaque itération de la boucle, tant qu’il est vraie, le bloc s’exécute
+     * **incrémentation/décrémentation** : Modifie le compteur après chaque itération de la boucle
    * Exemple :
 
      ```csharp
@@ -41,3 +70,12 @@ description: Répétitions de code
          tab[index] = tab[index] + 1;
      }
      ```
+
+## Exécution
+
+## incrémentation de multiples
+
+## décrémentation
+
+
+## boucles imbriqués
