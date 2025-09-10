@@ -1,8 +1,8 @@
 ---
-title: A - boucle For
+title: A - Boucle For simple
 ---
 
-# 🧪 Labo 4.1A – Exercices simples de boucles
+# Labo 4.1A – Exercices simples de boucles
 
 Nous allons réaliser une série d’exercices permettant de pratiquer la **définition de fonctions avec paramètres** en C#.
 
@@ -10,85 +10,93 @@ Pour **chaque exercice**, créez un **nouveau projet** dans Visual Studio.
 
 ---
 
-## 📌 Rappel : Syntaxe d’une fonction avec paramètres
+## 📌 Rappel : Boucle simple
 
 ```csharp
-static void NomDeLaFonction(type pParam1, type pParam2)
+//initialisation; test logique; incrémentation  
+for (int i = 0;   i < 10 ;   i++)
 {
-    // Instructions
+    // Block de code de la boucle
 }
 ```
 
-### Exemple
 
-```csharp
-static void MessageDeBienvenue(string pPrenom, string pNom)
-{
-    Console.WriteLine("Bienvenue " + pPrenom + " " + pNom);
-}
-```
 
 ---
 
 ## 🧩 Exercices
 
-### 🔹 Exercice 1 – Message personnalisé
+### 🟢 Exercice 1 
+Affichez les valeurs de 1 à 6 dans la console avec un boucle for.
 
-Créez une fonction prenant **trois paramètres** : le nom, l'âge et la ville.
-
-Elle doit afficher une phrase du style :
-
-> Bonjour Benoit Caldairou, vous avez 20 ans et vous venez de Montréal.
-
----
-
-### 🔹 Exercice 2 – Périmètre d’un rectangle
-
-Créez une fonction qui affiche le **périmètre d’un rectangle**, à partir de sa largeur et de sa hauteur.
-
-> Formule : périmètre = 2 \* (largeur + hauteur)
-
----
-
-### 🔹 Exercice 3 – Table de multiplication
-
-Créez une fonction prenant un **nombre entier** en paramètre et affichant sa **table de multiplication jusqu’à 10**.
-
-Exemple pour 3 :
-
+Résultat attendu :
 ```
-3 x 1 = 3
-3 x 2 = 6
-...
-3 x 10 = 30
+1
+2
+3
+4
+5
+6
 ```
 
----
 
-### 🔹 Exercice 4 – Pyramide d’étoiles
+### 🟢 Exercice 2
+Affichez sur UNE ligne, les valeurs de 10 à 20 (utiliser `console.write()`)
 
-Créez une fonction qui affiche une pyramide comme ceci :
-
+Résultat attendu :
 ```
-*
-**
-***
-****
-*****
+Sur une ligne : 1 2 3 4 5 6 7 8 9 10
 ```
 
-Cette fonction doit prendre en paramètre le **nombre de lignes à afficher**.
+### 🟢 Exercice 3
+Faites un compte à rebour avec par bon de 2 en partant de 10 et incluant le 0.
 
----
+Résultat attendu :
+```
+10
+8
+6
+4
+2
+0
+```
 
-### 🔹 Exercice 5 – Année bissextile
 
-Créez une fonction prenant une **année** en paramètre et qui affiche si elle est **bissextile ou non**.
+### 🟢 Exercice 4
+Affichez les nombres pairs de 0 à 20 inclusivement.
 
-> Rappel : Une année est bissextile si :
->
-> * Elle est divisible par 400, **ou**
-> * Elle est divisible par 4 **sans** être divisible par 100
+Résultat attendu :
+```
+0
+2
+4
+6
+8
+10
+12
+14
+16
+18
+20
+```
 
-Exemples d'années bissextiles : 1600, 2000, 1996, 1992, 2024
-Exemples **non** bissextiles : 1997, 2006, 1900
+### 🟢 Exercice 4
+Affichez les nombres impairs de 10 à 25 inclusivement.
+
+Résultat attendu :
+```
+11
+13
+15
+17
+19
+21
+23
+25
+```
+
+### 🟢 Exercice 5
+Faites la somme des chiffres de 1 à 50.
+Affichez le résultat final.
+Vous aurez besoin de crée une variable compteur à laquelle vous additionnerer les valeurs de votre boucle.
+Résultat attendu :
