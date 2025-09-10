@@ -37,6 +37,78 @@ Tu peux prendre de l'avance en regardant le contenu des semaines qui arrivent.
 
 </Row>
 
+## 📝 Qu’est-ce que `TryParse` ?
+
+`TryParse` est une fonction disponible sur plusieurs types de base en C#.  
+Elle permet de **convertir une chaîne de caractères** en un type donné **sans lever d’exception** en cas d’échec.
+
+Contrairement à `Parse` qui lève une exception si la conversion échoue, `TryParse` retourne simplement `true` si la conversion réussit, ou `false` sinon.
+
+### Exemple d'une exception
+![Exemple d'une exception](_05-integration/exception.png)
+
+---
+
+### 🔹 Signature générale
+
+
+Exemple avec `int` :
+
+```csharp
+int resultat = 0; 
+bool int.TryParse(string? texte, out resultat);
+```
+
+ - `texte` : le texte à convertir
+ - `resultat` : (mot-clé **`out`**) variable qui contiendra la valeur convertie si la conversion réussit
+ - Retourne : true si la conversion a réussi, false sinon
+
+`TryParse` est disponible avec tous les types de données
+ - int.TryParse
+ - double.TryParse
+ - decimal.TryParse
+ - bool.TryParse
+
+### 🔹 Exemples d'utilisation
+
+#### Conversion réussie
+```csharp
+string nombreTexte = "123";
+int nombre = 0;
+
+bool conversion = int.TryParse(nombreTexte, out nombre);
+        
+if (conversion)
+{
+    Console.WriteLine("Conversion réussie!");
+}
+Console.WriteLine("Le nombre est : " + nombre);
+```
+✅ **Resultat attendu** :
+```
+Conversion réussie!
+Le nombre est : 123
+```
+
+#### ‼️⚠️ Conversion échouée
+```csharp
+string nombreTexte = "Allo!! Je ne suis pas un nombre!";
+int nombre = 0;
+
+bool conversion = int.TryParse(nombreTexte, out nombre);
+        
+if (!conversion)
+{
+    Console.WriteLine("Conversion échouée!");
+}
+Console.WriteLine("Le nombre est : " + nombre);
+```
+✅ **Resultat attendu** :
+```
+Conversion échouée!
+Le nombre est : 0
+```
+
 ## 💪 Exercices supplémentaires
 
 Vous devez réaliser les laboratoires
