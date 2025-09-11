@@ -1,5 +1,5 @@
 ---
-description: Tableaux 1D 
+description: Introduction aux tableaux 1D et manipulation avancée des chaînes
 ---
 
 # Tableaux 1D
@@ -196,6 +196,53 @@ string phrase = string.Join(", ", fruits);
 Console.WriteLine(phrase);
 // Résultat : pomme, banane, orange
 ```
+
+---
+
+## 1️⃣2️⃣ Les constantes en C#
+
+Une **constante** est une valeur qui **ne change jamais** pendant l’exécution du programme. On la déclare avec le mot-clé `const`.
+
+### Exemple simple
+```csharp
+const double TAUX_TPS = 0.05;
+const double TAUX_TVQ = 0.09975;
+
+Console.WriteLine("TPS = " + TAUX_TPS);
+Console.WriteLine("TVQ = " + TAUX_TVQ);
+```
+
+👉 L’avantage est que si le taux change, on modifie **une seule ligne** dans le code.
+
+### Avec et sans constantes
+
+Sans constante :
+```csharp
+double prix = 100;
+double total = prix + prix * 0.05 + prix * 0.09975;
+```
+
+Avec constantes :
+```csharp
+const double TPS = 0.05;
+const double TVQ = 0.09975;
+
+double prix = 100;
+double total = prix + prix * TPS + prix * TVQ;
+```
+
+✅ Le code est plus lisible et plus facile à maintenir.
+
+### Constantes et tableaux
+
+On peut aussi utiliser une constante pour définir la taille d’un tableau.
+
+```csharp
+const int NOMBRE_ETUDIANTS = 5;
+int[] notes = new int[NOMBRE_ETUDIANTS];
+```
+
+Cela rend le code plus clair et permet de modifier facilement la taille du tableau en changeant une seule valeur.
 
 ---
 
