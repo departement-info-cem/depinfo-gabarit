@@ -9,7 +9,7 @@ Description: Répétitions de code
 
 
 Certains problèmes nécessitent un traitement répétitif. 
-Si on veut imprimer la même ligne 100 fois, on ne va pas écrire `Console.WriteLine()` 20 fois.
+Si on veut imprimer la même ligne 100 fois, on ne va pas écrire `Console.WriteLine()` 100 fois.
 On préfère utiliser une **boucle** pour répéter un ensemble d'instructions.
 
 Ces deux blocs de code donnent le même résultat
@@ -49,9 +49,10 @@ for (int i = 0; i < 10 ; i++)
      }
      ```
 
-     * **initialisation** : Déclaration et affectation du compteur
-     * **condition** : Test logique évalué à chaque itération de la boucle, tant qu’il est vrai, le bloc s’exécute
-     * **incrémentation/décrémentation** : Modifie le compteur après chaque itération de la boucle
+     * **initialisation** : Déclaration et affectation du compteur.
+     * **condition** : Test logique évalué à chaque itération de la boucle. Tant qu’il est vrai, le bloc s’exécute.
+     * **incrémentation/décrémentation** : Modifie le compteur après chaque itération de la boucle, afin que le test devienne faux éventuellement.
+
    * Exemple :
 
      ```csharp
@@ -75,17 +76,17 @@ for (int i = 0; i < 10 ; i++)
   |-------|-------|-------------|
   | 1 | 1 | Créez la variable `resultat` et lui assigne la valeur 0 |
   | 2 | 2 | Créez la variable `index` et lui assigne la valeur 1 |
-  | 3 | 2 | Évalue le test `index <= 5` qui est `true`| 
+  | 3 | 2 | Évalue le test `index <= 3` qui est `true`| 
   | 4 | 4 | Change la valeur de `resultat` pour lui ajouter la valeur de `index` ( 1 ) pour un nouveau total de ( 1 ) |
   | 5 | 2 | Incrémente la valeur de `index` qui vaut maintenant 2 |
-  | 6 | 2 | Évalue le test `index <= 5` qui est `true`| 
+  | 6 | 2 | Évalue le test `index <= 3` qui est `true`| 
   | 7 | 4 | Change la valeur de `resultat` pour lui ajouter la valeur de `index` ( 2 ) pour un nouveau total de ( 3 ) |
   | 8 | 2 | Incrémente la valeur de `index` qui vaut maintenant 3 |
-  | 9 | 2 | Évalue le test `index <= 5` qui est `true`| 
+  | 9 | 2 | Évalue le test `index <= 3` qui est `true`| 
   | 10 | 4 | Change la valeur de `resultat` pour lui ajouter la valeur de `index` ( 3 ) pour un nouveau total de ( 6 ) |
   | 11 | 2 | Incrémente la valeur de `index` qui vaut maintenant 4 |
-  | 12 | 2 | Évalue le test `index <= 5` qui est `false`| 
-  | 13 | 6 | Écris le résultat dans la console **Notez** : nous sommes sortis de la boucle |
+  | 12 | 2 | Évalue le test `index <= 3` qui est **`false`**| 
+  | 13 | 6 | Écris le résultat dans la console. **Notez** : nous sommes sortis de la boucle |
 
 
 
@@ -98,15 +99,15 @@ for (int i = 0; i < 10 ; i++)
 
   ```csharp
 Console.Write("Multiples de trois : ");
-for (int i = 1; i < 50 ; i += 3)
+for (int i = 0; i < 50 ; i += 3)
 {
-    Console.Write(i + "  ");
+    Console.Write(i + " ");
 }
 ```
 
 **Résultat :** 
   ```csharp
-Multiples de trois : 1  4  7  10  13  16  19  22  25  28  31  34  37  40  43  46  49
+Multiples de trois : 0 3 6 9 12 15 18 21 24 27 30 33 36 39 42 45 48
 ```
 
 
@@ -142,7 +143,7 @@ Boom !
 
 
 ## 4. Portée des variables et accumulation d'information
-La portée des variables fonctionne de la même façon pour les boucles `for` que pour les blocs `if-else`. Une variable créée à l'intérieur d'une boucle `for` cesse d'exister lorsqu'on quitte la boucle. Toutefois les variables crées hors de la boucle restent accessible et on peut modifier leurs valeurs,
+La portée des variables fonctionne de la même façon pour les boucles `for` que pour les blocs `if-else`. Une variable créée à l'intérieur d'une boucle `for` cesse d'exister lorsqu'on quitte la boucle. Toutefois les variables crées hors de la boucle restent accessibles et on peut modifier leurs valeurs.
 
 Par exemple :
   ```csharp
@@ -158,44 +159,17 @@ Console.WriteLine("Total : " + somme);
 Total : 5050
   ```
 
-Le total des valeurs de 1 à 100 est de 5050, la variable **somme** est déclarée avant le début de la boucle et peut donc être utilisée pour stocké de l'information provenant de la boucle.
+Le total des valeurs de 1 à 100 est de 5050, la variable **somme** est déclarée avant le début de la boucle et peut donc être utilisée pour stocker de l'information provenant de la boucle.
 
 Par contraste :
   ```csharp
 
-for (int i = 1; i <= 100 ; i++)
-{
-  int total += i
-}
-Console.WriteLine("Total : " + total);
+  for (int i = 1; i <= 100 ; i++)
+  {
+      int total += i
+  }
+  Console.WriteLine("Total : " + total);
 ```
 
-Ce code ne compilera pas. La variable total n'existe pas hors de la boucle `for`.
+Ce code ne compilera pas. La variable **total** n'existe pas hors de la boucle `for`.
 
-
-
-
-### 5. Instruction `Break`
-
-L'instruction `Break` permet d'interrompre l'exécution d'une boucle avant sa fin. Lorsque cette instruction est exécutée, le code saute directement à la fin de la boucle `for` sans exécuter le code restant dans la boucle et ne fait pas les itérations restantes.
-
-Par exemple :
-  ```csharp
-for (int i = 1; i <= 10 ; i++)
-{
-
-    Console.Write(i);
-    if (i == 5)
-    {
-      break;
-    }
-    
-    Console.Write("...");
-}
-```
-**Résultat :** 
-  ```
-1...2...3...4...5
-  ```
-
-  **Notez** : Lorsque **i** atteint la valeur **5**, on rentre dans le if et on interrompt la boucle. La dernière série de **...** n'est pas écrit dans la console et la boucle `for` n'est pas exécuté 10 fois malgré le test `i<=10`.
