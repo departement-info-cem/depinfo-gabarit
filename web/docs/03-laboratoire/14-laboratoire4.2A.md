@@ -2,7 +2,7 @@
 title: A - Tableaux 1D - Simple
 ---
 
-# 🧪 Labo 4.1A – Tableaux 1D
+# 🧪 Labo 4.2A – Tableaux 1D
 
 📎 **Référence** : [Tableau 1D – Documentation C#](https://info.cegepmontpetit.ca/notions-csharp/documentation/tableau/tableau-1d)
 
