@@ -47,13 +47,11 @@ Vendredi
 🛠️ **Instructions** :
 1. Déclarez un tableau `int` : `{ 2, 4, 6 }`.
 2. Affichez le **nombre d’éléments** grâce à `Length`.
-3. Calculez la somme des trois éléments en utilisant la fonction appropriée.
-4. Affichez la somme.
+
 
 ✅ **Exemple attendu** :
 ```
 Nombre d’éléments : 3
-Somme : 12
 ```
 
 ---
@@ -63,7 +61,7 @@ Somme : 12
 
 🛠️ **Instructions** :
 1. Déclarez un tableau `double` : `{ 12.5, 15.0, 20.0 }`.
-2. Calculez la moyenne des trois éléments en utilisant la fonction approprié.
+2. Calculez la **moyenne manuellement** en additionnant les éléments du tableau et en divisant par le nombre d’éléments.
 3. Affichez la moyenne.
 
 ✅ **Exemple attendu** :
@@ -120,3 +118,71 @@ Valeurs : 1, 4, 3, 4
 200
 330
 ```
+
+---
+
+## 🟢 Exercice 8 – Utilisation de `Split()`
+🎯 **Objectif** : Transformer une chaîne en tableau.
+
+🛠️ **Instructions** :
+1. Créez une variable `string` contenant : `"pomme,banane,orange"`.
+2. Utilisez `.Split(',')` pour créer un tableau de fruits.
+3. Affichez chaque fruit sur une ligne.
+
+✅ **Exemple attendu** :
+```
+pomme
+banane
+orange
+```
+
+---
+
+## 🟢 Exercice 9 – Utilisation de `Array.Sort()`
+🎯 **Objectif** : Trier un tableau.
+
+🛠️ **Instructions** :
+1. Déclarez un tableau `int` : `{ 42, 7, 19, 3 }`.
+2. Utilisez `Array.Sort()` pour trier les éléments.
+3. Affichez le tableau trié.
+
+✅ **Exemple attendu** :
+```
+3
+7
+19
+42
+```
+
+---
+
+## 🟢 Exercice 10 – Utilisation de `string.Join()`
+🎯 **Objectif** : Afficher un tableau sous forme de texte.
+
+🛠️ **Instructions** :
+1. Déclarez un tableau `string` : `"Alice", "Bob", "Charlie"`.
+2. Utilisez `string.Join(", ", tableau)` pour afficher tous les éléments sur une seule ligne.
+3. Testez avec différents séparateurs.
+
+✅ **Exemple attendu** :
+```
+Alice, Bob, Charlie
+```
+
+---
+
+## 🟢 Exercice 11 – Utilisation de constantes
+🎯 **Objectif** : Comprendre l’utilité des constantes.
+
+🛠️ **Instructions** :
+1. Déclarez une constante `const double PI = 3.14159;`.
+2. Demandez à l’utilisateur d’entrer un rayon.
+3. Calculez et affichez la circonférence du cercle avec la formule `2 * PI * rayon`.
+
+✅ **Exemple attendu** :
+```
+Entrez le rayon : 5
+Circonférence = 31.42
+```
+
+---
