@@ -166,7 +166,7 @@ Par contraste :
 
   for (int i = 1; i <= 100 ; i++)
   {
-      int total += i
+      int total += i;
   }
   Console.WriteLine("Total : " + total);
 ```
