@@ -8,6 +8,18 @@ title: Style de la console
 Elles servent uniquement à explorer et à **s'amuser avec la console**.
 
 ---
+## 🌐 Activer les caractères spéciaux (UTF-8)
+
+```csharp
+// Permet d'afficher correctement les icônes, symboles et émojis
+Console.OutputEncoding = System.Text.Encoding.UTF8;
+
+// Exemple
+Console.WriteLine("Hello 🌍 ☕ ★ ♫");
+```
+
+💡 Sans cette ligne, certains symboles risquent d'apparaître sous forme de carrés ou de points d'interrogation.
+
 
 ## 🎨 Changer les couleurs du texte et du fond
 
