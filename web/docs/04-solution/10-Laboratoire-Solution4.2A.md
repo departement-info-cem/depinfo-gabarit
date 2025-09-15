@@ -1,8 +1,8 @@
 ---
-title: ✅ Solutions – Labo 4.1A – Tableaux 1D
+title: ✅ Solutions – Labo 4.2A – Tableaux 1D
 ---
 
-# ✅ Solutions – Labo 4.1A – Tableaux 1D
+# ✅ Solutions – Labo 4.2A – Tableaux 1D
 
 ---
 
