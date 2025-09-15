@@ -86,7 +86,7 @@ for (int i = 0; i < 10 ; i++)
   | 10 | 4 | Change la valeur de `resultat` pour lui ajouter la valeur de `index` ( 3 ) pour un nouveau total de ( 6 ) |
   | 11 | 2 | Incrémente la valeur de `index` qui vaut maintenant 4 |
   | 12 | 2 | Évalue le test `index <= 3` qui est **`false`**| 
-  | 13 | 6 | Écris le résultat dans la console. **Notez** : nous sommes sortis de la boucle |
+  | 13 | 6 | Écris le résultat dans la console. **Notez** : nous sommes sortis de la boucle. |
 
 
 
@@ -120,7 +120,7 @@ Multiples de trois : 0 3 6 9 12 15 18 21 24 27 30 33 36 39 42 45 48
   * **condition** : Test que le compteur est supérieur à une valeur.
   * **décrémentation** : Diminue la valeur du compteur.
 
-  ```csharp
+```csharp
 Console.WriteLine("Compte à rebours : ");
 for (int i = 5; i >= 0 ; i--)
 {
@@ -130,7 +130,7 @@ Console.WriteLine("Boom !");
 ```
 
 **Résultat :** 
-  ```
+```
 Compte à rebours : 
 5...
 4...
@@ -142,11 +142,11 @@ Boom !
 ```
 
 
-## 4. Portée des variables et accumulation d'information
-La portée des variables fonctionne de la même façon pour les boucles `for` que pour les blocs `if-else`. Une variable créée à l'intérieur d'une boucle `for` cesse d'exister lorsqu'on quitte la boucle. Toutefois les variables crées hors de la boucle restent accessibles et on peut modifier leurs valeurs.
+### 4. Portée des variables et accumulation d'information
+La portée des variables fonctionne de la même façon pour les boucles `for` que pour les blocs `if-else`. Une variable créée à l'intérieur d'une boucle `for` cesse d'exister lorsqu'on quitte la boucle. Toutefois les variables créées hors de la boucle restent accessibles et on peut modifier leurs valeurs.
 
 Par exemple :
-  ```csharp
+```csharp
   int somme = 0;
 for (int i = 1; i <= 100 ; i++)
 {
@@ -162,7 +162,7 @@ Total : 5050
 Le total des valeurs de 1 à 100 est de 5050, la variable **somme** est déclarée avant le début de la boucle et peut donc être utilisée pour stocker de l'information provenant de la boucle.
 
 Par contraste :
-  ```csharp
+```csharp
 
   for (int i = 1; i <= 100 ; i++)
   {
@@ -172,4 +172,56 @@ Par contraste :
 ```
 
 Ce code ne compilera pas. La variable **total** n'existe pas hors de la boucle `for`.
+
+
+
+### 5. Boucles imbriquées
+Il arrive qu'on doive répété certaines portions de codes un plus grand nombre de fois que d'autres.
+Dans ce cas, nous utiliserons des boucles dans des boucles.
+
+```csharp
+for (int i = 1; i <= 10; i++) // Boucle A, exécuter 10 fois
+{
+    Console.WriteLine($"Itération {i} de la boucle A");
+
+    for (int j = 1; j <= 3; j++) // Boucle B, exécuter 3 fois... par itération de la boucle A !
+    {
+        Console.WriteLine($"    Itération {j} de la boucle B (Total d'exécutions : {i*j})" );
+    }
+}
+```
+
+**Attention** : L'utilisation de boucles multiples complexifie rapidement notre code. Lorsqu'on utilise des boucles imbriquées, il faut se demander : puis-je faire autrement ?
+
+
+### 6. Erreurs fréquentes
+L'utilisation de boucles engendre deux types d'erreurs particulièrement fréquentes. Les boucles infinies et les boucles non exécutées.
+
+#### Boucles infinies
+Une boucle infinie est une boucle dont le test logique est toujours vrai. Par exemple, lorsqu'on fait une boucle dont l'index diminue, mais dont le test logique est vrai tant que l'index est plus petit qu'une valeur. 
+
+```csharp
+for (int index = 1; index <= 10; index--) // La valeur d'index fait que le test est toujours vrai.
+{
+    Console.Write(index + " ");
+}
+```
+**Résultat :** 
+  ```
+  1 0 -1 -2 -3 -4 -5 -6 -7 -8 -9 -10 -11 -12 -13 -14 -15 -16 -17 -18 -19 -20 -21 -22 -23 -24 -25...
+  ```
+
+L'index continue de diminuer et le test est donc toujours vrai puisque `index <= 10` serait toujours `true`.
+
+#### Boucles non exécutées
+
+L'autre type d'erreur fréquent lorsqu'on fait une boucle, mais le test logique est immédiatement `false` au début de la boucle. On ne rentre donc pas dans la boucle et le bloc de code associé n'est pas exécuté.
+
+```csharp
+for (int index = 1; index >= 0; index--) // Le test est immédiatement faux.
+{
+    Console.Write(index + " ");
+}
+```
+Puisque `index` est initialisé à **1**, `index >= 0` est `false`, le bloc de code à l'intérieur de la boucle ``for`` n'est jamais exécuter.
 
