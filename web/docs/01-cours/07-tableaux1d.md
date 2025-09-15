@@ -249,3 +249,9 @@ Cela rend le code plus clair et permet de modifier facilement la taille du table
 ## 📎 Référence
 
 👉 Documentation officielle : [Tableaux en C#](https://info.cegepmontpetit.ca/notions-csharp/documentation/tableau/tableau-1d)
+
+
+Vous devez réaliser les labos suivants :
+ [🧪 Labo 4.2A](/laboratoire/laboratoire4.2A)
+ [🧪 Labo 4.2B](/laboratoire/laboratoire4.2B)
+ 
