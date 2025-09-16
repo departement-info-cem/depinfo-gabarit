@@ -109,18 +109,11 @@ static void Main(string[] args)
     Console.Write("Entrez un mot : ");
     string mot = Console.ReadLine();
 
-    // Appeler la fonction et capturer les résultats
-    int nbLettres = CompterLettres(mot);
     int nbA = CompterOccurrencesA(mot);
 
     Console.WriteLine("Mot saisi : " + mot);
-    Console.WriteLine("Nombre de lettres : " + nbLettres);
+    Console.WriteLine("Nombre de lettres : " + mot.Length);
     Console.WriteLine("Nombre de 'a' : " + nbA);
-}
-
-static int CompterLettres(string pMot)
-{
-    return pMot.Length; // un string est un tableau de char
 }
 
 static int CompterOccurrencesA(string pMot)
