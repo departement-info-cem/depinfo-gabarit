@@ -93,3 +93,26 @@ Avec index 1 : Éric
 
 
 ---
+## 🟡 Exercice 5 – Compter les lettres d’un mot
+🎯 **Objectif** : Manipuler une chaîne de caractères comme un tableau de `char`.
+
+🛠️ **Instructions** :
+1. Demandez à l’utilisateur d’entrer un mot.
+2. Stockez cette entrée dans une variable `string`.
+3. Parcourez le mot avec une boucle `for` :
+   - Affichez chaque lettre une par une.
+   - Comptez combien de fois la lettre `a` (ou `A`) apparaît.
+4. Affichez le nombre total de lettres et le nombre de `a`.
+
+✅ **Résultat attendu** :
+```
+Mot saisi : Canada
+C
+a
+n
+a
+d
+a
+Nombre de lettres : 6
+Nombre de 'a' : 3
+```
