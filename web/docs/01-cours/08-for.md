@@ -15,23 +15,23 @@ On préfère utiliser une **boucle** pour répéter un ensemble d'instructions.
 Ces deux blocs de code donnent le même résultat
   ```csharp
   // Bloc 1
-  Console.WriteLine("*****")
-  Console.WriteLine("*****")
-  Console.WriteLine("*****")
-  Console.WriteLine("*****")
-  Console.WriteLine("*****")
-  Console.WriteLine("*****")
-  Console.WriteLine("*****")
-  Console.WriteLine("*****")
-  Console.WriteLine("*****")
-  Console.WriteLine("*****")
+  Console.WriteLine("*****");
+  Console.WriteLine("*****");
+  Console.WriteLine("*****");
+  Console.WriteLine("*****");
+  Console.WriteLine("*****");
+  Console.WriteLine("*****");
+  Console.WriteLine("*****");
+  Console.WriteLine("*****");
+  Console.WriteLine("*****");
+  Console.WriteLine("*****");
   ```
 
   ```csharp
 // Bloc 2
 for (int i = 0; i < 10 ; i++)
 {
-    Console.WriteLine("*****")
+    Console.WriteLine("*****");
 }
 ```
 
@@ -61,7 +61,7 @@ for (int i = 0; i < 10 ; i++)
      3. {
      4.     resultat += index;
      5. }
-     6. Console.Write("Total de : " + resultat)
+     6. Console.Write("Total de : " + resultat);
      ```
 
      Ce code répète `resultat += index;` trois fois.
@@ -106,7 +106,7 @@ for (int i = 0; i < 50 ; i += 3)
 ```
 
 **Résultat :** 
-  ```csharp
+  ```
 Multiples de trois : 0 3 6 9 12 15 18 21 24 27 30 33 36 39 42 45 48
 ```
 
@@ -166,7 +166,7 @@ Par contraste :
 
   for (int i = 1; i <= 100 ; i++)
   {
-      int total += i
+      int total += i;
   }
   Console.WriteLine("Total : " + total);
 ```
