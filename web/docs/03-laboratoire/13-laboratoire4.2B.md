@@ -12,7 +12,7 @@ title: B - Tableaux 1D avec conditions et fonctions
 🎯 **Objectif** : Faire une fonction qui prend un `double[]` en paramètre et retourne un `double`.
 
 🛠️ **Instructions** :
-1. Déclarez un tableau `double[]` préinitialisé avec les valeurs : {70.0, 80.5 ,90.0}.
+1. Déclarez un tableau `double[]` préinitialisé avec les valeurs : `{70.0, 80.5 ,90.0}`.
 2. Créez une fonction **CalculerMoyenneFinale()** qui prend un tableau `double[]` en paramètre. 
 3. Cette fonction doit faire une moyenne, mais la première note compte pour 30%, la deuxième pour 20%, et la troisième pour 50%.
 4. Appelez la fonction et capturez son retour.
