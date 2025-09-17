@@ -218,10 +218,10 @@ L'index continue de diminuer et le test est donc toujours vrai puisque `index <=
 L'autre type d'erreur fréquent lorsqu'on fait une boucle, mais le test logique est immédiatement `false` au début de la boucle. On ne rentre donc pas dans la boucle et le bloc de code associé n'est pas exécuté.
 
 ```csharp
-for (int index = 1; index >= 0; index--) // Le test est immédiatement faux.
+for (int index = 0; index > 0; index--) // Le test est immédiatement faux.
 {
     Console.Write(index + " ");
 }
 ```
-Puisque `index` est initialisé à **1**, `index >= 0` est `false`, le bloc de code à l'intérieur de la boucle ``for`` n'est jamais exécuter.
+Puisque `index` est initialisé à **0**, `index > 0` est `false`, le bloc de code à l'intérieur de la boucle ``for`` n'est jamais exécuter.
 
