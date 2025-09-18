@@ -127,7 +127,7 @@ Résultat attendu :
 Entrez un chiffre : 3
 Entrez un chiffre : -5
 Entrez un chiffre : 21
-La moyenne est : 3,8
+La moyenne est : 6,33 // ou bien 6,33333333
 ```
 
 

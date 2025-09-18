@@ -18,7 +18,7 @@ Pour **chaque exercice**, créez un **nouveau projet** dans Visual Studio.
 🎯 **Objectif** : Faire une fonction qui prend un `int` en paramètre et qui imprime la table de multiplication correspondante dans la console.
 
 🛠️ **Instructions** :
-1. Crée une fonction `AfficherTableMultiplicant()` qui prend un int en paramètre et qui n'a pas de retour.
+1. Crée une fonction `AfficherTableMultiplication()` qui prend un int en paramètre et qui n'a pas de retour.
 2. La fonction doit contenir une boucle `for` allant de 1 à 12.
 3. Dans la boucle, imprimer la valeur passée en paramètre, ainsi que l'index et le résultat de leur multiplication.
 4. Appelez la fonction dans le `Main()` avec la valeur 7 en paramètre.
@@ -44,18 +44,18 @@ Pour **chaque exercice**, créez un **nouveau projet** dans Visual Studio.
 ## 🟡 Exercice 2 : Fonction dans une boucle
 Cette série d'exercices se font dans le même projet.
 
-### Exercice 2-A : Fonction `ImprimerLigneÉtoiles()`
+### Exercice 2-A : Fonction `ComposerLigneÉtoile()`
 
-🎯 **Objectif** : Faire une fonction qui prend un `int` en paramètre et qui imprime sur une seule ligne un nombre d'étoiles **`*`** correspondant.
+🎯 **Objectif** : Faire une fonction qui prend un `int` en paramètre et qui retourne un `string` avec un nombre d'étoiles **`*`** correspondant.
 
 🛠️ **Instructions** :
-1. Faites une fonction `ImprimerLigneÉtoiles()` qui prend un `int` en paramètre `pNbrÉtoiles` et qui retourne un `string`
+1. Faites une fonction `ComposerLigneÉtoile()` qui prend un `int` en paramètre `pNbrÉtoiles` et qui retourne un `string`
 2. Dans la fonction, faites une variable de type `string` avec une chaine vide `""` comme valeur initiale
-3. Encore dans la fonction, faites une boucle avec un index commençant à **0** et en utilisant le `int` passé pour le test logique `index <= pNbrÉtoiles`
+3. Encore dans la fonction, faites une boucle avec un index commençant à **0** et en utilisant le `int` passé pour le test logique `index < pNbrÉtoiles`
 4. Dans la boucle, concaténez une étoile **`*`** à la variable `string` créée à l'étape 2.
 5. Une fois la boucle terminée, retourner la variable `string`
 
-Vérifiez votre fonction en l'appelant avec les valeurs **3**, **5**,  et **9**.
+Vérifiez votre fonction en l'appelant avec les valeurs **3**, **5**,  et **9** et en imprimant les retours dans la console.
 
 **Résultat attendu** :
 ```
@@ -71,8 +71,8 @@ Dans le même projet que l'exercice 2-A.
 🎯 **Objectif** : Faire un appel de fonction dans une boucle pour faire une pyramide.
 
 🛠️ **Instructions** :
-1. Faites une boucle qui appelle la fonction `ImprimerLignesÉtoiles()` 5 fois et qui imprime son retour.
-2. En paramètre de la fonction `ImprimerLignesÉtoiles()`, passez l'index de votre boucle.
+1. Faites une boucle qui appelle la fonction `ComposerLigneÉtoile()` 5 fois et qui imprime son retour.
+2. En paramètre de la fonction `ComposerLigneÉtoile()`, passez l'index de votre boucle.
 
 **Résultat attendu** :
 ```

@@ -101,3 +101,32 @@ static string ObtenirValeurParIndex(int pIndex, string[] pTableau)
     return pTableau[pIndex];
 }
 ```
+
+## 🟡 Exercice 5
+```csharp
+static void Main(string[] args)
+{
+    Console.Write("Entrez un mot : ");
+    string mot = Console.ReadLine();
+
+    int nbA = CompterOccurrencesA(mot);
+
+    Console.WriteLine("Mot saisi : " + mot);
+    Console.WriteLine("Nombre de lettres : " + mot.Length);
+    Console.WriteLine("Nombre de 'a' : " + nbA);
+}
+
+static int CompterOccurrencesA(string pMot)
+{
+    int compteur = 0;
+    for (int i = 0; i < pMot.Length; i++)
+    {
+        Console.WriteLine(pMot[i]); // affiche chaque lettre
+        if (pMot[i] == 'a' || pMot[i] == 'A')
+        {
+            compteur++;
+        }
+    }
+    return compteur;
+}
+```

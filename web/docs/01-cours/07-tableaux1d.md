@@ -169,11 +169,17 @@ for (int i = 0; i < notes.Length; i++)
 int[] nombres = { 42, 7, 19, 3, 88 };
 Array.Sort(nombres);
 
-foreach (int n in nombres)
+for (int i = 0; i < nombres.Length; i++)
 {
-    Console.WriteLine(n);
+    Console.WriteLine(nombres[i]);
 }
-// Résultat : 3, 7, 19, 42, 88
+/* Résultat :
+3
+7
+19
+42
+88
+*/
 ```
 
 Fonctionne aussi avec les chaînes :
@@ -249,3 +255,9 @@ Cela rend le code plus clair et permet de modifier facilement la taille du table
 ## 📎 Référence
 
 👉 Documentation officielle : [Tableaux en C#](https://info.cegepmontpetit.ca/notions-csharp/documentation/tableau/tableau-1d)
+
+
+Vous devez réaliser les labos suivants :
+ [🧪 Labo 4.2A](/laboratoire/laboratoire4.2A)
+ [🧪 Labo 4.2B](/laboratoire/laboratoire4.2B)
+ 
