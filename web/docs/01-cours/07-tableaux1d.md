@@ -169,11 +169,17 @@ for (int i = 0; i < notes.Length; i++)
 int[] nombres = { 42, 7, 19, 3, 88 };
 Array.Sort(nombres);
 
-foreach (int n in nombres)
+for (int i = 0; i < nombres.Length; i++)
 {
-    Console.WriteLine(n);
+    Console.WriteLine(nombres[i]);
 }
-// Résultat : 3, 7, 19, 42, 88
+/* Résultat :
+3
+7
+19
+42
+88
+*/
 ```
 
 Fonctionne aussi avec les chaînes :
