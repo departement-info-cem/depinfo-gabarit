@@ -39,5 +39,5 @@ Tu peux prendre de l'avance en regardant le contenu des semaines qui arrivent.
 
 ## 💪 Exercices supplémentaires
 
-Vous devez réaliser le [🧪 Labo 5.1](/laboratoire/laboratoire5.1)
+Vous devez réaliser les labos : [🧪 Labo 5.1A](/laboratoire/laboratoire5.1A),  [🧪 Labo 5.1B](/laboratoire/laboratoire5.1B),  [🧪 Labo 5.1C](/laboratoire/laboratoire5.1C)
 
