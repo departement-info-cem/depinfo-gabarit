@@ -1,8 +1,8 @@
 ---
-title: ✅ Solutions – Labo 4.1B – Exercices de boucles
+title: ✅ Solutions – Labo 4.1B – Exercices plus complexes de boucles
 ---
 
-# ✅ Solutions – Labo 4.1B – Exercices simples Boucles For
+# ✅ Solutions – Labo 4.1B – Exercices de boucles
 
 ---
 
