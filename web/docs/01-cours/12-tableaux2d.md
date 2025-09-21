@@ -8,7 +8,7 @@ description: Travailler avec des tableaux en 2 dimensions
 
 Un tableau **1D** permet de stocker une liste d’éléments.
 
-Reprenons notre exemple du cours sur les tableaux 1D et imaginons que nous devions stocker les notes de 5 étudiants. Sans tableau, nous aurions :
+Reprenons notre exemple du cours sur les tableaux 1D et imaginons que nous devions stocker les notes de 5 élèves. Sans tableau, nous aurions :
 
 ```csharp
 int note1 = 85;
@@ -18,7 +18,7 @@ int note4 = 92;
 int note5 = 88;
 ```
 
-La **Solution** était alors d'utiliser un un tableau **1D** permettant de stocker toutes les valeurs :
+La **solution** était alors d'utiliser un tableau **1D** permettant de stocker toutes les valeurs :
 
 ```csharp
 int[] notes = { 85, 90, 78, 92, 88 };
@@ -30,7 +30,7 @@ int[] notes = { 85, 90, 78, 92, 88 };
 
 Parfois, les données que nous manipulons sont naturellement organisées en lignes et colonnes.
 
-Poussons notre exemple plus loin et essayons maintenant de stocker tous les notes de chaque élève d'une classe. Avec un simple tableau **1D** nous aurions :
+Poussons notre exemple plus loin et essayons maintenant de stocker toutes les notes de chaque élève d'une classe. Avec un simple tableau **1D**, nous aurions :
 
 ```csharp
 int[] notesEleve1 = { 85, 90, 78, 92, 88, 99 };
@@ -41,9 +41,9 @@ int[] notesEleve5 = { 65, 70, 72, 60, 68, 21 };
 ```
 
 ❌ **Inconvénients** :
-- Trop de variables à déclarer (encore).
+- Trop de variables à déclarer.
 - Difficile à traiter automatiquement (par exemple pour calculer la moyenne de la classe).
-- Impossible de retourner tous les notes des élèves depuis une fonction.
+- Impossible de retourner toutes les notes des élèves depuis une fonction.
 
 ✅ **Solution** : utiliser un seul conteneur capable de stocker toutes les valeurs : **un tableau 2D**.
 
@@ -53,7 +53,7 @@ int[] notesEleve5 = { 65, 70, 72, 60, 68, 21 };
 
 ### 🧠 Définition 
 
-Pour definir un tableau à plusieurs dimensions, il suffit d'initialiser un tableau a une dimension, puis d'y ajouter une virgule pour chaque dimension additionnel. Voici un exemple :
+Pour définir un tableau à plusieurs dimensions, il suffit d'initialiser un tableau à une dimension, puis d'y ajouter une virgule pour chaque dimension additionnelle. Voici un exemple :
 
 **Syntaxe :**
 ```csharp
@@ -65,12 +65,12 @@ type[,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,] variable; // Tableau à 32 dimension
 
 ```
 :::warning 
-en C#, les tableaux sont limités à 32 dimensions. Il est tout fois important de noter qu'il est très rare d'utiliser des tableaux avec plus de 2D. 
+En C#, les tableaux sont limités à 32 dimensions. Il est toutefois important de noter qu'il est très rare d'utiliser des tableaux avec plus de 2D. 
 :::
 
 ### ✅ Solution
 
-Pour regrouper tous les notes des élèves en une seule variable, il faut donc créer un tableau a deux dimensions. La première dimension servira pour les notes, et la seconde dimension servira pour chaque élève. Voyons comment definir un tableau de notes d'élèves :
+Pour regrouper toutes les notes des élèves en une seule variable, il faut donc créer un tableau à deux dimensions. La première dimension servira pour les élèves, et la seconde dimension servira pour les notes. Voyons comment définir un tableau de notes d'élèves :
 
 ```csharp
 int[,] notesEleves = {
@@ -81,13 +81,13 @@ int[,] notesEleves = {
     { 65, 70, 72, 60, 68, 21 }  // Élève 5
   };
 ```
-👉 Avec un tableau **2D**, tout est regroupé sous une seule variable nommée (`notesEleves`). On peut ainsi accéder facilement à chaque élément. Dans le cas suivant, nous avons maintenant un tableau à multiple dimensions, possedant 5 rangées et 6 colonnes.
+👉 Avec un tableau **2D**, tout est regroupé sous une seule variable nommée (`notesEleves`). On peut ainsi accéder facilement à chaque élément. Dans le cas suivant, nous avons maintenant un tableau à **plusieurs dimensions**, possédant 5 rangées et 6 colonnes.
 
 ---
 
 ## 4️⃣ Visualisation d’un tableau 2D
 
-Lorsqu'il est mention d'un tableau a deux dimensions, les dimensions sont généralement nommé rangées et colonnes, puisqu'il est facile de s'imaginer un tableau, selon la représentation visuelle suivante :
+Lorsqu'il est question d'un tableau à deux dimensions, les dimensions sont généralement nommées **rangées** et **colonnes**, puisqu'il est facile de s'imaginer un tableau selon la représentation visuelle suivante :
 
 ```
                             Notes
@@ -109,10 +109,10 @@ Lorsqu'il est mention d'un tableau a deux dimensions, les dimensions sont géné
 
 ## 5️⃣ Déclaration d’un tableau 2D
 
-Il existe deux façons de déclarer un tableau a plusieurs dimensions, avec et sans initialisation. 
+Il existe deux façons de déclarer un tableau à plusieurs dimensions : avec ou sans initialisation. 
 
 ### 📑 Déclaration **AVEC** initialisation
-Il peut arriver que le contenu d'un tableau soit déjà connu d'avance. Dans ce cas la, il suffit de déclarer un tableau et de directement donner les valeurs aux tableaux, suivant le code suivant :
+Il peut arriver que le contenu d'un tableau soit déjà connu d'avance. Dans ce cas-là, il suffit de déclarer un tableau et de lui attribuer directement les valeurs, comme dans le code suivant :
 
 ```csharp
 // Tableaux à deux dimensions, sur une ligne.
@@ -127,7 +127,8 @@ string[,] pouvoirsSuperheros = {
 };
 ```
 :::info
-Il est possible de definir un tableau a plusieurs dimension en une seule ligne. Cependant, il est important de s'assurer que son code est lisible au premier regard. S'il est nécéssaire d'utiliser la barre de défilement vertical pour voir l'entièreté du code, ajouter des sauts de lignes pourrait s'avéré utile.
+Il est possible de définir un tableau à plusieurs dimensions en une seule ligne. Cependant, il est important de s'assurer que le code reste lisible au premier regard. S'il est nécessaire d'utiliser la barre de défilement vertical pour voir l'entièreté du code, ajouter des sauts de lignes peut s'avérer utile.
+:::
 
 ```csharp
 string[,] pouvoirsSuperheros = {{ "Vol", "Super force", "Vision laser", "Invulnérabilité"},{ "Intelligence", "Arts martiaux", "Technologie", "Stratégie"},{ "Vitesse", "Voyage temporel", "Réflexes accrus", "Guérison rapide"},{ "Force divine", "Lasso de vérité", "Vol", "Agilité surhumaine"}};
@@ -135,37 +136,37 @@ string[,] pouvoirsSuperheros = {{ "Vol", "Super force", "Vision laser", "Invuln�
 :::
 
 ### 📄 Déclaration **SANS** initialisation
-Cependant, il arrive parfois que les données du tableaux soit créer pendant la vie du programme, a partir d'une logique d'affaire. Dans le cas suivant, il faut être en mesure de créer un tableau sans données. Voici un exemple d'une déclaration de tableau sans initialisation :
+Cependant, il arrive parfois que les données du tableau soient créées pendant la vie du programme, à partir d'une logique métier. Dans ce cas, il faut être en mesure de créer un tableau sans données. Voici un exemple de déclaration d'un tableau sans initialisation :
 
 ```csharp
 int[,] notesEleves = new int[3, 2]; // 3 rangées et 2 colonnes vides.
 ```
-Lorsque le tableau n'est pas initialisé, le tableau possède la valeur `null`.
+Lorsque le tableau n'est pas initialisé, chaque élément possède la valeur par défaut du type de données (les tableaux eux-mêmes ne sont pas `null` en C# lorsqu'ils sont créés avec `new`).
 
-- L'opérateur `new` instancie (crée) l'objet tableau
-- Le type de données des valeurs qui seront assignées au tableau est défini
+- L'opérateur `new` instancie (crée) l'objet tableau.
+- Le type de données des valeurs qui seront assignées au tableau est défini.
 - La taille du tableau est définie par le nombre de rangées suivi du nombre de colonnes.
 
 Chacun des éléments contient la valeur par défaut du type de données du tableau :
 | Type                           | Exemple de déclaration       | Valeur par défaut des éléments |
-|--------------------------------|------------------------------|--------------------------------|
-| Entiers (`int`, `long`, etc.)  | `int[] a = new int[3];`      | 0                              |
-| Flottants (`float`, `double`)  | `double[] b = new double[3];`| 0.0                            |
+|--------------------------------|-----------------------------|--------------------------------|
+| Entiers (`int`, `long`, etc.)  | `int[] a = new int[3];`     | 0                              |
+| Flottants (`float`, `double`)  | `double[] b = new double[3];`| 0.0                           |
 | Décimal (`decimal`)            | `decimal[] c = new decimal[3];` | 0.0m                        |
-| Booléens (`bool`)              | `bool[] d = new bool[3];`    | false                          |
-| Caractères (`char`)            | `char[] e = new char[3];`    | '\0' (caractère nul)           |
+| Booléens (`bool`)              | `bool[] d = new bool[3];`   | false                          |
+| Caractères (`char`)            | `char[] e = new char[3];`   | '\0' (caractère nul)           |
 | Chaînes (`string`)             | `string[] f = new string[3];`| null                           |
-| ...                            | ...                          | ...                            |
+| ...                            | ...                         | ...                             |
 
 ---
 
 ## 6️⃣ Accès aux éléments
 
-Tout comme pour les tableaux **1D**, il suffit d'utiliser l'index pour récupérer la valeur a l'intérieur d'un tableau. L'index représente l'endroit ou l'on souhaite regarder. Si un tableau possède `4` valeurs, l'on parcourera le tableau avec un indice allant de `0` à `3`.  
+Tout comme pour les tableaux **1D**, il suffit d'utiliser l'index pour récupérer la valeur à l'intérieur d'un tableau. L'index représente l'endroit où l'on souhaite accéder. Si un tableau possède `4` valeurs, on parcourra le tableau avec un indice allant de `0` à `3`.  
 
-Le principe est identique pour les tableaux a plusieurs dimensions. Par contre, il nous faudra deux index pour parcourir l'entièreré du tableau. 
-* Le **premier index** désignera le numéro de rangée (ligne).
-* Le **deuxième index** désignera numéro de colonne.
+Le principe est identique pour les tableaux à plusieurs dimensions. Par contre, il faudra deux indices pour parcourir l'intégralité du tableau : 
+* Le **premier index** désigne le numéro de rangée (ligne).
+* Le **deuxième index** désigne le numéro de colonne.
 
 **Exemples :**
 ```csharp
@@ -196,7 +197,7 @@ pouvoirsSuperheros[3,0] = Force divine
 
 ## 7️⃣ Modifications des éléments
 
-Une fois la bonne rangée et la bonne colonne, il suffit de faire une assignation au tableau pour modifié son contenu a l'endroit spécifiquement choisi:
+Une fois la bonne rangée et la bonne colonne identifiées, il suffit de faire une assignation au tableau pour **modifier** son contenu à l'endroit spécifiquement choisi :
 
 **Exemples :**
 ```csharp
@@ -216,14 +217,16 @@ pouvoirsSuperheros[3,0] = "Wonder Woman";
 ---
 
 ## 8️⃣ Propriété `.Length` et `.GetLength(dimension)`
-Contrairement au tableau **1D**, la proriété `Length` ne sera pas suffisante pour parcourir l'ensemble d'un tableau a plusieurs dimensions. Il nous faut également une fonction pour avoir le nombre d'élément dans chaque dimension du tableau.
+
+Contrairement au tableau **1D**, la propriété `Length` ne suffit pas pour parcourir l'ensemble d'un tableau à plusieurs dimensions. Il nous faut également une méthode pour obtenir le nombre d'éléments dans chaque dimension du tableau.
 
 - `.Length` : Retourne le nombre total d’éléments dans un tableau.
-- `.GetLength(dimension)` : Retourne le nombre d'élément(s) présent dans une dimension spécifique.
-  * `GetLength(0)` : Retourne le nombre de rangée(s).
-  * `GetLength(1)` : Retourne le nombre de colonne(s).
+- `.GetLength(dimension)` : Retourne le nombre d'éléments présents dans une dimension spécifique.
+  * `GetLength(0)` : Retourne le nombre de rangées.
+  * `GetLength(1)` : Retourne le nombre de colonnes.
 
 **Exemples :**
+
 ```csharp
 string[,] pouvoirsSuperheros = {
   { "Vol", "Super force", "Vision laser", "Invulnérabilité"}, // Superman
@@ -259,6 +262,23 @@ Deux stratégies principales existent :
 
 On parcourt toutes les colonnes **d’une rangée à la fois**, puis on passe à la rangée suivante.
 
+#### Visualisation du parcours
+
+```
+      Étape 1             Étape 2             Étape 3
+┌─────┬─────┬─────┐ ┌─────┬─────┬─────┐ ┌─────┬─────┬─────┐
+│ 85* │ 90  │ 78  │ │ 85  │ 90* │ 78  │ │ 85  │ 90  │ 78* │
+├─────┼─────┼─────┤ ├─────┼─────┼─────┤ ├─────┼─────┼─────┤
+│ 72  │ 81  │ 95  │ │ 72  │ 81  │ 95  │ │ 72  │ 81  │ 95  │
+└─────┴─────┴─────┘ └─────┴─────┴─────┘ └─────┴─────┴─────┘
+
+      Étape 4             Étape 5             Étape 6
+┌─────┬─────┬─────┐ ┌─────┬─────┬─────┐ ┌─────┬─────┬─────┐
+│ 85  │ 90  │ 78  │ │ 85  │ 90  │ 78  │ │ 85  │ 90  │ 78  │
+├─────┼─────┼─────┤ ├─────┼─────┼─────┤ ├─────┼─────┼─────┤
+│ 72* │ 81  │ 95  │ │ 72  │ 81* │ 95  │ │ 72  │ 81  │ 95* │
+└─────┴─────┴─────┘ └─────┴─────┴─────┘ └─────┴─────┴─────┘
+```
 #### ❌ Sans boucle
 ```csharp
 int[,] notes = {
@@ -301,6 +321,30 @@ for (int rangee = 0; rangee < notes.GetLength(0); rangee++)
 
 On parcourt toutes les rangées d’une colonne à la fois, puis on passe à la colonne suivante.
 
+#### Visualisation du parcours
+
+```
+      Étape 1             Étape 2
+┌─────┬─────┬─────┐ ┌─────┬─────┬─────┐ 
+│ 85* │ 90  │ 78  │ │ 85  │ 90  │ 78  │
+├─────┼─────┼─────┤ ├─────┼─────┼─────┤
+│ 72  │ 81  │ 95  │ │ 72* │ 81  │ 95  │
+└─────┴─────┴─────┘ └─────┴─────┴─────┘
+
+      Étape 3             Étape 4
+┌─────┬─────┬─────┐ ┌─────┬─────┬─────┐
+│ 85  │ 90* │ 78  │ │ 85  │ 90  │ 78  │
+├─────┼─────┼─────┤ ├─────┼─────┼─────┤
+│ 72  │ 81  │ 95  │ │ 72  │ 81* │ 95  │
+└─────┴─────┴─────┘ └─────┴─────┴─────┘
+
+      Étape 5             Étape 6
+┌─────┬─────┬─────┐ ┌─────┬─────┬─────┐
+│ 85  │ 90  │ 78* │ │ 85  │ 90  │ 78  │
+├─────┼─────┼─────┤ ├─────┼─────┼─────┤
+│ 72  │ 81  │ 95  │ │ 72  │ 81  │ 95* │
+└─────┴─────┴─────┘ └─────┴─────┴─────┘
+```
 #### ❌ Sans boucle
 ```csharp
 int[,] notes = {
@@ -342,16 +386,17 @@ for (int colonne = 0; colonne < notes.GetLength(1); colonne++)
 ```
 ---
 
- ## 📎 Référence
+## 📎 Références
 
 👉 Documentation officielle : 
 * [Tableaux en C#](https://info.cegepmontpetit.ca/notions-csharp/documentation/tableau/tableau-1d)
-* [Tableaux 2D en c#](https://info.cegepmontpetit.ca/notions-csharp/documentation/tableau/tableau-2d)
-  * [Déclaration **AVEC** initialisation ](https://info.cegepmontpetit.ca/notions-csharp/documentation/tableau/tableau-2d#d%C3%A9claration-avec-initialisation)
+* [Tableaux 2D en C#](https://info.cegepmontpetit.ca/notions-csharp/documentation/tableau/tableau-2d)
+  * [Déclaration **AVEC** initialisation](https://info.cegepmontpetit.ca/notions-csharp/documentation/tableau/tableau-2d#d%C3%A9claration-avec-initialisation)
   * [Déclaration **SANS** initialisation](https://info.cegepmontpetit.ca/notions-csharp/documentation/tableau/tableau-2d#d%C3%A9claration-sans-initialisation)
-* [Boucles **For** imbriquées](https://info.cegepmontpetit.ca/notions-csharp/documentation/structures-de-controle/for-imbrique)
-* [ Valeur par défaut pour chaque Type](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/default-values)
+* [Boucles **for** imbriquées](https://info.cegepmontpetit.ca/notions-csharp/documentation/structures-de-controle/for-imbrique)
+* [Valeurs par défaut pour chaque type](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/default-values)
 
-Vous devez réaliser les labos suivants :
- [🧪 Labo 4.2A](/laboratoire/laboratoire4.2A)
- [🧪 Labo 4.2B](/laboratoire/laboratoire4.2B)
+Vous devez réaliser les laboratoires suivants :
+* [🧪 Labo 6.2A](/laboratoire/laboratoire6.2A)
+* [🧪 Labo 6.2B](/laboratoire/laboratoire6.2B)
+* [🧪 Labo 6.2C](/laboratoire/laboratoire6.2C)
