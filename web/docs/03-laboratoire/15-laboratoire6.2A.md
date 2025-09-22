@@ -180,31 +180,3 @@ int[] joueur6 = { 75, 90, 85, 100, 95 };
 ```
 4
 ```
-
----
-
-## 🟢 Exercice 7 - Moyenne des salaires
-
-Voici le revenu mensuel de plusieurs employé(e)s au sein de la compagnie XYZ.
-```csharp
-int[] employe1 = { 1200, 3600, 600, 1000, 500, 6000, 1200, 500, 10000, 900, 8500, 100 };
-int[] employe2 = { 2500, 2600, 2550, 2700, 2650, 2800, 2750, 2900, 3000, 3100, 3050, 3200 };
-int[] employe3 = { 1500, 1800, 2000, 1700, 1600, 1900, 2100, 2500, 2300, 2200, 2000, 2400 };
-int[] employe4 = { 800, 1200, 950, 1100, 1000, 900, 1050, 980, 1020, 1150, 1080, 1110 };
-```
-
-
-🎯 **Objectif** : Calculer la moyenne des salaires mensuels de chaque employé(e).
-
-🛠️ **Instructions** :
-1. Transforme le salaire mensuel de chaque employé(e) afin de le rendre accessible dans un **tableau 2D**.
-2. Écris la fonction `CalculerMoyenne(int[,] employes)` qui reçoit en paramètre un tableau 2D et qui retourne la moyenne salariale de chaque employé(e) dans un **tableau 1D**.
-3. Parcours le tableau des moyennes et affiche le salaire moyen de chaque employé(e).
-
-**Résultat attendu**:
-```
-2841
-2816
-2000
-1028
-```
