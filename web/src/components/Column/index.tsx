@@ -15,7 +15,7 @@ export default function Column({
     <div
       className={strSize}
       style={{
-        display: vCenter ? "inherit" : "flex",
+        display: vCenter ? "flex" : "inherit",
         alignItems: vCenter ? "center" : "flex-start",
       }}
     >
