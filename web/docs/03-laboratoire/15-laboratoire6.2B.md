@@ -139,3 +139,5 @@ Choisissez un Pokémon :
 Choix : 6
 Statistiques : 115 45 20 20 25
 ```
+
+---
