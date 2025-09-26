@@ -177,65 +177,67 @@ static void Main(string[] args)
 ## 🟡 Exercice 5
 
 ```csharp
-static int[] StatistiqueParPokemon(int[,] statPokemons, int numeroPokemon)
-{
-    int[] statPokemon = new int[statPokemons.GetLength(1)];
-
-    for (int i = 0; i < statPokemons.GetLength(1); i++)
+    static int[] StatistiqueParPokemon(int[,] statPokemons, int numeroPokemon)
     {
-        statPokemon[i] = statPokemons[numeroPokemon, i];
-    }
+        int[] statPokemon = new int[statPokemons.GetLength(1)];
 
-    return statPokemon;
-
-}
-static void Main(string[] args)
-{
-    int[,] statPokemons =
-    {
-        { 35, 55, 40, 90, 50 },
-        { 45, 49, 49, 45, 65 },
-        { 39, 52, 43, 65, 50 },
-        { 44, 48, 65, 43, 50 },
-        { 40, 45, 40, 56, 35 },
-        { 30, 56, 35, 72, 25 },
-        { 115, 45, 20, 20, 25 },
-        { 40, 45, 35, 90, 40 },
-        { 70, 80, 50, 35, 35 },
-        { 30, 35, 30, 80, 100 }
-    };
-
-    string[] nomsPokemons =
+        for (int i = 0; i < statPokemons.GetLength(1); i++)
         {
-        "Pikachu",
-        "Bulbasaur",
-        "Charmander",
-        "Squirtle",
-        "Pidgey",
-        "Rattata",
-        "Jigglypuff",
-        "Meowth",
-        "Machop",
-        "Gastly"
-    };
+            statPokemon[i] = statPokemons[numeroPokemon, i];
+        }
 
-    Console.WriteLine("Choisissez un Pokémon :");
+        return statPokemon;
 
-    for (int i = 0; i < nomsPokemons.Length; i++)
-    {
-        Console.WriteLine($"{i}. {nomsPokemons[i]}");
     }
-
-    Console.Write("Choix : ");
-    int choix = int.Parse(Console.ReadLine());
-
-    Console.Write("Statistiques : ");
-    int[] statPokemon = StatistiqueParPokemon(statPokemons, choix);
-
-    for (int i = 0; i < statPokemon.Length; i++)
+    static void Main(string[] args)
     {
-        Console.Write(statPokemon[i] + " ");
+        int[,] statPokemons =
+        {
+            { 35, 55, 40, 90, 50 },
+            { 45, 49, 49, 45, 65 },
+            { 39, 52, 43, 65, 50 },
+            { 44, 48, 65, 43, 50 },
+            { 40, 45, 40, 56, 35 },
+            { 30, 56, 35, 72, 25 },
+            { 115, 45, 20, 20, 25 },
+            { 40, 45, 35, 90, 40 },
+            { 70, 80, 50, 35, 35 },
+            { 30, 35, 30, 80, 100 }
+        };
+
+        string[] nomsPokemons =
+            {
+                "Pikachu",
+                "Bulbasaur",
+                "Charmander",
+                "Squirtle",
+                "Pidgey",
+                "Rattata",
+                "Jigglypuff",
+                "Meowth",
+                "Machop",
+                "Gastly"
+            };
+
+        string[] titresStatistiques = { "PV", "Attaque", "Défense", "Vitesse", "Spécial" };
+
+        Console.WriteLine("Choisissez un Pokémon :");
+
+        for (int i = 0; i < nomsPokemons.Length; i++)
+        {
+            Console.WriteLine($"{i}. {nomsPokemons[i]}");
+        }
+
+        Console.Write("\nChoix : ");
+        int choix = int.Parse(Console.ReadLine());
+
+        int[] statPokemon = StatistiqueParPokemon(statPokemons, choix);
+
+        Console.WriteLine("\n" + nomsPokemons[choix]);
+        for (int i = 0; i < statPokemon.Length; i++)
+        {
+            Console.WriteLine($"{titresStatistiques[i]} : {statPokemon[i]}");
+        }
+
     }
-    
-}
 ```

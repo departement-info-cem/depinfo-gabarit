@@ -113,15 +113,16 @@ Pokémons puissants : 6 / 10
 
 ---
 
-## 🟡 Exercice 5 – 
+## 🟡 Exercice 5 – Affichage statistique et multiples tableaux
 
 🎯 **Objectif** : Création d'une fonction qui retourne une dimension d'un tableau.
 
 🛠️ **Instructions** :
 1. Reprends le code de l'exercice 4.  
-2. Crée une fonction nommée `StatistiqueParPokemon(int[,] statPokemons, int numeroPokemon)` qui reçoit en paramètre le tableau de statistiques des pokémons et le numéro du pokémon désiré. La fonction doit retourner la totalité des statistiques de ce pokémon.
-3. Demande à l'utilisateur d'entrer un nombre pour choisir le pokémon désiré.
-4. Affiche le nom et les statistiques de ce pokémon.
+2. Crée un tableau **1D**  nommé `titresStatistiques` avec les informations suivantes `PV, Attaque, Défense, Vitesse, Spécial`.
+3. Crée une fonction nommée `StatistiqueParPokemon(int[,] statPokemons, int numeroPokemon)` qui reçoit en paramètre le tableau de statistiques des pokémons et le numéro du pokémon désiré. La fonction doit retourner la totalité des statistiques de ce pokémon.
+4. Demande à l'utilisateur d'entrer un nombre pour choisir le pokémon désiré.
+5. Affiche le nom du pokémon, le titre de chaque statistique et les statistiques de ce pokémon.
 
 **Résultat attendu** :
 ```
@@ -136,8 +137,15 @@ Choisissez un Pokémon :
 7. Meowth
 8. Machop
 9. Gastly
-Choix : 6
-Statistiques : 115 45 20 20 25
+
+Choix : 3
+
+Squirtle
+PV : 44
+Attaque : 48
+Défense : 65
+Vitesse : 43
+Spécial : 50
 ```
 
 ---
