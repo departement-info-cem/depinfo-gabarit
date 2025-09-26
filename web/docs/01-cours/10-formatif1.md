@@ -1,3 +1,7 @@
+---
+description: Formatif 1
+---
+
 # Examen formatif 1
 **Voici 10 exercices qui vous aideront à pratiquer les notions vues en classe.**  
 Le jour de l'examen, on vous donnera des fichiers de départ et/ou une description du résultat attendu.  
