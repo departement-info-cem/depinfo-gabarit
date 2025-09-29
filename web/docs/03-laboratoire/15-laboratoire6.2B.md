@@ -27,7 +27,7 @@ int[] employe4 = { 800, 1200, 950, 1100, 1000, 900, 1050, 980, 1020, 1150, 1080,
 2. Écris la fonction `CalculerMoyenne(int[,] employes)` qui reçoit en paramètre un tableau 2D et qui retourne la moyenne salariale de chaque employé(e) dans un **tableau 1D**.
 3. Parcours le tableau des moyennes et affiche le salaire moyen de chaque employé(e).
 
-**Résultat attendu**:
+✅ **Résultat attendu**:
 ```
 2841
 2816
@@ -48,7 +48,7 @@ int[] employe4 = { 800, 1200, 950, 1100, 1000, 900, 1050, 980, 1020, 1150, 1080,
 3. Demande à l’utilisateur de choisir un mois.  
 4. Appelle la fonction et affiche la somme des salaires pour le mois en question.  
 
-**Résultat attendu** :
+✅ **Résultat attendu** :
 ```
 Choisissez un mois (0-Jan, 1-Fév, 2-Mar, 3-Avr, 4-Mai, 5-Juin, 6-Juil, 7-Août, 8-Sep, 9-Oct, 10-Nov, 11-Déc) : 5
 Total : 11600
@@ -64,7 +64,7 @@ Total : 11600
 3. Additionne les résultats obtenus pour chaque mois.  
 4. Affiche le revenu total annuel de tous les employé(e)s.  
 
-**Résultat attendu** :
+✅ **Résultat attendu** :
 ```
 Total : 104240
 ```
@@ -99,7 +99,7 @@ int[] Gastly      = { 30, 35, 30, 80, 100 };
     * Affiche le nom de tous les pokémons n'ayant **aucune statistique faible**.  
     * Affiche le nombre de pokémons puissants sur le nombre total de pokémons.  
 
-**Résultat attendu** :
+✅ **Résultat attendu** :
 ```
 Pikachu
 Bulbasaur
@@ -122,9 +122,12 @@ Pokémons puissants : 6 / 10
 2. Crée un tableau **1D**  nommé `titresStatistiques` avec les informations suivantes `PV, Attaque, Défense, Vitesse, Spécial`.
 3. Crée une fonction nommée `StatistiqueParPokemon(int[,] statPokemons, int numeroPokemon)` qui reçoit en paramètre le tableau de statistiques des pokémons et le numéro du pokémon désiré. La fonction doit retourner la totalité des statistiques de ce pokémon.
 4. Demande à l'utilisateur d'entrer un nombre pour choisir le pokémon désiré.
-5. Affiche le nom du pokémon, le titre de chaque statistique et les statistiques de ce pokémon.
+5. À la fin du programme :
+    * Affiche le nom du pokémon.
+    * Affiche le titre de chaque statistique.
+    * Affiche les statistiques de ce pokémon.
 
-**Résultat attendu** :
+✅ **Résultat attendu** :
 ```
 Choisissez un Pokémon :
 0. Pikachu

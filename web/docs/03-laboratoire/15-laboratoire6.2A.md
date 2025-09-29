@@ -23,7 +23,7 @@ Pour **chaque Labo**, créez un **nouveau projet** dans Visual Studio.
 3. Affiche les 4 artistes.
 4. Choisis un des 4 artistes, et affiche les trois chansons associées.
 
-**Exemple de résultat attendu**:
+✅ **Exemple de résultat attendu**:
 ```
 1. The Killers
 2. Queen
@@ -45,7 +45,7 @@ L'amérique pleure, Les étoiles filantes, Sur mon épaule
 5. Affiche le nombre total d'éléments pour le tableau `PrenomEtNomEleves`.
 6. Affiche la valeur présente dans la deuxième rangée et la première colonne du tableau `reussiteEleves`.
 
-**Résultat attendu**:
+✅ **Résultat attendu**:
 ```
 5
 False
@@ -68,7 +68,7 @@ False
 3. Modifie la première note du dernier étudiant pour qu'il réussisse son cours.
 4. Affiche à nouveau les notes du dernier étudiant.
 
-**Résultat attendu**:
+✅ **Résultat attendu**:
 ```
 Notes: 55 et 65
 Notes: 60 et 65
@@ -103,8 +103,7 @@ Notes: 60 et 65
 2. Parcours l'ensemble du tableau 2D à l'aide de boucles `for` imbriquées.
 3. Pour chaque citation, affiche l'indice de la citation ainsi que la citation elle-même.
 
-**Résultat attendu**:
-
+✅ **Résultat attendu**:
 ```
 Citation #0 : L'imagination est plus importante que le savoir.
 Citation #1 : La vie, c'est comme une bicyclette, il faut avancer pour ne pas perdre l'équilibre.
@@ -137,7 +136,7 @@ Citation #1 : Soyez moins curieux des gens et plus curieux des idées.
     ```
 3. Affiche le nom de chaque personnalité, puis les citations associées.
 
-**Résultat attendu**:
+✅ **Résultat attendu**:
 ```
 Albert Einstein
 Citation #0 : L'imagination est plus importante que le savoir.
@@ -176,7 +175,7 @@ int[] joueur6 = { 75, 90, 85, 100, 95 };
     * Indice : Parcours uniquement la **dernière colonne** de chaque joueur.
 3. Affiche le numéro du joueur gagnant (de 1 à 6).
 
-**Résultat attendu**:
+✅ **Résultat attendu**:
 ```
 4
 ```

@@ -399,4 +399,3 @@ for (int colonne = 0; colonne < notes.GetLength(1); colonne++)
 Vous devez réaliser les laboratoires suivants :
 * [🧪 Labo 6.2A](/laboratoire/laboratoire6.2A)
 * [🧪 Labo 6.2B](/laboratoire/laboratoire6.2B)
-* [🧪 Labo 6.2C](/laboratoire/laboratoire6.2C)
