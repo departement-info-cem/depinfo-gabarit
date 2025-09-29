@@ -1,7 +1,8 @@
-title: Tableaux 2D
+---
+title: B - Tableaux 2D – Avancé
 ---
 
-# 🧪 Labo 6.2B – Tableaux 2D
+# 🧪 Labo 6.2A – Tableaux 2D – Avancé
 
 📎 **Référence** : [Tableaux 2D en C# – Documentation](https://info.cegepmontpetit.ca/notions-csharp/documentation/tableau/tableau-2d)
 

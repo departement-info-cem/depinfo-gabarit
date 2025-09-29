@@ -635,7 +635,7 @@ const sidebars = {
       label: 'Laboratoire 6.2',
       collapsible: true,
       collapsed: false,
-      items: ['laboratoire/laboratoire6.2A','laboratoire/laboratoire6.2B','laboratoire/laboratoire6.2C']
+      items: ['laboratoire/laboratoire6.2A','laboratoire/laboratoire6.2B']
     },
     {
       type: 'category',

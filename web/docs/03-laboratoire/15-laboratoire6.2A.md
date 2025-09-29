@@ -1,8 +1,8 @@
 ---
-title: Tableaux 2D
+title: A - Tableaux 2D – Simple
 ---
 
-# 🧪 Labo 6.2A – Tableaux 2D
+# 🧪 Labo 6.2A – Tableaux 2D – Simple
 
 📎 **Référence** : [Tableaux 2D en C# – Documentation](https://info.cegepmontpetit.ca/notions-csharp/documentation/tableau/tableau-2d)
 
