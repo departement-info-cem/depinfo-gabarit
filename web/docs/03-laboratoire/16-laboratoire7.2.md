@@ -23,7 +23,7 @@ Le jour 4 est le : Mercredi
 ~~~
 
 ---
-### 🟢 Exercice S1.2 – Mois de l’année  
+### 🟢 Exercice S1.2 – Les mois de l’année  
 
 🎯 **Objectif** : Afficher le mois selon un numéro donné, utiliser la case défaut.  
 🛠️ **Instructions :**      
@@ -45,13 +45,13 @@ Le mois 8 correspond à août.
 ### 🟢 Exercice  S1.3 – Calculer l’aire 1.0   
 🎯 **Objectif** : Afficher des formules selon un choix.  
 🛠️ **Instructions :**  
-* Proposez un menu d'options :
+* Proposez un menu d'options offrant différentes formes géométriques
 * Selon le choix de l’utilisateur, affichez la formule qui permet de calculer l’aire de la forme choisie.
 
 **Rappel :**  
 Carré : côté * côté  
 Rectangle : longueur * largeur  
-Cercle : 3.14*(rayon*rayon)  
+Cercle : 3.14 * (rayon*rayon)  
 Triangle : (base × hauteur) /2  
 
 ✅ **Entrée / sortie attendue :**       
@@ -71,7 +71,19 @@ Pour calculer l'aire d'un rectangle faites : longueur * largeur
 🎯 **Objectif** : Afficher le type de véhicule autorisé selon la classe  
 🛠️ **Instructions :**  
 * Demandez un chiffre entier entre 1 et 8  
-* Affichez, dans un tableau 2 X 9, la classe de véhicule que le permis autorise de conduire :  
+* Déclarez un tableau de string 2 X 9, initialisez avec les informations suivantes :  
+~~~
+string[,] permis = {
+    { "C", "Véhicule"},
+    { "1", "Tous"},
+    { "2", "Autobus 24p+"},
+    { "3", "Camion"},
+    { "4", "Véhicules d'urgence"},
+    { "5", "Automobiles"},
+    { "6", "Motocyclettes"},
+    { "7", "Aprenti"},
+    { "8", "Tracteur"},};
+~~~
 
 
 |Classe|Véhicule|
@@ -96,9 +108,20 @@ La classe 7 autorise la conduite pour : Apprenti
 ### 🟢 Exercice S1.5 – Cinéma 1.0  
 🎯 **Objectif** : Afficher un titre selon le numéro entré.  
 🛠️ **Instructions :**  
-* Demandez un numéro entre 1 et 8 pour afficher le titre du film demandé
+* Déclarez et initialisez le tableau suvant :
+~~~
+  string[] filmsHarry = {
+    "À l'école des sorciers (1997)",
+    "la Chambre des secrets (1998)",
+    "le Prisonnier d'Azkaban (1999)",
+    "la Coupe de feu (2000)",
+    "l'Ordre du Phénix (2003)",
+    "le Prince de sang-mêlé (2005)",
+    "les Reliques de la Mort (2007)"};
+~~~
+* Demandez un numéro entre 1 et 8 pour choisir un film  
 * Affichez le titre correspondant  
-* Si la valeur entrée est invalide, affichez ERREUR.
+* Si la valeur entrée est invalide, affichez ERREUR.  
   
 |Titre|
 |---|
@@ -203,10 +226,10 @@ Nommez un des amis de Harry Potter : Ron
 --- 
 # ➡️🌀DO WHILE
 ## 🟢 Exercice DW1.1 – Majeurs  
-🎯 **Objectif :** Poser une question, répéter jusqu’à demander de quitter  
+🎯 **Objectif :** Poser une question, répéter jusqu’à obtenir une des bonnes réponses 
 🛠️ **Instructions :**  
 * Demandez à l’utilisateur à quel âge on devient majeurs  
-* Répéter la question tant qu’elle est différente de deux réponses possibles, soit 18 ou soit 21 selon les pays
+* Répéter la question tant qu’elle est différente de deux réponses possibles, soit 18 ou soit 21 selon le pays
   
 ✅ **Entrée / sortie attendue :**
 ~~~
@@ -217,10 +240,10 @@ Nommez un des amis de Harry Potter : Ron
 ---
 
 ## 🟢 Exercice DW1.2 – Les épargnes  
-🎯 **Objectif :** Répéter une question, nettoyer l’écran d’affichage   
+🎯 **Objectif :** Répéter une question   
 🛠️ **Instructions :**  
 * Demande à l’utilisateur combien veut-il épargner ce mois-ci.  
-* Répéter la question jusqu’à ce que la réponse soit zéro. Nettoyez l’écran lorsque la réponse est zéro.  
+* Répéter la question jusqu’à ce que la réponse soit zéro.    
 * Afficher le montant total des économies.  
 
 ✅ **Entrée / sortie attendue :**     
