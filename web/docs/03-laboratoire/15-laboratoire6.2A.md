@@ -48,8 +48,8 @@ L'amérique pleure, Les étoiles filantes, Sur mon épaule
 ✅ **Résultat attendu**:
 ```
 5
-False
 6
+False
 ```
 
 ---

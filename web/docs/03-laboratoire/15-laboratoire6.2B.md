@@ -43,7 +43,7 @@ int[] employe4 = { 800, 1200, 950, 1100, 1000, 900, 1050, 980, 1020, 1150, 1080,
 🎯 **Objectif** : Calculer la somme des salaires de tous les employé(e)s pour un mois donné.
 
 🛠️ **Instructions** :
-1. Reprends le code de l'exercice 7.  
+1. Reprends le code de l'exercice précédent.  
 2. Écris la fonction `CalculerSommeMensuelle(int[,] employes, int mois)` qui reçoit en paramètre un tableau 2D et l’indice du mois (**de 0 à 11**).  
    Cette fonction doit retourner la somme des salaires de tous les employé(e)s pour le mois choisi.  
 3. Demande à l’utilisateur de choisir un mois.  
