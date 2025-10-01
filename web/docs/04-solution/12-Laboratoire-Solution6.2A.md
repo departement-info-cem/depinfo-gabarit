@@ -119,34 +119,37 @@ static void Main(string[] args)
 
 ## 🟢 Exercice 6
 ```csharp
-static int meilleurJoueur(int[,] j)
-{
-    int meilleurPointage = 0;
-    int indiceDuMeilleurJoueur = 0;
-
-    for (int i = 0; i < j.GetLength(0); i++)
-    {
-        if(meilleurPointage <= j[i,4])
+        static void Main(string[] args)
         {
-            meilleurPointage = j[i, 4];
-            indiceDuMeilleurJoueur = i;
+            int[,] joueurs = {  { 120, 145, 132, 160, 178 },
+                                { 200, 185, 210, 195, 220 },
+                                { 98, 105, 115, 130, 125 },
+                                { 250, 260, 240, 270, 280 },
+                                { 150, 165, 172, 158, 180 },
+                                { 75, 90, 85, 100, 95 }
+                            };
+
+            int indexMeilleur = MeilleurJoueur(joueurs);
+            Console.WriteLine($"Le meilleur joueur est : {indexMeilleur + 1}");
+
         }
-    }
-    return indiceDuMeilleurJoueur;
-}
-
-static void Main(string[] args)
-{
-    int[,] joueurs =
-    {
-        { 120, 145, 132, 160, 178 },
-        { 200, 185, 210, 195, 220 },
-        { 98, 105, 115, 130, 125 },
-        { 250, 260, 240, 270, 280 },
-        { 150, 165, 172, 158, 180 },
-        { 75, 90, 85, 100, 95 }
-    };
-
-    Console.WriteLine(meilleurJoueur(joueurs)+1);
-}
+        static int MeilleurJoueur(int[,] pScores) 
+        {
+            int meilleurPointage = 0;
+            int indiceDuMeilleurJoueur = 0;
+            for (int rangé = 0; rangé < pScores.GetLength(0); rangé++)
+            {
+                int scoreJoueur = 0;
+                for (int colonne = 0;  colonne < pScores.GetLength(1); colonne++)
+                {
+                    scoreJoueur += pScores[rangé, colonne];
+                }
+                if (scoreJoueur > meilleurPointage)
+                {
+                    meilleurPointage = scoreJoueur;
+                    indiceDuMeilleurJoueur = rangé;
+                }
+            }
+            return indiceDuMeilleurJoueur;
+        }
 ```

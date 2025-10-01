@@ -39,10 +39,10 @@ L'amérique pleure, Les étoiles filantes, Sur mon épaule
 
 🛠️ **Instructions** :
 1. Crée un tableau 2D vide de type `int` de 3x5 nommé `notesEleves`.
-2. Crée un tableau 2D vide de type `string` de 3x2 nommé `PrenomEtNomEleves`.
+2. Crée un tableau 2D vide de type `string` de 3x2 nommé `prenomEtNomEleves`.
 3. Crée un tableau 2D vide de type `bool` de 3x5 nommé `reussiteEleves`.
 4. Affiche le nombre de colonnes pour le tableau `notesEleves`.
-5. Affiche le nombre total d'éléments pour le tableau `PrenomEtNomEleves`.
+5. Affiche le nombre total d'éléments pour le tableau `prenomEtNomEleves`.
 6. Affiche la valeur présente dans la deuxième rangée et la première colonne du tableau `reussiteEleves`.
 
 ✅ **Résultat attendu**:
@@ -172,7 +172,6 @@ int[] joueur6 = { 75, 90, 85, 100, 95 };
 🛠️ **Instructions** :
 1. Transforme les scores des joueurs en un **tableau 2D**.
 2. Écris la fonction `MeilleurJoueur(int[,] tableau)` qui reçoit en paramètre le tableau 2D d'entiers et qui retourne le numéro du joueur gagnant.
-    * Indice : Parcours uniquement la **dernière colonne** de chaque joueur.
 3. Affiche le numéro du joueur gagnant (de 1 à 6).
 
 ✅ **Résultat attendu**:
