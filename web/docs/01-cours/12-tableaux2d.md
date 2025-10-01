@@ -1,5 +1,5 @@
 ---
-description: Travailler avec des tableaux en 2 dimensions
+description: Tableaux 2D, boucles imbriquées et parcours par lignes et colonnes
 ---
 
 # Tableaux 2D

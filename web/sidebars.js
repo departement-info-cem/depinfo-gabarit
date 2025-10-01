@@ -25,8 +25,6 @@ const sidebars = {
       label: "1.2 - Variables et opérations",
       id: "cours/variables",
       customProps: {
-        avancementLabel: "TP1 - Créé - ",
-        avancement: 0.1,
         calendrier: {
           "David": [{"1090":"2025-08-28"}, {"1100":"2025-08-28"}],
           "Éric": [{"1050":"2025-08-27"}, {"1060":"2025-08-27"}],
@@ -45,8 +43,6 @@ const sidebars = {
       label: "2.1 - Structures conditionnelles (if/else)",
       id: "cours/ifelse",
       customProps: {
-        avancementLabel: "TP1",
-        avancement: 0.2,
         calendrier: {
           "David": [{"1090":"2025-08-29"}, {"1100":"2025-08-29"}],
           "Éric": [{"1050":"2025-09-03"}, {"1060":"2025-09-05"}],
@@ -65,7 +61,7 @@ const sidebars = {
       id: "cours/fonctions",
       customProps: {
         avancementLabel: "TP1",
-        avancement: 0.4,
+        avancement: 0.1,
         calendrier: {
           "David": [{"1090":"2025-09-04"}, {"1100":"2025-09-04"}],
           "Éric": [{"1050":"2025-09-10"}, {"1060":"2025-09-10"}],
@@ -84,7 +80,7 @@ const sidebars = {
       id: "cours/integration-fonctions",
       customProps: {
         avancementLabel: "TP1",
-        avancement: 0.6,
+        avancement: 0.4,
         calendrier: {
           "David": [{"1090":"2025-09-08"}, {"1100":"2025-09-08"}],
           "Éric": [{"1050":"2025-09-12"}, {"1060":"2025-09-12"}],
@@ -122,8 +118,6 @@ const sidebars = {
       label: "4.1 - Boucles for",
       id: "cours/for",
       customProps: {
-        avancementLabel: "TP2 - Créé - ",
-        avancement: 0.1,
         calendrier: {
           "David": [{"1090":"2025-09-15"}, {"1100":"2025-09-15"}],
           "Éric": [{"1050":"2025-09-19"}, {"1060":"2025-09-19"}],
@@ -141,8 +135,6 @@ const sidebars = {
       label: "4.2 - Tableaux 1D",
       id: "cours/tableaux1d",
       customProps: {
-        avancementLabel: "TP2",
-        avancement: 0.2,
         calendrier: {
           "David": [{"1090":"2025-09-18"}, {"1100":"2025-09-18"}],
           "Éric": [{"1050":"2025-09-24"}, {"1060":"2025-09-24"}],
@@ -160,8 +152,6 @@ const sidebars = {
       label: "5.1 - Intégration des notions",
       id: "cours/integration-for",
       customProps: {
-        avancementLabel: "TP2",
-        avancement: 0.4,
         calendrier: {
           "David": [{"1090":"2025-09-22"}, {"1100":"2025-09-22"}],
           "Éric": [{"1050":"2025-09-26"}, {"1060":"2025-09-26"}],
@@ -215,7 +205,7 @@ const sidebars = {
       id: "cours/tableaux2d",
       customProps: {
         avancementLabel: "TP2",
-        avancement: 0.5,
+        avancement: 0.1,
         calendrier: {
           "David": [{"1090":"2025-10-02"}, {"1100":"2025-10-02"}],
           "Éric": [{"1050":"2025-10-08"}, {"1060":"2025-10-08"}],
@@ -230,11 +220,11 @@ const sidebars = {
     },
     {
       type: "doc",
-      label: "7.1 - Parcours de tableaux 2D",
-      id: "cours/parcours2d",
+      label: "7.1 - Intégration des tableaux 2D",
+      id: "cours/integration-2d",
       customProps: {
         avancementLabel: "TP2",
-        avancement: 0.6,
+        avancement: 0.3,
         calendrier: {
           "David": [{"1090":"2025-10-06"}, {"1100":"2025-10-06"}],
           "Éric": [{"1050":"2025-10-10"}, {"1060":"2025-10-10"}],
@@ -253,7 +243,7 @@ const sidebars = {
       id: "cours/switch-while",
       customProps: {
         avancementLabel: "TP2",
-        avancement: 0.7,
+        avancement: 0.3,
         calendrier: {
           "David": [{"1090":"2025-10-09"}, {"1100":"2025-10-09"}],
           "Éric": [{"1050":"2025-10-22"}, {"1060":"2025-10-22"}],
@@ -268,11 +258,11 @@ const sidebars = {
     },
     {
       type: "doc",
-      label: "8.1 - Intégration des notions vues",
-      id: "cours/integration-2d",
+      label: "8.1 - Intégration - TP2",
+      id: "cours/integration-tp2",
       customProps: {
         avancementLabel: "TP2", 
-        avancement: 0.8,
+        avancement: 0.7,
         calendrier: {
           "David": [{"1090":"2025-10-20"}, {"1100":"2025-10-20"}],
           "Éric": [{"1050":"2025-10-24"}, {"1060":"2025-10-24"}],
@@ -636,13 +626,6 @@ const sidebars = {
       collapsible: true,
       collapsed: false,
       items: ['laboratoire/laboratoire6.2A','laboratoire/laboratoire6.2B']
-    },
-    {
-      type: 'category',
-      label: 'Laboratoire 7.1',
-      collapsible: true,
-      collapsed: false,
-      items: ['laboratoire/laboratoire7.1']
     },
     {
       type: 'category',
