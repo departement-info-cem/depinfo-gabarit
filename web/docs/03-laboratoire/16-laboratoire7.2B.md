@@ -1,11 +1,11 @@
 ---
-title: Labo 7.2B - Switch... case, While et Do... while  
+title: B - Labo 7.2B - Switch... case, While et Do... while – Avancé  
 ---
 
-# 🧪 Labo 7.2B - Switch... case, While et Do... while
+# 🧪 Labo 7.2B - Switch... case, While et Do... while – Avancé
 
-## SWITCH
-## 🟡 Exercice S2.1 – Calculer l’aire 2.0
+## 🔢Switch... case 
+### 🟡 Exercice S2.1 – Calculer l’aire 2.0
 🎯 **Objectif :** Pratiquer Switch ... case et les fonctions  
 🛠️ **Instructions :**  
 * Reprenez votre exercice « S1.3 Calculer l’aire 1.0 »  
@@ -32,7 +32,7 @@ L'aire d'un rectangle 2 X 3 est de : 6
 ~~~
 ---
 
-## 🟡 Exercice S2.2 – Classes de permis 2.0  
+### 🟡 Exercice S2.2 – Classes de permis 2.0  
 🎯 **Objectif :** Pratiquer Switch ... case, les tableaux 2D et les icônes    
 🛠️ **Instructions :**   
 * Reprenez l’exercice « S1.4 – Classes de permis 1.0 »  
@@ -66,7 +66,7 @@ C  Véhicule
 ~~~
 ---
 
-## 🟡 Exercice S2.3 – Cinéma 2.0  
+### 🟡 Exercice S2.3 – Cinéma 2.0  
 🎯 **Objectif :** Pratiquer le switch... case, les tableaux 1D et les couleurs  
 🛠️ **Instructions :**  
 * Reprenez l’exercice « S1.5 – Cinéma 1.0 »   
@@ -90,7 +90,7 @@ l'Ordre du Phénix (2003)
 ~~~
 ---
 
-## 🟡 Exercice W2.1 – Le sortilège de la journée 
+### 🟡 Exercice W2.1 – Le sortilège de la journée 
 🎯 **Objectif :** Pratiquer While, les tableaux 1D et la génération de nombres aléatoires  
 🛠️ **Instructions :**  
 * Déclarez le tableau suivant :   
@@ -113,7 +113,7 @@ Bonne réponse !
 ~~~
 ---
 
-## 🟡 Exercice W2.2 – Devine le film de Ghibli  
+### 🟡 Exercice W2.2 – Devine le film de Ghibli  
 🎯 **Objectif :** Pratiquer While, les tableaux 1D, la propriété length et les nombres aléatoires    
 🛠️ **Instructions :**  
 * Déclarez le tableau suivant :  
@@ -137,7 +137,8 @@ Bravo ! Vous avez deviné
 
 ~~~
 ---
-## 🟡 Exercice DW2.1 – Les sortilèges colorés 
+
+### 🟡 Exercice DW2.1 – Les sortilèges colorés 
 🎯 **Objectif :** Pratiquer Do while, les tableaux 1D et les couleurs  
 🛠️ **Instructions :**  
 * Reprenez "W2.1 – Le sortilège de la journée"  
@@ -169,10 +170,11 @@ Protego
 
 Est-ce que ce sortilège est disponible : abracadabra
 Ce sortilège n'est pas dans la liste. Au revoir !
-
-
 ~~~
-## 🔴 Exercice S3.1 – Les films de Denis 
+
+---
+
+### 🔴 Exercice S3.1 – Les films de Denis 
 🎯 **Objectif :** Pratiquer le Switch case, Do... while, les fonctions, les tableaux 2D, le parcours (par rangée et par colonne) et l'alignement de données  
 🛠️ **Instructions :**   
 * Déclarez le tableau suivant :
@@ -244,9 +246,8 @@ Num    Année  Titre
 11     2024   Dune, deuxième partie
 
 ...Peser sur une touche pour revenir au menu principal...
-
-
 ~~~
+
 **Choix 2**  
 ~~~
 2. Lister tous les films (détails)
@@ -284,3 +285,4 @@ Producteur : Non
  ...Peser sur une touche pour revenir au menu principal...
 ~~~
 
+---
