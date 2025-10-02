@@ -75,7 +75,7 @@ Pour calculer l'aire d'un rectangle faites : longueur * largeur
 🛠️ **Instructions :**  
 * Demandez un chiffre entier entre 1 et 8  
 * Déclarez un tableau de string 2 X 9, initialisez avec les informations suivantes :  
-~~~
+```csharp
 string[,] permis = {
     { "C", "Véhicule"},
     { "1", "Tous"},
@@ -86,8 +86,7 @@ string[,] permis = {
     { "6", "Motocyclettes"},
     { "7", "Aprenti"},
     { "8", "Tracteur"},};
-~~~
-
+```
 
 |Classe|Véhicule|
 |---|---|
@@ -100,7 +99,6 @@ string[,] permis = {
 |7|Apprenti|  
 |8|Tracteur|  
 
-
 ✅ **Entrée / sortie attendue :**         
 ~~~   
 Quelle classe de permis voulez-vous vérifier (1-8) ? 7  
@@ -112,7 +110,7 @@ La classe 7 autorise la conduite pour : Apprenti
 🎯 **Objectif** : Afficher un titre selon le numéro entré.  
 🛠️ **Instructions :**  
 * Déclarez et initialisez le tableau suvant :
-~~~
+```csharp
   string[] filmsHarry = {
     "À l'école des sorciers (1997)",
     "la Chambre des secrets (1998)",
@@ -121,7 +119,8 @@ La classe 7 autorise la conduite pour : Apprenti
     "l'Ordre du Phénix (2003)",
     "le Prince de sang-mêlé (2005)",
     "les Reliques de la Mort (2007)"};
-~~~
+```
+
 * Demandez un numéro entre 1 et 8 pour choisir un film  
 * Affichez le titre correspondant  
 * Si la valeur entrée est invalide, affichez ERREUR.  
@@ -194,6 +193,7 @@ Il te reste: -10
 Oh no, pas encore!
 ~~~
 ---
+
 ### 🟢 Exercice W1.4 – Quelle est la moitié de…  
 🎯 **Objectif :** Répéter une question  
 🛠️ **Instructions :**  
