@@ -1,5 +1,12 @@
 ﻿// @ts-check
 
+let currentDate = new Date();
+let month = currentDate.getMonth() + 1;
+
+let collapseBloc1 = !(month <= 9);
+let collapseBloc2 = !(month >= 9 && month <= 11);
+let collapseBloc3 = !(month >= 11);
+
 /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
 const sidebars = {
   docs: [
@@ -259,10 +266,10 @@ const sidebars = {
     {
       type: "doc",
       label: "8.1 - Intégration - TP2",
-      id: "cours/integration-tp2",
+      id: "cours/integration-tp2-1",
       customProps: {
         avancementLabel: "TP2", 
-        avancement: 0.7,
+        avancement: 0.6,
         calendrier: {
           "David": [{"1090":"2025-10-20"}, {"1100":"2025-10-20"}],
           "Éric": [{"1050":"2025-10-24"}, {"1060":"2025-10-24"}],
@@ -278,7 +285,7 @@ const sidebars = {
     {
       type: "doc",
       label: "8.2 - TP2 - Mini RPG",
-      id: "cours/integration-tp2",
+      id: "cours/integration-tp2-2",
       className: "remise-tp2",
       customProps: {
         avancementLabel: "TP2",
@@ -567,35 +574,35 @@ const sidebars = {
       type: 'category',
       label: 'Laboratoire 1.1',
       collapsible: true,
-      collapsed: false,
+      collapsed: collapseBloc1,
       items: ['laboratoire/laboratoire1.1', 'laboratoire/laboratoire1.1B']
     },
     {
       type: 'category',
       label: 'Laboratoire 1.2',
       collapsible: true,
-      collapsed: false,
+      collapsed: collapseBloc1,
       items: ['laboratoire/laboratoire1.2A', 'laboratoire/laboratoire1.2B']
     },
     {
       type: 'category',
       label: 'Laboratoire 2.1',
       collapsible: true,
-      collapsed: false,
+      collapsed: collapseBloc1,
       items: ['laboratoire/laboratoire2.1A', 'laboratoire/laboratoire2.1B']
     },
     {
       type: 'category',
       label: 'Laboratoire 2.2',
       collapsible: true,
-      collapsed: false,
+      collapsed: collapseBloc1,
       items: ['laboratoire/laboratoire2.2A', 'laboratoire/laboratoire2.2B', 'laboratoire/laboratoire2.2C']
     },
     {
       type: 'category',
       label: 'Laboratoire 3.1',
       collapsible: true,
-      collapsed: false,
+      collapsed: collapseBloc1,
       items: ['laboratoire/laboratoire3.1A', 'laboratoire/laboratoire3.1B']
     },
 
@@ -603,84 +610,84 @@ const sidebars = {
       type: 'category',
       label: 'Laboratoire 4.1',
       collapsible: true,
-      collapsed: false,
+      collapsed: collapseBloc1,
       items: ['laboratoire/laboratoire4.1A', 'laboratoire/laboratoire4.1B']
     },
     {
       type: 'category',
       label: 'Laboratoire 4.2',
       collapsible: true,
-      collapsed: false,
+      collapsed: collapseBloc1,
       items: ['laboratoire/laboratoire4.2A','laboratoire/laboratoire4.2B','laboratoire/laboratoire4.2C']
     },
     {
       type: 'category',
       label: 'Laboratoire 5.1',
       collapsible: true,
-      collapsed: false,
+      collapsed: collapseBloc1,
       items: ['laboratoire/laboratoire5.1A', 'laboratoire/laboratoire5.1B', 'laboratoire/laboratoire5.1C']
     },
     {
       type: 'category',
       label: 'Laboratoire 6.2',
       collapsible: true,
-      collapsed: false,
+      collapsed: collapseBloc2,
       items: ['laboratoire/laboratoire6.2A','laboratoire/laboratoire6.2B']
     },
     {
       type: 'category',
       label: 'Laboratoire 7.2',
       collapsible: true,
-      collapsed: false,
+      collapsed: collapseBloc2,
       items: ['laboratoire/laboratoire7.2A', 'laboratoire/laboratoire7.2B']
     },
     {
       type: 'category',
       label: 'Laboratoire 8.1',
       collapsible: true,
-      collapsed: false,
-      items: ['laboratoire/laboratoire8.1']
+      collapsed: collapseBloc2,
+      items: ['laboratoire/laboratoire8.1A']
     },
     {
       type: 'category',
       label: 'Laboratoire 9.1',
       collapsible: true,
-      collapsed: false,
+      collapsed: collapseBloc2,
       items: ['laboratoire/laboratoire9.1']
     },
     {
       type: 'category',
       label: 'Laboratoire 9.2',
       collapsible: true,
-      collapsed: false,
+      collapsed: collapseBloc2,
       items: ['laboratoire/laboratoire9.2']
     },
     {
       type: 'category',
       label: 'Laboratoire 10.1',
       collapsible: true,
-      collapsed: false,
+      collapsed: collapseBloc2,
       items: ['laboratoire/laboratoire10.1']
     },
     {
       type: 'category',
       label: 'Laboratoire 12.2',
       collapsible: true,
-      collapsed: false,
+      collapsed: collapseBloc3,
       items: ['laboratoire/laboratoire12.2']
     },
     {
       type: 'category',
       label: 'Laboratoire 13.1',
       collapsible: true,
-      collapsed: false,
+      collapsed: collapseBloc3,
       items: ['laboratoire/laboratoire13.1']
     },
     {
       type: 'category',
       label: 'Laboratoire 13.2',
       collapsible: true,
-      collapsed: false,
+      collapsed: collapseBloc3,
       items: ['laboratoire/laboratoire13.2']
     },
   ],
