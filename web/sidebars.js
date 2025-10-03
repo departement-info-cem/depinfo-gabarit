@@ -632,7 +632,7 @@ const sidebars = {
       label: 'Laboratoire 7.2',
       collapsible: true,
       collapsed: false,
-      items: ['laboratoire/laboratoire7.2']
+      items: ['laboratoire/laboratoire7.2A', 'laboratoire/laboratoire7.2B']
     },
     {
       type: 'category',

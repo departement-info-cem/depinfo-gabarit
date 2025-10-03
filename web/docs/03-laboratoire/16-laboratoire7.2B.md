@@ -1,11 +1,11 @@
 ---
-title: Labo 7.2B - Switch... case, While et Do... while  
+title: B - Labo 7.2B - Switch... case, While et Do... while – Avancé  
 ---
 
-# 🧪 Labo 7.2B - Switch... case, While et Do... while
+# 🧪 Labo 7.2B - Switch... case, While et Do... while – Avancé
 
-## SWITCH
-## 🟡 Exercice S2.1 – Calculer l’aire 2.0
+## 🔢Switch... case 
+### 🟡 Exercice S2.1 – Calculer l’aire 2.0
 🎯 **Objectif :** Pratiquer Switch ... case et les fonctions  
 🛠️ **Instructions :**  
 * Reprenez votre exercice « S1.3 Calculer l’aire 1.0 »  
@@ -32,7 +32,7 @@ L'aire d'un rectangle 2 X 3 est de : 6
 ~~~
 ---
 
-## 🟡 Exercice S2.2 – Classes de permis 2.0  
+### 🟡 Exercice S2.2 – Classes de permis 2.0  
 🎯 **Objectif :** Pratiquer Switch ... case, les tableaux 2D et les icônes    
 🛠️ **Instructions :**   
 * Reprenez l’exercice « S1.4 – Classes de permis 1.0 »  
@@ -66,7 +66,7 @@ C  Véhicule
 ~~~
 ---
 
-## 🟡 Exercice S2.3 – Cinéma 2.0  
+### 🟡 Exercice S2.3 – Cinéma 2.0  
 🎯 **Objectif :** Pratiquer le switch... case, les tableaux 1D et les couleurs  
 🛠️ **Instructions :**  
 * Reprenez l’exercice « S1.5 – Cinéma 1.0 »   
@@ -90,7 +90,8 @@ l'Ordre du Phénix (2003)
 ~~~
 ---
 
-## 🟡 Exercice W2.1 – Le sortilège de la journée 
+## 🌀WHILE
+### 🟡 Exercice W2.1 – Le sortilège de la journée 
 🎯 **Objectif :** Pratiquer While, les tableaux 1D et la génération de nombres aléatoires  
 🛠️ **Instructions :**  
 * Déclarez le tableau suivant :   
@@ -113,7 +114,7 @@ Bonne réponse !
 ~~~
 ---
 
-## 🟡 Exercice W2.2 – Devine le film de Ghibli  
+### 🟡 Exercice W2.2 – Devine le film de Ghibli  
 🎯 **Objectif :** Pratiquer While, les tableaux 1D, la propriété length et les nombres aléatoires    
 🛠️ **Instructions :**  
 * Déclarez le tableau suivant :  
@@ -137,7 +138,9 @@ Bravo ! Vous avez deviné
 
 ~~~
 ---
-## 🟡 Exercice DW2.1 – Les sortilèges colorés 
+
+## ➡️🌀DO WHILE
+### 🟡 Exercice DW2.1 – Les sortilèges colorés 
 🎯 **Objectif :** Pratiquer Do while, les tableaux 1D et les couleurs  
 🛠️ **Instructions :**  
 * Reprenez "W2.1 – Le sortilège de la journée"  
@@ -145,11 +148,11 @@ Bravo ! Vous avez deviné
 * Demandez à l’utilisateur de saisir un sortilège.   
 * Tant que le sortilège saisi se trouve dans le tableau :  
  1. Changez la couleur de l’arrière-plan à l’aide de l'index + 1;  
- 1. Réaffichez le sortilège choisi (en couleur)  
- 1. Rétablissez les couleurs de la console aux valeurs par défaut  
- 1. Redemandez de saisir un nouveau sortilège  
- 1. Toute autre valeur qui ne se trouve pas dans la tableau, permettra de quitter l'application.  
- 1. Envoyez un message avant que quitter.  
+ 2. Réaffichez le sortilège choisi (en couleur)  
+ 3. Rétablissez les couleurs de la console aux valeurs par défaut  
+ 4. Redemandez de saisir un nouveau sortilège  
+ 5. Toute autre valeur qui ne se trouve pas dans la tableau, permettra de quitter l'application.  
+ 6. Envoyez un message avant que quitter.  
   
 ➡️ Regarder `Console.BackgroundColor = (ConsoleColor)index` pour vous aider
 
@@ -169,14 +172,56 @@ Protego
 
 Est-ce que ce sortilège est disponible : abracadabra
 Ce sortilège n'est pas dans la liste. Au revoir !
-
-
 ~~~
-## 🔴 Exercice S3.1 – Les films de Denis 
+
+---
+
+### 🟡 Exercice DW2.2 – Où est le magicien ? 
+🎯 **Objectif :** Être d'afficher un tableau 2D de personnage, et trouver le magicien caché.
+🛠️ **Instructions :**   
+* Utilisez le code suivant :
+```csharp
+     // Permet d'afficher correctement les icônes, symboles et émojis
+     Console.OutputEncoding = System.Text.Encoding.UTF8;
+
+     string magicien = "🧙‍♂️"; // ou "🧙‍♀️" pour une magicienne !
+
+     // Grille de jeu de 5x5
+     string[,] plateau = {
+          {"🧝‍♂️","🧛‍♀️","🧟‍♂️","🧞‍♀️","🧜‍♂️"},
+          {"🧚‍♀️","🧑‍🚀","🧑‍⚕️","🧑‍🍳","🧑‍🏫"},
+          {"🧑‍🔧","🧑‍💻","🧑‍🎨","🧑‍🚒","🧑‍✈️"},
+          {"🧘‍♂️","🧑‍🌾","🧙‍♂️","🧝‍♀️","🧛‍♂️"},
+          {"🧟‍♀️","🧞‍♂️","🧜‍♀️","🧚‍♂️","🧑‍🚀"}
+     };
+```
+* Générez une rangée et une colonne aléatoires, puis remplacez l’un des personnages du plateau par le magicien.
+* Demandez à l’utilisateur de saisir une rangée et une colonne.   
+* Tant que la position du magicien n’a pas été trouvée :
+     1. Effacez le contenu de la console.
+     2. Affichez le plateau de jeu.
+     3. Demandez à l’utilisateur de choisir une rangée.
+     4. Demandez à l’utilisateur de choisir une colonne.
+* **Bonus :** si l’utilisateur devine une position incorrecte, remplacez le personnage choisi par un `❌`.
+✅ **Entrée / sortie attendue :**     
+```
+🧝‍♂️ 🧛‍♂️ 🧞‍♂️ 🧚‍♂️ 🧑‍🚀
+🧑‍⚕️ 🧑‍🍳 🧑‍🏫 🧑‍🔧 🧑‍💻
+🧑‍🎨 🧑‍🚒 🧑‍✈️ 🧘‍♂️ 🧑‍🌾
+🧑‍🎤 🧑‍🏭 🧙‍♂️ 🧛‍♀️ 🧞‍♀️
+🧚‍♀️ 🧜‍♀️ 🧝‍♀️ 🧑‍🦽 🧑‍🦯
+Choix de la rangée (1 à 5): 4
+Choix de la colonne (1 à 5): 3
+Bravo, le magicien a été trouvé à la position [4,3] !
+```
+---
+
+## 🔢Switch... case
+### 🔴 Exercice S3.1 – Les films de Denis 
 🎯 **Objectif :** Pratiquer le Switch case, Do... while, les fonctions, les tableaux 2D, le parcours (par rangée et par colonne) et l'alignement de données  
 🛠️ **Instructions :**   
 * Déclarez le tableau suivant :
-~~~
+```csharp
 string[,] filmsDenis = {
     { "Num", "Année", "Titre", "Directeur", "Scénariste", "Producteur" },
     { "1", "1998", "Un 32 août sur terre", "Oui", "Oui", "Non" },
@@ -190,7 +235,7 @@ string[,] filmsDenis = {
     { "9", "2017", "Blade Runner 2049", "Oui", "Non", "Non" },
     { "10", "2021", "Dune", "Oui", "Oui", "Oui" },
     { "11", "2024", "Dune, deuxième partie", "Oui", "Oui", "Oui" }};
-~~~
+```
 * Affichez le menu suivant à l’aide de `Do …  While` et réaffichez tant que l’utilisateur ne demande pas de quitter :
  1) Lister tous les films (résumé)
  2) Lister tous les films (détails)    
@@ -244,9 +289,8 @@ Num    Année  Titre
 11     2024   Dune, deuxième partie
 
 ...Peser sur une touche pour revenir au menu principal...
-
-
 ~~~
+
 **Choix 2**  
 ~~~
 2. Lister tous les films (détails)
@@ -284,3 +328,4 @@ Producteur : Non
  ...Peser sur une touche pour revenir au menu principal...
 ~~~
 
+---

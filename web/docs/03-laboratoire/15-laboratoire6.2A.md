@@ -154,6 +154,7 @@ Marie Curie
 Citation #0 : Dans la vie, rien n'est à craindre, tout est à comprendre.
 Citation #1 : Soyez moins curieux des gens et plus curieux des idées.
 ```
+---
 
 ## 🟢 Exercice 6 – Pointage Bowling
 

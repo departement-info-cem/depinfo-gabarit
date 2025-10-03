@@ -1,8 +1,8 @@
 ---
-title: Labo 7.2A - Switch... case, While et Do... while
+title: A - Labo 7.2 - Switch... case, While et Do... while – Simple
 ---
 
-# 🧪 Labo 7.2A - Switch... case, While et Do... while  
+# 🧪 Labo 7.2A - Switch... case, While et Do... while – Simple
 
 📎*Référence* : [Switch... case](https://info.cegepmontpetit.ca/notions-csharp/documentation/structures-de-controle/switch-case) | [While](https://info.cegepmontpetit.ca/notions-csharp/documentation/structures-de-controle/while) | [Do... while](https://info.cegepmontpetit.ca/notions-csharp/documentation/structures-de-controle/do-while)  
 
@@ -23,6 +23,7 @@ Le jour 4 est le : Mercredi
 ~~~
 
 ---
+
 ### 🟢 Exercice S1.2 – Les mois de l’année  
 
 🎯 **Objectif** : Afficher le mois selon un numéro donné, utiliser la case défaut.  
@@ -42,6 +43,7 @@ Le mois 8 correspond à août.
 ~~~
 
 ---
+
 ### 🟢 Exercice  S1.3 – Calculer l’aire 1.0   
 🎯 **Objectif** : Afficher des formules selon un choix.  
 🛠️ **Instructions :**  
@@ -67,12 +69,13 @@ Pour calculer l'aire d'un rectangle faites : longueur * largeur
 ~~~
 
 ---
+
 ### 🟢 Exercice S1.4 – Classes de permis 1.0  
 🎯 **Objectif** : Afficher le type de véhicule autorisé selon la classe  
 🛠️ **Instructions :**  
 * Demandez un chiffre entier entre 1 et 8  
 * Déclarez un tableau de string 2 X 9, initialisez avec les informations suivantes :  
-~~~
+```csharp
 string[,] permis = {
     { "C", "Véhicule"},
     { "1", "Tous"},
@@ -83,8 +86,7 @@ string[,] permis = {
     { "6", "Motocyclettes"},
     { "7", "Aprenti"},
     { "8", "Tracteur"},};
-~~~
-
+```
 
 |Classe|Véhicule|
 |---|---|
@@ -97,7 +99,6 @@ string[,] permis = {
 |7|Apprenti|  
 |8|Tracteur|  
 
-
 ✅ **Entrée / sortie attendue :**         
 ~~~   
 Quelle classe de permis voulez-vous vérifier (1-8) ? 7  
@@ -109,7 +110,7 @@ La classe 7 autorise la conduite pour : Apprenti
 🎯 **Objectif** : Afficher un titre selon le numéro entré.  
 🛠️ **Instructions :**  
 * Déclarez et initialisez le tableau suvant :
-~~~
+```csharp
   string[] filmsHarry = {
     "À l'école des sorciers (1997)",
     "la Chambre des secrets (1998)",
@@ -118,7 +119,8 @@ La classe 7 autorise la conduite pour : Apprenti
     "l'Ordre du Phénix (2003)",
     "le Prince de sang-mêlé (2005)",
     "les Reliques de la Mort (2007)"};
-~~~
+```
+
 * Demandez un numéro entre 1 et 8 pour choisir un film  
 * Affichez le titre correspondant  
 * Si la valeur entrée est invalide, affichez ERREUR.  
@@ -141,6 +143,7 @@ Quel film de Harry Potter voulez vous consulter? 3
 Le Prisonnier d'Azkaban (1999)
 ~~~
 
+---
 
 ## 🌀WHILE
 ### 🟢 Exercice W1.1 – Compter de 1 à 100  
@@ -170,8 +173,7 @@ Bonne réponse ! :D
 ~~~
 ---
 
-
-## 🟢 Exercice W1.3 – Afficher le budget  
+### 🟢 Exercice W1.3 – Afficher le budget  
 🎯 **Objectif :** Afficher un budget, jusqu’à épuisement  
 🛠️ **Instructions :**  
 * Déclarez une variable budget de 100$  
@@ -192,7 +194,7 @@ Oh no, pas encore!
 ~~~
 ---
 
-## 🟢 Exercice W1.4 – Quelle est la moitié de…  
+### 🟢 Exercice W1.4 – Quelle est la moitié de…  
 🎯 **Objectif :** Répéter une question  
 🛠️ **Instructions :**  
 * Demandez un nombre
@@ -211,7 +213,7 @@ Trouvons la moitié de :50
 ~~~
 ---
 
-## 🟢 Exercice W1.5 – Les amis à Harry  
+### 🟢 Exercice W1.5 – Les amis à Harry  
 🎯 **Objectif :** Répéter une question, deux réponses possibles  
 🛠️ **Instructions :**   
 * Demandez le nom de l’ami à Harry Potter
@@ -224,8 +226,9 @@ Nommez un des amis de Harry Potter : Voldemort
 Nommez un des amis de Harry Potter : Ron  
 ~~~
 --- 
-# ➡️🌀DO WHILE
-## 🟢 Exercice DW1.1 – Majeurs  
+
+## ➡️🌀DO WHILE
+### 🟢 Exercice DW1.1 – Majeurs  
 🎯 **Objectif :** Poser une question, répéter jusqu’à obtenir une des bonnes réponses 
 🛠️ **Instructions :**  
 * Demandez à l’utilisateur à quel âge on devient majeurs  
@@ -239,7 +242,7 @@ Nommez un des amis de Harry Potter : Ron
 ~~~
 ---
 
-## 🟢 Exercice DW1.2 – Les épargnes  
+### 🟢 Exercice DW1.2 – Les épargnes  
 🎯 **Objectif :** Répéter une question   
 🛠️ **Instructions :**  
 * Demande à l’utilisateur combien veut-il épargner ce mois-ci.  
@@ -255,7 +258,7 @@ Combien désirez-vous épargner ce mois-ci? 0
 ~~~
 ---
 
-## 🟢 Exercice DW1.3 – Station de Harry Potter  
+### 🟢 Exercice DW1.3 – Station de Harry Potter  
 🎯 **Objectif :** Répéter une question jusqu’à avoir la bonne réponse  
 🛠️ **Instructions :** 
 * Demander à l’utilisateur d’entrer le numéro de station de Harry Potter (en décimal).  

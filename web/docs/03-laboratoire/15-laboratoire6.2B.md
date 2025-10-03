@@ -55,6 +55,8 @@ Choisissez un mois (0-Jan, 1-Fév, 2-Mar, 3-Avr, 4-Mai, 5-Juin, 6-Juil, 7-Août,
 Total : 11600
 ```
 
+---
+
 ## 🟡 Exercice 3 – Total du revenu annuel de tous les employé(e)s de la compagnie XYZ
 
 🎯 **Objectif** : Calculer la somme des salaires de tous les employé(e)s sur une année complète.
