@@ -177,7 +177,7 @@ Ce sortilège n'est pas dans la liste. Au revoir !
 ---
 
 ### 🟡 Exercice DW2.2 – Où est le magicien ? 
-🎯 **Objectif :** Être d'afficher un tableau 2D de personnage, et trouver le magicien caché.
+🎯 **Objectif :** Être capable d'afficher un tableau 2D de personnages, et trouver le magicien caché.
 🛠️ **Instructions :**   
 * Utilisez le code suivant :
 ```csharp
