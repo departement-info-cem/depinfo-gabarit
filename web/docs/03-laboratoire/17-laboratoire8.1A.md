@@ -25,7 +25,7 @@ string[,] filmsDenis = {
     { "11", "2024", "Dune, deuxième partie", "Oui", "Oui", "Oui" }};
 ```
 :::
-## Menu d'acceuil
+## Menu d'accueil
 :::note Menu
 * Affichez le menu suivant à l’aide de `Do …  While` et réaffichez tant que l’utilisateur ne demande pas de quitter :
  1) Lister tous les films (résumé)
