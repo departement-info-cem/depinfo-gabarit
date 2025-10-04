@@ -4,7 +4,7 @@ title: A - Labo 7.2 - Switch... case, While et Do... while – Simple
 
 # 🧪 Labo 7.2A - Switch... case, While et Do... while – Simple
 
-📎*Référence* : [Switch... case](https://info.cegepmontpetit.ca/notions-csharp/documentation/structures-de-controle/switch-case) | [While](https://info.cegepmontpetit.ca/notions-csharp/documentation/structures-de-controle/while) | [Do... while](https://info.cegepmontpetit.ca/notions-csharp/documentation/structures-de-controle/do-while)  
+📎*Référence* : [Switch... case](https://info.cegepmontpetit.ca/notions-csharp/documentation/structures-de-controle/switch-case) | [While](https://info.cegepmontpetit.ca/notions-csharp/documentation/structures-de-controle/while) | [Do... while](https://info.cegepmontpetit.ca/notions-csharp/documentation/structures-de-controle/do-while)  | [TryParse](https://info.cegepmontpetit.ca/1P6/cours/integration-fonctions#-quest-ce-que-tryparse-)
 
 
 ## 🔢Switch... case  
@@ -14,6 +14,7 @@ title: A - Labo 7.2 - Switch... case, While et Do... while – Simple
 🛠️ **Instructions :**  
 * Demandez à l'utilisateur de saisir un chiffre entier entre 1 et 7.   
 * Affichez le jour de la semaine correspondant au chiffre (dimanche = 1, etc.).
+* Utilisez `TryParse` pour valider l'information saisie.
 
 ✅ **Entrée / sortie attendue :**    
 
@@ -28,8 +29,9 @@ Le jour 4 est le : Mercredi
 
 🎯 **Objectif** : Afficher le mois selon un numéro donné, utiliser la case défaut.  
 🛠️ **Instructions :**      
-* Demandez un chiffre entier entre 1 et 12
-* Affichez le mois associé
+* Demandez un chiffre entier entre 1 et 12.
+* Affichez le mois associé.
+* Utilisez `TryParse` pour valider l'information saisie.  
 * Si la valeur entrée est invalide, utilisez la case `Default` pour afficher : ERREUR.
 
 
@@ -47,8 +49,9 @@ Le mois 8 correspond à août.
 ### 🟢 Exercice  S1.3 – Calculer l’aire 1.0   
 🎯 **Objectif** : Afficher des formules selon un choix.  
 🛠️ **Instructions :**  
-* Proposez un menu d'options offrant différentes formes géométriques
+* Proposez un menu d'options offrant différentes formes géométriques.
 * Selon le choix de l’utilisateur, affichez la formule qui permet de calculer l’aire de la forme choisie.
+* Utilisez `TryParse` pour valider l'information saisie.  
 
 **Rappel :**  
 Carré : côté * côté  
@@ -73,7 +76,9 @@ Pour calculer l'aire d'un rectangle faites : longueur * largeur
 ### 🟢 Exercice S1.4 – Classes de permis 1.0  
 🎯 **Objectif** : Afficher le type de véhicule autorisé selon la classe  
 🛠️ **Instructions :**  
-* Demandez un chiffre entier entre 1 et 8  
+* Demandez un chiffre entier entre 1 et 8.
+* AFfichez les informaitons qui correspondent à la classe de permis (voir tableau).
+* Utilisez `TryParse` pour valider l'information saisie.    
 * Déclarez un tableau de string 2 X 9, initialisez avec les informations suivantes :  
 ```csharp
 string[,] permis = {
@@ -109,7 +114,7 @@ La classe 7 autorise la conduite pour : Apprenti
 ### 🟢 Exercice S1.5 – Cinéma 1.0  
 🎯 **Objectif** : Afficher un titre selon le numéro entré.  
 🛠️ **Instructions :**  
-* Déclarez et initialisez le tableau suvant :
+* Déclarez et initialisez le tableau suivant :
 ```csharp
   string[] filmsHarry = {
     "À l'école des sorciers (1997)",
@@ -121,8 +126,9 @@ La classe 7 autorise la conduite pour : Apprenti
     "les Reliques de la Mort (2007)"};
 ```
 
-* Demandez un numéro entre 1 et 8 pour choisir un film  
-* Affichez le titre correspondant  
+* Demandez un numéro entre 1 et 8 pour choisir un film.  
+* Affichez le titre correspondant.
+* Utilisez `TryParse` pour valider l'information saisie.  
 * Si la valeur entrée est invalide, affichez ERREUR.  
   
 |Titre|
@@ -176,10 +182,11 @@ Bonne réponse ! :D
 ### 🟢 Exercice W1.3 – Afficher le budget  
 🎯 **Objectif :** Afficher un budget, jusqu’à épuisement  
 🛠️ **Instructions :**  
-* Déclarez une variable budget de 100$  
-* Affichez le budget initial  
-* Demandez combien a été dépensé, tant qu’il reste de budget  
-* Si le budget devient 0 ou négatif, affichez un message
+* Déclarez une variable budget de 100$.  
+* Affichez le budget initial.  
+* Demandez combien a été dépensé, tant qu’il reste de budget.
+* Utilisez `TryParse` pour valider l'information saisie.    
+* Si le budget devient 0 ou négatif, affichez un message.
 
 ✅ **Entrée / sortie attendue :**
 ~~~   
@@ -197,8 +204,9 @@ Oh no, pas encore!
 ### 🟢 Exercice W1.4 – Quelle est la moitié de…  
 🎯 **Objectif :** Répéter une question  
 🛠️ **Instructions :**  
-* Demandez un nombre
+* Demandez un nombre.
 * Calculez et affichez la moitié de cette valeur, tant qu’elle est plus grande que 0.5
+* Utilisez `TryParse` pour valider l'information saisie.  
 
 ✅ **Entrée / sortie attendue :**     
 ~~~   
@@ -216,8 +224,8 @@ Trouvons la moitié de :50
 ### 🟢 Exercice W1.5 – Les amis à Harry  
 🎯 **Objectif :** Répéter une question, deux réponses possibles  
 🛠️ **Instructions :**   
-* Demandez le nom de l’ami à Harry Potter
-* Répéter la question tant que la réponse n’est pas Hermione ou Ron
+* Demandez le nom de l’ami à Harry Potter.
+* Répéter la question tant que la réponse n’est pas Hermione ou Ron.
 
 ✅ **Entrée / sortie attendue :**
 ~~~
@@ -231,8 +239,9 @@ Nommez un des amis de Harry Potter : Ron
 ### 🟢 Exercice DW1.1 – Majeurs  
 🎯 **Objectif :** Poser une question, répéter jusqu’à obtenir une des bonnes réponses 
 🛠️ **Instructions :**  
-* Demandez à l’utilisateur à quel âge on devient majeurs  
-* Répéter la question tant qu’elle est différente de deux réponses possibles, soit 18 ou soit 21 selon le pays
+* Demandez à l’utilisateur à quel âge on devient majeurs.  
+* Répéter la question tant qu’elle est différente de deux réponses possibles, soit 18 ou soit 21 selon le pays.
+* Utilisez `TryParse` pour valider l'information saisie.  
   
 ✅ **Entrée / sortie attendue :**
 ~~~
@@ -245,7 +254,8 @@ Nommez un des amis de Harry Potter : Ron
 ### 🟢 Exercice DW1.2 – Les épargnes  
 🎯 **Objectif :** Répéter une question   
 🛠️ **Instructions :**  
-* Demande à l’utilisateur combien veut-il épargner ce mois-ci.  
+* Demande à l’utilisateur combien veut-il épargner ce mois-ci.
+* Utilisez `TryParse` pour valider l'information saisie.    
 * Répéter la question jusqu’à ce que la réponse soit zéro.    
 * Afficher le montant total des économies.  
 
@@ -255,6 +265,9 @@ Combien désirez-vous épargner ce mois-ci? 50
 Combien désirez-vous épargner ce mois-ci? 10
 Combien désirez-vous épargner ce mois-ci? 30
 Combien désirez-vous épargner ce mois-ci? 0  
+
+----------------------------------------  
+Vous avez cummulé : 90,00 $  
 ~~~
 ---
 
@@ -263,6 +276,7 @@ Combien désirez-vous épargner ce mois-ci? 0
 🛠️ **Instructions :** 
 * Demander à l’utilisateur d’entrer le numéro de station de Harry Potter (en décimal).  
 * Répéter la question tant qu’elle est différente de 9.75
+* Utilisez `TryParse` pour valider l'information saisie.  
 
 ✅ **Entrée / sortie attendue :**     
 ~~~
