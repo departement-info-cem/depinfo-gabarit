@@ -84,7 +84,7 @@ string[,] permis = {
     { "4", "Véhicules d'urgence"},
     { "5", "Automobiles"},
     { "6", "Motocyclettes"},
-    { "7", "Aprenti"},
+    { "7", "Apprenti"},
     { "8", "Tracteur"},};
 ```
 
