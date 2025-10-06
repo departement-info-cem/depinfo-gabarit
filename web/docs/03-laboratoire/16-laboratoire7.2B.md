@@ -36,13 +36,16 @@ L'aire d'un rectangle 2 X 3 est de : 6
 🎯 **Objectif :** Pratiquer Switch ... case, les tableaux 2D et les icônes    
 🛠️ **Instructions :**   
 * Reprenez l’exercice « S1.4 – Classes de permis 1.0 »  
-* Renommez comme « S2.2 – Classes de permis 2.0 »
+* Renommez comme « S2.2 – Classes de permis 2.0 »  
 * Affichez le tableau au complet  
-* À l'aide de Switch... case, demandez à l'utilisateur à quelle classe de permis il veut ajouter une icône
+* À l'aide de Switch... case, demandez à l'utilisateur à quelle classe de permis il veut ajouter une icône  
 * Dans chaque case, appelez une fonction qui : 
-  * Ajoutera une icône (représentant le véhicule en question) à côté de la classe de permis
-  * Afficher ensuite:
+  * Recevra en paramètre : le tableau, le choix de classe et une icône  
+  * Ajouter l'icône (représentant le véhicule en question) à côté de la classe de permis  
+  * Reafficher le tableau :  
     * Le numéro de classe, suivi de l'icône, suivi du titre du permis
+
+**DÉFI** : Permettre d'ajouter des icônes aux autres clases, jusqu'à demander de quitter (Piste : Utilisez `Do... while`) 
 
 ➡️ Pour les icônes, voir section [Extra](https://info.cegepmontpetit.ca/1P6/extra/style)
 	
@@ -62,7 +65,37 @@ C  Véhicule
 
 
  Votre choix : 4
+
+
+Classes de permis de conduire v2.0
+*************************************
+C  Véhicule
+1  Tous
+2  Autobus 24p+
+3  Camion
 4 🚑 Véhicules d'urgence
+5  Automobiles
+6  Motocyclettes
+7  Apprenti
+8  Tracteur
+~~~
+
+**Avec Défi :**
+
+~~~
+=== S2.2 – Classes de permis 2.0 ===
+*************************************
+C - Véhicule
+1 🏎️ - Tous
+2 🚌 - Autobus 24p+
+3 🚛 - Camion
+4 🚑 - Véhicules d'urgence
+5 - Automobiles
+6 - Motocyclettes
+7 - Apprenti
+8 - Tracteur
+
+À quelle classe voulez-vous ajouter une icône ? (1 à 8, 9 pour quitter) :
 ~~~
 ---
 
