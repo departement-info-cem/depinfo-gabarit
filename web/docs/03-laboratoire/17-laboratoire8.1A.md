@@ -45,6 +45,7 @@ string[,] filmsDenis = {
  4) Quitter
 
 * Nettoyez l'écran avant d'afficher les informations demandées. Demandez à l'utilisateur de peser sur une touche afin de retourner au menu principal.
+   
 ➡️ NOTE : Pour aligner les informations, regardez : `String.Format(alignement, valeur)`
 
     
