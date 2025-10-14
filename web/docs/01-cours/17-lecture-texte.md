@@ -80,8 +80,10 @@ string expressionQuebecoise = inputFile.ReadLine();
 Chaque appel à `ReadLine()` :
 * lit la ligne actuelle du fichier,  
 * fait avancer le **pointeur de lecture** à la ligne suivante.
+  
 
 🪄 **Exemple visuel :**
+
 
 Fichier : 
 ```
