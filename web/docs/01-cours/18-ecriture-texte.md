@@ -2,12 +2,12 @@
 description: Écriture dans un fichier texte avec StreamWriter
 ---
 
-# 🧾 9.1 — Écrire dans un fichier texte
+# 🧾 9.1 — Écriture dans un fichier texte
 
 ## 🎯 Objectif
 
 Apprendre à **écrire des données dans un fichier texte (.txt)** à l’aide de la classe `StreamWriter`.  
-Nous verrons comment créer un fichier, y écrire du texte, et le fermer correctement pour que les données soient sauvegardées localement. 💾
+Nous verrons comment créer un fichier, y écrire du texte, et le fermer correctement pour que les données soient sauvegardées localement.
 
 ---
 
@@ -17,7 +17,7 @@ Les programmes que vous avez écrits jusqu'à maintenant nécessitent de **ressa
 Mais pourquoi donc? 🤔
 
 Les **variables et objets** sont stockés dans la **mémoire vive (RAM)**, et celle-ci est **effacée à la fin de l’exécution** du programme.  
-Résultat : toutes tes infos disparaissent à chaque redémarrage. 🚫
+Résultat : toutes les données disparaissent à chaque redémarrage. 👻
 
 ❓ Alors comment faire pour les garder entre deux exécutions ?  
 👉 En les **sauvegardant dans un fichier** sur ton disque 💾 !
@@ -45,13 +45,13 @@ Avant tout, assurez-vous d'ajouter **cette ligne au début de votre programme :*
 using System.IO;
 ```
 
-Le namespace `System.IO` contient toutes les classes utiles pour lire et écrire dans des fichiers (comme `StreamWriter` et `StreamReader`).
+Le _namespace_ `System.IO` contient toutes les classes utiles pour lire et écrire dans des fichiers (comme `StreamWriter` et `StreamReader`).
 
 ---
 
 ## ⚡ Étape 2 — Créer une instance de StreamWriter
 
-La classe `StreamWriter` permet d’ouvrir un fichier et de créer un lien entre le programme et ce fichier.
+La classe `StreamWriter` permet d’ouvrir un fichier en mode **Écriture** et de créer un lien entre le programme et ce fichier.
 
 ```csharp
 StreamWriter outputFile = new StreamWriter("culture_quebecoise_101.txt");
@@ -73,7 +73,7 @@ Ainsi, vous avez un meilleur contrôle sur l'emplacement où les fichiers sont s
 
 ## ✍️ Étape 3 — Écrire des données avec Write et WriteLine
 
-Vous connaissez déjà `Console.WriteLine` pour afficher des données à l’écran.  
+Vous connaissez déjà `Console.WriteLine` pour afficher des données dans la console.  
 Avec `StreamWriter`, on utilise les mêmes méthodes **pour écrire dans un fichier** :
 
 ```csharp
@@ -134,12 +134,26 @@ class Program
 {
     static void Main()
     {
+
+        // Création d'un fichier en mode ÉCRITURE
+        StreamWriter outputFile = new StreamWriter("culture_quebecoise_101.txt");
+
+        outputFile.WriteLine("Avoir les yeux dans la graisse de bine");
+        outputFile.WriteLine("Avoir de la broue dans le toupet");
+
+        outputFile.Write("Attache ta tuque ");
+        outputFile.Write("avec d’la broche !");
+
+        outputFile.Close(); // Fermeture du fichier
+
+        
+        // Ouverture d'un fichier existant pour y ajouter du texte
         StreamWriter outputFile = new StreamWriter("culture_quebecoise_101.txt", true);
 
         outputFile.WriteLine("Se faire passer un sapin");
         outputFile.WriteLine("Se tirer une bûche");
 
-        outputFile.Close();
+        outputFile.Close(); // Fermeture du fichier
     }
 }
 ```
