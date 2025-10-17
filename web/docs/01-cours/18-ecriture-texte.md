@@ -67,6 +67,11 @@ Il est possible d'indiquer l’emplacement exact du fichier :
 ```csharp
 StreamWriter outputFile = new StreamWriter("C:/EspaceLabo/culture_quebecoise_101.txt");
 ```
+Ou
+```csharp
+StreamWriter outputFile = new StreamWriter("C:\\EspaceLabo\\culture_quebecoise_101.txt");
+```
+
 Ainsi, vous avez un meilleur contrôle sur l'emplacement où les fichiers sont sauvegardés. 🗂️
 
 ---
@@ -113,9 +118,9 @@ outputFile.Close();
 ## ➕ Ajouter du contenu à un fichier existant (Append)
 
 Par défaut, `StreamWriter` écrase le contenu du fichier.  
-Mais parfois, nous voulons simplement **ajouter des lignes à la suite**, sans tout effacer.
+Mais parfois, nous voulons simplement **ajouter des informations** à la fin d'un fichier, sans tout effacer.
 
-Pour cela, il faut ajouter un **deuxième argument booléen** au constructeur :
+Pour cela, il faut ajouter un **deuxième argument booléen** au constructeur `StreamWriter` :
 
 ```csharp
 StreamWriter outputFile = new StreamWriter("culture_quebecoise_101.txt", true);
@@ -136,7 +141,7 @@ class Program
     {
 
         // Création d'un fichier en mode ÉCRITURE
-        StreamWriter outputFile = new StreamWriter("culture_quebecoise_101.txt");
+        StreamWriter outputFile = new StreamWriter("C:/EspaceLabo/culture_quebecoise_101.txt");
 
         outputFile.WriteLine("Avoir les yeux dans la graisse de bine");
         outputFile.WriteLine("Avoir de la broue dans le toupet");
@@ -146,14 +151,13 @@ class Program
 
         outputFile.Close(); // Fermeture du fichier
 
-        
         // Ouverture d'un fichier existant pour y ajouter du texte
-        StreamWriter outputFile = new StreamWriter("culture_quebecoise_101.txt", true);
+        StreamWriter fichierExistant = new StreamWriter("C:/EspaceLabo/culture_quebecoise_101.txt", true);
 
-        outputFile.WriteLine("Se faire passer un sapin");
-        outputFile.WriteLine("Se tirer une bûche");
+        fichierExistant.WriteLine("Se faire passer un sapin");
+        fichierExistant.WriteLine("Se tirer une bûche");
 
-        outputFile.Close(); // Fermeture du fichier
+        fichierExistant.Close(); // Fermeture du fichier
     }
 }
 ```
