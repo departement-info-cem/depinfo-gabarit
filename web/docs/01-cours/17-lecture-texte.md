@@ -49,7 +49,7 @@ StreamReader inputFile = new StreamReader("C:/EspaceLabo/culture_quebecoise_101.
 
 ### ⚠️ Attention : Vérifier si le fichier existe
 
-Si le fichier n’existe pas, une erreur (`FileNotFoundException`) sera levée. 
+Si le fichier qu'on souhaite lire n’existe pas, une erreur (`FileNotFoundException`) sera levée. 
 Avant d’ouvrir un fichier, on peut **vérifier son existence** avec la méthode `File.Exists(...)` :
 
 ```csharp
