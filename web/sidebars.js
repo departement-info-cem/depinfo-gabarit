@@ -304,8 +304,8 @@ const sidebars = {
     },
     {
       type: "doc",
-      label: "9.1 - Lecture de fichiers texte",
-      id: "cours/lecture-texte",
+      label: "9.1 - Écriture dans un fichier",
+      id: "cours/ecriture-texte",
       customProps: {
         avancementLabel: "TP3 - Créé - ",
         avancement: 0.1,
@@ -323,8 +323,9 @@ const sidebars = {
     },
     {
       type: "doc",
-      label: "9.2 - Écriture dans un fichier",
-      id: "cours/ecriture-texte",
+      
+      label: "9.2 - Lecture de fichiers texte",
+      id: "cours/lecture-texte",
       customProps: {
         avancementLabel: "TP3",
         avancement: 0.2,
