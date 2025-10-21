@@ -152,7 +152,7 @@ Bonne réponse !
 🛠️ **Instructions :**  
 * Déclarez le tableau suivant :  
     `string [] films={"Kiki", "Porco Rosso", "Totoro", "Ponyo", "Mononoke"}`  
-* Gênerez un chiffre aléatoire entre 1 et le nombre de films disponibles (en utilisant la propriété length)  
+* Générez un chiffre aléatoire entre 1 et le nombre de films disponibles (en utilisant la propriété length)  
 * Demandez à l’utilisateur de deviner quel est le film qui a été choisi aléatoirement  
 * Répétez la question tant qu’il n’a pas deviné.
 
