@@ -85,7 +85,7 @@ Chaque appel à `ReadLine()` :
 🪄 **Exemple visuel :**
 
 
-Fichier : 
+Fichier `culture_quebecoise_101.txt` : 
 ```
 Avoir les yeux dans la graisse de bine
 Avoir de la broue dans le toupet
@@ -93,8 +93,12 @@ Attache ta tuque avec d’la broche
 Se faire passer un sapin
 Se tirer une bûche
 ```
-1️⃣ Avant la lecture
-➡️ Le pointeur est au tout début du fichier.
+
+1️⃣ Lorsqu'on ouvre le fichier en mode *lecture*, un pointeur de lecture est placé au tout début du fichier.
+
+```csharp
+StreamReader inputFile = new StreamReader("C:/EspaceLabo/culture_quebecoise_101.txt");
+```
 
 ```
 → Avoir les yeux dans la graisse de bine
@@ -104,8 +108,12 @@ Se faire passer un sapin
 Se tirer une bûche
 ```
 
-2️⃣ Après le premier ReadLine()
-➡️ Le pointeur passe à la 2e ligne.
+2️⃣ Après le premier `ReadLine()`, la première ligne est capturée dans une variable et le pointeur de lecture passe à la seconde ligne.
+
+```csharp
+string ligne1 = inputFile.ReadLine();
+// ligne1 = "Avoir les yeux dans la graisse de bine"
+```
 
 ```
 Avoir les yeux dans la graisse de bine
@@ -115,15 +123,30 @@ Se faire passer un sapin
 Se tirer une bûche
 ```
 
-3️⃣ Et ainsi de suite… jusqu’à la fin du fichier 🏁
+3️⃣ Après un second `ReadLine()`, la seconde ligne est capturée dans une variable et le pointeur de lecture passe à la troisième ligne.
 
-Quand le pointeur atteint la fin du fichier, `ReadLine()` retourne `null`.
+```csharp
+string ligne2 = inputFile.ReadLine();
+// ligne2 = "Avoir de la broue dans le toupet"
+```
+
+```
+Avoir les yeux dans la graisse de bine
+Avoir de la broue dans le toupet
+→ Attache ta tuque avec d’la broche
+Se faire passer un sapin
+Se tirer une bûche
+```
+
+ Ainsi de suite… jusqu’à la fin du fichier 🏁
+
+⚠️ Quand le pointeur de lecture atteint la fin du fichier, `ReadLine()` retourne `null`.
 
 ---
 
-### 🔁 Lire un fichier complet avec une boucle `while`
+#### 🔁 Lire un fichier complet avec une boucle `while`
 
-Dans les séances précédentes, nous avons vu que la boucle `while` permet d’exécuter du code en boucle tant qu’une condition est vraie. En combinant la boucle `while` et la méthode `ReadLine()`, il est possible de …roulement de tambour 🥁… lire un fichier, une ligne à la fois, jusqu’à atteindre la fin du fichier. 
+Dans les séances précédentes, nous avons vu que la boucle `while` permet d’exécuter du code en boucle tant qu’une condition est vraie. En combinant la boucle `while` et la méthode `ReadLine()`, il est possible de lire un fichier, une ligne à la fois, jusqu’à atteindre la fin du fichier. 
 Pour ce faire, on veut vérifier après chaque lecture si nous avons atteint le `EndOfStream` de notre fichier :
 
 ```csharp
@@ -136,31 +159,31 @@ while (!inputFile.EndOfStream) // Tant qu'on n'est pas à la fin du fichier
 }
 ```
 
-🌳 **Arbre logique de la lecture ligne par ligne :**
+🌳 **Arbre logique de la lecture ligne par ligne avec la boucle `while` :**
 ```
-Ouvrir le fichier
+Ouvrir le fichier en mode lecture
 ↓
-Lire la première ligne
-↓
-Avons-nous atteint EndOfStream ?
-├── Oui → Fermer le fichier
-└── Non → Lire la prochaine ligne
-↓
-(recommencer)
+Boucle : Avons-nous atteint EndOfStream ?
+├── Oui → Fermer le fichier.
+└── Non → Lire la ligne et déplacer le pointeur de lecture à la prochaine ligne. Recommencer la boucle.
+
 ```
 
 ---
 
-### 🧩 Option 2 — Lire tout le fichier d’un coup : `ReadToEnd()`
+### 🧩 Option 2 — Lire tout le fichier d’un coup : `ReadToEnd()` 🏎
 
-Si tu veux récupérer tout le contenu dans une seule variable :
+La fonction `ReadToEnd()` permet de lire tout le contenu d'un fichier d'un coup et de le capturer dans **une seule variable** :
 
 ```csharp
 string contenu = inputFile.ReadToEnd();
-Console.WriteLine(contenu);
+// contenu = "Avoir les yeux dans la graisse de bine\r\nAvoir de la broue dans le toupet\r\nAttache ta tuque avec d’la broche\r\nSe faire passer un sapin\r\nSe tirer une bûche"
+
 ```
 
-Cette méthode lit **tout le fichier** à partir de la position courante jusqu’à la fin.
+Que remarquez-vous ?
+>> la variable `contenu` contient explicitement **les caractères de fin de ligne** (\r\n dans cet exemple).
+Ces caractères servent à marquer les retours à la ligne dans le texte, et leur représentation peut varier selon le système d’exploitation.
 
 ---
 
@@ -172,12 +195,12 @@ Une fois la lecture terminée, n'oubliez pas de **fermer le fichier** pour libé
 inputFile.Close();
 ```
 
-### 💡 Alternative moderne : `using`
+### 💡 Pro-tip : `using`
 
 Avec la syntaxe `using`, le fichier se fermera automatiquement à la fin du bloc :
 
 ```csharp
-using (StreamReader inputFile = new StreamReader("culture_quebecoise_101.txt"))
+using (StreamReader inputFile = new StreamReader("C:/EspaceLabo/culture_quebecoise_101.txt"))
 {
     string ligne;
     while (!inputFile.EndOfStream)
@@ -200,7 +223,7 @@ class Program
 {
     static void Main()
     {
-        string path = "culture_quebecoise_101.txt";
+        string path = "C:/EspaceLabo/culture_quebecoise_101.txt";
 
         if (!File.Exists(path))
         {
@@ -211,11 +234,17 @@ class Program
         using (StreamReader inputFile = new StreamReader(path))
         {
             string ligne;
+            // Lecture une ligne à la fois
             while (!inputFile.EndOfStream)
             {
                 ligne = inputFile.ReadLine();
                 Console.WriteLine(ligne);
             }
+
+            // Lecture de tout le contenu d'un seul coup
+            string contenu = reader.ReadToEnd();
+            Console.WriteLine(contenu);
+
         }
     }
 }
@@ -229,7 +258,7 @@ class Program
 |:--:|:--|:--|
 | 1️⃣ | Ajouter `using System.IO;` | `using System.IO;` |
 | 2️⃣ | Créer un objet `StreamReader` | `StreamReader file = new StreamReader("fichier.txt");` |
-| 3️⃣ | Lire les données | `string line = file.ReadLine();` |
+| 3️⃣ | Lire les données | `string line = file.ReadLine();` ou `string allLines = file.ReadToEnd();` |
 | 4️⃣ | Fermer le fichier | `file.Close();` |
 
 ---
@@ -247,5 +276,6 @@ class Program
 
 👉 Notions C# : [Fichiers texte — StreamReader](https://info.cegepmontpetit.ca/notions-csharp/documentation/fichier-texte#la-classe-streamreader--lecture-dans-un-fichier-texte)
 
----
+Vous devez réaliser le labo suivant :
+ [🧪 Labo 9.2](/laboratoire/laboratoire9.2)
 
