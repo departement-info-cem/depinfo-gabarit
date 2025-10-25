@@ -163,7 +163,7 @@ Cela devient un problème lorsqu’on lit un fichier CSV **dont la taille est in
 
 ---
 
-## 🧰 Les listes (`List<T>`)
+### 🧰 Les listes (`List<T>`)
 
 Une **liste** est une structure de données **dynamique** :  
 **Aucune taille n’a besoin d’être définie à la création, et on peut ajouter ou retirer des éléments librement.**
@@ -189,7 +189,7 @@ Pour en savoir plus, consultez la section *Ressources supplémentaires* au bas d
 
 ---
 
-### 🧩 Démonstration : **lire un fichier CSV contenant une grille de taille inconnue**
+### 🧩 Démonstration : lire un fichier CSV contenant une grille de taille inconnue
 
 Voici un exemple complet pour lire un fichier CSV représentant une grille de taille inconnue,
 puis stocker le tout dans un tableau 2D.
