@@ -6,8 +6,6 @@ title: Lecture dans un fichier texte
 
 📎 **Référence** : [Fichiers texte — StreamReader](https://info.cegepmontpetit.ca/notions-csharp/documentation/fichier-texte#la-classe-streamreader--lecture-dans-un-fichier-texte)
 
-**Ajouter référence au foreach et Contains ?**
-
 ---
 
 ## 🟢 Exercice 1 : Découvrir StreamReader
