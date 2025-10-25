@@ -1,9 +1,8 @@
 ---
-title: Solutions — Lecture dans un fichier texte
+title: ✅ Solutions — Labo 9.2
 ---
 
-# ✅ Solutions — Lecture dans un fichier texte
-
+# ✅ Solutions — Labo 9.2
 ---
 
 ## 🟢 Exercice 1 : Découvrir StreamReader
