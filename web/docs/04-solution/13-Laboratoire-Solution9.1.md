@@ -1,8 +1,8 @@
 ---
-description: Solutions — Écriture dans un fichier texte
+description: ✅ Solutions —  Labo 9.1
 ---
 
-# ✅ Solutions — Écriture dans un fichier texte
+# ✅ Solutions — Labo 9.1
 
 ---
 
