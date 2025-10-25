@@ -6,7 +6,7 @@ description: Lecture et écriture de fichiers CSV en C#
 
 ## 🎯 Objectif
 
-Apprendre à **lire et écrire des fichiers CSV** (`Comma-Separated Values`) à l’aide des classes `StreamReader` et `StreamWriter`.  
+Apprendre à **lire et écrire des fichiers CSV** (`Comma-Separated Values`) à l’aide des classes `StreamReader` et `StreamWriter`.  Nous verrons également comment lire et stocker une grille de **taille inconnue** en introduisant le concept de liste (`List<T>`).
 
 ---
 
