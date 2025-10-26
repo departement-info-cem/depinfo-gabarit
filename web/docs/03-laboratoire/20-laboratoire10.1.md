@@ -100,8 +100,8 @@ Jaune,Citron
 👹,🧙‍,🗝
 🚪,🧟,👺
 ```
-
 (*Sentez vous libre de modifier la taille de la grille 😉*)
+
 2. Lire chaque ligne et la stocker dans une liste.
 3. Déterminer le nombre de lignes et de colonnes.
 4. Remplir un tableau 2D `string[,]`.
@@ -112,7 +112,7 @@ Jaune,Citron
 ## 🔴 Exercice 6 : Sauvegarder et relire une matrice numérique
 
 **Votre programme doit** :
-1. Initialiser un tableau 2D de nombres, comme celle-ci :
+1. Initialiser un tableau 2D de nombres, comme celui-ci :
 
 ```csharp
 int[,] matrice = {
@@ -122,14 +122,16 @@ int[,] matrice = {
 };
 ```
 
-2. Écrire cette matrice dans un fichier `matrice.csv` (une ligne par rangée).
-3. Relire le fichier pour recréer et afficher la matrice dans la console.
+2. Écrire cette matrice dans un fichier `matrice.csv` (une ligne par rangée) sans oublier de séparer chaque élément par **une vigule**.
 
-⚠️ `Join(" ")` pourra vous être utile lors de l'étape d'écriture et `Split(' ')` pendant l'étape de lecture et d'affichage dans la console.
+⚠️ **Votre programme doit pouvoir fonctionner avec des matrices de taille différente !**
+
+3. Lire le fichier pour recréer et afficher la matrice dans la console.
+    * `Split(',')` vous sera utile pendant l'étape de lecture et d'affichage dans la console.
 
 ---
 
-## Jeux intégrateurs - AVEC LISTE
+## 🔥 Jeux intégrateurs - AVEC LISTE
 
 ### 💀 Bonhomme pendu (avec fichier .txt)
 
@@ -158,7 +160,7 @@ int[,] matrice = {
 4️⃣ Créer le mot masqué
 
 1. Initialisez un tableau char[] de la même longueur que le mot choisi.
-2. Remplissez-le avec des _ pour masquer les lettres.
+2. Remplissez-le avec des `'_'` pour masquer les lettres.
 
 5️⃣ Initialiser les variables de jeu
 
@@ -172,9 +174,9 @@ Répétez tant que tentativesRestantes > 0 et gagne == false :
 2. Affichez le nombre de tentatives restantes.
 3. Demandez à l’utilisateur une lettre (une seule lettre).
 4. Vérifiez si la lettre est présente dans le mot :
-    * Si oui, remplacez les _ correspondants dans le mot masqué.
+    * Si oui, remplacez les `'_'` correspondants dans le mot masqué.
     * Si non, diminuez tentativesRestantes de 1.
-5. Vérifiez si le joueur a trouvé toutes les lettres (motCache ne contient plus de _).
+5. Vérifiez si le joueur a trouvé toutes les lettres (motCache ne contient plus de `'_'`).
 
 7️⃣ Fin du jeu
 
@@ -192,6 +194,51 @@ Sinon, affichez :
 
 ✅ **Exemple** 
 ```
+Mot : _ _ _ _ _ _ _ _ _ _
+Tentatives restantes : 6
+Lettre : a
+✅ Bonne lettre !
+Mot : _ _ _ _ _ A _ _ _ _
+Tentatives restantes : 6
+Lettre : e
+✅ Bonne lettre !
+Mot : _ _ _ _ _ A _ E _ _
+Tentatives restantes : 6
+Lettre : g
+❌ Mauvaise lettre !
+Mot : _ _ _ _ _ A _ E _ _
+Tentatives restantes : 5
+Lettre : l
+❌ Mauvaise lettre !
+Mot : _ _ _ _ _ A _ E _ _
+Tentatives restantes : 4
+Lettre : r
+✅ Bonne lettre !
+Mot : _ R _ _ _ A _ E _ R
+Tentatives restantes : 4
+Lettre : o
+✅ Bonne lettre !
+Mot : O R _ _ _ A _ E _ R
+Tentatives restantes : 4
+Lettre : d
+✅ Bonne lettre !
+Mot : O R D _ _ A _ E _ R
+Tentatives restantes : 4
+Lettre : i
+✅ Bonne lettre !
+Mot : O R D I _ A _ E _ R
+Tentatives restantes : 4
+Lettre : n
+✅ Bonne lettre !
+Mot : O R D I N A _ E _ R
+Tentatives restantes : 4
+Lettre : t
+✅ Bonne lettre !
+Mot : O R D I N A T E _ R
+Tentatives restantes : 4
+Lettre : u
+✅ Bonne lettre !
+🎉 Bravo, vous avez trouvé : ORDINATEUR
 
 ```
 
@@ -237,11 +284,10 @@ Sinon, affichez :
 **Étapes à suivre**
 
 1. Demandez au joueur de saisir une coordonnée numériques (ligne, colonne).
-3. Convertissez la réponse en index de ligne/colonne.
-4. Si la case contient un 🚢, affichez “💥 Touché !” et remplacez-la par 💥.
+2. Si la case contient un 🚢, affichez “💥 Touché !” et remplacez-la par 💥.
    Sinon, affichez “💦 Raté !” et remplacez-la par 💦.
-5. Après chaque tir, affichez la grille mise à jour.
-6. Quand tous les bateaux sont détruits, affichez "🎉 Tous les bateaux sont coulés !".
+3. Après chaque tir, affichez la grille mise à jour.
+4. Quand tous les bateaux sont détruits, affichez "🎉 Tous les bateaux sont coulés !".
 
 **✅ Exemple de déroulement :**
 ```

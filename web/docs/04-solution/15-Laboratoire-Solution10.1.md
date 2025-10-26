@@ -38,12 +38,12 @@ title: ✅ Solutions — Labo 10.1
         using (StreamReader reader = new StreamReader(path))
         {
             // Lire l'en-tête
-            string ligne = sr.ReadLine();
+            string ligne = reader.ReadLine();
 
             // Lire le reste du fichier
-            while (!sr.EndOfStream)
+            while (!reader.EndOfStream)
             {
-                ligne = sr.ReadLine();
+                ligne = reader.ReadLine();
                 string[] valeurs = ligne.Split(',');
                 Console.WriteLine(valeurs[0] + " est de couleur " + valeurs[1].ToLower() + ".");
             }
@@ -159,7 +159,7 @@ Voir la démonstration du cours.
                 {
                     ligne += matrice[i, j];
                     if (j != colonnes - 1)
-                        ligne += " ";
+                        ligne += ",";
                 }
                 sw.WriteLine(ligne);
             }
@@ -172,7 +172,7 @@ Voir la démonstration du cours.
             while (!sr.EndOfStream)
             {
                 ligne = sr.ReadLine();
-                string[] valeurs = ligne.Split(' ');
+                string[] valeurs = ligne.Split(',');
                 for (int i = 0; i < valeurs.Length; i++)
                 {
                     Console.Write(valeurs[i] + " ");
@@ -184,9 +184,9 @@ Voir la démonstration du cours.
 
 ---
 
-### Jeux intégrateurs (avec liste)
+## 🔥 Jeux intégrateurs - AVEC LISTE
 
-## 💀 Bonhomme pendu (avec fichier .txt)
+### 💀 Bonhomme pendu (avec fichier .txt)
 
 ```csharp
 using System;
@@ -199,8 +199,36 @@ class Program
     {
         Console.OutputEncoding = System.Text.Encoding.UTF8;
 
-        // --- Étape 1 : Lire tous les mots depuis le fichier mots.txt ---
+        // --- Étape 1 :Préparer le fichier mots.txt ---
+
         string chemin = "C:/EspaceLabo/mots.txt";
+
+
+        // Contenu du fichier
+        string[] mots = {
+        "ordinateur",
+        "programmation",
+        "clavier",
+        "souris",
+        "écran",
+        "fenêtre",
+        "compilation",
+        "algorithme",
+        "variable",
+        "fonction"
+        };
+
+        // Écriture dans le fichier
+        using (StreamWriter sw = new StreamWriter(chemin))
+        {
+            for (int i = 0; i < mots.Length; i++)
+            {
+                sw.WriteLine(mots[i]);
+            }
+        }
+
+        // --- Étape 2 : Lire tous les mots depuis le fichier mots.txt ---
+
         if (!File.Exists(chemin))
         {
             Console.WriteLine("Fichier mots.txt introuvable !");
@@ -218,21 +246,21 @@ class Program
         }
 
 
-        // --- Étape 2 : Choisir un mot au hasard ---
+        // --- Étape 3 : Choisir un mot au hasard ---
         Random rnd = new Random();
         int index = rnd.Next(0, listeMots.Count);
         string motChoisi = listeMots[index];
 
-        // --- Étape 3 : Créer le mot masqué ---
+        // --- Étape 4 : Créer le mot masqué ---
         char[] motCache = new char[motChoisi.Length];
         for (int i = 0; i < motChoisi.Length; i++)
             motCache[i] = '_';
 
-        // --- Étape 4 : Initialiser les variables de jeu ---
+        // --- Étape 5 : Initialiser les variables de jeu ---
         int tentativesRestantes = 6;
         bool gagne = false;
 
-        // --- Étape 5 : Boucle de jeu ---
+        // --- Étape 6 : Boucle de jeu ---
         while (tentativesRestantes > 0 && !gagne)
         {
             // Afficher le mot masqué
@@ -280,7 +308,7 @@ class Program
             }
         }
 
-        // --- Étape 6 : Fin du jeu ---
+        // --- Étape 7 : Fin du jeu ---
         if (gagne)
             Console.WriteLine("🎉 Bravo, vous avez trouvé : " + motChoisi);
         else
@@ -292,14 +320,12 @@ class Program
 
 ---
 
-## Bataille navale ⚓
+### Bataille navale (avec fichier CSV) ⚓
 
 **Partie A**
 
 ```csharp
-using System;
 using System.IO;
-using System.Collections.Generic;
 
 class Program
 {
@@ -356,10 +382,10 @@ class Program
             // Demander les coordonnées
             Console.Write("Entrez la ligne : ");
             string inputL = Console.ReadLine();
-            int ligne = int.Parse(inputL) - 1
+            int ligne = int.Parse(inputL) - 1;
             Console.Write("Entrez la colonne : ");
             string inputC = Console.ReadLine();
-            int colonne = int.Parse(inputC) - 1
+            int colonne = int.Parse(inputC) - 1;
 
              if (ligne < 0 || ligne >= nbLignes || colonne < 0 || colonne >= nbColonnes)
             {

@@ -185,7 +185,7 @@ On peut la voir comme une version “flexible” d’un tableau.
 | `Count` | Propriété | Donne le **nombre d’éléments** actuellement contenus dans la liste. | `Console.WriteLine(grille.Count);` |
 
 💡 La classe `List<T>` possède **plusieurs autres méthodes et propriétés utiles** (comme `Remove`, `Insert`, `Clear`, etc.).  
-Pour en savoir plus, consultez la section *Ressources supplémentaires* au bas de cette page (👉 *Notions C# : Liste générique*).
+Pour en savoir plus, consultez la section *Ressources supplémentaires* au bas de cette page.
 
 ---
 
