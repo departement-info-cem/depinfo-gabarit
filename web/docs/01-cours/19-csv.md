@@ -1,5 +1,5 @@
 ---
-description: Lecture et écriture de fichiers CSV en C#
+description: Lecture et écriture de fichiers CSV
 ---
 
 # 10.1 — Lecture et écriture de fichiers CSV
