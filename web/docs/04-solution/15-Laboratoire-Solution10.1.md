@@ -199,35 +199,11 @@ class Program
     {
         Console.OutputEncoding = System.Text.Encoding.UTF8;
 
-        // --- Étape 1 :Préparer le fichier mots.txt ---
+        // --- Étape 1 :Assurez-vous d'avoir créé le fichier mots.txt dans le bon répertoire ---
 
-        string chemin = "C:/EspaceLabo/mots.txt";
-
-
-        // Contenu du fichier
-        string[] mots = {
-        "ordinateur",
-        "programmation",
-        "clavier",
-        "souris",
-        "écran",
-        "fenêtre",
-        "compilation",
-        "algorithme",
-        "variable",
-        "fonction"
-        };
-
-        // Écriture dans le fichier
-        using (StreamWriter sw = new StreamWriter(chemin))
-        {
-            for (int i = 0; i < mots.Length; i++)
-            {
-                sw.WriteLine(mots[i]);
-            }
-        }
-
+        
         // --- Étape 2 : Lire tous les mots depuis le fichier mots.txt ---
+        string chemin = "C:/EspaceLabo/mots.txt";
 
         if (!File.Exists(chemin))
         {
