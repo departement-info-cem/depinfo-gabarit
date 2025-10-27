@@ -78,6 +78,12 @@ La matière est expliquée dans chacun des cours, mais tu peux trouver plus d'in
             component: <MainDocsCalendar professorName="Jean-Michel" />,
         },
         {
+            id: "calendar-philippe",
+            label: "Philippe",
+            icon: "📅",
+            component: <MainDocsCalendar professorName="Philippe" />,
+        },
+        {
             id: "calendar-pierre",
             label: "Pierre-Paul",
             icon: "📅",
@@ -88,12 +94,6 @@ La matière est expliquée dans chacun des cours, mais tu peux trouver plus d'in
             label: "Tommy",
             icon: "📅",
             component: <MainDocsCalendar professorName="Tommy" />,
-        },
-        {
-            id: "calendar-zenia",
-            label: "Zénia",
-            icon: "📅",
-            component: <MainDocsCalendar professorName="Zénia" />,
         },
     ]}
     defaultTabId="grid"
