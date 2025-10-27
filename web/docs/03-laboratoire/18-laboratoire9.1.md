@@ -95,14 +95,15 @@ Jean Neige
 **Objectif :** Ajouter du contenu dans un fichier texte existant **sans écraser le contenu précédent**.
 
 **Instructions :**
+1. Demandez à l'utilisater d’entrer le nom du fichier créé à l'exercice précédent.
 1. Dans votre programme, ouvrez le fichier créé à l'exercice précédent en mode ajout (*append*).
 3. Ajoutez deux nouveaux noms d’enfants au fichier à l'aide d'une boucle `for`.
 4. Validez manuellement le résultat.
 
 ✅ **Exemple Console** :
 ```
-Entrez le nom de l'enfant 5 : Maximus Decimus Meridius
-Entrez le nom de l'enfant 6 : Séraphin
+Entrez le nom de l'enfant 1 : Maximus Decimus Meridius
+Entrez le nom de l'enfant 2 : Séraphin
 Les noms ont été ajoutés avec succès.
 ```
 
