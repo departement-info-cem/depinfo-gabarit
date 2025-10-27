@@ -68,12 +68,12 @@ Console.WriteLine("Les noms ont été écrits avec succès.");
 ## 🟡 Exercice 4 — L’ajout surprise 🎁
 
 ```csharp
+Console.Write("Entrez un nom de fichier (avec l'extension .txt) : ");
+string nomFichier = Console.ReadLine();
+
+StreamWriter fichierExistant = new StreamWriter($"C:\\EspaceLabo\\{nomFichier}", true);
 string nomEnfant;
-int nbEnfants = 4;
-
-StreamWriter fichierExistant = new StreamWriter("C:\\EspaceLabo\\MiniMoi.txt", true);
-
-for (int i = nbEnfants + 1; i <=  nbEnfants + 2; i++)
+for (int i = 0; i < 2; i++)
 {
     Console.Write("Entrez le nom de l'enfant {0} : ", i);
     nomEnfant = Console.ReadLine();
