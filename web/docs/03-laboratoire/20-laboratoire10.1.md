@@ -55,7 +55,7 @@ Jamil,92
 David,76
 Tommy,95
 Pierre-Paul,84
-Jean-Michel, 59
+Jean-Michel,59
 Philippe,100
 ```
 
@@ -122,7 +122,7 @@ int[,] matrice = {
 };
 ```
 
-2. Écrire cette matrice dans un fichier `matrice.csv` (une ligne par rangée) sans oublier de séparer chaque élément par **une vigule**.
+2. Faites le code afin d'écrire cette matrice dans un fichier `matrice.csv` (une ligne par rangée) sans oublier de séparer chaque élément par **une vigule**.
 
 ⚠️ **Votre programme doit pouvoir fonctionner avec des matrices de taille différente !**
 
