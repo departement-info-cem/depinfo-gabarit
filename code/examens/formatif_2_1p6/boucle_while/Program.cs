@@ -29,14 +29,17 @@
                  Exemple d'itérations (pour n = 13) :
                 
                  --------------------------------------------------------------------------------------------------
-                 | Itération | a (Fi-2) | b (Fi-1) | valeurCourante (Fi) | Opérations effectuées                |
+                 | Position dans | Itération | Valeur de a | Valeur de b  | Résultat | Opérations effectuées      |
+                 | la suite      |           | (Fi-2)      | (Fi-1)       | (Fi)     |                            |
                  --------------------------------------------------------------------------------------------------
-                 |     1     | 0        | 1        | 1                   | Fi = a + b = 0 + 1 = 1               |
-                 |     2     | 1        | 1        | 2                   | Fi = a + b = 1 + 1 = 2               |
-                 |     3     | 1        | 2        | 3                   | Fi = a + b = 1 + 2 = 3               |
-                 |     4     | 2        | 3        | 5                   | ...                                  |
-                 |     5     | 3        | 5        | 8                   | ...                                  |
-                 |     6     | 5        | 8        | 13                  | On a Fi = n, position = 7            |
+                 |       0       |     -     |    -        |     -        | 0        | a initialisé à 0           |
+                 |       1       |     -     |    -        |     0        | 1        | b initialisé à 1           |                 
+                 |       2       |     1     |    0        |     1        | 1        | Fi = a + b = 0 + 1 = 1     |
+                 |       3       |     2     |    1        |     1        | 2        | Fi = a + b = 1 + 1 = 2     |
+                 |       4       |     3     |    1        |     2        | 3        | Fi = a + b = 1 + 2 = 3     |
+                 |       5       |     4     |    2        |     3        | 5        | ...                        |
+                 |       6       |     5     |    3        |     5        | 8        | ...                        |
+                 |       7       |     6     |    5        |     8        | 13       | On a Fi = n, position = 7  |
                  --------------------------------------------------------------------------------------------------
 
                 Résultat final : la position de 13 dans la suite de Fibonacci est 7.
