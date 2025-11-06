@@ -54,9 +54,9 @@ Vous avez le droit à :
 
 L’examen comporte trois (3) questions. 
 
-- Q1 : Utilisation de la structure conditionnelle switch case ( % ) 
-- Q2 : Utilisation de la structure itérative while ( % )  
-- Q3 : Utilisation des boucles (imbriquées) avec des tableau 1D et 2D ( % )   
+- Q1 : Utilisation de la structure conditionnelle switch case (10 pts)
+- Q2 : Utilisation de la structure itérative while (10 pts)
+- Q3 : Utilisation des boucles (imbriquées) avec des tableau 1D et 2D (15 pts)
 
 
 **Critères d’évaluation** 
