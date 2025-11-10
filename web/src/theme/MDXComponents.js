@@ -7,6 +7,7 @@ import GHCode from "@site/src/components/GHCode";
 import MainDocsGrid from "@site/src/components/MainDocsGrid";
 import MainDocsCalendar from "@site/src/components/MainDocsCalendar";
 import DocsViewer from "@site/src/components/DocsViewer";
+import GithubDownload from "@site/src/components/GithubDownload";
 
 export default {
   ...MDXComponents,
@@ -18,4 +19,5 @@ export default {
   MainDocsGrid,
   MainDocsCalendar,
   DocsViewer,
+  GithubDownload,
 };
