@@ -1,0 +1,24 @@
+{
+    // Utilisez IntelliSense pour en savoir plus sur les attributs possibles.
+    // Pointez pour afficher la description des attributs existants.
+    // Pour plus d'informations, visitez : https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Docusaurus Start (default)",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/web",
+            "program": "${workspaceFolder}/web/node_modules/@docusaurus/core/bin/docusaurus.mjs",
+            "args": ["start"]
+        },
+        {
+            "name": "Docusaurus Start (port 8080)",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/web",
+            "program": "${workspaceFolder}/web/node_modules/@docusaurus/core/bin/docusaurus.mjs",
+            "args": ["start", "--port=8080"]
+        },
+    ]
+}
