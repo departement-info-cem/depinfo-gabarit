@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import { useColorMode } from "@docusaurus/theme-common";
 import styles from "./WeeklySchedule.module.css";
@@ -96,6 +96,78 @@ export default function WeeklySchedule({
   const [scheduleData, setScheduleData] = useState<WeeklyScheduleData | null>(data || null);
   const [error, setError] = useState<string | null>(null);
   const { colorMode } = useColorMode();
+  const scheduleRef = useRef<HTMLDivElement>(null);
+
+  const handlePrint = () => {
+    const el = scheduleRef.current;
+    if (!el) return;
+
+    const rootCss = getComputedStyle(document.documentElement);
+    const cssVarsContent = [
+      "--ifm-color-emphasis-300",
+      "--ifm-color-emphasis-200",
+      "--ifm-color-emphasis-700",
+      "--ifm-background-surface-color",
+      "--ifm-color-primary",
+      "--ifm-color-primary-lightest",
+      "--ifm-font-color-base",
+      "--ifm-font-family-base",
+      "--ifm-font-size-base",
+    ]
+      .map((v) => `${v}: ${rootCss.getPropertyValue(v).trim() || "initial"};`)
+      .join(" ");
+
+    const styleLinks = Array.from(
+      document.querySelectorAll<HTMLLinkElement>('link[rel="stylesheet"]')
+    )
+      .map((l) => `<link rel="stylesheet" href="${l.href}">`)
+      .join("\n");
+
+    // Zone utile : 11po - 2 × 0.4po = 10.2po, 8.5po - 2 × 0.4po = 7.7po à 96 dpi
+    const usableW = Math.round((11 - 0.8) * 96);
+    const usableH = Math.round((8.5 - 0.8) * 96);
+
+    const win = window.open("", "_blank", `width=${usableW + 40},height=${usableH + 120}`);
+    if (!win) return;
+
+    const titleHtml = title
+      ? `<h2 style="margin:0 0 0.4rem 0;font-size:1rem;font-weight:600;font-family:sans-serif;">${title}</h2>`
+      : "";
+
+    win.document.write(`<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  ${styleLinks}
+  <style>
+    :root { ${cssVarsContent} }
+    @page { size: 11in 8.5in; margin: 0.4in; }
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; background: white; width: ${usableW}px; }
+    [class*="schedule"] { overflow: visible !important; }
+    [class*="headerRow"] { position: static !important; }
+    [class*="dayColumn"] { background: none !important; }
+    [class*="eventBox"] { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  </style>
+</head>
+<body>
+  ${titleHtml}
+  <div>${el.outerHTML}</div>
+  <script>
+    window.onload = function() {
+      var totalH = document.body.scrollHeight;
+      var totalW = document.body.scrollWidth;
+      var scale = Math.min(${usableW} / totalW, ${usableH} / totalH, 1);
+      if (scale < 1) {
+        document.body.style.zoom = scale.toFixed(4);
+      }
+      setTimeout(function() { window.print(); window.close(); }, 300);
+    };
+  <\/script>
+</body>
+</html>`);
+    win.document.close();
+  };
   const baseDataUrl = useBaseUrl(dataUrl.startsWith("/") ? dataUrl : `/${dataUrl}`);
   const resolvedDataUrl = /^https?:\/\//i.test(dataUrl) ? dataUrl : baseDataUrl;
 
@@ -216,9 +288,15 @@ export default function WeeklySchedule({
 
   return (
     <section className={styles.wrapper}>
-      {title ? <h3 className={styles.title}>{title}</h3> : null}
+      <div className={styles.topBar}>
+        {title ? <h3 className={styles.title}>{title}</h3> : <span />}
+        <button type="button" className={styles.printButton} onClick={handlePrint}>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+          Imprimer
+        </button>
+      </div>
 
-      <div className={styles.schedule}>
+      <div ref={scheduleRef} className={styles.schedule}>
         <div
           className={styles.headerRow}
           style={{ gridTemplateColumns: columnTemplate, minWidth: gridMinWidth }}
