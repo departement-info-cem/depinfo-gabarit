@@ -1,0 +1,135 @@
+.wrapper {
+  margin: 1.25rem 0;
+}
+
+.title {
+  margin: 0 0 0.75rem;
+  font-size: 1.1rem;
+}
+
+.schedule {
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 10px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  background: var(--ifm-background-surface-color);
+  user-select: none;
+}
+
+.headerRow {
+  display: grid;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: var(--ifm-background-surface-color);
+  border-bottom: 1px solid var(--ifm-color-emphasis-300);
+}
+
+.corner {
+  border-right: 1px solid var(--ifm-color-emphasis-300);
+  min-height: 42px;
+}
+
+.dayHeader {
+  padding: 0.65rem 0.5rem;
+  text-align: center;
+  font-weight: 600;
+  border-right: 1px solid var(--ifm-color-emphasis-300);
+}
+
+.dayHeader:last-child {
+  border-right: none;
+}
+
+.bodyRow {
+  display: grid;
+}
+
+.timeColumn {
+  position: relative;
+  border-right: 1px solid var(--ifm-color-emphasis-300);
+}
+
+.timeLabel {
+  position: absolute;
+  transform: translateY(-45%);
+  left: 0;
+  right: 0;
+  padding-right: 0.5rem;
+  text-align: right;
+  font-size: 0.75rem;
+  color: var(--ifm-color-emphasis-700);
+  line-height: 1;
+}
+
+.dayColumn {
+  position: relative;
+  border-right: 1px solid var(--ifm-color-emphasis-300);
+  background: linear-gradient(
+    to bottom,
+    color-mix(in srgb, var(--ifm-color-primary) 5%, transparent),
+    transparent 24%
+  );
+}
+
+.dayColumn:last-child {
+  border-right: none;
+}
+
+.timeLine {
+  position: absolute;
+  left: 0;
+  right: 0;
+  border-top: 1px dashed var(--ifm-color-emphasis-300);
+  pointer-events: none;
+}
+
+.eventBox {
+  position: absolute;
+  left: 0.2rem;
+  right: 0.3rem;
+  border-radius: 8px;
+  padding: 0.35rem 0.45rem;
+  border: 1px solid color-mix(in srgb, currentColor 45%, transparent);
+  border-left-width: 6px;
+  box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.eventTitle {
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.eventContent {
+  min-height: 0;
+}
+
+.eventMeta {
+  margin-top: 0.15rem;
+  font-size: 0.72rem;
+  line-height: 1.2;
+}
+
+.eventTime {
+  margin-top: auto;
+  text-align: right;
+  font-size: 0.72rem;
+  opacity: 0.85;
+}
+
+.loading,
+.error {
+  padding: 0.7rem;
+  border-radius: 8px;
+  border: 1px solid var(--ifm-color-emphasis-300);
+}
+
+.error {
+  border-color: var(--ifm-color-danger);
+  color: var(--ifm-color-danger-dark);
+}
+

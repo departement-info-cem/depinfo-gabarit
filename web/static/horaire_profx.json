@@ -1,0 +1,176 @@
+{
+  "name": "Professeur X",
+  "startHour": "08:00",
+  "endHour": "18:00",
+  "slotMinutes": 60,
+  "days": ["lundi", "mardi", "mercredi", "jeudi", "vendredi"],
+  "categories": {
+    "blue": {
+      "backgroundColor": "#dbeafe",
+      "textColor": "#1e3a8a",
+      "darkBackgroundColor": "#1e3a8a",
+      "darkTextColor": "#dbeafe"
+    },
+    "yellow": {
+      "backgroundColor": "#fef3c7",
+      "textColor": "#78350f",
+      "darkBackgroundColor": "#7c5e00",
+      "darkTextColor": "#fff4cc"
+    },
+    "green": {
+      "backgroundColor": "#dcfce7",
+      "textColor": "#14532d",
+      "darkBackgroundColor": "#14532d",
+      "darkTextColor": "#dcfce7"
+    },
+    "red": {
+      "backgroundColor": "#fce7f3",
+      "textColor": "#831843",
+      "darkBackgroundColor": "#831843",
+      "darkTextColor": "#fce7f3"
+    },
+    "purple": {
+      "backgroundColor": "#ede9fe",
+      "textColor": "#5b21b6",
+      "darkBackgroundColor": "#5b21b6",
+      "darkTextColor": "#ede9fe"
+    },
+    "orange": {
+      "backgroundColor": "#ffedd5",
+      "textColor": "#9a3412",
+      "darkBackgroundColor": "#9a3412",
+      "darkTextColor": "#ffedd5"
+    },
+    "gray": {
+      "backgroundColor": "#f3f4f6",
+      "textColor": "#374151",
+      "darkBackgroundColor": "#374151",
+      "darkTextColor": "#f3f4f6"
+    }
+  },
+  "events": [
+    {
+      "id": "1a6-1010-t",
+      "day": "mardi",
+      "start": "12:10",
+      "end": "15:00",
+      "title": "Programmation INTERCAL",
+      "courseCode": "420-1A6-EM",
+      "courseGroup": "1010",
+      "room": "D0602",
+      "category": "blue"
+    },
+    {
+      "id": "1a6-1020-t",
+      "day": "mardi",
+      "start": "15:10",
+      "end": "18:00",
+      "title": "Programmation INTERCAL",
+      "courseCode": "420-1A6-EM",
+      "courseGroup": "1020",
+      "room": "D0602",
+      "category": "blue"
+    },
+    {
+      "id": "1a6-1010-0",
+      "day": "jeudi",
+      "start": "8:10",
+      "end": "11:00",
+      "title": "Programmation INTERCAL",
+      "courseCode": "420-1A6-EM",
+      "courseGroup": "1020",
+      "room": "D0602",
+      "category": "blue"
+    },
+    {
+      "id": "1a6-1020-l",
+      "day": "jeudi",
+      "start": "12:10",
+      "end": "15:00",
+      "title": "Programmation INTERCAL",
+      "courseCode": "420-1A6-EM",
+      "courseGroup": "1020",
+      "room": "D0602",
+      "category": "blue"
+    },
+    {
+      "id": "3z4-1010-t",
+      "day": "lundi",
+      "start": "15:10",
+      "end": "17:00",
+      "title": "Introduction à TempleOS",
+      "courseCode": "420-3Z4-EM",
+      "courseGroup": "1010",
+      "room": "D0704",
+      "category": "yellow"
+    },
+    {
+      "id": "3z4-1020-t",
+      "day": "lundi",
+      "start": "13:10",
+      "end": "15:00",
+      "title": "Introduction à TempleOS",
+      "courseCode": "420-3Z4-EM",
+      "courseGroup": "1020",
+      "room": "D0704",
+      "category": "yellow"
+    },
+    {
+      "id": "3z4-1010-l",
+      "day": "mercredi",
+      "start": "8:10",
+      "end": "10:00",
+      "title": "Introduction à TempleOS",
+      "courseCode": "420-3Z4-EM",
+      "courseGroup": "1010",
+      "room": "D0704",
+      "category": "yellow"
+    },
+    {
+      "id": "3z4-1020-l",
+      "day": "mercredi",
+      "start": "10:10",
+      "end": "12:00",
+      "title": "Introduction à TempleOS",
+      "courseCode": "420-3Z4-EM",
+      "courseGroup": "1020",
+      "room": "D0704",
+      "category": "yellow"
+    },
+    {
+      "id": "dispo-cai-1",
+      "day": "lundi",
+      "start": "10:10",
+      "end": "12:00",
+      "title": "Centre d'aide en informatique",
+      "room": "D0008",
+      "category": "green"
+    },
+    {
+      "id": "dispo-bur-1",
+      "day": "mardi",
+      "start": "10:10",
+      "end": "11:00",
+      "title": "Disponibilité à mon bureau",
+      "room": "E210",
+      "category": "green"
+    },
+    {
+      "id": "dispo-bur-2",
+      "day": "jeudi",
+      "start": "17:10",
+      "end": "18:00",
+      "title": "Disponibilité à mon bureau",
+      "room": "E210",
+      "category": "green"
+    },
+    {
+      "id": "reunion-dep",
+      "day": "mercredi",
+      "start": "12:30",
+      "end": "14:00",
+      "title": "Réunion départementale",
+      "category": "gray"
+    }
+  ]
+}
