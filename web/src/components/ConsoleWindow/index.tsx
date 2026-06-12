@@ -1,4 +1,6 @@
 import React, { ReactNode } from "react";
+import { Highlight, themes as prismThemes } from "prism-react-renderer";
+import type { Language } from "prism-react-renderer";
 import styles from "./ConsoleWindow.module.css";
 
 interface ConsoleWindowProps {
@@ -10,6 +12,7 @@ interface ConsoleWindowProps {
   foregroundColor?: string;
   titleBackgroundColor?: string;
   titleForegroundColor?: string;
+  language?: string;
 }
 
 function toPlainText(node: ReactNode): string {
@@ -72,15 +75,19 @@ export default function ConsoleWindow({
   foregroundColor = "#fff",
   titleBackgroundColor = "#121212",
   titleForegroundColor = "#f0f0f0",
+  language,
 }: ConsoleWindowProps): React.ReactElement {
   const rawContent = text ?? toPlainText(children);
   const content = normalizeConsoleText(rawContent);
+
+  const prismTheme = prismThemes.vsDark;
+
   const style = {
     "--consolewin-bg": backgroundColor,
     "--consolewin-fg": foregroundColor,
     "--consolewin-title-bg": titleBackgroundColor,
     "--consolewin-title-fg": titleForegroundColor,
-    "--consolewin-nocopy": noCopy == "true" ? 'none' : 'text',
+    "--consolewin-nocopy": noCopy == "true" ? "none" : "text",
   } as React.CSSProperties;
 
   return (
@@ -91,9 +98,29 @@ export default function ConsoleWindow({
         </header>
       ) : null}
 
-      <pre className={styles.console}>
-        <code>{content}</code>
-      </pre>
+      {language ? (
+        <Highlight
+          code={content}
+          language={language as Language}
+          theme={prismTheme}
+        >
+          {({ tokens, getLineProps, getTokenProps }) => (
+            <pre className={styles.console}>
+              {tokens.map((line, i) => (
+                <div key={i} {...getLineProps({ line })}>
+                  {line.map((token, key) => (
+                    <span key={key} {...getTokenProps({ token })} />
+                  ))}
+                </div>
+              ))}
+            </pre>
+          )}
+        </Highlight>
+      ) : (
+        <pre className={styles.console}>
+          <code>{content}</code>
+        </pre>
+      )}
     </section>
   );
 }
