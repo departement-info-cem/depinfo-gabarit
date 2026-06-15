@@ -28,6 +28,12 @@ hide_table_of_contents: true
         component: <MainDocsCalendar professorName="Prof 2" />, // Doit matcher le nom du professeur qui est dans l'attribut "calendrier" des cours qui sont dans sidebar.js
     },
     //* Ajouter d'autres enseignants ici. Voir sidebar.js pour configurer les calendriers.
+    {
+        id: "horaire-profx",
+        label: "Horaire Prof X",  // Modifier pour le nom de l'enseignant
+        icon: "🎈",
+        component: <WeeklySchedule title="Professeur X" dataUrl="/horaire_profx.json" />
+    },
     ]}
     defaultTabId="grid"
 />

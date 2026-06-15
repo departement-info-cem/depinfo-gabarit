@@ -7,6 +7,8 @@ import GHCode from "@site/src/components/GHCode";
 import MainDocsGrid from "@site/src/components/MainDocsGrid";
 import MainDocsCalendar from "@site/src/components/MainDocsCalendar";
 import DocsViewer from "@site/src/components/DocsViewer";
+import ConsoleWindow from "@site/src/components/ConsoleWindow";
+import WeeklySchedule from "@site/src/components/WeeklySchedule";
 
 export default {
   ...MDXComponents,
@@ -18,4 +20,6 @@ export default {
   MainDocsGrid,
   MainDocsCalendar,
   DocsViewer,
+  ConsoleWindow,
+  WeeklySchedule
 };
