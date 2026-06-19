@@ -19,8 +19,8 @@ jobs:
           node-version: 20
           cache: npm
       - name: Installer les dépendances
-        working-directory: ./web
+        working-directory: ./
         run: npm ci
       - name: Build du site
-        working-directory: ./web
+        working-directory: ./
         run: npm run build

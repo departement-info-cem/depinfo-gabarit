@@ -18,13 +18,13 @@ jobs:
           cache: npm
 
       - name: Installer les dépendances
-        working-directory: ./web
+        working-directory: ./
         run: npm ci
       - name: Build du site
-        working-directory: ./web
+        working-directory: ./
         run: npm run build
       - name: Corriger les permissions
-        working-directory: ./web/build
+        working-directory: ./build
         run: |
           chmod -c -R +rX "./" | while read line; do
             echo "::warning title=Invalid file permissions automatically fixed::$line"
@@ -32,7 +32,7 @@ jobs:
       - name: Téléverser l'artéfact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./web/build
+          path: ./build
   deploy:
     name: Déployer le site
     needs: build
