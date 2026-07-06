@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import CodeBlock from "@theme/CodeBlock";
 import { Line } from "./line";
+import style from "./GHCode.module.css";
 
 export default function GHCode({
   language,
@@ -11,6 +12,7 @@ export default function GHCode({
   endLine,
   showLineNumber = false,
   branch = "main",
+  readonly = false,
   ignore,
 }: {
   language?: string;
@@ -21,6 +23,7 @@ export default function GHCode({
   startLine?: number;
   endLine?: number;
   branch?: string;
+  readonly?: boolean;
   ignore?: string;
 }) {
   const [code, setCode] = useState(null);
@@ -65,7 +68,7 @@ export default function GHCode({
   );
 
   return (
-    <CodeBlock showLineNumbers={showLineNumber} language={language}>
+    <CodeBlock showLineNumbers={showLineNumber} language={language} className={readonly ? style.readonly : ""}>
       {lines.map((line: Line) => line.code).join("\n")}
     </CodeBlock>
   );

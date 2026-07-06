@@ -1,0 +1,7 @@
+.readonly button {
+  display: none;
+}
+
+.readonly code {
+  user-select: none;
+}
