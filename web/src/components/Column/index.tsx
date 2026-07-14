@@ -24,7 +24,6 @@ export default function Column({
       className={className}
       style={{
         display: vCenter ? "flex" : "block",
-        alignItems: vCenter ? "center" : "flex-start",
       }}
     >
       {children}
