@@ -1,5 +1,5 @@
 import React, { JSX, ReactNode } from "react";
-import "bootstrap/dist/css/bootstrap-grid.min.css";
+import "./styles.css";
 
 export default function Column({
   children,
@@ -10,10 +10,18 @@ export default function Column({
   size?: number;
   vCenter?: boolean;
 }): JSX.Element {
-  const strSize = size != null ? "col-" + size : "col";
+  const normalizedSize =
+    size != null && Number.isInteger(size) && size >= 1 && size <= 12
+      ? size
+      : undefined;
+  const className =
+    normalizedSize != null
+      ? `depinfo-col depinfo-col-${normalizedSize}`
+      : "depinfo-col";
+
   return (
     <div
-      className={strSize}
+      className={className}
       style={{
         display: vCenter ? "flex" : "block",
         alignItems: vCenter ? "center" : "flex-start",
