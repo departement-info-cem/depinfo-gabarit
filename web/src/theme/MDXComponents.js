@@ -1,4 +1,5 @@
 import MDXComponents from "@theme-original/MDXComponents";
+import Image from '@theme/IdealImage';
 import Column from "@site/src/components/Column";
 import Highlight from "@site/src/components/Highlight";
 import Row from "@site/src/components/Row";
@@ -12,6 +13,7 @@ import WeeklySchedule from "@site/src/components/WeeklySchedule";
 
 export default {
   ...MDXComponents,
+  Image,
   Column,
   Highlight,
   Row,

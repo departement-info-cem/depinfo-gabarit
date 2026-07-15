@@ -52,7 +52,10 @@ const config = {
     ],
   ],
 
-  plugins: [require.resolve("./plugins/docs-metadata")],
+  plugins: [
+    '@docusaurus/plugin-ideal-image',
+    require.resolve("./plugins/docs-metadata")
+  ],
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
