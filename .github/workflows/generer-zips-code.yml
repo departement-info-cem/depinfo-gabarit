@@ -3,6 +3,8 @@ name: Générer les zips de code
 on:
   push:
     branches: [main]
+    paths:
+      - 'code/**'
 
 jobs:
   zip:
