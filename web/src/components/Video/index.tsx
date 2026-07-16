@@ -1,4 +1,4 @@
-import React from "react";
+import React, { JSX } from "react";
 import ReactPlayer from 'react-player'
 import styles from './style.module.css'
 
