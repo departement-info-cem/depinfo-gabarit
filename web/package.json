@@ -49,5 +49,8 @@
   },
   "engines": {
     "node": ">=16.14"
+  },
+  "allowScripts": {
+    "sharp@0.32.6": true
   }
 }
