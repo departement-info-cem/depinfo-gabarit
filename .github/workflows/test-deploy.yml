@@ -4,6 +4,16 @@ on:
   pull_request:
     branches:
       - main
+    paths:
+      - 'web/**'
+      - '.github/workflows/test-deploy.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: test-build-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
 
 jobs:
   test-build:

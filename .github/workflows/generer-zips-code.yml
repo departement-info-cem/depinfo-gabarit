@@ -6,6 +6,13 @@ on:
     paths:
       - 'code/**'
 
+permissions:
+  contents: write
+
+concurrency:
+  group: zip-release-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   zip:
     runs-on: ubuntu-latest
