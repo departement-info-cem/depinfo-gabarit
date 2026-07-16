@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React, { JSX, ReactNode } from "react";
 
 export default function NonVoyant({ children }: { children: ReactNode }): JSX.Element {
   return (
