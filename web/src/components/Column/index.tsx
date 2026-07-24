@@ -7,12 +7,19 @@ export default function Column({
   vCenter = false,
 }: {
   children: ReactNode;
-  size?: number;
+  size?: number | string;
   vCenter?: boolean;
 }): JSX.Element {
+  let parsedSize: number | undefined;
+  if (typeof size === "number") {
+    parsedSize = size;
+  } else if (typeof size === "string" && size.trim() !== "") {
+    const numericSize = Number(size);
+    parsedSize = Number.isFinite(numericSize) ? numericSize : undefined;
+  }
   const normalizedSize =
-    size != null && Number.isInteger(size) && size >= 1 && size <= 12
-      ? size
+    parsedSize != null && Number.isInteger(parsedSize) && parsedSize >= 1 && parsedSize <= 12
+      ? parsedSize
       : undefined;
   const className =
     normalizedSize != null
