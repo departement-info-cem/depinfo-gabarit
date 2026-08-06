@@ -34,6 +34,25 @@ export default function MainDocsCalendar({
   const history = useHistory();
   const baseUrl = useBaseUrl("/");
 
+  const resolveDocTitle = (doc: any): string => {
+    const frontmatterTitle =
+      typeof doc?.title === "string" && doc.title.trim().length > 0
+        ? doc.title.trim()
+        : undefined;
+    const sidebarTitle =
+      typeof doc?._sidebarLabel === "string" &&
+      doc._sidebarLabel.trim().length > 0
+        ? doc._sidebarLabel.trim()
+        : undefined;
+    const markdownTitle =
+      typeof doc?._documentTitle === "string" &&
+      doc._documentTitle.trim().length > 0
+        ? doc._documentTitle.trim()
+        : undefined;
+
+    return frontmatterTitle || sidebarTitle || markdownTitle || doc?.id || "";
+  };
+
   // Fonction pour créer un hash simple d'une chaîne
   const simpleHash = (str: string): number => {
     let hash = 0;
@@ -113,7 +132,7 @@ export default function MainDocsCalendar({
           const [groupe, date] = Object.entries(groupeObj)[0];
           events.push({
             id: doc.id, // Utiliser directement l'ID du document
-            title: groupe + " - " + (doc?.title || doc?._sidebarLabel || doc?.id),
+            title: `${groupe} - ${resolveDocTitle(doc)}`,
             description: doc?.description || "",
             date: date as string,
             className: doc._sidebarClassName,

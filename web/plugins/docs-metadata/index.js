@@ -22,6 +22,17 @@ function extractFrontmatter(content) {
 }
 
 /**
+ * Extrait le premier en-tete Markdown de niveau 1 (# Titre) hors frontmatter.
+ * @param {string} content
+ * @returns {string|undefined}
+ */
+function extractFirstMarkdownTitle(content) {
+  const withoutFrontmatter = content.replace(/^---[\s\S]*?---\s*/, "");
+  const match = withoutFrontmatter.match(/^#\s+(.+)$/m);
+  return match ? match[1].trim() : undefined;
+}
+
+/**
  * Retourne le chemin absolu du fichier docsMetadata.json dans static/
  * @returns {string}
  */
@@ -42,11 +53,12 @@ function getAllDocsMetadata({ docsDir }) {
     if (!file.endsWith(".md")) continue;
     const docPath = path.join(docsDir, file);
     const content = fs.readFileSync(docPath, "utf-8");
-    const frontmatter = extractFrontmatter(content);
-    if (!frontmatter) continue;
+    const frontmatter = extractFrontmatter(content) || {};
+    const markdownTitle = extractFirstMarkdownTitle(content);
     docs.push({
       id: file.replace(/\.md$/, ""),
       ...frontmatter,
+      _documentTitle: markdownTitle,
     });
   }
   return docs;

@@ -65,6 +65,25 @@ export default function MainDocsGrid() {
     });
   };
 
+  const resolveDocTitle = (doc: any): string => {
+    const frontmatterTitle =
+      typeof doc?.title === "string" && doc.title.trim().length > 0
+        ? doc.title.trim()
+        : undefined;
+    const sidebarTitle =
+      typeof doc?._sidebarLabel === "string" &&
+      doc._sidebarLabel.trim().length > 0
+        ? doc._sidebarLabel.trim()
+        : undefined;
+    const markdownTitle =
+      typeof doc?._documentTitle === "string" &&
+      doc._documentTitle.trim().length > 0
+        ? doc._documentTitle.trim()
+        : undefined;
+
+    return frontmatterTitle || sidebarTitle || markdownTitle || doc?.id || "";
+  };
+
   return (
     <div
       className={
@@ -112,7 +131,7 @@ export default function MainDocsGrid() {
             }}
           >
             <div>
-              <h3>{doc?.title || doc?._sidebarLabel || doc?.id}</h3>
+              <h3>{resolveDocTitle(doc)}</h3>
               <p>{doc?.description || ""}</p>
             </div>
             <div>
