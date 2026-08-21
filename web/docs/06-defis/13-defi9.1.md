@@ -37,9 +37,9 @@ Ajoute la possibilité de créer un nouveau journal ou de choisir le journal exi
 - Le fichier est lisible avec un éditeur de texte.
 - Les informations demandées sont complètes et bien présentées.
 
-## Tests manuels à effectuer
+## Tests manuels et résultats attendus
 
-1. Ajoute une séance de course de `45` minutes, puis ouvre le fichier avec un éditeur de texte pour confirmer que la séance est présente.
-2. Ajoute une seconde séance de vélo de `30` minutes, puis vérifie que la première séance est toujours présente.
-3. Entre une durée de `-10` ou un texte à la place de la durée. Le programme doit signaler une donnée invalide.
-4. Vérifie que les informations de chaque séance sont séparées de façon lisible dans le fichier.
+1. Ajoute une séance de course de `45` minutes. **Résultat attendu :** le programme confirme l'écriture et le fichier contient la date, `Course`, `45` et ta note.
+2. Ajoute une seconde séance de vélo de `30` minutes. **Résultat attendu :** le fichier contient maintenant deux séances et la première séance est toujours présente.
+3. Entre une durée de `-10` ou un texte à la place de la durée. **Résultat attendu :** le programme signale une donnée invalide et n'ajoute pas de séance incorrecte dans le fichier.
+4. Ouvre le fichier avec un éditeur de texte. **Résultat attendu :** les informations de chaque séance sont séparées de façon lisible.

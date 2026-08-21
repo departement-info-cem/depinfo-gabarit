@@ -42,7 +42,7 @@ Crée une application console qui permet de :
 - Le programme est découpé en fonctions utiles.
 - Le palmarès demeure lisible avec plus de trois membres.
 
-## Tests manuels à effectuer
+## Tests manuels et résultats attendus
 
 Utilise temporairement les tableaux suivants :
 
@@ -51,11 +51,11 @@ Noms   : Amélie, Bilal, Chloé
 Points : 12, 19, 19
 ```
 
-Vérifie que :
+**Résultats attendus :**
 
 - la moyenne est d'environ `16,67` points ;
 - deux personnes atteignent un seuil de `15` points ;
 - le programme traite l'égalité entre Bilal et Chloé de la façon que tu as choisie ;
 - chaque nom est associé au bon nombre de points.
 
-Teste ensuite un tableau qui contient une seule personne.
+Teste ensuite un tableau qui contient une seule personne. **Résultat attendu :** cette personne est affichée comme première, sa moyenne est égale à son pointage et aucun autre nom n'apparaît.

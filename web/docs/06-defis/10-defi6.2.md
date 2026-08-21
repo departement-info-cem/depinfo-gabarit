@@ -44,7 +44,7 @@ Rangée 4 : O L O O L L
 - Les boucles parcourent toutes les lignes et toutes les colonnes.
 - Les messages sont clairs pour une personne qui ne voit pas le code.
 
-## Tests manuels à effectuer
+## Tests manuels et résultats attendus
 
 Avec le plan illustré dans l'exemple, vérifie les résultats suivants :
 
@@ -55,4 +55,4 @@ Avec le plan illustré dans l'exemple, vérifie les résultats suivants :
 | Sièges occupés à la rangée 2 | 3 |
 | Rangée avec le plus de sièges libres | Rangée 3 |
 
-Modifie ensuite tous les sièges en `O`. Le programme doit indiquer que la salle est complète.
+Modifie ensuite tous les sièges en `O`. **Résultat attendu :** le total de sièges libres est `0` et le programme indique que la salle est complète.

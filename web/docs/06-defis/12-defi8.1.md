@@ -42,7 +42,7 @@ Crée une application console qui permet, à partir d'un menu, de :
 - Le programme combine correctement les notions vues avant le TP2.
 - L'affichage reste clair pour une personne qui ne connaît pas les données de départ.
 
-## Tests manuels à effectuer
+## Tests manuels et résultats attendus
 
 Utilise temporairement les données suivantes :
 
@@ -53,11 +53,11 @@ Utilise temporairement les données suivantes :
 | Gamma | 8 | 16 | 12 |
 | Delta | 13 | 11 | 13 |
 
-Vérifie que :
+**Résultats attendus :**
 
 - Delta gagne avec `37` points ;
 - les meilleures notes des épreuves sont `15`, `16` et `14` ;
 - avec un seuil de `12`, Alpha, Bêta et Gamma sont signalés au moins une fois ;
 - le menu revient après chaque option.
 
-Teste aussi deux robots avec le même total afin de vérifier ton traitement des égalités.
+Teste aussi deux robots avec le même total. **Résultat attendu :** l'affichage traite l'égalité selon la règle que tu as choisie et ne présente pas de gagnant incorrect.

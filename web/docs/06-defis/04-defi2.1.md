@@ -43,7 +43,7 @@ Crée un programme qui demande l'âge de la personne et, lorsque nécessaire, si
 - Les cas impossibles sont traités avec un message compréhensible.
 - Le programme ne présente qu'un seul tarif par personne.
 
-## Tests manuels à effectuer
+## Tests manuels et résultats attendus
 
 | Âge | Carte étudiante | Résultat attendu |
 | ---: | --- | --- |
@@ -53,4 +53,4 @@ Crée un programme qui demande l'âge de la personne et, lorsque nécessaire, si
 | 20 | Non | 14 $ |
 | 72 | Oui | 9 $ |
 
-Teste aussi les âges `-1` et `150`. Ils doivent produire un message d'erreur plutôt qu'un tarif.
+Teste aussi les âges `-1` et `150`. **Résultat attendu :** un message d'erreur est affiché et aucun tarif n'est présenté.

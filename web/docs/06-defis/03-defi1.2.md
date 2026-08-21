@@ -40,11 +40,11 @@ Coût par personne     : 6,32 $
 - Le résumé est clair et les unités sont indiquées.
 - Les variables ont des noms représentatifs.
 
-## Tests manuels à effectuer
+## Tests manuels et résultats attendus
 
 | Distance aller-retour | Consommation | Prix par litre | Passagers | Résultat attendu |
 | ---: | ---: | ---: | ---: | --- |
 | 186 km | 8 L / 100 km | 1,70 $ | 4 | 14,88 L, environ 25,30 $ au total et 6,32 $ par personne |
 | 100 km | 6 L / 100 km | 1,50 $ | 2 | 6 L, 9,00 $ au total et 4,50 $ par personne |
 
-Vérifie aussi ce qui se passe si le nombre de passagers est `0`. Le programme ne doit pas effectuer une division par zéro.
+Entre ensuite `0` passager. **Résultat attendu :** le programme affiche un message indiquant que le nombre de passagers est invalide et ne tente pas de calculer un coût par personne.

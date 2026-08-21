@@ -41,7 +41,7 @@ Crée une application console qui lit ce fichier et affiche :
 - Le programme ne s'arrête pas brutalement à cause d'une ligne incorrecte.
 - Les résultats sont faciles à comprendre.
 
-## Tests manuels à effectuer
+## Tests manuels et résultats attendus
 
 Avec le fichier d'exemple, vérifie les résultats suivants :
 
@@ -53,4 +53,4 @@ Avec le fichier d'exemple, vérifie les résultats suivants :
 | Tâche la plus longue | Faire le laboratoire |
 | Tâches de 30 minutes ou plus | 2 |
 
-Ajoute ensuite une ligne incomplète, par exemple `Préparer mon sac;`, et vérifie que le programme la traite sans s'arrêter.
+Ajoute ensuite une ligne incomplète, par exemple `Préparer mon sac;`. **Résultat attendu :** le programme reste fonctionnel, n'ajoute pas cette ligne aux statistiques et indique le problème si tu as choisi d'afficher les erreurs.

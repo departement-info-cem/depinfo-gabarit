@@ -39,11 +39,11 @@ Choisis et affiche clairement la règle d'attribution des points. Par exemple, u
 - Les fonctions ont des responsabilités claires.
 - Le programme est compréhensible sans que son code soit expliqué ligne par ligne.
 
-## Tests manuels à effectuer
+## Tests manuels et résultats attendus
 
-- Entre `4` victoires, `1` match nul et `1` défaite : le total de matchs doit être `6`.
-- Entre `0` victoire, `0` match nul et `3` défaites : le pourcentage de victoire doit être `0 %`.
-- Entre `3` victoires, `0` match nul et `0` défaite : vérifie que le commentaire spécial pour une équipe invaincue apparaît si tu as réalisé cette bonification.
-- Entre une valeur négative pour une victoire, un match nul ou une défaite : le programme doit signaler le problème sans calculer de bilan.
+- Entre `4` victoires, `1` match nul et `1` défaite. **Résultat attendu :** le bilan affiche `6` matchs joués, le pourcentage correspondant et les points selon ta règle.
+- Entre `0` victoire, `0` match nul et `3` défaites. **Résultat attendu :** le bilan affiche `3` matchs et un pourcentage de victoire de `0 %`.
+- Entre `3` victoires, `0` match nul et `0` défaite. **Résultat attendu :** le bilan affiche `3` matchs; le commentaire pour une équipe invaincue apparaît si tu as réalisé cette bonification.
+- Entre une valeur négative pour une victoire, un match nul ou une défaite. **Résultat attendu :** le programme signale le problème et n'affiche aucun bilan.
 
 Vérifie les points selon la règle que tu as affichée dans ton programme.

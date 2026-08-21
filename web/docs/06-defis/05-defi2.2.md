@@ -37,7 +37,7 @@ Ajoute une promotion : la livraison devient gratuite à partir d'un montant mini
 - Le programme est organisé en fonctions cohérentes.
 - Les montants sont affichés avec deux décimales.
 
-## Tests manuels à effectuer
+## Tests manuels et résultats attendus
 
 Utilise les prix que tu as choisis dans ton programme, puis vérifie au minimum les situations suivantes :
 
@@ -45,4 +45,4 @@ Utilise les prix que tu as choisis dans ton programme, puis vérifie au minimum 
 - une grande pizza avec trois garnitures et une livraison ;
 - une commande dont le sous-total atteint le seuil de livraison gratuite, si tu as réalisé la bonification.
 
-Pour chaque cas, calcule d'abord le sous-total, les taxes et les frais à la main. Le total affiché par le programme doit correspondre à ton calcul.
+Pour chaque cas, calcule d'abord le sous-total, les taxes et les frais à la main. **Résultat attendu :** le reçu affiche ces quatre montants séparément et le total affiché correspond exactement à ton calcul.

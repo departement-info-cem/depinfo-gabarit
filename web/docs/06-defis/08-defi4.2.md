@@ -43,7 +43,7 @@ Permets à la personne qui utilise le programme de modifier une température ava
 - Les statistiques correspondent aux données.
 - Le programme reste correct si les températures changent.
 
-## Tests manuels à effectuer
+## Tests manuels et résultats attendus
 
 Avec le tableau proposé (`18, 21, 17, 23, 25, 20, 16`), vérifie les résultats suivants :
 
@@ -55,4 +55,4 @@ Avec le tableau proposé (`18, 21, 17, 23, 25, 20, 16`), vérifie les résultats
 | Journées de 20 °C ou plus | 4 |
 | Première journée la plus chaude | Jour 5 |
 
-Remplace ensuite toutes les températures par la même valeur, par exemple `20`. Vérifie que le minimum, le maximum et la moyenne sont alors identiques.
+Remplace ensuite toutes les températures par la même valeur, par exemple `20`. **Résultat attendu :** le minimum, le maximum et la moyenne affichent tous `20 °C`.

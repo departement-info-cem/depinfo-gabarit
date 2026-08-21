@@ -40,11 +40,11 @@ Tour    Distance cumulée
 - La distance cumulée et le total sont exacts.
 - Les données invalides sont signalées clairement.
 
-## Tests manuels à effectuer
+## Tests manuels et résultats attendus
 
 | Longueur d'un tour | Nombre de tours | Résultat attendu |
 | ---: | ---: | --- |
 | 400 m | 4 | Quatre lignes : 400 m, 800 m, 1200 m et 1600 m |
 | 250 m | 1 | Une seule ligne à 250 m |
 
-Teste également une longueur de tour de `0` et un nombre de tours négatif. Le programme doit les refuser.
+Teste également une longueur de tour de `0` et un nombre de tours négatif. **Résultat attendu :** le programme refuse la donnée et n'affiche aucun tableau d'entraînement.

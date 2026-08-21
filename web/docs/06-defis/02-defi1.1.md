@@ -48,8 +48,7 @@ Bonne première journée !
 - L'affichage est bien organisé et facile à lire.
 - Le programme démarre et se termine sans erreur.
 
-## Tests manuels à effectuer
+## Tests manuels et résultats attendus
 
-- Vérifie que les six informations demandées apparaissent à l'écran.
-- Vérifie que le titre et le message d'encouragement sont séparés des autres informations.
-- Modifie le nom et le groupe, puis vérifie que le billet reste bien aligné.
+- Lance le programme avec le nom `Alex Tremblay` et le groupe `1090`. **Résultat attendu :** les six informations demandées, le titre et le message d'encouragement apparaissent dans un seul billet lisible.
+- Modifie le nom pour `Mia` et le groupe pour `1080`. **Résultat attendu :** seules ces deux valeurs changent et le billet demeure bien aligné.
