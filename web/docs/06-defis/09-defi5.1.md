@@ -11,11 +11,11 @@ Le club de jeux du Cégep organise un tournoi de **Uno** de trois parties. Aprè
 
 ## Données de départ
 
-Utilise deux tableaux de même taille : un pour les noms et un pour le total de points au tournoi.
+Utilise deux tableaux de même taille : un pour les noms et un pour le total de points au tournoi. Initialise directement ces tableaux dans ton code; ne demande pas à la personne qui utilise le programme d'écrire les noms et les points dans la console.
 
-```text
-Noms   : Amélie, Bilal, Chloé
-Points : 12, 19, 19
+```csharp
+string[] noms = { "Amélie", "Bilal", "Chloé" };
+int[] points = { 12, 19, 19 };
 ```
 
 `Amélie` avec `12` points signifie qu'elle a accumulé 12 points dans ses trois parties.
@@ -49,7 +49,7 @@ Les noms sont des textes non vides. Les pointages sont des entiers de `0` ou plu
 
 ## Exemple de résultat
 
-**Données de départ :** noms `Amélie`, `Bilal`, `Chloé` et pointages `12`, `19`, `19`.
+**Tableaux initialisés dans le code :** noms `Amélie`, `Bilal`, `Chloé` et pointages `12`, `19`, `19`.
 
 ```text
 Palmarès du tournoi de Uno
@@ -69,7 +69,7 @@ Moyenne : 16,67 points
 
 ## Tests manuels et résultats attendus
 
-| Noms | Points | Résultat attendu |
-| --- | --- | --- |
-| `Amélie, Bilal, Chloé` | `12, 19, 19` | Moyenne : 16,67 points; 2 personnes atteignent 15 points; Bilal est premier, car il apparaît avant Chloé; chaque nom est associé au bon pointage. |
-| `Maya` | `8` | Maya est première; moyenne : 8 points; 0 personne atteint 15 points; aucun autre nom n'apparaît. |
+| Tableaux à initialiser dans le code | Résultat attendu |
+| --- | --- |
+| `noms = { "Amélie", "Bilal", "Chloé" }`<br />`points = { 12, 19, 19 }` | Moyenne : 16,67 points; 2 personnes atteignent 15 points; Bilal est premier, car il apparaît avant Chloé; chaque nom est associé au bon pointage. |
+| `noms = { "Maya" }`<br />`points = { 8 }` | Maya est première; moyenne : 8 points; 0 personne atteint 15 points; aucun autre nom n'apparaît. |
