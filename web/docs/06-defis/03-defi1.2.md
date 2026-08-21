@@ -3,59 +3,64 @@ sidebar_position: 3
 slug: /defis/defi-1-2
 ---
 
-# Défi 1.2 — Prévoir le coût d'un trajet
+# Défi 1.2 — Calculer le coût d'une impression
 
 ## Contexte
 
-Tu pars en voiture pour une activité à l'extérieur de Montréal. Avant de partir, tu veux prévoir combien le trajet coûtera en essence.
+Le comité étudiant prépare une activité et doit faire imprimer des affiches. L'imprimerie facture chaque page imprimée. Tu dois créer un petit programme qui calcule le coût de la commande.
 
-La distance demandée est la distance **aller seulement**, c'est-à-dire la distance entre le point de départ et la destination. Le programme doit la doubler pour calculer l'aller-retour. Le nombre de passagers représente les personnes qui se partagent le coût, conducteur ou conductrice comprise.
+Pour simplifier l'exercice, toutes les affiches ont le même nombre de pages et le prix par page est le même pour toute la commande. Les valeurs saisies seront valides : il n'est pas nécessaire de traiter les erreurs ou les cas particuliers.
 
 ## Besoins
 
-Crée une application console qui demande ces quatre informations : la distance aller en kilomètres, la consommation du véhicule en litres par 100 kilomètres, le prix d'un litre d'essence et le nombre de passagers. Elle doit ensuite calculer le coût total de l'aller-retour et afficher un résumé contenant au minimum :
+Ton application console doit demander :
 
-- la distance totale parcourue ;
-- la quantité d'essence nécessaire ;
-- le coût total de l'essence ;
-- le coût par personne, si les frais sont partagés.
+- le nombre d'affiches à imprimer ;
+- le nombre de pages par affiche ;
+- le prix d'une page.
+
+Elle doit ensuite afficher :
+
+- le nombre total de pages imprimées ;
+- le coût total de la commande.
 
 Utilise les calculs suivants :
 
-1. `distance aller-retour = distance aller × 2`;
-2. `litres nécessaires = distance aller-retour × consommation ÷ 100`;
-3. `coût total = litres nécessaires × prix par litre`;
-4. `coût par personne = coût total ÷ nombre de passagers`.
+1. `pages imprimées = nombre d'affiches × pages par affiche`;
+2. `coût total = pages imprimées × prix d'une page`.
 
 ## Contraintes
 
-- Utilise des variables de types appropriés.
-- Effectue les calculs avec des valeurs réelles lorsque nécessaire.
-- Affiche les montants avec deux chiffres après la virgule.
-- Le programme doit fonctionner avec au moins deux nombres différents de passagers.
-- Le nombre de passagers doit être au moins égal à 1.
+- Utilise des variables de types appropriés, notamment `int` pour les quantités et `double` pour le prix.
+- Utilise `Console.ReadLine()` et la conversion nécessaire pour lire les valeurs.
+- Affiche le prix avec deux chiffres après la virgule.
+- N'utilise pas encore de conditions, de boucles ou de fonctions : le défi porte sur les variables et les opérations.
 
 ## Exemple de résultat
 
+Avec `4` affiches, `2` pages par affiche et un prix de `0,15 $` par page :
+
 ```text
-Distance aller        : 93 km
-Distance aller-retour : 186 km
-Essence nécessaire    : 14,88 L
-Coût total            : 25,30 $
-Coût par personne     : 6,32 $
+Nombre d'affiches : 4
+Pages par affiche : 2
+Prix par page : 0,15 $
+
+Pages imprimées : 8
+Coût total : 1,20 $
 ```
 
 ## Critères de réussite
 
-- Les calculs sont cohérents avec les valeurs saisies.
-- Le résumé est clair et les unités sont indiquées.
-- Les variables ont des noms représentatifs.
+- Les trois valeurs sont demandées et conservées dans des variables.
+- Le nombre total de pages est exact.
+- Le coût total est exact.
+- Les unités et les montants sont clairement affichés.
 
 ## Tests manuels et résultats attendus
 
-| Distance aller | Consommation | Prix par litre | Passagers | Résultat attendu |
-| ---: | ---: | ---: | ---: | --- |
-| 93 km | 8 L / 100 km | 1,70 $ | 4 | 186 km aller-retour, 14,88 L, environ 25,30 $ au total et 6,32 $ par personne |
-| 50 km | 6 L / 100 km | 1,50 $ | 2 | 100 km aller-retour, 6 L, 9,00 $ au total et 4,50 $ par personne |
+| Affiches | Pages par affiche | Prix par page | Résultat attendu |
+| ---: | ---: | ---: | --- |
+| 4 | 2 | 0,15 $ | 8 pages et 1,20 $ |
+| 10 | 1 | 0,20 $ | 10 pages et 2,00 $ |
 
-Entre ensuite `0` passager. **Résultat attendu :** le programme affiche un message indiquant que le nombre de passagers est invalide et ne tente pas de calculer un coût par personne.
+Refais ensuite le premier test avec `2` affiches au lieu de `4`. **Résultat attendu :** le programme affiche `4` pages imprimées et un coût total de `0,60 $`.
