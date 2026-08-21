@@ -7,9 +7,7 @@ slug: /defis/defi-4-1
 
 ## Contexte
 
-Le comité d'accueil prépare des trousses pour les nouvelles personnes inscrites. Chaque trousse contient le même nombre d'articles. Le comité veut afficher le nombre d'articles préparés après chaque trousse afin de suivre sa progression.
-
-Chaque trousse contient le même nombre d'articles. Par exemple, avec `4` articles par trousse, la deuxième trousse correspond à `8` articles préparés au total, et non à `4` articles affichés une deuxième fois.
+Le comité d'accueil prépare des trousses pour les nouvelles personnes inscrites. Chaque trousse contient le même nombre d'articles. Le comité veut afficher le nombre d'articles préparés après chaque trousse afin de suivre sa progression. Par exemple, avec `4` articles par trousse, la deuxième trousse correspond à `8` articles préparés au total.
 
 ## Besoins
 
@@ -27,13 +25,15 @@ Le nombre d'articles par trousse et le nombre de trousses sont des entiers supé
 ## Notions à utiliser
 
 - boucle `for`;
-- variable d'accumulation ou calcul à partir de l'index de la boucle;
+- variable d'accumulation;
 - conditions déjà vues pour vérifier les valeurs positives.
 
 ## Contraintes
 
 - Utilise une boucle `for` pour produire le tableau.
+- Ajoute le nombre d'articles de chaque nouvelle trousse à une variable d'accumulation.
 - Les valeurs saisies doivent être positives.
+- Si une valeur est nulle ou négative, affiche `Les valeurs doivent être supérieures à 0.` et n'affiche pas le tableau.
 - La mise en forme doit permettre de lire facilement les colonnes.
 
 ## Exemple de résultat
@@ -46,6 +46,8 @@ Trousse    Articles cumulés
 2          8
 3          12
 4          16
+
+Total d'articles préparés : 16
 ```
 
 ## Critères de réussite
@@ -58,7 +60,7 @@ Trousse    Articles cumulés
 
 | Articles par trousse | Nombre de trousses | Résultat attendu |
 | ---: | ---: | --- |
-| 4 | 4 | Quatre lignes : 4, 8, 12 et 16 articles cumulés |
-| 6 | 1 | Une seule ligne à 6 articles cumulés |
-| 0 | 4 | Le programme refuse la donnée et n'affiche aucun tableau. |
-| 4 | -1 | Le programme refuse la donnée et n'affiche aucun tableau. |
+| 4 | 4 | Quatre lignes avec 4, 8, 12 et 16 articles cumulés, puis `Total d'articles préparés : 16`. |
+| 6 | 1 | Une ligne avec 6 articles cumulés, puis `Total d'articles préparés : 6`. |
+| 0 | 4 | `Les valeurs doivent être supérieures à 0.`; aucun tableau ni total n'est affiché. |
+| 4 | -1 | `Les valeurs doivent être supérieures à 0.`; aucun tableau ni total n'est affiché. |

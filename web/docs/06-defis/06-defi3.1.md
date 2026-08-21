@@ -17,7 +17,7 @@ Crée une application console qui demande le nom d'un atelier, le nombre de pers
 - le pourcentage de présence ;
 - un commentaire adapté à la participation.
 
-Le pourcentage de présence est calculé ainsi : nombre de personnes présentes divisé par le nombre total de personnes inscrites, multiplié par 100. Utilise les commentaires suivants : `Excellente participation` à partir de `90 %`, `Bonne participation` de `75 %` à `89,99 %` et `Participation limitée` sous `75 %`.
+Le pourcentage de présence est calculé ainsi : nombre de personnes présentes divisé par le nombre total de personnes inscrites, multiplié par 100. Utilise les commentaires suivants : `Excellente participation` pour `90 %` ou plus; `Bonne participation` pour `75 %` ou plus lorsque le premier cas ne s'applique pas; `Participation limitée` dans les autres cas.
 
 ## Valeurs à utiliser
 
@@ -42,6 +42,8 @@ Le nom de l'atelier est un texte non vide. Le nombre de personnes présentes et 
 
 ```text
 Atelier : Révision de C#
+Personnes présentes : 4
+Personnes absentes : 1
 Personnes inscrites : 5
 Présence : 80 %
 Commentaire : Bonne participation
@@ -57,6 +59,6 @@ Commentaire : Bonne participation
 
 | Nom de l'atelier | Présentes | Absentes | Résultat attendu |
 | --- | ---: | ---: | --- |
-| `Révision de C#` | 4 | 1 | 5 personnes inscrites, 80 % de présence et `Bonne participation`. |
-| `Aide aux devoirs` | 0 | 3 | 3 personnes inscrites, 0 % de présence et `Participation limitée`. |
-| `Préparation à l'examen` | 3 | 0 | 3 personnes inscrites, 100 % de présence et `Excellente participation`. |
+| `Révision de C#` | 4 | 1 | Les valeurs 4 présentes et 1 absente sont affichées, puis 5 personnes inscrites, 80 % et `Bonne participation`. |
+| `Aide aux devoirs` | 0 | 3 | Les valeurs 0 présente et 3 absentes sont affichées, puis 3 personnes inscrites, 0 % et `Participation limitée`. |
+| `Préparation à l'examen` | 3 | 0 | Les valeurs 3 présentes et 0 absente sont affichées, puis 3 personnes inscrites, 100 % et `Excellente participation`. |

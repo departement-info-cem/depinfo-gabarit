@@ -9,11 +9,11 @@ slug: /defis/defi-7-2
 
 Une borne libre-service aide les visiteurs à convertir rapidement des unités. Elle doit rester ouverte jusqu'à ce que la personne choisisse de quitter.
 
-Pour cet exercice, utilise ces taux fixes affichés dans le menu : `1 °C = 33,8 °F` selon la formule `F = C × 9 / 5 + 32`, `1 km = 0,621371 mile` et `1 $ CA = 0,72 $ US`. Le taux de change est volontairement fixé pour l'exercice et n'a pas besoin d'être mis à jour.
+Pour cet exercice, utilise la formule `F = C × 9 / 5 + 32`, ainsi que les taux fixes `1 km = 0,621371 mile` et `1 $ CA = 0,72 $ US`. Le taux de change est volontairement fixé pour l'exercice et n'a pas besoin d'être mis à jour.
 
 ## Besoins
 
-Crée une application console avec un menu qui offre au moins les choix suivants :
+Crée une application console avec exactement les choix suivants :
 
 1. convertir des degrés Celsius en degrés Fahrenheit ;
 2. convertir des kilomètres en miles ;
@@ -21,6 +21,8 @@ Crée une application console avec un menu qui offre au moins les choix suivants
 0. quitter le programme.
 
 Après chaque conversion, le menu doit être affiché de nouveau.
+
+Affiche chaque résultat avec deux décimales. Lorsqu'un choix, une valeur numérique ou une valeur positive attendue est invalide, affiche un message d'erreur, puis retourne au menu sans effectuer de conversion.
 
 ## Valeurs à utiliser
 
@@ -38,6 +40,7 @@ Le choix du menu est un entier de `0` à `3`. Pour Celsius, accepte un nombre d�
 - Utilise une boucle `while` ou `do while` pour répéter le programme.
 - Utilise `TryParse` afin de traiter les saisies non numériques sans faire planter le programme.
 - Affiche un message utile lorsqu'un choix n'existe pas.
+- Utilise des valeurs décimales dans la formule de température afin d'éviter une division entière.
 
 ## Exemple de résultat
 
@@ -51,7 +54,7 @@ Le choix du menu est un entier de `0` à `3`. Pour Celsius, accepte un nombre d�
 
 Votre choix : 1
 Température en Celsius : 25
-Résultat : 77 °F
+Résultat : 77,00 °F
 ```
 
 ## Critères de réussite
@@ -64,9 +67,10 @@ Résultat : 77 °F
 
 | Choix du menu | Valeur saisie | Résultat attendu |
 | ---: | --- | --- |
-| 1 | `0` | 32 °F |
-| 1 | `100` | 212 °F |
-| 2 | `10` | Environ 6,21 miles |
-| 3 | `100` | 72,00 $ US |
-| 1 | `bonjour` | Message de saisie invalide, puis nouvelle demande ou retour au menu. |
+| 1 | `0` | `Résultat : 32,00 °F`, puis retour au menu. |
+| 1 | `100` | `Résultat : 212,00 °F`, puis retour au menu. |
+| 2 | `10` | `Résultat : 6,21 miles`, puis retour au menu. |
+| 3 | `100` | `Résultat : 72,00 $ US`, puis retour au menu. |
+| 2 | `-4` | Message indiquant que la distance doit être positive ou nulle, puis retour au menu. |
+| 3 | `bonjour` | Message de saisie invalide, puis retour au menu sans résultat de conversion. |
 | 9, puis 0 | Aucune valeur de conversion | Message indiquant que le choix 9 est invalide; le menu est réaffiché; le programme se ferme seulement après le choix 0. |

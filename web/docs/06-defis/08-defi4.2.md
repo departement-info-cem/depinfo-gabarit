@@ -9,14 +9,6 @@ slug: /defis/defi-4-2
 
 Une station météo a enregistré les températures maximales des sept derniers jours, du jour 1 au jour 7. Tu dois produire un bilan simple de la semaine.
 
-## Données de départ
-
-Utilise un tableau de sept températures. Tu peux commencer avec ces données :
-
-```text
-18, 21, 17, 23, 25, 20, 16
-```
-
 ## Besoins
 
 Ton programme doit afficher :
@@ -29,7 +21,7 @@ Ton programme doit afficher :
 
 ## Valeurs à utiliser
 
-Utilise d'abord exactement le tableau suivant, dans cet ordre du jour 1 au jour 7 : `18, 21, 17, 23, 25, 20, 16`. Les températures sont des entiers en degrés Celsius.
+Utilise exactement le tableau suivant, dans cet ordre du jour 1 au jour 7 : `18, 21, 17, 23, 25, 20, 16`. Les températures sont des entiers en degrés Celsius. Affiche la moyenne avec deux décimales.
 
 ## Notions à utiliser
 
@@ -48,9 +40,17 @@ Utilise d'abord exactement le tableau suivant, dans cet ordre du jour 1 au jour 
 **Données de départ :** tableau de températures `18, 21, 17, 23, 25, 20, 16`.
 
 ```text
+Jour 1 : 18 °C
+Jour 2 : 21 °C
+Jour 3 : 17 °C
+Jour 4 : 23 °C
+Jour 5 : 25 °C
+Jour 6 : 20 °C
+Jour 7 : 16 °C
+
 Température minimale : 16 °C
 Température maximale : 25 °C
-Moyenne de la semaine : 20 °C
+Moyenne de la semaine : 20,00 °C
 Journées de 20 °C ou plus : 4
 Première journée la plus chaude : jour 5
 ```
@@ -65,5 +65,5 @@ Première journée la plus chaude : jour 5
 
 | Valeurs du tableau (jours 1 à 7) | Résultat attendu |
 | --- | --- |
-| `18, 21, 17, 23, 25, 20, 16` | Minimum : 16 °C; maximum : 25 °C; moyenne : 20 °C; 4 journées de 20 °C ou plus; première journée la plus chaude : jour 5. |
-| `20, 20, 20, 20, 20, 20, 20` | Minimum, maximum et moyenne : 20 °C; 7 journées de 20 °C ou plus; première journée la plus chaude : jour 1. |
+| `18, 21, 17, 23, 25, 20, 16` | Les sept lignes `Jour` sont affichées; minimum : 16 °C; maximum : 25 °C; moyenne : 20,00 °C; 4 journées de 20 °C ou plus; première journée la plus chaude : jour 5. |
+| `20, 20, 20, 20, 20, 20, 20` | Les sept journées affichent 20 °C; minimum et maximum : 20 °C; moyenne : 20,00 °C; 7 journées de 20 °C ou plus; première journée la plus chaude : jour 1. |

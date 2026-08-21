@@ -30,7 +30,7 @@ Pour la version de base, place dans des variables les valeurs de l'exemple : `Al
 
 ## Notions à utiliser
 
-- `Console.ReadLine()` et `Console.WriteLine()`;
+- `Console.WriteLine()`;
 - variables de type `string`;
 - concaténation de texte avec l'opérateur `+`.
 
@@ -38,7 +38,7 @@ Pour la version de base, place dans des variables les valeurs de l'exemple : `Al
 
 - Utilise uniquement ce qui a été vu dans les premiers pas en C#.
 - Le programme doit être lisible et chacune des informations doit apparaître sur une ligne appropriée.
-- Choisis toi-même la mise en forme du billet.
+- Utilise les libellés `Nom`, `Groupe`, `Local` et `Début`, dans cet ordre. Tu peux choisir les bordures et les espaces du billet.
 
 ## Exemple de résultat
 
@@ -66,5 +66,5 @@ Bonne première journée !
 
 | Valeurs à utiliser | Résultat attendu |
 | --- | --- |
-| Nom `Alex Tremblay`, groupe `1090`, local `B-321`, début `8 h 00` | Les six informations demandées, le titre et le message d'encouragement apparaissent dans un seul billet lisible. |
-| Nom `Mia`, groupe `1080`, même local et même heure | Seuls le nom et le groupe changent; le billet demeure bien aligné. |
+| Nom `Alex Tremblay`, groupe `1090`, local `B-321`, début `8 h 00` | Le titre, les quatre lignes `Nom`, `Groupe`, `Local` et `Début`, puis le message d'encouragement apparaissent dans un seul billet lisible. |
+| Nom `Mia`, groupe `1080`, local `B-321`, début `8 h 00` | Les lignes affichent `Nom : Mia`, `Groupe : 1080`, `Local : B-321` et `Début : 8 h 00`; le titre et le message demeurent présents. |

@@ -17,7 +17,7 @@ Le programme demande l'âge en années complètes et une réponse oui/non pour l
 | --- | ---: |
 | Moins de 6 ans | Gratuit |
 | De 6 à 17 ans | 8 $ |
-| Étudiant ou étudiante de 18 ans et plus | 10 $ |
+| Étudiant ou étudiante de 18 à 64 ans | 10 $ |
 | 65 ans et plus | 9 $ |
 | Autre adulte | 14 $ |
 
@@ -49,17 +49,9 @@ L'âge est un entier de `0` à `120`. Pour une personne de 18 à 64 ans, demande
 Âge : 20
 Carte étudiante (oui/non) : oui
 
-Tarif applicable : 10,00 $
+Tarif applicable : 10 $
 Raison : tarif étudiant
 ```
-
-## Exemples à tester
-
-- Une personne de 5 ans.
-- Une personne de 16 ans.
-- Une personne de 20 ans avec une carte étudiante.
-- Une personne de 20 ans sans carte étudiante.
-- Une personne de 72 ans.
 
 ## Critères de réussite
 
@@ -71,10 +63,10 @@ Raison : tarif étudiant
 
 | Âge | Carte étudiante | Résultat attendu |
 | ---: | --- | --- |
-| 5 | Non | Gratuit |
-| 16 | Non | 8 $ |
-| 20 | Oui | 10 $ |
-| 20 | Non | 14 $ |
-| 72 | Oui | 9 $ |
-| -1 | Non demandé | Un message d'erreur est affiché et aucun tarif n'est présenté. |
-| 150 | Non demandé | Un message d'erreur est affiché et aucun tarif n'est présenté. |
+| 5 | Non demandée | `Tarif applicable : Gratuit` et raison liée à l'âge. |
+| 16 | Non demandée | `Tarif applicable : 8 $` et raison `tarif jeunesse`. |
+| 20 | `oui` | `Tarif applicable : 10 $` et raison `tarif étudiant`. |
+| 20 | `non` | `Tarif applicable : 14 $` et raison `tarif adulte`. |
+| 72 | Non demandée | `Tarif applicable : 9 $` et raison `tarif aîné`. |
+| -1 | Non demandée | Un message d'erreur est affiché et aucun tarif n'est présenté. |
+| 150 | Non demandée | Un message d'erreur est affiché et aucun tarif n'est présenté. |

@@ -9,7 +9,7 @@ slug: /defis/defi-2-2
 
 Une petite pizzeria prend les commandes par téléphone. Le personnel veut un programme qui calcule rapidement le montant à payer.
 
-Pour que les calculs soient comparables, utilise ces règles : petite pizza à `12,00 $`, grande pizza à `18,00 $`, chaque garniture coûte `1,50 $`, la livraison coûte `5,00 $` et la taxe est de `14,975 %`. Le sous-total comprend la pizza, les garnitures et la livraison; la taxe est calculée sur ce sous-total.
+Pour que les calculs soient comparables, utilise ces règles : petite pizza à `12,00 $`, grande pizza à `18,00 $`, chaque garniture coûte `1,50 $`, la livraison coûte `5,00 $` et la taxe est de `14,975 %`. Le montant taxable comprend la pizza, les garnitures et la livraison; la taxe est calculée sur ce montant.
 
 ## Besoins
 
@@ -19,14 +19,23 @@ Crée une application console qui permet de calculer le coût d'une commande sel
 - le nombre de garnitures ;
 - la présence ou non d'une livraison.
 
-Le programme doit présenter le sous-total, les taxes, les frais de livraison s'il y en a, puis le total final.
+Le programme doit présenter le prix de la pizza et des garnitures, les frais de livraison, le montant taxable, les taxes, puis le total final.
+
+Utilise les calculs suivants :
+
+1. `pizza et garnitures = prix de la taille + nombre de garnitures × 1,50 $`;
+2. `montant taxable = pizza et garnitures + frais de livraison`;
+3. `taxes = montant taxable × 14,975 %`;
+4. `total à payer = montant taxable + taxes`.
 
 ## Valeurs à utiliser
 
 - Taille : demande `P` pour une petite pizza à `12,00 $` ou `G` pour une grande pizza à `18,00 $`.
 - Garnitures : demande un entier de `0` ou plus; chaque garniture ajoute `1,50 $`.
 - Livraison : demande exactement `oui` ou `non`; une livraison ajoute `5,00 $`.
-- Taxe : ne demande pas cette valeur. Utilise une constante de `14,975 %` sur le sous-total.
+- Taxe : ne demande pas cette valeur. Utilise une constante de `14,975 %` sur le montant taxable.
+
+Pour ce défi, suppose que les saisies respectent ces valeurs. Tu n'as pas à traiter une taille inconnue, un nombre négatif ou une réponse différente de `oui` et `non`.
 
 ## Notions à utiliser
 
@@ -38,19 +47,17 @@ Le programme doit présenter le sous-total, les taxes, les frais de livraison s'
 
 - Découpe ton programme en plusieurs fonctions pertinentes.
 - Au moins une fonction doit recevoir des paramètres et retourner une valeur.
-- Affiche clairement les prix et les règles utilisées dans le programme.
+- Utilise les libellés de l'exemple et affiche les montants avec deux décimales.
 - Les fonctions doivent éviter de dépendre inutilement de variables globales.
 
 ## Exemple de résultat
 
 **Entrées saisies :** taille `G`, `3` garnitures et livraison `oui`.
 
-Pour une grande pizza avec trois garnitures et une livraison :
-
 ```text
 Pizza et garnitures       : 22,50 $
 Frais de livraison        : 5,00 $
-Sous-total avec livraison : 27,50 $
+Montant taxable           : 27,50 $
 Taxes                     : 4,12 $
 Total à payer             : 31,62 $
 ```
@@ -65,6 +72,6 @@ Total à payer             : 31,62 $
 
 | Taille | Garnitures | Livraison | Résultat attendu |
 | --- | ---: | --- | --- |
-| `P` | 0 | `non` | Pizza et garnitures : 12,00 $; livraison : 0,00 $; sous-total : 12,00 $; taxes : 1,80 $; total : 13,80 $. |
-| `G` | 3 | `oui` | Pizza et garnitures : 22,50 $; livraison : 5,00 $; sous-total : 27,50 $; taxes : 4,12 $; total : 31,62 $. |
-| `P` | 2 | `oui` | Pizza et garnitures : 15,00 $; livraison : 5,00 $; sous-total : 20,00 $; taxes : 3,00 $; total : 23,00 $. |
+| `P` | 0 | `non` | `Pizza et garnitures : 12,00 $`; `Frais de livraison : 0,00 $`; `Montant taxable : 12,00 $`; `Taxes : 1,80 $`; `Total à payer : 13,80 $`. |
+| `G` | 3 | `oui` | `Pizza et garnitures : 22,50 $`; `Frais de livraison : 5,00 $`; `Montant taxable : 27,50 $`; `Taxes : 4,12 $`; `Total à payer : 31,62 $`. |
+| `P` | 2 | `oui` | `Pizza et garnitures : 15,00 $`; `Frais de livraison : 5,00 $`; `Montant taxable : 20,00 $`; `Taxes : 3,00 $`; `Total à payer : 23,00 $`. |

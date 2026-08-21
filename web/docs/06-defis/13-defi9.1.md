@@ -7,7 +7,7 @@ slug: /defis/defi-9-1
 
 ## Contexte
 
-Une personne souhaite conserver la trace de ses séances d'entraînement dans un fichier texte nommé `entrainement.txt`. Chaque séance doit être ajoutée au journal sans effacer les séances précédentes.
+Une personne souhaite conserver la trace de ses séances d'entraînement dans le fichier `C:\EspaceLabo\entrainement.txt`. Chaque séance doit être ajoutée au journal sans effacer les séances précédentes.
 
 Chaque séance occupe une ligne et les champs sont séparés par le caractère `;`, dans cet ordre : date, activité, durée en minutes et note personnelle.
 
@@ -20,11 +20,11 @@ Crée une application console qui demande les informations d'une séance, puis l
 - la durée en minutes ;
 - une note personnelle.
 
-Le programme doit confirmer clairement que l'écriture a réussi et indiquer le nom ou l'emplacement du fichier utilisé.
-
 ## Valeurs à utiliser
 
-La date est un texte au format `AAAA-MM-JJ`, par exemple `2026-09-08`. L'activité doit être `Course`, `Vélo` ou `Marche`. La durée est un entier supérieur à `0`. La note est un court texte qui ne contient pas le caractère `;`.
+La date est un texte au format `AAAA-MM-JJ`, par exemple `2026-09-08`. L'activité doit être exactement `Course`, `Vélo` ou `Marche`. La durée est un entier supérieur à `0`. La note est un court texte qui ne contient pas le caractère `;`.
+
+Pour ce défi, tu n'as pas à vérifier le format de la date ni le contenu de la note. Tu dois toutefois refuser une activité inconnue, une durée non numérique, nulle ou négative.
 
 ## Notions à utiliser
 
@@ -38,6 +38,7 @@ La date est un texte au format `AAAA-MM-JJ`, par exemple `2026-09-08`. L'activit
 - Chaque séance doit occuper une ligne facile à relire, avec les quatre champs dans le même ordre.
 - Ne remplace pas le contenu existant lorsque tu ajoutes une nouvelle séance.
 - Valide les données numériques nécessaires avant de les écrire.
+- Écris exactement une ligne au format `date;activité;durée;note` lorsque les données sont valides.
 
 ## Exemple de résultat
 
@@ -58,9 +59,12 @@ Note       : Course au parc
 
 ## Tests manuels et résultats attendus
 
+Avant de commencer les tests, crée un fichier `C:\EspaceLabo\entrainement.txt` vide. Exécute ensuite les tests dans l'ordre du tableau.
+
 | Date | Activité | Durée | Note | Résultat attendu |
 | --- | --- | ---: | --- | --- |
-| `2026-09-08` | `Course` | 45 | `Course au parc` | Le programme confirme l'écriture; le fichier contient `2026-09-08;Course;45;Course au parc`. |
-| `2026-09-09` | `Vélo` | 30 | `Tour du quartier` | Le fichier contient maintenant deux séances; la première séance est toujours présente. |
-| `2026-09-10` | `Marche` | -10 | `Test invalide` | Le programme signale une donnée invalide et n'ajoute aucune ligne. |
-| `2026-09-10` | `Marche` | `bonjour` | `Test invalide` | Le programme signale une donnée invalide et n'ajoute aucune ligne. |
+| `2026-09-08` | `Course` | 45 | `Course au parc` | La console affiche les quatre valeurs avec les libellés de l'exemple; le fichier contient exactement `2026-09-08;Course;45;Course au parc`. |
+| `2026-09-09` | `Vélo` | 30 | `Tour du quartier` | Le fichier contient maintenant deux lignes; la première est inchangée et la deuxième est `2026-09-09;Vélo;30;Tour du quartier`. |
+| `2026-09-10` | `Natation` | 20 | `Test invalide` | Le programme affiche `Activité invalide.` et n'ajoute aucune ligne. Le fichier contient toujours deux lignes. |
+| `2026-09-10` | `Marche` | -10 | `Test invalide` | Le programme affiche `Durée invalide.` et n'ajoute aucune ligne. Le fichier contient toujours deux lignes. |
+| `2026-09-10` | `Marche` | `bonjour` | `Test invalide` | Le programme affiche `Durée invalide.` et n'ajoute aucune ligne. Le fichier contient toujours deux lignes. |

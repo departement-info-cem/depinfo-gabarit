@@ -20,7 +20,9 @@ Contrairement aux laboratoires, les défis ne donnent pas toutes les étapes à 
 
 ## Ce que tu trouveras dans chaque défi
 
-Chaque défi présente un contexte, les besoins à respecter, les notions attendues et des critères de réussite. Les défis d'intégration sont plus longs et combinent plusieurs notions vues récemment.
+Chaque défi présente un contexte, les besoins à respecter, les valeurs à utiliser, les notions attendues, les contraintes, un exemple complet et des critères de réussite. Les défis d'intégration sont plus longs et combinent plusieurs notions vues récemment.
+
+Dans les exemples, respecte les libellés, leur ordre et les unités indiquées. Tu peux toutefois choisir les espaces, les bordures et l'apparence générale de ton affichage, à moins qu'une contrainte précise le contraire.
 
 Chaque défi contient aussi une section **Tests manuels et résultats attendus**. Après avoir terminé ton programme, utilise les valeurs proposées, puis compare ce qui s'affiche ou ce qui est enregistré avec le résultat attendu indiqué.
 
