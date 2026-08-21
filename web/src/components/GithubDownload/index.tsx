@@ -3,11 +3,13 @@ import React, { useState } from 'react';
 export default function GithubDownload({
   label,
   repo,
-  folder
+  folder,
+  branch = "main"
 }: {
   label: string
   repo: string;
   folder: string;
+  branch?: string;
 }) {
   const [progress, setProgress] = useState(0);
   const [loading, setLoading] = useState(false);
@@ -18,7 +20,6 @@ export default function GithubDownload({
 
     const user = "departement-info-cem";  // 👈 ton utilisateur GitHub
     //const repo = "1P6";         // 👈 ton dépôt GitHub
-    const branch = "main";       // ou autre branche
     //const folder = "code/examens/formatif_2_1p6"; // chemin relatif dans le repo
 
     // Import dynamique pour éviter les erreurs côté serveur
