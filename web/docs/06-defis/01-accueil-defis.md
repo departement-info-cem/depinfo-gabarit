@@ -22,4 +22,6 @@ Contrairement aux laboratoires, les défis ne donnent pas toutes les étapes à 
 
 Chaque défi présente un contexte, les besoins à respecter, les notions attendues et des critères de réussite. Les défis d'intégration sont plus longs et combinent plusieurs notions vues récemment.
 
-Les premiers défis seront ajoutés au fur et à mesure du cours.
+Chaque défi contient aussi une section **Tests manuels à effectuer**. Après avoir terminé ton programme, utilise les valeurs proposées pour vérifier toi-même que le comportement et les résultats sont corrects.
+
+Les défis sont classés dans le même ordre que les laboratoires. Commence par le défi associé aux notions que tu viens d'étudier, puis relève les défis d'intégration lorsque tu es prêt à combiner plusieurs notions.

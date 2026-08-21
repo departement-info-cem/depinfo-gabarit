@@ -1,0 +1,58 @@
+---
+sidebar_position: 8
+slug: /defis/defi-4-2
+---
+
+# Défi 4.2 — Bilan d'une semaine de température
+
+## Contexte
+
+Une station météo a enregistré les températures maximales des sept derniers jours. Tu dois produire un bilan simple de la semaine.
+
+## Données de départ
+
+Utilise un tableau de sept températures. Tu peux commencer avec ces données :
+
+```text
+18, 21, 17, 23, 25, 20, 16
+```
+
+## Besoins
+
+Ton programme doit afficher :
+
+- chaque journée avec sa température ;
+- la température la plus basse et la plus haute ;
+- la moyenne de la semaine ;
+- le nombre de journées de 20 °C ou plus ;
+- le numéro de la première journée la plus chaude.
+
+## Contraintes
+
+- Utilise un tableau 1D et une ou plusieurs boucles `for`.
+- N'écris pas les sept températures une à une dans les calculs.
+- Les résultats doivent être obtenus à partir du contenu du tableau.
+
+## Bonification facultative
+
+Permets à la personne qui utilise le programme de modifier une température avant d'afficher le bilan.
+
+## Critères de réussite
+
+- Le tableau est parcouru correctement.
+- Les statistiques correspondent aux données.
+- Le programme reste correct si les températures changent.
+
+## Tests manuels à effectuer
+
+Avec le tableau proposé (`18, 21, 17, 23, 25, 20, 16`), vérifie les résultats suivants :
+
+| Élément | Résultat attendu |
+| --- | --- |
+| Température minimale | 16 °C |
+| Température maximale | 25 °C |
+| Moyenne | 20 °C |
+| Journées de 20 °C ou plus | 4 |
+| Première journée la plus chaude | Jour 5 |
+
+Remplace ensuite toutes les températures par la même valeur, par exemple `20`. Vérifie que le minimum, le maximum et la moyenne sont alors identiques.

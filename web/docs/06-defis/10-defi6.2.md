@@ -1,0 +1,58 @@
+---
+sidebar_position: 10
+slug: /defis/defi-6-2
+---
+
+# Défi 6.2 — Plan de salle
+
+## Contexte
+
+Une salle de spectacle possède quatre rangées de six sièges. Un siège libre est représenté par le caractère `L` et un siège occupé par le caractère `O`.
+
+## Données de départ
+
+Crée un tableau 2D qui représente une salle. Utilise une combinaison de sièges libres et occupés de ton choix.
+
+## Besoins
+
+Ton programme doit :
+
+- afficher le plan de salle sous forme de grille ;
+- indiquer le nombre total de sièges libres ;
+- indiquer le nombre de sièges occupés dans chaque rangée ;
+- identifier la rangée qui possède le plus de sièges libres ;
+- afficher un message si la salle est complète.
+
+## Contraintes
+
+- Utilise un tableau 2D et des boucles imbriquées.
+- Le plan doit être affiché à partir du tableau, et non écrit directement dans des `WriteLine`.
+- Les calculs doivent fonctionner si le contenu de la salle change.
+
+## Exemple de plan
+
+```text
+Rangée 1 : L O L L O L
+Rangée 2 : O O L L L O
+Rangée 3 : L L L O L L
+Rangée 4 : O L O O L L
+```
+
+## Critères de réussite
+
+- La grille et les statistiques correspondent au tableau.
+- Les boucles parcourent toutes les lignes et toutes les colonnes.
+- Les messages sont clairs pour une personne qui ne voit pas le code.
+
+## Tests manuels à effectuer
+
+Avec le plan illustré dans l'exemple, vérifie les résultats suivants :
+
+| Élément | Résultat attendu |
+| --- | --- |
+| Sièges libres | 15 |
+| Sièges occupés à la rangée 1 | 2 |
+| Sièges occupés à la rangée 2 | 3 |
+| Rangée avec le plus de sièges libres | Rangée 3 |
+
+Modifie ensuite tous les sièges en `O`. Le programme doit indiquer que la salle est complète.
