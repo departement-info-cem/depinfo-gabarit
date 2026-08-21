@@ -29,7 +29,7 @@ Utilise les calculs suivants :
 1. `pages imprimées = nombre d'affiches × pages par affiche`;
 2. `coût total = pages imprimées × prix d'une page`.
 
-## Notions à mobiliser
+## Notions à utiliser
 
 - variables `int` et `double`;
 - lecture d'une valeur avec `Console.ReadLine()` et conversion avec `int.Parse()` ou `double.Parse()`;

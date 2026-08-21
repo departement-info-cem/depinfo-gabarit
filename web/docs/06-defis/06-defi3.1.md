@@ -19,7 +19,7 @@ Crée une application console qui demande le nom d'un atelier, le nombre de pers
 
 Le pourcentage de présence est calculé ainsi : nombre de personnes présentes divisé par le nombre total de personnes inscrites, multiplié par 100. Utilise les commentaires suivants : `Excellente participation` à partir de `90 %`, `Bonne participation` de `75 %` à `89,99 %` et `Participation limitée` sous `75 %`.
 
-## Notions à mobiliser
+## Notions à utiliser
 
 - fonctions avec paramètres et valeur de retour;
 - conditions `if`, `else if` et `else`;

@@ -22,7 +22,7 @@ Crée une application console qui demande les informations d'une séance, puis l
 
 Le programme doit confirmer clairement que l'écriture a réussi et indiquer le nom ou l'emplacement du fichier utilisé.
 
-## Notions à mobiliser
+## Notions à utiliser
 
 - lecture de texte avec `Console.ReadLine()`;
 - validation d'un nombre avec `TryParse`;

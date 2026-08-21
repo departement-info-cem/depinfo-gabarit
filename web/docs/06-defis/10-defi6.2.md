@@ -23,7 +23,7 @@ Ton programme doit :
 - identifier la rangée qui possède le plus de sièges libres ;
 - afficher un message si la salle est complète.
 
-## Notions à mobiliser
+## Notions à utiliser
 
 - tableau 2D;
 - boucles `for` imbriquées pour parcourir les rangées et les sièges;

@@ -23,7 +23,7 @@ Crée une application console qui permet de :
 - compter le nombre de personnes qui atteignent un seuil de `15` points ;
 - afficher un message personnalisé pour la personne en première position.
 
-## Notions à mobiliser
+## Notions à utiliser
 
 - deux tableaux 1D de même longueur;
 - boucle `for` pour utiliser le même indice dans les deux tableaux;

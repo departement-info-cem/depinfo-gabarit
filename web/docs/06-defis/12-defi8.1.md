@@ -23,7 +23,7 @@ Crée une application console qui permet, à partir d'un menu, de :
 - trouver la meilleure note de chaque épreuve ;
 - afficher les robots qui ont obtenu une note inférieure à un seuil donné.
 
-## Notions à mobiliser
+## Notions à utiliser
 
 - tableau 2D et boucles `for` imbriquées;
 - fonctions pour chaque action du menu;

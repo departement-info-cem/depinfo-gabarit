@@ -22,7 +22,7 @@ Crée une application console avec un menu qui offre au moins les choix suivants
 
 Après chaque conversion, le menu doit être affiché de nouveau.
 
-## Notions à mobiliser
+## Notions à utiliser
 
 - `switch` pour le menu;
 - boucle `while` ou `do while`;

@@ -22,7 +22,7 @@ Crée une application console qui permet de calculer le coût d'une commande sel
 
 Le programme doit présenter le sous-total, les taxes, les frais de livraison s'il y en a, puis le total final.
 
-## Notions à mobiliser
+## Notions à utiliser
 
 - fonctions avec paramètres;
 - au moins une fonction qui retourne une valeur;

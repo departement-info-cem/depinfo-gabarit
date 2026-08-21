@@ -25,7 +25,7 @@ Le programme demande l'âge en années complètes et une réponse oui/non pour l
 
 Crée un programme qui demande l'âge de la personne et, lorsque nécessaire, si elle possède une carte étudiante. Le programme doit afficher le tarif applicable et une courte explication.
 
-## Notions à mobiliser
+## Notions à utiliser
 
 - comparaisons numériques (`<`, `<=`, `>=`);
 - conditions `if`, `else if` et `else`;
