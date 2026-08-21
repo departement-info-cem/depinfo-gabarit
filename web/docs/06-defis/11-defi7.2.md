@@ -41,6 +41,8 @@ Le choix du menu est un entier de `0` à `3`. Pour Celsius, accepte un nombre d�
 
 ## Exemple de résultat
 
+**Entrées saisies :** choix de menu `1`, puis température `25` degrés Celsius.
+
 ```text
 1. Celsius vers Fahrenheit
 2. Kilomètres vers miles

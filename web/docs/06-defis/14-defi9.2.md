@@ -47,6 +47,8 @@ Chaque ligne du fichier contient un nom de tâche non vide, suivi d'un `;`, puis
 
 ## Exemple de résultat
 
+**Données lues dans `taches.txt` :** `Réviser les variables;25`, `Faire le laboratoire;55`, `Lire les notes de cours;20` et `Tester mon programme;35`.
+
 ```text
 Nombre de tâches : 4
 Total des minutes : 135

@@ -43,6 +43,8 @@ L'âge est un entier de `0` à `120`. Pour une personne de 18 à 64 ans, demande
 
 ## Exemple de résultat
 
+**Entrées saisies :** âge `20` et carte étudiante `oui`.
+
 ```text
 Âge : 20
 Carte étudiante (oui/non) : oui

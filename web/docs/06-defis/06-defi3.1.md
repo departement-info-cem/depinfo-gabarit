@@ -38,6 +38,8 @@ Le nom de l'atelier est un texte non vide. Le nombre de personnes présentes et 
 
 ## Exemple de résultat
 
+**Entrées saisies :** atelier `Révision de C#`, `4` personnes présentes et `1` personne absente.
+
 ```text
 Atelier : Révision de C#
 Personnes inscrites : 5

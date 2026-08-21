@@ -50,6 +50,8 @@ Rangée 4 : O L O O L L
 
 ## Exemple de résultat
 
+**Données de départ :** le plan de salle `L O L L O L / O O L L L O / L L L O L L / O L O O L L` présenté ci-dessus.
+
 ```text
 Sièges libres : 15
 Sièges occupés à la rangée 1 : 2

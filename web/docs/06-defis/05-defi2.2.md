@@ -43,6 +43,8 @@ Le programme doit présenter le sous-total, les taxes, les frais de livraison s'
 
 ## Exemple de résultat
 
+**Entrées saisies :** taille `G`, `3` garnitures et livraison `oui`.
+
 Pour une grande pizza avec trois garnitures et une livraison :
 
 ```text

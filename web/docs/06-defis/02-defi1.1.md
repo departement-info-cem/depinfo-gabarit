@@ -42,6 +42,8 @@ Pour la version de base, place dans des variables les valeurs de l'exemple : `Al
 
 ## Exemple de résultat
 
+**Valeurs placées dans les variables :** nom `Alex Tremblay`, groupe `1090`, local `B-321` et début `8 h 00`.
+
 ```text
 ====================================
      BIENVENUE EN TECHNIQUE INFO

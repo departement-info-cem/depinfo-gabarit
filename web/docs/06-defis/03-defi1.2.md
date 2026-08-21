@@ -48,6 +48,8 @@ Le nombre d'affiches et le nombre de pages par affiche sont des entiers supérie
 
 ## Exemple de résultat
 
+**Entrées saisies :** `4` affiches, `2` pages par affiche et `0,15 $` par page.
+
 Avec `4` affiches, `2` pages par affiche et un prix de `0,15 $` par page :
 
 ```text

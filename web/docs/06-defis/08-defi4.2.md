@@ -45,6 +45,8 @@ Utilise d'abord exactement le tableau suivant, dans cet ordre du jour 1 au jour 
 
 ## Exemple de résultat
 
+**Données de départ :** tableau de températures `18, 21, 17, 23, 25, 20, 16`.
+
 ```text
 Température minimale : 16 °C
 Température maximale : 25 °C

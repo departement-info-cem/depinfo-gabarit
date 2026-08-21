@@ -38,6 +38,8 @@ Le nombre d'articles par trousse et le nombre de trousses sont des entiers supé
 
 ## Exemple de résultat
 
+**Entrées saisies :** `4` articles par trousse et `4` trousses à préparer.
+
 ```text
 Trousse    Articles cumulés
 1          4

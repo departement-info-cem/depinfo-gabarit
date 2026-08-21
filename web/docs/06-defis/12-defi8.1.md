@@ -49,6 +49,8 @@ Chaque note est un entier de `0` à `20`. Le seuil demandé à la personne qui u
 
 ## Exemple de résultat
 
+**Données de départ :** utilise les quatre prototypes et leurs neuf notes présentés dans le tableau du défi. **Seuil saisi :** `12`.
+
 ```text
 Prototype le plus performant : Delta
 Total de Delta : 37 points

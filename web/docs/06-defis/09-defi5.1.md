@@ -49,6 +49,8 @@ Les noms sont des textes non vides. Les pointages sont des entiers de `0` ou plu
 
 ## Exemple de résultat
 
+**Données de départ :** noms `Amélie`, `Bilal`, `Chloé` et pointages `12`, `19`, `19`.
+
 ```text
 Palmarès du tournoi de Uno
 Amélie : 12 points
