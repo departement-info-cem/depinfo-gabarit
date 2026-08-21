@@ -9,16 +9,23 @@ slug: /defis/defi-1-2
 
 Tu pars en voiture pour une activité à l'extérieur de Montréal. Avant de partir, tu veux prévoir combien le trajet coûtera en essence.
 
-La distance demandée est la distance **aller seulement**. Le programme doit la doubler pour calculer l'aller-retour. Le nombre de passagers représente les personnes qui se partagent le coût, conducteur ou conductrice comprise.
+La distance demandée est la distance **aller seulement**, c'est-à-dire la distance entre le point de départ et la destination. Le programme doit la doubler pour calculer l'aller-retour. Le nombre de passagers représente les personnes qui se partagent le coût, conducteur ou conductrice comprise.
 
 ## Besoins
 
-Crée une application console qui demande les informations nécessaires pour calculer le coût total d'un aller-retour. Elle doit ensuite afficher un résumé contenant au minimum :
+Crée une application console qui demande ces quatre informations : la distance aller en kilomètres, la consommation du véhicule en litres par 100 kilomètres, le prix d'un litre d'essence et le nombre de passagers. Elle doit ensuite calculer le coût total de l'aller-retour et afficher un résumé contenant au minimum :
 
 - la distance totale parcourue ;
 - la quantité d'essence nécessaire ;
 - le coût total de l'essence ;
 - le coût par personne, si les frais sont partagés.
+
+Utilise les calculs suivants :
+
+1. `distance aller-retour = distance aller × 2`;
+2. `litres nécessaires = distance aller-retour × consommation ÷ 100`;
+3. `coût total = litres nécessaires × prix par litre`;
+4. `coût par personne = coût total ÷ nombre de passagers`.
 
 ## Contraintes
 
@@ -31,6 +38,7 @@ Crée une application console qui demande les informations nécessaires pour cal
 ## Exemple de résultat
 
 ```text
+Distance aller        : 93 km
 Distance aller-retour : 186 km
 Essence nécessaire    : 14,88 L
 Coût total            : 25,30 $
@@ -45,9 +53,9 @@ Coût par personne     : 6,32 $
 
 ## Tests manuels et résultats attendus
 
-| Distance aller-retour | Consommation | Prix par litre | Passagers | Résultat attendu |
+| Distance aller | Consommation | Prix par litre | Passagers | Résultat attendu |
 | ---: | ---: | ---: | ---: | --- |
-| 186 km | 8 L / 100 km | 1,70 $ | 4 | 14,88 L, environ 25,30 $ au total et 6,32 $ par personne |
-| 100 km | 6 L / 100 km | 1,50 $ | 2 | 6 L, 9,00 $ au total et 4,50 $ par personne |
+| 93 km | 8 L / 100 km | 1,70 $ | 4 | 186 km aller-retour, 14,88 L, environ 25,30 $ au total et 6,32 $ par personne |
+| 50 km | 6 L / 100 km | 1,50 $ | 2 | 100 km aller-retour, 6 L, 9,00 $ au total et 4,50 $ par personne |
 
 Entre ensuite `0` passager. **Résultat attendu :** le programme affiche un message indiquant que le nombre de passagers est invalide et ne tente pas de calculer un coût par personne.
