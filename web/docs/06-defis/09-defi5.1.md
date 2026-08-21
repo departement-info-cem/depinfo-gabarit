@@ -11,12 +11,9 @@ Le club de jeux du Cégep organise un tournoi de **Uno** de trois parties. Aprè
 
 ## Données de départ
 
-Utilise deux tableaux de même taille : un pour les noms et un pour le total de points au tournoi. Initialise directement ces tableaux dans ton code; ne demande pas à la personne qui utilise le programme d'écrire les noms et les points dans la console.
+Utilise deux tableaux de même taille : un pour les noms et un pour le total de points au tournoi. Place directement les noms et les pointages dans ces tableaux au début de ton programme; ne demande pas à la personne qui utilise le programme d'écrire les noms et les points dans la console.
 
-```csharp
-string[] noms = { "Amélie", "Bilal", "Chloé" };
-int[] points = { 12, 19, 19 };
-```
+Dans le premier tableau, place `Amélie`, `Bilal` et `Chloé`. Aux mêmes positions du deuxième tableau, place respectivement `12`, `19` et `19`.
 
 `Amélie` avec `12` points signifie qu'elle a accumulé 12 points dans ses trois parties.
 
@@ -71,5 +68,5 @@ Moyenne : 16,67 points
 
 | Tableaux à initialiser dans le code | Résultat attendu |
 | --- | --- |
-| `noms = { "Amélie", "Bilal", "Chloé" }`<br />`points = { 12, 19, 19 }` | Moyenne : 16,67 points; 2 personnes atteignent 15 points; Bilal est premier, car il apparaît avant Chloé; chaque nom est associé au bon pointage. |
-| `noms = { "Maya" }`<br />`points = { 8 }` | Maya est première; moyenne : 8 points; 0 personne atteint 15 points; aucun autre nom n'apparaît. |
+| Tableau des noms : `Amélie`, `Bilal`, `Chloé`<br />Tableau des points : `12`, `19`, `19` | Moyenne : 16,67 points; 2 personnes atteignent 15 points; Bilal est premier, car il apparaît avant Chloé; chaque nom est associé au bon pointage. |
+| Tableau des noms : `Maya`<br />Tableau des points : `8` | Maya est première; moyenne : 8 points; 0 personne atteint 15 points; aucun autre nom n'apparaît. |
