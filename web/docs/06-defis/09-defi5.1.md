@@ -7,11 +7,11 @@ slug: /defis/defi-5-1
 
 ## Contexte
 
-Le club de jeux du Cégep veut afficher le palmarès de ses membres après une série de parties. Chaque membre possède un nom et un nombre de points.
+Le club de jeux du Cégep organise un tournoi de **Uno** de trois parties. Après le tournoi, il veut afficher le palmarès des membres. Chaque membre possède un nom et un nombre total de points accumulés pendant les trois parties; ces points sont déjà calculés et fournis dans le tableau.
 
 ## Données de départ
 
-Utilise deux tableaux de même taille : un pour les noms et un pour les points. Tu peux choisir les données initiales.
+Utilise deux tableaux de même taille : un pour les noms et un pour le total de points au tournoi. Par exemple, `Amélie` avec `12` points signifie qu'elle a accumulé 12 points dans ses trois parties.
 
 ## Besoins
 
@@ -20,7 +20,7 @@ Crée une application console qui permet de :
 - afficher le palmarès complet ;
 - trouver la personne qui a obtenu le plus de points ;
 - calculer la moyenne des points ;
-- compter le nombre de personnes qui atteignent un seuil choisi ;
+- compter le nombre de personnes qui atteignent un seuil de `15` points ;
 - afficher un message personnalisé pour la personne en première position.
 
 ## Contraintes

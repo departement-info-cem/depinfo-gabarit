@@ -7,7 +7,7 @@ slug: /defis/defi-4-2
 
 ## Contexte
 
-Une station météo a enregistré les températures maximales des sept derniers jours. Tu dois produire un bilan simple de la semaine.
+Une station météo a enregistré les températures maximales des sept derniers jours, du jour 1 au jour 7. Tu dois produire un bilan simple de la semaine.
 
 ## Données de départ
 
@@ -24,8 +24,8 @@ Ton programme doit afficher :
 - chaque journée avec sa température ;
 - la température la plus basse et la plus haute ;
 - la moyenne de la semaine ;
-- le nombre de journées de 20 °C ou plus ;
-- le numéro de la première journée la plus chaude.
+- le nombre de journées de 20 °C ou plus, la limite de 20 °C étant incluse ;
+- le numéro de la première journée ayant la température maximale. Si plusieurs journées ont la même température maximale, conserve la première rencontrée.
 
 ## Contraintes
 

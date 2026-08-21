@@ -9,6 +9,8 @@ slug: /defis/defi-1-1
 
 Une journée d'accueil est organisée pour les nouvelles personnes qui arrivent dans la technique. Tu dois créer un programme qui affiche un billet de bienvenue clair et agréable à lire dans la console.
 
+Le billet est destiné à une personne précise : les valeurs du nom, du groupe, du local et de l'heure doivent être conservées dans des variables afin de pouvoir être facilement modifiées.
+
 ## Besoins
 
 Ton programme doit afficher :
@@ -50,5 +52,5 @@ Bonne première journée !
 
 ## Tests manuels et résultats attendus
 
-- Lance le programme avec le nom `Alex Tremblay` et le groupe `1090`. **Résultat attendu :** les six informations demandées, le titre et le message d'encouragement apparaissent dans un seul billet lisible.
+- Lance le programme avec les valeurs suivantes : nom `Alex Tremblay`, groupe `1090`, local `B-321` et début `8 h 00`. **Résultat attendu :** les six informations demandées, le titre et le message d'encouragement apparaissent dans un seul billet lisible.
 - Modifie le nom pour `Mia` et le groupe pour `1080`. **Résultat attendu :** seules ces deux valeurs changent et le billet demeure bien aligné.

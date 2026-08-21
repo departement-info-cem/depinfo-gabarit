@@ -7,7 +7,7 @@ slug: /defis/defi-9-2
 
 ## Contexte
 
-Tu reçois un fichier texte contenant une courte liste de tâches terminées. Chaque ligne contient une tâche et le nombre de minutes nécessaires pour la réaliser.
+Tu reçois un fichier texte nommé `taches.txt` contenant une courte liste de tâches terminées. Chaque ligne respecte le format `nom de la tâche;durée en minutes`.
 
 ## Fichier d'exemple
 
@@ -33,7 +33,7 @@ Crée une application console qui lit ce fichier et affiche :
 - Lis les données à partir du fichier, et non à partir de valeurs écrites directement dans le programme.
 - Traite correctement les lignes incomplètes ou mal formées.
 - Utilise des boucles, des conditions et des variables d'accumulation.
-- Choisis une façon claire de séparer le nom de la durée dans chaque ligne.
+- Utilise le caractère `;` pour séparer le nom de la tâche et sa durée, comme dans le fichier d'exemple.
 
 ## Critères de réussite
 
@@ -53,4 +53,4 @@ Avec le fichier d'exemple, vérifie les résultats suivants :
 | Tâche la plus longue | Faire le laboratoire |
 | Tâches de 30 minutes ou plus | 2 |
 
-Ajoute ensuite une ligne incomplète, par exemple `Préparer mon sac;`. **Résultat attendu :** le programme reste fonctionnel, n'ajoute pas cette ligne aux statistiques et indique le problème si tu as choisi d'afficher les erreurs.
+Ajoute ensuite une ligne incomplète, par exemple `Préparer mon sac;`. **Résultat attendu :** le programme reste fonctionnel, n'ajoute pas cette ligne aux statistiques et indique clairement que la ligne est mal formée.

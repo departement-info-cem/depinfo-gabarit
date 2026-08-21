@@ -9,6 +9,8 @@ slug: /defis/defi-2-1
 
 Le centre des sciences offre des tarifs différents selon l'âge et le statut de la personne qui le visite. Une personne ne peut bénéficier que d'un seul tarif réduit.
 
+Le programme demande l'âge en années complètes et une réponse oui/non pour la carte étudiante. La carte étudiante ne change le tarif que pour une personne de 18 à 64 ans.
+
 ## Règles de tarification
 
 | Profil | Tarif |
@@ -26,7 +28,7 @@ Crée un programme qui demande l'âge de la personne et, lorsque nécessaire, si
 ## Contraintes
 
 - Utilise des conditions pour appliquer les règles.
-- Une personne de 65 ans ou plus reçoit le tarif aîné, même si elle est étudiante.
+- Une personne de 65 ans ou plus reçoit le tarif aîné, même si elle est étudiante. L'ordre des règles doit donc être respecté.
 - Prévois un message clair si un âge impossible est fourni.
 
 ## Exemples à tester

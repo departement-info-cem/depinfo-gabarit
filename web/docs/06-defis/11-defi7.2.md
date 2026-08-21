@@ -9,6 +9,8 @@ slug: /defis/defi-7-2
 
 Une borne libre-service aide les visiteurs à convertir rapidement des unités. Elle doit rester ouverte jusqu'à ce que la personne choisisse de quitter.
 
+Pour cet exercice, utilise ces taux fixes affichés dans le menu : `1 °C = 33,8 °F` selon la formule `F = C × 9 / 5 + 32`, `1 km = 0,621371 mile` et `1 $ CA = 0,72 $ US`. Le taux de change est volontairement fixé pour l'exercice et n'a pas besoin d'être mis à jour.
+
 ## Besoins
 
 Crée une application console avec un menu qui offre au moins les choix suivants :
@@ -45,4 +47,4 @@ Ajoute une option permettant de convertir une durée en minutes vers des heures 
 - Entre `bonjour` lorsqu'une valeur numérique est demandée. **Résultat attendu :** le programme affiche un message de saisie invalide puis redemande une valeur ou revient au menu.
 - Entre un choix de menu inexistant, par exemple `9`, puis quitte avec `0`. **Résultat attendu :** le programme affiche un message indiquant que le choix est invalide, réaffiche le menu, puis se ferme seulement après `0`.
 
-Pour la conversion de devises, vérifie les résultats avec le taux que tu as choisi et affiché.
+Pour la conversion de devises, vérifie le résultat avec le taux fixe de `0,72` affiché dans ton programme.

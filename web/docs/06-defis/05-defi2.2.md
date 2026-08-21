@@ -9,6 +9,8 @@ slug: /defis/defi-2-2
 
 Une petite pizzeria prend les commandes par téléphone. Le personnel veut un programme qui calcule rapidement le montant à payer.
 
+Pour que les calculs soient comparables, utilise ces règles : petite pizza à `12,00 $`, grande pizza à `18,00 $`, chaque garniture coûte `1,50 $`, la livraison coûte `5,00 $` et la taxe est de `14,975 %`. Le sous-total comprend la pizza, les garnitures et la livraison; la taxe est calculée sur ce sous-total.
+
 ## Besoins
 
 Crée une application console qui permet de calculer le coût d'une commande selon :
@@ -24,7 +26,7 @@ Le programme doit présenter le sous-total, les taxes, les frais de livraison s'
 
 - Découpe ton programme en plusieurs fonctions pertinentes.
 - Au moins une fonction doit recevoir des paramètres et retourner une valeur.
-- Les prix et les règles de livraison sont à choisir et à afficher clairement dans le programme.
+- Affiche clairement les prix et les règles utilisées dans le programme.
 - Les fonctions doivent éviter de dépendre inutilement de variables globales.
 
 ## Bonification facultative
@@ -39,7 +41,7 @@ Ajoute une promotion : la livraison devient gratuite à partir d'un montant mini
 
 ## Tests manuels et résultats attendus
 
-Utilise les prix que tu as choisis dans ton programme, puis vérifie au minimum les situations suivantes :
+Utilise les prix fixés dans la section « Contexte », puis vérifie au minimum les situations suivantes :
 
 - une petite pizza sans garniture, sans livraison ;
 - une grande pizza avec trois garnitures et une livraison ;

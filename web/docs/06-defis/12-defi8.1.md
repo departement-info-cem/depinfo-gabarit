@@ -7,7 +7,7 @@ slug: /defis/defi-8-1
 
 ## Contexte
 
-Quatre robots participent à trois épreuves : vitesse, précision et endurance. Les organisateurs veulent analyser les résultats avant de remettre les prix.
+Quatre robots participent à trois épreuves : vitesse, précision et endurance. Chaque note est un nombre de points obtenu dans une épreuve. Les organisateurs veulent analyser les résultats avant de remettre les prix.
 
 ## Données de départ
 
@@ -19,7 +19,7 @@ Crée une application console qui permet, à partir d'un menu, de :
 
 - afficher toutes les notes dans un tableau lisible ;
 - calculer le total de points de chaque robot ;
-- trouver le robot gagnant ;
+- trouver le robot gagnant, c'est-à-dire celui dont le total des trois notes est le plus élevé ;
 - trouver la meilleure note de chaque épreuve ;
 - afficher les robots qui ont obtenu une note inférieure à un seuil donné.
 

@@ -7,7 +7,9 @@ slug: /defis/defi-9-1
 
 ## Contexte
 
-Une personne souhaite conserver la trace de ses séances d'entraînement dans un fichier texte. Chaque séance doit être ajoutée au journal sans effacer les séances précédentes.
+Une personne souhaite conserver la trace de ses séances d'entraînement dans un fichier texte nommé `entrainement.txt`. Chaque séance doit être ajoutée au journal sans effacer les séances précédentes.
+
+Chaque séance occupe une ligne et les champs sont séparés par le caractère `;`, dans cet ordre : date, activité, durée en minutes et note personnelle.
 
 ## Besoins
 
@@ -23,7 +25,7 @@ Le programme doit confirmer clairement que l'écriture a réussi et indiquer le 
 ## Contraintes
 
 - Utilise l'écriture dans un fichier texte.
-- Chaque séance doit occuper une ligne ou un bloc facile à relire.
+- Chaque séance doit occuper une ligne facile à relire, avec les quatre champs dans le même ordre.
 - Ne remplace pas le contenu existant lorsque tu ajoutes une nouvelle séance.
 - Valide les données numériques nécessaires avant de les écrire.
 

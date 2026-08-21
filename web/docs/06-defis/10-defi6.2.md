@@ -7,7 +7,7 @@ slug: /defis/defi-6-2
 
 ## Contexte
 
-Une salle de spectacle possède quatre rangées de six sièges. Un siège libre est représenté par le caractère `L` et un siège occupé par le caractère `O`.
+Une salle de spectacle possède quatre rangées de six sièges. Les rangées sont numérotées de 1 à 4 et les sièges de chaque rangée de 1 à 6. Un siège libre est représenté par le caractère `L` et un siège occupé par le caractère `O`.
 
 ## Données de départ
 

@@ -9,6 +9,8 @@ slug: /defis/defi-1-2
 
 Tu pars en voiture pour une activité à l'extérieur de Montréal. Avant de partir, tu veux prévoir combien le trajet coûtera en essence.
 
+La distance demandée est la distance **aller seulement**. Le programme doit la doubler pour calculer l'aller-retour. Le nombre de passagers représente les personnes qui se partagent le coût, conducteur ou conductrice comprise.
+
 ## Besoins
 
 Crée une application console qui demande les informations nécessaires pour calculer le coût total d'un aller-retour. Elle doit ensuite afficher un résumé contenant au minimum :
@@ -24,6 +26,7 @@ Crée une application console qui demande les informations nécessaires pour cal
 - Effectue les calculs avec des valeurs réelles lorsque nécessaire.
 - Affiche les montants avec deux chiffres après la virgule.
 - Le programme doit fonctionner avec au moins deux nombres différents de passagers.
+- Le nombre de passagers doit être au moins égal à 1.
 
 ## Exemple de résultat
 

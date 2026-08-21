@@ -9,6 +9,8 @@ slug: /defis/defi-4-1
 
 Un entraîneur prépare une séance de course. Il veut afficher les distances cumulées à chaque tour de piste pour aider les athlètes à visualiser leur progression.
 
+La longueur d'un tour est la même pour toute la séance. Par exemple, avec un tour de `400 m`, le deuxième tour correspond à une distance cumulée de `800 m`, et non à une distance de `400 m` affichée une deuxième fois.
+
 ## Besoins
 
 Crée une application console qui demande :
