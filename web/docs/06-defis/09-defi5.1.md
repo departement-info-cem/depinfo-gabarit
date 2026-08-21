@@ -36,6 +36,18 @@ Crée une application console qui permet de :
 - Les deux tableaux doivent toujours être consultés au même indice.
 - Prévois un comportement cohérent si plusieurs personnes ont le même meilleur résultat.
 
+## Exemple de résultat
+
+```text
+Palmarès du tournoi de Uno
+Amélie : 12 points
+Bilal  : 19 points
+Chloé  : 19 points
+
+Meilleur résultat : Bilal, avec 19 points
+Moyenne : 16,67 points
+```
+
 ## Bonifications facultatives
 
 - Permettre d'ajouter un résultat.

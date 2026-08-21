@@ -36,6 +36,16 @@ Crée une application console qui permet, à partir d'un menu, de :
 - Utilise des conditions pour traiter les égalités et les résultats faibles. En cas d'égalité pour le meilleur total, affiche le premier prototype rencontré dans le tableau.
 - Le menu doit rester accessible jusqu'au choix de quitter.
 
+## Exemple de résultat
+
+```text
+Prototype le plus performant : Delta
+Total de Delta : 37 points
+Meilleure note en vitesse : 15
+Meilleure note en précision : 16
+Meilleure note en endurance : 14
+```
+
 ## Bonifications facultatives
 
 - Ajouter une épreuve ou un robot.

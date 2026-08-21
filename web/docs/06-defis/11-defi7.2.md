@@ -35,6 +35,19 @@ Après chaque conversion, le menu doit être affiché de nouveau.
 - Utilise `TryParse` afin de traiter les saisies non numériques sans faire planter le programme.
 - Affiche un message utile lorsqu'un choix n'existe pas.
 
+## Exemple de résultat
+
+```text
+1. Celsius vers Fahrenheit
+2. Kilomètres vers miles
+3. Dollars canadiens vers dollars américains
+0. Quitter
+
+Votre choix : 1
+Température en Celsius : 25
+Résultat : 77 °F
+```
+
 ## Bonification facultative
 
 Ajoute une option permettant de convertir une durée en minutes vers des heures et des minutes.

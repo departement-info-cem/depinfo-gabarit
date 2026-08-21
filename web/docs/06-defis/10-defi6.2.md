@@ -44,6 +44,14 @@ Rangée 3 : L L L O L L
 Rangée 4 : O L O O L L
 ```
 
+## Exemple de résultat
+
+```text
+Sièges libres : 15
+Sièges occupés à la rangée 1 : 2
+Rangée avec le plus de sièges libres : rangée 3
+```
+
 ## Critères de réussite
 
 - La grille et les statistiques correspondent au tableau.

@@ -35,6 +35,17 @@ Le programme doit présenter le sous-total, les taxes, les frais de livraison s'
 - Affiche clairement les prix et les règles utilisées dans le programme.
 - Les fonctions doivent éviter de dépendre inutilement de variables globales.
 
+## Exemple de résultat
+
+Pour une grande pizza avec trois garnitures et une livraison :
+
+```text
+Sous-total       : 27,50 $
+Taxes            : 4,12 $
+Frais livraison  : 5,00 $
+Total à payer    : 31,62 $
+```
+
 ## Bonification facultative
 
 Ajoute une promotion : la livraison devient gratuite à partir d'un montant minimal que tu détermines.

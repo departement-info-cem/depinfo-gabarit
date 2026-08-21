@@ -37,6 +37,16 @@ Crée un programme qui demande l'âge de la personne et, lorsque nécessaire, si
 - Une personne de 65 ans ou plus reçoit le tarif aîné, même si elle est étudiante. L'ordre des règles doit donc être respecté.
 - Prévois un message clair si un âge impossible est fourni.
 
+## Exemple de résultat
+
+```text
+Âge : 20
+Carte étudiante (oui/non) : oui
+
+Tarif applicable : 10,00 $
+Raison : tarif étudiant
+```
+
 ## Exemples à tester
 
 - Une personne de 5 ans.

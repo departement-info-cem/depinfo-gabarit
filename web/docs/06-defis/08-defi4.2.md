@@ -39,6 +39,16 @@ Ton programme doit afficher :
 - N'écris pas les sept températures une à une dans les calculs.
 - Les résultats doivent être obtenus à partir du contenu du tableau.
 
+## Exemple de résultat
+
+```text
+Température minimale : 16 °C
+Température maximale : 25 °C
+Moyenne de la semaine : 20 °C
+Journées de 20 °C ou plus : 4
+Première journée la plus chaude : jour 5
+```
+
 ## Bonification facultative
 
 Permets à la personne qui utilise le programme de modifier une température avant d'afficher le bilan.

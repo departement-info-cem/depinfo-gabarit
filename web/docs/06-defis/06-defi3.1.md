@@ -32,6 +32,15 @@ Le pourcentage de présence est calculé ainsi : nombre de personnes présentes 
 - Utilise un `double` pour les calculs de pourcentage.
 - Les valeurs saisies sont des nombres entiers positifs ou nuls; suppose qu'au moins une personne est inscrite.
 
+## Exemple de résultat
+
+```text
+Atelier : Révision de C#
+Personnes inscrites : 5
+Présence : 80 %
+Commentaire : Bonne participation
+```
+
 ## Bonifications facultatives
 
 - Ajouter la date de l'atelier au bilan.

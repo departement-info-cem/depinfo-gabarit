@@ -35,6 +35,13 @@ Le programme doit confirmer clairement que l'écriture a réussi et indiquer le 
 - Ne remplace pas le contenu existant lorsque tu ajoutes une nouvelle séance.
 - Valide les données numériques nécessaires avant de les écrire.
 
+## Exemple de résultat
+
+```text
+Séance ajoutée dans entrainement.txt
+2026-09-08;Course;45;Course au parc
+```
+
 ## Bonification facultative
 
 Ajoute la possibilité de créer un nouveau journal ou de choisir le journal existant à compléter.

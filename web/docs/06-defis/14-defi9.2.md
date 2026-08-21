@@ -41,6 +41,15 @@ Crée une application console qui lit ce fichier et affiche :
 - Utilise des boucles, des conditions et des variables d'accumulation.
 - Utilise le caractère `;` pour séparer le nom de la tâche et sa durée, comme dans le fichier d'exemple.
 
+## Exemple de résultat
+
+```text
+Nombre de tâches : 4
+Total des minutes : 135
+Durée moyenne : 33,75 minutes
+Tâche la plus longue : Faire le laboratoire
+```
+
 ## Critères de réussite
 
 - Les statistiques correspondent au fichier lu.
