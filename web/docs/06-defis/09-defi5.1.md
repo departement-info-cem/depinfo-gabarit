@@ -11,7 +11,14 @@ Le club de jeux du Cégep organise un tournoi de **Uno** de trois parties. Aprè
 
 ## Données de départ
 
-Utilise deux tableaux de même taille : un pour les noms et un pour le total de points au tournoi. Par exemple, `Amélie` avec `12` points signifie qu'elle a accumulé 12 points dans ses trois parties.
+Utilise deux tableaux de même taille : un pour les noms et un pour le total de points au tournoi.
+
+```text
+Noms   : Amélie, Bilal, Chloé
+Points : 12, 19, 19
+```
+
+`Amélie` avec `12` points signifie qu'elle a accumulé 12 points dans ses trois parties.
 
 ## Besoins
 
@@ -22,6 +29,10 @@ Crée une application console qui permet de :
 - calculer la moyenne des points ;
 - compter le nombre de personnes qui atteignent un seuil de `15` points ;
 - afficher un message personnalisé pour la personne en première position.
+
+## Valeurs à utiliser
+
+Les noms sont des textes non vides. Les pointages sont des entiers de `0` ou plus. Le seuil à utiliser est toujours `15` points. En cas d'égalité pour le meilleur résultat, affiche la première personne rencontrée dans les tableaux.
 
 ## Notions à utiliser
 
@@ -34,7 +45,7 @@ Crée une application console qui permet de :
 - Organise le programme en fonctions.
 - Utilise des boucles et des tableaux plutôt que de répéter le même code.
 - Les deux tableaux doivent toujours être consultés au même indice.
-- Prévois un comportement cohérent si plusieurs personnes ont le même meilleur résultat.
+- En cas d'égalité pour le meilleur résultat, affiche la première personne rencontrée dans les tableaux.
 
 ## Exemple de résultat
 
@@ -73,7 +84,7 @@ Points : 12, 19, 19
 
 - la moyenne est d'environ `16,67` points ;
 - deux personnes atteignent un seuil de `15` points ;
-- le programme traite l'égalité entre Bilal et Chloé de la façon que tu as choisie ;
+- le programme affiche Bilal comme première personne, car Bilal apparaît avant Chloé dans les tableaux ;
 - chaque nom est associé au bon nombre de points.
 
 Teste ensuite un tableau qui contient une seule personne. **Résultat attendu :** cette personne est affichée comme première, sa moyenne est égale à son pointage et aucun autre nom n'apparaît.

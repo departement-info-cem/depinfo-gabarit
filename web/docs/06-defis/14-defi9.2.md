@@ -28,6 +28,10 @@ Crée une application console qui lit ce fichier et affiche :
 - le nom de la tâche la plus longue ;
 - le nombre de tâches qui durent au moins 30 minutes.
 
+## Valeurs à utiliser
+
+Chaque ligne du fichier contient un nom de tâche non vide, suivi d'un `;`, puis d'une durée entière supérieure à `0`. Par exemple : `Faire le laboratoire;55`.
+
 ## Notions à utiliser
 
 - lecture d'un fichier texte ligne par ligne;

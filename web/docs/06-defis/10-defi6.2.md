@@ -11,7 +11,7 @@ Une salle de spectacle possède quatre rangées de six sièges. Les rangées son
 
 ## Données de départ
 
-Crée un tableau 2D qui représente une salle. Utilise une combinaison de sièges libres et occupés de ton choix.
+Crée un tableau 2D qui représente la salle illustrée dans l'exemple ci-dessous. Utilise seulement `L` pour un siège libre et `O` pour un siège occupé.
 
 ## Besoins
 
@@ -22,6 +22,10 @@ Ton programme doit :
 - indiquer le nombre de sièges occupés dans chaque rangée ;
 - identifier la rangée qui possède le plus de sièges libres ;
 - afficher un message si la salle est complète.
+
+## Valeurs à utiliser
+
+La salle comporte toujours `4` rangées de `6` sièges. Les rangées sont affichées de 1 à 4 et chaque case du tableau contient uniquement `L` ou `O`.
 
 ## Notions à utiliser
 

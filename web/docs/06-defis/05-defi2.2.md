@@ -17,10 +17,16 @@ Crée une application console qui permet de calculer le coût d'une commande sel
 
 - la taille de la pizza ;
 - le nombre de garnitures ;
-- la présence ou non d'une livraison ;
-- le taux de taxe.
+- la présence ou non d'une livraison.
 
 Le programme doit présenter le sous-total, les taxes, les frais de livraison s'il y en a, puis le total final.
+
+## Valeurs à utiliser
+
+- Taille : demande `P` pour une petite pizza à `12,00 $` ou `G` pour une grande pizza à `18,00 $`.
+- Garnitures : demande un entier de `0` ou plus; chaque garniture ajoute `1,50 $`.
+- Livraison : demande exactement `oui` ou `non`; une livraison ajoute `5,00 $`.
+- Taxe : ne demande pas cette valeur. Utilise une constante de `14,975 %` sur le sous-total.
 
 ## Notions à utiliser
 
@@ -40,10 +46,11 @@ Le programme doit présenter le sous-total, les taxes, les frais de livraison s'
 Pour une grande pizza avec trois garnitures et une livraison :
 
 ```text
-Sous-total       : 27,50 $
-Taxes            : 4,12 $
-Frais livraison  : 5,00 $
-Total à payer    : 31,62 $
+Pizza et garnitures       : 22,50 $
+Frais de livraison        : 5,00 $
+Sous-total avec livraison : 27,50 $
+Taxes                     : 4,12 $
+Total à payer             : 31,62 $
 ```
 
 ## Bonification facultative

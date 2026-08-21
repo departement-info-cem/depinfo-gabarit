@@ -22,6 +22,10 @@ Crée une application console avec un menu qui offre au moins les choix suivants
 
 Après chaque conversion, le menu doit être affiché de nouveau.
 
+## Valeurs à utiliser
+
+Le choix du menu est un entier de `0` à `3`. Pour Celsius, accepte un nombre décimal, y compris une valeur négative. Pour les kilomètres et les dollars canadiens, accepte seulement un nombre décimal de `0` ou plus.
+
 ## Notions à utiliser
 
 - `switch` pour le menu;

@@ -24,6 +24,10 @@ Ton programme doit afficher :
 
 Le résultat doit être encadré ou organisé de manière à ressembler à un vrai billet.
 
+## Valeurs à utiliser
+
+Pour la version de base, place dans des variables les valeurs de l'exemple : `Alex Tremblay`, groupe `1090`, local `B-321` et début `8 h 00`. Tu n'as pas à demander ces valeurs à la personne qui lance le programme.
+
 ## Notions à utiliser
 
 - `Console.ReadLine()` et `Console.WriteLine()`;

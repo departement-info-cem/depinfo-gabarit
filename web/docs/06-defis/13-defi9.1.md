@@ -22,6 +22,10 @@ Crée une application console qui demande les informations d'une séance, puis l
 
 Le programme doit confirmer clairement que l'écriture a réussi et indiquer le nom ou l'emplacement du fichier utilisé.
 
+## Valeurs à utiliser
+
+La date est un texte au format `AAAA-MM-JJ`, par exemple `2026-09-08`. L'activité doit être `Course`, `Vélo` ou `Marche`. La durée est un entier supérieur à `0`. La note est un court texte qui ne contient pas le caractère `;`.
+
 ## Notions à utiliser
 
 - lecture de texte avec `Console.ReadLine()`;

@@ -27,6 +27,10 @@ Ton programme doit afficher :
 - le nombre de journées de 20 °C ou plus, la limite de 20 °C étant incluse ;
 - le numéro de la première journée ayant la température maximale. Si plusieurs journées ont la même température maximale, conserve la première rencontrée.
 
+## Valeurs à utiliser
+
+Utilise d'abord exactement le tableau suivant, dans cet ordre du jour 1 au jour 7 : `18, 21, 17, 23, 25, 20, 16`. Les températures sont des entiers en degrés Celsius.
+
 ## Notions à utiliser
 
 - tableau 1D de nombres;

@@ -11,7 +11,14 @@ Un laboratoire teste quatre prototypes de robots selon trois critères : vitesse
 
 ## Données de départ
 
-Utilise un tableau 2D de notes pour représenter les résultats et un tableau de noms pour les robots. Choisis des données variées qui permettent de tester ton programme.
+Utilise un tableau 2D de notes et un tableau de noms pour les robots. Commence avec les données suivantes :
+
+| Robot | Vitesse | Précision | Endurance |
+| --- | ---: | ---: | ---: |
+| Alpha | 12 | 10 | 14 |
+| Bêta | 15 | 9 | 11 |
+| Gamma | 8 | 16 | 12 |
+| Delta | 13 | 11 | 13 |
 
 ## Besoins
 
@@ -21,7 +28,11 @@ Crée une application console qui permet, à partir d'un menu, de :
 - calculer le total de points de chaque robot ;
 - trouver le prototype le plus performant, c'est-à-dire celui dont le total des trois notes est le plus élevé ;
 - trouver la meilleure note de chaque épreuve ;
-- afficher les robots qui ont obtenu une note inférieure à un seuil donné.
+- afficher les robots qui ont obtenu une note inférieure au seuil saisi, de `0` à `20`.
+
+## Valeurs à utiliser
+
+Chaque note est un entier de `0` à `20`. Le seuil demandé à la personne qui utilise le programme est aussi un entier de `0` à `20`; utilise `12` dans les tests. Les trois critères sont toujours vitesse, précision et endurance, dans cet ordre.
 
 ## Notions à utiliser
 

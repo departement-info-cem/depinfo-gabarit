@@ -29,6 +29,10 @@ Utilise les calculs suivants :
 1. `pages imprimées = nombre d'affiches × pages par affiche`;
 2. `coût total = pages imprimées × prix d'une page`.
 
+## Valeurs à utiliser
+
+Le nombre d'affiches et le nombre de pages par affiche sont des entiers supérieurs à `0`. Le prix par page est un nombre décimal supérieur à `0`, par exemple `0,15`.
+
 ## Notions à utiliser
 
 - variables `int` et `double`;

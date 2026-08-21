@@ -25,6 +25,10 @@ Le programme demande l'âge en années complètes et une réponse oui/non pour l
 
 Crée un programme qui demande l'âge de la personne et, lorsque nécessaire, si elle possède une carte étudiante. Le programme doit afficher le tarif applicable et une courte explication.
 
+## Valeurs à utiliser
+
+L'âge est un entier de `0` à `120`. Pour une personne de 18 à 64 ans, demande exactement `oui` ou `non` pour la carte étudiante. Pour les personnes de moins de 18 ans ou de 65 ans et plus, ne demande pas la carte : le tarif est déjà déterminé par l'âge.
+
 ## Notions à utiliser
 
 - comparaisons numériques (`<`, `<=`, `>=`);

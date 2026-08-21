@@ -20,6 +20,10 @@ Crée une application console qui demande :
 
 Le programme doit afficher un tableau indiquant le numéro de chaque trousse et le nombre d'articles cumulés. Il doit ensuite afficher le nombre total d'articles préparés.
 
+## Valeurs à utiliser
+
+Le nombre d'articles par trousse et le nombre de trousses sont des entiers supérieurs à `0`.
+
 ## Notions à utiliser
 
 - boucle `for`;
