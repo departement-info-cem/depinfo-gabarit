@@ -60,6 +60,8 @@ Commentaire : Bonne participation
 
 ## Tests manuels et résultats attendus
 
-- Entre l'atelier `Révision de C#`, `4` personnes présentes et `1` personne absente. **Résultat attendu :** le bilan affiche `5` personnes inscrites, `80 %` de présence et le commentaire `Bonne participation`.
-- Entre l'atelier `Aide aux devoirs`, `0` personne présente et `3` personnes absentes. **Résultat attendu :** le bilan affiche `3` personnes inscrites, `0 %` de présence et le commentaire `Participation limitée`.
-- Entre l'atelier `Préparation à l'examen`, `3` personnes présentes et `0` personne absente. **Résultat attendu :** le bilan affiche `3` personnes inscrites, `100 %` de présence et le commentaire `Excellente participation`.
+| Nom de l'atelier | Présentes | Absentes | Résultat attendu |
+| --- | ---: | ---: | --- |
+| `Révision de C#` | 4 | 1 | 5 personnes inscrites, 80 % de présence et `Bonne participation`. |
+| `Aide aux devoirs` | 0 | 3 | 3 personnes inscrites, 0 % de présence et `Participation limitée`. |
+| `Préparation à l'examen` | 3 | 0 | 3 personnes inscrites, 100 % de présence et `Excellente participation`. |

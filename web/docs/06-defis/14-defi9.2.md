@@ -64,14 +64,7 @@ Tâche la plus longue : Faire le laboratoire
 
 ## Tests manuels et résultats attendus
 
-Avec le fichier d'exemple, vérifie les résultats suivants :
-
-| Élément | Résultat attendu |
+| Lignes du fichier `taches.txt` | Résultat attendu |
 | --- | --- |
-| Nombre de tâches | 4 |
-| Total des minutes | 135 |
-| Durée moyenne | 33,75 minutes |
-| Tâche la plus longue | Faire le laboratoire |
-| Tâches de 30 minutes ou plus | 2 |
-
-Ajoute ensuite une ligne incomplète, par exemple `Préparer mon sac;`. **Résultat attendu :** le programme reste fonctionnel, n'ajoute pas cette ligne aux statistiques et indique clairement que la ligne est mal formée.
+| `Réviser les variables;25`<br />`Faire le laboratoire;55`<br />`Lire les notes de cours;20`<br />`Tester mon programme;35` | 4 tâches; total de 135 minutes; moyenne de 33,75 minutes; tâche la plus longue : `Faire le laboratoire`; 2 tâches de 30 minutes ou plus. |
+| Les quatre lignes ci-dessus, puis `Préparer mon sac;` | Le programme indique que la dernière ligne est mal formée, ne l'ajoute pas aux statistiques et conserve les mêmes résultats : 4 tâches et 135 minutes. |

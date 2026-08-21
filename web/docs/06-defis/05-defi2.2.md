@@ -67,10 +67,8 @@ Ajoute une promotion : la livraison devient gratuite à partir d'un montant mini
 
 ## Tests manuels et résultats attendus
 
-Utilise les prix fixés dans la section « Contexte », puis vérifie au minimum les situations suivantes :
-
-- une petite pizza sans garniture, sans livraison ;
-- une grande pizza avec trois garnitures et une livraison ;
-- une commande dont le sous-total atteint le seuil de livraison gratuite, si tu as réalisé la bonification.
-
-Pour chaque cas, calcule d'abord le sous-total, les taxes et les frais à la main. **Résultat attendu :** le reçu affiche ces quatre montants séparément et le total affiché correspond exactement à ton calcul.
+| Taille | Garnitures | Livraison | Résultat attendu |
+| --- | ---: | --- | --- |
+| `P` | 0 | `non` | Pizza et garnitures : 12,00 $; livraison : 0,00 $; sous-total : 12,00 $; taxes : 1,80 $; total : 13,80 $. |
+| `G` | 3 | `oui` | Pizza et garnitures : 22,50 $; livraison : 5,00 $; sous-total : 27,50 $; taxes : 4,12 $; total : 31,62 $. |
+| `P` | 2 | `oui` | Pizza et garnitures : 15,00 $; livraison : 5,00 $; sous-total : 20,00 $; taxes : 3,00 $; total : 23,00 $. |

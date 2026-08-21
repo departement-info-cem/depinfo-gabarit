@@ -66,13 +66,7 @@ Rangée avec le plus de sièges libres : rangée 3
 
 ## Tests manuels et résultats attendus
 
-Avec le plan illustré dans l'exemple, vérifie les résultats suivants :
-
-| Élément | Résultat attendu |
+| Plan de salle à utiliser | Résultat attendu |
 | --- | --- |
-| Sièges libres | 15 |
-| Sièges occupés à la rangée 1 | 2 |
-| Sièges occupés à la rangée 2 | 3 |
-| Rangée avec le plus de sièges libres | Rangée 3 |
-
-Modifie ensuite tous les sièges en `O`. **Résultat attendu :** le total de sièges libres est `0` et le programme indique que la salle est complète.
+| `L O L L O L / O O L L L O / L L L O L L / O L O O L L` | 15 sièges libres; 2 sièges occupés à la rangée 1; 3 sièges occupés à la rangée 2; rangée 3 possède le plus de sièges libres. |
+| `O O O O O O / O O O O O O / O O O O O O / O O O O O O` | 0 siège libre et message indiquant que la salle est complète. |

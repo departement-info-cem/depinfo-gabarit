@@ -24,11 +24,11 @@ Utilise un tableau 2D de notes et un tableau de noms pour les robots. Commence a
 
 Crée une application console qui permet, à partir d'un menu, de :
 
-- afficher toutes les notes dans un tableau lisible ;
-- calculer le total de points de chaque robot ;
-- trouver le prototype le plus performant, c'est-à-dire celui dont le total des trois notes est le plus élevé ;
-- trouver la meilleure note de chaque épreuve ;
-- afficher les robots qui ont obtenu une note inférieure au seuil saisi, de `0` à `20`.
+1. afficher toutes les notes dans un tableau lisible ;
+2. calculer le total de points de chaque robot et trouver le prototype le plus performant ;
+3. trouver la meilleure note de chaque épreuve ;
+4. afficher les robots qui ont obtenu une note inférieure au seuil saisi, de `0` à `20` ;
+0. quitter le programme.
 
 ## Valeurs à utiliser
 
@@ -73,20 +73,11 @@ Meilleure note en endurance : 14
 
 ## Tests manuels et résultats attendus
 
-Utilise temporairement les données suivantes :
-
-| Robot | Vitesse | Précision | Endurance |
-| --- | ---: | ---: | ---: |
-| Alpha | 12 | 10 | 14 |
-| Bêta | 15 | 9 | 11 |
-| Gamma | 8 | 16 | 12 |
-| Delta | 13 | 11 | 13 |
-
-**Résultats attendus :**
-
-- Delta est le prototype le plus performant avec `37` points ;
-- les meilleures notes des épreuves sont `15`, `16` et `14` ;
-- avec un seuil de `12`, Alpha, Bêta et Gamma sont signalés au moins une fois ;
-- le menu revient après chaque option.
-
-Teste aussi deux robots avec le même meilleur total. **Résultat attendu :** le programme affiche le premier de ces deux prototypes dans le tableau comme prototype le plus performant.
+| Choix du menu et données à utiliser | Résultat attendu |
+| --- | --- |
+| Choix `1`, avec le tableau de départ Alpha/Bêta/Gamma/Delta | Les quatre robots et leurs trois notes sont affichés dans un tableau lisible. |
+| Choix `2`, avec le tableau de départ | Totaux : Alpha 36, Bêta 35, Gamma 36, Delta 37; Delta est le prototype le plus performant avec 37 points. |
+| Choix `3`, avec le tableau de départ | Meilleure note en vitesse : 15; précision : 16; endurance : 14. |
+| Choix `4`, seuil `12`, avec le tableau de départ | Alpha, Bêta, Gamma et Delta sont signalés, car chacun possède au moins une note inférieure à 12. |
+| Choix `2`, avec Alpha `12, 10, 14`; Bêta `15, 9, 11`; Gamma `8, 16, 12`; Delta `13, 11, 11` | Alpha et Gamma totalisent 36 points; Alpha est affiché comme prototype le plus performant, car il est le premier à avoir le meilleur total dans le tableau. |
+| Choix `0` | Le programme se ferme. |

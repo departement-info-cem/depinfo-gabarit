@@ -67,14 +67,7 @@ Permets à la personne qui utilise le programme de modifier une température ava
 
 ## Tests manuels et résultats attendus
 
-Avec le tableau proposé (`18, 21, 17, 23, 25, 20, 16`), vérifie les résultats suivants :
-
-| Élément | Résultat attendu |
+| Valeurs du tableau (jours 1 à 7) | Résultat attendu |
 | --- | --- |
-| Température minimale | 16 °C |
-| Température maximale | 25 °C |
-| Moyenne | 20 °C |
-| Journées de 20 °C ou plus | 4 |
-| Première journée la plus chaude | Jour 5 |
-
-Remplace ensuite toutes les températures par la même valeur, par exemple `20`. **Résultat attendu :** le minimum, le maximum et la moyenne affichent tous `20 °C`.
+| `18, 21, 17, 23, 25, 20, 16` | Minimum : 16 °C; maximum : 25 °C; moyenne : 20 °C; 4 journées de 20 °C ou plus; première journée la plus chaude : jour 5. |
+| `20, 20, 20, 20, 20, 20, 20` | Minimum, maximum et moyenne : 20 °C; 7 journées de 20 °C ou plus; première journée la plus chaude : jour 1. |

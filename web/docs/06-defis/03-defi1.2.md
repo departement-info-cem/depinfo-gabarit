@@ -72,7 +72,6 @@ Coût total : 1,20 $
 
 | Affiches | Pages par affiche | Prix par page | Résultat attendu |
 | ---: | ---: | ---: | --- |
-| 4 | 2 | 0,15 $ | 8 pages et 1,20 $ |
-| 10 | 1 | 0,20 $ | 10 pages et 2,00 $ |
-
-Refais ensuite le premier test avec `2` affiches au lieu de `4`. **Résultat attendu :** le programme affiche `4` pages imprimées et un coût total de `0,60 $`.
+| 4 | 2 | 0,15 $ | 8 pages imprimées et 1,20 $ |
+| 10 | 1 | 0,20 $ | 10 pages imprimées et 2,00 $ |
+| 2 | 2 | 0,15 $ | 4 pages imprimées et 0,60 $ |

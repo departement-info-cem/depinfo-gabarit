@@ -76,5 +76,5 @@ Raison : tarif étudiant
 | 20 | Oui | 10 $ |
 | 20 | Non | 14 $ |
 | 72 | Oui | 9 $ |
-
-Teste aussi les âges `-1` et `150`. **Résultat attendu :** un message d'erreur est affiché et aucun tarif n'est présenté.
+| -1 | Non demandé | Un message d'erreur est affiché et aucun tarif n'est présenté. |
+| 150 | Non demandé | Un message d'erreur est affiché et aucun tarif n'est présenté. |

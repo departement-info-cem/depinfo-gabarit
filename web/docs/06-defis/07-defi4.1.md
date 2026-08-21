@@ -60,5 +60,5 @@ Trousse    Articles cumulés
 | ---: | ---: | --- |
 | 4 | 4 | Quatre lignes : 4, 8, 12 et 16 articles cumulés |
 | 6 | 1 | Une seule ligne à 6 articles cumulés |
-
-Teste également un nombre d'articles de `0` et un nombre de trousses négatif. **Résultat attendu :** le programme refuse la donnée et n'affiche aucun tableau.
+| 0 | 4 | Le programme refuse la donnée et n'affiche aucun tableau. |
+| 4 | -1 | Le programme refuse la donnée et n'affiche aucun tableau. |

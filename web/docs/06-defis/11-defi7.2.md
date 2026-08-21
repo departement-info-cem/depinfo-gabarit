@@ -66,10 +66,11 @@ Ajoute une option permettant de convertir une durée en minutes vers des heures 
 
 ## Tests manuels et résultats attendus
 
-- Choisis Celsius vers Fahrenheit et entre `0` : le résultat doit être `32 °F`.
-- Choisis Celsius vers Fahrenheit et entre `100` : le résultat doit être `212 °F`.
-- Choisis kilomètres vers miles et entre `10` : le résultat doit être environ `6,21 miles`.
-- Entre `bonjour` lorsqu'une valeur numérique est demandée. **Résultat attendu :** le programme affiche un message de saisie invalide puis redemande une valeur ou revient au menu.
-- Entre un choix de menu inexistant, par exemple `9`, puis quitte avec `0`. **Résultat attendu :** le programme affiche un message indiquant que le choix est invalide, réaffiche le menu, puis se ferme seulement après `0`.
-
-Pour la conversion de devises, vérifie le résultat avec le taux fixe de `0,72` affiché dans ton programme.
+| Choix du menu | Valeur saisie | Résultat attendu |
+| ---: | --- | --- |
+| 1 | `0` | 32 °F |
+| 1 | `100` | 212 °F |
+| 2 | `10` | Environ 6,21 miles |
+| 3 | `100` | 72,00 $ US |
+| 1 | `bonjour` | Message de saisie invalide, puis nouvelle demande ou retour au menu. |
+| 9, puis 0 | Aucune valeur de conversion | Message indiquant que le choix 9 est invalide; le menu est réaffiché; le programme se ferme seulement après le choix 0. |

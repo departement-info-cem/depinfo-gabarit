@@ -60,7 +60,9 @@ Ajoute la possibilité de créer un nouveau journal ou de choisir le journal exi
 
 ## Tests manuels et résultats attendus
 
-1. Ajoute une séance de course de `45` minutes. **Résultat attendu :** le programme confirme l'écriture et le fichier contient la date, `Course`, `45` et ta note.
-2. Ajoute une seconde séance de vélo de `30` minutes. **Résultat attendu :** le fichier contient maintenant deux séances et la première séance est toujours présente.
-3. Entre une durée de `-10` ou un texte à la place de la durée. **Résultat attendu :** le programme signale une donnée invalide et n'ajoute pas de séance incorrecte dans le fichier.
-4. Ouvre le fichier avec un éditeur de texte. **Résultat attendu :** les informations de chaque séance sont séparées de façon lisible.
+| Date | Activité | Durée | Note | Résultat attendu |
+| --- | --- | ---: | --- | --- |
+| `2026-09-08` | `Course` | 45 | `Course au parc` | Le programme confirme l'écriture; le fichier contient `2026-09-08;Course;45;Course au parc`. |
+| `2026-09-09` | `Vélo` | 30 | `Tour du quartier` | Le fichier contient maintenant deux séances; la première séance est toujours présente. |
+| `2026-09-10` | `Marche` | -10 | `Test invalide` | Le programme signale une donnée invalide et n'ajoute aucune ligne. |
+| `2026-09-10` | `Marche` | `bonjour` | `Test invalide` | Le programme signale une donnée invalide et n'ajoute aucune ligne. |

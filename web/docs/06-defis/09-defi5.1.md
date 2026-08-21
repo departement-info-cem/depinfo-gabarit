@@ -75,18 +75,7 @@ Moyenne : 16,67 points
 
 ## Tests manuels et résultats attendus
 
-Utilise temporairement les tableaux suivants :
-
-```text
-Noms   : Amélie, Bilal, Chloé
-Points : 12, 19, 19
-```
-
-**Résultats attendus :**
-
-- la moyenne est d'environ `16,67` points ;
-- deux personnes atteignent un seuil de `15` points ;
-- le programme affiche Bilal comme première personne, car Bilal apparaît avant Chloé dans les tableaux ;
-- chaque nom est associé au bon nombre de points.
-
-Teste ensuite un tableau qui contient une seule personne. **Résultat attendu :** cette personne est affichée comme première, sa moyenne est égale à son pointage et aucun autre nom n'apparaît.
+| Noms | Points | Résultat attendu |
+| --- | --- | --- |
+| `Amélie, Bilal, Chloé` | `12, 19, 19` | Moyenne : 16,67 points; 2 personnes atteignent 15 points; Bilal est premier, car il apparaît avant Chloé; chaque nom est associé au bon pointage. |
+| `Maya` | `8` | Maya est première; moyenne : 8 points; 0 personne atteint 15 points; aucun autre nom n'apparaît. |

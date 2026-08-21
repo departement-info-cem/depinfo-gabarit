@@ -64,5 +64,7 @@ Bonne première journée !
 
 ## Tests manuels et résultats attendus
 
-- Lance le programme avec les valeurs suivantes : nom `Alex Tremblay`, groupe `1090`, local `B-321` et début `8 h 00`. **Résultat attendu :** les six informations demandées, le titre et le message d'encouragement apparaissent dans un seul billet lisible.
-- Modifie le nom pour `Mia` et le groupe pour `1080`. **Résultat attendu :** seules ces deux valeurs changent et le billet demeure bien aligné.
+| Valeurs à utiliser | Résultat attendu |
+| --- | --- |
+| Nom `Alex Tremblay`, groupe `1090`, local `B-321`, début `8 h 00` | Les six informations demandées, le titre et le message d'encouragement apparaissent dans un seul billet lisible. |
+| Nom `Mia`, groupe `1080`, même local et même heure | Seuls le nom et le groupe changent; le billet demeure bien aligné. |
