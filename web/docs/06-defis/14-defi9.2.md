@@ -28,6 +28,12 @@ Crée une application console qui lit ce fichier et affiche :
 - le nom de la tâche la plus longue ;
 - le nombre de tâches qui durent au moins 30 minutes.
 
+## Notions à mobiliser
+
+- lecture d'un fichier texte ligne par ligne;
+- séparation d'une ligne avec `Split(';')`;
+- `TryParse`, boucles et variables d'accumulation.
+
 ## Contraintes
 
 - Lis les données à partir du fichier, et non à partir de valeurs écrites directement dans le programme.

@@ -24,6 +24,12 @@ Ton programme doit afficher :
 
 Le résultat doit être encadré ou organisé de manière à ressembler à un vrai billet.
 
+## Notions à mobiliser
+
+- `Console.ReadLine()` et `Console.WriteLine()`;
+- variables de type `string`;
+- concaténation de texte avec l'opérateur `+`.
+
 ## Contraintes
 
 - Utilise uniquement ce qui a été vu dans les premiers pas en C#.

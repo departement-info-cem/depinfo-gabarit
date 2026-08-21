@@ -3,11 +3,11 @@ sidebar_position: 12
 slug: /defis/defi-8-1
 ---
 
-# Défi d'intégration 8.1 — Tournoi de robots
+# Défi d'intégration 8.1 — Évaluation de prototypes robots
 
 ## Contexte
 
-Quatre robots participent à trois épreuves : vitesse, précision et endurance. Chaque note est un nombre de points obtenu dans une épreuve. Les organisateurs veulent analyser les résultats avant de remettre les prix.
+Un laboratoire teste quatre prototypes de robots selon trois critères : vitesse, précision et endurance. Chaque note est un nombre de points obtenu lors d'un test. L'équipe veut analyser les résultats afin de choisir le prototype le plus performant.
 
 ## Données de départ
 
@@ -19,15 +19,21 @@ Crée une application console qui permet, à partir d'un menu, de :
 
 - afficher toutes les notes dans un tableau lisible ;
 - calculer le total de points de chaque robot ;
-- trouver le robot gagnant, c'est-à-dire celui dont le total des trois notes est le plus élevé ;
+- trouver le prototype le plus performant, c'est-à-dire celui dont le total des trois notes est le plus élevé ;
 - trouver la meilleure note de chaque épreuve ;
 - afficher les robots qui ont obtenu une note inférieure à un seuil donné.
+
+## Notions à mobiliser
+
+- tableau 2D et boucles `for` imbriquées;
+- fonctions pour chaque action du menu;
+- `switch`, boucle `do while` ou `while`, et conditions.
 
 ## Contraintes
 
 - Utilise des fonctions pour séparer les responsabilités du programme.
 - Utilise les tableaux et les boucles plutôt que des calculs répétés à la main.
-- Utilise des conditions pour traiter les égalités et les résultats faibles.
+- Utilise des conditions pour traiter les égalités et les résultats faibles. En cas d'égalité pour le meilleur total, affiche le premier prototype rencontré dans le tableau.
 - Le menu doit rester accessible jusqu'au choix de quitter.
 
 ## Bonifications facultatives
@@ -55,9 +61,9 @@ Utilise temporairement les données suivantes :
 
 **Résultats attendus :**
 
-- Delta gagne avec `37` points ;
+- Delta est le prototype le plus performant avec `37` points ;
 - les meilleures notes des épreuves sont `15`, `16` et `14` ;
 - avec un seuil de `12`, Alpha, Bêta et Gamma sont signalés au moins une fois ;
 - le menu revient après chaque option.
 
-Teste aussi deux robots avec le même total. **Résultat attendu :** l'affichage traite l'égalité selon la règle que tu as choisie et ne présente pas de gagnant incorrect.
+Teste aussi deux robots avec le même meilleur total. **Résultat attendu :** le programme affiche le premier de ces deux prototypes dans le tableau comme prototype le plus performant.

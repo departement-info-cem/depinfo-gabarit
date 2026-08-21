@@ -22,6 +22,12 @@ Crée une application console avec un menu qui offre au moins les choix suivants
 
 Après chaque conversion, le menu doit être affiché de nouveau.
 
+## Notions à mobiliser
+
+- `switch` pour le menu;
+- boucle `while` ou `do while`;
+- `TryParse` pour valider les nombres saisis.
+
 ## Contraintes
 
 - Utilise `switch` pour traiter le choix du menu.

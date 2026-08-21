@@ -27,6 +27,12 @@ Ton programme doit afficher :
 - le nombre de journées de 20 °C ou plus, la limite de 20 °C étant incluse ;
 - le numéro de la première journée ayant la température maximale. Si plusieurs journées ont la même température maximale, conserve la première rencontrée.
 
+## Notions à mobiliser
+
+- tableau 1D de nombres;
+- boucle `for` et propriété `Length`;
+- variables d'accumulation, minimum et maximum.
+
 ## Contraintes
 
 - Utilise un tableau 1D et une ou plusieurs boucles `for`.
