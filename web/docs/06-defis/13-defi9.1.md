@@ -44,8 +44,12 @@ La date est un texte au format `AAAA-MM-JJ`, par exemple `2026-09-08`. L'activit
 **Entrées saisies :** date `2026-09-08`, activité `Course`, durée `45` minutes et note `Course au parc`.
 
 ```text
+Date       : 2026-09-08
+Activité   : Course
+Durée      : 45 minutes
+Note       : Course au parc
+
 Séance ajoutée dans entrainement.txt
-2026-09-08;Course;45;Course au parc
 ```
 
 ## Critères de réussite
