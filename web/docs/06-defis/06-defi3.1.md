@@ -47,11 +47,6 @@ Présence : 80 %
 Commentaire : Bonne participation
 ```
 
-## Bonifications facultatives
-
-- Ajouter la date de l'atelier au bilan.
-- Afficher le nombre de personnes absentes en plus du pourcentage.
-
 ## Critères de réussite
 
 - Le bilan est calculé correctement à partir des deux nombres saisis.

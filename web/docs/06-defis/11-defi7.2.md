@@ -54,10 +54,6 @@ Température en Celsius : 25
 Résultat : 77 °F
 ```
 
-## Bonification facultative
-
-Ajoute une option permettant de convertir une durée en minutes vers des heures et des minutes.
-
 ## Critères de réussite
 
 - Le programme se répète jusqu'au choix de sortie.

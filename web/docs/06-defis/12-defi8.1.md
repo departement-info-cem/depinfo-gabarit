@@ -59,12 +59,6 @@ Meilleure note en précision : 16
 Meilleure note en endurance : 14
 ```
 
-## Bonifications facultatives
-
-- Ajouter une épreuve ou un robot.
-- Donner un prix spécial à un robot régulier dans les trois épreuves.
-- Permettre de modifier une note.
-
 ## Critères de réussite
 
 - Tous les résultats sont obtenus à partir des tableaux.

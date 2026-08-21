@@ -55,10 +55,6 @@ Journées de 20 °C ou plus : 4
 Première journée la plus chaude : jour 5
 ```
 
-## Bonification facultative
-
-Permets à la personne qui utilise le programme de modifier une température avant d'afficher le bilan.
-
 ## Critères de réussite
 
 - Le tableau est parcouru correctement.

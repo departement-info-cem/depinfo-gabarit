@@ -55,10 +55,6 @@ Taxes                     : 4,12 $
 Total à payer             : 31,62 $
 ```
 
-## Bonification facultative
-
-Ajoute une promotion : la livraison devient gratuite à partir d'un montant minimal que tu détermines.
-
 ## Critères de réussite
 
 - Le total est exact pour différentes combinaisons de commandes.

@@ -48,10 +48,6 @@ Séance ajoutée dans entrainement.txt
 2026-09-08;Course;45;Course au parc
 ```
 
-## Bonification facultative
-
-Ajoute la possibilité de créer un nouveau journal ou de choisir le journal existant à compléter.
-
 ## Critères de réussite
 
 - Une nouvelle séance est ajoutée sans effacer les autres.

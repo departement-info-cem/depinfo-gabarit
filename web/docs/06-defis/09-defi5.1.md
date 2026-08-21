@@ -61,12 +61,6 @@ Meilleur résultat : Bilal, avec 19 points
 Moyenne : 16,67 points
 ```
 
-## Bonifications facultatives
-
-- Permettre d'ajouter un résultat.
-- Afficher les membres dans l'ordre inverse.
-- Ajouter une distinction pour les personnes au-dessus de la moyenne.
-
 ## Critères de réussite
 
 - Les résultats affichés sont calculés à partir des tableaux.
