@@ -48,8 +48,6 @@ Date       : 2026-09-08
 Activité   : Course
 Durée      : 45 minutes
 Note       : Course au parc
-
-Séance ajoutée dans entrainement.txt
 ```
 
 ## Critères de réussite
