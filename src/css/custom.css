@@ -14,12 +14,24 @@
   --ifm-color-primary-lighter: #359962;
   --ifm-color-primary-lightest: #3cad6e;
   --ifm-code-font-size: 95%;
-  --ifm-menu-link-padding-horizontal:1.5em;
+  --ifm-menu-link-padding-horizontal: 1.5em;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --examen-bg: #ffebec;
+  --examen-font-color: #003100;
+  --formatif-bg: #fffdeb;
+  --formatif-font-color: #003100;
+  --remise-tp-bg: #e6f6e6;
+  --remise-tp-font-color: #003100;
+  --module-border-width: 4px;
+  --module1-border: #7070ff;
+  --module2-border: #6ab16a;
+  --module3-border: #f0b066;
+  --custom-tag-yellow-bg: #b3b010;
+  --custom-tag-yellow-fg: #ffffff;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme='dark'] {
+[data-theme="dark"] {
   --ifm-color-primary: #25c2a0;
   --ifm-color-primary-dark: #21af90;
   --ifm-color-primary-darker: #1fa588;
@@ -28,97 +40,171 @@
   --ifm-color-primary-lighter: #32d8b4;
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --examen-bg: #4b1113;
+  --examen-font-color: #f4e7ec;
+  --formatif-bg: #4b3911;
+  --formatif-font-color: #f4e7ec;
+  --remise-tp-bg: #003100;
+  --remise-tp-font-color: #d3f0e6;
+  --module1-border: #3e3ec2;
+  --module2-border: #008d00;
+  --module3-border: #c78800;
+  --custom-tag-yellow-bg: #f1f391;
+  --custom-tag-yellow-fg: #000000;
 }
-
-
 
 /* Style commun pour TP et examens */
 .tp, .examen, .formatif {
   font-weight: bold;
   border-radius: 6px;
-  border: 1px solid transparent;
+  border: 1px solid;
 }
 .tp {
   font-size: 90%;
+  text-align: center;
+  width: 100%;
+  display: block;
+  background: var(--remise-tp-bg);
+  font-size: 0.75em;
+  color: var(--remise-tp-font-color);
+}
+.examen {
+  color: var(--examen-font-color) !important;
+  background-color: var(--examen-bg);
 }
 
-/* TP - Bleu */
-/* Mode clair */
+/* OLD...
+
 html[data-theme="light"] .tp {
-  background-color: #e6f0ff; /* bleu pâle */
+  background-color: #e6f0ff;
   border-color: #99c2ff;
   color: #003366;
 }
-/* Mode sombre */
+
 html[data-theme="dark"] .tp {
-  background-color: #00264d; /* bleu foncé */
+  background-color: #00264d;
   border-color: #66a3ff;
   color: #cce0ff;
 }
 
-/* Examens - Rouge */
-/* Mode clair */
 html[data-theme="light"] .examen {
-  background-color: #ffe6e6; /* rouge pâle */
+  background-color: #ffe6e6;
   border-color: #ff9999;
   color: #660000;
 }
-/* Mode sombre */
+
 html[data-theme="dark"] .examen {
-  background-color: #660000; /* rouge foncé */
+  background-color: #660000;
   border-color: #ff4d4d;
   color: #ffe6e6;
 }
 
-/* Examen formatif - Jaune */
-/* Mode clair */
 html[data-theme="light"] .formatif {
-  background-color: #fffde6; /* jaune pâle */
+  background-color: #fffde6;
   border-color: #d8d52a;
   color: #665f00;
 }
-/* Mode sombre */
+
 html[data-theme="dark"] .formatif {
-  background-color: #595a01; /* jaune foncé */
+  background-color: #595a01;
   border-color: #cfda43;
   color: #ffffe6;
 }
+*/
 
+.examen1 {
+  background-color: var(--examen-bg);
+  color: var(--examen-font-color);
+}
+.examen2 {
+  background-color: var(--examen-bg);
+  color: var(--examen-font-color);
+}
+.examen3 {
+  background-color: var(--examen-bg);
+  color: var(--examen-font-color);
+}
+.formatif1 {
+  background-color: var(--formatif-bg);
+  color: var(--formatif-font-color);
+}
+.formatif2 {
+  background-color: var(--formatif-bg);
+  color: var(--formatif-font-color);
+}
+.formatif3 {
+  background-color: var(--formatif-bg);
+  color: var(--formatif-font-color);
+}
 .remise-tp1::after {
   content: "Remise TP1";
   text-align: center;
   width: 100%;
   display: block;
-  background: #8787ff;
-  font-size: 0.75em;
+  background: var(--remise-tp-bg);
+  font-size: 0.65em;
+  color: var(--remise-tp-font-color);
 }
-
 .remise-tp2::after {
   content: "Remise TP2";
   text-align: center;
   width: 100%;
   display: block;
-  background: #8787ff;
-  font-size: 0.75em;
+  background: var(--remise-tp-bg);
+  font-size: 0.65em;
+  color: var(--remise-tp-font-color);
 }
-
 .remise-tp3::after {
   content: "Remise TP3";
   text-align: center;
   width: 100%;
   display: block;
-  background: #8787ff;
-  font-size: 0.75em;
-}
+  background: var(--remise-tp-bg);
+  font-size: 0.65em;
+  color: var(--remise-tp-font-color);
 
+}
 .remise-tp4::after {
   content: "Remise TP4";
   text-align: center;
   width: 100%;
   display: block;
-  background: #8787ff;
+  background: var(--remise-tp-bg);
   font-size: 0.75em;
+  color: var(--remise-tp-font-color);
 }
+
+.menu__list-item.module1,    .menu__link.module1,
+.menu__list-item.module2,    .menu__link.module2,
+.menu__list-item.module3,    .menu__link.module3,
+.menu__list-item.formatif1,  .menu__link.formatif1,
+.menu__list-item.formatif2,  .menu__link.formatif2,
+.menu__list-item.formatif3,  .menu__link.formatif3,
+.menu__list-item.examen1,    .menu__link.examen1,
+.menu__list-item.examen2,    .menu__link.examen2,
+.menu__list-item.examen3,    .menu__link.examen3,
+.menu__list-item.remise-tp1, .menu__link.remise-tp1,
+.menu__list-item.remise-tp2, .menu__link.remise-tp2,
+.menu__list-item.remise-tp3, .menu__link.remise-tp3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 1px;
+  padding-bottom: 1px
+}
+
+.custom-tag-yellow {
+  background-color: var(--custom-tag-yellow-bg);
+  color: var(--custom-tag-yellow-fg);
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  line-height: 1;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  width: fit-content;
+  margin-bottom: 1em;
+}
+
 
 .DocCardList--no-description .card h2 {
   margin-bottom: 0;
@@ -134,4 +220,26 @@ html[data-theme="dark"] .formatif {
   margin: 0 calc(-1 * var(--ifm-pre-padding));
   padding: 0 var(--ifm-pre-padding);
   border-left: 3px solid #ff000080;
+}
+
+/* Prevent selection */
+.unselectable {
+ -webkit-user-select: none; /* Safari/Chrome */
+ -moz-user-select: none; /* Firefox */
+ -ms-user-select: none; /* IE 10+ */
+ user-select: none; /* Standard */
+}
+
+/* Select all text on click */
+.select-all {
+ -webkit-user-select: all;
+ -moz-user-select: all;
+ user-select: all;
+}
+
+/* Allow normal selection */
+.select-text {
+ -webkit-user-select: text;
+ -moz-user-select: text;
+ user-select: text;
 }

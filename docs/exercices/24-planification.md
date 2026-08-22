@@ -2,7 +2,7 @@
 title: Planification de tâches
 sidebar_label: Planification de tâches
 toc_max_heading_level: 2
-draft: false
+draft: true
 ---
 
 Sur une machine virtuelle (**PAS** le contrôleur de domaine), créez un petit script, `C:\Test\test.ps1` qui écrit une ligne dans un fichier texte avec la date du jour, par exemple:

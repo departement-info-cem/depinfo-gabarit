@@ -2,6 +2,7 @@
 title: Paramètres et dictionnaires
 sidebar_label: Paramètres et dictionnaires
 toc_max_heading_level: 3
+draft: true
 ---
 
 

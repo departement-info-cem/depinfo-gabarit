@@ -1,0 +1,431 @@
+.calendarContainer {
+  margin: 1rem 0;
+  background: var(--ifm-background-surface-color, #fff);
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--ifm-color-emphasis-200, #e0e0e0);
+}
+
+.calendarHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  background: var(--ifm-color-primary-lightest, #f0f9ff);
+  border-bottom: 1px solid var(--ifm-color-emphasis-200, #e0e0e0);
+}
+
+.monthTitle {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--ifm-color-primary-darker, #1976d2);
+}
+
+.navButton {
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 4px;
+  color: var(--ifm-color-primary, #25c2a0);
+  transition: background-color 0.2s;
+}
+
+.navButton:hover {
+  background: var(--ifm-hover-overlay, rgba(0, 0, 0, 0.05));
+}
+
+.calendarGrid {
+  display: flex;
+  flex-direction: column;
+}
+
+.weekHeader {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  background: var(--ifm-color-emphasis-100, #f5f5f5);
+}
+
+.dayHeader {
+  padding: 0.75rem 0.5rem;
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: var(--ifm-color-emphasis-700, #666);
+  border-right: 1px solid var(--ifm-color-emphasis-200, #e0e0e0);
+}
+
+.dayHeader:last-child {
+  border-right: none;
+}
+
+.daysGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  min-height: 0;
+  overflow: hidden;
+}
+
+.dayCell {
+  min-height: 100px;
+  padding: 0.5rem;
+  border-right: 1px solid var(--ifm-color-emphasis-200, #e0e0e0);
+  border-bottom: 1px solid var(--ifm-color-emphasis-200, #e0e0e0);
+  background: var(--ifm-background-surface-color, #fff);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden; 
+}
+
+.dayCell:nth-child(5n) {
+  border-right: none;
+}
+
+.dayCell.otherMonth {
+  background: var(--ifm-color-emphasis-100, #f8f9fa);
+  color: var(--ifm-color-emphasis-500, #999);
+}
+
+.dayCell.today {
+  background: var(--ifm-color-primary-lightest, #e3f2fd);
+}
+
+.dayCell.today .dayNumber {
+  background: var(--ifm-color-primary, #25c2a0);
+  color: white;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.25rem;
+}
+
+.dayNumber {
+  font-weight: 600;
+  font-size: 0.875rem;
+  margin-bottom: 0.25rem;
+  color: var(--ifm-font-color-base, #222);
+}
+
+.otherMonth .dayNumber {
+  color: var(--ifm-color-emphasis-500, #999);
+}
+
+.eventsContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.event {
+  padding: 4px 6px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  max-height: 40px;
+  overflow: hidden;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+.event:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  border-color: var(--ifm-color-primary, #25c2a0);
+  opacity: 0.9;
+}
+
+.event:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.eventTitle {
+  font-weight: 600;
+  line-height: 1.3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--ifm-color-primary-darkest, #003d82);
+  font-size: 0.8rem;
+}
+
+/* Couleurs spécifiques par groupe - 15 variantes */
+.eventGroup0 {
+  background-color: #e3f2fd !important; /* Bleu clair */
+  border-color: #1976d2 !important;
+}
+
+.eventGroup1 {
+  background-color: #e8f5e9 !important; /* Vert clair */
+  border-color: #388e3c !important;
+}
+
+.eventGroup2 {
+  background-color: #fff3e0 !important; /* Orange clair */
+  border-color: #f57c00 !important;
+}
+
+.eventGroup3 {
+  background-color: #f3e5f5 !important; /* Violet clair */
+  border-color: #7b1fa2 !important;
+}
+
+.eventGroup4 {
+  background-color: #ffebee !important; /* Rose clair */
+  border-color: #c62828 !important;
+}
+
+.eventGroup5 {
+  background-color: #e0f2f1 !important; /* Turquoise clair */
+  border-color: #00695c !important;
+}
+
+.eventGroup6 {
+  background-color: #fce4ec !important; /* Rose pâle */
+  border-color: #ad1457 !important;
+}
+
+.eventGroup7 {
+  background-color: #e8eaf6 !important; /* Indigo clair */
+  border-color: #303f9f !important;
+}
+
+.eventGroup8 {
+  background-color: #e1f5fe !important; /* Cyan clair */
+  border-color: #0277bd !important;
+}
+
+.eventGroup9 {
+  background-color: #f9fbe7 !important; /* Lime clair */
+  border-color: #689f38 !important;
+}
+
+.eventGroup10 {
+  background-color: #fff8e1 !important; /* Ambre clair */
+  border-color: #ffa000 !important;
+}
+
+.eventGroup11 {
+  background-color: #fafafa !important; /* Gris clair */
+  border-color: #616161 !important;
+}
+
+.eventGroup12 {
+  background-color: #efebe9 !important; /* Brun clair */
+  border-color: #5d4037 !important;
+}
+
+.eventGroup13 {
+  background-color: #e4f1fe !important; /* Bleu très clair */
+  border-color: #0d47a1 !important;
+}
+
+.eventGroup14 {
+  background-color: #f1f8e9 !important; /* Vert très clair */
+  border-color: #33691e !important;
+}
+
+/* Mode sombre */
+[data-theme="dark"] .calendarContainer {
+  background: var(--ifm-background-surface-color, #23272f);
+  border-color: var(--ifm-color-emphasis-200, #444950);
+}
+
+[data-theme="dark"] .calendarHeader {
+  background: var(--ifm-color-emphasis-200, #2e3440);
+  border-bottom-color: var(--ifm-color-emphasis-300, #444950);
+}
+
+[data-theme="dark"] .monthTitle {
+  color: var(--ifm-color-primary-lighter, #5cdbf0);
+}
+
+[data-theme="dark"] .navButton {
+  color: var(--ifm-color-primary-lighter, #5cdbf0);
+}
+
+[data-theme="dark"] .navButton:hover {
+  background: var(--ifm-hover-overlay, rgba(255, 255, 255, 0.05));
+}
+
+[data-theme="dark"] .weekHeader {
+  background: var(--ifm-color-emphasis-200, #2e3440);
+}
+
+[data-theme="dark"] .dayHeader {
+  color: var(--ifm-color-emphasis-600, #8891a1);
+  border-right-color: var(--ifm-color-emphasis-300, #444950);
+}
+
+[data-theme="dark"] .dayCell {
+  background: var(--ifm-background-surface-color, #23272f);
+  border-right-color: var(--ifm-color-emphasis-300, #444950);
+  border-bottom-color: var(--ifm-color-emphasis-300, #444950);
+}
+
+[data-theme="dark"] .dayCell.otherMonth {
+  background: var(--ifm-color-emphasis-200, #1c1e21);
+}
+
+[data-theme="dark"] .dayCell.today {
+  background: var(--ifm-color-primary-dark, #1e7b72);
+}
+
+[data-theme="dark"] .dayNumber {
+  color: var(--ifm-font-color-base, #f3f3f3);
+}
+
+[data-theme="dark"] .otherMonth .dayNumber {
+  color: var(--ifm-color-emphasis-500, #666);
+}
+
+[data-theme="dark"] .event {
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .event:hover {
+  border-color: var(--ifm-color-primary-lighter, #5cdbf0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="dark"] .eventTitle {
+  color: var(--ifm-font-color-base, #f3f3f3);
+}
+
+/* Couleurs spécifiques par groupe - Mode sombre - 15 variantes */
+[data-theme="dark"] .eventGroup0 {
+  background-color: #1a237e !important; /* Bleu foncé */
+  border-color: #3f51b5 !important;
+}
+
+[data-theme="dark"] .eventGroup1 {
+  background-color: #1b5e20 !important; /* Vert foncé */
+  border-color: #4caf50 !important;
+}
+
+[data-theme="dark"] .eventGroup2 {
+  background-color: #e65100 !important; /* Orange foncé */
+  border-color: #ff9800 !important;
+}
+
+[data-theme="dark"] .eventGroup3 {
+  background-color: #4a148c !important; /* Violet foncé */
+  border-color: #9c27b0 !important;
+}
+
+[data-theme="dark"] .eventGroup4 {
+  background-color: #b71c1c !important; /* Rouge foncé */
+  border-color: #f44336 !important;
+}
+
+[data-theme="dark"] .eventGroup5 {
+  background-color: #004d40 !important; /* Turquoise foncé */
+  border-color: #009688 !important;
+}
+
+[data-theme="dark"] .eventGroup6 {
+  background-color: #880e4f !important; /* Rose foncé */
+  border-color: #e91e63 !important;
+}
+
+[data-theme="dark"] .eventGroup7 {
+  background-color: #1a237e !important; /* Indigo foncé */
+  border-color: #3f51b5 !important;
+}
+
+[data-theme="dark"] .eventGroup8 {
+  background-color: #01579b !important; /* Cyan foncé */
+  border-color: #03a9f4 !important;
+}
+
+[data-theme="dark"] .eventGroup9 {
+  background-color: #33691e !important; /* Lime foncé */
+  border-color: #8bc34a !important;
+}
+
+[data-theme="dark"] .eventGroup10 {
+  background-color: #ff6f00 !important; /* Ambre foncé */
+  border-color: #ffc107 !important;
+}
+
+[data-theme="dark"] .eventGroup11 {
+  background-color: #424242 !important; /* Gris foncé */
+  border-color: #9e9e9e !important;
+}
+
+[data-theme="dark"] .eventGroup12 {
+  background-color: #3e2723 !important; /* Brun foncé */
+  border-color: #795548 !important;
+}
+
+[data-theme="dark"] .eventGroup13 {
+  background-color: #0d47a1 !important; /* Bleu très foncé */
+  border-color: #2196f3 !important;
+}
+
+[data-theme="dark"] .eventGroup14 {
+  background-color: #1b5e20 !important; /* Vert très foncé */
+  border-color: #4caf50 !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .dayCell {
+    min-height: 80px;
+    padding: 0.25rem;
+  }
+
+  .event {
+    font-size: 0.7rem;
+    padding: 1px 3px;
+    max-height: 28px;
+  }
+
+  .eventTitle {
+    font-size: 0.7rem;
+  }
+
+  .dayHeader {
+    padding: 0.5rem 0.25rem;
+    font-size: 0.8rem;
+  }
+
+  .monthTitle {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .dayCell {
+    min-height: 60px;
+    padding: 0.125rem;
+  }
+
+  .dayHeader {
+    padding: 0.25rem;
+    font-size: 0.75rem;
+  }
+
+  .event {
+    font-size: 0.65rem;
+    max-height: 24px;
+  }
+}

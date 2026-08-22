@@ -2,6 +2,7 @@
 title: Strings et regex
 sidebar_label: Strings et regex
 toc_max_heading_level: 2
+draft: true
 ---
 
 Les exercices suivants visent à vous familiariser avec les chaînes de caractères et les expressions régulières (regex).

@@ -2,6 +2,7 @@
 title: Montage du laboratoire
 sidebar_label: Montage du laboratoire
 description: Tutoriel d'installation d'un domaine AD
+draft: false
 ---
 
 import Tabs from '@theme/Tabs';

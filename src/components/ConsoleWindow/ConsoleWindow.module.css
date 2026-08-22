@@ -1,0 +1,91 @@
+.window {
+  margin: 1rem 0;
+  border: 1px solid #2f2f2f;
+  border-radius: 6px;
+  overflow: hidden;
+  background: var(--consolewin-bg, #000) !important;
+  color: var(--consolewin-fg, #fff) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme='dark'] .window {
+  border: 1px solid #5c5c5c;
+}
+
+.titleBar {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0.8rem;
+  height: 30px;
+  border-bottom: 1px solid #696969;
+  background: var(--consolewin-title-bg, #121212) !important;
+  color: var(--consolewin-title-fg, #f0f0f0) !important;
+}
+
+.title {
+  font-size: 0.86rem;
+  font-weight: 400;
+  user-select: none;
+}
+
+.icon {
+    width: 20px;
+    height: 18px;
+    margin-right: 0.5rem;
+    margin-left: -0.2rem;
+    margin-top: 8px;
+    margin-bottom: 7px;
+    border-color: #a5a5a5;
+    border-style: solid;
+    border-width: 1px;
+    border-top-width: 4px;
+    border-radius: 2px 2px 1px 1px;
+    font-size: 9px;
+    color: #a5a5a5;
+    font-family: monospace;
+    text-align: center;
+    font-weight: 900;
+}
+
+.console {
+  margin: 0;
+  padding: 0.9rem 1rem;
+  background: var(--consolewin-bg, #000) !important;
+  color: var(--consolewin-fg, #fff) !important;
+  white-space: pre-wrap;
+  overflow-x: auto;
+  line-height: 1.45;
+  font-size: 0.9rem;
+  font-family: "Cascadia Code", "Consolas", "Courier New", monospace;
+  font-variant-ligatures: none;
+  font-feature-settings: "liga" 0, "calt" 0;
+  user-select: var(--consolewin-nocopy);
+}
+
+.console code {
+  background: transparent !important;
+  color: inherit !important;
+  font-family: inherit;
+  padding: 0;
+  border: 0;
+}
+
+@media print {
+  .window {
+    background: #fff !important;
+    color: #000 !important;
+    border-color: #000 !important;
+    box-shadow: none !important;
+  }
+
+  .titleBar {
+    background: #fff !important;
+    color: #000 !important;
+    border-bottom-color: #000 !important;
+  }
+
+  .console {
+    background: #fff !important;
+    color: #000 !important;
+  }
+}

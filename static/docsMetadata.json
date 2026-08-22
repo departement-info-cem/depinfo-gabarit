@@ -1,0 +1,252 @@
+[
+  {
+    "id": "r01",
+    "title": "01 - Accueil",
+    "sidebar_label": "01 - Accueil",
+    "description": "Introduction à PowerShell et présentation du plan de cours",
+    "draft": false,
+    "hide_table_of_contents": true
+  },
+  {
+    "id": "r02",
+    "title": "02 - Commandes",
+    "sidebar_label": "02 - Commandes, objets",
+    "description": "Utilisation des commandes, introduction aux objets et aux structures de données de PowerShell",
+    "draft": false,
+    "hide_table_of_contents": true
+  },
+  {
+    "id": "r03",
+    "title": "03 - Pipeline",
+    "sidebar_label": "03 - Le pipeline de PowerShell",
+    "description": "Chaînage des commandes et circulation d'objets dans le pipeline de PowerShell",
+    "draft": false,
+    "hide_table_of_contents": true
+  },
+  {
+    "id": "r04",
+    "title": "04 - Tableaux",
+    "sidebar_label": "04 - Tableaux et collections",
+    "description": "Collections d'objets, filtres et boucles du pipeline",
+    "draft": false,
+    "hide_table_of_contents": true
+  },
+  {
+    "id": "r05",
+    "title": "05 - Strings",
+    "sidebar_label": "05 - Strings, types, regex",
+    "description": "Chaînes de caractères, conversions de types, expressions régulières (regex)",
+    "draft": false,
+    "hide_table_of_contents": true
+  },
+  {
+    "id": "r06",
+    "title": "06 - CSV et JSON",
+    "sidebar_label": "06 - Fichiers CSV et JSON",
+    "description": "Importation et exportation de données (texte, CSV, json)",
+    "draft": false,
+    "hide_table_of_contents": true
+  },
+  {
+    "id": "r07",
+    "title": "07 - (Intégration / TP1)",
+    "sidebar_label": "07 - (Intégration / TP1)",
+    "description": "Travail sur les exercices et le TP1",
+    "draft": false,
+    "hide_table_of_contents": true
+  },
+  {
+    "id": "r08",
+    "title": "08 - (Intégration / TP1)",
+    "sidebar_label": "08 - (Intégration / TP1)",
+    "description": "Travail sur les exercices et le TP1",
+    "sidebar_class_name": "remise-tp1",
+    "draft": false,
+    "hide_table_of_contents": true
+  },
+  {
+    "id": "r09",
+    "title": "09 - Formatif 1",
+    "sidebar_label": "09 - Formatif 1",
+    "description": "Pratique d'examen en vue de la préparation à l'examen 1",
+    "sidebar_class_name": "formatif1",
+    "draft": false,
+    "hide_table_of_contents": true
+  },
+  {
+    "id": "r10",
+    "title": "10 - Examen 1",
+    "sidebar_label": "10 - Examen 1",
+    "description": "Examen sommatif portant sur PowerShell en ligne de commande",
+    "sidebar_class_name": "examen1",
+    "draft": false,
+    "hide_table_of_contents": true
+  },
+  {
+    "id": "r11",
+    "title": "11 - Scripts",
+    "sidebar_label": "11 - Fichiers de scripts",
+    "description": "Fichiers de scripts, exécution de scripts, préparation des outils",
+    "draft": false,
+    "hide_table_of_contents": true
+  },
+  {
+    "id": "r12",
+    "title": "12 - Paramètres",
+    "sidebar_label": "12 - Paramètres, dictionnaires",
+    "description": "Définition de paramètres, dictionnaires (hashtable, pscustomobject)",
+    "draft": false,
+    "hide_table_of_contents": true
+  },
+  {
+    "id": "r13",
+    "title": "13 - Fonctions",
+    "sidebar_label": "13 - Fonctions et pile d'appel",
+    "description": "Fonctions, pile d’appel (stack), splatting",
+    "draft": false,
+    "hide_table_of_contents": true
+  },
+  {
+    "id": "r14",
+    "title": "13 - Erreurs",
+    "sidebar_label": "13 - Gestion des erreurs",
+    "description": "Prévention et gestion des erreurs, journalisation (logging)",
+    "draft": false,
+    "hide_table_of_contents": true
+  },
+  {
+    "id": "r15",
+    "title": "15 - Comptes",
+    "sidebar_label": "15 - Gestion des comptes",
+    "description": "Gestion des comptes locaux et de domaine",
+    "draft": false,
+    "hide_table_of_contents": true
+  },
+  {
+    "id": "r16",
+    "title": "16 - Assurance-qualité",
+    "sidebar_label": "16 - Assurance-qualité",
+    "description": "Stratégies d’assurance-qualité, tests d'intégration et bonnes pratiques",
+    "draft": false,
+    "hide_table_of_contents": true
+  },
+  {
+    "id": "r17",
+    "title": "17 - (Intégration / TP2)",
+    "sidebar_label": "17 - (Intégration / TP2)",
+    "description": "Travail sur les exercices et le TP2",
+    "draft": false,
+    "hide_table_of_contents": true
+  },
+  {
+    "id": "r18",
+    "title": "18 - (Intégration / TP2)",
+    "sidebar_label": "18 - (Intégration / TP2)",
+    "description": "Travail sur les exercices et le TP2",
+    "sidebar_class_name": "remise-tp2",
+    "draft": false,
+    "hide_table_of_contents": true
+  },
+  {
+    "id": "r19",
+    "title": "19 - Formatif 2",
+    "sidebar_label": "19 - Formatif 2",
+    "description": "Pratique d'examen en vue de la préparation à l'examen 2",
+    "sidebar_class_name": "formatif2",
+    "draft": false,
+    "hide_table_of_contents": true
+  },
+  {
+    "id": "r20",
+    "title": "20 - Examen 2",
+    "sidebar_label": "20 - Examen 2",
+    "description": "Examen sommatif portant sur les scripts PowerShell",
+    "sidebar_class_name": "examen2",
+    "draft": false,
+    "hide_table_of_contents": true
+  },
+  {
+    "id": "r21",
+    "title": "21 - API Web",
+    "sidebar_label": "21 - Les API Web",
+    "description": "Utilisation de PowerShell pour interfacer avec une API Web",
+    "draft": false,
+    "hide_table_of_contents": true
+  },
+  {
+    "id": "r22",
+    "title": "22 - (Intégration / TP3)",
+    "sidebar_label": "22 - (Intégration / TP3)",
+    "description": "Travail sur les exercices et le TP3",
+    "draft": false,
+    "hide_table_of_contents": true
+  },
+  {
+    "id": "r23",
+    "title": "23 - (Intégration / TP3)",
+    "sidebar_label": "23 - (Intégration / TP3)",
+    "description": "Travail sur les exercices et le TP3",
+    "sidebar_class_name": "remise-tp3",
+    "draft": false,
+    "hide_table_of_contents": true
+  },
+  {
+    "id": "r24",
+    "title": "24 - WMI / CIM",
+    "sidebar_label": "24 - La base WMI / CIM",
+    "description": "Utilisation de WMI pour la gestion programmatique de la configuration de Windows",
+    "draft": false,
+    "hide_table_of_contents": true
+  },
+  {
+    "id": "r25",
+    "title": "25 - PSRemoting",
+    "sidebar_label": "25 - Administration à distance",
+    "description": "Administration de systèmes distants avec PSRemoting, CIM et MS-RPC/DCOM",
+    "draft": false,
+    "hide_table_of_contents": true
+  },
+  {
+    "id": "r26",
+    "title": "26 - Planification",
+    "sidebar_label": "26 - Planification de tâches",
+    "description": "Planification de tâches et déploiement automatisé",
+    "draft": false,
+    "hide_table_of_contents": true
+  },
+  {
+    "id": "r27",
+    "title": "27 - (Intégration / TP4)",
+    "sidebar_label": "27 - (Intégration / TP4)",
+    "description": "Travail sur les exercices et le TP4",
+    "draft": false,
+    "hide_table_of_contents": true
+  },
+  {
+    "id": "r28",
+    "title": "28 - (Intégration / TP4)",
+    "sidebar_label": "28 - (Intégration / TP4)",
+    "description": "Travail sur les exercices et le TP4",
+    "sidebar_class_name": "remise-tp4",
+    "draft": false,
+    "hide_table_of_contents": true
+  },
+  {
+    "id": "r29",
+    "title": "29 - Formatif 3",
+    "sidebar_label": "29 - Formatif 3",
+    "description": "Pratique d'examen en vue de la préparation à l'examen 3",
+    "sidebar_class_name": "formatif3",
+    "draft": false,
+    "hide_table_of_contents": true
+  },
+  {
+    "id": "r30",
+    "title": "30 - Examen 3",
+    "sidebar_label": "30 - Examen 3 (terminal)",
+    "description": "Examen sommatif terminal portant sur l'ensemble de la matière du cours",
+    "sidebar_class_name": "examen3",
+    "draft": false,
+    "hide_table_of_contents": true
+  }
+]

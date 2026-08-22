@@ -2,6 +2,7 @@
 title: WMI
 sidebar_label: WMI
 toc_max_heading_level: 2
+draft: true
 ---
 
 Dans cet exercice, trouvez la commande PowerShell à utiliser pour obtenir l'information demandée à l'aide de WMI. Utilisez la commande `Get-CimInstance` dans vos réponses.

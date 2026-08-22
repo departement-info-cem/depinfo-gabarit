@@ -2,6 +2,7 @@
 title: Gestion des comptes
 sidebar_label: Gestion des comptes
 toc_max_heading_level: 2
+draft: true
 ---
 
 :::info Préparation

@@ -2,7 +2,7 @@
 title: PSRemoting et WinRM
 sidebar_label: PSRemoting et WinRM
 toc_max_heading_level: 2
-draft: false
+draft: true
 ---
 
 ## Préparation

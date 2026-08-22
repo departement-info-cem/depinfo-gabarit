@@ -2,6 +2,7 @@
 title: Registre
 sidebar_label: Registre
 toc_max_heading_level: 2
+draft: true
 ---
 
 ## Partie 1 - Exploration

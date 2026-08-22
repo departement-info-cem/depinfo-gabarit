@@ -1,6 +1,7 @@
 ---
 title: Pipeline
 sidebar_label: Pipeline
+draft: true
 ---
 
 Les exercices suivants visent à vous familiariser avec les commandes PowerShell, les alias et les objets retournés par les commandes.

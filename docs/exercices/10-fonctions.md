@@ -2,6 +2,7 @@
 title: Fonctions, pile d'appel, portée
 sidebar_label: Fonctions, pile d'appel, portée
 toc_max_heading_level: 2
+draft: true
 ---
 
 

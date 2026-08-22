@@ -1,6 +1,8 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 import { themes } from 'prism-react-renderer';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
 
 const siteConfig = require("./config");
 
@@ -42,6 +44,8 @@ const config = {
           sidebarPath: require.resolve("./sidebars.js"),
           routeBasePath: "/",
           //editUrl: `https://github.com/departement-info-cem/${siteConfig.nomUrl}/tree/main/web`,
+          remarkPlugins: [remarkMath],
+          rehypePlugins: [rehypeKatex],
         },
         theme: {
           customCss: [require.resolve("./src/css/custom.css")],
@@ -49,6 +53,18 @@ const config = {
       }),
     ],
   ],
+  
+  stylesheets: [
+    {
+      href: 'https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css',
+      type: 'text/css',
+      integrity:
+        'sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM',
+      crossorigin: 'anonymous',
+    },
+  ],
+
+  plugins: [require.resolve("./plugins/docs-metadata")],
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
@@ -67,9 +83,9 @@ const config = {
         items: [
           {
             type: "doc",
-            docId: "rencontres/r01",
+            docId: "cours/r01",
             position: "left",
-            label: "Rencontres",
+            label: "Cours",
           },
           {
             type: "doc",

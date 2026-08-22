@@ -2,6 +2,7 @@
 title: Tableaux
 sidebar_label: Tableaux
 toc_max_heading_level: 2
+draft: true
 ---
 
 Les exercices suivants visent à vous familiariser avec les commandes PowerShell, les alias et les objets retournés par les commandes.
