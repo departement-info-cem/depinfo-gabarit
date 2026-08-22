@@ -6,6 +6,15 @@ title: 🏆 Solutions - Défi 13.2
 
 Cette solution utilise les contrôles du défi : `txtNom`, `txtDateRetour`, `cmbMateriel`, `lstPretsActifs`, `lstPretsRetournes`, `lblNombreActifs`, `lblNombreRetournes`, les boutons `btnAjouterPret` et `btnMarquerRetourne`, puis les éléments de menu `enregistrerToolStripMenuItem` et `quitterToolStripMenuItem`.
 
+Dans le concepteur WinForms, associe les événements suivants aux méthodes correspondantes :
+
+- le clic de `btnAjouterPret` à `btnAjouterPret_Click` ;
+- le clic de `btnMarquerRetourne` à `btnMarquerRetourne_Click` ;
+- le clic de `enregistrerToolStripMenuItem` à `enregistrerToolStripMenuItem_Click` ;
+- le clic de `quitterToolStripMenuItem` à `quitterToolStripMenuItem_Click`.
+
+L'événement de chargement du formulaire est associé directement dans le constructeur avec `Load += Form1_Load`.
+
 ```csharp
 using System;
 using System.IO;

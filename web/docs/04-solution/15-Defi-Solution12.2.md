@@ -24,11 +24,10 @@ namespace PlanificateurRevision
             int chapitres;
             int minutesParChapitre;
 
-            bool valeursValides = int.TryParse(txtChapitres.Text, out chapitres) &&
-                                  int.TryParse(txtMinutesParChapitre.Text, out minutesParChapitre) &&
-                                  chapitres > 0 && minutesParChapitre > 0;
+            bool chapitresValides = int.TryParse(txtChapitres.Text, out chapitres);
+            bool minutesValides = int.TryParse(txtMinutesParChapitre.Text, out minutesParChapitre);
 
-            if (!valeursValides)
+            if (!chapitresValides || !minutesValides || chapitres <= 0 || minutesParChapitre <= 0)
             {
                 lblMinutesTotales.Text = "";
                 lblHeuresCompletes.Text = "";

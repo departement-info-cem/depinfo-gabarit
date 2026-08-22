@@ -40,7 +40,14 @@ class Program
                 total = total + notes[robot, epreuve];
             }
 
-            Console.WriteLine("Total d'" + robots[robot] + " : " + total + " points");
+            string prefixe = "de ";
+
+            if (robot == 0)
+            {
+                prefixe = "d'";
+            }
+
+            Console.WriteLine("Total " + prefixe + robots[robot] + " : " + total + " points");
 
             if (total > meilleurTotal)
             {

@@ -88,6 +88,10 @@ class Program
             {
                 rapport.WriteLine("Produit le plus rentable : " + produitPlusRentable + " (" + revenuMaximum.ToString("F2") + " $)");
             }
+            else
+            {
+                rapport.WriteLine("Aucune vente valide.");
+            }
 
             rapport.WriteLine("Vêtements : " + articlesVetements + " articles");
             rapport.WriteLine("Souvenirs : " + articlesSouvenirs + " articles");
@@ -115,4 +119,4 @@ class Program
 }
 ```
 
-> Le rapport ne contient pas le message `Aucune vente valide.`; il contient les mêmes lignes de statistiques que la console, sauf la ligne `Rapport`.
+> Le rapport contient les mêmes lignes de résultats que la console, sauf la ligne `Rapport`. Lorsqu'aucune vente valide n'est trouvée, la ligne `Aucune vente valide.` remplace la ligne `Produit le plus rentable`.

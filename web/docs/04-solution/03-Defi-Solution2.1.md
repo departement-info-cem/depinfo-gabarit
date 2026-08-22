@@ -38,7 +38,7 @@ class Program
             Console.Write("Carte étudiante (oui/non) : ");
             string carteEtudiante = Console.ReadLine();
 
-            if (carteEtudiante == "oui")
+            if (age >= 18 && age <= 64 && carteEtudiante == "oui")
             {
                 Console.WriteLine("Tarif applicable : 10 $");
                 Console.WriteLine("Raison : tarif étudiant");
