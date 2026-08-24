@@ -45,6 +45,23 @@ function extractFirstMarkdownTitle(content) {
 }
 
 /**
+ * Déduit le segment de route à partir du dossier des docs, en retirant le dossier
+ * racine des docs et les préfixes numériques (ex : docs/01-notes -> notes)
+ * @param {string} siteDir - Racine du site Docusaurus
+ * @param {string} docsDir - Chemin absolu du dossier des fichiers Markdown
+ * @returns {string}
+ */
+function deriveRouteBasePath(siteDir, docsDir) {
+  return path
+    .relative(siteDir, docsDir)
+    .split(path.sep)
+    .slice(1) // retire le dossier racine des docs (docs/)
+    .map((segment) => segment.replace(/^[0-9]+-/, ""))
+    .filter(Boolean)
+    .join("/");
+}
+
+/**
  * Retourne le chemin absolu du fichier docsMetadata.json dans static/
  * @returns {string}
  */
@@ -134,18 +151,22 @@ function generateSidebarDocs() {
  * @param {Object} [options]
  * @param {string} [options.docsDir] - Dossier des fichiers Markdown à lire,
  *   relatif à la racine du site (ou chemin absolu). Défaut : docs/01-cours
+ * @param {string} [options.routeBasePath] - Segment de route sous lequel ces docs
+ *   sont publiés, exposé aux composants. Défaut : déduit de docsDir
  */
 module.exports = function pluginDocsMetadata(context, options) {
   const siteDir = context?.siteDir || path.resolve(__dirname, "../..");
   const docsDir = path.resolve(siteDir, options?.docsDir || DEFAULT_DOCS_DIR);
+  const routeBasePath =
+    options?.routeBasePath ?? deriveRouteBasePath(siteDir, docsDir);
 
   return {
     name: "docusaurus-plugin-docs-metadata",
     /**
      * Chargement des métadonnées à partir des fichiers Markdown
      */
-    async loadContent() {
-      return getAllDocsMetadata({ docsDir });
+    async contentLoaded({ content, actions }) {
+      actions.setGlobalData({ routeBasePath });
     },
     /**
      * Génère le fichier docsMetadata.json dans static/ pour qu'il soit déployé

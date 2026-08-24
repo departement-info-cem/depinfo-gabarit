@@ -3,6 +3,7 @@ import styles from "./MainDocsGrid.module.css";
 import { useHistory } from "@docusaurus/router";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import { useColorMode } from "@docusaurus/theme-common";
+import { usePluginData } from "@docusaurus/useGlobalData";
 import sidebarDocs from "./sidebarDocs";
 import ProgressBar from "./ProgressBar";
 
@@ -15,6 +16,10 @@ export default function MainDocsGrid() {
   );
   const history = useHistory();
   const baseUrl = useBaseUrl("/");
+  // Route des docs telle que configurée pour le plugin docs-metadata (ex : "notes")
+  const { routeBasePath = "" } = (usePluginData(
+    "docusaurus-plugin-docs-metadata"
+  ) ?? {}) as { routeBasePath?: string };
   const { colorMode } = useColorMode();
 
   useEffect(() => {
@@ -45,7 +50,8 @@ export default function MainDocsGrid() {
     // Le slug vient de la sidebar : il reste valide même si le doc n’a pas de métadonnées
     const slug = doc?._slug || doc?.id?.replace(/^[0-9]+-/, "");
     if (!slug) return;
-    history.push(`${baseUrl}notes/${slug}`);
+    const prefix = routeBasePath ? `${routeBasePath}/` : "";
+    history.push(`${baseUrl}${prefix}${slug}`);
   };
 
   const getBackgroundColor = (className: string): string => {
@@ -75,12 +81,12 @@ export default function MainDocsGrid() {
         : undefined;
     const sidebarTitle =
       typeof doc?._sidebarLabel === "string" &&
-      doc._sidebarLabel.trim().length > 0
+        doc._sidebarLabel.trim().length > 0
         ? doc._sidebarLabel.trim()
         : undefined;
     const markdownTitle =
       typeof doc?._documentTitle === "string" &&
-      doc._documentTitle.trim().length > 0
+        doc._documentTitle.trim().length > 0
         ? doc._documentTitle.trim()
         : undefined;
 
@@ -118,7 +124,7 @@ export default function MainDocsGrid() {
             }}
             onClick={() => handleClick(doc)}
             onMouseEnter={(e) => {
-              if(tooltip !== "cache") {
+              if (tooltip !== "cache") {
                 setHoveredIndex(i);
                 const rect = (
                   e.currentTarget as HTMLElement
@@ -127,10 +133,10 @@ export default function MainDocsGrid() {
               }
             }}
             onMouseLeave={() => {
-              if(tooltip !== "cache") {
+              if (tooltip !== "cache") {
                 setHoveredIndex(null);
                 setTooltipPos(null);
-              }              
+              }
             }}
           >
             <div>
@@ -168,13 +174,13 @@ export default function MainDocsGrid() {
                 <ul style={{ margin: 0, paddingLeft: 16, whiteSpace: "nowrap" }}>
                   {Object.entries(calendrier).map(([nom, groupedate]) => (
                     (groupedate as Array<Record<string, string>>).map((groupeObj, index) => {
-                        const [groupe, date] = Object.entries(groupeObj)[0];
-                        return (
-                          <li key={index} style={{ whiteSpace: "nowrap" }}>
-                            {nom} - {groupe} : {formatDateFr(date)}
-                          </li>
-                        );
-                      })
+                      const [groupe, date] = Object.entries(groupeObj)[0];
+                      return (
+                        <li key={index} style={{ whiteSpace: "nowrap" }}>
+                          {nom} - {groupe} : {formatDateFr(date)}
+                        </li>
+                      );
+                    })
                   ))}
                 </ul>
               </div>
