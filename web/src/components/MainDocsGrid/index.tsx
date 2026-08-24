@@ -27,22 +27,25 @@ export default function MainDocsGrid() {
     if (meta.length === 0) return;
     // Pour chaque entrée de la sidebar, trouver le doc correspondant (même si doublon)
     const docsList = sidebarDocs.map((entry: any) => {
-      const suffix = entry.id.split("/").pop();
-      const doc = meta.find((d: any) => d.id.endsWith(suffix));
+      // Retirer le préfixe numérique et le tiret (ex: 01-rencontre1.1 -> rencontre1.1)
+      const slug = entry.id.split("/").pop().replace(/^[0-9]+-/, "");
+      const doc = meta.find((d: any) => d.id.endsWith(slug));
       return {
         ...doc,
         _sidebarLabel: entry.label,
         _sidebarProps: entry.customProps,
         _sidebarClassName: entry.className,
+        _slug: slug,
       };
     });
     setDocs(docsList);
   }, [meta]);
 
   const handleClick = (doc: any) => {
-    // Retirer le préfixe numérique et le tiret (ex: 01-rencontre1.1 -> rencontre1.1)
-    const slug = doc.id.replace(/^[0-9]+-/, "");
-    history.push(`${baseUrl}cours/${slug}`);
+    // Le slug vient de la sidebar : il reste valide même si le doc n’a pas de métadonnées
+    const slug = doc?._slug || doc?.id?.replace(/^[0-9]+-/, "");
+    if (!slug) return;
+    history.push(`${baseUrl}notes/${slug}`);
   };
 
   const getBackgroundColor = (className: string): string => {
