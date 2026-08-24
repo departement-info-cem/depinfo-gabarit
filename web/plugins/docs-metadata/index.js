@@ -165,13 +165,15 @@ module.exports = function pluginDocsMetadata(context, options) {
     /**
      * Chargement des métadonnées à partir des fichiers Markdown
      */
-    async contentLoaded({ content, actions }) {
-      actions.setGlobalData({ routeBasePath });
+    async loadContent() {
+      return getAllDocsMetadata({ docsDir });
     },
     /**
-     * Génère le fichier docsMetadata.json dans static/ pour qu'il soit déployé
+     * Expose le segment de route aux composants et génère le fichier
+     * docsMetadata.json dans static/ pour qu'il soit déployé
      */
-    async contentLoaded({ content }) {
+    async contentLoaded({ content, actions }) {
+      actions.setGlobalData({ routeBasePath });
       fs.writeFileSync(
         getStaticMetadataPath(),
         JSON.stringify(content, null, 2)
