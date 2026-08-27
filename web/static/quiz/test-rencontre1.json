@@ -1,0 +1,23 @@
+{
+  "titre": "Quiz test - Rencontre 1.1",
+  "questions": [
+    {
+      "texte": "Quel langage est principalement utilisé pour ce cours ?",
+      "choix": ["Python", "JavaScript", "C#", "Cela dépend du cours"],
+      "reponse": 3,
+      "duree": 15
+    },
+    {
+      "texte": "2 + 2 * 2 = ?",
+      "choix": ["8", "6", "4", "16"],
+      "reponse": 1,
+      "duree": 15
+    },
+    {
+      "texte": "Quel outil sert à versionner le code ?",
+      "choix": ["Git", "Word", "Excel", "Photoshop"],
+      "reponse": 0,
+      "duree": 15
+    }
+  ]
+}
