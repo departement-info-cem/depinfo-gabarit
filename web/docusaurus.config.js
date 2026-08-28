@@ -60,6 +60,12 @@ const config = {
         docsDir: "docs/01-cours",
       },
     ],
+    [
+      require.resolve("./plugins/quiz"),
+      {
+        // Par défaut, utilise le serveur de courtage public gratuit de PeerJS.
+      },
+    ],
   ],
 
   themeConfig:

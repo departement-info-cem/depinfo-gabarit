@@ -1,0 +1,23 @@
+{
+  "titre": "Quiz de démonstration",
+  "questions": [
+    {
+      "texte": "Quelle structure de données fonctionne selon le principe LIFO ?",
+      "choix": ["File", "Pile", "Arbre binaire", "Table de hachage"],
+      "reponse": 1,
+      "duree": 20
+    },
+    {
+      "texte": "Quelle est la complexité moyenne de la recherche binaire ?",
+      "choix": ["O(1)", "O(n)", "O(log n)", "O(n log n)"],
+      "reponse": 2,
+      "duree": 20
+    },
+    {
+      "texte": "Quel mot-clé JavaScript déclare une variable dont la référence ne peut pas être réassignée ?",
+      "choix": ["var", "let", "const", "static"],
+      "reponse": 2,
+      "duree": 15
+    }
+  ]
+}
