@@ -44,6 +44,8 @@
   grid-template-columns: 1fr 1fr;
   gap: 0.75rem;
   margin: 1rem 0;
+  padding: 0;
+  list-style: none;
 }
 
 @media (max-width: 640px) {
@@ -53,6 +55,9 @@
 }
 
 .choiceButton {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
   padding: 0.75rem 1rem;
   border-radius: 6px;
   border: 2px solid var(--ifm-color-emphasis-300);
