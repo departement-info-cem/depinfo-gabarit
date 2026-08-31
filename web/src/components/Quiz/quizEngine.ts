@@ -18,6 +18,16 @@ export interface PlayerState {
   score: number;
 }
 
+/** Participant·e vu·e par l'hôte : comme PlayerState, mais avec son identifiant de connexion. */
+export interface RosterEntry extends PlayerState {
+  id: string;
+}
+
+/** Forme normalisée d'un pseudonyme, utilisée comme clé de la liste des bannis. */
+function normalizePseudo(pseudo: string): string {
+  return pseudo.trim().toLowerCase();
+}
+
 interface AnswerState {
   choiceIndex: number;
   elapsed: number;
@@ -66,6 +76,10 @@ export function validateQuiz(quiz: unknown): QuizData {
 export class QuizRoom {
   readonly quiz: QuizData;
   readonly players = new Map<string, PlayerState>();
+  /** Pseudonymes bannis : forme normalisée → pseudonyme tel qu'il a été affiché. */
+  readonly bannedPseudos = new Map<string, string>();
+  /** Connexions bannies : identifiant PeerJS → pseudonyme normalisé correspondant. */
+  private bannedIds = new Map<string, string>();
   private answers = new Map<string, AnswerState>();
   currentIndex = -1;
   questionStartAt = 0;
@@ -83,10 +97,46 @@ export class QuizRoom {
     return this.currentQuestion().duree || DEFAULT_DURATION_SECONDS;
   }
 
-  leaderboard(): PlayerState[] {
-    return Array.from(this.players.values())
-      .map(({ pseudo, score }) => ({ pseudo, score }))
+  /** Participant·e·s avec leur identifiant de connexion (usage interne à l'hôte). */
+  roster(): RosterEntry[] {
+    return Array.from(this.players.entries())
+      .map(([id, { pseudo, score }]) => ({ id, pseudo, score }))
       .sort((a, b) => b.score - a.score);
+  }
+
+  /** Classement diffusé aux participant·e·s : sans les identifiants de connexion. */
+  leaderboard(): PlayerState[] {
+    return this.roster().map(({ pseudo, score }) => ({ pseudo, score }));
+  }
+
+  isIdBanned(playerId: string): boolean {
+    return this.bannedIds.has(playerId);
+  }
+
+  isPseudoBanned(pseudo: string): boolean {
+    return this.bannedPseudos.has(normalizePseudo(pseudo));
+  }
+
+  /**
+   * Retire un·e participant·e de la partie (ex. pseudonyme obscène) et bloque
+   * son pseudonyme : il ou elle peut revenir, mais avec un autre pseudonyme.
+   */
+  ban(playerId: string): void {
+    const player = this.players.get(playerId);
+    if (!player) return;
+    const key = normalizePseudo(player.pseudo);
+    this.bannedIds.set(playerId, key);
+    this.bannedPseudos.set(key, player.pseudo);
+    this.players.delete(playerId);
+    this.answers.delete(playerId);
+  }
+
+  /** Réautorise un pseudonyme banni (clé normalisée telle que fournie par bannedPseudos). */
+  unban(normalizedPseudo: string): void {
+    this.bannedPseudos.delete(normalizedPseudo);
+    for (const [playerId, key] of this.bannedIds) {
+      if (key === normalizedPseudo) this.bannedIds.delete(playerId);
+    }
   }
 
   startQuestion(index: number): void {
@@ -97,7 +147,9 @@ export class QuizRoom {
   }
 
   recordAnswer(playerId: string, choiceIndex: number): boolean {
-    if (this.status !== "question" || this.answers.has(playerId)) return false;
+    if (this.status !== "question" || !this.players.has(playerId) || this.answers.has(playerId)) {
+      return false;
+    }
     this.answers.set(playerId, { choiceIndex, elapsed: Date.now() - this.questionStartAt });
     return true;
   }

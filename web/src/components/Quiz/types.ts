@@ -27,4 +27,5 @@ export type PeerMessage =
   | { type: "answer"; choiceIndex: number }
   | { type: "answerAck"; ok: boolean; message?: string }
   | { type: "reveal"; payload: QuestionRevealPayload }
-  | { type: "end"; leaderboard: Player[] };
+  | { type: "end"; leaderboard: Player[] }
+  | { type: "banned"; message?: string };
