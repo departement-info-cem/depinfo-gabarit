@@ -55,6 +55,33 @@ compatible tel quel avec un hébergement 100% statique comme GitHub Pages.
 - **La partie ne dure que le temps où l'onglet de l'enseignant·e reste ouvert** :
   fermer ou rafraîchir cet onglet met fin à la session pour tout le monde.
 
+## Retirer un·e participant·e (pseudonyme obscène)
+
+Comme les pseudonymes sont choisis librement, l'enseignant·e peut retirer
+quelqu'un de la partie. Dans la liste des participant·e·s (salle d'attente) et
+dans le classement affiché après chaque question, un bouton `✕` apparaît à
+droite de chaque nom ; une confirmation est demandée avant le retrait.
+
+Le retrait a trois effets :
+
+- la personne est immédiatement exclue de la partie (elle disparaît du
+  classement, ses réponses ne comptent plus) et voit le message « Vous avez été
+  retiré du quiz par l'enseignant·e » ;
+- sa connexion pair-à-pair est fermée ;
+- son **pseudonyme est bloqué** : revenir avec le même nom est refusé
+  (« Ce pseudonyme a été bloqué par l'enseignant·e. Choisissez-en un autre. »),
+  mais la personne peut rejoindre de nouveau avec un pseudonyme correct — c'est
+  le but : bloquer le nom, pas la personne.
+
+Les pseudonymes bloqués sont listés sous le classement, avec un bouton `↺` pour
+lever le blocage en cas d'erreur.
+
+> Le blocage porte sur le pseudonyme (comparé sans tenir compte de la casse ni
+> des espaces autour) et sur la connexion en cours. Il n'y a pas
+> d'authentification des étudiant·e·s : quelqu'un de déterminé peut revenir avec
+> une variante du nom. La liste est aussi propre à la session en cours : elle
+> disparaît quand l'onglet de l'enseignant·e est fermé.
+
 ## Lenteur au démarrage
 
 La première connexion au courtier public PeerJS peut prendre quelques

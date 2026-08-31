@@ -6,7 +6,7 @@ import type { Player, PeerMessage, QuestionRevealPayload, QuestionShowPayload } 
 import styles from "./Quiz.module.css";
 import Peer, { DataConnection, PeerOptions } from "peerjs";
 
-type Phase = "rejoindre" | "connexion" | "attente" | "question" | "reveal" | "fin";
+type Phase = "rejoindre" | "connexion" | "attente" | "question" | "reveal" | "fin" | "banni";
 
 export default function QuizStudent({
   peerOptions,
@@ -29,6 +29,9 @@ export default function QuizStudent({
 
   const peerRef = useRef<Peer | null>(null);
   const connRef = useRef<DataConnection | null>(null);
+  // Un bannissement coupe volontairement la connexion : les événements de
+  // fermeture qui suivent ne doivent pas être signalés comme une erreur réseau.
+  const bannedRef = useRef(false);
 
   useEffect(() => {
     return () => {
@@ -73,6 +76,13 @@ export default function QuizStudent({
         setPlayers(data.leaderboard);
         setPhase("fin");
         return;
+      case "banned":
+        bannedRef.current = true;
+        setError(null);
+        setReconnecting(false);
+        setPhase("banni");
+        peerRef.current?.destroy();
+        return;
       default:
         return;
     }
@@ -82,6 +92,7 @@ export default function QuizStudent({
     event.preventDefault();
     const trimmedCode = code.trim();
     if (!trimmedCode) return;
+    bannedRef.current = false;
     setError(null);
     setPhase("connexion");
 
@@ -98,6 +109,7 @@ export default function QuizStudent({
       });
       peer.on("open", () => setReconnecting(false));
       peer.on("error", (err) => {
+        if (bannedRef.current) return;
         if (err.type === "network" || err.type === "socket-error" || err.type === "socket-closed") return;
         setError(`Erreur de connexion : ${err.message}`);
       });
@@ -106,8 +118,14 @@ export default function QuizStudent({
       connRef.current = conn;
       conn.send({ type: "join", pseudo } satisfies PeerMessage);
       conn.on("data", (data) => handleMessage(data as PeerMessage));
-      conn.on("close", () => setError("La connexion avec l'enseignant·e a été interrompue"));
-      conn.on("error", (err) => setError(`Erreur de connexion : ${err.message}`));
+      conn.on("close", () => {
+        if (bannedRef.current) return;
+        setError("La connexion avec l'enseignant·e a été interrompue");
+      });
+      conn.on("error", (err) => {
+        if (bannedRef.current) return;
+        setError(`Erreur de connexion : ${err.message}`);
+      });
     } catch (err) {
       setError(err instanceof Error ? err.message : String(err));
       setPhase("rejoindre");
@@ -119,6 +137,30 @@ export default function QuizStudent({
     setSelected(choiceIndex);
     connRef.current.send({ type: "answer", choiceIndex } satisfies PeerMessage);
   };
+
+  if (phase === "banni") {
+    return (
+      <div className={styles.container}>
+        <p className={styles.error}>Vous avez été retiré du quiz par l'enseignant·e.</p>
+        <p>
+          <button
+            className="button button--primary"
+            onClick={() => {
+              setPseudo("");
+              setPhase("rejoindre");
+            }}
+          >
+            Rejoindre avec un autre pseudonyme
+          </button>
+        </p>
+        <p>
+          <button className="button button--link" onClick={onQuit}>
+            Retour
+          </button>
+        </p>
+      </div>
+    );
+  }
 
   if (phase === "rejoindre" || phase === "connexion") {
     return (
