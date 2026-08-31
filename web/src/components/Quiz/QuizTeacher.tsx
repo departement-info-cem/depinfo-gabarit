@@ -1,8 +1,8 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { JSX, useEffect, useRef, useState } from "react";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import type { DataConnection, Peer, PeerOptions } from "peerjs";
 import Leaderboard from "./Leaderboard";
-import { QuizRoom, validateQuiz } from "./quizEngine";
+import { QuizRoom, validateQuiz, type QuizData } from "./quizEngine";
 import { ROOM_ID_PREFIX, createPeerWithRetry } from "./peerUtils";
 import type { Player, PeerMessage, QuestionRevealPayload, QuestionShowPayload } from "./types";
 import styles from "./Quiz.module.css";
@@ -14,8 +14,11 @@ export default function QuizTeacher({
   peerOptions,
   onQuit,
 }: {
-  /** Chemin vers le fichier JSON de questions, ex: "/quiz/exemple.json" */
-  file: string;
+  /**
+   * Fichier JSON de questions : soit un chemin (ex: "/quiz/exemple.json"),
+   * soit un objet importé directement, ce qui permet un chemin relatif.
+   */
+  file: string | QuizData;
   peerOptions?: PeerOptions;
   onQuit: () => void;
 }): JSX.Element {
@@ -33,7 +36,7 @@ export default function QuizTeacher({
   const roomRef = useRef<QuizRoom | null>(null);
   const connectionsRef = useRef<Map<string, DataConnection>>(new Map());
   const peerRef = useRef<Peer | null>(null);
-  const fileUrl = useBaseUrl(file);
+  const fileUrl = useBaseUrl(typeof file === "string" ? file : undefined);
   const [retryCount, setRetryCount] = useState(0);
 
   const send = (conn: DataConnection, message: PeerMessage) => {
@@ -84,9 +87,15 @@ export default function QuizTeacher({
 
     (async () => {
       try {
-        const response = await fetch(fileUrl);
-        if (!response.ok) throw new Error("Fichier de quiz introuvable");
-        const quiz = validateQuiz(await response.json());
+        let quizJson: unknown;
+        if (typeof file === "string") {
+          const response = await fetch(fileUrl);
+          if (!response.ok) throw new Error("Fichier de quiz introuvable");
+          quizJson = await response.json();
+        } else {
+          quizJson = file;
+        }
+        const quiz = validateQuiz(quizJson);
         if (cancelled) return;
 
         roomRef.current = new QuizRoom(quiz);
@@ -174,7 +183,10 @@ export default function QuizTeacher({
     if (!room) return;
 
     if (room.status === "question") {
-      const payload = room.reveal();
+      const payload: QuestionRevealPayload = {
+        index: room.currentIndex,
+        ...room.reveal(),
+      };
       setReveal(payload);
       setPlayers(payload.leaderboard);
       setPhase("reveal");

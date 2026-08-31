@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { JSX, useEffect, useRef, useState } from "react";
 import type { DataConnection, PeerOptions } from "peerjs";
 import Leaderboard from "./Leaderboard";
 import { connectToRoom, createStudentPeer } from "./peerUtils";
