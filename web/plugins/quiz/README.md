@@ -97,9 +97,61 @@ réseau.
   pas à un usage intensif ou critique.
 - WebRTC a besoin de traverser les pare-feux/NAT des réseaux des
   participant·e·s. Ça fonctionne bien dans la plupart des cas (réseau Wi-Fi
-  d'un cégep, réseaux domestiques), mais peut échouer derrière certains
-  réseaux d'entreprise très restrictifs qui bloquent le trafic UDP/WebRTC : il
-  n'y a pas de serveur TURN de secours configuré par défaut.
+  d'un cégep, réseaux domestiques), mais peut échouer (erreur « ICE failed »)
+  derrière certains réseaux très restrictifs (NAT symétrique, pare-feu
+  d'entreprise, machine virtuelle/conteneur avec réseau limité) : il n'y a pas
+  de serveur TURN de secours configuré par défaut, car les services gratuits
+  « sans inscription » qui existaient (ex. Open Relay Project) ont fermé cet
+  accès public. Voir « Ajouter un serveur TURN » ci-dessous.
+
+## « ICE failed, add a TURN server » (about:webrtc / about:webrtc-internals)
+
+Cette erreur signifie que les deux navigateurs n'ont trouvé aucun chemin
+réseau direct pour se connecter et qu'aucun TURN (relais) n'était disponible
+pour prendre le relais. Deux causes fréquentes :
+
+1. **Réseau restrictif** : NAT symétrique, pare-feu d'entreprise/cégep, ou
+   environnement de test dans une machine virtuelle/conteneur dont le réseau
+   est isolé (pas d'accès UDP sortant réel vers Internet). Dans ce dernier
+   cas, ça échoue même en testant deux onglets sur le même `localhost`,
+   puisque WebRTC a quand même besoin d'un vrai accès réseau pour négocier.
+   → Tester avec un navigateur ayant un accès Internet normal (pas dans un
+   environnement de développement bac à sable) est la première chose à
+   vérifier.
+2. **Aucun TURN configuré** : par défaut, ce plugin ne configure qu'un STUN
+   (`stun:stun.l.google.com:19302`), suffisant pour la majorité des réseaux
+   mais pas pour les cas ci-dessus. Voir « Ajouter un serveur TURN » ci-dessous.
+
+## Ajouter un serveur TURN
+
+Pour les cas où un STUN seul ne suffit pas, on peut fournir ses propres
+serveurs TURN via la prop `peerOptions` du composant `<Quiz />` (ou l'option
+`peerOptions` du plugin dans `docusaurus.config.js`) :
+
+```jsx
+<Quiz
+  file="/quiz/exemple.json"
+  peerOptions={{
+    config: {
+      iceServers: [
+        { urls: "stun:stun.l.google.com:19302" },
+        {
+          urls: "turn:mon-turn.example.com:3478",
+          username: "...",
+          credential: "...",
+        },
+      ],
+    },
+  }}
+/>
+```
+
+Plusieurs fournisseurs offrent un plan gratuit avec inscription (ex.
+[Metered](https://www.metered.ca/tools/openrelay/), Twilio, Xirsys) : ils
+fournissent une clé d'API permettant de récupérer dynamiquement une liste
+`iceServers` à jour (avec identifiants temporaires) à passer telle quelle
+dans `peerOptions.config.iceServers`. On peut aussi héberger son propre TURN
+avec [coturn](https://github.com/coturn/coturn).
 
 ## Aller plus loin : héberger son propre serveur de courtage PeerJS
 
@@ -139,6 +191,11 @@ en pair-à-pair une fois la connexion établie.
       "choix": ["File", "Pile", "Arbre", "Graphe"],
       "reponse": 1,
       "duree": 20
+    },
+    {
+      "texte": "Que retourne cette fonction ?\n\n```javascript\nfunction f(a, b) {\n  return a + b;\n}\nf(1, 2);\n```",
+      "choix": ["1", "2", "3", "Une erreur"],
+      "reponse": 2
     }
   ]
 }
@@ -146,5 +203,7 @@ en pair-à-pair une fois la connexion établie.
 
 - `reponse` est l'index (0-based) du bon choix.
 - `duree` (secondes) est optionnel, 20 secondes par défaut.
+- `texte` supporte le markdown (gras, listes, blocs de code avec coloration
+  syntaxique selon le langage indiqué après les ```` ``` ````, etc.).
 - Les points d'une bonne réponse varient entre 500 et 1000 selon la rapidité
   (aucun point pour une mauvaise réponse ou une absence de réponse).

@@ -1,11 +1,12 @@
 import React, { JSX, useEffect, useRef, useState } from "react";
 import useBaseUrl from "@docusaurus/useBaseUrl";
-import type { DataConnection, Peer, PeerOptions } from "peerjs";
 import Leaderboard from "./Leaderboard";
+import QuestionText from "./QuestionText";
 import { QuizRoom, validateQuiz, type QuizData } from "./quizEngine";
 import { ROOM_ID_PREFIX, createPeerWithRetry } from "./peerUtils";
 import type { Player, PeerMessage, QuestionRevealPayload, QuestionShowPayload } from "./types";
 import styles from "./Quiz.module.css";
+import Peer, { DataConnection, PeerOptions } from "peerjs";
 
 type Phase = "chargement" | "attente" | "question" | "reveal" | "fin";
 
@@ -247,7 +248,7 @@ export default function QuizTeacher({
             </strong>
             <span className={styles.timer}>{timeLeft}s</span>
           </div>
-          <p>{question.texte}</p>
+          <QuestionText texte={question.texte} />
           <ul className={styles.choices}>
             {question.choix.map((choix) => (
               <li key={choix} className={styles.choiceButton}>
@@ -266,7 +267,7 @@ export default function QuizTeacher({
 
       {phase === "reveal" && question && reveal && (
         <>
-          <p>{question.texte}</p>
+          <QuestionText texte={question.texte} />
           <ul className={styles.choices}>
             {question.choix.map((choix, index) => (
               <li
