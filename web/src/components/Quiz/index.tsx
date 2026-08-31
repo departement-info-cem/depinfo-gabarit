@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { JSX, useState } from "react";
 import BrowserOnly from "@docusaurus/BrowserOnly";
 import { usePluginData } from "@docusaurus/useGlobalData";
 import type { PeerOptions } from "peerjs";
+import type { QuizData } from "./quizEngine";
 import styles from "./Quiz.module.css";
 
 type Mode = "enseignant" | "etudiant" | null;
@@ -10,8 +11,12 @@ export default function Quiz({
   file,
   peerOptions,
 }: {
-  /** Chemin vers le fichier JSON de questions, ex: "/quiz/exemple.json" */
-  file: string;
+  /**
+   * Fichier JSON de questions : soit un chemin (ex: "/quiz/exemple.json"),
+   * soit un objet importé directement (ex: `import quiz from "./exemple.json"`),
+   * ce qui permet d'utiliser un chemin relatif au fichier .md.
+   */
+  file: string | QuizData;
   /** Options PeerJS, remplace la valeur configurée dans le plugin */
   peerOptions?: PeerOptions;
 }): JSX.Element {
