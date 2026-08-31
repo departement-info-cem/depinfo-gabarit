@@ -9,17 +9,25 @@ export const ROOM_ID_PREFIX = "depinfo-quiz-";
 /** Délai maximal (ms) accordé à la connexion au serveur de courtage PeerJS. */
 export const PEER_CONNECT_TIMEOUT_MS = 12000;
 
-/** Un seul serveur STUN pour accélérer la négociation ICE (au lieu de la liste par défaut). */
-const FAST_ICE_CONFIG: RTCConfiguration = {
-  iceServers: [{ urls: "stun:stun.l.google.com:19302" }],
-};
+/**
+ * Serveur STUN utilisé par défaut pour la négociation ICE (au lieu de la
+ * liste par défaut, plus longue, de PeerJS). Aucun TURN n'est fourni par
+ * défaut : les services gratuits « sans inscription » (ex. Open Relay
+ * Project) ont cessé d'être disponibles publiquement (identifiants
+ * statiques désactivés, inscription requise). Sans TURN, la connexion
+ * échoue avec « ICE failed » quand un réseau est trop restrictif (NAT
+ * symétrique, pare-feu d'entreprise) pour une connexion directe. Voir le
+ * README du plugin pour ajouter son propre TURN via `peerOptions.config`.
+ */
+const DEFAULT_ICE_SERVERS: RTCIceServer[] = [{ urls: "stun:stun.l.google.com:19302" }];
+
+function withIceConfig(peerOptions?: PeerOptions): PeerOptions {
+  const { config, ...rest } = peerOptions ?? {};
+  return { config: { iceServers: DEFAULT_ICE_SERVERS, ...config }, ...rest };
+}
 
 function randomRoomCode(): string {
   return String(Math.floor(Math.random() * 100000)).padStart(5, "0");
-}
-
-function withIceConfig(peerOptions?: PeerOptions): PeerOptions {
-  return { config: FAST_ICE_CONFIG, ...peerOptions };
 }
 
 /**
