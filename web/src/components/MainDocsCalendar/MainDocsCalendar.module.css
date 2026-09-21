@@ -11,7 +11,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 1rem;
-  background: var(--ifm-color-primary-lightest, #f0f9ff);
+  background: var(--cem-bleu-marine, #0c3455);
   border-bottom: 1px solid var(--ifm-color-emphasis-200, #e0e0e0);
 }
 
@@ -19,7 +19,7 @@
   margin: 0;
   font-size: 1.25rem;
   font-weight: 600;
-  color: var(--ifm-color-primary-darker, #1976d2);
+  color: white;
 }
 
 .navButton {
@@ -29,12 +29,12 @@
   cursor: pointer;
   padding: 0.5rem;
   border-radius: 4px;
-  color: var(--ifm-color-primary, #25c2a0);
+  color: var(--cem-vert, #8dc640);
   transition: background-color 0.2s;
 }
 
 .navButton:hover {
-  background: var(--ifm-hover-overlay, rgba(0, 0, 0, 0.05));
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .calendarGrid {
@@ -92,7 +92,7 @@
 }
 
 .dayCell.today {
-  background: var(--ifm-color-primary-lightest, #e3f2fd);
+  background: var(--ifm-color-primary-contrast-background, #e3f2fd);
 }
 
 .dayCell.today .dayNumber {
@@ -249,20 +249,7 @@
 }
 
 [data-theme="dark"] .calendarHeader {
-  background: var(--ifm-color-emphasis-200, #2e3440);
   border-bottom-color: var(--ifm-color-emphasis-300, #444950);
-}
-
-[data-theme="dark"] .monthTitle {
-  color: var(--ifm-color-primary-lighter, #5cdbf0);
-}
-
-[data-theme="dark"] .navButton {
-  color: var(--ifm-color-primary-lighter, #5cdbf0);
-}
-
-[data-theme="dark"] .navButton:hover {
-  background: var(--ifm-hover-overlay, rgba(255, 255, 255, 0.05));
 }
 
 [data-theme="dark"] .weekHeader {
@@ -285,7 +272,11 @@
 }
 
 [data-theme="dark"] .dayCell.today {
-  background: var(--ifm-color-primary-dark, #1e7b72);
+  background: var(--ifm-color-primary-contrast-background, #1e7b72);
+}
+
+[data-theme="dark"] .dayCell.today .dayNumber {
+  color: var(--ifm-color-primary-contrast-background, #003d82);
 }
 
 [data-theme="dark"] .dayNumber {

@@ -4,45 +4,407 @@
  * work well for content-centric websites.
  */
 
-/* You can override the default Infima variables here. */
+/*
+ * Palette officielle du CÉGEP Édouard-Montpetit
+ * (Guide de normes graphiques v2.0, août 2023, p. 9).
+ *
+ * Pour le web, seules les combinaisons texte/fond de la grille « Mariages de
+ * couleurs permis pour le web » (p. 10) devraient être utilisées. Par exemple,
+ * sur fond blanc, le texte peut être noir, bleu marine, vert forêt, rouge ou
+ * gris 4, mais jamais vert, bleu ciel ou bleu pâle.
+ */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
-  --ifm-code-font-size: 95%;
-  --ifm-menu-link-padding-horizontal: 1.5em;
-  --ifm-font-family-base: 'Montserrat', sans-serif;
-  --ifm-heading-font-family: 'Montserrat', sans-serif;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
-  --examen-bg: #ffebec;
-  --examen-font-color: #003100;
-  --remise-tp-bg: #e6f6e6;
-  --remise-tp-font-color: #003100;
+  /* Couleurs principales */
+  --cem-bleu-marine: #0c3455;
+  --cem-bleu-ciel: #14b1e7;
+  --cem-vert: #8dc640;
+
+  /* Couleurs secondaires */
+  --cem-noir: #000000;
+  --cem-bleu-pale: #8ed8f8;
+  --cem-vert-foret: #278637;
+  --cem-gris-4: #545454;
+  --cem-rouge: #d93b20;
+  --cem-vert-pomme: #bcd85f;
+  --cem-gris-3: #969696;
+  --cem-orange: #f37021;
+  --cem-vert-pale: #cfe5ae;
+  --cem-gris-2: #c8c8c8;
+  --cem-jaune-or: #fdb913;
+  --cem-gris-1: #e6e6e6;
+  --cem-jaune-pale: #ffdf5d;
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme="dark"] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
+/* You can override the default Infima variables here. */
+:root {
+  /* Couleur primaire (liens, menu actif, boutons) : vert forêt, puisque le
+     vert principal n'offre pas assez de contraste sur fond blanc. */
+  --ifm-color-primary: #278637;
+  --ifm-color-primary-dark: #237932;
+  --ifm-color-primary-darker: #21722f;
+  --ifm-color-primary-darkest: #1b5e27;
+  --ifm-color-primary-light: #2b933d;
+  --ifm-color-primary-lighter: #2d9a3f;
+  --ifm-color-primary-lightest: #33ae48;
+  --ifm-color-primary-contrast-background: #e9f3eb;
+  --ifm-color-primary-contrast-foreground: #0c2811;
+
+  /* Couleurs sémantiques (admonitions, badges, quiz) tirées de la palette. */
+  --ifm-color-success: #278637;
+  --ifm-color-success-dark: #237932;
+  --ifm-color-success-darker: #21722f;
+  --ifm-color-success-darkest: #1b5e27;
+  --ifm-color-success-light: #479855;
+  --ifm-color-success-lighter: #68aa73;
+  --ifm-color-success-lightest: #93c39b;
+  --ifm-color-success-contrast-background: #e9f3eb;
+  --ifm-color-success-contrast-foreground: #0c2811;
+  --ifm-color-info: #14b1e7;
+  --ifm-color-info-dark: #129fd0;
+  --ifm-color-info-darker: #1196c4;
+  --ifm-color-info-darkest: #0e7ca2;
+  --ifm-color-info-light: #37bdeb;
+  --ifm-color-info-lighter: #5bc8ee;
+  --ifm-color-info-lightest: #8ad8f3;
+  --ifm-color-info-contrast-background: #e8f7fd;
+  --ifm-color-info-contrast-foreground: #063545;
+  --ifm-color-warning: #fdb913;
+  --ifm-color-warning-dark: #e4a711;
+  --ifm-color-warning-darker: #d79d10;
+  --ifm-color-warning-darkest: #b1820d;
+  --ifm-color-warning-light: #fdc436;
+  --ifm-color-warning-lighter: #fece5a;
+  --ifm-color-warning-lightest: #fedc89;
+  --ifm-color-warning-contrast-background: #fff8e7;
+  --ifm-color-warning-contrast-foreground: #4c3806;
+  --ifm-color-danger: #d93b20;
+  --ifm-color-danger-dark: #c3351d;
+  --ifm-color-danger-darker: #b8321b;
+  --ifm-color-danger-darkest: #982916;
+  --ifm-color-danger-light: #df5841;
+  --ifm-color-danger-lighter: #e47663;
+  --ifm-color-danger-lightest: #ec9d90;
+  --ifm-color-danger-contrast-background: #fbebe9;
+  --ifm-color-danger-contrast-foreground: #41120a;
+
+  --ifm-heading-color: var(--cem-bleu-marine);
+  --ifm-code-font-size: 95%;
+  --ifm-menu-link-padding-horizontal: 1.5em;
+  /* Arial est la police de remplacement prévue par le guide. */
+  --ifm-font-family-base: 'Montserrat', Arial, sans-serif;
+  --ifm-heading-font-family: 'Montserrat', Arial, sans-serif;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --examen-bg: var(--ifm-color-danger-contrast-background);
+  --examen-font-color: var(--ifm-color-danger-contrast-foreground);
+  --remise-tp-bg: var(--ifm-color-success-contrast-background);
+  --remise-tp-font-color: var(--ifm-color-success-contrast-foreground);
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode.
+   Le sélecteur html[...] est requis pour avoir préséance sur celui d'Infima. */
+html[data-theme="dark"] {
+  /* Sur fond foncé, le vert principal offre un bon contraste. */
+  --ifm-color-primary: #8dc640;
+  --ifm-color-primary-dark: #7fb636;
+  --ifm-color-primary-darker: #78ac33;
+  --ifm-color-primary-darkest: #638d2a;
+  --ifm-color-primary-light: #99cc54;
+  --ifm-color-primary-lighter: #9fcf5e;
+  --ifm-color-primary-lightest: #b1d87d;
+  --ifm-color-primary-contrast-background: #2a3b13;
+  --ifm-color-primary-contrast-foreground: #f4f9ec;
+  --ifm-color-success-contrast-background: #0c2811;
+  --ifm-color-success-contrast-foreground: #e9f3eb;
+  --ifm-color-info-contrast-background: #063545;
+  --ifm-color-info-contrast-foreground: #e8f7fd;
+  --ifm-color-warning-contrast-background: #4c3806;
+  --ifm-color-warning-contrast-foreground: #fff8e7;
+  --ifm-color-danger-contrast-background: #41120a;
+  --ifm-color-danger-contrast-foreground: #fbebe9;
+
+  --ifm-heading-color: inherit;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
-  --examen-bg: #4b1113;
-  --examen-font-color: #f4e7ec;
-  --remise-tp-bg: #003100;
-  --remise-tp-font-color: #d3f0e6;
+}
+
+/* Barre de navigation et pied de page en bleu marine, comme les
+   versions renversées du logo. */
+.navbar--dark {
+  --ifm-navbar-background-color: var(--cem-bleu-marine);
+  /* Aucune ombre : la barre se fond dans le cadre bleu marine. */
+  --ifm-navbar-shadow: none;
+  --ifm-navbar-link-hover-color: var(--cem-vert);
+  --ifm-navbar-link-active-color: var(--cem-vert);
+  --ifm-menu-color-active: var(--cem-vert);
+}
+
+/* Les menus (mobile et latéral) sont affichés sur fond bleu marine, peu
+   importe le thème. */
+.navbar--dark,
+.theme-doc-sidebar-container {
+  --examen-bg: #41120a;
+  --examen-font-color: #fbebe9;
+  --remise-tp-bg: #0c2811;
+  --remise-tp-font-color: #e9f3eb;
+}
+
+.footer--dark {
+  --ifm-footer-background-color: var(--cem-bleu-marine);
+  --ifm-footer-title-color: var(--cem-vert);
+  --ifm-footer-link-hover-color: var(--cem-vert);
+}
+
+/* Formes graphiques arrondies à 35° (guide, p. 11), disposées à contresens :
+   un aplat vert qui entre par le bas et un filet vert pâle qui part du coin
+   supérieur droit et se termine en croisant l'aplat. Une seule extrémité de
+   chaque forme est visible et le texte du copyright est tenu à l'écart pour
+   que les formes « respirent ». Chaque forme pivote autour du centre de son
+   extrémité visible. */
+@media (min-width: 1200px) {
+  .footer--dark {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .footer--dark::before,
+  .footer--dark::after {
+    content: "";
+    position: absolute;
+    transform: rotate(-35deg);
+    pointer-events: none;
+  }
+
+  /* Extrémité visible en haut à droite. */
+  .footer--dark::before {
+    right: 2.5rem;
+    bottom: 2.5rem;
+    width: 16rem;
+    height: 3rem;
+    border-radius: 1.5rem;
+    transform-origin: calc(100% - 1.5rem) 50%;
+    background: var(--cem-vert);
+  }
+
+  /* Extrémité visible en bas à gauche, par-dessus l'aplat. */
+  .footer--dark::after {
+    left: calc(100% - 7.25rem);
+    bottom: 4rem;
+    width: 14rem;
+    height: 2.75rem;
+    border-radius: 1.375rem;
+    transform-origin: 1.375rem 50%;
+    border: 2px solid var(--cem-vert-pale);
+  }
+
+  .footer--dark .footer__copyright {
+    max-width: calc(100% - 28rem);
+    margin-inline: auto;
+  }
+}
+
+/*
+ * Mise en page inspirée de cegepmontpetit.ca : un cadre bleu marine dans
+ * lequel flottent des cartes arrondies séparées de 8 px, soit la barre
+ * latérale (plus foncée) et le contenu.
+ */
+:root {
+  --cem-bleu-marine-fonce: #05223a;
+  --cem-cadre: 0.5rem;
+  --cem-fond-contenu: #fff;
+  /* La barre du haut inclut l'espace qui la sépare des cartes, pour que son
+     contenu soit centré dans toute la bande bleu marine. */
+  --ifm-navbar-height: calc(3.75rem + var(--cem-cadre));
+
+  /* Coins arrondis uniformes : 12 px pour les cartes et les encadrés, 8 px
+     pour les petits éléments, et boutons et badges en forme de pilule. */
+  --ifm-global-radius: 0.75rem;
+  --ifm-code-border-radius: 0.5rem;
+  --ifm-button-border-radius: 3rem;
+  --ifm-badge-border-radius: 1rem;
+}
+
+html[data-theme="dark"] {
+  --cem-fond-contenu: var(--ifm-background-color);
+}
+
+html {
+  background-color: var(--cem-bleu-marine);
+}
+
+.main-wrapper {
+  padding: 0 var(--cem-cadre) var(--cem-cadre);
+  /* Déclarées ici plutôt que sur :root pour avoir préséance sur les valeurs
+     de Docusaurus, peu importe l'ordre de chargement des feuilles de style. */
+  --doc-sidebar-width: calc(20.5rem + var(--cem-cadre));
+  --doc-sidebar-hidden-width: calc(1.875rem + var(--cem-cadre));
+}
+
+.main-wrapper > main,
+main[class*="docMainContainer_"] {
+  background-color: var(--cem-fond-contenu);
+  border-radius: 0.75rem;
+}
+
+@media (min-width: 997px) {
+  /* Page sans barre latérale (ex. : l'accueil) : le contenu prend toute la
+     largeur. */
+  main[class*="docMainContainer_"]:first-child {
+    max-width: 100%;
+  }
+
+  /* Le préfixe html donne préséance sur les modules CSS de Docusaurus. */
+  html .theme-doc-sidebar-container {
+    margin-top: 0;
+    border-right: none;
+    /* Couleurs du menu sur fond bleu marine foncé. */
+    --ifm-menu-color: #fff;
+    --ifm-menu-color-active: var(--cem-vert);
+    --ifm-menu-color-background-active: transparent;
+    --ifm-menu-color-background-hover: rgba(255, 255, 255, 0.1);
+    --ifm-menu-link-padding-vertical: 0.59375rem;
+    --ifm-menu-link-padding-horizontal: 1rem;
+    --ifm-menu-link-sublist-icon-filter: invert(100%) sepia(94%) saturate(17%)
+      hue-rotate(223deg) brightness(104%) contrast(98%);
+  }
+
+  /* La carte reste visible sous la barre de navigation pendant le
+     défilement, avec 8 px d'espace en bas (l'espace du haut fait partie de
+     la barre). */
+  html [class*="sidebarViewport_"] {
+    top: var(--ifm-navbar-height);
+    max-height: calc(100vh - var(--ifm-navbar-height) - var(--cem-cadre));
+  }
+
+  [class*="sidebarViewport_"] > [class*="sidebar_"] {
+    width: calc(var(--doc-sidebar-width) - var(--cem-cadre));
+    padding-top: 0;
+    background-color: var(--cem-bleu-marine-fonce);
+    border-radius: 1rem;
+    overflow: hidden;
+  }
+
+  /* Barre de défilement discrète, comme le menu du site du cégep qui n'en
+     affiche pas : un mince pouce arrondi et translucide, sans rail, qui
+     n'apparaît qu'au survol du menu. */
+  .theme-doc-sidebar-container .menu {
+    padding-top: 1.5rem;
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+  }
+
+  .theme-doc-sidebar-container .menu:hover {
+    scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+  }
+
+  /* Chrome et Safari : les pseudo-éléments permettent un pouce en pilule,
+     décollé des bords de la carte. Ils ne s'appliquent que si les propriétés
+     standards sont remises à auto. */
+  @supports selector(::-webkit-scrollbar) {
+    .theme-doc-sidebar-container .menu,
+    .theme-doc-sidebar-container .menu:hover {
+      scrollbar-width: auto;
+      scrollbar-color: auto;
+    }
+
+    .theme-doc-sidebar-container .menu::-webkit-scrollbar {
+      width: var(--cem-cadre);
+    }
+
+    .theme-doc-sidebar-container .menu::-webkit-scrollbar-track {
+      background: transparent;
+      margin-block: var(--cem-cadre);
+    }
+
+    .theme-doc-sidebar-container .menu::-webkit-scrollbar-thumb {
+      border: 2px solid transparent;
+      border-radius: 1rem;
+      background-color: transparent;
+      background-clip: padding-box;
+    }
+
+    .theme-doc-sidebar-container .menu:hover::-webkit-scrollbar-thumb {
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .theme-doc-sidebar-container .menu::-webkit-scrollbar-thumb:hover {
+      background-color: rgba(255, 255, 255, 0.5);
+    }
+  }
+
+  .theme-doc-sidebar-container .menu__link {
+    font-weight: 600;
+    line-height: 1.3;
+  }
+
+  .theme-doc-sidebar-container .menu__link,
+  .theme-doc-sidebar-container .menu__caret,
+  .theme-doc-sidebar-container .menu__list-item-collapsible,
+  .theme-doc-sidebar-container .examen {
+    border-radius: 0.5rem;
+  }
+
+  .theme-doc-sidebar-container .menu__list-item:not(:first-child) {
+    margin-top: 0;
+  }
+
+  /* Sous-menus : regroupés par une barre verticale arrondie. */
+  .theme-doc-sidebar-container .menu__list .menu__list {
+    position: relative;
+    margin: 0 0 0 1rem;
+    padding-left: 0.625rem;
+  }
+
+  .theme-doc-sidebar-container .menu__list .menu__list::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 0.5rem;
+    border-radius: 1rem;
+    background-color: var(--cem-vert);
+  }
+
+  /* Bouton pour replier la barre latérale, au bas de la carte. */
+  .theme-doc-sidebar-container [class*="collapseSidebarButton_"] {
+    height: 3rem;
+    margin: var(--cem-cadre);
+    border: none;
+    border-radius: 0.5rem;
+    background-color: var(--cem-bleu-marine);
+  }
+
+  .theme-doc-sidebar-container [class*="collapseSidebarButton_"]:hover,
+  .theme-doc-sidebar-container [class*="collapseSidebarButton_"]:focus {
+    background-color: color-mix(in srgb, var(--cem-bleu-marine), #fff 10%);
+  }
+
+  /* Barre latérale repliée : une mince carte à cliquer pour la rouvrir. */
+  .theme-doc-sidebar-container [class*="expandButton_"] {
+    left: 0;
+    right: auto;
+    width: calc(100% - var(--cem-cadre));
+    border-radius: 1rem;
+    background-color: var(--cem-bleu-marine-fonce);
+  }
+
+  .theme-doc-sidebar-container [class*="expandButton_"]:hover,
+  .theme-doc-sidebar-container [class*="expandButton_"]:focus {
+    background-color: var(--cem-bleu-marine);
+  }
+
+  .theme-doc-sidebar-container [class*="collapseSidebarButton_"] svg g,
+  .theme-doc-sidebar-container [class*="expandButton_"] svg g {
+    fill: #fff;
+  }
 }
 
 .examen {
   background-color: var(--examen-bg);
   color: var(--examen-font-color);
+}
+
+[class*="remise-tp"]::after {
+  border-radius: 0.5rem;
 }
 
 .remise-tp1::after {
