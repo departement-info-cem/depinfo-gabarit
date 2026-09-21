@@ -26,6 +26,22 @@ const config = {
     locales: ["fr"],
   },
 
+  stylesheets: [
+    {
+      href: 'https://fonts.googleapis.com',
+      rel: 'preconnect',
+    },
+    {
+      href: 'https://fonts.gstatic.com',
+      rel: 'preconnect',
+      crossorigin: 'anonymous',
+    },
+    {
+      href: 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap',
+      rel: 'stylesheet',
+    },
+  ],
+
   markdown: {
     mermaid: true,
     hooks: {
