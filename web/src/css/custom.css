@@ -126,25 +126,79 @@ html[data-theme="dark"] {
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
-/* Barre de navigation et pied de page en bleu marine, comme les
-   versions renversées du logo. */
-.navbar--dark {
-  --ifm-navbar-background-color: var(--cem-bleu-marine);
-  /* Aucune ombre : la barre se fond dans le cadre bleu marine. */
-  --ifm-navbar-shadow: none;
-  --ifm-navbar-link-hover-color: var(--cem-vert);
-  --ifm-navbar-link-active-color: var(--cem-vert);
-  --ifm-menu-color-active: var(--cem-vert);
+/* Couleurs du cadre et des menus : claires en mode clair, bleu marine (comme
+   les versions renversées du logo) en mode sombre. */
+:root {
+  --cem-bleu-marine-fonce: #05223a;
+  --cem-fond-cadre: var(--cem-gris-1);
+  --cem-fond-menu: #fff;
+  --cem-texte-menu: var(--cem-bleu-marine);
+  --cem-survol: rgba(12, 52, 85, 0.08);
+  --cem-bouton-menu: var(--cem-gris-1);
+  --cem-bouton-menu-survol: var(--cem-gris-2);
+  --cem-defilement: rgba(12, 52, 85, 0.3);
+  --cem-defilement-survol: rgba(12, 52, 85, 0.5);
 }
 
-/* Les menus (mobile et latéral) sont affichés sur fond bleu marine, peu
-   importe le thème. */
-.navbar--dark,
+html[data-theme="dark"] {
+  --cem-fond-cadre: var(--cem-bleu-marine);
+  --cem-fond-menu: var(--cem-bleu-marine-fonce);
+  --cem-texte-menu: #fff;
+  --cem-survol: rgba(255, 255, 255, 0.1);
+  --cem-bouton-menu: var(--cem-bleu-marine);
+  --cem-bouton-menu-survol: color-mix(in srgb, var(--cem-bleu-marine), #fff 10%);
+  --cem-defilement: rgba(255, 255, 255, 0.3);
+  --cem-defilement-survol: rgba(255, 255, 255, 0.5);
+}
+
+/* Barre de navigation fondue dans le cadre (sans ombre). En mode clair, le
+   vert forêt n'est pas permis sur le gris du cadre (guide, p. 10) : le lien
+   actif reste bleu marine et est souligné d'une pilule verte. */
+.navbar {
+  --ifm-navbar-background-color: var(--cem-fond-cadre);
+  --ifm-navbar-shadow: none;
+  --ifm-navbar-link-color: var(--cem-texte-menu);
+  --ifm-navbar-link-hover-color: var(--cem-texte-menu);
+}
+
+html[data-theme="dark"] .navbar {
+  --ifm-navbar-link-hover-color: var(--cem-vert);
+}
+
+.navbar__items .navbar__link {
+  border-radius: 0.5rem;
+}
+
+.navbar__items .navbar__link:hover {
+  background-color: var(--cem-survol);
+}
+
+.navbar__items .navbar__link--active {
+  position: relative;
+}
+
+.navbar__items .navbar__link--active::after {
+  content: "";
+  position: absolute;
+  right: var(--ifm-navbar-item-padding-horizontal);
+  bottom: 0;
+  left: var(--ifm-navbar-item-padding-horizontal);
+  height: 3px;
+  border-radius: 3px;
+  background-color: var(--cem-vert);
+}
+
+/* Menu mobile : même carte que la barre latérale. */
+.navbar-sidebar {
+  background-color: var(--cem-fond-menu);
+}
+
+.navbar-sidebar,
 .theme-doc-sidebar-container {
-  --examen-bg: #41120a;
-  --examen-font-color: #fbebe9;
-  --remise-tp-bg: #0c2811;
-  --remise-tp-font-color: #e9f3eb;
+  --ifm-menu-color: var(--cem-texte-menu);
+  --ifm-menu-color-active: var(--ifm-color-primary);
+  --ifm-menu-color-background-active: transparent;
+  --ifm-menu-color-background-hover: var(--cem-survol);
 }
 
 .footer--dark {
@@ -202,16 +256,15 @@ html[data-theme="dark"] {
 }
 
 /*
- * Mise en page inspirée de cegepmontpetit.ca : un cadre bleu marine dans
- * lequel flottent des cartes arrondies séparées de 8 px, soit la barre
- * latérale (plus foncée) et le contenu.
+ * Mise en page inspirée de cegepmontpetit.ca : un cadre dans lequel flottent
+ * des cartes arrondies séparées de 8 px, soit la barre latérale et le
+ * contenu.
  */
 :root {
-  --cem-bleu-marine-fonce: #05223a;
   --cem-cadre: 0.5rem;
   --cem-fond-contenu: #fff;
   /* La barre du haut inclut l'espace qui la sépare des cartes, pour que son
-     contenu soit centré dans toute la bande bleu marine. */
+     contenu soit centré dans toute la bande du cadre. */
   --ifm-navbar-height: calc(3.75rem + var(--cem-cadre));
 
   /* Coins arrondis uniformes : 12 px pour les cartes et les encadrés, 8 px
@@ -227,7 +280,7 @@ html[data-theme="dark"] {
 }
 
 html {
-  background-color: var(--cem-bleu-marine);
+  background-color: var(--cem-fond-cadre);
 }
 
 .main-wrapper {
@@ -255,15 +308,8 @@ main[class*="docMainContainer_"] {
   html .theme-doc-sidebar-container {
     margin-top: 0;
     border-right: none;
-    /* Couleurs du menu sur fond bleu marine foncé. */
-    --ifm-menu-color: #fff;
-    --ifm-menu-color-active: var(--cem-vert);
-    --ifm-menu-color-background-active: transparent;
-    --ifm-menu-color-background-hover: rgba(255, 255, 255, 0.1);
     --ifm-menu-link-padding-vertical: 0.59375rem;
     --ifm-menu-link-padding-horizontal: 1rem;
-    --ifm-menu-link-sublist-icon-filter: invert(100%) sepia(94%) saturate(17%)
-      hue-rotate(223deg) brightness(104%) contrast(98%);
   }
 
   /* La carte reste visible sous la barre de navigation pendant le
@@ -277,7 +323,7 @@ main[class*="docMainContainer_"] {
   [class*="sidebarViewport_"] > [class*="sidebar_"] {
     width: calc(var(--doc-sidebar-width) - var(--cem-cadre));
     padding-top: 0;
-    background-color: var(--cem-bleu-marine-fonce);
+    background-color: var(--cem-fond-menu);
     border-radius: 1rem;
     overflow: hidden;
   }
@@ -292,7 +338,7 @@ main[class*="docMainContainer_"] {
   }
 
   .theme-doc-sidebar-container .menu:hover {
-    scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+    scrollbar-color: var(--cem-defilement) transparent;
   }
 
   /* Chrome et Safari : les pseudo-éléments permettent un pouce en pilule,
@@ -322,11 +368,11 @@ main[class*="docMainContainer_"] {
     }
 
     .theme-doc-sidebar-container .menu:hover::-webkit-scrollbar-thumb {
-      background-color: rgba(255, 255, 255, 0.3);
+      background-color: var(--cem-defilement);
     }
 
     .theme-doc-sidebar-container .menu::-webkit-scrollbar-thumb:hover {
-      background-color: rgba(255, 255, 255, 0.5);
+      background-color: var(--cem-defilement-survol);
     }
   }
 
@@ -337,8 +383,7 @@ main[class*="docMainContainer_"] {
 
   .theme-doc-sidebar-container .menu__link,
   .theme-doc-sidebar-container .menu__caret,
-  .theme-doc-sidebar-container .menu__list-item-collapsible,
-  .theme-doc-sidebar-container .examen {
+  .theme-doc-sidebar-container .menu__list-item-collapsible {
     border-radius: 0.5rem;
   }
 
@@ -361,7 +406,7 @@ main[class*="docMainContainer_"] {
     left: 0;
     width: 0.5rem;
     border-radius: 1rem;
-    background-color: var(--cem-vert);
+    background-color: var(--ifm-color-primary);
   }
 
   /* Bouton pour replier la barre latérale, au bas de la carte. */
@@ -370,12 +415,12 @@ main[class*="docMainContainer_"] {
     margin: var(--cem-cadre);
     border: none;
     border-radius: 0.5rem;
-    background-color: var(--cem-bleu-marine);
+    background-color: var(--cem-bouton-menu);
   }
 
   .theme-doc-sidebar-container [class*="collapseSidebarButton_"]:hover,
   .theme-doc-sidebar-container [class*="collapseSidebarButton_"]:focus {
-    background-color: color-mix(in srgb, var(--cem-bleu-marine), #fff 10%);
+    background-color: var(--cem-bouton-menu-survol);
   }
 
   /* Barre latérale repliée : une mince carte à cliquer pour la rouvrir. */
@@ -384,23 +429,24 @@ main[class*="docMainContainer_"] {
     right: auto;
     width: calc(100% - var(--cem-cadre));
     border-radius: 1rem;
-    background-color: var(--cem-bleu-marine-fonce);
+    background-color: var(--cem-fond-menu);
   }
 
   .theme-doc-sidebar-container [class*="expandButton_"]:hover,
   .theme-doc-sidebar-container [class*="expandButton_"]:focus {
-    background-color: var(--cem-bleu-marine);
+    background-color: var(--cem-bouton-menu);
   }
 
   .theme-doc-sidebar-container [class*="collapseSidebarButton_"] svg g,
   .theme-doc-sidebar-container [class*="expandButton_"] svg g {
-    fill: #fff;
+    fill: var(--cem-texte-menu);
   }
 }
 
 .examen {
   background-color: var(--examen-bg);
   color: var(--examen-font-color);
+  border-radius: 0.5rem;
 }
 
 [class*="remise-tp"]::after {

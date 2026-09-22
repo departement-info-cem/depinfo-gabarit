@@ -94,7 +94,6 @@ const config = {
       },
       navbar: {
         title: siteConfig.nom,
-        style: "dark",
         logo: {
           alt: "Logo CEM",
           src: "img/logo.svg",
