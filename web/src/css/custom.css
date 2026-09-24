@@ -256,6 +256,95 @@ html[data-theme="dark"] .navbar {
 }
 
 /*
+ * Recherche Algolia (DocSearch). Docusaurus n'associe que la couleur primaire
+ * et celle du texte : DocSearch garde sinon ses accents bleus et, en mode
+ * sombre, son fond indigo. La fenêtre reprend plutôt la mise en page du site,
+ * soit un cadre dans lequel flottent des cartes (champ, résultats et pied).
+ *
+ * La feuille de DocSearch est chargée après celle-ci et définit ses variables
+ * sur :root et html[data-theme=dark] : le sélecteur :root[data-theme] est
+ * requis pour avoir préséance dans les deux modes.
+ */
+:root[data-theme] {
+  --docsearch-primary-color: var(--ifm-color-primary);
+  --docsearch-highlight-color: var(--ifm-color-primary);
+  --docsearch-focus-color: var(--ifm-color-primary);
+  --docsearch-soft-primary-color: var(--cem-survol);
+  --docsearch-text-color: var(--ifm-font-color-base);
+  --docsearch-secondary-text-color: var(--cem-gris-4);
+  --docsearch-muted-color: var(--cem-gris-4);
+  --docsearch-icon-color: var(--cem-texte-menu);
+  --docsearch-subtle-color: var(--cem-gris-2);
+  --docsearch-background-color: var(--cem-bouton-menu);
+  --docsearch-border-radius: 0.5rem;
+  --docsearch-container-background: rgba(12, 52, 85, 0.6);
+  --docsearch-modal-background: var(--cem-fond-cadre);
+  --docsearch-modal-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
+  --docsearch-searchbox-background: var(--cem-fond-menu);
+  --docsearch-searchbox-focus-background: var(--cem-fond-menu);
+  --docsearch-hit-color: var(--ifm-font-color-base);
+  --docsearch-hit-background: var(--cem-fond-menu);
+  --docsearch-hit-highlight-color: var(--cem-fond-menu);
+  --docsearch-hit-shadow: none;
+  --docsearch-key-background: var(--cem-bouton-menu);
+  --docsearch-key-color: var(--cem-texte-menu);
+  --docsearch-footer-background: var(--cem-fond-menu);
+  --docsearch-footer-shadow: none;
+  --docsearch-logo-color: var(--cem-texte-menu);
+  --docsearch-search-button-background: var(--cem-fond-menu);
+  --docsearch-search-button-text-color: var(--cem-texte-menu);
+}
+
+:root[data-theme="dark"] {
+  --docsearch-secondary-text-color: rgba(255, 255, 255, 0.7);
+  --docsearch-muted-color: rgba(255, 255, 255, 0.7);
+  --docsearch-subtle-color: color-mix(in srgb, var(--cem-bleu-marine), #fff 15%);
+  --docsearch-container-background: rgba(5, 34, 58, 0.8);
+}
+
+.DocSearch-Button:focus-visible {
+  outline: 2px solid var(--docsearch-focus-color);
+  outline-offset: 2px;
+}
+
+.DocSearch-Container .DocSearch-Hit a {
+  border-radius: 0.5rem;
+}
+
+/* Résultat sélectionné : un contour vert plutôt qu'un fond teinté, sur lequel
+   le vert forêt n'offrirait plus un contraste suffisant. */
+.DocSearch-Container .DocSearch-Hit[aria-selected="true"] a {
+  box-shadow: inset 0 0 0 2px var(--docsearch-highlight-color);
+}
+
+/* Sur le gris du cadre, le vert forêt n'est pas permis : les suggestions de
+   l'écran « Aucun résultat » restent bleu marine. */
+.DocSearch-NoResults {
+  --docsearch-highlight-color: var(--cem-texte-menu);
+}
+
+/* L'icône de cet écran a un trait violet codé en dur dans DocSearch. */
+.DocSearch-Screen-Icon svg {
+  stroke: currentColor;
+}
+
+/* Coins arrondis comme les cartes du site, sauf sur mobile, où la fenêtre
+   occupe tout l'écran. */
+@media (min-width: 769px) {
+  .DocSearch-Container .DocSearch-Modal {
+    border-radius: 1rem;
+  }
+
+  .DocSearch-Container .DocSearch-Form {
+    border-radius: 1rem 1rem 0 0;
+  }
+
+  .DocSearch-Container .DocSearch-Footer {
+    border-radius: 0 0 1rem 1rem;
+  }
+}
+
+/*
  * Mise en page inspirée de cegepmontpetit.ca : un cadre dans lequel flottent
  * des cartes arrondies séparées de 8 px, soit la barre latérale et le
  * contenu.
