@@ -78,17 +78,17 @@
 
 .choiceSelected {
   border-color: var(--ifm-color-primary);
-  background: var(--ifm-color-primary-lightest);
+  background: var(--ifm-color-primary-contrast-background);
 }
 
 .choiceCorrect {
   border-color: var(--ifm-color-success);
-  background: var(--ifm-color-success-lightest);
+  background: var(--ifm-color-success-contrast-background);
 }
 
 .choiceWrong {
   border-color: var(--ifm-color-danger);
-  background: var(--ifm-color-danger-lightest);
+  background: var(--ifm-color-danger-contrast-background);
 }
 
 .leaderboard {
@@ -106,7 +106,7 @@
 }
 
 .leaderboardItemSelf {
-  background: var(--ifm-color-primary-lightest);
+  background: var(--ifm-color-primary-contrast-background);
   border-radius: 6px;
 }
 
@@ -137,7 +137,7 @@
 
 .banButton:hover {
   color: var(--ifm-color-danger);
-  background: var(--ifm-color-danger-lightest);
+  background: var(--ifm-color-danger-contrast-background);
 }
 
 .bannedNote {
