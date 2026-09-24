@@ -100,13 +100,17 @@ const config = {
         },
         items: [
           {
-            type: "doc",
-            docId: "cours/rencontre1.1",
+            // Mène au prochain cours selon l'horaire du premier prof trouvé dans
+            // sidebars.js, sinon au premier cours de la sidebar
+            type: "custom-prochainCours",
             position: "left",
+            sidebarId: "docs",
             label: "Cours",
           },
           {
-            type: "docSidebar",
+            // Mène au TP dont le nom (ex : « TP1 - ... ») est contenu dans le className
+            // du prochain cours qui en mentionne un (ex : remise-tp1), sinon au premier TP
+            type: "custom-tpCourant",
             position: "left",
             sidebarId: "tp",
             label: "Travaux Pratiques",

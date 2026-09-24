@@ -1,12 +1,15 @@
 // Plugin Docusaurus : Génère un fichier docsMetadata.json à partir des frontmatters
 // des fichiers Markdown d’un dossier de documentation (docs/01-cours par défaut,
-// configurable via l’option docsDir).
+// configurable via l’option docsDir). Expose aussi la liste des pages de TP à la navbar.
 
 const fs = require("fs");
 const path = require("path");
 
 // Dossier lu par défaut, relatif à la racine du site Docusaurus
 const DEFAULT_DOCS_DIR = "docs/01-cours";
+
+// Début du nom d'une page de TP : TP suivi de son numéro (ex : « TP1 - Calculatrice »)
+const TP_NAME_PREFIX = /^TP\d+/i;
 
 /**
  * Extrait le frontmatter d'un contenu Markdown
@@ -146,6 +149,28 @@ function generateSidebarDocs() {
 }
 
 /**
+ * Liste les pages dont le nom (titre ou libellé de sidebar) commence par TP#
+ * @param {Object} allContent - Contenu chargé par tous les plugins
+ * @returns {Array<{id: string, sidebar?: string, nom: string}>} nom : ex. « TP1 »
+ */
+function extractTravauxPratiques(allContent) {
+  const docsContent = allContent["docusaurus-plugin-content-docs"]?.default;
+  // Le gabarit n'utilise pas les versions de docs : seule la première compte
+  const docs = docsContent?.loadedVersions?.[0]?.docs ?? [];
+  const travauxPratiques = [];
+  for (const doc of docs) {
+    const match = [doc.title, doc.frontMatter?.sidebar_label]
+      .filter((name) => typeof name === "string")
+      .map((name) => name.trim().match(TP_NAME_PREFIX))
+      .find(Boolean);
+    if (match) {
+      travauxPratiques.push({ id: doc.id, sidebar: doc.sidebar, nom: match[0] });
+    }
+  }
+  return travauxPratiques;
+}
+
+/**
  * Plugin Docusaurus pour exposer les métadonnées des documents
  * @param {Object} context - Contexte Docusaurus
  * @param {Object} [options]
@@ -179,6 +204,15 @@ module.exports = function pluginDocsMetadata(context, options) {
         JSON.stringify(content, null, 2)
       );
       generateSidebarDocs(); // Génère sidebarDocs.js à chaque build
+    },
+    /**
+     * Expose les pages de TP, une fois les docs chargés, pour que l'onglet
+     * « Travaux Pratiques » de la navbar puisse mener au TP courant
+     */
+    async allContentLoaded({ allContent, actions }) {
+      actions.setGlobalData({
+        travauxPratiques: extractTravauxPratiques(allContent),
+      });
     },
   };
 };
