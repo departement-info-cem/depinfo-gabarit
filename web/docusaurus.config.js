@@ -127,6 +127,12 @@ const config = {
                 label: "GitHub",
                 href: `https://github.com/departement-info-cem/${siteConfig.nomUrl}`,
               },
+              {
+                // Seul lien vers cette page, qui n'est ni dans le menu ni
+                // dans les barres latérales.
+                label: "Proposer une correction",
+                to: "/contribuer",
+              },
             ],
           },
         ],
