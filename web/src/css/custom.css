@@ -435,6 +435,16 @@ main[class*="docMainContainer_"] {
   border-radius: 0.75rem;
 }
 
+/* Pages MDX (src/pages) : Docusaurus espace la carte du cadre avec la classe
+   margin-vert--lg, ce qui colle le titre au haut de la carte. Comme pour les
+   docs, la carte suit plutôt la barre du haut et l'espace passe à
+   l'intérieur. Les !important l'emportent sur ceux de la classe d'Infima. */
+html.mdx-page .main-wrapper > main {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding-block: 2rem;
+}
+
 @media (min-width: 997px) {
   /* Page sans barre latérale (ex. : l'accueil) : le contenu prend toute la
      largeur. */

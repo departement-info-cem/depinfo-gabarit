@@ -1,0 +1,58 @@
+.assistant {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: var(--ifm-leading);
+  padding: 1.25rem;
+  /* En mode sombre, le fond se confond presque avec celui de la page : la
+     bordure délimite l'encadré. */
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: var(--ifm-global-radius);
+  background-color: var(--ifm-color-emphasis-100);
+}
+
+.champs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: 1rem;
+}
+
+.champ {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.champ label {
+  font-weight: 600;
+}
+
+.champ input {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--ifm-color-emphasis-400);
+  border-radius: 0.5rem;
+  background-color: var(--ifm-background-surface-color);
+  color: var(--ifm-font-color-base);
+  font: inherit;
+}
+
+.champ input:focus-visible {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 1px;
+}
+
+.liens {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* Les boutons d'Infima ne passent pas à la ligne : le libellé, qui contient
+   le nom du dépôt, déborderait sur mobile. */
+.liens :global(.button) {
+  white-space: normal;
+}
+
+.consigne {
+  margin: 0;
+  color: var(--ifm-color-emphasis-700);
+}

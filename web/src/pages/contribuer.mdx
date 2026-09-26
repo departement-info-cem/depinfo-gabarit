@@ -1,0 +1,77 @@
+---
+title: Proposer une correction
+description: Comment proposer une correction au contenu de ce site au moyen d'une pull request sur GitHub.
+---
+
+import { AssistantPullRequest, DepotDuCours } from "@site/src/components/Contribution";
+
+# Proposer une correction
+
+Vous avez repéré une coquille, une erreur dans un exemple ou un lien brisé? Chaque page de ce site est générée à partir d'un fichier Markdown du dépôt GitHub <DepotDuCours lien />. Vous pouvez donc proposer vous-même la correction au moyen d'une *pull request* (PR) : votre enseignant·e la révise, puis l'intègre au site ou vous répond.
+
+:::danger Le piège à éviter
+
+Le dépôt du cours est lui-même un *fork* du gabarit commun des sites du département, `departement-info-cem/depinfo-gabarit`. Pour cette raison, GitHub propose par défaut d'envoyer votre PR au **gabarit** plutôt qu'au cours, où personne ne l'attend.
+
+De plus, si vous cliquez sur le crayon ✏️ directement dans le dépôt du cours, GitHub construit votre modification par-dessus le gabarit plutôt que par-dessus le cours. Elle ne peut alors plus être intégrée, même si vous corrigez la destination de la PR après coup.
+
+Pour éviter ces deux problèmes, suivez les étapes dans l'ordre : on modifie toujours dans **son propre fork**, et on vérifie toujours la destination de la PR.
+
+:::
+
+## 1. Créer votre fork
+
+Un *fork* est votre copie personnelle du dépôt, dans laquelle vous avez le droit de modifier les fichiers. Vous n'avez à le créer qu'une fois par cours.
+
+1. Ouvrez le dépôt du cours : <DepotDuCours lien />.
+2. En haut à droite, cliquez sur **Fork**, puis sur **Create fork**, sans changer les options.
+
+:::info Vous avez déjà un fork?
+
+S'il date d'une correction précédente, mettez-le d'abord à jour pour ne pas corriger une version périmée de la page : sur la page de votre fork, cliquez sur **Sync fork**, puis sur **Update branch**.
+
+:::
+
+## 2. Ouvrir la page dans votre fork
+
+1. Sur ce site, allez à la page qui contient l'erreur et cliquez sur **Éditer cette page**, tout en bas. GitHub s'ouvre sur le fichier source de la page, mais dans le dépôt du cours.
+2. Dans la barre d'adresse, remplacez `departement-info-cem` par votre nom d'utilisateur GitHub, puis appuyez sur Entrée.
+3. Vérifiez qu'en haut à gauche, GitHub affiche maintenant votre nom d'utilisateur suivi du nom du dépôt, avec la mention *forked from* <DepotDuCours /> juste en dessous.
+
+## 3. Faire la correction
+
+1. Cliquez sur le crayon ✏️ (*Edit this file*), en haut à droite du fichier. Si GitHub vous indique que vous n'avez pas accès en écriture au dépôt (*write access*), vous êtes encore dans le dépôt du cours : revenez à l'étape 2.
+2. Faites votre correction. L'onglet **Preview** montre le rendu du Markdown. Limitez-vous à une seule correction ou à un seul sujet par PR : elle sera plus facile à réviser.
+3. Cliquez sur **Commit changes…** et décrivez la correction en une phrase dans *Commit message*, par exemple « Corrige la valeur de retour dans l'exemple 3 ».
+4. Choisissez **Create a new branch for this commit and start a pull request**, gardez le nom de branche proposé (par exemple `votre-nom-patch-1`), puis cliquez sur **Propose changes**.
+
+La nouvelle branche garde la branche `main` de votre fork identique à celle du cours, ce qui vous permettra de la mettre à jour sans conflit pour vos prochaines corrections.
+
+## 4. Ouvrir la pull request vers le cours
+
+GitHub affiche ensuite la page *Open a pull request*. La barre du haut indique où va la PR (*base repository* et *base*) et d'où elle part (*head repository* et *compare*).
+
+1. Vérifiez **base repository** : il doit indiquer <DepotDuCours />. S'il indique `departement-info-cem/depinfo-gabarit`, cliquez dessus et choisissez <DepotDuCours /> dans la liste.
+2. Vérifiez le résumé des changements : il ne doit contenir que votre commit et le fichier que vous avez modifié. Des dizaines de commits ou de fichiers signifient que la PR vise le mauvais dépôt.
+3. Donnez un titre clair à la PR, expliquez l'erreur dans la description, puis cliquez sur **Create pull request**.
+
+### Raccourci : un lien déjà dirigé vers le cours
+
+Plutôt que de passer par le menu *base repository*, vous pouvez générer ici le lien qui ouvre la PR avec le bon dépôt de base :
+
+<AssistantPullRequest />
+
+## 5. Après l'envoi
+
+- Votre enseignant·e révise la PR : il ou elle peut la commenter, demander un ajustement, l'intégrer au site (*merge*) ou la fermer. GitHub vous en avise par notification.
+- Pour faire un ajustement demandé, modifiez de nouveau le fichier dans **la même branche** de votre fork, que vous choisissez dans le menu des branches en haut à gauche. La PR se met à jour d'elle-même.
+- Pour une autre correction plus tard, mettez d'abord votre fork à jour avec **Sync fork**, puis reprenez à l'étape 2.
+
+## En cas de problème
+
+| Symptôme | Solution |
+| --- | --- |
+| Votre PR est arrivée dans `departement-info-cem/depinfo-gabarit`. | Fermez-la avec **Close pull request**. Si sa branche s'appelle `patch-1`, elle a été créée depuis le dépôt du cours et repose sur le gabarit : reprenez à l'étape 2. Sinon, ouvrez une nouvelle PR à l'aide du raccourci ci-dessus. |
+| GitHub indique que vous n'avez pas accès en écriture. | Vous êtes dans le dépôt du cours plutôt que dans votre fork : revenez à l'étape 2. |
+| Votre fork indique *This branch is … commits behind*. | Cliquez sur **Sync fork**, puis sur **Update branch**. |
+| Le raccourci mène à *There isn't anything to compare*. | Vérifiez l'orthographe de votre nom d'utilisateur et le nom de la branche. |
