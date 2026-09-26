@@ -212,46 +212,95 @@ html[data-theme="dark"] .navbar {
    supérieur droit et se termine en croisant l'aplat. Une seule extrémité de
    chaque forme est visible et le texte du copyright est tenu à l'écart pour
    que les formes « respirent ». Chaque forme pivote autour du centre de son
-   extrémité visible. */
-@media (min-width: 1200px) {
+   extrémité visible. Leurs dimensions sont en em, soit en multiples de
+   --cem-forme, pour qu'elles rapetissent ensemble sur les écrans étroits. */
+.footer--dark {
+  --cem-forme: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (max-width: 996px) {
   .footer--dark {
-    position: relative;
-    overflow: hidden;
+    --cem-forme: 0.75rem;
   }
+}
 
-  .footer--dark::before,
-  .footer--dark::after {
-    content: "";
-    position: absolute;
-    transform: rotate(-35deg);
-    pointer-events: none;
-  }
+.footer--dark::before,
+.footer--dark::after {
+  content: "";
+  position: absolute;
+  font-size: var(--cem-forme);
+  transform: rotate(-35deg);
+  pointer-events: none;
+}
 
-  /* Extrémité visible en haut à droite. */
-  .footer--dark::before {
-    right: 2.5rem;
-    bottom: 2.5rem;
-    width: 16rem;
-    height: 3rem;
-    border-radius: 1.5rem;
-    transform-origin: calc(100% - 1.5rem) 50%;
-    background: var(--cem-vert);
-  }
+/* Extrémité visible en haut à droite. */
+.footer--dark::before {
+  right: 2.5em;
+  bottom: 2.5em;
+  width: 16em;
+  height: 3em;
+  border-radius: 1.5em;
+  transform-origin: calc(100% - 1.5em) 50%;
+  background: var(--cem-vert);
+}
 
-  /* Extrémité visible en bas à gauche, par-dessus l'aplat. */
-  .footer--dark::after {
-    left: calc(100% - 7.25rem);
-    bottom: 4rem;
-    width: 14rem;
-    height: 2.75rem;
-    border-radius: 1.375rem;
-    transform-origin: 1.375rem 50%;
-    border: 2px solid var(--cem-vert-pale);
+/* Extrémité visible en bas à gauche, par-dessus l'aplat. */
+.footer--dark::after {
+  left: calc(100% - 7.25em);
+  bottom: 4em;
+  width: 14em;
+  height: 2.75em;
+  border-radius: 1.375em;
+  transform-origin: 1.375em 50%;
+  border: 2px solid var(--cem-vert-pale);
+}
+
+/* Sous 1200 px, le copyright passe à gauche des formes, dans une colonne plus
+   étroite, comme sur le site mobile du cégep. Le sélecteur l'emporte sur la
+   classe text--center de Docusaurus. */
+.footer--dark .footer__bottom {
+  text-align: left;
+}
+
+.footer--dark .footer__copyright {
+  max-width: calc(100% - 10 * var(--cem-forme));
+}
+
+@media (min-width: 1200px) {
+  .footer--dark .footer__bottom {
+    text-align: center;
   }
 
   .footer--dark .footer__copyright {
     max-width: calc(100% - 28rem);
     margin-inline: auto;
+  }
+}
+
+/* Entrée des formes quand le pied de page devient visible (voir
+   src/theme/Footer) : l'aplat monte du bas vers le coin supérieur droit, puis
+   le filet descend de la droite vers le bas à gauche pour le croiser. Chaque
+   forme glisse le long de son axe sur sa propre longueur, ce qui suffit à la
+   cacher hors du pied de page au départ. Sans JavaScript, ou si l'utilisateur
+   préfère réduire les animations, les formes restent simplement en place. */
+@media (prefers-reduced-motion: no-preference) and (scripting: enabled) {
+  .footer--dark::before,
+  .footer--dark::after {
+    transition: transform 1.1s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .footer--dark[data-formes-visibles]::after {
+    transition-delay: 0.25s;
+  }
+
+  .footer--dark:not([data-formes-visibles])::before {
+    transform: rotate(-35deg) translateX(-100%);
+  }
+
+  .footer--dark:not([data-formes-visibles])::after {
+    transform: rotate(-35deg) translateX(100%);
   }
 }
 
