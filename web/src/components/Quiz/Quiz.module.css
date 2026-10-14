@@ -67,6 +67,19 @@
   text-align: left;
 }
 
+.choiceButton p:last-child,
+.choiceButton pre:last-child {
+  margin-bottom: 0;
+}
+
+.choiceCode {
+  margin: 0.5rem 0;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  text-align: left;
+  overflow-x: auto;
+}
+
 .choiceButton:hover:not(:disabled) {
   border-color: var(--ifm-color-primary);
 }

@@ -1,7 +1,7 @@
 # Plugin Quiz
 
 Plugin Docusaurus permettant d'animer des quiz en direct (façon Wooclap/Kahoot) :
-un·e enseignant·e démarre une session à partir d'un fichier JSON de questions, les
+un·e enseignant·e démarre une session à partir d'un fichier de questions (markdown ou JSON), les
 étudiant·e·s la rejoignent avec un code, et un classement se met à jour après
 chaque question en fonction de la rapidité des bonnes réponses.
 
@@ -28,12 +28,12 @@ compatible tel quel avec un hébergement 100% statique comme GitHub Pages.
    ],
    ```
 
-3. Déposer les fichiers de questions dans `static/quiz/` (voir `static/quiz/exemple.json`).
+3. Déposer les fichiers de questions dans `static/quiz/` (voir `static/quiz/exemple.md`).
 
 4. Utiliser le composant dans une page ou un document :
 
    ```mdx
-   <Quiz file="/quiz/exemple.json" />
+   <Quiz file="/quiz/exemple.md" />
    ```
 
    Un sélecteur permet ensuite de choisir le mode « enseignant » ou « étudiant ».
@@ -44,7 +44,7 @@ compatible tel quel avec un hébergement 100% statique comme GitHub Pages.
 ## Fonctionnement
 
 - L'enseignant·e ouvre la page en mode « enseignant » : son navigateur charge
-  le fichier JSON, devient l'hôte de la partie (`Peer` PeerJS avec un
+  le fichier de questions, devient l'hôte de la partie (`Peer` PeerJS avec un
   identifiant court dérivé du code affiché) et conserve l'état du jeu (scores,
   question courante, etc.).
 - Chaque étudiant·e ouvre la page en mode « étudiant », saisit le code et un
@@ -157,7 +157,7 @@ serveurs TURN via la prop `peerOptions` du composant `<Quiz />` (ou l'option
 
 ```jsx
 <Quiz
-  file="/quiz/exemple.json"
+  file="/quiz/exemple.md"
   peerOptions={{
     config: {
       iceServers: [
@@ -209,6 +209,77 @@ en pair-à-pair une fois la connexion établie.
 
 ## Format du fichier de questions
 
+Les quiz s'écrivent de préférence en markdown (fichier `.md`) : le code s'y
+écrit comme dans n'importe quelle page du site, et l'aperçu markdown de VS Code
+montre le quiz tel qu'il sera affiché.
+
+````md
+---
+titre: Quiz de révision
+duree: 20
+---
+
+## Quelle structure de données fonctionne en LIFO ?
+
+- [ ] File
+- [x] Pile
+- [ ] Arbre
+- [ ] Graphe
+
+## Que retourne cette fonction ?
+
+<!-- duree: 30 -->
+
+```javascript
+function f(a, b) {
+  return a + b;
+}
+f(1, 2);
+```
+
+- [ ] `1`
+- [ ] `2`
+- [x] `3`
+- [ ] Une erreur
+
+## Laquelle de ces boucles affiche les nombres de 0 à 4 ?
+
+- [x] Celle-ci :
+
+  ```csharp
+  for (int i = 0; i < 5; i++) Console.WriteLine(i);
+  ```
+
+- [ ] Celle-là :
+
+  ```csharp
+  for (int i = 1; i <= 5; i++) Console.WriteLine(i);
+  ```
+````
+
+- L'en-tête (entre les `---`) donne le `titre` du quiz et la `duree` par
+  défaut des questions, en secondes (20 secondes si absente). Les deux sont
+  optionnels ; à défaut d'en-tête, un titre `# …` sert de titre du quiz.
+- Chaque titre `## …` commence une question. Tout ce qui suit jusqu'aux choix
+  (texte, blocs de code avec coloration syntaxique, listes, etc.) complète
+  l'énoncé.
+- Les choix sont une liste de cases à cocher : `- [ ]` pour un mauvais choix,
+  `- [x]` pour **la** bonne réponse (exactement une par question, au moins deux
+  choix). Un choix peut contenir du markdown : `code en ligne`, ou un bloc de
+  code **indenté** sous le choix pour qu'il en fasse partie.
+- `<!-- duree: 30 -->`, placé dans une question, change sa durée. Ce
+  commentaire est invisible dans l'aperçu markdown.
+- Les `##` et `- [ ]` à l'intérieur d'un bloc de code ne sont pas interprétés.
+- Une erreur de format (aucune bonne réponse cochée, texte non indenté après
+  les choix, etc.) s'affiche en mode enseignant, avec le numéro de la question
+  et de la ligne en cause.
+- Les points d'une bonne réponse varient entre 500 et 1000 selon la rapidité
+  (aucun point pour une mauvaise réponse ou une absence de réponse).
+
+### Format JSON
+
+Les fichiers `.json` restent acceptés (le format est choisi selon l'extension) :
+
 ```json
 {
   "titre": "Quiz de révision",
@@ -218,11 +289,6 @@ en pair-à-pair une fois la connexion établie.
       "choix": ["File", "Pile", "Arbre", "Graphe"],
       "reponse": 1,
       "duree": 20
-    },
-    {
-      "texte": "Que retourne cette fonction ?\n\n```javascript\nfunction f(a, b) {\n  return a + b;\n}\nf(1, 2);\n```",
-      "choix": ["1", "2", "3", "Une erreur"],
-      "reponse": 2
     }
   ]
 }
@@ -230,7 +296,6 @@ en pair-à-pair une fois la connexion établie.
 
 - `reponse` est l'index (0-based) du bon choix.
 - `duree` (secondes) est optionnel, 20 secondes par défaut.
-- `texte` supporte le markdown (gras, listes, blocs de code avec coloration
-  syntaxique selon le langage indiqué après les ```` ``` ````, etc.).
-- Les points d'une bonne réponse varient entre 500 et 1000 selon la rapidité
-  (aucun point pour une mauvaise réponse ou une absence de réponse).
+- `texte` et `choix` supportent le markdown, mais les blocs de code y sont
+  pénibles à écrire (`\n` et guillemets à échapper) : préférer le format
+  markdown dès qu'une question contient du code.

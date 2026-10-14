@@ -3,6 +3,7 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 import Leaderboard from "./Leaderboard";
 import QuestionText from "./QuestionText";
 import { QuizRoom, validateQuiz, type QuizData, type RosterEntry } from "./quizEngine";
+import { parseQuizMarkdown } from "./quizMarkdown";
 import { ROOM_ID_PREFIX, createPeerWithRetry } from "./peerUtils";
 import type { PeerMessage, QuestionRevealPayload, QuestionShowPayload } from "./types";
 import styles from "./Quiz.module.css";
@@ -28,8 +29,8 @@ export default function QuizTeacher({
   onQuit,
 }: {
   /**
-   * Fichier JSON de questions : soit un chemin (ex: "/quiz/exemple.json"),
-   * soit un objet importé directement, ce qui permet un chemin relatif.
+   * Fichier de questions : soit un chemin vers un fichier markdown ou JSON
+   * (ex: "/quiz/exemple.md"), soit un objet importé directement, ce qui permet un chemin relatif.
    */
   file: string | QuizData;
   peerOptions?: PeerOptions;
@@ -146,15 +147,16 @@ export default function QuizTeacher({
 
     (async () => {
       try {
-        let quizJson: unknown;
+        let quizData: unknown;
         if (typeof file === "string") {
           const response = await fetch(fileUrl);
           if (!response.ok) throw new Error("Fichier de quiz introuvable");
-          quizJson = await response.json();
+          const isMarkdown = /\.md$/i.test(new URL(fileUrl, window.location.href).pathname);
+          quizData = isMarkdown ? parseQuizMarkdown(await response.text()) : await response.json();
         } else {
-          quizJson = file;
+          quizData = file;
         }
-        const quiz = validateQuiz(quizJson);
+        const quiz = validateQuiz(quizData);
         if (cancelled) return;
 
         roomRef.current = new QuizRoom(quiz);
@@ -332,7 +334,7 @@ export default function QuizTeacher({
           <ul className={styles.choices}>
             {question.choix.map((choix) => (
               <li key={choix} className={styles.choiceButton}>
-                {choix}
+                <QuestionText texte={choix} compact />
               </li>
             ))}
           </ul>
@@ -358,7 +360,7 @@ export default function QuizTeacher({
                     : styles.choiceButton
                 }
               >
-                {choix}
+                <QuestionText texte={choix} compact />
               </li>
             ))}
           </ul>

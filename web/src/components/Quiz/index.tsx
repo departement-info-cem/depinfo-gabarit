@@ -12,8 +12,8 @@ export default function Quiz({
   peerOptions,
 }: {
   /**
-   * Fichier JSON de questions : soit un chemin (ex: "/quiz/exemple.json"),
-   * soit un objet importé directement (ex: `import quiz from "./exemple.json"`),
+   * Fichier de questions : soit un chemin vers un fichier markdown ou JSON
+   * (ex: "/quiz/exemple.md"), soit un objet importé directement (ex: `import quiz from "./exemple.json"`),
    * ce qui permet d'utiliser un chemin relatif au fichier .md.
    */
   file: string | QuizData;

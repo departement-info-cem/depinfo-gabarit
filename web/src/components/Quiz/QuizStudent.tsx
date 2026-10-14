@@ -222,7 +222,7 @@ export default function QuizStudent({
                   onClick={() => answer(index)}
                   disabled={selected !== null}
                 >
-                  {choix}
+                  <QuestionText texte={choix} compact />
                 </button>
               </li>
             ))}
@@ -250,7 +250,7 @@ export default function QuizStudent({
                     }
                     disabled
                   >
-                    {choix}
+                    <QuestionText texte={choix} compact />
                   </button>
                 </li>
               );
