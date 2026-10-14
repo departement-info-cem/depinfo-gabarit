@@ -140,7 +140,7 @@ réseau.
 
 Cette erreur signifie que les deux navigateurs n'ont trouvé aucun chemin
 réseau direct pour se connecter et qu'aucun TURN (relais) n'était disponible
-pour prendre le relais. Deux causes fréquentes :
+pour prendre le relais. Trois causes fréquentes :
 
 1. **Réseau restrictif** : NAT symétrique, pare-feu d'entreprise/cégep, ou
    environnement de test dans une machine virtuelle/conteneur dont le réseau
