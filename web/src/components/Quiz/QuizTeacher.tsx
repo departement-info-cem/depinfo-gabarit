@@ -2,8 +2,7 @@ import React, { JSX, useEffect, useRef, useState } from "react";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import Leaderboard from "./Leaderboard";
 import QuestionText, { ChoiceWithCount } from "./QuestionText";
-import { QuizRoom, validateQuiz, type QuizData, type RosterEntry } from "./quizEngine";
-import { parseQuizMarkdown } from "./quizMarkdown";
+import { QuizRoom, loadQuiz, type QuizData, type RosterEntry } from "./quizEngine";
 import { ROOM_ID_PREFIX, createPeerWithRetry } from "./peerUtils";
 import type { PeerMessage, QuestionRevealPayload, QuestionShowPayload } from "./types";
 import styles from "./Quiz.module.css";
@@ -170,16 +169,7 @@ export default function QuizTeacher({
 
     (async () => {
       try {
-        let quizData: unknown;
-        if (typeof file === "string") {
-          const response = await fetch(fileUrl);
-          if (!response.ok) throw new Error("Fichier de quiz introuvable");
-          const isMarkdown = /\.md$/i.test(new URL(fileUrl, window.location.href).pathname);
-          quizData = isMarkdown ? parseQuizMarkdown(await response.text()) : await response.json();
-        } else {
-          quizData = file;
-        }
-        const quiz = validateQuiz(quizData);
+        const quiz = await loadQuiz(file, fileUrl);
         if (cancelled) return;
 
         roomRef.current = new QuizRoom(quiz);

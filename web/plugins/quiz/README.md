@@ -41,6 +41,16 @@ compatible tel quel avec un hébergement 100% statique comme GitHub Pages.
    partager (ex. `48213`) ; le mode étudiant permet de rejoindre avec ce code
    et un pseudonyme.
 
+   Un troisième bouton, « Réviser seul·e », lance le mode solo (voir plus bas).
+
+## Mode solo (révision)
+
+Le mode solo permet à un·e étudiant·e de refaire le quiz seul·e, à son rythme,
+pour réviser : aucune connexion ni code de session, aucun chronomètre. Après
+chaque réponse, la bonne réponse est montrée aussitôt. À la fin, le résultat
+s'affiche (ex. « 3 / 5 bonnes réponses ») avec deux boutons : réessayer
+seulement les questions ratées, ou recommencer tout le quiz.
+
 ## Fonctionnement
 
 - L'enseignant·e ouvre la page en mode « enseignant » : son navigateur charge
