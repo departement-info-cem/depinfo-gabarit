@@ -379,12 +379,12 @@ export default function QuizTeacher({
               </li>
             ))}
           </ul>
-          <h4>Classement</h4>
-          <Leaderboard players={roster} onBan={banPlayer} />
-          {bannedList}
           <button className="button button--primary" onClick={advance}>
             {question.index + 1 < question.total ? "Question suivante" : "Voir le résultat final"}
           </button>
+          <h4>Classement</h4>
+          <Leaderboard players={roster} onBan={banPlayer} />
+          {bannedList}
         </>
       )}
 
