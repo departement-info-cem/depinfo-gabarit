@@ -1,6 +1,6 @@
 import React, { JSX, useEffect, useRef, useState } from "react";
 import Leaderboard from "./Leaderboard";
-import QuestionText from "./QuestionText";
+import QuestionText, { ChoiceWithCount } from "./QuestionText";
 import { connectToRoom, createStudentPeer } from "./peerUtils";
 import type { Player, PeerMessage, QuestionRevealPayload, QuestionShowPayload } from "./types";
 import styles from "./Quiz.module.css";
@@ -250,7 +250,7 @@ export default function QuizStudent({
                     }
                     disabled
                   >
-                    <QuestionText texte={choix} compact />
+                    <ChoiceWithCount choix={choix} count={reveal.compteParChoix[index]} />
                   </button>
                 </li>
               );

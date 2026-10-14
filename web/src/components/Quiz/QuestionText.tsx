@@ -22,6 +22,20 @@ export default function QuestionText({ texte, compact = false }: { texte: string
   );
 }
 
+/** Choix affiché à la révélation, avec un badge du nombre de participant·e·s l'ayant répondu. */
+export function ChoiceWithCount({ choix, count }: { choix: string; count: number }): JSX.Element {
+  return (
+    <span className={styles.choiceWithCount}>
+      <span className={styles.choiceContent}>
+        <QuestionText texte={choix} compact />
+      </span>
+      <span className={styles.choiceCount} title={`${count} réponse${count > 1 ? "s" : ""}`}>
+        {count}
+      </span>
+    </span>
+  );
+}
+
 /** Extrait le langage et le code d'un bloc `<pre><code class="lang-…">` produit par markdown-to-jsx. */
 function codeOf(children: React.ReactNode): { language?: string; code: string } {
   const child = React.Children.only(children) as React.ReactElement<{ className?: string; children?: string }>;

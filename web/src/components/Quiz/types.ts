@@ -15,6 +15,8 @@ export interface QuestionShowPayload {
 export interface QuestionRevealPayload {
   index: number;
   reponse: number;
+  /** Nombre de participant·e·s ayant répondu chaque choix (même ordre que `choix`). */
+  compteParChoix: number[];
   leaderboard: Player[];
 }
 

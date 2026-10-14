@@ -158,18 +158,20 @@ export class QuizRoom {
     return this.answers.size;
   }
 
-  /** Révèle la bonne réponse et met à jour les scores. */
-  reveal(): { reponse: number; leaderboard: PlayerState[] } {
+  /** Révèle la bonne réponse, compte les réponses par choix et met à jour les scores. */
+  reveal(): { reponse: number; compteParChoix: number[]; leaderboard: PlayerState[] } {
     this.status = "reveal";
     const question = this.currentQuestion();
     const duration = this.questionDuration();
+    const compteParChoix = question.choix.map(() => 0);
     for (const [playerId, player] of this.players) {
       const answer = this.answers.get(playerId);
       const correct = Boolean(answer) && answer!.choiceIndex === question.reponse;
       const elapsed = answer ? answer.elapsed : Infinity;
+      if (answer) compteParChoix[answer.choiceIndex]++;
       player.score += computeScore(correct, elapsed, duration);
     }
-    return { reponse: question.reponse, leaderboard: this.leaderboard() };
+    return { reponse: question.reponse, compteParChoix, leaderboard: this.leaderboard() };
   }
 
   hasNextQuestion(): boolean {

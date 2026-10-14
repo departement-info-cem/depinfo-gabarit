@@ -1,7 +1,7 @@
 import React, { JSX, useEffect, useRef, useState } from "react";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import Leaderboard from "./Leaderboard";
-import QuestionText from "./QuestionText";
+import QuestionText, { ChoiceWithCount } from "./QuestionText";
 import { QuizRoom, validateQuiz, type QuizData, type RosterEntry } from "./quizEngine";
 import { parseQuizMarkdown } from "./quizMarkdown";
 import { ROOM_ID_PREFIX, createPeerWithRetry } from "./peerUtils";
@@ -360,7 +360,7 @@ export default function QuizTeacher({
                     : styles.choiceButton
                 }
               >
-                <QuestionText texte={choix} compact />
+                <ChoiceWithCount choix={choix} count={reveal.compteParChoix[index]} />
               </li>
             ))}
           </ul>
