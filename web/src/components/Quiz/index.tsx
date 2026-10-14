@@ -36,7 +36,7 @@ export default function Quiz({
             Mode étudiant
           </button>
           <button className="button button--secondary button--outline" onClick={() => setMode("solo")}>
-            Réviser seul·e
+            Mode solo
           </button>
         </div>
       </div>

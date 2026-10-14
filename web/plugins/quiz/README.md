@@ -41,7 +41,7 @@ compatible tel quel avec un hébergement 100% statique comme GitHub Pages.
    partager (ex. `48213`) ; le mode étudiant permet de rejoindre avec ce code
    et un pseudonyme.
 
-   Un troisième bouton, « Réviser seul·e », lance le mode solo (voir plus bas).
+   Un troisième bouton, « Mode solo », permet de réviser seul·e (voir plus bas).
 
 ## Mode solo (révision)
 
