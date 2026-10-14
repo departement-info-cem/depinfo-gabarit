@@ -103,6 +103,16 @@ export function createStudentPeer(peerOptions?: PeerOptions): Promise<Peer> {
   });
 }
 
+/**
+ * Message affiché quand aucun chemin réseau direct n'a été trouvé entre
+ * l'étudiant·e et l'enseignant·e (« ICE failed »), faute de serveur TURN.
+ */
+export const NEGOTIATION_FAILED_MESSAGE =
+  "Impossible d'établir une connexion directe avec l'enseignant·e. " +
+  "Essayez avec un autre navigateur (ex. Chrome) ou un autre réseau. " +
+  "Sur Mac, vérifiez aussi que le navigateur a accès au réseau local " +
+  "(Réglages Système → Confidentialité et sécurité → Réseau local).";
+
 /** Se connecte à la salle d'un·e enseignant·e à partir de son code, avec délai maximal. */
 export function connectToRoom(
   peer: Peer,
@@ -122,7 +132,7 @@ export function connectToRoom(
     });
     conn.once("error", (err) => {
       clearTimeout(timeoutId);
-      reject(new Error(err.message));
+      reject(new Error(err.type === "negotiation-failed" ? NEGOTIATION_FAILED_MESSAGE : err.message));
     });
   });
 }

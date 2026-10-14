@@ -1,7 +1,7 @@
 # Plugin Quiz
 
 Plugin Docusaurus permettant d'animer des quiz en direct (façon Wooclap/Kahoot) :
-un·e enseignant·e démarre une session à partir d'un fichier JSON de questions, les
+un·e enseignant·e démarre une session à partir d'un fichier de questions (markdown ou JSON), les
 étudiant·e·s la rejoignent avec un code, et un classement se met à jour après
 chaque question en fonction de la rapidité des bonnes réponses.
 
@@ -28,12 +28,12 @@ compatible tel quel avec un hébergement 100% statique comme GitHub Pages.
    ],
    ```
 
-3. Déposer les fichiers de questions dans `static/quiz/` (voir `static/quiz/exemple.json`).
+3. Déposer les fichiers de questions dans `static/quiz/` (voir `static/quiz/exemple.md`).
 
 4. Utiliser le composant dans une page ou un document :
 
    ```mdx
-   <Quiz file="/quiz/exemple.json" />
+   <Quiz file="/quiz/exemple.md" />
    ```
 
    Un sélecteur permet ensuite de choisir le mode « enseignant » ou « étudiant ».
@@ -41,10 +41,20 @@ compatible tel quel avec un hébergement 100% statique comme GitHub Pages.
    partager (ex. `48213`) ; le mode étudiant permet de rejoindre avec ce code
    et un pseudonyme.
 
+   Un troisième bouton, « Mode solo », permet de réviser seul·e (voir plus bas).
+
+## Mode solo (révision)
+
+Le mode solo permet à un·e étudiant·e de refaire le quiz seul·e, à son rythme,
+pour réviser : aucune connexion ni code de session, aucun chronomètre. Après
+chaque réponse, la bonne réponse est montrée aussitôt. À la fin, le résultat
+s'affiche (ex. « 3 / 5 bonnes réponses ») avec deux boutons : réessayer
+seulement les questions ratées, ou recommencer tout le quiz.
+
 ## Fonctionnement
 
 - L'enseignant·e ouvre la page en mode « enseignant » : son navigateur charge
-  le fichier JSON, devient l'hôte de la partie (`Peer` PeerJS avec un
+  le fichier de questions, devient l'hôte de la partie (`Peer` PeerJS avec un
   identifiant court dérivé du code affiché) et conserve l'état du jeu (scores,
   question courante, etc.).
 - Chaque étudiant·e ouvre la page en mode « étudiant », saisit le code et un
@@ -52,6 +62,11 @@ compatible tel quel avec un hébergement 100% statique comme GitHub Pages.
   celui de l'enseignant·e.
 - Les questions, réponses et mises à jour du classement transitent uniquement
   entre les navigateurs concernés, sans passer par un serveur applicatif.
+- On peut rejoindre une partie déjà commencée (mais pas une partie terminée) :
+  la personne arrive directement sur la question en cours, avec le temps qu'il
+  reste pour y répondre, et commence avec 0 point. Si elle arrive pendant la
+  révélation d'une réponse, elle voit cette révélation puis participe à la
+  question suivante.
 - **La partie ne dure que le temps où l'onglet de l'enseignant·e reste ouvert** :
   fermer ou rafraîchir cet onglet met fin à la session pour tout le monde.
 
@@ -135,7 +150,7 @@ réseau.
 
 Cette erreur signifie que les deux navigateurs n'ont trouvé aucun chemin
 réseau direct pour se connecter et qu'aucun TURN (relais) n'était disponible
-pour prendre le relais. Deux causes fréquentes :
+pour prendre le relais. Trois causes fréquentes :
 
 1. **Réseau restrictif** : NAT symétrique, pare-feu d'entreprise/cégep, ou
    environnement de test dans une machine virtuelle/conteneur dont le réseau
@@ -145,7 +160,14 @@ pour prendre le relais. Deux causes fréquentes :
    → Tester avec un navigateur ayant un accès Internet normal (pas dans un
    environnement de développement bac à sable) est la première chose à
    vérifier.
-2. **Aucun TURN configuré** : par défaut, ce plugin ne configure qu'un STUN
+2. **Navigateur sans accès au réseau local (macOS)** : depuis macOS 15,
+   chaque application doit être autorisée à accéder au réseau local
+   (Réglages Système → Confidentialité et sécurité → Réseau local). Un
+   navigateur non autorisé (souvent Firefox, si Chrome l'est déjà) ne peut pas
+   joindre les autres appareils, ni un autre navigateur du même ordinateur :
+   la connexion échoue avec « ICE failed ». Activer l'accès puis relancer le
+   navigateur.
+3. **Aucun TURN configuré** : par défaut, ce plugin ne configure qu'un STUN
    (`stun:stun.l.google.com:19302`), suffisant pour la majorité des réseaux
    mais pas pour les cas ci-dessus. Voir « Ajouter un serveur TURN » ci-dessous.
 
@@ -157,7 +179,7 @@ serveurs TURN via la prop `peerOptions` du composant `<Quiz />` (ou l'option
 
 ```jsx
 <Quiz
-  file="/quiz/exemple.json"
+  file="/quiz/exemple.md"
   peerOptions={{
     config: {
       iceServers: [
@@ -209,6 +231,77 @@ en pair-à-pair une fois la connexion établie.
 
 ## Format du fichier de questions
 
+Les quiz s'écrivent de préférence en markdown (fichier `.md`) : le code s'y
+écrit comme dans n'importe quelle page du site, et l'aperçu markdown de VS Code
+montre le quiz tel qu'il sera affiché.
+
+````md
+---
+titre: Quiz de révision
+duree: 20
+---
+
+## Quelle structure de données fonctionne en LIFO ?
+
+- [ ] File
+- [x] Pile
+- [ ] Arbre
+- [ ] Graphe
+
+## Que retourne cette fonction ?
+
+<!-- duree: 30 -->
+
+```javascript
+function f(a, b) {
+  return a + b;
+}
+f(1, 2);
+```
+
+- [ ] `1`
+- [ ] `2`
+- [x] `3`
+- [ ] Une erreur
+
+## Laquelle de ces boucles affiche les nombres de 0 à 4 ?
+
+- [x] Celle-ci :
+
+  ```csharp
+  for (int i = 0; i < 5; i++) Console.WriteLine(i);
+  ```
+
+- [ ] Celle-là :
+
+  ```csharp
+  for (int i = 1; i <= 5; i++) Console.WriteLine(i);
+  ```
+````
+
+- L'en-tête (entre les `---`) donne le `titre` du quiz et la `duree` par
+  défaut des questions, en secondes (20 secondes si absente). Les deux sont
+  optionnels ; à défaut d'en-tête, un titre `# …` sert de titre du quiz.
+- Chaque titre `## …` commence une question. Tout ce qui suit jusqu'aux choix
+  (texte, blocs de code avec coloration syntaxique, listes, etc.) complète
+  l'énoncé.
+- Les choix sont une liste de cases à cocher : `- [ ]` pour un mauvais choix,
+  `- [x]` pour **la** bonne réponse (exactement une par question, au moins deux
+  choix). Un choix peut contenir du markdown : `code en ligne`, ou un bloc de
+  code **indenté** sous le choix pour qu'il en fasse partie.
+- `<!-- duree: 30 -->`, placé dans une question, change sa durée. Ce
+  commentaire est invisible dans l'aperçu markdown.
+- Les `##` et `- [ ]` à l'intérieur d'un bloc de code ne sont pas interprétés.
+- Une erreur de format (aucune bonne réponse cochée, texte non indenté après
+  les choix, etc.) s'affiche en mode enseignant, avec le numéro de la question
+  et de la ligne en cause.
+- Les points d'une bonne réponse varient entre 500 et 1000 selon la rapidité
+  (aucun point pour une mauvaise réponse ou une absence de réponse).
+
+### Format JSON
+
+Les fichiers `.json` restent acceptés (le format est choisi selon l'extension) :
+
 ```json
 {
   "titre": "Quiz de révision",
@@ -218,11 +311,6 @@ en pair-à-pair une fois la connexion établie.
       "choix": ["File", "Pile", "Arbre", "Graphe"],
       "reponse": 1,
       "duree": 20
-    },
-    {
-      "texte": "Que retourne cette fonction ?\n\n```javascript\nfunction f(a, b) {\n  return a + b;\n}\nf(1, 2);\n```",
-      "choix": ["1", "2", "3", "Une erreur"],
-      "reponse": 2
     }
   ]
 }
@@ -230,7 +318,6 @@ en pair-à-pair une fois la connexion établie.
 
 - `reponse` est l'index (0-based) du bon choix.
 - `duree` (secondes) est optionnel, 20 secondes par défaut.
-- `texte` supporte le markdown (gras, listes, blocs de code avec coloration
-  syntaxique selon le langage indiqué après les ```` ``` ````, etc.).
-- Les points d'une bonne réponse varient entre 500 et 1000 selon la rapidité
-  (aucun point pour une mauvaise réponse ou une absence de réponse).
+- `texte` et `choix` supportent le markdown, mais les blocs de code y sont
+  pénibles à écrire (`\n` et guillemets à échapper) : préférer le format
+  markdown dès qu'une question contient du code.

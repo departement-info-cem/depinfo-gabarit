@@ -1,6 +1,8 @@
 // Logique du jeu de quiz (état des salles, questions, calcul des scores).
 // Exécutée entièrement côté client : l'enseignant·e agit comme hôte de la partie.
 
+import { parseQuizMarkdown } from "./quizMarkdown";
+
 export interface Question {
   texte: string;
   choix: string[];
@@ -70,6 +72,19 @@ export function validateQuiz(quiz: unknown): QuizData {
     }
   }
   return candidate as QuizData;
+}
+
+/**
+ * Charge un quiz : `file` est soit déjà un objet (JSON importé), soit un chemin,
+ * auquel cas `url` (le chemin résolu avec la baseUrl) est récupérée et lue
+ * comme du markdown ou du JSON selon son extension.
+ */
+export async function loadQuiz(file: string | QuizData, url: string): Promise<QuizData> {
+  if (typeof file !== "string") return validateQuiz(file);
+  const response = await fetch(url);
+  if (!response.ok) throw new Error("Fichier de quiz introuvable");
+  const isMarkdown = /\.md$/i.test(new URL(url, window.location.href).pathname);
+  return validateQuiz(isMarkdown ? parseQuizMarkdown(await response.text()) : await response.json());
 }
 
 /** État d'une partie de quiz, géré côté hôte (navigateur de l'enseignant·e). */
@@ -158,18 +173,20 @@ export class QuizRoom {
     return this.answers.size;
   }
 
-  /** Révèle la bonne réponse et met à jour les scores. */
-  reveal(): { reponse: number; leaderboard: PlayerState[] } {
+  /** Révèle la bonne réponse, compte les réponses par choix et met à jour les scores. */
+  reveal(): { reponse: number; compteParChoix: number[]; leaderboard: PlayerState[] } {
     this.status = "reveal";
     const question = this.currentQuestion();
     const duration = this.questionDuration();
+    const compteParChoix = question.choix.map(() => 0);
     for (const [playerId, player] of this.players) {
       const answer = this.answers.get(playerId);
       const correct = Boolean(answer) && answer!.choiceIndex === question.reponse;
       const elapsed = answer ? answer.elapsed : Infinity;
+      if (answer) compteParChoix[answer.choiceIndex]++;
       player.score += computeScore(correct, elapsed, duration);
     }
-    return { reponse: question.reponse, leaderboard: this.leaderboard() };
+    return { reponse: question.reponse, compteParChoix, leaderboard: this.leaderboard() };
   }
 
   hasNextQuestion(): boolean {

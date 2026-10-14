@@ -5,15 +5,15 @@ import type { PeerOptions } from "peerjs";
 import type { QuizData } from "./quizEngine";
 import styles from "./Quiz.module.css";
 
-type Mode = "enseignant" | "etudiant" | null;
+type Mode = "enseignant" | "etudiant" | "solo" | null;
 
 export default function Quiz({
   file,
   peerOptions,
 }: {
   /**
-   * Fichier JSON de questions : soit un chemin (ex: "/quiz/exemple.json"),
-   * soit un objet importé directement (ex: `import quiz from "./exemple.json"`),
+   * Fichier de questions : soit un chemin vers un fichier markdown ou JSON
+   * (ex: "/quiz/exemple.md"), soit un objet importé directement (ex: `import quiz from "./exemple.json"`),
    * ce qui permet d'utiliser un chemin relatif au fichier .md.
    */
   file: string | QuizData;
@@ -35,6 +35,9 @@ export default function Quiz({
           <button className="button button--secondary" onClick={() => setMode("etudiant")}>
             Mode étudiant
           </button>
+          <button className="button button--secondary button--outline" onClick={() => setMode("solo")}>
+            Mode solo
+          </button>
         </div>
       </div>
     );
@@ -45,6 +48,8 @@ export default function Quiz({
       {() => {
         const QuizTeacher = require("./QuizTeacher").default;
         const QuizStudent = require("./QuizStudent").default;
+        const QuizSolo = require("./QuizSolo").default;
+        if (mode === "solo") return <QuizSolo file={file} onQuit={() => setMode(null)} />;
         return mode === "enseignant" ? (
           <QuizTeacher file={file} peerOptions={resolvedPeerOptions} onQuit={() => setMode(null)} />
         ) : (

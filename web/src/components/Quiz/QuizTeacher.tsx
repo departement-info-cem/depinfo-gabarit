@@ -1,8 +1,8 @@
 import React, { JSX, useEffect, useRef, useState } from "react";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import Leaderboard from "./Leaderboard";
-import QuestionText from "./QuestionText";
-import { QuizRoom, validateQuiz, type QuizData, type RosterEntry } from "./quizEngine";
+import QuestionText, { ChoiceWithCount } from "./QuestionText";
+import { QuizRoom, loadQuiz, type QuizData, type RosterEntry } from "./quizEngine";
 import { ROOM_ID_PREFIX, createPeerWithRetry } from "./peerUtils";
 import type { PeerMessage, QuestionRevealPayload, QuestionShowPayload } from "./types";
 import styles from "./Quiz.module.css";
@@ -22,14 +22,27 @@ interface BannedPseudo {
  */
 const BAN_CLOSE_DELAY_MS = 1000;
 
+/** Question en cours, telle qu'envoyée aux participant·e·s. */
+function questionPayload(room: QuizRoom): QuestionShowPayload {
+  const q = room.currentQuestion();
+  return {
+    index: room.currentIndex,
+    total: room.quiz.questions.length,
+    texte: q.texte,
+    choix: q.choix,
+    duree: room.questionDuration(),
+    startAt: room.questionStartAt,
+  };
+}
+
 export default function QuizTeacher({
   file,
   peerOptions,
   onQuit,
 }: {
   /**
-   * Fichier JSON de questions : soit un chemin (ex: "/quiz/exemple.json"),
-   * soit un objet importé directement, ce qui permet un chemin relatif.
+   * Fichier de questions : soit un chemin vers un fichier markdown ou JSON
+   * (ex: "/quiz/exemple.md"), soit un objet importé directement, ce qui permet un chemin relatif.
    */
   file: string | QuizData;
   peerOptions?: PeerOptions;
@@ -48,6 +61,8 @@ export default function QuizTeacher({
   const [reconnecting, setReconnecting] = useState(false);
 
   const roomRef = useRef<QuizRoom | null>(null);
+  /** Dernière révélation, renvoyée aux participant·e·s qui arrivent pendant celle-ci. */
+  const lastRevealRef = useRef<QuestionRevealPayload | null>(null);
   const connectionsRef = useRef<Map<string, DataConnection>>(new Map());
   const peerRef = useRef<Peer | null>(null);
   const fileUrl = useBaseUrl(typeof file === "string" ? file : undefined);
@@ -105,8 +120,8 @@ export default function QuizTeacher({
     if (!room) return;
 
     if (data.type === "join") {
-      if (room.status !== "lobby") {
-        send(conn, { type: "joinAck", ok: false, message: "Le quiz est déjà commencé" });
+      if (room.status === "ended") {
+        send(conn, { type: "joinAck", ok: false, message: "Le quiz est terminé" });
         return;
       }
       const pseudo = String(data.pseudo || "").trim().slice(0, 20);
@@ -129,6 +144,14 @@ export default function QuizTeacher({
       room.players.set(conn.peer, { pseudo, score: 0 });
       send(conn, { type: "joinAck", ok: true, titre: room.quiz.titre });
       updatePlayers();
+      // Arrivée en cours de partie : on envoie la question en cours (avec le temps
+      // qu'il reste pour y répondre) ou, si elle est déjà révélée, sa réponse.
+      if (room.status === "question" || room.status === "reveal") {
+        send(conn, { type: "question", payload: questionPayload(room) });
+      }
+      if (room.status === "reveal" && lastRevealRef.current) {
+        send(conn, { type: "reveal", payload: { ...lastRevealRef.current, leaderboard: room.leaderboard() } });
+      }
       return;
     }
 
@@ -146,15 +169,7 @@ export default function QuizTeacher({
 
     (async () => {
       try {
-        let quizJson: unknown;
-        if (typeof file === "string") {
-          const response = await fetch(fileUrl);
-          if (!response.ok) throw new Error("Fichier de quiz introuvable");
-          quizJson = await response.json();
-        } else {
-          quizJson = file;
-        }
-        const quiz = validateQuiz(quizJson);
+        const quiz = await loadQuiz(file, fileUrl);
         if (cancelled) return;
 
         roomRef.current = new QuizRoom(quiz);
@@ -215,16 +230,7 @@ export default function QuizTeacher({
   }, [question, phase]);
 
   const emitQuestion = () => {
-    const room = roomRef.current!;
-    const q = room.currentQuestion();
-    const payload: QuestionShowPayload = {
-      index: room.currentIndex,
-      total: room.quiz.questions.length,
-      texte: q.texte,
-      choix: q.choix,
-      duree: room.questionDuration(),
-      startAt: room.questionStartAt,
-    };
+    const payload = questionPayload(roomRef.current!);
     setQuestion(payload);
     setReveal(null);
     setAnsweredCount(0);
@@ -246,6 +252,7 @@ export default function QuizTeacher({
         index: room.currentIndex,
         ...room.reveal(),
       };
+      lastRevealRef.current = payload;
       setReveal(payload);
       setRoster(room.roster());
       setPhase("reveal");
@@ -332,7 +339,7 @@ export default function QuizTeacher({
           <ul className={styles.choices}>
             {question.choix.map((choix) => (
               <li key={choix} className={styles.choiceButton}>
-                {choix}
+                <QuestionText texte={choix} compact />
               </li>
             ))}
           </ul>
@@ -358,16 +365,16 @@ export default function QuizTeacher({
                     : styles.choiceButton
                 }
               >
-                {choix}
+                <ChoiceWithCount choix={choix} count={reveal.compteParChoix[index]} />
               </li>
             ))}
           </ul>
-          <h4>Classement</h4>
-          <Leaderboard players={roster} onBan={banPlayer} />
-          {bannedList}
           <button className="button button--primary" onClick={advance}>
             {question.index + 1 < question.total ? "Question suivante" : "Voir le résultat final"}
           </button>
+          <h4>Classement</h4>
+          <Leaderboard players={roster} onBan={banPlayer} />
+          {bannedList}
         </>
       )}
 
