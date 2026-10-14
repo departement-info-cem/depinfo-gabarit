@@ -52,6 +52,11 @@ compatible tel quel avec un hébergement 100% statique comme GitHub Pages.
   celui de l'enseignant·e.
 - Les questions, réponses et mises à jour du classement transitent uniquement
   entre les navigateurs concernés, sans passer par un serveur applicatif.
+- On peut rejoindre une partie déjà commencée (mais pas une partie terminée) :
+  la personne arrive directement sur la question en cours, avec le temps qu'il
+  reste pour y répondre, et commence avec 0 point. Si elle arrive pendant la
+  révélation d'une réponse, elle voit cette révélation puis participe à la
+  question suivante.
 - **La partie ne dure que le temps où l'onglet de l'enseignant·e reste ouvert** :
   fermer ou rafraîchir cet onglet met fin à la session pour tout le monde.
 
