@@ -150,7 +150,14 @@ pour prendre le relais. Deux causes fréquentes :
    → Tester avec un navigateur ayant un accès Internet normal (pas dans un
    environnement de développement bac à sable) est la première chose à
    vérifier.
-2. **Aucun TURN configuré** : par défaut, ce plugin ne configure qu'un STUN
+2. **Navigateur sans accès au réseau local (macOS)** : depuis macOS 15,
+   chaque application doit être autorisée à accéder au réseau local
+   (Réglages Système → Confidentialité et sécurité → Réseau local). Un
+   navigateur non autorisé (souvent Firefox, si Chrome l'est déjà) ne peut pas
+   joindre les autres appareils, ni un autre navigateur du même ordinateur :
+   la connexion échoue avec « ICE failed ». Activer l'accès puis relancer le
+   navigateur.
+3. **Aucun TURN configuré** : par défaut, ce plugin ne configure qu'un STUN
    (`stun:stun.l.google.com:19302`), suffisant pour la majorité des réseaux
    mais pas pour les cas ci-dessus. Voir « Ajouter un serveur TURN » ci-dessous.
 
