@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useRef, useState } from "react";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import { useColorMode } from "@docusaurus/theme-common";
 import styles from "./WeeklySchedule.module.css";
+import { numeroCoursDuSite, useCoursDepartement, type FichierCours } from "../donneesDepartement";
 
 interface ScheduleEvent {
   id?: string;
@@ -36,6 +37,44 @@ interface WeeklyScheduleProps {
   dataUrl?: string;
   data?: WeeklyScheduleData;
   title?: string;
+  /** Identifiant du prof sur le site du département (ex. « po.brillant ») : son horaire y est lu, plus de JSON à tenir à jour */
+  prof?: string;
+  /** Numéro du cours sur le site du département ; par défaut numeroCours dans config.js */
+  cours?: string;
+}
+
+// ---------- Horaire lu sur le site du département (prop « prof ») ----------
+
+const COULEURS_TYPES: Record<string, ScheduleCategory> = {
+  dispo: { backgroundColor: "#ffedd5", textColor: "#9a3412", darkBackgroundColor: "#9a3412", darkTextColor: "#ffedd5" },
+  "centre-aide": { backgroundColor: "#ede9fe", textColor: "#5b21b6", darkBackgroundColor: "#5b21b6", darkTextColor: "#ede9fe" },
+  reunion: { backgroundColor: "#dcfce7", textColor: "#14532d", darkBackgroundColor: "#14532d", darkTextColor: "#dcfce7" },
+  autre: { backgroundColor: "#f3f4f6", textColor: "#374151", darkBackgroundColor: "#374151", darkTextColor: "#f3f4f6" },
+};
+const COULEURS_COURS: ScheduleCategory[] = [
+  { backgroundColor: "#fef3c7", textColor: "#78350f", darkBackgroundColor: "#7c5e00", darkTextColor: "#fff4cc" },
+  { backgroundColor: "#dbeafe", textColor: "#1e3a8a", darkBackgroundColor: "#1e3a8a", darkTextColor: "#dbeafe" },
+  { backgroundColor: "#fce7f3", textColor: "#831843", darkBackgroundColor: "#831843", darkTextColor: "#fce7f3" },
+  { backgroundColor: "#ccfbf1", textColor: "#134e4a", darkBackgroundColor: "#134e4a", darkTextColor: "#ccfbf1" },
+  { backgroundColor: "#e0e7ff", textColor: "#3730a3", darkBackgroundColor: "#3730a3", darkTextColor: "#e0e7ff" },
+];
+const LIBELLES_TYPES: Record<string, string> = { dispo: "Disponibilité", "centre-aide": "Centre d'aide", reunion: "Réunion", autre: "Autre" };
+const court = (no: string) => no.replace(/^420-/, "").replace(/-(EM|RE)$/, "");
+
+/** L'horaire de la semaine d'un prof, au format de ce composant, à partir du fichier du cours publié par le département. */
+export function horaireDuDepartement(fichier: FichierCours, prof: string): WeeklyScheduleData | null {
+  const semaine = fichier.profs?.[prof];
+  if (!semaine) return null;
+  const categories: Record<string, ScheduleCategory> = { ...COULEURS_TYPES };
+  const events: ScheduleEvent[] = semaine.horaire.plages.map((p, i) => {
+    if (p.type === "cours" && p.cours) {
+      const code = court(p.cours);
+      categories[code] = categories[code] ?? COULEURS_COURS[Object.keys(categories).length % COULEURS_COURS.length];
+      return { id: `${code}-${p.groupe ?? ""}-${i}`, day: p.jour, start: p.debut, end: p.fin, title: p.nomCours ?? code, courseCode: p.cours, courseGroup: p.groupe, room: p.local, category: code };
+    }
+    return { id: `${p.type}-${i}`, day: p.jour, start: p.debut, end: p.fin, title: p.titre ?? LIBELLES_TYPES[p.type] ?? p.type, room: p.local, category: COULEURS_TYPES[p.type] ? p.type : "autre" };
+  });
+  return { startHour: semaine.horaire.debut ?? "08:00", endHour: semaine.horaire.fin ?? "18:00", slotMinutes: 60, categories, events };
 }
 
 const DAY_ALIASES: Record<string, string> = {
@@ -92,9 +131,13 @@ export default function WeeklySchedule({
   dataUrl = "/ressources/weekly-schedule.sample.json",
   data,
   title,
+  prof,
+  cours,
 }: WeeklyScheduleProps) {
   const [scheduleData, setScheduleData] = useState<WeeklyScheduleData | null>(data || null);
   const [error, setError] = useState<string | null>(null);
+  // Avec « prof », l'horaire vient du site du département au lieu de data ou dataUrl
+  const departement = useCoursDepartement(prof ? cours ?? numeroCoursDuSite : undefined);
   const { colorMode } = useColorMode();
   const scheduleRef = useRef<HTMLDivElement>(null);
 
@@ -172,6 +215,13 @@ export default function WeeklySchedule({
   const resolvedDataUrl = /^https?:\/\//i.test(dataUrl) ? dataUrl : baseDataUrl;
 
   useEffect(() => {
+    if (prof) {
+      if (!departement.charge) return;
+      const horaire = departement.cours && horaireDuDepartement(departement.cours, prof);
+      setScheduleData(horaire);
+      setError(horaire ? null : `Horaire de ${prof} introuvable sur le site du département (cours ${cours ?? numeroCoursDuSite ?? "non précisé dans config.js"})`);
+      return;
+    }
     if (data) {
       setScheduleData(data);
       setError(null);
@@ -198,7 +248,7 @@ export default function WeeklySchedule({
         setScheduleData(null);
         setError(fetchError.message);
       });
-  }, [data, dataUrl, resolvedDataUrl]);
+  }, [data, dataUrl, resolvedDataUrl, prof, cours, departement]);
 
   const computed = useMemo(() => {
     if (!scheduleData) {

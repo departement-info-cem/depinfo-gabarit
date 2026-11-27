@@ -9,7 +9,7 @@ import {
 import DefaultNavbarItem, {
   type Props as DefaultNavbarItemProps,
 } from "@theme/NavbarItem/DefaultNavbarItem";
-import sidebarDocs from "../MainDocsGrid/sidebarDocs";
+import { useSidebarDocs } from "../donneesDepartement";
 import {
   dateDuJour,
   trouverProchainCours,
@@ -61,6 +61,7 @@ function LienSidebarNavbarItem({
 /** Onglet menant au prochain cours selon l'horaire du premier prof défini dans sidebars.js */
 export function ProchainCoursNavbarItem(props: Props) {
   const isBrowser = useIsBrowser();
+  const sidebarDocs = useSidebarDocs();
   const docIdCible = isBrowser ? trouverProchainCours(sidebarDocs, dateDuJour()) : undefined;
   return <LienSidebarNavbarItem {...props} docIdCible={docIdCible} />;
 }
@@ -68,6 +69,7 @@ export function ProchainCoursNavbarItem(props: Props) {
 /** Onglet menant au TP dont la remise (className d'un cours dans sidebars.js) est la plus proche */
 export function TpCourantNavbarItem(props: Props) {
   const isBrowser = useIsBrowser();
+  const sidebarDocs = useSidebarDocs();
   const { travauxPratiques = [] } = (usePluginData(
     "docusaurus-plugin-docs-metadata"
   ) ?? {}) as { travauxPratiques?: TravailPratique[] };

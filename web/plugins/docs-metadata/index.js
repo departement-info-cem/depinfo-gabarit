@@ -140,10 +140,22 @@ function generateSidebarDocs() {
   if (Array.isArray(sidebars.docs)) {
     allEntries = extractAllDocEntries(sidebars.docs);
   }
+  // Numéro du cours sur le site du département (numeroCours dans config.js, facultatif), pour les séances
+  // numérotées (voir src/components/donneesDepartement.ts). Lu ici, côté Node : config.js peut utiliser
+  // process.env, qui n'existe pas dans le navigateur.
+  let numeroCours = null;
+  try {
+    numeroCours = require(path.resolve(__dirname, "../../config")).numeroCours ?? null;
+  } catch {
+    numeroCours = null;
+  }
   const content =
     "// Ce fichier est généré automatiquement à partir de sidebars.js\n" +
     "export default " +
     JSON.stringify(allEntries, null, 2) +
+    ";\n" +
+    "export const numeroCours = " +
+    JSON.stringify(numeroCours) +
     ";\n";
   fs.writeFileSync(outputPath, content);
 }
