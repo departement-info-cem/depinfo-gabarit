@@ -4,7 +4,7 @@ import { useHistory } from "@docusaurus/router";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import { useColorMode } from "@docusaurus/theme-common";
 import { usePluginData } from "@docusaurus/useGlobalData";
-import sidebarDocs from "./sidebarDocs";
+import { useSidebarDocs } from "../donneesDepartement";
 import ProgressBar from "./ProgressBar";
 
 export default function MainDocsGrid() {
@@ -21,6 +21,8 @@ export default function MainDocsGrid() {
     "docusaurus-plugin-docs-metadata"
   ) ?? {}) as { routeBasePath?: string };
   const { colorMode } = useColorMode();
+  // Les entrées de sidebars.js ; celles qui donnent un numéro de séance reçoivent leurs dates du site du département
+  const sidebarDocs = useSidebarDocs();
 
   useEffect(() => {
     fetch("docsMetadata.json")
@@ -44,7 +46,7 @@ export default function MainDocsGrid() {
       };
     });
     setDocs(docsList);
-  }, [meta]);
+  }, [meta, sidebarDocs]);
 
   const handleClick = (doc: any) => {
     // Le slug vient de la sidebar : il reste valide même si le doc n’a pas de métadonnées

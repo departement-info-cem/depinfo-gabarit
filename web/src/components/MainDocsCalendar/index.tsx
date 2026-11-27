@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import styles from "./MainDocsCalendar.module.css";
 import { useHistory } from "@docusaurus/router";
 import useBaseUrl from "@docusaurus/useBaseUrl";
-import sidebarDocs from "../MainDocsGrid/sidebarDocs";
+import { useSidebarDocs } from "../donneesDepartement";
 
 interface CalendarEvent {
   id: string;
@@ -33,6 +33,8 @@ export default function MainDocsCalendar({
   const [calendarEvents, setCalendarEvents] = useState<CalendarEvent[]>([]);
   const history = useHistory();
   const baseUrl = useBaseUrl("/");
+  // Les entrées de sidebars.js ; celles qui donnent un numéro de séance reçoivent leurs dates du site du département
+  const sidebarDocs = useSidebarDocs();
 
   const resolveDocTitle = (doc: any): string => {
     const frontmatterTitle =
@@ -144,7 +146,7 @@ export default function MainDocsCalendar({
       }
     });
     setCalendarEvents(events);
-  }, [meta, professorName]);
+  }, [meta, professorName, sidebarDocs]);
 
   const handleEventClick = (event: CalendarEvent) => {
     // Trouver le document correspondant
